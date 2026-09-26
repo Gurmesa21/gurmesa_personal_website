@@ -1,0 +1,372 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// -----------------------------------------------------------------------------
+// ENUMS
+// -----------------------------------------------------------------------------
+
+enum AdminUserStatus {
+  ACTIVE
+  SUSPENDED
+}
+
+enum SocialVisibility {
+  PUBLIC
+  HIDDEN
+}
+
+enum ServiceStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum ProjectStatus {
+  INQUIRY
+  DISCOVERY
+  PROPOSAL
+  ACTIVE
+  DELIVERED
+  SUPPORT
+  ARCHIVED
+}
+
+enum ProjectConfidentiality {
+  PUBLIC
+  ANONYMIZED
+  PRIVATE
+}
+
+enum CaseStudyStatus {
+  DRAFT
+  PUBLISHED
+}
+
+enum BlogPostStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum TestimonialPermissionStatus {
+  PENDING
+  AUTHORIZED
+  REVOKED
+}
+
+enum TestimonialStatus {
+  DRAFT
+  PUBLISHED
+}
+
+enum InquiryStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  PROPOSAL
+  WON
+  LOST
+  ARCHIVED
+}
+
+// -----------------------------------------------------------------------------
+// CORE ENTITIES
+// -----------------------------------------------------------------------------
+
+model AdminUser {
+  id           String          @id @default(cuid())
+  email        String          @unique
+  passwordHash String?
+  name         String
+  status       AdminUserStatus
+  createdAt    DateTime        @default(now()) @db.Timestamptz
+  updatedAt    DateTime        @updatedAt @db.Timestamptz
+
+  sessions     Session[]
+  inquiryNotes InquiryNote[]
+  auditLogs    AuditLog[]
+}
+
+model Session {
+  id        String    @id @default(cuid())
+  userId    String
+  expiresAt DateTime  @db.Timestamptz
+  createdAt DateTime  @default(now()) @db.Timestamptz
+  userAgent String?
+  ipAddress String?
+
+  user      AdminUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Profile {
+  id                 String   @id @default(cuid())
+  name               String
+  title              String
+  tagline            String
+  bio                String   @db.Text
+  locationLabel      String?
+  availabilityStatus String?
+  updatedAt          DateTime @updatedAt @db.Timestamptz
+}
+
+model Experience {
+  id           String    @id @default(cuid())
+  organization String
+  role         String
+  startDate    DateTime  @db.Timestamptz
+  endDate      DateTime? @db.Timestamptz
+  description  String    @db.Text
+  order        Int
+  createdAt    DateTime  @default(now()) @db.Timestamptz
+  updatedAt    DateTime  @updatedAt @db.Timestamptz
+}
+
+model Skill {
+  id               String  @id @default(cuid())
+  name             String
+  category         String
+  proficiencyLabel String?
+  order            Int
+}
+
+model SocialLink {
+  id         String           @id @default(cuid())
+  platform   String
+  url        String
+  label      String
+  visibility SocialVisibility
+  order      Int
+}
+
+model Service {
+  id                 String        @id @default(cuid())
+  slug               String        @unique
+  title              String
+  summary            String
+  description        String        @db.Text
+  deliverables       String[]
+  status             ServiceStatus
+  order              Int
+  startingPriceRange String?
+  createdAt          DateTime      @default(now()) @db.Timestamptz
+  updatedAt          DateTime      @updatedAt @db.Timestamptz
+
+  @@index([slug, status])
+}
+
+model Project {
+  id              String                 @id @default(cuid())
+  clientRef       String?
+  title           String
+  slug            String                 @unique
+  status          ProjectStatus
+  confidentiality ProjectConfidentiality
+  startDate       DateTime?              @db.Timestamptz
+  endDate         DateTime?              @db.Timestamptz
+  summary         String                 @db.Text
+  internalNotes   String?                @db.Text
+  createdAt       DateTime               @default(now()) @db.Timestamptz
+  updatedAt       DateTime               @updatedAt @db.Timestamptz
+
+  caseStudy       CaseStudy?
+  technologies    ProjectTechnology[]
+  media           ProjectMedia[]
+
+  @@index([slug])
+  @@index([status, confidentiality])
+}
+
+model CaseStudy {
+  id                  String          @id @default(cuid())
+  projectId           String          @unique
+  problem             String          @db.Text
+  solution            String          @db.Text
+  role                String          @db.Text
+  scope               String          @db.Text
+  architectureSummary String          @db.Text
+  keyDecisions        String?         @db.Text
+  challenges          String?         @db.Text
+  outcome             String          @db.Text
+  content             String          @db.Text
+  status              CaseStudyStatus
+  publishedAt         DateTime?       @db.Timestamptz
+  updatedAt           DateTime        @updatedAt @db.Timestamptz
+
+  project             Project         @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model Technology {
+  id       String              @id @default(cuid())
+  name     String
+  category String
+  slug     String              @unique
+  projects ProjectTechnology[]
+
+  @@index([slug])
+}
+
+model ProjectTechnology {
+  projectId    String
+  technologyId String
+
+  project      Project    @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  technology   Technology @relation(fields: [technologyId], references: [id], onDelete: Restrict)
+
+  @@id([projectId, technologyId])
+}
+
+model ProjectMedia {
+  id        String     @id @default(cuid())
+  projectId String
+  mediaId   String
+  caption   String?
+  altText   String
+  order     Int
+
+  project   Project    @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  media     MediaAsset @relation(fields: [mediaId], references: [id], onDelete: Restrict)
+}
+
+model BlogPost {
+  id              String         @id @default(cuid())
+  slug            String         @unique
+  title           String
+  excerpt         String
+  body            String         @db.Text
+  status          BlogPostStatus
+  publishedAt     DateTime?      @db.Timestamptz
+  updatedAt       DateTime       @updatedAt @db.Timestamptz
+  categoryId      String?
+  featuredImageId String?
+
+  category        Category?      @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  featuredImage   MediaAsset?    @relation(fields: [featuredImageId], references: [id], onDelete: SetNull)
+  tags            PostTag[]
+
+  @@index([slug])
+  @@index([status, publishedAt])
+  @@index([updatedAt])
+}
+
+model Category {
+  id        String     @id @default(cuid())
+  name      String
+  slug      String     @unique
+  blogPosts BlogPost[]
+
+  @@index([slug])
+}
+
+model Tag {
+  id        String    @id @default(cuid())
+  name      String
+  slug      String    @unique
+  blogPosts PostTag[]
+
+  @@index([slug])
+}
+
+model PostTag {
+  postId String
+  tagId  String
+
+  post   BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag    Tag      @relation(fields: [tagId], references: [id], onDelete: Restrict)
+
+  @@id([postId, tagId])
+}
+
+model Testimonial {
+  id               String                      @id @default(cuid())
+  name             String
+  role             String?
+  organization     String?
+  content          String                      @db.Text
+  permissionStatus TestimonialPermissionStatus
+  featured         Boolean                     @default(false)
+  status           TestimonialStatus
+  createdAt        DateTime                    @default(now()) @db.Timestamptz
+}
+
+model Inquiry {
+  id           String        @id @default(cuid())
+  name         String
+  email        String
+  organization String?
+  projectType  String?
+  message      String        @db.Text
+  status       InquiryStatus
+  source       String?
+  createdAt    DateTime      @default(now()) @db.Timestamptz
+  updatedAt    DateTime      @updatedAt @db.Timestamptz
+
+  notes        InquiryNote[]
+
+  @@index([status, createdAt])
+  @@index([email])
+}
+
+model InquiryNote {
+  id        String    @id @default(cuid())
+  inquiryId String
+  authorId  String
+  body      String    @db.Text
+  createdAt DateTime  @default(now()) @db.Timestamptz
+
+  inquiry   Inquiry   @relation(fields: [inquiryId], references: [id], onDelete: Cascade)
+  author    AdminUser @relation(fields: [authorId], references: [id], onDelete: Restrict)
+}
+
+model MediaAsset {
+  id            String         @id @default(cuid())
+  storageKey    String         @unique
+  mimeType      String
+  size          Int
+  width         Int?
+  height        Int?
+  altText       String?
+  createdAt     DateTime       @default(now()) @db.Timestamptz
+
+  projectMedia  ProjectMedia[]
+  featuredPosts BlogPost[]
+  seoOverrides  SEOOverride[]
+}
+
+model SEOOverride {
+  id               String      @id @default(cuid())
+  routeOrContentId String      @unique
+  title            String?
+  description      String?
+  canonical        String?
+  ogImageId        String?
+
+  ogImage          MediaAsset? @relation(fields: [ogImageId], references: [id], onDelete: SetNull)
+}
+
+model AuditLog {
+  id        String     @id @default(cuid())
+  actorId   String?
+  action    String
+  entity    String
+  entityId  String?
+  timestamp DateTime   @db.Timestamptz
+  metadata  Json?
+
+  actor     AdminUser? @relation(fields: [actorId], references: [id], onDelete: Restrict)
+
+  @@index([actorId, timestamp])
+  @@index([entity, entityId])
+}
+
+model SiteSetting {
+  key       String   @id @unique
+  value     Json
+  type      String
+  updatedAt DateTime @updatedAt @db.Timestamptz
+}
