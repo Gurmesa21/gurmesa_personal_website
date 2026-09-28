@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getPublicProfile } from '@/server/services/profileService';
 import { getPublicServices } from '@/server/services/serviceService';
 import { getPublicProjects } from '@/server/services/projectService';
+import { getPublicPosts } from '@/server/services/blogService';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 
@@ -9,6 +10,7 @@ export default async function HomePage() {
   const profile = await getPublicProfile();
   const services = await getPublicServices();
   const projects = await getPublicProjects(); // Returns only published & non-private
+  const posts = await getPublicPosts();
 
   return (
     <div className="flex flex-col gap-16 py-12">
@@ -86,6 +88,33 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Selected Writing Section */}
+      <section className="container mx-auto px-4 bg-muted/30 py-12 rounded-2xl mb-12">
+        <div className="mb-8 flex items-center justify-between">
+          <h2 className="text-3xl font-bold">Selected Writing</h2>
+          <Button variant="outline" asChild>
+            <Link href="/blog">View All Posts</Link>
+          </Button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.slice(0, 3).map((post) => (
+            <Card key={post.id} className="flex flex-col h-full">
+              <CardHeader>
+                <CardTitle className="text-xl">{post.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-1">
+                <p className="text-muted-foreground">{post.excerpt}</p>
+              </CardContent>
+              <CardFooter>
+                <Button variant="secondary" asChild className="w-full">
+                  <Link href={`/blog/${post.slug}`}>Read Article</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+      </section>
+
       {/* About Snapshot Section */}
       <section className="container mx-auto px-4">
         <div className="max-w-3xl space-y-6">
@@ -103,10 +132,10 @@ export default async function HomePage() {
 
       {/* 
         TECHNICAL DEBT NOTE:
-        Featured Work, Selected Writing, and Testimonials sections are omitted from the homepage today 
-        because their underlying entities (Project, BlogPost, Testimonial) do not yet have their full 
-        DTOs/pages built out (scheduled for Days 6, 7, etc.). Rather than faking placeholder content, 
-        they are intentionally skipped per Day 5 requirements.
+        Testimonials sections are omitted from the homepage today 
+        because their underlying entities (Testimonial) do not yet have their full 
+        DTOs/pages built out. Rather than faking placeholder content, 
+        they are intentionally skipped.
       */}
     </div>
   );
