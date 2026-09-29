@@ -2,7 +2,6 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { getPublicProjects, getPublicCaseStudyBySlug, createProject, updateProject, deleteProject, upsertCaseStudy } from '../../server/services/projectService';
 import * as authModule from '../../auth';
 import { toPublicCaseStudy } from '../../lib/dto/project';
-import { prisma } from '../../server/repositories/db';
 
 vi.mock('../../auth', () => ({
   auth: vi.fn(),
@@ -19,62 +18,9 @@ describe('Day 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     vi.mocked(authModule.auth as any).mockResolvedValue({ user: { id: 'admin', role: 'ADMIN' } });
 
-    // 1. Ensure we have a PRIVATE project with a PUBLISHED case study (SEC-ACL-02)
-    let privateProject = await prisma.project.findFirst({
-      where: { confidentiality: 'PRIVATE' },
-      include: { caseStudy: true }
-    });
-    if (!privateProject) {
-      privateProject = await prisma.project.create({
-        data: {
-          title: 'Private Test Project',
-          slug: 'private-test-project',
-          summary: 'Sum',
-          status: 'ACTIVE',
-          confidentiality: 'PRIVATE',
-          clientRef: 'Secret Client',
-          internalNotes: 'Secret notes',
-          caseStudy: {
-            create: {
-              problem: 'p', solution: 's', role: 'r', scope: 's', architectureSummary: 'a', outcome: 'o', content: 'c', status: 'PUBLISHED'
-            }
-          }
-        },
-        include: { caseStudy: true }
-      });
-    } else if (!privateProject.caseStudy || privateProject.caseStudy.status !== 'PUBLISHED') {
-      await prisma.caseStudy.upsert({
-        where: { projectId: privateProject.id },
-        update: { status: 'PUBLISHED' },
-        create: {
-          projectId: privateProject.id,
-          problem: 'p', solution: 's', role: 'r', scope: 's', architectureSummary: 'a', outcome: 'o', content: 'c', status: 'PUBLISHED'
-        }
-      });
-    }
-    privateProjectSlug = privateProject.slug;
-
-    // 2. Ensure we have a PUBLIC/ANONYMIZED project with a DRAFT case study (SEC-ACL-03)
-    let unpublishedCaseStudy = await prisma.project.findFirst({
-      where: { confidentiality: 'PUBLIC', caseStudy: { status: 'DRAFT' } },
-    });
-    if (!unpublishedCaseStudy) {
-      unpublishedCaseStudy = await prisma.project.create({
-        data: {
-          title: 'Unpublished CS Project',
-          slug: 'unpublished-cs-project',
-          summary: 'Sum',
-          status: 'ACTIVE',
-          confidentiality: 'PUBLIC',
-          caseStudy: {
-            create: {
-              problem: 'p', solution: 's', role: 'r', scope: 's', architectureSummary: 'a', outcome: 'o', content: 'c', status: 'DRAFT'
-            }
-          }
-        }
-      });
-    }
-    unpublishedCaseStudySlug = unpublishedCaseStudy.slug;
+    // Use fixed seeded projects
+    privateProjectSlug = 'secret-tool';
+    unpublishedCaseStudySlug = 'unpublished-cs-project';
   });
 
   describe('SEC-ACL-02: Private Project Isolation', () => {

@@ -1,61 +1,78 @@
-﻿
+
 > gurmesa-website@0.1.0 build
 > next build
 
-Γû▓ Next.js 16.3.6 (Turbopack)
+▲ Next.js 16.3.6 (Turbopack)
 - Environments: .env
-Γ£ô Running next.config.ts took 113ms
+⚠ Warning: Next.js ignored package-lock.json in C:\Users\Hp because it is outside the current Git repository (C:\Users\Hp\Documents\Projects\Gurmesa_website).
+ To use this directory, set `turbopack.root` in your Next.js config.
+
+✓ Running next.config.ts took 85ms
 
   Creating an optimized production build ...
-Γ£ô Compiled successfully in 6.2s
+✓ Compiled successfully in 7.7s
   Running TypeScript ...
-  Finished TypeScript in 10.3s ...
+  Finished TypeScript in 8.1s ...
   Collecting page data using 7 workers ...
-  Generating static pages using 7 workers (0/10) ...
-  Generating static pages using 7 workers (2/10) 
-  Generating static pages using 7 workers (4/10) 
-  Generating static pages using 7 workers (7/10) 
-Γ£ô Generating static pages using 7 workers (10/10) in 2.8s
+  Generating static pages using 7 workers (0/9) ...
+  Generating static pages using 7 workers (2/9) 
+  Generating static pages using 7 workers (4/9) 
+  Generating static pages using 7 workers (6/9) 
+✓ Generating static pages using 7 workers (9/9) in 951ms
   Finalizing page optimization ...
 
 Route (app)
-Γöî Γùï /
-Γö£ Γùï /_not-found
-Γö£ Γùï /about
-Γö£ ╞Æ /admin
-Γö£ ╞Æ /admin/blog
-Γö£ ╞Æ /admin/blog/[id]/edit
-Γö£ ╞Æ /admin/blog/[id]/preview
-Γö£ ╞Æ /admin/blog/new
-Γö£ ╞Æ /admin/inquiries
-Γö£ ╞Æ /admin/inquiries/[id]
-Γö£ ╞Æ /admin/login
-Γö£ ╞Æ /admin/projects
-Γö£ ╞Æ /admin/projects/[id]/edit
-Γö£ ╞Æ /admin/projects/new
-Γö£ ╞Æ /admin/services
-Γö£ ╞Æ /admin/services/[id]/edit
-Γö£ ╞Æ /admin/services/new
-Γö£ ╞Æ /admin/technologies
-Γö£ ╞Æ /admin/technologies/[id]/edit
-Γö£ ╞Æ /admin/technologies/new
-Γö£ ╞Æ /admin/testimonials
-Γö£ ╞Æ /admin/testimonials/[id]
-Γö£ ╞Æ /api/auth/[...nextauth]
-Γö£ ╞Æ /blog
-Γö£ ╞Æ /blog/[slug]
-Γö£ Γùï /contact
-Γö£ Γùï /privacy
-Γö£ Γùï /services
-Γö£ ╞Æ /services/[slug]
-Γö£ Γùï /sitemap.xml
-Γö£ Γùï /terms
-Γö£ ╞Æ /work
-Γöö ╞Æ /work/[slug]
+┌ ƒ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /admin
+├ ƒ /admin/blog
+├ ƒ /admin/blog/[id]/edit
+├ ƒ /admin/blog/[id]/preview
+├ ƒ /admin/blog/new
+├ ƒ /admin/experience
+├ ƒ /admin/experience/[id]/edit
+├ ƒ /admin/experience/new
+├ ƒ /admin/inquiries
+├ ƒ /admin/inquiries/[id]
+├ ƒ /admin/login
+├ ƒ /admin/profile
+├ ƒ /admin/projects
+├ ƒ /admin/projects/[id]/edit
+├ ƒ /admin/projects/new
+├ ƒ /admin/services
+├ ƒ /admin/services/[id]/edit
+├ ƒ /admin/services/new
+├ ƒ /admin/settings
+├ ƒ /admin/skills
+├ ƒ /admin/skills/[id]/edit
+├ ƒ /admin/skills/new
+├ ƒ /admin/social-links
+├ ƒ /admin/social-links/[id]/edit
+├ ƒ /admin/social-links/new
+├ ƒ /admin/technologies
+├ ƒ /admin/technologies/[id]/edit
+├ ƒ /admin/technologies/new
+├ ƒ /admin/testimonials
+├ ƒ /admin/testimonials/[id]
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/health
+├ ƒ /blog
+├ ƒ /blog/[slug]
+├ ○ /contact
+├ ○ /privacy
+├ ○ /robots.txt
+├ ƒ /services
+├ ƒ /services/[slug]
+├ ƒ /sitemap.xml
+├ ○ /terms
+├ ○ /test-error
+├ ƒ /work
+└ ƒ /work/[slug]
 
 
-╞Æ Proxy (Middleware)
+ƒ Proxy (Middleware)
 
-Γùï  (Static)   prerendered as static content
-╞Æ  (Dynamic)  server-rendered on demand
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
 

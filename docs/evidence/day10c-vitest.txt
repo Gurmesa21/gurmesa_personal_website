@@ -1,0 +1,123 @@
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - `__dirname` (vitest.config.ts:8:25). Use `import.meta.dirname` instead
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.2 [39m[90mC:/Users/Hp/Documents/Projects/Gurmesa_website[39m
+
+ [31m×[39m tests/integration/day10b.test.ts[2m > [22mDay 10b - Missing Verification Tests[2m > [22mrobots.ts disallows /admin and /api and references the sitemap[32m 29[2mms[22m[39m
+[31m   → expected '{"rules":{"userAgent":"*","allow":"/"…' to contain 'Disallow: /admin'[39m
+ [32m✓[39m tests/integration/day10b.test.ts[2m > [22mDay 10b - Missing Verification Tests[2m > [22mJSON-LD on at least one page parses as valid JSON, and a fixture with </script> in its title does not break out of the script element[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10b.test.ts[2m > [22mDay 10b - Missing Verification Tests[2m > [22mlogin with an external callbackUrl does not redirect off-site[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/project-visibility.test.ts[2m > [22mProject query can filter by confidentiality[32m 182[2mms[22m[39m
+ [32m✓[39m tests/integration/day5-service.test.ts[2m > [22mService Integration Tests[2m > [22mgetPublicServices() excludes DRAFT/ARCHIVED services[32m 156[2mms[22m[39m
+ [32m✓[39m tests/integration/day5-service.test.ts[2m > [22mService Integration Tests[2m > [22mtoPublicService() output keys match exactly the declared public allowlist[32m 6[2mms[22m[39m
+ [32m✓[39m tests/integration/day5-service.test.ts[2m > [22mService Integration Tests[2m > [22munauthenticated request to a Service admin mutation is rejected[32m 6[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mgetPublicPosts() excludes DRAFT posts[32m 257[2mms[22m[39m
+ [32m✓[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mSEC-ACL-02: Private Project Isolation[2m > [22m(a) getPublicProjects() — never appears in the list[32m 193[2mms[22m[39m
+ [32m✓[39m tests/integration/day3-auth.test.ts[2m > [22mDay 3 - Authentication and DTO Boundary[2m > [22mSEC-ACL-05: getPublicProfile() output keys match exactly the declared public allowlist[32m 149[2mms[22m[39m
+ [32m✓[39m tests/integration/day3-auth.test.ts[2m > [22mDay 3 - Authentication and DTO Boundary[2m > [22mSEC-ACL-01: unauthenticated access to admin action (getAdminProfile) is rejected[32m 8[2mms[22m[39m
+ [32m✓[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mSEC-ACL-02: Private Project Isolation[2m > [22m(b) getPublicCaseStudyBySlug(slug) — returns null for private project[32m 89[2mms[22m[39m
+ [32m✓[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mSEC-ACL-03: Unpublished Case Study Isolation[2m > [22m(a) getPublicProjects() — never appears in the list if case study is DRAFT[32m 64[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mgetPublicPosts() excludes ARCHIVED posts[32m 98[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mgetPublicPostBySlug(slug) returns null for a DRAFT post's real slug[32m 72[2mms[22m[39m
+ [32m✓[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mSEC-ACL-03: Unpublished Case Study Isolation[2m > [22m(b) getPublicCaseStudyBySlug(slug) — returns null if case study is DRAFT[32m 60[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mgetPublicPostBySlug(slug) returns null for an ARCHIVED post[32m 79[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mtoPublicPost() output keys match the declared allowlist exactly[32m 4[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: createPost rejected[32m 9[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: updatePost rejected[32m 2[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: publish rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: deletePost rejected[32m 2[2mms[22m[39m
+ [32m✓[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mDTO Allowlist[2m > [22mtoPublicCaseStudy() output keys exclude clientRef and internalNotes and match the declared allowlist exactly[32m 65[2mms[22m[39m
+ [32m✓[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mAdmin Mutations (SEC-ACL-01 equivalent)[2m > [22mProject/CaseStudy mutations reject unauthenticated requests[32m 131[2mms[22m[39m
+ [32m✓[39m tests/integration/day3-auth.test.ts[2m > [22mDay 3 - Authentication and DTO Boundary[2m > [22mSEC-AUTH-03: Login validation accepts correct password and rejects wrong password[33m 748[2mms[22m[39m
+ [32m✓[39m tests/integration/profile.test.ts[2m > [22mProfile DTO tests[2m > [22mtoPublicProfile() output keys match the declared allowlist exactly[32m 11[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: category create rejected[33m 587[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: category delete rejected[32m 2[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: tag create rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: tag delete rejected[32m 2[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mvalid submission stores an inquiry with status NEW[33m 620[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input is rejected with field errors[32m 34[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: missing email[32m 17[2mms[22m[39m
+ [32m✓[39m tests/integration/health.test.ts[2m > [22mDay 10 - /api/health[2m > [22m/api/health returns 200 and {status:"ok"} with the DB reachable[32m 35[2mms[22m[39m
+ [32m✓[39m tests/integration/health.test.ts[2m > [22mDay 10 - /api/health[2m > [22m/api/health returns 503 and {status:"degraded"} when the DB call is fault-injected to fail; response body contains no internal detail[32m 4[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: invalid email[32m 18[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: message too short[32m 8[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: message too long[32m 7[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: unknown projectType[32m 9[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22munknown/extra fields are rejected[32m 6[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mhoneypot filled: nothing stored, nothing sent, success-shaped reply[32m 18[2mms[22m[39m
+[90mstdout[2m | tests/integration/contact.test.ts[2m > [22m[2mContact & Inquiry Service Integration[2m > [22m[2mConsoleTransport records SKIPPED (never SENT)
+[22m[39m--- EMAIL SKIPPED (CONSOLE TRANSPORT) ---
+To: x
+Subject: y
+Body:
+z
+-----------------------------------------
+
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mrate limit: the (N+1)th request from one client is rejected while a different client is still accepted[32m 161[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22memail transport throws: inquiry is still stored with notificationStatus FAILED[32m 45[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mConsoleTransport records SKIPPED (never SENT)[32m 10[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mConsoleTransport cannot be selected when NODE_ENV=production[32m 6[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mheader-injection attempt does not alter the outgoing email headers/subject[32m 6[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22msource with a full URL, protocol, or query string is rejected or normalized to a safe path[32m 5[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated Profile update rejected[32m 15[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated Experience create rejected[32m 2[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated Experience update rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated Experience delete rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated Skill create rejected[32m 3[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated Skill update rejected[32m 2[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated Skill delete rejected[32m 3[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated SocialLink create rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated SocialLink update rejected[32m 2[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated SocialLink delete rejected[32m 2[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated SiteSetting update rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22mSiteSetting update with an unknown/non-whitelisted key is rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22mSiteSetting invalid values rejected: retention out of range[32m 6[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22mSiteSetting invalid values rejected: malformed email[32m 3[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - SEO/headers[2m > [22mHSTS header present when NODE_ENV=production, absent otherwise[32m 2[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22macknowledgement is not sent when the toggle is off[32m 35[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated: list, get, status change, add note, delete each rejected[32m 3[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: list rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: get rejected[32m 0[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: status change rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: add note rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: delete rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22madd note stores the session user as author regardless of any client-supplied authorId[32m 67[2mms[22m[39m
+ [32m✓[39m tests/unit/sanity.test.ts[2m > [22msanity check[32m 6[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22mPENDING+published testimonial excluded from public[32m 68[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22mAUTHORIZED+DRAFT excluded from public[32m 15[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22mREVOKED+published excluded from public[32m 20[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22mtoPublicTestimonial allowlist keys match exactly[32m 12[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22manonymous testimonial omits name and organization[32m 8[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22munauthenticated testimonial mutations rejected[32m 2[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22munauthenticated testimonial create rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22munauthenticated testimonial update rejected[32m 0[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22munauthenticated testimonial delete rejected[32m 0[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/day10b.test.ts[2m > [22mDay 10b - Missing Verification Tests[2m > [22mrobots.ts disallows /admin and /api and references the sitemap
+[31m[1mAssertionError[22m: expected '{"rules":{"userAgent":"*","allow":"/"…' to contain 'Disallow: /admin'[39m
+
+Expected: [32m"[7mD[27misallow[7m: [27m/admin"[39m
+Received: [31m"[7m{"rules":{"userAgent":"*","allow":"/","d[27misallow[7m":["[27m/admin[7m","/api"]},"sitemap":"http://localhost:3000/sitemap.xml"}[27m"[39m
+
+[36m [2m❯[22m tests/integration/day10b.test.ts:[2m9:18[22m[39m
+    [90m  7|[39m     const res = await robotsGet();
+    [90m  8|[39m     const text = JSON.stringify(res);
+    [90m  9|[39m     expect(text).toContain('Disallow: /admin');
+    [90m   |[39m                  [31m^[39m
+    [90m 10|[39m     expect(text).toContain('Disallow: /api');
+    [90m 11|[39m     expect(text).toContain('Sitemap:');
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m10 passed[39m[22m[90m (11)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m79 passed[39m[22m[90m (80)[39m
+[2m   Start at [22m 11:11:26
+[2m   Duration [22m 3.16s[2m (tests 40%, import 34%, transform 24%, worker 2%)[22m
+
+[2m    Isolate [22m [33m11 workers spawned[39m[2m · ~692ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~395ms faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+

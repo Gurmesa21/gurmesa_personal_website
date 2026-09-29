@@ -17,7 +17,10 @@ export default function BlogForm({ post, categories }: { post?: import('@prisma/
       } else {
         await createBlogPostAction(formData);
       }
-    } catch (err) {
+    } catch (err: any) {
+      if (err?.message === 'NEXT_REDIRECT' || err?.digest?.startsWith('NEXT_REDIRECT')) {
+        throw err;
+      }
       console.error(err);
       setLoading(false);
     }

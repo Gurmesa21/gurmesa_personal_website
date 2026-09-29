@@ -1,0 +1,218 @@
+﻿node.exe : [WebServer] ΓÜá Warning: Next.js ignored 
+package-lock.json in C:\Users\Hp because it is outside the 
+current Git repository 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website).
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
+    + CategoryInfo          : NotSpecified: ([WebServer] ΓÜá...r 
+   mesa_website).:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[WebServer]  To use this directory, set `turbopack.root` in your 
+Next.js config.
+[WebServer] 
+[WebServer] ΓÜá Warning: Next.js ignored package-lock.json in 
+C:\Users\Hp because it is outside the current Git repository 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website).
+[WebServer]  To use this directory, set `outputFileTracingRoot` 
+in your Next.js config.
+[WebServer] 
+
+Running 45 tests using 4 workers
+
+  Γ£ô   2 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:23:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /privacy (3.3s)
+  Γ£ô   3 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:32:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /terms (3.2s)
+  Γ£ô   1 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:5:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on / (homepage with AUTHORIZED+PUBLISHED testimonial) (4.0s)
+  Γ£ô   5 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:41:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ skip-to-content link works correctly (1.0s)
+[WebServer] Γ¿» Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+  Γ£ô   4 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:14:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /contact (3.9s)
+  Γ£ô   6 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:58:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ mobile menu opens, traps focus, and closes with escape (1.8s)
+  Γ£ô   7 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:28:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post is absent from public index HTML (724ms)
+[WebServer] Γ¿» Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+  Γ£ô   8 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:45:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Unauthenticated request to the preview URL is redirected/rejected and contains no draft content (972ms)
+  Γ£ô   9 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:80:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: search (?q=) filters results; a DRAFT post's title never appears in results (1.2s)
+  Γ£ô  10 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:34:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post returns 404 on direct lookup (1.0s)
+  Γ£ô  12 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:58:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: /blog index renders seeded published posts (736ms)
+  Γ£ô  11 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:117:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ XSS: a post whose body contains <script> and <img src=x onerror=...> payloads renders them inert on /blog/[slug] (934ms)
+  Γ£ô  13 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:97:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: category and tag filters work (730ms)
+  Γ£ô  14 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:39:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post is absent from sitemap (543ms)
+  Γ£ô  16 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:136:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ XSS: CaseStudy content on /work/[slug] renders inert (1.2s)
+  Γ£ô  15 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:65:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: article detail page loads from the index (1.5s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63212)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63390)
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:1:1251)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmes
+a_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._
+.js:1:578) {
+[WebServer]   digest: 
+'NEXT_REDIRECT;push;http://localhost:3000/admin;307;'
+[WebServer] }
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63212)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63390)
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:1:1251)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmes
+a_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._
+.js:1:578) {
+[WebServer]   digest: 
+'NEXT_REDIRECT;push;http://localhost:3000/admin;307;'
+[WebServer] }
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63212)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63390)
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:1:1251)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmes
+a_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._
+.js:1:578) {
+[WebServer]   digest: 
+'NEXT_REDIRECT;push;http://localhost:3000/admin;307;'
+[WebServer] }
+  Γ£ô  17 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:103:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Axe scan (zero critical/serious) on /blog and /blog/[slug] (4.9s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63212)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63390)
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:1:1251)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmes
+a_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._
+.js:1:578) {
+[WebServer]   digest: 
+'NEXT_REDIRECT;push;http://localhost:3000/admin;307;'
+[WebServer] }
+  Γ£ô  18 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:13:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ i. Publish a testimonial -> appears on / (10.2s)
+  Γ£ô  20 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:57:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iii. Unpublish a service -> absent from /services and / (9.1s)
+  Γ£ô  19 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:36:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ ii. Mark a featured project DRAFT -> absent from / and /work (9.3s)
+[WebServer] Γ¿» Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63212)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63390)
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:1:1251)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmes
+a_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._
+.js:1:578) {
+[WebServer]   digest: 
+'NEXT_REDIRECT;push;http://localhost:3000/admin;307;'
+[WebServer] }
+  Γ£ô  24 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:32:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ contact form: invalid submit focuses the error summary and associates errors with fields (1.4s)
+  Γ£ô  23 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:12:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ contact form: happy path submits and shows confirmation, using keyboard only (1.7s)
+  Γ£ô  25 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:46:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ inquiry-leak scan: assert the marker is absent from the HTML of public surfaces and sitemap (570ms)
+  Γ£ô  26 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:65:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ unauthenticated visit to /admin/inquiries and /admin/testimonials redirects to login (895ms)
+  Γ£ô  27 [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:5:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ HIDDEN social link absent from getPublicSocialLinks output AND from the rendered /about page HTML (816ms)
+  Γ£ô  21 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:74:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iv. Unpublish a blog post -> absent from / and /blog (8.8s)
+[WebServer] Γ¿» Error: simulated secret internal server error 
+postgres://secret@db
+[WebServer]     at o (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\[root-of-the-server]__17jiglf._.js:1:
+973) {
+[WebServer]   digest: '1456711122'
+[WebServer] }
+  Γ£ô  30 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:5:3 ΓÇ║ Day 10b E2E ΓÇ║ robots.ts disallows /admin and /api and references the sitemap (195ms)
+  Γ£ô  31 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:13:3 ΓÇ║ Day 10b E2E ΓÇ║ sitemap includes the static pages and public entities, excludes the known private project, DRAFT case study, and DRAFT post (107ms)
+  Γ£ô  29 [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:48:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ production error page shows no stack trace in the rendered HTML (773ms)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63212)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63390)
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:1:1251)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmes
+a_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._
+.js:1:578) {
+[WebServer]   digest: 
+'NEXT_REDIRECT;push;http://localhost:3000/admin;307;'
+[WebServer] }
+  Γ£ô  32 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:21:3 ΓÇ║ Day 10b E2E ΓÇ║ /admin pages, /admin/login, and the blog preview page each return noindex (1.1s)
+  Γ£ô  34 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:43:3 ΓÇ║ Day 10b E2E ΓÇ║ JSON-LD on at least one page parses as valid JSON, and a fixture with </script> in its title does not break out of the script element (6ms)
+  Γ£ô  33 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:31:3 ΓÇ║ Day 10b E2E ΓÇ║ canonical URL and OG title present in generateMetadata output for: home, one service detail, one case study, one blog post (1.1s)
+  Γ£ô  28 [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:26:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ editing the Profile tagline via the admin UI shows the new tagline on / on the next request (2.8s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63212)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63390)
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:1:1251)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmes
+a_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._
+.js:1:578) {
+[WebServer]   digest: 
+'NEXT_REDIRECT;push;http://localhost:3000/admin;307;'
+[WebServer] }
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63212)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63390)
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:1:1251)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmes
+a_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._
+.js:1:578) {
+[WebServer]   digest: 
+'NEXT_REDIRECT;push;http://localhost:3000/admin;307;'
+[WebServer] }
+  Γ£ô  35 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:60:3 ΓÇ║ Day 10b E2E ΓÇ║ login with an external callbackUrl does not redirect off-site (1.9s)
+  Γ£ô  37 [chromium] ΓÇ║ tests\e2e\day5.spec.ts:4:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ homepage renders hero, services preview, about snapshot with real seeded data (1.2s)
+  Γ£ô  36 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:71:3 ΓÇ║ Day 10b E2E ΓÇ║ SEO override persists in admin UI and is rendered by generateMetadata (2.1s)
+  Γ£ô  40 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:39:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL (147ms)
+  Γ£ô  39 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:27:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(c): /work page does NOT render the private project (739ms)
+  Γ£ô  38 [chromium] ΓÇ║ tests\e2e\day5.spec.ts:20:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ services index -> click service -> detail page loads correctly (1.5s)
+  Γ£ô  41 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:46:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(c): /work page does NOT render unpublished case studies (848ms)
+  Γ£ô  22 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:97:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml (8.7s)
+  Γ£ô  43 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:52:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study (619ms)
+  Γ£ô  45 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:57:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs (64ms)
+  Γ£ô  44 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:64:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ Public /work page renders seeded public case studies (838ms)
+  Γ£ÿ  42 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:34:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(d): /work/[slug] returns 404 for a private project (761ms)
+
+
+  1) [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:34:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(d): /work/[slug] returns 404 for a private project 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 200
+
+      34 |   test('SEC-ACL-02(d): /work/[slug] returns 404 for a private project', async ({ page }) => {
+      35 |     const response = await page.goto(`/work/${privateProjectSlug}`);
+    > 36 |     expect(response?.status()).toBe(404);
+         |                                ^
+      37 |   });
+      38 |
+      39 |   test('SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL', async ({ request }) => {
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\day6-portfolio.spec.ts:36:32
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-e4970-s-404-for-a-private-project-chromium\error-context.md
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-e4970-s-404-for-a-private-project-chromium\error-context.md
+
+  1 failed
+    [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:34:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(d): /work/[slug] returns 404 for a private project 
+  44 passed (57.1s)

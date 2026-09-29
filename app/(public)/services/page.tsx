@@ -3,11 +3,26 @@ import Link from 'next/link';
 import { getPublicServices } from '../../../server/services/serviceService';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '../../../components/ui/card';
 import { Button } from '../../../components/ui/button';
+import { getSeoOverride } from '@/server/services/seoService';
+import { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Services | Gurmesa',
-  description: 'Professional services offered.',
-};
+
+
+
+export async function generateMetadata(): Promise<Metadata> {
+  const override = await getSeoOverride('/services');
+  const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+  return {
+    title: override?.title || 'Services',
+    description: override?.description || 'What I offer.',
+    alternates: { canonical: override?.canonical || `${siteUrl}/services` },
+    openGraph: {
+      title: override?.title || 'Services',
+      url: `${siteUrl}/services`,
+      images: override?.ogImage ? [override.ogImage.storageKey] : ['/og-image.jpg'],
+    }
+  };
+}
 
 export default async function ServicesPage() {
   const services = await getPublicServices();

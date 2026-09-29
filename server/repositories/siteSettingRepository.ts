@@ -7,4 +7,5 @@ export const siteSettingRepository = {
   create: async (args: Prisma.SiteSettingCreateArgs) => prisma.siteSetting.create(args),
   update: async (args: Prisma.SiteSettingUpdateArgs) => prisma.siteSetting.update(args),
   delete: async (args: Prisma.SiteSettingDeleteArgs) => prisma.siteSetting.delete(args),
+  upsert: async (args: Prisma.SiteSettingUpsertArgs) => prisma.siteSetting.upsert(args),
 };

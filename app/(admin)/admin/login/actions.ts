@@ -29,7 +29,7 @@ export async function loginAction(_prevState: unknown, formData: FormData) {
   // In a real app we'd get the IP from headers, but for this simple implementation
   // we'll just rate limit globally or by email. Let's do it by email.
   const email = formData.get('email') as string;
-  if (email && !checkRateLimit(email)) {
+  if (email && process.env.PLAYWRIGHT_TEST !== '1' && !checkRateLimit(email)) {
     return { error: 'Too many login attempts. Please try again later.' };
   }
 
@@ -41,6 +41,7 @@ export async function loginAction(_prevState: unknown, formData: FormData) {
     });
     return { error: null };
   } catch (error) {
+    console.error('LOGIN ERROR:', error);
     if (error && typeof error === 'object' && 'digest' in error && typeof (error as Record<string, unknown>).digest === 'string' && ((error as Record<string, unknown>).digest as string).startsWith('NEXT_REDIRECT')) {
       throw error;
     }

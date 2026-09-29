@@ -33,7 +33,7 @@ async function main() {
     data: {
       email: 'admin@example.com',
       name: 'Admin User',
-      passwordHash: '$2b$10$KcZfjTNTRikmmEjG2fBOhepEgNwx7BuOiorC07C9NcEY1fFpCYLme', // password: admin123
+      passwordHash: '$2b$10$IcZkCnfZrt16tUMidcIfm.yjUljBxnNbqqATtaeUzh584w7Wk70HG', // password: admin123
       status: AdminUserStatus.ACTIVE,
     }
   });
@@ -83,7 +83,9 @@ async function main() {
     data: [
       { slug: 'web-development', title: 'Web Development', summary: 'Custom web apps', description: 'Full stack development', status: ServiceStatus.PUBLISHED, order: 1, startingPriceRange: '$5000+' },
       { slug: 'consulting', title: 'Technical Consulting', summary: 'Architecture advice', description: 'Expert guidance', status: ServiceStatus.PUBLISHED, order: 2 },
-      { slug: 'ui-design', title: 'UI/UX Design', summary: 'Beautiful interfaces', description: 'Design systems', status: ServiceStatus.PUBLISHED, order: 3 }
+      { slug: 'ui-design', title: 'UI/UX Design', summary: 'Beautiful interfaces', description: 'Design systems', status: ServiceStatus.PUBLISHED, order: 3 },
+      { slug: 'caching-service', title: 'Caching Service', summary: 'Test service', description: 'For caching tests', status: ServiceStatus.PUBLISHED, order: 4 },
+      { slug: 'draft-service', title: 'Draft Service', summary: 'Draft service', description: 'Not published yet', status: ServiceStatus.DRAFT, order: 5 }
     ]
   });
 
@@ -130,6 +132,33 @@ async function main() {
     }
   });
 
+  // Dedicated projects for caching tests
+  await prisma.project.create({
+    data: {
+      title: 'Caching Dashboard',
+      slug: 'caching-dashboard',
+      status: ProjectStatus.DELIVERED,
+      confidentiality: ProjectConfidentiality.PUBLIC,
+      summary: 'For caching test.',
+      caseStudy: {
+        create: { problem: 'P', solution: 'S', role: 'R', scope: 'S', architectureSummary: 'A', outcome: 'O', content: 'C', status: CaseStudyStatus.PUBLISHED }
+      }
+    }
+  });
+
+  await prisma.project.create({
+    data: {
+      title: 'Caching Fintech',
+      slug: 'caching-fintech',
+      status: ProjectStatus.ACTIVE,
+      confidentiality: ProjectConfidentiality.ANONYMIZED,
+      summary: 'For caching test 2.',
+      caseStudy: {
+        create: { problem: 'P', solution: 'S', role: 'R', scope: 'S', architectureSummary: 'A', outcome: 'O', content: 'C', status: CaseStudyStatus.PUBLISHED }
+      }
+    }
+  });
+
   await prisma.project.create({
     data: {
       title: 'Secret Internal Tool',
@@ -155,6 +184,19 @@ async function main() {
     }
   });
 
+  await prisma.project.create({
+    data: {
+      title: 'Unpublished Case Study Project',
+      slug: 'unpublished-cs-project',
+      status: ProjectStatus.ACTIVE,
+      confidentiality: ProjectConfidentiality.PUBLIC,
+      summary: 'Public project but drafted case study.',
+      caseStudy: {
+        create: { problem: 'P', solution: 'S', role: 'R', scope: 'S', architectureSummary: 'A', outcome: 'O', content: 'C', status: CaseStudyStatus.DRAFT }
+      }
+    }
+  });
+
   // MediaAssets
   const m1 = await prisma.mediaAsset.create({ data: { storageKey: 'img-1.jpg', mimeType: 'image/jpeg', size: 1024 } });
   await prisma.mediaAsset.create({ data: { storageKey: 'img-2.png', mimeType: 'image/png', size: 2048 } });
@@ -168,7 +210,8 @@ async function main() {
     data: [
       { slug: 'first-post', title: 'First Post', excerpt: 'Intro', body: 'Content', status: BlogPostStatus.PUBLISHED, categoryId: cat.id, featuredImageId: m1.id },
       { slug: 'second-post', title: 'Draft Post', excerpt: 'Draft', body: 'Draft Content', status: BlogPostStatus.DRAFT, categoryId: cat.id },
-      { slug: 'third-post', title: 'Archived Post', excerpt: 'Archived', body: 'Old content', status: BlogPostStatus.ARCHIVED, categoryId: cat.id }
+      { slug: 'third-post', title: 'Archived Post', excerpt: 'Archived', body: 'Old content', status: BlogPostStatus.ARCHIVED, categoryId: cat.id },
+      { slug: 'caching-post', title: 'Caching Post', excerpt: 'Caching', body: 'For caching tests', status: BlogPostStatus.PUBLISHED, categoryId: cat.id }
     ]
   });
 
@@ -176,7 +219,8 @@ async function main() {
   await prisma.testimonial.createMany({
     data: [
       { name: 'Alice Smith', content: 'Great work!', permissionStatus: TestimonialPermissionStatus.AUTHORIZED, status: TestimonialStatus.PUBLISHED },
-      { name: 'Bob Jones', content: 'Very good.', permissionStatus: TestimonialPermissionStatus.PENDING, status: TestimonialStatus.DRAFT }
+      { name: 'Bob Jones', content: 'Very good.', permissionStatus: TestimonialPermissionStatus.PENDING, status: TestimonialStatus.DRAFT },
+      { name: 'Caching Testimonial', content: 'For caching tests.', permissionStatus: TestimonialPermissionStatus.PENDING, status: TestimonialStatus.DRAFT }
     ]
   });
 

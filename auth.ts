@@ -70,6 +70,14 @@ export const {
       }
       return session;
     },
+    async redirect({ url, baseUrl }) {
+      // Allows relative callback URLs
+      if (url.startsWith('/')) return `${baseUrl}${url}`;
+      // Allows callback URLs on the same origin
+      else if (new URL(url).origin === baseUrl) return url;
+      // Fallback for all other cases
+      return `${baseUrl}/admin`;
+    },
   },
   events: {
     async signOut(message) {

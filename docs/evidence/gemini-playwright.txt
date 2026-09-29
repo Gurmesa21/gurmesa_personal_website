@@ -1,0 +1,265 @@
+[WebServer] ⚠ Warning: Next.js ignored package-lock.json in C:\Users\Hp because it is outside the current Git repository (C:\Users\Hp\Documents\Projects\Gurmesa_website).
+[WebServer]  To use this directory, set `turbopack.root` in your Next.js config.
+[WebServer] 
+[WebServer] ⚠ Warning: Next.js ignored package-lock.json in C:\Users\Hp because it is outside the current Git repository (C:\Users\Hp\Documents\Projects\Gurmesa_website).
+[WebServer]  To use this directory, set `outputFileTracingRoot` in your Next.js config.
+[WebServer] 
+
+Running 45 tests using 4 workers
+
+  ok  2 [chromium] › tests\e2e\accessibility.spec.ts:14:3 › Accessibility & Shell Features › Axe scan on /contact (4.3s)
+  ok  1 [chromium] › tests\e2e\accessibility.spec.ts:5:3 › Accessibility & Shell Features › Axe scan on / (homepage with AUTHORIZED+PUBLISHED testimonial) (4.7s)
+  ok  5 [chromium] › tests\e2e\accessibility.spec.ts:41:3 › Accessibility & Shell Features › skip-to-content link works correctly (1.9s)
+[WebServer] ⨯ Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+[WebServer] ⨯ Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+  ok  6 [chromium] › tests\e2e\accessibility.spec.ts:58:3 › Accessibility & Shell Features › mobile menu opens, traps focus, and closes with escape (2.1s)
+  ok  4 [chromium] › tests\e2e\accessibility.spec.ts:23:3 › Accessibility & Shell Features › Axe scan on /privacy (4.2s)
+  ok  3 [chromium] › tests\e2e\accessibility.spec.ts:32:3 › Accessibility & Shell Features › Axe scan on /terms (5.6s)
+  ok  7 [chromium] › tests\e2e\blog.spec.ts:28:3 › Blog SEC-ACL E2E Tests › Draft post is absent from public index HTML (919ms)
+  ok  8 [chromium] › tests\e2e\blog.spec.ts:45:3 › Blog SEC-ACL E2E Tests › Unauthenticated request to the preview URL is redirected/rejected and contains no draft content (911ms)
+  ok 11 [chromium] › tests\e2e\blog.spec.ts:34:3 › Blog SEC-ACL E2E Tests › Draft post returns 404 on direct lookup (790ms)
+  ok 10 [chromium] › tests\e2e\blog.spec.ts:117:3 › Blog SEC-ACL E2E Tests › XSS: a post whose body contains <script> and <img src=x onerror=...> payloads renders them inert on /blog/[slug] (1.1s)
+  ok  9 [chromium] › tests\e2e\blog.spec.ts:80:3 › Blog SEC-ACL E2E Tests › Playwright: search (?q=) filters results; a DRAFT post's title never appears in results (1.6s)
+  ok 13 [chromium] › tests\e2e\blog.spec.ts:39:3 › Blog SEC-ACL E2E Tests › Draft post is absent from sitemap (516ms)
+  ok 12 [chromium] › tests\e2e\blog.spec.ts:58:3 › Blog SEC-ACL E2E Tests › Playwright: /blog index renders seeded published posts (1.0s)
+  ok 15 [chromium] › tests\e2e\blog.spec.ts:97:3 › Blog SEC-ACL E2E Tests › Playwright: category and tag filters work (928ms)
+  ok 14 [chromium] › tests\e2e\blog.spec.ts:136:3 › Blog SEC-ACL E2E Tests › XSS: CaseStudy content on /work/[slug] renders inert (1.4s)
+  ok 17 [chromium] › tests\e2e\blog.spec.ts:65:3 › Blog SEC-ACL E2E Tests › Playwright: article detail page loads from the index (2.3s)
+  ok 18 [chromium] › tests\e2e\blog.spec.ts:103:3 › Blog SEC-ACL E2E Tests › Axe scan (zero critical/serious) on /blog and /blog/[slug] (5.0s)
+  ok 16 [chromium] › tests\e2e\caching.spec.ts:13:3 › Caching and Revalidation (End-to-End) › i. Publish a testimonial -> appears on / (10.1s)
+  ok 20 [chromium] › tests\e2e\caching.spec.ts:57:3 › Caching and Revalidation (End-to-End) › iii. Unpublish a service -> absent from /services and / (8.5s)
+  ok 19 [chromium] › tests\e2e\caching.spec.ts:36:3 › Caching and Revalidation (End-to-End) › ii. Mark a featured project DRAFT -> absent from / and /work (10.1s)
+  ok 24 [chromium] › tests\e2e\contact.spec.ts:32:3 › Inquiry & Testimonial E2E › contact form: invalid submit focuses the error summary and associates errors with fields (1.1s)
+  ok 23 [chromium] › tests\e2e\contact.spec.ts:12:3 › Inquiry & Testimonial E2E › contact form: happy path submits and shows confirmation, using keyboard only (1.7s)
+  ok 25 [chromium] › tests\e2e\contact.spec.ts:46:3 › Inquiry & Testimonial E2E › inquiry-leak scan: assert the marker is absent from the HTML of public surfaces and sitemap (562ms)
+[WebServer] ⨯ Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+  ok 27 [chromium] › tests\e2e\day10-admin.spec.ts:5:3 › Day 10 - Admin & SEO E2E › HIDDEN social link absent from getPublicSocialLinks output AND from the rendered /about page HTML (967ms)
+  ok 26 [chromium] › tests\e2e\contact.spec.ts:65:3 › Inquiry & Testimonial E2E › unauthenticated visit to /admin/inquiries and /admin/testimonials redirects to login (1.1s)
+[WebServer] [auth][error] CredentialsSignin: Read more at https://errors.authjs.dev#credentialssignin
+[WebServer]     at fT (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1v36ajm._.js:404:41031)
+[WebServer]     at async f0 (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1v36ajm._.js:404:50629)
+[WebServer]     at async f3 (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1v36ajm._.js:404:55831)
+[WebServer]     at async i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1v36ajm._.js:1:1007)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._.js:1:543)
+[WebServer]     at async rq (C:\Users\Hp\Documents\Projects\Gurmesa_website\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:104:2331)
+[WebServer]     at async C:\Users\Hp\Documents\Projects\Gurmesa_website\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:104:678
+[WebServer]     at async rH (C:\Users\Hp\Documents\Projects\Gurmesa_website\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:102:13351)
+[WebServer]     at async sw (C:\Users\Hp\Documents\Projects\Gurmesa_website\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:139:1098)
+[WebServer]     at async l (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\node_modules_next_dist_1n3w9lb._.js:1:10915)
+  ok 22 [chromium] › tests\e2e\caching.spec.ts:97:3 › Caching and Revalidation (End-to-End) › v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml (5.3s)
+  ok 30 [chromium] › tests\e2e\day10b.spec.ts:5:3 › Day 10b E2E › robots.ts disallows /admin and /api and references the sitemap (35ms)
+  ok 31 [chromium] › tests\e2e\day10b.spec.ts:13:3 › Day 10b E2E › sitemap includes the static pages and public entities, excludes the known private project, DRAFT case study, and DRAFT post (46ms)
+  ok 32 [chromium] › tests\e2e\day10b.spec.ts:21:3 › Day 10b E2E › /admin pages, /admin/login, and the blog preview page each return noindex (660ms)
+  x  21 [chromium] › tests\e2e\caching.spec.ts:74:3 › Caching and Revalidation (End-to-End) › iv. Unpublish a blog post -> absent from / and /blog (9.7s)
+  ok 33 [chromium] › tests\e2e\day10b.spec.ts:31:3 › Day 10b E2E › canonical URL and OG title present in generateMetadata output for: home, one service detail, one case study, one blog post (816ms)
+[WebServer] [auth][error] CredentialsSignin: Read more at https://errors.authjs.dev#credentialssignin
+[WebServer]     at fT (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1v36ajm._.js:404:41031)
+[WebServer]     at async f0 (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1v36ajm._.js:404:50629)
+[WebServer]     at async f3 (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1v36ajm._.js:404:55831)
+[WebServer]     at async i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1v36ajm._.js:1:1007)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._.js:1:543)
+[WebServer]     at async rq (C:\Users\Hp\Documents\Projects\Gurmesa_website\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:104:2331)
+[WebServer]     at async C:\Users\Hp\Documents\Projects\Gurmesa_website\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:104:678
+[WebServer]     at async rH (C:\Users\Hp\Documents\Projects\Gurmesa_website\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:102:13351)
+[WebServer]     at async sw (C:\Users\Hp\Documents\Projects\Gurmesa_website\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:139:1098)
+[WebServer]     at async l (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\node_modules_next_dist_1n3w9lb._.js:1:10915)
+  x  35 [chromium] › tests\e2e\day10b.spec.ts:43:3 › Day 10b E2E › JSON-LD on at least one page parses as valid JSON, and a fixture with </script> in its title does not break out of the script element (28ms)
+  x  34 [chromium] › tests\e2e\day10b.spec.ts:60:3 › Day 10b E2E › login with an external callbackUrl does not redirect off-site (1.4s)
+  x  29 [chromium] › tests\e2e\day10-admin.spec.ts:48:3 › Day 10 - Admin & SEO E2E › production error page shows no stack trace in the rendered HTML (5.6s)
+[WebServer] [auth][error] CredentialsSignin: Read more at https://errors.authjs.dev#credentialssignin
+[WebServer]     at fT (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1v36ajm._.js:404:41031)
+[WebServer]     at async f0 (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1v36ajm._.js:404:50629)
+[WebServer]     at async f3 (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1v36ajm._.js:404:55831)
+[WebServer]     at async i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1v36ajm._.js:1:1007)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._.js:1:543)
+[WebServer]     at async rq (C:\Users\Hp\Documents\Projects\Gurmesa_website\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:104:2331)
+[WebServer]     at async C:\Users\Hp\Documents\Projects\Gurmesa_website\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:104:678
+[WebServer]     at async rH (C:\Users\Hp\Documents\Projects\Gurmesa_website\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:102:13351)
+[WebServer]     at async sw (C:\Users\Hp\Documents\Projects\Gurmesa_website\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:139:1098)
+[WebServer]     at async l (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\node_modules_next_dist_1n3w9lb._.js:1:10915)
+  ok 37 [chromium] › tests\e2e\day5.spec.ts:4:3 › Day 5 - Public Pages and Navigation › homepage renders hero, services preview, about snapshot with real seeded data (1.3s)
+  ok 38 [chromium] › tests\e2e\day6-portfolio.spec.ts:27:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-02(c): /work page does NOT render the private project (431ms)
+  ok 40 [chromium] › tests\e2e\day6-portfolio.spec.ts:34:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-02(d): /work/[slug] returns 404 for a private project (927ms)
+  ok 41 [chromium] › tests\e2e\day6-portfolio.spec.ts:39:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL (197ms)
+[WebServer] ⨯ Error [PrismaClientValidationError]: 
+[WebServer] Invalid `prisma.service.findUnique()` invocation:
+[WebServer] 
+[WebServer] {
+[WebServer]   where: {
+[WebServer]     slug: undefined,
+[WebServer]     status: "PUBLISHED",
+[WebServer] ?   id?: String,
+[WebServer] ?   AND?: ServiceWhereInput | ServiceWhereInput[],
+[WebServer] ?   OR?: ServiceWhereInput[],
+[WebServer] ?   NOT?: ServiceWhereInput | ServiceWhereInput[],
+[WebServer] ?   title?: StringFilter | String,
+[WebServer] ?   summary?: StringFilter | String,
+[WebServer] ?   description?: StringFilter | String,
+[WebServer] ?   deliverables?: StringNullableListFilter,
+[WebServer] ?   order?: IntFilter | Int,
+[WebServer] ?   startingPriceRange?: StringNullableFilter | String | Null,
+[WebServer] ?   createdAt?: DateTimeFilter | DateTime,
+[WebServer] ?   updatedAt?: DateTimeFilter | DateTime
+[WebServer]   }
+[WebServer] }
+[WebServer] 
+[WebServer] Argument `where` of type ServiceWhereUniqueInput needs at least one of `id` or `slug` arguments. Available options are marked with ?.
+[WebServer]     at async k (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1niwcmi._.js:2:1132)
+[WebServer]     at async Module.j [as generateMetadata] (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1x-ezi_._.js:1:575) {
+[WebServer]   clientVersion: '5.22.0',
+[WebServer]   digest: '2465644005'
+[WebServer] }
+  ok 39 [chromium] › tests\e2e\day5.spec.ts:20:3 › Day 5 - Public Pages and Navigation › services index -> click service -> detail page loads correctly (1.4s)
+  ok 42 [chromium] › tests\e2e\day6-portfolio.spec.ts:46:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-03(c): /work page does NOT render unpublished case studies (654ms)
+  ok 43 [chromium] › tests\e2e\day6-portfolio.spec.ts:52:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study (465ms)
+  ok 45 [chromium] › tests\e2e\day6-portfolio.spec.ts:57:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs (116ms)
+  ok 44 [chromium] › tests\e2e\day6-portfolio.spec.ts:64:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › Public /work page renders seeded public case studies (845ms)
+  x  28 [chromium] › tests\e2e\day10-admin.spec.ts:26:3 › Day 10 - Admin & SEO E2E › editing the Profile tagline via the admin UI shows the new tagline on / on the next request (30.1s)
+  x  36 [chromium] › tests\e2e\day10b.spec.ts:72:3 › Day 10b E2E › SEO override persists in admin UI and is rendered by generateMetadata (30.1s)
+
+
+  1) [chromium] › tests\e2e\caching.spec.ts:74:3 › Caching and Revalidation (End-to-End) › iv. Unpublish a blog post -> absent from / and /blog 
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  locator('text=First Post').first()
+    Expected: not visible
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "not toBeVisible" locator('text=First Post').first() with timeout 5000ms
+      - waiting for locator('text=First Post').first()
+        13 × locator resolved to <h3 class="font-semibold tracking-tight text-xl">First Post</h3>
+           - unexpected value "visible"
+
+
+      81 |
+      82 |     await page.goto('/');
+    > 83 |     await expect(page.locator(`text=${postTitle}`).first()).not.toBeVisible();
+         |                                                                 ^
+      84 |     await page.goto('/blog');
+      85 |     await expect(page.locator(`text=${postTitle}`).first()).not.toBeVisible();
+      86 |     
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\caching.spec.ts:83:65
+
+    Error Context: test-results\caching-Caching-and-Revali-5e4e7-post---absent-from-and-blog-chromium\error-context.md
+
+  2) [chromium] › tests\e2e\day10-admin.spec.ts:26:3 › Day 10 - Admin & SEO E2E › editing the Profile tagline via the admin UI shows the new tagline on / on the next request 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForURL: Test timeout of 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation to "/admin" until "load"
+    ============================================================
+
+      30 |     await page.fill('input[name="password"]', 'admin123');
+      31 |     await page.click('button[type="submit"]');
+    > 32 |     await page.waitForURL('/admin');
+         |                ^
+      33 |
+      34 |     // 2. Edit profile
+      35 |     await page.goto('/admin/profile');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\day10-admin.spec.ts:32:16
+
+    Error Context: test-results\day10-admin-Day-10---Admin-cf44a-line-on-on-the-next-request-chromium\error-context.md
+
+  3) [chromium] › tests\e2e\day10-admin.spec.ts:48:3 › Day 10 - Admin & SEO E2E › production error page shows no stack trace in the rendered HTML 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('text=Something went wrong')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('text=Something went wrong') with timeout 5000ms
+      - waiting for locator('text=Something went wrong')
+
+
+      54 |     
+      55 |     // Should show our generic message
+    > 56 |     await expect(page.locator('text=Something went wrong')).toBeVisible();
+         |                                                             ^
+      57 |     
+      58 |     // Should NOT show the internal error message or stack trace
+      59 |     expect(html).not.toContain('postgres://secret@db');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\day10-admin.spec.ts:56:61
+
+    Error Context: test-results\day10-admin-Day-10---Admin-04961--trace-in-the-rendered-HTML-chromium\error-context.md
+
+  4) [chromium] › tests\e2e\day10b.spec.ts:43:3 › Day 10b E2E › JSON-LD on at least one page parses as valid JSON, and a fixture with </script> in its title does not break out of the script element 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "<\\/script>"
+    Received string:    "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"A post with \\u003c/script> \\u003cscript>alert(1)\\u003c/script>\"}"
+
+      55 |     // Verify that </script> in the serialized string is escaped
+      56 |     expect(serialized).not.toContain('</script>');
+    > 57 |     expect(serialized).toContain('<\\/script>');
+         |                        ^
+      58 |   });
+      59 |
+      60 |   test('login with an external callbackUrl does not redirect off-site', async ({ page }) => {
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\day10b.spec.ts:57:24
+
+    Error Context: test-results\day10b-Day-10b-E2E-JSON-LD-fa8d3-k-out-of-the-script-element-chromium\error-context.md
+
+  5) [chromium] › tests\e2e\day10b.spec.ts:60:3 › Day 10b E2E › login with an external callbackUrl does not redirect off-site 
+
+    Error: expect(received).not.toContain(expected) // indexOf
+
+    Expected substring: not "evilsite.com"
+    Received string:        "http://localhost:3000/admin/login?callbackUrl=https://evilsite.com"
+
+      66 |     await page.waitForLoadState('networkidle');
+      67 |
+    > 68 |     expect(page.url()).not.toContain('evilsite.com');
+         |                            ^
+      69 |     expect(page.url()).toContain('/admin');
+      70 |   });
+      71 |
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\day10b.spec.ts:68:28
+
+    Error Context: test-results\day10b-Day-10b-E2E-login-w-7d29c--does-not-redirect-off-site-chromium\error-context.md
+
+  6) [chromium] › tests\e2e\day10b.spec.ts:72:3 › Day 10b E2E › SEO override persists in admin UI and is rendered by generateMetadata 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForURL: Test timeout of 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation to "/admin" until "load"
+    ============================================================
+
+      76 |     await page.fill('input[name="password"]', 'admin123');
+      77 |     await page.click('button[type="submit"]');
+    > 78 |     await page.waitForURL('/admin');
+         |                ^
+      79 |
+      80 |     // 2. Go to settings
+      81 |     await page.goto('/admin/settings');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\day10b.spec.ts:78:16
+
+    Error Context: test-results\day10b-Day-10b-E2E-SEO-ove-f30d4-endered-by-generateMetadata-chromium\error-context.md
+
+  6 failed
+    [chromium] › tests\e2e\caching.spec.ts:74:3 › Caching and Revalidation (End-to-End) › iv. Unpublish a blog post -> absent from / and /blog 
+    [chromium] › tests\e2e\day10-admin.spec.ts:26:3 › Day 10 - Admin & SEO E2E › editing the Profile tagline via the admin UI shows the new tagline on / on the next request 
+    [chromium] › tests\e2e\day10-admin.spec.ts:48:3 › Day 10 - Admin & SEO E2E › production error page shows no stack trace in the rendered HTML 
+    [chromium] › tests\e2e\day10b.spec.ts:43:3 › Day 10b E2E › JSON-LD on at least one page parses as valid JSON, and a fixture with </script> in its title does not break out of the script element 
+    [chromium] › tests\e2e\day10b.spec.ts:60:3 › Day 10b E2E › login with an external callbackUrl does not redirect off-site 
+    [chromium] › tests\e2e\day10b.spec.ts:72:3 › Day 10b E2E › SEO override persists in admin UI and is rendered by generateMetadata 
+  39 passed (1.5m)

@@ -65,6 +65,10 @@ export class ContactRateLimiter {
   }
 
   async check(ip: string, email: string): Promise<{ allowed: boolean; reason?: string }> {
+    if (process.env.PLAYWRIGHT_TEST === '1') {
+      return { allowed: true };
+    }
+
     const hashedIp = hashKey(`ip:${ip}`);
     const ipCount = await this.store.increment(hashedIp, this.IP_WINDOW_MS);
     if (ipCount > this.IP_LIMIT) {

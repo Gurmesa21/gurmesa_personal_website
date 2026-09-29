@@ -1,0 +1,41 @@
+﻿node.exe : [WebServer] ΓÜá Warning: Next.js ignored 
+package-lock.json in C:\Users\Hp because it is outside the 
+current Git repository 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website).
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
+    + CategoryInfo          : NotSpecified: ([WebServer] ΓÜá...r 
+   mesa_website).:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[WebServer]  To use this directory, set `turbopack.root` in your 
+Next.js config.
+[WebServer] 
+[WebServer] ΓÜá Warning: Next.js ignored package-lock.json in 
+C:\Users\Hp because it is outside the current Git repository 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website).
+[WebServer]  To use this directory, set `outputFileTracingRoot` 
+in your Next.js config.
+[WebServer] 
+
+Running 1 test using 1 worker
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63212)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63390)
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:1:1251)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmes
+a_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._
+.js:1:578) {
+[WebServer]   digest: 
+'NEXT_REDIRECT;push;http://localhost:3000/admin;307;'
+[WebServer] }
+  Γ£ô  1 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:60:3 ΓÇ║ Day 10b E2E ΓÇ║ login with an external callbackUrl does not redirect off-site (1.8s)
+
+  1 passed (29.2s)

@@ -3,16 +3,52 @@ import Link from 'next/link';
 import { getPublicServiceBySlug } from '../../../../server/services/serviceService';
 import { Button } from '../../../../components/ui/button';
 import { Badge } from '../../../../components/ui/badge';
+import { serializeJsonLd } from '@/lib/jsonLd';
+import { getSeoOverride } from '@/server/services/seoService';
+import { Metadata } from 'next';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const override = await getSeoOverride(`/services/${resolvedParams.slug}`);
+  const service = await getPublicServiceBySlug(resolvedParams.slug);
+  const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+  return {
+    title: override?.title || service?.title || 'Service',
+    description: override?.description || service?.summary || 'Service details.',
+    alternates: { canonical: override?.canonical || `${siteUrl}/services/${resolvedParams.slug}` },
+    openGraph: {
+      title: override?.title || service?.title || 'Service',
+      description: override?.description || service?.summary,
+      url: `${siteUrl}/services/${resolvedParams.slug}`,
+      images: override?.ogImage ? [override.ogImage.storageKey] : ['/og-image.jpg'],
+    }
+  };
+}
 
 export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  const service = await getPublicServiceBySlug(resolvedParams.slug);
+  const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+
+  
+  const service = await getPublicServiceBySlug((await params).slug);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": `${siteUrl}/services` },
+      { "@type": "ListItem", "position": 3, "name": service?.title, "item": `${siteUrl}/services/${(await params).slug}` }
+    ]
+  };
 
   if (!service) {
     notFound();
   }
 
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }} />
+      
     <div className="container mx-auto px-4 py-12 max-w-4xl space-y-16">
       {/* Header */}
       <section className="space-y-6 text-center max-w-3xl mx-auto">
@@ -77,5 +113,6 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         </Button>
       </section>
     </div>
+  </>
   );
 }

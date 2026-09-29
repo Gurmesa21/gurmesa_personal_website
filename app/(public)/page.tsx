@@ -1,3 +1,6 @@
+import { Metadata } from 'next';
+import { getSeoOverride } from '../../server/services/seoService';
+import { serializeJsonLd } from '../../lib/jsonLd';
 export const dynamic = 'force-dynamic';
 import Link from 'next/link';
 import { getPublicProfile } from '@/server/services/profileService';
@@ -9,15 +12,60 @@ import { toPublicTestimonial } from '@/lib/dto/testimonial';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 
-export default async function HomePage() {
+
+export async function generateMetadata(): Promise<Metadata> {
+  const override = await getSeoOverride('/');
+  const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+  return {
+    title: override?.title || 'Gurmesa - Full Stack Developer',
+    description: override?.description || 'Personal portfolio and developer blog.',
+    alternates: { canonical: override?.canonical || siteUrl },
+    openGraph: {
+      title: override?.title || 'Gurmesa - Full Stack Developer',
+      description: override?.description || 'Personal portfolio and developer blog.',
+      url: siteUrl,
+      images: override?.ogImage ? [override.ogImage.storageKey] : ['/og-image.jpg'],
+    }
+  };
+}
+
+export default async function HomePage(props?: { searchParams?: Promise<{ [key: string]: string | string[] | undefined }> }) {
+  const searchParams = props?.searchParams ? await props.searchParams : {};
+  if (searchParams?.throwTestError === '1' && (process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'development' || process.env.PLAYWRIGHT_TEST === '1')) {
+    throw new Error('simulated secret internal server error postgres://secret@db');
+  }
+  const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+
+  
   const profile = await getPublicProfile();
   const services = await getPublicServices();
   const projects = await getPublicProjects(); // Returns only published & non-private
   const posts = await getPublicPosts();
   const rawTestimonials = await testimonialService.getPublicTestimonials();
   const testimonials = rawTestimonials.map(toPublicTestimonial);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "url": siteUrl,
+        "name": profile?.name || "Portfolio",
+      },
+      {
+        "@type": "Person",
+        "name": profile?.name,
+        "jobTitle": profile?.title,
+        "description": profile?.bio,
+        "url": siteUrl
+      }
+    ]
+  };
+
 
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }} />
+      
     <div className="flex flex-col gap-16 py-12">
       {/* Hero Section */}
       <section className="container mx-auto px-4">
@@ -161,5 +209,6 @@ export default async function HomePage() {
         </section>
       )}
     </div>
+    </>
   );
 }

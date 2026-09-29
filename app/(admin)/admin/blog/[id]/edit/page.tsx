@@ -3,8 +3,9 @@ import { getAdminPostById } from '../../../../../../server/services/blogService'
 import { blogRepository } from '../../../../../../server/repositories/blogRepository';
 import { notFound } from 'next/navigation';
 
-export default async function EditBlogPostPage({ params }: { params: { id: string } }) {
-  const post = await getAdminPostById(params.id);
+export default async function EditBlogPostPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  const post = await getAdminPostById(resolvedParams.id);
   if (!post) notFound();
   const categories = await blogRepository.findManyCategories();
 

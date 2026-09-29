@@ -8,6 +8,25 @@ import {
 import { Button } from '../../../components/ui/button';
 import { Badge } from '../../../components/ui/badge';
 import { Card, CardHeader, CardTitle, CardContent } from '../../../components/ui/card';
+import { getSeoOverride } from '@/server/services/seoService';
+import { Metadata } from 'next';
+
+
+export async function generateMetadata(): Promise<Metadata> {
+  const override = await getSeoOverride('/about');
+  const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+  return {
+    title: override?.title || 'About',
+    description: override?.description || 'About me.',
+    alternates: { canonical: override?.canonical || `${siteUrl}/about` },
+    openGraph: {
+      title: override?.title || 'About',
+      description: override?.description || 'About me.',
+      url: `${siteUrl}/about`,
+      images: override?.ogImage ? [override.ogImage.storageKey] : ['/og-image.jpg'],
+    }
+  };
+}
 
 export default async function AboutPage() {
   const [profile, experiences, skills, socialLinks] = await Promise.all([

@@ -1,27 +1,11 @@
 import { test, expect } from '@playwright/test';
-import { PrismaClient } from '@prisma/client';
 
 test.describe('Day 6 - Portfolio & Case Studies (E2E & SEC-ACL)', () => {
-  let privateProjectSlug: string;
-  let unpublishedCaseStudySlug: string;
-  const prisma = new PrismaClient();
-
-  test.beforeAll(async () => {
-    // We expect these to exist from the integration test DB seed or we find them.
-    const privateProject = await prisma.project.findFirst({
-      where: { confidentiality: 'PRIVATE' },
-    });
-    const unpublishedCS = await prisma.project.findFirst({
-      where: { confidentiality: 'PUBLIC', caseStudy: { status: 'DRAFT' } },
-    });
-    
-    // Fallbacks just in case
-    privateProjectSlug = privateProject?.slug || 'private-test-project';
-    unpublishedCaseStudySlug = unpublishedCS?.slug || 'unpublished-cs-project';
-  });
+  const privateProjectSlug: string = 'secret-tool';
+  const unpublishedCaseStudySlug: string = 'unpublished-cs-project';
 
   test.afterAll(async () => {
-    await prisma.$disconnect();
+    // nothing to clean up
   });
 
   test('SEC-ACL-02(c): /work page does NOT render the private project', async ({ page }) => {

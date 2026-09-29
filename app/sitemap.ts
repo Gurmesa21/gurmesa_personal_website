@@ -6,7 +6,7 @@ import { getPublicPosts } from '@/server/services/blogService';
 export const dynamic = 'force-dynamic';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  const baseUrl = process.env.SITE_URL || 'http://localhost:3000';
 
   const projects = await getPublicProjects();
   const services = await getPublicServices();
@@ -46,6 +46,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/terms`,
       lastModified: new Date(),
     },
     ...serviceUrls,

@@ -1,0 +1,77 @@
+
+> gurmesa-website@0.1.0 build
+> next build
+
+▲ Next.js 16.3.6 (Turbopack)
+- Environments: .env
+⚠ Warning: Next.js ignored package-lock.json in C:\Users\Hp because it is outside the current Git repository (C:\Users\Hp\Documents\Projects\Gurmesa_website).
+ To use this directory, set `turbopack.root` in your Next.js config.
+
+✓ Running next.config.ts took 83ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.6s
+  Running TypeScript ...
+  Finished TypeScript in 7.3s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/8) ...
+  Generating static pages using 7 workers (2/8) 
+  Generating static pages using 7 workers (4/8) 
+  Generating static pages using 7 workers (6/8) 
+✓ Generating static pages using 7 workers (8/8) in 1016ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /admin
+├ ƒ /admin/blog
+├ ƒ /admin/blog/[id]/edit
+├ ƒ /admin/blog/[id]/preview
+├ ƒ /admin/blog/new
+├ ƒ /admin/experience
+├ ƒ /admin/experience/[id]/edit
+├ ƒ /admin/experience/new
+├ ƒ /admin/inquiries
+├ ƒ /admin/inquiries/[id]
+├ ƒ /admin/login
+├ ƒ /admin/profile
+├ ƒ /admin/projects
+├ ƒ /admin/projects/[id]/edit
+├ ƒ /admin/projects/new
+├ ƒ /admin/services
+├ ƒ /admin/services/[id]/edit
+├ ƒ /admin/services/new
+├ ƒ /admin/settings
+├ ƒ /admin/skills
+├ ƒ /admin/skills/[id]/edit
+├ ƒ /admin/skills/new
+├ ƒ /admin/social-links
+├ ƒ /admin/social-links/[id]/edit
+├ ƒ /admin/social-links/new
+├ ƒ /admin/technologies
+├ ƒ /admin/technologies/[id]/edit
+├ ƒ /admin/technologies/new
+├ ƒ /admin/testimonials
+├ ƒ /admin/testimonials/[id]
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/health
+├ ƒ /blog
+├ ƒ /blog/[slug]
+├ ○ /contact
+├ ○ /privacy
+├ ○ /robots.txt
+├ ƒ /services
+├ ƒ /services/[slug]
+├ ƒ /sitemap.xml
+├ ○ /terms
+├ ƒ /work
+└ ƒ /work/[slug]
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

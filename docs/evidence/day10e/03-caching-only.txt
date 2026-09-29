@@ -1,0 +1,105 @@
+﻿node.exe : [WebServer] ΓÜá Warning: Next.js ignored 
+package-lock.json in C:\Users\Hp because it is outside the 
+current Git repository 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website).
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
+    + CategoryInfo          : NotSpecified: ([WebServer] ΓÜá...r 
+   mesa_website).:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[WebServer]  To use this directory, set `turbopack.root` in your 
+Next.js config.
+[WebServer] 
+[WebServer] ΓÜá Warning: Next.js ignored package-lock.json in 
+C:\Users\Hp because it is outside the current Git repository 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website).
+[WebServer]  To use this directory, set `outputFileTracingRoot` 
+in your Next.js config.
+[WebServer] 
+
+Running 5 tests using 4 workers
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63212)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63390)
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:1:1251)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmes
+a_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._
+.js:1:578) {
+[WebServer]   digest: 
+'NEXT_REDIRECT;push;http://localhost:3000/admin;307;'
+[WebServer] }
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63212)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63390)
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:1:1251)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmes
+a_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._
+.js:1:578) {
+[WebServer]   digest: 
+'NEXT_REDIRECT;push;http://localhost:3000/admin;307;'
+[WebServer] }
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63212)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63390)
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:1:1251)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmes
+a_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._
+.js:1:578) {
+[WebServer]   digest: 
+'NEXT_REDIRECT;push;http://localhost:3000/admin;307;'
+[WebServer] }
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63212)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63390)
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:1:1251)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmes
+a_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._
+.js:1:578) {
+[WebServer]   digest: 
+'NEXT_REDIRECT;push;http://localhost:3000/admin;307;'
+[WebServer] }
+  Γ£ô  3 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:13:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ i. Publish a testimonial -> appears on / (10.3s)
+  Γ£ô  2 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:57:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iii. Unpublish a service -> absent from /services and / (10.5s)
+  Γ£ô  1 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:74:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iv. Unpublish a blog post -> absent from / and /blog (10.6s)
+  Γ£ô  4 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:36:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ ii. Mark a featured project DRAFT -> absent from / and /work (10.6s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63212)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:404:63390)
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_webs
+ite\.next\server\chunks\ssr\_1v36ajm._.js:1:1251)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmes
+a_website\.next\server\chunks\ssr\[root-of-the-server]__1r0ck4w._
+.js:1:578) {
+[WebServer]   digest: 
+'NEXT_REDIRECT;push;http://localhost:3000/admin;307;'
+[WebServer] }
+[WebServer] Γ¿» Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+[WebServer] Γ¿» Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+  Γ£ô  5 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:97:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml (3.3s)
+
+  5 passed (42.5s)

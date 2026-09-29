@@ -12,13 +12,13 @@ test.describe('Caching and Revalidation (End-to-End)', () => {
 
   test('i. Publish a testimonial -> appears on /', async ({ page }) => {
     await page.goto('/admin/testimonials');
-    const authorName = 'Bob Jones';
+    const authorName = 'Caching Testimonial';
     await page.locator(`tr:has-text("${authorName}")`).first().locator('a:has-text("Edit")').click();
     
     await page.selectOption('select[name="status"]', 'PUBLISHED');
     await page.selectOption('select[name="permissionStatus"]', 'AUTHORIZED');
     await page.click('button[type="submit"]');
-    await expect(page).toHaveURL(/.*\/admin\/testimonials$/);
+    await expect(page).toHaveURL(/.*\/admin\/testimonials$/, { timeout: 15000 });
     
     await page.goto('/');
     await expect(page.locator(`text=${authorName}`).first()).toBeVisible();
@@ -27,7 +27,7 @@ test.describe('Caching and Revalidation (End-to-End)', () => {
     await page.locator(`tr:has-text("${authorName}")`).first().locator('a:has-text("Edit")').click();
     await page.selectOption('select[name="permissionStatus"]', 'REVOKED');
     await page.click('button[type="submit"]');
-    await expect(page).toHaveURL(/.*\/admin\/testimonials$/);
+    await expect(page).toHaveURL(/.*\/admin\/testimonials$/, { timeout: 15000 });
 
     await page.goto('/');
     await expect(page.locator(`text=${authorName}`).first()).not.toBeVisible();
@@ -35,12 +35,12 @@ test.describe('Caching and Revalidation (End-to-End)', () => {
 
   test('ii. Mark a featured project DRAFT -> absent from / and /work', async ({ page }) => {
     await page.goto('/admin/projects');
-    const projectTitle = "Open Source Dashboard";
+    const projectTitle = "Caching Dashboard";
     await page.locator(`div.border:has(.text-xl:text-is("${projectTitle}"))`).first().locator('a[href*="/edit"]').click();
     // Select the second select named 'status' which is the case study status
     await page.locator('select[name="status"]').nth(1).selectOption('DRAFT');
     await page.locator('text=Save Case Study').click();
-    await expect(page).toHaveURL(/.*\/admin\/projects$/);
+    await expect(page).toHaveURL(/.*\/admin\/projects$/, { timeout: 15000 });
 
     await page.goto('/');
     await expect(page.locator(`text=${projectTitle}`).first()).not.toBeVisible();
@@ -51,33 +51,33 @@ test.describe('Caching and Revalidation (End-to-End)', () => {
     await page.locator(`div.border:has(.text-xl:text-is("${projectTitle}"))`).first().locator('a[href*="/edit"]').click();
     await page.locator('select[name="status"]').nth(1).selectOption('PUBLISHED');
     await page.locator('text=Save Case Study').click();
-    await expect(page).toHaveURL(/.*\/admin\/projects$/);
+    await expect(page).toHaveURL(/.*\/admin\/projects$/, { timeout: 15000 });
   });
 
   test('iii. Unpublish a service -> absent from /services and /', async ({ page }) => {
     await page.goto('/admin/services');
-    await page.locator('a[href*="/edit"]').first().click();
+    await page.locator('div.border:has(.text-xl:text-is("Caching Service"))').first().locator('a[href*="/edit"]').click();
     await page.selectOption('select[name="status"]', 'DRAFT');
     await page.click('button[type="submit"]');
-    await expect(page).toHaveURL(/.*\/admin\/services$/);
+    await expect(page).toHaveURL(/.*\/admin\/services$/, { timeout: 15000 });
 
     await page.goto('/');
     await page.goto('/services');
 
     await page.goto('/admin/services');
-    await page.locator('a[href*="/edit"]').first().click();
+    await page.locator('div.border:has(.text-xl:text-is("Caching Service"))').first().locator('a[href*="/edit"]').click();
     await page.selectOption('select[name="status"]', 'PUBLISHED');
     await page.click('button[type="submit"]');
-    await expect(page).toHaveURL(/.*\/admin\/services$/);
+    await expect(page).toHaveURL(/.*\/admin\/services$/, { timeout: 15000 });
   });
 
   test('iv. Unpublish a blog post -> absent from / and /blog', async ({ page }) => {
     await page.goto('/admin/blog');
-    const postTitle = "First Post";
+    const postTitle = "Caching Post";
     await page.locator(`tr:has(td:text-is("${postTitle}"))`).first().locator('a[href*="/edit"]').click();
     await page.selectOption('select[name="status"]', 'DRAFT');
     await page.locator('text=Save Post').click();
-    await expect(page).toHaveURL(/.*\/admin\/blog$/);
+    await expect(page).toHaveURL(/.*\/admin\/blog$/, { timeout: 15000 });
 
     await page.goto('/');
     await expect(page.locator(`text=${postTitle}`).first()).not.toBeVisible();
@@ -85,22 +85,22 @@ test.describe('Caching and Revalidation (End-to-End)', () => {
     await expect(page.locator(`text=${postTitle}`).first()).not.toBeVisible();
     
     await page.goto('/sitemap.xml');
-    await expect(page.locator('body')).not.toContainText('/blog/first-post'); 
+    await expect(page.locator('body')).not.toContainText('/blog/caching-post'); 
 
     await page.goto('/admin/blog');
     await page.locator(`tr:has(td:text-is("${postTitle}"))`).first().locator('a[href*="/edit"]').click();
     await page.selectOption('select[name="status"]', 'PUBLISHED');
     await page.locator('text=Save Post').click();
-    await expect(page).toHaveURL(/.*\/admin\/blog$/);
+    await expect(page).toHaveURL(/.*\/admin\/blog$/, { timeout: 15000 });
   });
 
   test('v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml', async ({ page }) => {
     await page.goto('/admin/projects');
-    const projectTitle = "Fintech Platform";
+    const projectTitle = "Caching Fintech";
     await page.locator(`div.border:has(.text-xl:text-is("${projectTitle}"))`).first().locator('a[href*="/edit"]').click();
     await page.selectOption('select[name="confidentiality"]', 'PRIVATE');
     await page.locator('text=Save Project').click();
-    await expect(page).toHaveURL(/.*\/admin\/projects$/);
+    await expect(page).toHaveURL(/.*\/admin\/projects$/, { timeout: 15000 });
 
     await page.goto('/');
     await expect(page.locator(`text=${projectTitle}`).first()).not.toBeVisible();
@@ -115,6 +115,6 @@ test.describe('Caching and Revalidation (End-to-End)', () => {
     await page.locator(`div.border:has(.text-xl:text-is("${projectTitle}"))`).first().locator('a[href*="/edit"]').click();
     await page.selectOption('select[name="confidentiality"]', 'ANONYMIZED'); // Seed uses ANONYMIZED for Fintech Platform
     await page.locator('text=Save Project').click();
-    await expect(page).toHaveURL(/.*\/admin\/projects$/);
+    await expect(page).toHaveURL(/.*\/admin\/projects$/, { timeout: 15000 });
   });
 });

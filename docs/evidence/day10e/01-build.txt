@@ -1,0 +1,89 @@
+﻿
+> gurmesa-website@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.3.6 (Turbopack)
+- Environments: .env
+node.exe : ΓÜá Warning: Next.js ignored package-lock.json in 
+C:\Users\Hp because it is outside the current Git repository 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website).
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
+    + CategoryInfo          : NotSpecified: (ΓÜá Warning: Ne...r 
+   mesa_website).:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ To use this directory, set `turbopack.root` in your Next.js 
+config.
+
+Γ£ô Running next.config.ts took 214ms
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 4.6s
+  Running TypeScript ...
+  Finished TypeScript in 7.1s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/8) ...
+  Generating static pages using 7 workers (2/8) 
+  Generating static pages using 7 workers (4/8) 
+  Generating static pages using 7 workers (6/8) 
+Γ£ô Generating static pages using 7 workers (8/8) in 841ms
+  Finalizing page optimization ...
+
+Route (app)
+Γöî ╞Æ /
+Γö£ Γùï /_not-found
+Γö£ Γùï /about
+Γö£ ╞Æ /admin
+Γö£ ╞Æ /admin/blog
+Γö£ ╞Æ /admin/blog/[id]/edit
+Γö£ ╞Æ /admin/blog/[id]/preview
+Γö£ ╞Æ /admin/blog/new
+Γö£ ╞Æ /admin/experience
+Γö£ ╞Æ /admin/experience/[id]/edit
+Γö£ ╞Æ /admin/experience/new
+Γö£ ╞Æ /admin/inquiries
+Γö£ ╞Æ /admin/inquiries/[id]
+Γö£ ╞Æ /admin/login
+Γö£ ╞Æ /admin/profile
+Γö£ ╞Æ /admin/projects
+Γö£ ╞Æ /admin/projects/[id]/edit
+Γö£ ╞Æ /admin/projects/new
+Γö£ ╞Æ /admin/services
+Γö£ ╞Æ /admin/services/[id]/edit
+Γö£ ╞Æ /admin/services/new
+Γö£ ╞Æ /admin/settings
+Γö£ ╞Æ /admin/skills
+Γö£ ╞Æ /admin/skills/[id]/edit
+Γö£ ╞Æ /admin/skills/new
+Γö£ ╞Æ /admin/social-links
+Γö£ ╞Æ /admin/social-links/[id]/edit
+Γö£ ╞Æ /admin/social-links/new
+Γö£ ╞Æ /admin/technologies
+Γö£ ╞Æ /admin/technologies/[id]/edit
+Γö£ ╞Æ /admin/technologies/new
+Γö£ ╞Æ /admin/testimonials
+Γö£ ╞Æ /admin/testimonials/[id]
+Γö£ ╞Æ /api/auth/[...nextauth]
+Γö£ ╞Æ /api/health
+Γö£ ╞Æ /blog
+Γö£ ╞Æ /blog/[slug]
+Γö£ Γùï /contact
+Γö£ Γùï /privacy
+Γö£ Γùï /robots.txt
+Γö£ ╞Æ /services
+Γö£ ╞Æ /services/[slug]
+Γö£ ╞Æ /sitemap.xml
+Γö£ Γùï /terms
+Γö£ ╞Æ /work
+Γöö ╞Æ /work/[slug]
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+╞Æ  (Dynamic)  server-rendered on demand
+

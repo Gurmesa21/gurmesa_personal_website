@@ -1,7 +1,25 @@
 import Link from 'next/link';
 import { getPublicPosts } from '../../../server/services/blogService';
+import { getSeoOverride } from '@/server/services/seoService';
+import { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
+
+
+export async function generateMetadata(): Promise<Metadata> {
+  const override = await getSeoOverride('/blog');
+  const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+  return {
+    title: override?.title || 'Blog',
+    description: override?.description || 'My articles.',
+    alternates: { canonical: override?.canonical || `${siteUrl}/blog` },
+    openGraph: {
+      title: override?.title || 'Blog',
+      url: `${siteUrl}/blog`,
+      images: override?.ogImage ? [override.ogImage.storageKey] : ['/og-image.jpg'],
+    }
+  };
+}
 
 export default async function BlogIndexPage({ searchParams }: { searchParams: { q?: string, category?: string, tag?: string } }) {
   const posts = await getPublicPosts({

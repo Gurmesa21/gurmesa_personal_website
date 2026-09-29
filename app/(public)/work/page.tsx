@@ -3,15 +3,30 @@ import { getPublicProjects } from '@/server/services/projectService';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { getSeoOverride } from '@/server/services/seoService';
+import { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata = {
-  title: 'Work & Portfolio | Gurmesa',
-  description: 'A selection of recent projects and case studies.',
-};
+
 
 // Next 15 Server Component with search params
+
+export async function generateMetadata(): Promise<Metadata> {
+  const override = await getSeoOverride('/work');
+  const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+  return {
+    title: override?.title || 'Portfolio',
+    description: override?.description || 'My projects.',
+    alternates: { canonical: override?.canonical || `${siteUrl}/work` },
+    openGraph: {
+      title: override?.title || 'Portfolio',
+      url: `${siteUrl}/work`,
+      images: override?.ogImage ? [override.ogImage.storageKey] : ['/og-image.jpg'],
+    }
+  };
+}
+
 export default async function WorkPage({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
   const resolvedParams = await searchParams;
   let projects = await getPublicProjects();

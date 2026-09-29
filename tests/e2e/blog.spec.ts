@@ -136,8 +136,10 @@ test.describe('Blog SEC-ACL E2E Tests', () => {
   test('XSS: CaseStudy content on /work/[slug] renders inert', async ({ page }) => {
     const xssPayload = '<script>alert("xss")</script><img src=x onerror=alert("xss")>';
     // Need a dummy project and case study
-    const project = await prisma.project.create({
-      data: {
+    const project = await prisma.project.upsert({
+      where: { slug: 'xss-project' },
+      update: { title: 'XSS Project', summary: 'sum', confidentiality: 'PUBLIC', status: 'ACTIVE' },
+      create: {
         title: 'XSS Project',
         slug: 'xss-project',
         summary: 'sum',
@@ -145,8 +147,10 @@ test.describe('Blog SEC-ACL E2E Tests', () => {
         status: 'ACTIVE'
       }
     });
-    const caseStudy = await prisma.caseStudy.create({
-      data: {
+    const caseStudy = await prisma.caseStudy.upsert({
+      where: { projectId: project.id },
+      update: { role: 'role', problem: 'p', solution: 's', scope: 'scope', architectureSummary: 'a', outcome: 'o', content: xssPayload, status: 'PUBLISHED' },
+      create: {
         projectId: project.id,
         role: 'role',
         problem: 'p',

@@ -24,7 +24,7 @@ describe('Service Integration Tests', () => {
     expect(dbServices.every(s => s.status === 'PUBLISHED')).toBe(true);
     
     // Also explicitly verify a known DRAFT seed doesn't appear
-    const draftService = await prisma.service.findFirst({ where: { status: 'DRAFT' } });
+    const draftService = await prisma.service.findUnique({ where: { slug: 'draft-service' } });
     if (draftService) {
       expect(services.map(s => s.id)).not.toContain(draftService.id);
     }
