@@ -2,23 +2,40 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
 test.describe('Accessibility & Shell Features', () => {
-  test('should pass axe accessibility scan on all public pages with zero critical/serious violations', async ({ page }) => {
-    const paths = ['/', '/about', '/services', '/services/web-development'];
-    
-    for (const path of paths) {
-      await page.goto(path);
-      
-      const accessibilityScanResults = await new AxeBuilder({ page })
-        .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-        .analyze();
-        
-      // Filter for critical and serious violations
-      const criticalOrSerious = accessibilityScanResults.violations.filter(
-        v => v.impact === 'critical' || v.impact === 'serious'
-      );
-      
-      expect(criticalOrSerious, `Violations found on ${path}`).toEqual([]);
-    }
+  test('Axe scan on / (homepage with AUTHORIZED+PUBLISHED testimonial)', async ({ page }) => {
+    await page.goto('/');
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+      .analyze();
+    const criticalOrSerious = accessibilityScanResults.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
+    expect(criticalOrSerious, `Violations found on /`).toEqual([]);
+  });
+
+  test('Axe scan on /contact', async ({ page }) => {
+    await page.goto('/contact');
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+      .analyze();
+    const criticalOrSerious = accessibilityScanResults.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
+    expect(criticalOrSerious, `Violations found on /contact`).toEqual([]);
+  });
+
+  test('Axe scan on /privacy', async ({ page }) => {
+    await page.goto('/privacy');
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+      .analyze();
+    const criticalOrSerious = accessibilityScanResults.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
+    expect(criticalOrSerious, `Violations found on /privacy`).toEqual([]);
+  });
+
+  test('Axe scan on /terms', async ({ page }) => {
+    await page.goto('/terms');
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+      .analyze();
+    const criticalOrSerious = accessibilityScanResults.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
+    expect(criticalOrSerious, `Violations found on /terms`).toEqual([]);
   });
 
   test('skip-to-content link works correctly', async ({ page }) => {

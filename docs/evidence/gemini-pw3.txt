@@ -1,0 +1,149 @@
+﻿
+Running 32 tests using 4 workers
+
+  ok  1 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:41:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ mobile menu opens, traps focus, and closes with escape (1.6s)
+  ok  2 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:28:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post is absent from public index HTML (2.0s)
+  ok  4 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:24:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ skip-to-content link works correctly (2.3s)
+  ok  5 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:45:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Unauthenticated request to the preview URL is redirected/rejected and contains no draft content (1.1s)
+  ok  6 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:34:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post returns 404 on direct lookup (1.1s)
+  ok  9 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:39:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post is absent from sitemap (303ms)
+  ok  7 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:80:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: search (?q=) filters results; a DRAFT post's title never appears in results (1.2s)
+  ok  8 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:58:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: /blog index renders seeded published posts (916ms)
+  ok 11 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:97:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: category and tag filters work (619ms)
+  ok 10 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:117:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ XSS: a post whose body contains <script> and <img src=x onerror=...> payloads renders them inert on /blog/[slug] (796ms)
+  ok 12 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:65:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: article detail page loads from the index (1.1s)
+  ok 14 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:136:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ XSS: CaseStudy content on /work/[slug] renders inert (1.2s)
+  ok 13 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:103:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Axe scan (zero critical/serious) on /blog and /blog/[slug] (5.0s)
+  ok  3 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:5:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ should pass axe accessibility scan on all public pages with zero critical/serious violations (12.9s)
+  ok 17 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:58:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iii. Unpublish a service -> absent from /services and / (2.8s)
+  x  15 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:13:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ i. Publish a testimonial -> appears on / (9.1s)
+  x  16 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:37:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ ii. Mark a featured project DRAFT -> absent from / and /work (9.1s)
+  ok 21 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:32:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ contact form: invalid submit focuses the error summary and associates errors with fields (1.0s)
+  ok 20 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:12:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ contact form: happy path submits and shows confirmation, using keyboard only (1.5s)
+  ok 22 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:46:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ inquiry-leak scan: assert the marker is absent from the HTML of public surfaces and sitemap (239ms)
+  ok 23 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:65:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ unauthenticated visit to /admin/inquiries and /admin/testimonials redirects to login (708ms)
+  ok 24 [chromium] ΓÇ║ tests\e2e\day5.spec.ts:4:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ homepage renders hero, services preview, about snapshot with real seeded data (639ms)
+  ok 25 [chromium] ΓÇ║ tests\e2e\day5.spec.ts:20:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ services index -> click service -> detail page loads correctly (834ms)
+  ok 26 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:27:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(c): /work page does NOT render the private project (550ms)
+  x  19 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:98:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml (8.1s)
+  x  18 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:75:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iv. Unpublish a blog post -> absent from / and /blog (8.2s)
+  ok 27 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:39:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL (82ms)
+  ok 28 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:34:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(d): /work/[slug] returns 404 for a private project (711ms)
+  ok 29 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:46:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(c): /work page does NOT render unpublished case studies (506ms)
+  ok 30 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:52:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study (882ms)
+  ok 32 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:57:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs (95ms)
+  ok 31 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:64:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ Public /work page renders seeded public case studies (1.0s)
+
+
+  1) [chromium] ΓÇ║ tests\e2e\caching.spec.ts:13:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ i. Publish a testimonial -> appears on / 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('text=Bob Jones').first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('text=Bob Jones').first() with timeout 5000ms
+      - waiting for locator('text=Bob Jones').first()
+
+
+      23 |     
+      24 |     await page.goto('/');
+    > 25 |     await expect(page.locator(`text=${authorName}`).first()).toBeVisible();
+         |                                                              ^
+      26 |
+      27 |     await page.goto('/admin/testimonials');
+      28 |     await page.locator('text=Edit').first().click();
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\caching.spec.ts:25:62
+
+    Error Context: test-results\caching-Caching-and-Revali-8c98b-a-testimonial---appears-on--chromium\error-context.md
+
+  2) [chromium] ΓÇ║ tests\e2e\caching.spec.ts:37:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ ii. Mark a featured project DRAFT -> absent from / and /work 
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  locator('text=Open Source Dashboard').first()
+    Expected: not visible
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "not toBeVisible" locator('text=Open Source Dashboard').first() with timeout 5000ms
+      - waiting for locator('text=Open Source Dashboard').first()
+        13 ├ù locator resolved to <h3 class="font-semibold tracking-tight text-2xl">Open Source Dashboard</h3>
+           - unexpected value "visible"
+
+
+      45 |
+      46 |     await page.goto('/');
+    > 47 |     await expect(page.locator(`text=${projectTitle}`).first()).not.toBeVisible();
+         |                                                                    ^
+      48 |     await page.goto('/work');
+      49 |     await expect(page.locator(`text=${projectTitle}`).first()).not.toBeVisible();
+      50 |
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\caching.spec.ts:47:68
+
+    Error Context: test-results\caching-Caching-and-Revali-de1a7-RAFT---absent-from-and-work-chromium\error-context.md
+
+  3) [chromium] ΓÇ║ tests\e2e\caching.spec.ts:75:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iv. Unpublish a blog post -> absent from / and /blog 
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  locator('text=First Post').first()
+    Expected: not visible
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "not toBeVisible" locator('text=First Post').first() with timeout 5000ms
+      - waiting for locator('text=First Post').first()
+        13 ├ù locator resolved to <h3 class="font-semibold tracking-tight text-xl">First Post</h3>
+           - unexpected value "visible"
+
+
+      82 |
+      83 |     await page.goto('/');
+    > 84 |     await expect(page.locator(`text=${postTitle}`).first()).not.toBeVisible();
+         |                                                                 ^
+      85 |     await page.goto('/blog');
+      86 |     await expect(page.locator(`text=${postTitle}`).first()).not.toBeVisible();
+      87 |     
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\caching.spec.ts:84:65
+
+    Error Context: test-results\caching-Caching-and-Revali-5e4e7-post---absent-from-and-blog-chromium\error-context.md
+
+  4) [chromium] ΓÇ║ tests\e2e\caching.spec.ts:98:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml 
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  locator('text=Fintech Platform').first()
+    Expected: not visible
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "not toBeVisible" locator('text=Fintech Platform').first() with timeout 5000ms
+      - waiting for locator('text=Fintech Platform').first()
+        13 ├ù locator resolved to <h3 class="font-semibold tracking-tight text-2xl">Fintech Platform</h3>
+           - unexpected value "visible"
+
+
+      105 |
+      106 |     await page.goto('/');
+    > 107 |     await expect(page.locator(`text=${projectTitle}`).first()).not.toBeVisible();
+          |                                                                    ^
+      108 |     await page.goto('/work');
+      109 |     await expect(page.locator(`text=${projectTitle}`).first()).not.toBeVisible();
+      110 |     
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\caching.spec.ts:107:68
+
+    Error Context: test-results\caching-Caching-and-Revali-810af-t-from-work-and-sitemap-xml-chromium\error-context.md
+
+  4 failed
+    [chromium] ΓÇ║ tests\e2e\caching.spec.ts:13:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ i. Publish a testimonial -> appears on / 
+    [chromium] ΓÇ║ tests\e2e\caching.spec.ts:37:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ ii. Mark a featured project DRAFT -> absent from / and /work 
+    [chromium] ΓÇ║ tests\e2e\caching.spec.ts:75:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iv. Unpublish a blog post -> absent from / and /blog 
+    [chromium] ΓÇ║ tests\e2e\caching.spec.ts:98:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml 
+  28 passed (1.0m)

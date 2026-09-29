@@ -6,7 +6,13 @@ export type PublicBlogPost = Pick<BlogPost, 'id' | 'slug' | 'title' | 'excerpt' 
   tags: { tag: Pick<Tag, 'id' | 'name' | 'slug'> }[];
 };
 
-export function toPublicPost(post: any): PublicBlogPost {
+type FullBlogPost = BlogPost & {
+  category?: Pick<Category, 'id' | 'name' | 'slug'> | null;
+  featuredImage?: Pick<MediaAsset, 'id' | 'storageKey' | 'altText' | 'width' | 'height'> | null;
+  tags?: { tag: Pick<Tag, 'id' | 'name' | 'slug'> }[];
+};
+
+export function toPublicPost(post: FullBlogPost): PublicBlogPost {
   return {
     id: post.id,
     slug: post.slug,
@@ -28,7 +34,7 @@ export function toPublicPost(post: any): PublicBlogPost {
       width: post.featuredImage.width,
       height: post.featuredImage.height,
     } : null,
-    tags: (post.tags || []).map((t: any) => ({
+    tags: (post.tags || []).map((t) => ({
       tag: {
         id: t.tag.id,
         name: t.tag.name,

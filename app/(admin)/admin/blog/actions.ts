@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { createPost, updatePost, deletePost } from '../../../../server/services/blogService';
 import { blogRepository } from '../../../../server/repositories/blogRepository';
 import type { BlogPostStatus } from '@prisma/client';
+import { auth } from '../../../../auth';
 
 export async function createBlogPostAction(formData: FormData) {
   const title = formData.get('title') as string;
@@ -26,6 +27,7 @@ export async function createBlogPostAction(formData: FormData) {
 
   revalidatePath('/blog');
   revalidatePath('/admin/blog');
+  revalidatePath('/');
   redirect('/admin/blog');
 }
 
@@ -37,7 +39,7 @@ export async function updateBlogPostAction(id: string, formData: FormData) {
   const status = formData.get('status') as BlogPostStatus;
   const categoryId = formData.get('categoryId') as string || undefined;
 
-  const data: any = {
+  const data: import('@prisma/client').Prisma.BlogPostUpdateInput = {
     title,
     slug,
     excerpt,
@@ -60,6 +62,7 @@ export async function updateBlogPostAction(id: string, formData: FormData) {
   revalidatePath('/blog');
   revalidatePath(`/blog/${slug}`);
   revalidatePath('/admin/blog');
+  revalidatePath('/');
   redirect('/admin/blog');
 }
 
@@ -67,18 +70,37 @@ export async function deleteBlogPostAction(id: string) {
   await deletePost(id);
   revalidatePath('/blog');
   revalidatePath('/admin/blog');
+  revalidatePath('/');
 }
 
 export async function createCategoryAction(formData: FormData) {
+  const session = await auth();
+  if (!session) throw new Error('Unauthorized');
   const name = formData.get('name') as string;
   const slug = formData.get('slug') as string;
   await blogRepository.createCategory({ data: { name, slug } });
   revalidatePath('/admin/blog');
 }
 
+export async function deleteCategoryAction(id: string) {
+  const session = await auth();
+  if (!session) throw new Error('Unauthorized');
+  await blogRepository.deleteCategory({ where: { id } });
+  revalidatePath('/admin/blog');
+}
+
 export async function createTagAction(formData: FormData) {
+  const session = await auth();
+  if (!session) throw new Error('Unauthorized');
   const name = formData.get('name') as string;
   const slug = formData.get('slug') as string;
   await blogRepository.createTag({ data: { name, slug } });
+  revalidatePath('/admin/blog');
+}
+
+export async function deleteTagAction(id: string) {
+  const session = await auth();
+  if (!session) throw new Error('Unauthorized');
+  await blogRepository.deleteTag({ where: { id } });
   revalidatePath('/admin/blog');
 }

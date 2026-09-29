@@ -75,6 +75,13 @@ enum InquiryStatus {
   ARCHIVED
 }
 
+enum NotificationStatus {
+  PENDING
+  SENT
+  FAILED
+  SKIPPED
+}
+
 // -----------------------------------------------------------------------------
 // CORE ENTITIES
 // -----------------------------------------------------------------------------
@@ -291,20 +298,25 @@ model Testimonial {
   permissionStatus TestimonialPermissionStatus
   featured         Boolean                     @default(false)
   status           TestimonialStatus
+  isAnonymous      Boolean                     @default(false)
   createdAt        DateTime                    @default(now()) @db.Timestamptz
 }
 
 model Inquiry {
-  id           String        @id @default(cuid())
-  name         String
-  email        String
-  organization String?
-  projectType  String?
-  message      String        @db.Text
-  status       InquiryStatus
-  source       String?
-  createdAt    DateTime      @default(now()) @db.Timestamptz
-  updatedAt    DateTime      @updatedAt @db.Timestamptz
+  id                    String              @id @default(cuid())
+  name                  String
+  email                 String
+  organization          String?
+  projectType           String?
+  message               String              @db.Text
+  status                InquiryStatus
+  source                String?
+  notificationStatus    NotificationStatus  @default(PENDING)
+  notificationAttemptedAt DateTime?         @db.Timestamptz
+  notificationError     String?
+  acknowledgementStatus NotificationStatus?
+  createdAt             DateTime            @default(now()) @db.Timestamptz
+  updatedAt             DateTime            @updatedAt @db.Timestamptz
 
   notes        InquiryNote[]
 

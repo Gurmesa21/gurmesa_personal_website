@@ -1,0 +1,88 @@
+﻿
+Running 32 tests using 4 workers
+
+  ok  1 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:24:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ skip-to-content link works correctly (1.5s)
+  ok  3 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:28:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post is absent from public index HTML (1.9s)
+  ok  5 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:45:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Unauthenticated request to the preview URL is redirected/rejected and contains no draft content (1.0s)
+  ok  4 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:41:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ mobile menu opens, traps focus, and closes with escape (2.3s)
+  ok  7 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:58:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: /blog index renders seeded published posts (673ms)
+  ok  6 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:34:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post returns 404 on direct lookup (1.1s)
+  ok 10 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:39:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post is absent from sitemap (165ms)
+  ok  8 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:80:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: search (?q=) filters results; a DRAFT post's title never appears in results (1.1s)
+  ok  9 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:65:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: article detail page loads from the index (1.3s)
+  ok 11 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:117:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ XSS: a post whose body contains <script> and <img src=x onerror=...> payloads renders them inert on /blog/[slug] (894ms)
+  ok 12 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:97:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: category and tag filters work (726ms)
+  ok 14 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:136:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ XSS: CaseStudy content on /work/[slug] renders inert (982ms)
+  ok 15 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:103:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Axe scan (zero critical/serious) on /blog and /blog/[slug] (4.3s)
+  ok  2 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:5:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ should pass axe accessibility scan on all public pages with zero critical/serious violations (12.7s)
+  ok 13 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:14:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ i. Publish a testimonial -> appears on / (9.7s)
+  ok 16 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:38:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ ii. Mark a featured project DRAFT -> absent from / and /work (10.4s)
+  ok 20 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:12:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ contact form: happy path submits and shows confirmation, using keyboard only (1.5s)
+  ok 17 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:59:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iii. Unpublish a service -> absent from /services and / (9.1s)
+  ok 21 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:32:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ contact form: invalid submit focuses the error summary and associates errors with fields (809ms)
+  ok 22 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:46:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ inquiry-leak scan: assert the marker is absent from the HTML of public surfaces and sitemap (343ms)
+  ok 23 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:65:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ unauthenticated visit to /admin/inquiries and /admin/testimonials redirects to login (758ms)
+  ok 24 [chromium] ΓÇ║ tests\e2e\day5.spec.ts:4:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ homepage renders hero, services preview, about snapshot with real seeded data (683ms)
+  ok 25 [chromium] ΓÇ║ tests\e2e\day5.spec.ts:20:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ services index -> click service -> detail page loads correctly (849ms)
+  ok 26 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:27:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(c): /work page does NOT render the private project (600ms)
+  ok 28 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:39:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL (30ms)
+  ok 27 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:34:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(d): /work/[slug] returns 404 for a private project (846ms)
+  ok 29 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:46:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(c): /work page does NOT render unpublished case studies (647ms)
+  ok 31 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:64:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ Public /work page renders seeded public case studies (958ms)
+  x  30 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:52:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study (776ms)
+  x  18 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:76:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iv. Unpublish a blog post -> absent from / and /blog (10.7s)
+  ok 19 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:100:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml (9.0s)
+  ok 32 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:57:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs (75ms)
+
+
+  1) [chromium] ΓÇ║ tests\e2e\caching.spec.ts:76:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iv. Unpublish a blog post -> absent from / and /blog 
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  locator('text=Archived Post').first()
+    Expected: not visible
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "not toBeVisible" locator('text=Archived Post').first() with timeout 5000ms
+      - waiting for locator('text=Archived Post').first()
+        13 ├ù locator resolved to <h3 class="font-semibold tracking-tight text-xl">Archived Post</h3>
+           - unexpected value "visible"
+
+
+      84 |
+      85 |     await page.goto('/');
+    > 86 |     await expect(page.locator(`text=${postTitle}`).first()).not.toBeVisible();
+         |                                                                 ^
+      87 |     await page.goto('/blog');
+      88 |     await expect(page.locator(`text=${postTitle}`).first()).not.toBeVisible();
+      89 |     
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\caching.spec.ts:86:65
+
+    Error Context: test-results\caching-Caching-and-Revali-5e4e7-post---absent-from-and-blog-chromium\error-context.md
+
+  2) [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:52:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 200
+
+      52 |   test('SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study', async ({ page }) => {
+      53 |     const response = await page.goto(`/work/${unpublishedCaseStudySlug}`);
+    > 54 |     expect(response?.status()).toBe(404);
+         |                                ^
+      55 |   });
+      56 |
+      57 |   test('SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs', async ({ request }) => {
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\day6-portfolio.spec.ts:54:32
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-6ced2-r-an-unpublished-case-study-chromium\error-context.md
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-6ced2-r-an-unpublished-case-study-chromium\error-context.md
+
+  2 failed
+    [chromium] ΓÇ║ tests\e2e\caching.spec.ts:76:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iv. Unpublish a blog post -> absent from / and /blog 
+    [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:52:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study 
+  30 passed (58.1s)

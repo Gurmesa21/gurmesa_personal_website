@@ -1,0 +1,4 @@
+﻿
+> gurmesa-website@0.1.0 lint
+> eslint app/ server/ lib/ components/ features/ tests/ scripts/
+

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { createBlogPostAction, updateBlogPostAction } from './actions';
 import { Button } from '@/components/ui/button';
 
-export default function BlogForm({ post, categories }: { post?: any, categories: any[] }) {
+export default function BlogForm({ post, categories }: { post?: import('@prisma/client').BlogPost, categories: import('@prisma/client').Category[] }) {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

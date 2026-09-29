@@ -104,7 +104,7 @@ describe('Day 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL
   });
 
   describe('DTO Allowlist', () => {
-    it('toPublicCaseStudy() output keys explicitly exclude clientRef and internalNotes', () => {
+    it('toPublicCaseStudy() output keys exclude clientRef and internalNotes and match the declared allowlist exactly', () => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const mockProject: any = {
         id: 'test', title: 't', slug: 's', summary: 's',
@@ -119,10 +119,15 @@ describe('Day 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL
       };
 
       const publicDto = toPublicCaseStudy(mockProject);
+      
+      const allowedKeys = [
+        'id', 'title', 'slug', 'summary', 'problem', 'solution', 'role', 'scope', 'architectureSummary', 
+        'keyDecisions', 'challenges', 'outcome', 'content', 'publishedAt', 'updatedAt', 'technologies'
+      ];
+      
+      expect(Object.keys(publicDto).sort()).toEqual(allowedKeys.sort());
       expect(publicDto).not.toHaveProperty('clientRef');
       expect(publicDto).not.toHaveProperty('internalNotes');
-      expect(Object.values(publicDto)).not.toContain('SECRET_CLIENT');
-      expect(Object.values(publicDto)).not.toContain('SECRET_NOTES');
     });
   });
 

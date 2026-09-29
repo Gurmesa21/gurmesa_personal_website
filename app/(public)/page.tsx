@@ -1,8 +1,11 @@
+export const dynamic = 'force-dynamic';
 import Link from 'next/link';
 import { getPublicProfile } from '@/server/services/profileService';
 import { getPublicServices } from '@/server/services/serviceService';
 import { getPublicProjects } from '@/server/services/projectService';
 import { getPublicPosts } from '@/server/services/blogService';
+import { testimonialService } from '@/server/services/testimonialService';
+import { toPublicTestimonial } from '@/lib/dto/testimonial';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 
@@ -11,6 +14,8 @@ export default async function HomePage() {
   const services = await getPublicServices();
   const projects = await getPublicProjects(); // Returns only published & non-private
   const posts = await getPublicPosts();
+  const rawTestimonials = await testimonialService.getPublicTestimonials();
+  const testimonials = rawTestimonials.map(toPublicTestimonial);
 
   return (
     <div className="flex flex-col gap-16 py-12">
@@ -130,13 +135,31 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* 
-        TECHNICAL DEBT NOTE:
-        Testimonials sections are omitted from the homepage today 
-        because their underlying entities (Testimonial) do not yet have their full 
-        DTOs/pages built out. Rather than faking placeholder content, 
-        they are intentionally skipped.
-      */}
+      {/* Testimonials Section */}
+      {testimonials.length > 0 && (
+        <section className="container mx-auto px-4 bg-muted/30 py-12 rounded-2xl mb-12">
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold">What People Say</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {testimonials.map((testimonial) => (
+              <Card key={testimonial.id} className="flex flex-col h-full">
+                <CardContent className="flex-1 pt-6">
+                  <blockquote className="text-lg italic text-muted-foreground">
+                    &quot;{testimonial.content}&quot;
+                  </blockquote>
+                </CardContent>
+                <CardFooter className="flex flex-col items-start border-t pt-4">
+                  <p className="font-semibold">{testimonial.name || 'Anonymous'}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {testimonial.role} {testimonial.organization && `at ${testimonial.organization}`}
+                  </p>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

@@ -22,5 +22,10 @@ export default defineConfig({
     url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,
     timeout: 120000,
+    env: {
+      AUTH_TRUST_HOST: 'true',
+      AUTH_URL: 'http://localhost:3000',
+      AUTH_SECRET: 'dummy-secret-for-ci-tests-1234567890'
+    }
   },
 });

@@ -1,0 +1,61 @@
+﻿
+> gurmesa-website@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.3.6 (Turbopack)
+- Environments: .env
+Γ£ô Running next.config.ts took 113ms
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 6.2s
+  Running TypeScript ...
+  Finished TypeScript in 10.3s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/10) ...
+  Generating static pages using 7 workers (2/10) 
+  Generating static pages using 7 workers (4/10) 
+  Generating static pages using 7 workers (7/10) 
+Γ£ô Generating static pages using 7 workers (10/10) in 2.8s
+  Finalizing page optimization ...
+
+Route (app)
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /about
+Γö£ ╞Æ /admin
+Γö£ ╞Æ /admin/blog
+Γö£ ╞Æ /admin/blog/[id]/edit
+Γö£ ╞Æ /admin/blog/[id]/preview
+Γö£ ╞Æ /admin/blog/new
+Γö£ ╞Æ /admin/inquiries
+Γö£ ╞Æ /admin/inquiries/[id]
+Γö£ ╞Æ /admin/login
+Γö£ ╞Æ /admin/projects
+Γö£ ╞Æ /admin/projects/[id]/edit
+Γö£ ╞Æ /admin/projects/new
+Γö£ ╞Æ /admin/services
+Γö£ ╞Æ /admin/services/[id]/edit
+Γö£ ╞Æ /admin/services/new
+Γö£ ╞Æ /admin/technologies
+Γö£ ╞Æ /admin/technologies/[id]/edit
+Γö£ ╞Æ /admin/technologies/new
+Γö£ ╞Æ /admin/testimonials
+Γö£ ╞Æ /admin/testimonials/[id]
+Γö£ ╞Æ /api/auth/[...nextauth]
+Γö£ ╞Æ /blog
+Γö£ ╞Æ /blog/[slug]
+Γö£ Γùï /contact
+Γö£ Γùï /privacy
+Γö£ Γùï /services
+Γö£ ╞Æ /services/[slug]
+Γö£ Γùï /sitemap.xml
+Γö£ Γùï /terms
+Γö£ ╞Æ /work
+Γöö ╞Æ /work/[slug]
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+╞Æ  (Dynamic)  server-rendered on demand
+

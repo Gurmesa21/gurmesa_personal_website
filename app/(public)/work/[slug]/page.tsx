@@ -4,6 +4,8 @@ import { getPublicCaseStudyBySlug } from '@/server/services/projectService';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
+export const dynamic = 'force-dynamic';
+
 export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const project = await getPublicCaseStudyBySlug(resolvedParams.slug);

@@ -26,6 +26,7 @@ export async function createProjectAction(formData: FormData) {
 
   revalidatePath('/admin/projects');
   revalidatePath('/work');
+  revalidatePath('/');
   redirect('/admin/projects');
 }
 
@@ -50,6 +51,7 @@ export async function updateProjectAction(id: string, formData: FormData) {
 
   revalidatePath('/admin/projects');
   revalidatePath('/work');
+  revalidatePath('/');
   revalidatePath(`/work/${slug}`);
   redirect('/admin/projects');
 }
@@ -82,10 +84,13 @@ export async function upsertCaseStudyAction(projectId: string, formData: FormDat
 
   revalidatePath('/admin/projects');
   revalidatePath('/work');
+  revalidatePath('/');
+  redirect('/admin/projects');
 }
 
 export async function deleteProjectAction(id: string) {
   await deleteProject(id);
   revalidatePath('/admin/projects');
   revalidatePath('/work');
+  revalidatePath('/');
 }

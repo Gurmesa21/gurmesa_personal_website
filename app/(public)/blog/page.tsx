@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { getPublicPosts } from '../../../server/services/blogService';
 
+export const dynamic = 'force-dynamic';
+
 export default async function BlogIndexPage({ searchParams }: { searchParams: { q?: string, category?: string, tag?: string } }) {
   const posts = await getPublicPosts({
     search: searchParams.q,

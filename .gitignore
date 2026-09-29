@@ -42,3 +42,6 @@ next-env.d.ts
 node_modules/
 dist/
 .env
+
+playwright-report/
+test-results/

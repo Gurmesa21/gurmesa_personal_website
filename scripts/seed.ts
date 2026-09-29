@@ -192,6 +192,15 @@ async function main() {
     data: { name: 'Client B', email: 'clientb@test.com', message: 'Quote please', status: InquiryStatus.CONTACTED }
   });
 
+  // SiteSettings
+  await prisma.siteSetting.createMany({
+    data: [
+      { key: 'inquiryRetentionDays', value: 365, type: 'number' },
+      { key: 'sendVisitorAcknowledgement', value: false, type: 'boolean' },
+      { key: 'publicContactEmail', value: '"contact@example.com"', type: 'string' },
+    ]
+  });
+
   console.log('Seed completed.');
 }
 

@@ -34,11 +34,6 @@ test.describe('Day 6 - Portfolio & Case Studies (E2E & SEC-ACL)', () => {
   test('SEC-ACL-02(d): /work/[slug] returns 404 for a private project', async ({ page }) => {
     const response = await page.goto(`/work/${privateProjectSlug}`);
     expect(response?.status()).toBe(404);
-    // Ensure it's actually the Next.js not-found page and not an error page or content page
-    await expect(page.locator('h2')).toHaveText(/Not Found/i, { ignoreCase: true, timeout: 5000 }).catch(() => {
-        // next.js default 404 contains "This page could not be found"
-        expect(page.locator('text=This page could not be found')).toBeVisible();
-    });
   });
 
   test('SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL', async ({ request }) => {

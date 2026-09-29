@@ -4,6 +4,8 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/componen
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Work & Portfolio | Gurmesa',
   description: 'A selection of recent projects and case studies.',

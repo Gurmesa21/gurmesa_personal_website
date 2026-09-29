@@ -1,0 +1,22 @@
+﻿ .github/workflows/ci.yml              |  14 +++-
+ .gitignore                            |   3 +
+ app/(admin)/admin/blog/actions.ts     |   3 +
+ app/(admin)/admin/login/actions.ts    |   2 +-
+ app/(admin)/admin/page.tsx            |  13 +++-
+ app/(admin)/admin/projects/actions.ts |   4 ++
+ app/(public)/blog/[slug]/page.tsx     |   2 +
+ app/(public)/blog/page.tsx            |   2 +
+ app/(public)/page.tsx                 |  36 ++++++++--
+ app/(public)/work/[slug]/page.tsx     |   2 +
+ app/(public)/work/page.tsx            |   2 +
+ app/api/preview/page.tsx              |  18 -----
+ eslint.config.mjs                     |   6 ++
+ lib/dto/blogPost.ts                   |  10 ++-
+ next.config.ts                        |   9 ++-
+ prisma/schema.prisma                  |  32 ++++++---
+ query.ts                              |  15 ----
+ scripts/seed.ts                       |   9 +++
+ tests/e2e/blog.spec.ts                | 129 +++++++++++++++++++++++++++++++++-
+ tests/e2e/day6-portfolio.spec.ts      |   5 --
+ tests/integration/blog.test.ts        |  81 ++++++++++++++-------
+ 21 files changed, 306 insertions(+), 91 deletions(-)

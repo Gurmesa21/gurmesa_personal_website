@@ -1,0 +1,77 @@
+﻿
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.2 [39m[90mC:/Users/Hp/Documents/Projects/Gurmesa_website[39m
+
+ [32mΓ£ô[39m tests/integration/profile.test.ts[2m > [22mProfile DTO tests[2m > [22mtoPublicProfile() output keys match the declared allowlist exactly[32m 10[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/project-visibility.test.ts[2m > [22mProject query can filter by confidentiality[32m 125[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day5-service.test.ts[2m > [22mService Integration Tests[2m > [22mgetPublicServices() excludes DRAFT/ARCHIVED services[32m 112[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day5-service.test.ts[2m > [22mService Integration Tests[2m > [22mtoPublicService() output keys match exactly the declared public allowlist[32m 6[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day5-service.test.ts[2m > [22mService Integration Tests[2m > [22munauthenticated request to a Service admin mutation is rejected[32m 7[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mgetPublicPosts() excludes DRAFT posts[32m 145[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mgetPublicPosts() excludes ARCHIVED posts[32m 32[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mgetPublicPostBySlug(slug) returns null for a DRAFT post's real slug[32m 26[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day3-auth.test.ts[2m > [22mDay 3 - Authentication and DTO Boundary[2m > [22mSEC-ACL-05: getPublicProfile() output keys match exactly the declared public allowlist[32m 88[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day3-auth.test.ts[2m > [22mDay 3 - Authentication and DTO Boundary[2m > [22mSEC-ACL-01: unauthenticated access to admin action (getAdminProfile) is rejected[32m 6[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mSEC-ACL-02: Private Project Isolation[2m > [22m(a) getPublicProjects() ΓÇö never appears in the list[32m 140[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mSEC-ACL-02: Private Project Isolation[2m > [22m(b) getPublicCaseStudyBySlug(slug) ΓÇö returns null for private project[32m 25[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mSEC-ACL-03: Unpublished Case Study Isolation[2m > [22m(a) getPublicProjects() ΓÇö never appears in the list if case study is DRAFT[32m 39[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mSEC-ACL-03: Unpublished Case Study Isolation[2m > [22m(b) getPublicCaseStudyBySlug(slug) ΓÇö returns null if case study is DRAFT[32m 23[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mDTO Allowlist[2m > [22mtoPublicCaseStudy() output keys exclude clientRef and internalNotes and match the declared allowlist exactly[32m 18[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mAdmin Mutations (SEC-ACL-01 equivalent)[2m > [22mProject/CaseStudy mutations reject unauthenticated requests[32m 20[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/sanity.test.ts[2m > [22msanity check[32m 5[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mgetPublicPostBySlug(slug) returns null for an ARCHIVED post[32m 26[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mtoPublicPost() output keys match the declared allowlist exactly[32m 4[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: createPost rejected[32m 5[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: updatePost rejected[32m 1[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: publish rejected[32m 1[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: deletePost rejected[32m 2[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: category create rejected[33m 362[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: category delete rejected[32m 1[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: tag create rejected[32m 1[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: tag delete rejected[32m 1[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day3-auth.test.ts[2m > [22mDay 3 - Authentication and DTO Boundary[2m > [22mSEC-AUTH-03: Login validation accepts correct password and rejects wrong password[33m 464[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mvalid submission stores an inquiry with status NEW[32m 148[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input is rejected with field errors[32m 11[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: missing email[32m 8[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: invalid email[32m 7[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: message too short[32m 5[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: message too long[32m 5[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: unknown projectType[32m 6[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22munknown/extra fields are rejected[32m 5[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mhoneypot filled: nothing stored, nothing sent, success-shaped reply[32m 13[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mrate limit: the (N+1)th request from one client is rejected while a different client is still accepted[32m 120[2mms[22m[39m
+[90mstdout[2m | tests/integration/contact.test.ts[2m > [22m[2mContact & Inquiry Service Integration[2m > [22m[2mConsoleTransport records SKIPPED (never SENT)
+[22m[39m--- EMAIL SKIPPED (CONSOLE TRANSPORT) ---
+To: x
+Subject: y
+Body:
+z
+-----------------------------------------
+
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22memail transport throws: inquiry is still stored with notificationStatus FAILED[32m 31[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mConsoleTransport records SKIPPED (never SENT)[32m 6[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mConsoleTransport cannot be selected when NODE_ENV=production[32m 4[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mheader-injection attempt does not alter the outgoing email headers/subject[32m 5[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22msource with a full URL, protocol, or query string is rejected or normalized to a safe path[32m 4[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22macknowledgement is not sent when the toggle is off[32m 28[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated: list, get, status change, add note, delete each rejected[32m 2[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: list rejected[32m 1[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: get rejected[32m 0[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: status change rejected[32m 0[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: add note rejected[32m 1[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: delete rejected[32m 0[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22madd note stores the session user as author regardless of any client-supplied authorId[32m 51[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22mPENDING+published testimonial excluded from public[32m 53[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22mAUTHORIZED+DRAFT excluded from public[32m 12[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22mREVOKED+published excluded from public[32m 12[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22mtoPublicTestimonial allowlist keys match exactly[32m 10[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22manonymous testimonial omits name and organization[32m 9[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22munauthenticated testimonial mutations rejected[32m 1[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22munauthenticated testimonial create rejected[32m 0[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22munauthenticated testimonial update rejected[32m 0[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22munauthenticated testimonial delete rejected[32m 0[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m8 passed[39m[22m[90m (8)[39m
+[2m      Tests [22m [1m[32m60 passed[39m[22m[90m (60)[39m
+[2m   Start at [22m 16:15:03
+[2m   Duration [22m 2.24s[2m (tests 38%, import 33%, transform 27%, worker 2%)[22m
+

@@ -1,0 +1,24 @@
+﻿commit f6f6ead599c26c51ad929fa8f4cb5f67836f7836
+Author: Gurmesa Teklemariam <gurmesteklemariam@gmail.com>
+Date:   Mon Sep 28 10:57:43 2026 +0300
+
+    day 7 work
+
+ app/(admin)/admin/blog/BlogForm.tsx       |  67 +++++++++++++++++++
+ app/(admin)/admin/blog/[id]/edit/page.tsx |  17 +++++
+ app/(admin)/admin/blog/actions.ts         |  84 ++++++++++++++++++++++++
+ app/(admin)/admin/blog/new/page.tsx       |  12 ++++
+ app/(admin)/admin/blog/page.tsx           |  73 +++++++++++++++++++++
+ app/(public)/blog/[slug]/page.tsx         |  18 ++++++
+ app/(public)/blog/page.tsx                |  34 ++++++++++
+ app/(public)/page.tsx                     |  37 +++++++++--
+ app/api/preview/page.tsx                  |  18 ++++++
+ app/sitemap.ts                            |  12 ++++
+ lib/dto/blogPost.ts                       |  39 +++++++++++
+ playwright-report/index.html              |   2 +-
+ query.ts                                  |  15 +++++
+ server/repositories/blogRepository.ts     |  22 +++++++
+ server/services/blogService.ts            | 103 ++++++++++++++++++++++++++++++
+ tests/e2e/blog.spec.ts                    |  43 +++++++++++++
+ tests/integration/blog.test.ts            |  40 ++++++++++++
+ 17 files changed, 631 insertions(+), 5 deletions(-)
