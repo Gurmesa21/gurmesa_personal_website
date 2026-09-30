@@ -1,6 +1,7 @@
 import { Profile, Experience, Skill, SocialLink } from '@prisma/client';
 import { profileRepository } from '../repositories/profileRepository';
 import { auth } from '../../auth';
+import { logAdminAction } from '@/lib/audit';
 import {
   toPublicProfile, PublicProfile,
   toPublicExperience, PublicExperience,
@@ -65,59 +66,79 @@ export async function updateProfile(data: Partial<Profile>) {
   const profile = profiles[0];
   if (!profile) throw new Error('Profile not found');
   
-  return profileRepository.update({
+  const result = await profileRepository.update({
     where: { id: profile.id },
     data
   });
+  await logAdminAction({ action: 'UPDATE', entity: 'Profile', entityId: result?.id || 'unknown' });
+  return result;
 }
 
 // Experience Admin
 export async function createExperience(data: Omit<Experience, 'id' | 'createdAt' | 'updatedAt'>) {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
-  return experienceRepository.create({ data });
+  const result = await experienceRepository.create({ data });
+  await logAdminAction({ action: 'CREATE', entity: 'Profile', entityId: result?.id || 'unknown' });
+  return result;
 }
 export async function updateExperience(id: string, data: Partial<Experience>) {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
-  return experienceRepository.update({ where: { id }, data });
+  const result = await experienceRepository.update({ where: { id }, data });
+  await logAdminAction({ action: 'UPDATE', entity: 'Profile', entityId: result?.id || 'unknown' });
+  return result;
 }
 export async function deleteExperience(id: string) {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
-  return experienceRepository.delete({ where: { id } });
+  const result = await experienceRepository.delete({ where: { id } });
+  await logAdminAction({ action: 'DELETE', entity: 'Profile', entityId: result?.id || 'unknown' });
+  return result;
 }
 
 // Skill Admin
 export async function createSkill(data: Omit<Skill, 'id'>) {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
-  return skillRepository.create({ data });
+  const result = await skillRepository.create({ data });
+  await logAdminAction({ action: 'CREATE', entity: 'Profile', entityId: result?.id || 'unknown' });
+  return result;
 }
 export async function updateSkill(id: string, data: Partial<Skill>) {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
-  return skillRepository.update({ where: { id }, data });
+  const result = await skillRepository.update({ where: { id }, data });
+  await logAdminAction({ action: 'UPDATE', entity: 'Profile', entityId: result?.id || 'unknown' });
+  return result;
 }
 export async function deleteSkill(id: string) {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
-  return skillRepository.delete({ where: { id } });
+  const result = await skillRepository.delete({ where: { id } });
+  await logAdminAction({ action: 'DELETE', entity: 'Profile', entityId: result?.id || 'unknown' });
+  return result;
 }
 
 // SocialLink Admin
 export async function createSocialLink(data: Omit<SocialLink, 'id'>) {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
-  return socialLinkRepository.create({ data });
+  const result = await socialLinkRepository.create({ data });
+  await logAdminAction({ action: 'CREATE', entity: 'Profile', entityId: result?.id || 'unknown' });
+  return result;
 }
 export async function updateSocialLink(id: string, data: Partial<SocialLink>) {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
-  return socialLinkRepository.update({ where: { id }, data });
+  const result = await socialLinkRepository.update({ where: { id }, data });
+  await logAdminAction({ action: 'UPDATE', entity: 'Profile', entityId: result?.id || 'unknown' });
+  return result;
 }
 export async function deleteSocialLink(id: string) {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
-  return socialLinkRepository.delete({ where: { id } });
+  const result = await socialLinkRepository.delete({ where: { id } });
+  await logAdminAction({ action: 'DELETE', entity: 'Profile', entityId: result?.id || 'unknown' });
+  return result;
 }

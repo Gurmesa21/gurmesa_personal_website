@@ -3,6 +3,7 @@ import { prisma } from '../repositories/db';
 import { toPublicCaseStudy, PublicCaseStudyDTO } from '../../lib/dto/project';
 import { Prisma } from '@prisma/client';
 import { auth } from '../../auth';
+import { logAdminAction } from '@/lib/audit';
 
 async function requireAdmin() {
   const session = await auth();
@@ -79,28 +80,34 @@ export async function getAdminProjectById(id: string) {
 
 export async function createProject(data: Prisma.ProjectCreateInput) {
   await requireAdmin();
-  return projectRepository.create({ data });
+  const result = await projectRepository.create({ data });
+  await logAdminAction({ action: 'CREATE', entity: 'Project', entityId: result?.id || 'unknown' });
+  return result;
 }
 
 export async function updateProject(id: string, data: Prisma.ProjectUpdateInput) {
   await requireAdmin();
-  return projectRepository.update({
+  const result = await projectRepository.update({
     where: { id },
     data
   });
+  await logAdminAction({ action: 'UPDATE', entity: 'Project', entityId: result?.id || 'unknown' });
+  return result;
 }
 
 export async function deleteProject(id: string) {
   await requireAdmin();
-  return projectRepository.delete({
+  const result = await projectRepository.delete({
     where: { id }
   });
+  await logAdminAction({ action: 'DELETE', entity: 'Project', entityId: result?.id || 'unknown' });
+  return result;
 }
 
 // Optional helper to directly interact with CaseStudy
 export async function upsertCaseStudy(projectId: string, data: Omit<Prisma.CaseStudyCreateInput, 'project'>) {
   await requireAdmin();
-  return prisma.caseStudy.upsert({
+  const result = await prisma.caseStudy.upsert({
     where: { projectId },
     update: data,
     create: {
@@ -108,4 +115,6 @@ export async function upsertCaseStudy(projectId: string, data: Omit<Prisma.CaseS
       project: { connect: { id: projectId } }
     }
   });
+  await logAdminAction({ action: 'UPDATE', entity: 'Project', entityId: result?.id || 'unknown' });
+  return result;
 }

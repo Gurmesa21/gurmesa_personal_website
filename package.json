@@ -19,6 +19,8 @@
     "seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1142.0",
+    "@aws-sdk/s3-request-presigner": "^3.1142.0",
     "@prisma/client": "^5.22.0",
     "@prisma/orm-postgres": "^8.0.0-rc.12",
     "@radix-ui/react-dialog": "^1.1.23",
@@ -27,6 +29,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^18.0.4",
+    "ioredis": "^6.0.0",
     "lucide-react": "^1.48.0",
     "next": "16.3.6",
     "next-auth": "^5.0.0-beta.32",
@@ -41,6 +44,7 @@
     "@prisma/cli-engine": "^0.6.1",
     "@tailwindcss/postcss": "^4",
     "@types/bcryptjs": "^2.4.6",
+    "@types/ioredis": "^4.28.10",
     "@types/node": "^26.6.3",
     "@types/react": "^19",
     "@types/react-dom": "^19",

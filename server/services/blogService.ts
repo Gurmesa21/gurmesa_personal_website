@@ -1,6 +1,7 @@
 import { blogRepository } from '../repositories/blogRepository';
 import { toPublicPost, type PublicBlogPost } from '../../lib/dto/blogPost';
 import { auth } from '../../auth';
+import { logAdminAction } from '@/lib/audit';
 import type { Prisma } from '@prisma/client';
 
 export const getPublicPosts = async (filters?: { category?: string; tag?: string; search?: string }): Promise<PublicBlogPost[]> => {
@@ -70,19 +71,25 @@ export const getAdminPostById = async (id: string) => {
 export const createPost = async (data: Prisma.BlogPostCreateInput) => {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
-  return blogRepository.create({ data });
+  const result = await blogRepository.create({ data });
+  await logAdminAction({ action: 'CREATE', entity: 'BlogPost', entityId: result.id });
+  return result;
 };
 
 export const updatePost = async (id: string, data: Prisma.BlogPostUpdateInput) => {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
-  return blogRepository.update({ where: { id }, data });
+  const result = await blogRepository.update({ where: { id }, data });
+  await logAdminAction({ action: 'UPDATE', entity: 'BlogPost', entityId: id, metadata: data });
+  return result;
 };
 
 export const deletePost = async (id: string) => {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
-  return blogRepository.delete({ where: { id } });
+  const result = await blogRepository.delete({ where: { id } });
+  await logAdminAction({ action: 'DELETE', entity: 'BlogPost', entityId: id });
+  return result;
 };
 
 export const getPreviewPostBySlug = async (slug: string) => {

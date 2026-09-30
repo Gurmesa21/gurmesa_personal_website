@@ -222,11 +222,14 @@ describe('Admin Inquiries', () => {
   });
 
   it('add note stores the session user as author regardless of any client-supplied authorId', async () => {
-    const user = await prisma.adminUser.create({ data: { name: 'Admin', email: 'admin@test.com', passwordHash: 'hash', status: 'ACTIVE' } });
+    const userEmail = `admin-${Date.now()}@test.com`;
+    const user = await prisma.adminUser.create({ data: { name: 'Admin', email: userEmail, passwordHash: 'hash', status: 'ACTIVE' } });
     (auth as any /* eslint-disable-line @typescript-eslint/no-explicit-any */).mockResolvedValue({ user: { id: user.id, email: user.email } });
     const inq = await prisma.inquiry.create({ data: { name: 'X', email: 'x@x.com', message: 'x', status: 'NEW' } });
     const note = await service.addNote(inq.id, 'My note');
     expect(note.authorId).toBe(user.id);
+    await prisma.inquiryNote.deleteMany({ where: { inquiryId: inq.id } });
+    await prisma.auditLog.deleteMany({ where: { actorId: user.id } });
     await prisma.inquiry.delete({ where: { id: inq.id } });
     await prisma.adminUser.delete({ where: { id: user.id } });
   });

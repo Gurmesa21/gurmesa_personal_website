@@ -9,9 +9,8 @@ import { Button } from '../../../components/ui/button';
 import { Badge } from '../../../components/ui/badge';
 import { Card, CardHeader, CardTitle, CardContent } from '../../../components/ui/card';
 import { getSeoOverride } from '@/server/services/seoService';
+import { getResumeUrl } from '@/server/services/mediaService';
 import { Metadata } from 'next';
-
-
 export async function generateMetadata(): Promise<Metadata> {
   const override = await getSeoOverride('/about');
   const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
@@ -29,11 +28,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function AboutPage() {
-  const [profile, experiences, skills, socialLinks] = await Promise.all([
+  const [profile, experiences, skills, socialLinks, resumeUrl] = await Promise.all([
     getPublicProfile(),
     getPublicExperiences(),
     getPublicSkills(),
-    getPublicSocialLinks()
+    getPublicSocialLinks(),
+    getResumeUrl()
   ]);
 
   // Group skills by category
@@ -56,11 +56,11 @@ export default async function AboutPage() {
               {link.label}
             </a>
           ))}
-          {/* TECHNICAL DEBT: Resume download currently uses a static local file reference. 
-              This is an interim solution until full S3/object-storage media upload is wired. */}
-          <Button variant="outline" asChild>
-            <a href="/resume.pdf" download>Download Resume</a>
-          </Button>
+          {resumeUrl && (
+            <Button variant="outline" asChild>
+              <a href={resumeUrl} target="_blank" rel="noopener noreferrer">Download Resume</a>
+            </Button>
+          )}
         </div>
         <div className="prose prose-lg dark:prose-invert max-w-none">
           <p className="whitespace-pre-wrap">{profile?.bio}</p>

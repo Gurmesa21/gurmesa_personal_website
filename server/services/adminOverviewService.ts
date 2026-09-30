@@ -1,6 +1,7 @@
 import { PrismaClient, InquiryStatus, BlogPostStatus } from '@prisma/client';
 import { auth } from '../../auth';
 
+
 const prisma = new PrismaClient();
 
 export class AdminOverviewService {

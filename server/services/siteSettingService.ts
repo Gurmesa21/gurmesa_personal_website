@@ -1,12 +1,14 @@
 import { siteSettingRepository } from '../repositories/siteSettingRepository';
 import { auth } from '../../auth';
+import { logAdminAction } from '@/lib/audit';
 import { z } from 'zod';
 
 const siteSettingWhitelist = [
   'publicContactEmail',
   'inquiryRetentionDays',
   'sendVisitorAcknowledgement',
-  'availabilityMessage'
+  'availabilityMessage',
+  'resumeMediaId'
 ] as const;
 
 export type SiteSettingKey = typeof siteSettingWhitelist[number];
@@ -16,6 +18,7 @@ const schemas = {
   inquiryRetentionDays: z.number().int().min(30).max(1825),
   sendVisitorAcknowledgement: z.boolean(),
   availabilityMessage: z.string(),
+  resumeMediaId: z.string(),
 };
 
 export async function getAdminSiteSettings() {
@@ -39,9 +42,18 @@ export async function updateSiteSetting(key: string, value: any) {
   // validate value
   const parsedValue = schemas[k].parse(value);
 
-  return siteSettingRepository.upsert({
+  const result = await siteSettingRepository.upsert({
     where: { key: k },
     update: { value: parsedValue },
     create: { key: k, value: parsedValue, type: typeof parsedValue }
   });
+  
+  await logAdminAction({
+    action: 'UPDATE',
+    entity: 'SiteSetting',
+    entityId: k,
+    metadata: { value: parsedValue }
+  });
+  
+  return result;
 }

@@ -2,35 +2,15 @@
 
 import { signIn } from '../../../../auth';
 import { AuthError } from 'next-auth';
-// Simple in-memory rate limiter (Technical Debt: replace with Redis in Day 9)
-const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
-const RATE_LIMIT_MAX_ATTEMPTS = 5;
-const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
-
-function checkRateLimit(ip: string): boolean {
-  const now = Date.now();
-  const record = rateLimitMap.get(ip);
-  if (!record) {
-    rateLimitMap.set(ip, { count: 1, timestamp: now });
-    return true;
-  }
-  if (now - record.timestamp > RATE_LIMIT_WINDOW_MS) {
-    rateLimitMap.set(ip, { count: 1, timestamp: now });
-    return true;
-  }
-  if (record.count >= RATE_LIMIT_MAX_ATTEMPTS) {
-    return false;
-  }
-  record.count += 1;
-  return true;
-}
+import { loginRateLimiter } from '@/lib/rate-limit';
 
 export async function loginAction(_prevState: unknown, formData: FormData) {
-  // In a real app we'd get the IP from headers, but for this simple implementation
-  // we'll just rate limit globally or by email. Let's do it by email.
   const email = formData.get('email') as string;
-  if (email && process.env.PLAYWRIGHT_TEST !== '1' && !checkRateLimit(email)) {
-    return { error: 'Too many login attempts. Please try again later.' };
+  if (email) {
+    const isAllowed = await loginRateLimiter.check(email);
+    if (!isAllowed) {
+      return { error: 'Too many login attempts. Please try again later.' };
+    }
   }
 
   try {

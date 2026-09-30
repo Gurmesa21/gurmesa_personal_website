@@ -2,6 +2,7 @@ import { serviceRepository } from '../repositories/serviceRepository';
 import { toPublicService, PublicServiceDTO } from '../../lib/dto/service';
 import { Service, Prisma } from '@prisma/client';
 import { auth } from '../../auth';
+import { logAdminAction } from '@/lib/audit';
 
 export async function getPublicServices(): Promise<PublicServiceDTO[]> {
   const services = await serviceRepository.findMany({
@@ -40,20 +41,26 @@ export async function getAdminServiceById(id: string): Promise<Service | null> {
 
 export async function createService(data: Omit<Prisma.ServiceCreateInput, 'id' | 'createdAt' | 'updatedAt'>): Promise<Service> {
   await requireAdmin();
-  return serviceRepository.create({ data });
+  const result = await serviceRepository.create({ data });
+  await logAdminAction({ action: 'CREATE', entity: 'Service', entityId: result?.id || 'unknown' });
+  return result;
 }
 
 export async function updateService(id: string, data: Prisma.ServiceUpdateInput): Promise<Service> {
   await requireAdmin();
-  return serviceRepository.update({
+  const result = await serviceRepository.update({
     where: { id },
     data,
   });
+  await logAdminAction({ action: 'UPDATE', entity: 'Service', entityId: result?.id || 'unknown' });
+  return result;
 }
 
 export async function deleteService(id: string): Promise<Service> {
   await requireAdmin();
-  return serviceRepository.delete({
+  const result = await serviceRepository.delete({
     where: { id },
   });
+  await logAdminAction({ action: 'DELETE', entity: 'Service', entityId: result?.id || 'unknown' });
+  return result;
 }

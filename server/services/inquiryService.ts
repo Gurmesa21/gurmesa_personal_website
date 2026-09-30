@@ -1,5 +1,6 @@
 import { PrismaClient, InquiryStatus, NotificationStatus, Prisma } from '@prisma/client';
 import { auth } from '../../auth';
+import { logAdminAction } from '@/lib/audit';
 import { inquirySchema, InquiryInput } from '../../lib/validation/inquiry';
 import { contactRateLimiter, ContactRateLimiter } from '../../lib/rate-limit';
 import { getEmailTransport, EmailTransport } from '../../lib/email';
@@ -151,23 +152,27 @@ export class InquiryService {
 
   async updateStatus(id: string, status: InquiryStatus) {
     await this.requireAuth();
-    return prisma.inquiry.update({
+    const result = await prisma.inquiry.update({
       where: { id },
       data: { status }
     });
+  await logAdminAction({ action: 'UPDATE', entity: 'Inquiry', entityId: result?.id || 'unknown' });
+  return result;
   }
 
   async addNote(id: string, body: string) {
     const user = await this.requireAuth();
     if (!user.id) throw new Error('UNAUTHORIZED: No user ID in session');
 
-    return prisma.inquiryNote.create({
+    const result = await prisma.inquiryNote.create({
       data: {
         inquiryId: id,
         authorId: user.id,
         body
       }
     });
+  await logAdminAction({ action: 'CREATE', entity: 'Inquiry', entityId: result?.id || 'unknown' });
+  return result;
   }
 
   async deleteInquiry(id: string) {
@@ -175,9 +180,11 @@ export class InquiryService {
     // Prisma cascading or manual? We need to delete notes first if no cascade.
     // Assuming schema has onDelete: Cascade for notes, but let's be safe.
     await prisma.inquiryNote.deleteMany({ where: { inquiryId: id } });
-    return prisma.inquiry.delete({
+    const result = await prisma.inquiry.delete({
       where: { id }
     });
+  await logAdminAction({ action: 'DELETE', entity: 'Inquiry', entityId: result?.id || 'unknown' });
+  return result;
   }
 }
 

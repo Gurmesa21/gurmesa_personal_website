@@ -1,5 +1,6 @@
 import { PrismaClient, TestimonialStatus, TestimonialPermissionStatus, Prisma } from '@prisma/client';
 import { auth } from '../../auth';
+import { logAdminAction } from '@/lib/audit';
 
 const prisma = new PrismaClient();
 
@@ -41,20 +42,26 @@ export class TestimonialService {
 
   async createTestimonial(data: Prisma.TestimonialCreateInput) {
     await this.requireAuth();
-    return prisma.testimonial.create({ data });
+    const result = await prisma.testimonial.create({ data });
+  await logAdminAction({ action: 'CREATE', entity: 'Testimonial', entityId: result?.id || 'unknown' });
+  return result;
   }
 
   async updateTestimonial(id: string, data: Prisma.TestimonialUpdateInput) {
     await this.requireAuth();
-    return prisma.testimonial.update({
+    const result = await prisma.testimonial.update({
       where: { id },
       data
     });
+  await logAdminAction({ action: 'UPDATE', entity: 'Testimonial', entityId: result?.id || 'unknown' });
+  return result;
   }
 
   async deleteTestimonial(id: string) {
     await this.requireAuth();
-    return prisma.testimonial.delete({ where: { id } });
+    const result = await prisma.testimonial.delete({ where: { id } });
+  await logAdminAction({ action: 'DELETE', entity: 'Testimonial', entityId: result?.id || 'unknown' });
+  return result;
   }
 }
 

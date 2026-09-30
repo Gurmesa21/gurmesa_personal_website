@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import Redis from 'ioredis';
 
 export interface RateLimitStore {
   increment(key: string, windowMs: number): Promise<number>;
@@ -20,7 +21,6 @@ export class InMemoryStore implements RateLimitStore {
 
     this.hits.set(key, { count: 1, expiresAt: now + windowMs });
     
-    // Lazy cleanup of expired keys to prevent unbounded memory growth
     if (Math.random() < 0.05) {
       for (const [k, v] of this.hits.entries()) {
         if (v.expiresAt <= now) {
@@ -33,10 +33,35 @@ export class InMemoryStore implements RateLimitStore {
   }
 }
 
-const defaultStore = new InMemoryStore();
+// Redis implementation
+export class RedisStore implements RateLimitStore {
+  private redis: Redis;
 
-// Trust assumption: Next.js runs behind a reverse proxy (like Vercel, Cloudflare, Nginx)
-// which accurately populates 'x-forwarded-for'. If exposed directly, this header can be spoofed.
+  constructor(url: string) {
+    this.redis = new Redis(url);
+  }
+
+  async increment(key: string, windowMs: number): Promise<number> {
+    const multi = this.redis.multi();
+    multi.incr(key);
+    multi.pttl(key);
+    const results = await multi.exec();
+    
+    if (!results) return 1;
+
+    const count = results[0][1] as number;
+    const ttl = results[1][1] as number;
+
+    if (ttl === -1 || ttl === -2) {
+      await this.redis.pexpire(key, windowMs);
+    }
+    
+    return count;
+  }
+}
+
+const defaultStore = process.env.REDIS_URL ? new RedisStore(process.env.REDIS_URL) : new InMemoryStore();
+
 export function getIpFromHeaders(headers: Headers): string {
   const forwardedFor = headers.get('x-forwarded-for');
   if (forwardedFor) {
@@ -52,11 +77,9 @@ function hashKey(value: string): string {
 export class ContactRateLimiter {
   private store: RateLimitStore;
   
-  // IP limit: 5 inquiries per hour
   private readonly IP_LIMIT = 5;
   private readonly IP_WINDOW_MS = 60 * 60 * 1000;
   
-  // Email limit: 3 inquiries per hour
   private readonly EMAIL_LIMIT = 3;
   private readonly EMAIL_WINDOW_MS = 60 * 60 * 1000;
 
@@ -85,4 +108,26 @@ export class ContactRateLimiter {
   }
 }
 
+export class LoginRateLimiter {
+  private store: RateLimitStore;
+  
+  private readonly EMAIL_LIMIT = 5;
+  private readonly EMAIL_WINDOW_MS = 5 * 60 * 1000; // 5 attempts per 5 minutes
+
+  constructor(store: RateLimitStore = defaultStore) {
+    this.store = store;
+  }
+
+  async check(email: string): Promise<boolean> {
+    if (process.env.PLAYWRIGHT_TEST === '1') {
+      return true;
+    }
+
+    const hashedEmail = hashKey(`login:${email.toLowerCase()}`);
+    const count = await this.store.increment(hashedEmail, this.EMAIL_WINDOW_MS);
+    return count <= this.EMAIL_LIMIT;
+  }
+}
+
 export const contactRateLimiter = new ContactRateLimiter();
+export const loginRateLimiter = new LoginRateLimiter();
