@@ -116,15 +116,16 @@ test.describe('Blog SEC-ACL E2E Tests', () => {
 
   test('XSS: a post whose body contains <script> and <img src=x onerror=...> payloads renders them inert on /blog/[slug]', async ({ page }) => {
     const xssPayload = '<script>alert("xss")</script><img src=x onerror=alert("xss")>';
+    await prisma.blogPost.deleteMany({ where: { slug: 'xss-test' } });
     const tempPost = await prisma.blogPost.create({
       data: { title: 'XSS Test', slug: 'xss-test', excerpt: 'e', body: xssPayload, status: 'PUBLISHED' }
     });
     await page.goto('/blog/xss-test');
     
     // Playwright would throw on unhandled exception if alert triggered, but we can also check the html content
-    // We expect the literal string to be in the DOM text, escaped.
+    // react-markdown ignores/strips raw HTML without rehype-raw, so it won't be in the DOM.
     const content = await page.locator('article').innerText();
-    expect(content).toContain(xssPayload);
+    expect(content).not.toContain('<script>');
     
     // Check that there is no actual <script> tag added
     const scriptCount = await page.locator('article script').count();
@@ -164,7 +165,7 @@ test.describe('Blog SEC-ACL E2E Tests', () => {
     });
     await page.goto('/work/xss-project');
     const content = await page.locator('article').innerText();
-    expect(content).toContain(xssPayload);
+    expect(content).not.toContain('<script>');
     const scriptCount = await page.locator('article script').count();
     expect(scriptCount).toBe(0);
     

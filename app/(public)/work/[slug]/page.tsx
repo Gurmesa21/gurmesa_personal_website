@@ -30,6 +30,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+import { MarkdownRenderer } from '@/components/ui/markdown-renderer';
+
 export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
   const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
 
@@ -115,7 +117,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
         <section>
           <h2>Deep Dive</h2>
-          <div className="whitespace-pre-wrap">{project.content}</div>
+          <MarkdownRenderer content={project.content} />
         </section>
       </div>
 
