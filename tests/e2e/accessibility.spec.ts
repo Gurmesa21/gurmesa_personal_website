@@ -29,6 +29,42 @@ test.describe('Accessibility & Shell Features', () => {
     expect(criticalOrSerious, `Violations found on /privacy`).toEqual([]);
   });
 
+  test('Axe scan on /about', async ({ page }) => {
+    await page.goto('/about');
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+      .analyze();
+    const criticalOrSerious = accessibilityScanResults.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
+    expect(criticalOrSerious, `Violations found on /about`).toEqual([]);
+  });
+
+  test('Axe scan on /blog', async ({ page }) => {
+    await page.goto('/blog');
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+      .analyze();
+    const criticalOrSerious = accessibilityScanResults.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
+    expect(criticalOrSerious, `Violations found on /blog`).toEqual([]);
+  });
+
+  test('Axe scan on /services', async ({ page }) => {
+    await page.goto('/services');
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+      .analyze();
+    const criticalOrSerious = accessibilityScanResults.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
+    expect(criticalOrSerious, `Violations found on /services`).toEqual([]);
+  });
+
+  test('Axe scan on /work', async ({ page }) => {
+    await page.goto('/work');
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+      .analyze();
+    const criticalOrSerious = accessibilityScanResults.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
+    expect(criticalOrSerious, `Violations found on /work`).toEqual([]);
+  });
+
   test('Axe scan on /terms', async ({ page }) => {
     await page.goto('/terms');
     const accessibilityScanResults = await new AxeBuilder({ page })

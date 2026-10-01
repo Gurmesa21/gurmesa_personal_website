@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { getSeoOverride } from '../../server/services/seoService';
 import { serializeJsonLd } from '../../lib/jsonLd';
-export const dynamic = 'force-dynamic';
+
 import Link from 'next/link';
 import { getPublicProfile } from '@/server/services/profileService';
 import { getPublicServices } from '@/server/services/serviceService';

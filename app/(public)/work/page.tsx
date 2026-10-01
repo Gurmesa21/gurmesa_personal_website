@@ -10,6 +10,8 @@ export const dynamic = 'force-dynamic';
 
 
 
+
+
 // Next 15 Server Component with search params
 
 export async function generateMetadata(): Promise<Metadata> {

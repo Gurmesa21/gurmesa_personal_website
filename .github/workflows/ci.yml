@@ -16,7 +16,7 @@ jobs:
         env:
           POSTGRES_USER: dev_user
           POSTGRES_PASSWORD: dev_password
-          POSTGRES_DB: gurmesa_db
+          POSTGRES_DB: gurmesa_test_db
         ports:
           - 5432:5432
         options: >-
@@ -35,7 +35,7 @@ jobs:
           --health-retries 5
 
     env:
-      DATABASE_URL: postgresql://dev_user:dev_password@localhost:5432/gurmesa_db?schema=public
+      DATABASE_URL: postgresql://dev_user:dev_password@localhost:5432/gurmesa_test_db?schema=public
       AUTH_SECRET: 'dummy-secret-for-ci-tests-1234567890'
       AUTH_TRUST_HOST: 'true'
       AUTH_URL: 'http://localhost:3000'

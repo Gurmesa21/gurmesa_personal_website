@@ -1,0 +1,14 @@
+CI Failure Analysis for Commit a343ffb
+
+Failed Job: build-and-test
+Failed Step: Run Playwright tests
+
+Error diagnosis:
+The failure is caused by an environment variable mismatch for the database connection.
+- In `ci.yml`, the Postgres service is mapped to port 5432, and the `DATABASE_URL` is set to `postgresql://dev_user:dev_password@localhost:5432/gurmesa_test_db?schema=public`.
+- However, `playwright.config.ts` hardcodes `DATABASE_URL` to port 5433 (`127.0.0.1:5433`) in its `webServer.env` configuration. This overrides the CI environment variable.
+- Locally, `docker-compose.yml` maps Postgres to port 5433, which is why local Playwright runs pass. But in CI, the database is on 5432, leading to a connection refused error during the tests when the app tries to connect to 5433.
+
+Fix applied:
+Updated `playwright.config.ts` to use `process.env.DATABASE_URL` if available, and fallback to the hardcoded local URL:
+`DATABASE_URL: process.env.DATABASE_URL || 'postgresql://dev_user:dev_password@127.0.0.1:5433/gurmesa_test_db?schema=public'`
