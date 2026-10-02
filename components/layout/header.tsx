@@ -13,6 +13,7 @@ import {
 } from '../ui/dialog'
 import { cn } from '../../lib/utils'
 
+
 const navLinks = [
   { href: '/work', label: 'Work' },
   { href: '/services', label: 'Services' },
@@ -29,9 +30,10 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between px-4 sm:px-8">
         <div className="flex gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-bold text-lg sm:text-xl inline-block">Gurmesa</span>
+
+            <span className="font-bold text-lg sm:text-xl inline-block bg-gradient-to-r from-[#7167E8] to-[#05EEF2] bg-clip-text text-transparent font-bold " >AVENOR</span>
           </Link>
-          <nav className="hidden md:flex gap-6">
+          <nav className="hidden md:flex gap-6" style={{ marginLeft: '600px' }}>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -46,7 +48,7 @@ export function Header() {
             ))}
           </nav>
         </div>
-        
+
         {/* Mobile Nav */}
         <div className="flex flex-1 items-center justify-end md:hidden">
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
