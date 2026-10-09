@@ -1,4 +1,4 @@
-import { describe, test, expect, vi } from 'vitest';
+import { describe, test, expect, vi, beforeEach } from 'vitest';
 import { getPublicPosts, getPublicPostBySlug } from '../../server/services/blogService';
 import { toPublicPost } from '../../lib/dto/blogPost';
 import { prisma } from '../../server/repositories/db';
@@ -8,13 +8,23 @@ vi.mock('../../auth', () => ({
 }));
 
 describe('Blog SEC-ACL tests', () => {
+  beforeEach(async () => {
+    await prisma.blogPost.deleteMany({
+      where: {
+        slug: {
+          in: ['draft-post-test', 'archived-post-test', 'draft-post-test-2', 'archived-post-test-2']
+        }
+      }
+    });
+  });
+
   test('getPublicPosts() excludes DRAFT posts', async () => {
     const draftPost = await prisma.blogPost.create({
       data: { title: 'Draft Post', slug: 'draft-post-test', excerpt: 'e', body: 'b', status: 'DRAFT' }
     });
     const publicPosts = await getPublicPosts();
     expect(publicPosts.map(p => p.slug)).not.toContain('draft-post-test');
-    await prisma.blogPost.delete({ where: { id: draftPost.id } });
+    await prisma.blogPost.deleteMany({ where: { id: draftPost.id } });
   });
 
   test('getPublicPosts() excludes ARCHIVED posts', async () => {
@@ -23,7 +33,7 @@ describe('Blog SEC-ACL tests', () => {
     });
     const publicPosts = await getPublicPosts();
     expect(publicPosts.map(p => p.slug)).not.toContain('archived-post-test');
-    await prisma.blogPost.delete({ where: { id: archivedPost.id } });
+    await prisma.blogPost.deleteMany({ where: { id: archivedPost.id } });
   });
 
   test('getPublicPostBySlug(slug) returns null for a DRAFT post\'s real slug', async () => {
@@ -32,7 +42,7 @@ describe('Blog SEC-ACL tests', () => {
     });
     const post = await getPublicPostBySlug('draft-post-test-2');
     expect(post).toBeNull();
-    await prisma.blogPost.delete({ where: { id: draftPost.id } });
+    await prisma.blogPost.deleteMany({ where: { id: draftPost.id } });
   });
 
   test('getPublicPostBySlug(slug) returns null for an ARCHIVED post', async () => {
@@ -41,7 +51,7 @@ describe('Blog SEC-ACL tests', () => {
     });
     const post = await getPublicPostBySlug('archived-post-test-2');
     expect(post).toBeNull();
-    await prisma.blogPost.delete({ where: { id: archivedPost.id } });
+    await prisma.blogPost.deleteMany({ where: { id: archivedPost.id } });
   });
 
   test('toPublicPost() output keys match the declared allowlist exactly', () => {
@@ -51,7 +61,7 @@ describe('Blog SEC-ACL tests', () => {
       categoryId: 'c1', featuredImageId: 'f1', category: null, featuredImage: null, tags: []
     };
     const dto = toPublicPost(fullPost as any /* eslint-disable-line @typescript-eslint/no-explicit-any */);
-    expect(Object.keys(dto).sort()).toEqual(['body', 'category', 'excerpt', 'featuredImage', 'id', 'publishedAt', 'slug', 'status', 'tags', 'title', 'updatedAt'].sort());
+    expect(Object.keys(dto).sort()).toEqual(['body', 'category', 'excerpt', 'featuredImage', 'id', 'publishedAt', 'slug', 'status', 'tags', 'title', 'updatedAt', 'comments', 'likesCount', 'likedByMe'].sort());
   });
 
   test('unauthenticated: createPost rejected', async () => {
@@ -77,9 +87,7 @@ describe('Blog SEC-ACL tests', () => {
 
   test('unauthenticated: category create rejected', async () => {
     const { createCategoryAction } = await import('../../app/(admin)/admin/blog/actions');
-    const formData = new FormData();
-    formData.append('name', 'C');
-    formData.append('slug', 'c');
+    const formData = { get: () => 'c' } as any;
     await expect(createCategoryAction(formData)).rejects.toThrow('Unauthorized');
   });
 
@@ -90,9 +98,7 @@ describe('Blog SEC-ACL tests', () => {
 
   test('unauthenticated: tag create rejected', async () => {
     const { createTagAction } = await import('../../app/(admin)/admin/blog/actions');
-    const formData = new FormData();
-    formData.append('name', 'T');
-    formData.append('slug', 't');
+    const formData = { get: () => 't' } as any;
     await expect(createTagAction(formData)).rejects.toThrow('Unauthorized');
   });
 

@@ -7,7 +7,8 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.PW_WORKERS ? parseInt(process.env.PW_WORKERS) : 1, // Limit workers to 1 to prevent Next.js/Turbopack dev server from choking on Windows
+  timeout: 90000, // Increase test timeout to 90s for compilation
   reporter: 'html',
   use: {
     baseURL: 'http://localhost:3006',
@@ -20,15 +21,18 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run build && npm run start -- -p 3006',
+    command: process.env.PW_PREBUILT === '1' ? 'npm run start -- -p 3006' : 'npm run build && npm run start -- -p 3006',
     url: 'http://localhost:3006',
     reuseExistingServer: false,
-    timeout: 120000,
+    timeout: 300000,
     env: {
+      APP_ENV: 'test',
+      PLAYWRIGHT_TEST: '1',
+      // Deployment settings for Auth.js
       AUTH_TRUST_HOST: 'true',
       AUTH_URL: 'http://localhost:3006',
+      NEXTAUTH_URL: 'http://localhost:3006',
       AUTH_SECRET: 'dummy-secret-for-ci-tests-1234567890',
-      PLAYWRIGHT_TEST: '1',
       PORT: '3006',
       DATABASE_URL: process.env.DATABASE_URL || 'postgresql://dev_user:dev_password@127.0.0.1:5433/gurmesa_test_db?schema=public'
     }

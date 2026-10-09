@@ -1,0 +1,1 @@
+const originalParse = JSON.parse; JSON.parse = function(text, reviver) { try { return originalParse(text, reviver); } catch(e) { if (e.message.includes('position 2045')) { console.error('FAILED JSON LENGTH:', text.length); console.error('FAILED JSON:', text.substring(2000, 2080)); } throw e; } };

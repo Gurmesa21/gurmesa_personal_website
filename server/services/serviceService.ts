@@ -39,14 +39,14 @@ export async function getAdminServiceById(id: string): Promise<Service | null> {
   });
 }
 
-export async function createService(data: Omit<Prisma.ServiceCreateInput, 'id' | 'createdAt' | 'updatedAt'>): Promise<Service> {
+export async function createService(data: Omit<Prisma.ServiceUncheckedCreateInput, 'id' | 'createdAt' | 'updatedAt'>): Promise<Service> {
   await requireAdmin();
   const result = await serviceRepository.create({ data });
   await logAdminAction({ action: 'CREATE', entity: 'Service', entityId: result?.id || 'unknown' });
   return result;
 }
 
-export async function updateService(id: string, data: Prisma.ServiceUpdateInput): Promise<Service> {
+export async function updateService(id: string, data: Prisma.ServiceUncheckedUpdateInput): Promise<Service> {
   await requireAdmin();
   const result = await serviceRepository.update({
     where: { id },

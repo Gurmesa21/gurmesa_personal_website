@@ -1,0 +1,62 @@
+﻿
+> gurmesa-website@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.3.6 (Turbopack)
+- Environments: .env
+node.exe : ΓÜá Warning: Next.js ignored package-lock.json in C:\Users\Hp because it is outside the current Git 
+repository (C:\Users\Hp\Documents\Projects\Gurmesa_website).
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ΓÜá Warning: Ne...rmesa_website).:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ To use this directory, set `turbopack.root` in your Next.js config.
+
+Γ£ô Running next.config.ts took 255ms
+- Experiments (use with caution):
+  ┬╖ proxyClientMaxBodySize: 31457280
+  ┬╖ serverActions
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 53s
+  Running TypeScript ...
+app/(admin)/admin/inquiries/page.tsx(64,19): error TS2367: This comparison appears to be unintentional because the types '"CONTACTED" | "QUALIFIED" | "PROPOSAL" | "WON" | "LOST" | "ARCHIVED"' and '"IN_PROGRESS"' have no overlap.
+app/(admin)/admin/inquiries/page.tsx(65,19): error TS2367: This comparison appears to be unintentional because the types '"CONTACTED" | "QUALIFIED" | "PROPOSAL" | "WON" | "LOST" | "ARCHIVED"' and '"REJECTED"' have no overlap.
+app/[locale]/(public)/contact/page.tsx(5,16): error TS6133: 'CardHeader' is declared but its value is never read.
+app/[locale]/(public)/contact/page.tsx(5,28): error TS6133: 'CardTitle' is declared but its value is never read.
+app/[locale]/(public)/contact/page.tsx(6,16): error TS6133: 'MapPin' is declared but its value is never read.
+tests/integration/guard.test.ts(13,25): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+tests/integration/guard.test.ts(20,25): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+Failed to type check.
+
+Turbopack build encountered 1 warning:
+./lib/storage/local.ts:30:24
+Warning: Dynamic filesystem access causes tracing of the whole project
+  [90m28 |[0m     [36mconst[0m key = [32m`[0m${finalPrefix[32m}[0m${uniqueId[32m}.[0m${ext[32m}`[0m;
+  [90m29 |[0m
+[33m[1m>[0m [90m30 |[0m     [36mconst[0m targetPath = path.join([36mthis[0m.uploadDir, key);
+  [90m   |[0m                        [33m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m31 |[0m     
+  [90m32 |[0m     [90m// Ensure the directory for this specific file exists[0m
+  [90m33 |[0m     [36mawait[0m [36mthis[0m.ensureDir(path.dirname(targetPath));
+
+Static analysis determined that this filesystem access causes the whole project to be traced and included in the 
+output.
+This is usually unintentional and leads to all source files (including the public folder) to be deployed as part of 
+the server code.
+This can slow down deployments or lead to failures when size limits are exceeded.
+To resolve this, you can
+- make sure the path is statically scoped to some subfolder, for example path.join(process.cwd(), 'data', bar), or
+- only use them in development, or
+- opt out by adding an ignore comment to the highlighted call: path.join(/*turbopackIgnore: true*/ ...), or
+- remove them.
+
+Import trace:
+  Server Component:
+    ./lib/storage/local.ts
+    ./lib/storage/index.ts
+    ./app/[locale]/(public)/work/[slug]/page.tsx
+
+

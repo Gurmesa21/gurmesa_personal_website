@@ -20,7 +20,7 @@ describe('Profile DTO tests', () => {
 
     const publicDto = toPublicProfile(fullProfile);
     const allowedKeys = [
-      'name', 'title', 'tagline', 'bio', 'locationLabel', 'availabilityStatus'
+      'name', 'title', 'tagline', 'bio', 'locationLabel', 'availabilityStatus', 'avatarUrl'
     ];
 
     expect(Object.keys(publicDto).sort()).toEqual(allowedKeys.sort());

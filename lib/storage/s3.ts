@@ -8,18 +8,18 @@ export class S3StorageAdapter implements StorageAdapter {
   private publicUrlBase?: string;
 
   constructor() {
-    this.bucket = process.env.S3_BUCKET || 'gurmesa-media';
-    this.publicUrlBase = process.env.S3_PUBLIC_URL_BASE;
+    this.bucket = process.env.STORAGE_BUCKET || process.env.S3_BUCKET || 'gurmesa-media';
+    this.publicUrlBase = process.env.STORAGE_PUBLIC_URL_BASE || process.env.S3_PUBLIC_URL_BASE;
     
     this.client = new S3Client({
-      region: process.env.S3_REGION || 'us-east-1',
-      endpoint: process.env.S3_ENDPOINT, // e.g. for MinIO, DigitalOcean, Cloudflare R2
+      region: process.env.STORAGE_REGION || process.env.S3_REGION || 'us-east-1',
+      endpoint: process.env.STORAGE_ENDPOINT || process.env.S3_ENDPOINT, // e.g. for MinIO, DigitalOcean, Cloudflare R2
       credentials: {
-        accessKeyId: process.env.S3_ACCESS_KEY || '',
-        secretAccessKey: process.env.S3_SECRET_KEY || '',
+        accessKeyId: process.env.STORAGE_ACCESS_KEY || process.env.S3_ACCESS_KEY || '',
+        secretAccessKey: process.env.STORAGE_SECRET_KEY || process.env.S3_SECRET_KEY || '',
       },
       // Force path style for local testing (MinIO/Localstack) if endpoint is set
-      forcePathStyle: !!process.env.S3_ENDPOINT,
+      forcePathStyle: !!(process.env.STORAGE_ENDPOINT || process.env.S3_ENDPOINT),
     });
   }
 

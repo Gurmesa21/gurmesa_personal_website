@@ -82,6 +82,12 @@ enum NotificationStatus {
   SKIPPED
 }
 
+enum NotificationType {
+  NEW_INQUIRY
+  NEW_TESTIMONIAL
+  NEW_COMMENT
+}
+
 // -----------------------------------------------------------------------------
 // CORE ENTITIES
 // -----------------------------------------------------------------------------
@@ -119,7 +125,10 @@ model Profile {
   bio                String   @db.Text
   locationLabel      String?
   availabilityStatus String?
+  avatarId           String?
   updatedAt          DateTime @updatedAt @db.Timestamptz
+
+  avatar             MediaAsset? @relation(fields: [avatarId], references: [id], onDelete: SetNull)
 }
 
 model Experience {
@@ -161,8 +170,11 @@ model Service {
   status             ServiceStatus
   order              Int
   startingPriceRange String?
+  featuredImageId    String?
   createdAt          DateTime      @default(now()) @db.Timestamptz
   updatedAt          DateTime      @updatedAt @db.Timestamptz
+
+  featuredImage      MediaAsset?   @relation(fields: [featuredImageId], references: [id], onDelete: SetNull)
 
   @@index([slug, status])
 }
@@ -251,14 +263,40 @@ model BlogPost {
   updatedAt       DateTime       @updatedAt @db.Timestamptz
   categoryId      String?
   featuredImageId String?
-
   category        Category?      @relation(fields: [categoryId], references: [id], onDelete: SetNull)
   featuredImage   MediaAsset?    @relation(fields: [featuredImageId], references: [id], onDelete: SetNull)
   tags            PostTag[]
+  comments        BlogComment[]
+  likes           BlogLike[]
 
   @@index([slug])
   @@index([status, publishedAt])
   @@index([updatedAt])
+}
+
+model BlogLike {
+  id        String   @id @default(cuid())
+  postId    String
+  voterHash String
+  createdAt DateTime @default(now()) @db.Timestamptz
+
+  post      BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@unique([postId, voterHash])
+  @@index([postId])
+}
+
+model BlogComment {
+  id        String   @id @default(cuid())
+  postId    String
+  author    String
+  content   String   @db.Text
+  createdAt DateTime @default(now()) @db.Timestamptz
+  isApproved Boolean @default(false)
+
+  post      BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@index([postId, createdAt])
 }
 
 model Category {
@@ -348,6 +386,8 @@ model MediaAsset {
   projectMedia  ProjectMedia[]
   featuredPosts BlogPost[]
   seoOverrides  SEOOverride[]
+  services      Service[]
+  profiles      Profile[]
 }
 
 model SEOOverride {
@@ -381,4 +421,15 @@ model SiteSetting {
   value     Json
   type      String
   updatedAt DateTime @updatedAt @db.Timestamptz
+}
+
+model Notification {
+  id        String           @id @default(cuid())
+  type      NotificationType
+  entityId  String
+  message   String
+  isRead    Boolean          @default(false)
+  createdAt DateTime         @default(now()) @db.Timestamptz
+
+  @@index([isRead, createdAt])
 }

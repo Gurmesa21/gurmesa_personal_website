@@ -1,0 +1,86 @@
+﻿
+> gurmesa-website@0.1.0 test
+> vitest run
+
+node.exe : Γùç injected env (12) from .env.test
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γùç injected env (12) from .env.test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become 
+the default in a future major version of Vite:
+  - `__dirname` (vitest.config.ts:10:25). Use `import.meta.dirname` instead
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.2 [39m[90mC:/Users/Hp/Documents/Projects/Gurmesa_website[39m
+
+ [32mΓ£ô[39m tests/integration/audit-login.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 720[2mms[22m[39m
+   [32mΓ£ô[39m Audit Logs (Login) [2m(1)[22m
+     [33m[2mΓ£ô[22m[39m 9c. Audit log entry is created for a login event[33m 709[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day3-auth.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 625[2mms[22m[39m
+   [32mΓ£ô[39m Day 3 - Authentication and DTO Boundary [2m(3)[22m
+     [33m[2mΓ£ô[22m[39m SEC-AUTH-03: Login validation accepts correct password and rejects wrong password[33m 488[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/media.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 1257[2mms[22m[39m
+   [32mΓ£ô[39m Media Service [2m(7)[22m
+     [33m[2mΓ£ô[22m[39m 1. Unauthenticated media upload rejected[33m 385[2mms[22m[39m
+     [33m[2mΓ£ô[22m[39m 6. Storage key is not derived from the original filename[33m 374[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day6-portfolio.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 238[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day5-service.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 178[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/guard.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 2064[2mms[22m[39m
+   [32mΓ£ô[39m Production Guard [2m(4)[22m
+     [33m[2mΓ£ô[22m[39m throws an error if PLAYWRIGHT_TEST=1 in production[33m 2027[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 3413[2mms[22m[39m
+   [32mΓ£ô[39m Blog SEC-ACL tests [2m(13)[22m
+     [33m[2mΓ£ô[22m[39m getPublicPosts() excludes DRAFT posts[33m 541[2mms[22m[39m
+     [33m[2mΓ£ô[22m[39m unauthenticated: category create rejected[33m 2765[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/project-visibility.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 79[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/health.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/profile.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day10b.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/sanity.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 11[2mms[22m[39m
+[90mstdout[2m | tests/integration/rateLimit.test.ts[2m > [22m[2mRate Limiter with Redis[2m > [22m[2m11. Rate limiter: the (N+1)th request from one client is rejected while a different client is still accepted
+[22m[39mRedis keys created: [
+  [32m'e695c4ca2a24b18f1faf5b1180af5979ccd819ae8c28597a3c5fcf999e72ee13'[39m,
+  [32m'1acbfc66fcf9616174e9ea1e12880effb9fca7fd89b3ea02315fbcf5f9323318'[39m,
+  [32m'61899de8cd15fbb10de857c7ca896481f7b25eb4ee36f54616b8808b2ba46c95'[39m,
+  [32m'8ec73dcfbbaed22394257bbb2b77361386277155e22d09069fff819b3276d7ed'[39m
+]
+
+ [32mΓ£ô[39m tests/integration/testimonialRateLimit.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 1579[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/rateLimit.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 1585[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day10-admin.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 45[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/notifications.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 817[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/audit.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 2254[2mms[22m[39m
+   [32mΓ£ô[39m Audit Logs [2m(4)[22m
+     [33m[2mΓ£ô[22m[39m 9a. Audit log entry is created for a publish action[33m 944[2mms[22m[39m
+     [33m[2mΓ£ô[22m[39m 9d. Audit log entry is created for a media delete[33m 625[2mms[22m[39m
+     [33m[2mΓ£ô[22m[39m 10. Unauthenticated audit log viewer access rejected[33m 585[2mms[22m[39m
+[90mstdout[2m | tests/integration/contact.test.ts[2m > [22m[2mContact & Inquiry Service Integration[2m > [22m[2mConsoleTransport records SKIPPED (never SENT)
+[22m[39m--- EMAIL SKIPPED (CONSOLE TRANSPORT) ---
+To: x
+Subject: y
+Body:
+z
+-----------------------------------------
+
+ [32mΓ£ô[39m tests/integration/contact.test.ts [2m([22m[2m32 tests[22m[2m)[22m[33m 5934[2mms[22m[39m
+   [32mΓ£ô[39m Contact & Inquiry Service Integration [2m(16)[22m
+     [33m[2mΓ£ô[22m[39m honeypot filled: nothing stored, nothing sent, success-shaped reply[33m 555[2mms[22m[39m
+     [33m[2mΓ£ô[22m[39m rate limit: the (N+1)th request from one client is rejected while a different client is still accepted[33m 747[2mms[22m[39m
+     [33m[2mΓ£ô[22m[39m acknowledgement is not sent when the toggle is off[33m 592[2mms[22m[39m
+   [32mΓ£ô[39m Admin Inquiries [2m(7)[22m
+     [33m[2mΓ£ô[22m[39m add note stores the session user as author regardless of any client-supplied authorId[33m 1761[2mms[22m[39m
+   [32mΓ£ô[39m Testimonials [2m(9)[22m
+     [33m[2mΓ£ô[22m[39m AUTHORIZED+DRAFT excluded from public[33m 559[2mms[22m[39m
+     [33m[2mΓ£ô[22m[39m anonymous testimonial omits name and organization[33m 1231[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m18 passed[39m[22m[90m (18)[39m
+[2m      Tests [22m [1m[32m101 passed[39m[22m[90m (101)[39m
+[2m   Start at [22m 11:31:15
+[2m   Duration [22m 35.61s[2m (import 81%, tests 13%, transform 6%, worker 1%)[22m
+
+[2m    Isolate [22m [33m18 workers spawned[39m[2m ┬╖ ~1.65s startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~2.59s faster with [22m[33misolate: false[39m[2m ΓÇö reuses workers across files instead of one per file[22m
+

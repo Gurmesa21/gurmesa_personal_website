@@ -14,6 +14,7 @@ export async function createBlogPostAction(formData: FormData) {
   const body = formData.get('body') as string;
   const status = formData.get('status') as BlogPostStatus;
   const categoryId = formData.get('categoryId') as string || undefined;
+  const featuredImageId = formData.get('featuredImageId') as string || undefined;
   
   await createPost({
     title,
@@ -23,6 +24,7 @@ export async function createBlogPostAction(formData: FormData) {
     status,
     publishedAt: status === 'PUBLISHED' ? new Date() : null,
     category: categoryId ? { connect: { id: categoryId } } : undefined,
+    featuredImage: featuredImageId ? { connect: { id: featuredImageId } } : undefined,
   });
 
   revalidatePath('/blog');
@@ -38,6 +40,7 @@ export async function updateBlogPostAction(id: string, formData: FormData) {
   const body = formData.get('body') as string;
   const status = formData.get('status') as BlogPostStatus;
   const categoryId = formData.get('categoryId') as string || undefined;
+  const featuredImageId = formData.get('featuredImageId') as string || undefined;
 
   const data: import('@prisma/client').Prisma.BlogPostUpdateInput = {
     title,
@@ -55,6 +58,12 @@ export async function updateBlogPostAction(id: string, formData: FormData) {
     data.category = { connect: { id: categoryId } };
   } else {
     data.category = { disconnect: true };
+  }
+
+  if (featuredImageId) {
+    data.featuredImage = { connect: { id: featuredImageId } };
+  } else {
+    data.featuredImage = { disconnect: true };
   }
 
   await updatePost(id, data);
@@ -103,4 +112,18 @@ export async function deleteTagAction(id: string) {
   if (!session) throw new Error('Unauthorized');
   await blogRepository.deleteTag({ where: { id } });
   revalidatePath('/admin/blog');
+}
+
+export async function approveCommentAction(id: string, postId: string) {
+  const { approveComment } = await import('../../../../server/services/blogService');
+  await approveComment(id);
+  revalidatePath('/admin/blog');
+  revalidatePath(`/admin/blog/${postId}/edit`);
+}
+
+export async function deleteCommentAction(id: string, postId: string) {
+  const { deleteComment } = await import('../../../../server/services/blogService');
+  await deleteComment(id);
+  revalidatePath('/admin/blog');
+  revalidatePath(`/admin/blog/${postId}/edit`);
 }

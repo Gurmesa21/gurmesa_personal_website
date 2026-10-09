@@ -1,3 +1,4 @@
+
 export interface SendEmailArgs {
   to: string;
   subject: string;
@@ -21,7 +22,7 @@ function stripCRLF(val: string): string {
 
 export class ConsoleTransport implements EmailTransport {
   constructor() {
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.APP_ENV === 'production') {
       throw new Error('ConsoleTransport cannot be used in production.');
     }
   }
@@ -85,7 +86,7 @@ export class ResendTransport implements EmailTransport {
 }
 
 export function getEmailTransport(): EmailTransport {
-  if (process.env.NODE_ENV === 'production' || process.env.EMAIL_PROVIDER === 'resend') {
+  if (process.env.APP_ENV === 'production' || process.env.EMAIL_PROVIDER === 'resend') {
     return new ResendTransport();
   }
   return new ConsoleTransport();

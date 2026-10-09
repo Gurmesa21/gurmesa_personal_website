@@ -3,6 +3,11 @@ import { PrismaClient, AdminUserStatus, ProjectStatus, ProjectConfidentiality, C
 const prisma = new PrismaClient();
 
 async function main() {
+  if (process.env.APP_ENV === 'production') {
+    console.error('Cannot run seed.ts in production. Use seed-prod.ts instead.');
+    process.exit(1);
+  }
+
   // Clear previous
   await prisma.auditLog.deleteMany();
   await prisma.caseStudy.deleteMany();

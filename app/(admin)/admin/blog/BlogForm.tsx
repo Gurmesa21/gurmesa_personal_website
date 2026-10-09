@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import { createBlogPostAction, updateBlogPostAction } from './actions';
 import { Button } from '@/components/ui/button';
+import { MediaPicker } from '@/components/admin/MediaPicker';
 
 export default function BlogForm({ post, categories }: { post?: import('@prisma/client').BlogPost, categories: import('@prisma/client').Category[] }) {
   const [loading, setLoading] = useState(false);
+  const [featuredImageId, setFeaturedImageId] = useState(post?.featuredImageId || '');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -60,6 +62,10 @@ export default function BlogForm({ post, categories }: { post?: import('@prisma/
             <option key={c.id} value={c.id}>{c.name}</option>
           ))}
         </select>
+      </div>
+      <div>
+        <label className="block mb-2">Featured Image</label>
+        <MediaPicker name="featuredImageId" value={featuredImageId} onChange={setFeaturedImageId} />
       </div>
       
       <Button type="submit" disabled={loading}>

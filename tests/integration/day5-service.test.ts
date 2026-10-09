@@ -41,6 +41,7 @@ describe('Service Integration Tests', () => {
       status: 'PUBLISHED' as const,
       order: 1,
       startingPriceRange: '$1000',
+      featuredImageId: null,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
@@ -48,7 +49,7 @@ describe('Service Integration Tests', () => {
     const dto = toPublicService(mockService);
 
     const allowedKeys = [
-      'id', 'slug', 'title', 'summary', 'description', 'deliverables', 'startingPriceRange', 'order'
+      'id', 'slug', 'title', 'summary', 'description', 'deliverables', 'startingPriceRange', 'order', 'featuredImageId'
     ];
 
     expect(Object.keys(dto).sort()).toEqual(allowedKeys.sort());
@@ -72,6 +73,7 @@ describe('Service Integration Tests', () => {
         status: 'DRAFT',
         order: 1,
         startingPriceRange: null,
+        featuredImageId: null,
       })
     ).rejects.toThrow('Unauthorized');
   });

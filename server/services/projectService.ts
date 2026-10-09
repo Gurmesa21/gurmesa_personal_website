@@ -118,3 +118,35 @@ export async function upsertCaseStudy(projectId: string, data: Omit<Prisma.CaseS
   await logAdminAction({ action: 'UPDATE', entity: 'Project', entityId: result?.id || 'unknown' });
   return result;
 }
+
+export async function setProjectFeaturedMedia(projectId: string, mediaId: string | null) {
+  await requireAdmin();
+  
+  const existing = await prisma.projectMedia.findFirst({
+    where: { projectId, order: 0 }
+  });
+
+  if (!mediaId) {
+    if (existing) {
+      await prisma.projectMedia.delete({ where: { id: existing.id } });
+    }
+    return;
+  }
+
+  if (existing) {
+    await prisma.projectMedia.update({
+      where: { id: existing.id },
+      data: { mediaId, altText: 'Featured Image' }
+    });
+  } else {
+    await prisma.projectMedia.create({
+      data: {
+        projectId,
+        mediaId,
+        order: 0,
+        altText: 'Featured Image'
+      }
+    });
+  }
+}
+

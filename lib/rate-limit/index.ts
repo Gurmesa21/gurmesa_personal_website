@@ -1,5 +1,6 @@
 import crypto from 'crypto';
 import Redis from 'ioredis';
+import { isTestMode } from '../test-mode';
 
 export interface RateLimitStore {
   increment(key: string, windowMs: number): Promise<number>;
@@ -88,7 +89,7 @@ export class ContactRateLimiter {
   }
 
   async check(ip: string, email: string): Promise<{ allowed: boolean; reason?: string }> {
-    if (process.env.PLAYWRIGHT_TEST === '1') {
+    if (isTestMode()) {
       return { allowed: true };
     }
 
@@ -119,7 +120,7 @@ export class LoginRateLimiter {
   }
 
   async check(email: string): Promise<boolean> {
-    if (process.env.PLAYWRIGHT_TEST === '1') {
+    if (isTestMode()) {
       return true;
     }
 
@@ -131,3 +132,64 @@ export class LoginRateLimiter {
 
 export const contactRateLimiter = new ContactRateLimiter();
 export const loginRateLimiter = new LoginRateLimiter();
+
+export class TestimonialRateLimiter {
+  private store: RateLimitStore;
+  private readonly LIMIT = 3;
+  private readonly WINDOW_MS = 60 * 60 * 1000;
+
+  constructor(store: RateLimitStore = defaultStore) {
+    this.store = store;
+  }
+
+  async check(ip: string): Promise<boolean> {
+    if (isTestMode()) return true;
+    const hashed = hashKey(`testimonial:${ip}`);
+    const count = await this.store.increment(hashed, this.WINDOW_MS);
+    return count <= this.LIMIT;
+  }
+}
+
+export const testimonialRateLimiter = new TestimonialRateLimiter();
+
+export class BlogLikeRateLimiter {
+  private store: RateLimitStore;
+  private readonly LIMIT = 10;
+  private readonly WINDOW_MS = 60 * 1000; // 10 likes per minute
+
+  constructor(store: RateLimitStore = defaultStore) {
+    this.store = store;
+  }
+
+  async check(ip: string, voterHash: string): Promise<boolean> {
+    if (isTestMode()) return true;
+    const hashedIp = hashKey(`like_ip:${ip}`);
+    const hashedVoter = hashKey(`like_voter:${voterHash}`);
+    
+    const countIp = await this.store.increment(hashedIp, this.WINDOW_MS);
+    const countVoter = await this.store.increment(hashedVoter, this.WINDOW_MS);
+    
+    return countIp <= this.LIMIT && countVoter <= this.LIMIT;
+  }
+}
+
+export const blogLikeRateLimiter = new BlogLikeRateLimiter();
+
+export class CommentRateLimiter {
+  private store: RateLimitStore;
+  private readonly LIMIT = 5;
+  private readonly WINDOW_MS = 60 * 60 * 1000; // 5 comments per hour
+
+  constructor(store: RateLimitStore = defaultStore) {
+    this.store = store;
+  }
+
+  async check(ip: string): Promise<boolean> {
+    if (isTestMode()) return true;
+    const hashedIp = hashKey(`comment_ip:${ip}`);
+    const countIp = await this.store.increment(hashedIp, this.WINDOW_MS);
+    return countIp <= this.LIMIT;
+  }
+}
+
+export const commentRateLimiter = new CommentRateLimiter();

@@ -1,4 +1,6 @@
 import { S3StorageAdapter } from './s3';
+import { LocalStorageAdapter } from './local';
+import { isTestMode } from '../test-mode';
 
 export interface StorageAdapter {
   upload(file: File, keyPrefix?: string): Promise<{ url: string; key: string; size: number; mimeType: string }>;
@@ -32,8 +34,15 @@ let instance: StorageAdapter | null = null;
 
 export function getStorageAdapter(): StorageAdapter {
   if (!instance) {
-    if (process.env.PLAYWRIGHT_TEST === '1') {
+    if (isTestMode()) {
       instance = new MockStorageAdapter();
+    } else if (
+      !process.env.STORAGE_ACCESS_KEY ||
+      process.env.STORAGE_ACCESS_KEY.includes('your-storage') ||
+      process.env.NODE_ENV === 'development'
+    ) {
+      // Fallback to local storage if AWS keys aren't actually configured
+      instance = new LocalStorageAdapter();
     } else {
       instance = new S3StorageAdapter();
     }

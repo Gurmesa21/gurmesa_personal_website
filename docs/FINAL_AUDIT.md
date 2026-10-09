@@ -1,37 +1,55 @@
 # Final Production Gate (SRS 35)
 
 ## 1. Functional Requirements (SRS 35.1)
-- [x] **Core Public Pages (Home, About, Services, Portfolio, Blog, Contact)** - **PARTIAL**: 
-  - *VERIFIED*: The CMS content rendering, dynamic routing, markdown serialization, and metadata generation are fully functional. (Evidence: `docs/evidence/day14/07-playwright.txt` confirms functional end-to-end rendering).
+- [ ] **Core Public Pages (Home, About, Services, Portfolio, Blog, Contact)** - **PARTIAL**:
+  - *VERIFIED*: The CMS content rendering, dynamic routing, markdown serialization, and metadata generation. Tested via `docs/evidence/day15/01-baseline/playwright-1.txt` (or task-140 log).
   - *NOT DONE*: (FR-HOME-09) Status/Availability message on the homepage is missing.
   - *NOT DONE*: (FR-ABOUT-06) "Now" section on the About page is missing.
   - *NOT DONE*: (FR-SVC-05) Optional pricing tiers for services are not implemented.
   - *NOT DONE*: (FR-BLOG-10) RSS/Atom feed is not implemented.
-  - *NOT DONE*: (FR-ABOUT-04/05) `/resume` and `/now` routes are not standalone pages (see Specific Items resolution below).
+  - *NOT DONE*: `/resume` and `/now` routes are not standalone pages or features.
 
 ## 2. Security & Confidentiality (SRS 35.2)
-- [x] **Confidentiality Boundary** - **VERIFIED**: Private entities strictly return 404s unauthenticated and are successfully excluded from public lists and sitemaps. (Evidence: `tests/e2e/day6-portfolio.spec.ts` executed successfully across Day 6-14).
-- [x] **XSS Sanitization** - **VERIFIED**: The Markdown renderer explicitly strips raw HTML scripts as confirmed by Playwright assertions. (Evidence: `tests/e2e/blog.spec.ts` Day 13b).
-- [x] **Rate Limiting** - **VERIFIED**: Contact and Inquiry endpoints are protected by Redis. (Evidence: `tests/e2e/contact.spec.ts` Day 6/11).
+- [x] **Confidentiality Boundary** - **VERIFIED**: Unauthenticated access to every admin route redirects properly. Draft, private, and pending-testimonial content absent from public pages, sitemap, and RSS-like surfaces. (Evidence: Playwright suite `tests/e2e/blog.spec.ts` passes for draft/public exclusions).
+- [x] **XSS Sanitization & Headers** - **VERIFIED**: Security headers and CSP still present on public and localized pages.
+- [x] **Rate Limiting** - **VERIFIED**: Bypasses exist but are guarded by `PLAYWRIGHT_TEST=1` which throws on startup in production.
 
 ## 3. Database (SRS 35.3)
-- [x] **Migrations & Seeding** - **VERIFIED**: Standardized via Prisma and rigorously tested in ephemeral DB containers on CI. (Evidence: `.github/workflows/ci.yml` Day 7).
-- [x] **Backup and Restore** - **VERIFIED**: Native bash scripts utilizing `pg_dump` and `pg_restore` round-tripped successfully with perfect row-count matches. (Evidence: `docs/evidence/day14/02-restore-test.txt` Day 14).
+- [x] **Migrations & Seeding** - **PARTIAL**: 
+  - *VERIFIED*: `prisma migrate status` is clean. 3 migrations exist: init, day8 features, and add_notification. No `db push` remains in CI.
+  - *NOT DONE*: Seed script creates hardcoded `admin@example.com` default credentials and lacks a production guard.
 
 ## 4. Performance (SRS 35.4)
-- [ ] **Core Web Vitals** - **PARTIAL**:
-  - *Results*: LCP ~3.0s, INP < 250ms on mobile throttled emulation. (Evidence: `docs/evidence/day13c/lighthouse-delta2-home.json`).
-  - *Gap*: Fails the strict SRS 11.1 LCP (<2.5s) target by roughly 0.5s due to heavy dependency on Radix UI in the navigation components inflating the initial client chunk.
+- [ ] **Core Web Vitals** - **NOT DONE**: 
+  - *BLOCKED*: Lighthouse JSON re-run blocked by test environment constraints (requires local server + Chrome). Visual refresh regression status unknown.
 
 ## 5. Accessibility (SRS 35.5)
-- [x] **ARIA & Keyboard Navigation** - **VERIFIED**: Error state focus delegation and keyboard-only submission on forms explicitly tested. (Evidence: `tests/e2e/contact.spec.ts` Day 11/14).
+- [ ] **ARIA & Keyboard Navigation** - **PARTIAL**:
+  - *VERIFIED*: Playwright axe-core runs on public pages.
+  - *BLOCKED*: `/privacy`, `/contact`, and Admin Services CRUD tests fail in Playwright due to missing components or environment issues.
 
 ## 6. SEO (SRS 35.6)
-- [x] **Metadata & Sitemaps** - **VERIFIED**: Dynamic `sitemap.ts`, `robots.ts`, and `generateMetadata` correctly output canonicals and exclude private content. (Evidence: `tests/e2e/day10b.spec.ts` Day 10b/14).
+- [x] **Metadata & Sitemaps** - **PARTIAL**:
+  - *VERIFIED*: `sitemap.ts`, `robots.ts`, and `generateMetadata` correctly output canonicals.
+  - *NOT DONE*: Route table render modes (static vs dynamic) blocked because `npm run build` fails on typecheck errors in `app/(admin)/admin/inquiries/page.tsx` (`IN_PROGRESS` / `REJECTED` invalid states).
 
 ## 7. Reliability (SRS 35.7)
-- [ ] **Uptime & Monitoring** - **NOT DONE**: Only a basic `/api/health` endpoint exists. No external APM or ping service is configured per SRS 15.5.
+- [ ] **Uptime & Monitoring** - **PARTIAL**:
+  - *VERIFIED*: Minimum viable setup exists via `/api/health`.
+  - *NOT DONE*: External APM, uptime ping, or error tracking not configured.
 
 ## 8. Deployment (SRS 35.8)
-- [x] **CI/CD Pipeline** - **VERIFIED**: The GitHub Actions pipeline provisions containers and runs the full suite cleanly. (Evidence: `docs/evidence/07-ci.yml.txt` Day 7/14).
-- [ ] **Production Hosting Configured** - **OWNER ACTION**: Requires actual domain, SSL, S3 buckets, and secrets injection on the live hosting provider. (Evidence: `docs/LAUNCH_CHECKLIST.md` Day 14b).
+- [x] **CI/CD Pipeline** - **PARTIAL**:
+  - *VERIFIED*: `ci.yml` exists.
+  - *NOT DONE*: `docs/DEPLOYMENT.md`, `LAUNCH_CHECKLIST.md` missing updates for Redis requirement, notifications, i18n, and Testimonial approval flow.
+
+---
+
+### Specific Audit Items Addressed
+1. **Static vs Dynamic Routes**: Blocked. Build fails due to typecheck error in Admin Inquiries page.
+2. **i18n**: Verified `/am` and `/om` localized prefixes route properly, but dynamic content remains English. Admin remains unlocalized.
+3. **Security proxy/matcher**: Verified unauthenticated access to admin redirects.
+4. **Media**: 25MB ceiling exists. Automated E2E on real S3 is missing.
+5. **Notifications/Testimonials**: Verified via Vitest (`tests/integration/notifications.test.ts`). Unapproved testimonials never render.
+6. **Performance/Axe**: Blocked/Failed in CI.
+7. **Documentation**: Stale on recent feature additions (Redis, Notifications, Testimonials).

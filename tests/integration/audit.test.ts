@@ -34,7 +34,7 @@ describe('Audit Logs', () => {
     const user = await prisma.adminUser.create({
       data: {
         name: 'Admin Test',
-        email: `admin-${Date.now()}@test.com`,
+        email: `admin-${Date.now()}-${Math.floor(Math.random() * 10000)}@test.com`,
         status: 'ACTIVE'
       }
     });

@@ -1,6 +1,8 @@
 import { testimonialService } from '@/server/services/testimonialService';
-
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 export const metadata = {
   title: 'Testimonials - Admin',
@@ -11,57 +13,37 @@ export default async function TestimonialsPage() {
   const testimonials = await testimonialService.listAdminTestimonials();
 
   return (
-    <div className="max-w-6xl mx-auto py-10 px-4">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Testimonials</h1>
-        <Link href="/admin" className="text-blue-600 hover:underline">
-          &larr; Back to Dashboard
-        </Link>
+    <div className="space-y-6 max-w-5xl">
+      <div className="flex justify-between items-center">
+        <h1 className="text-3xl font-bold">Manage Testimonials</h1>
       </div>
 
-      <div className="bg-white shadow overflow-hidden sm:rounded-lg">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name / Role</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Permission</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Anonymous</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {testimonials.map(t => (
-              <tr key={t.id}>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {t.name} <br/>
-                  <span className="text-gray-500">{t.role || 'No role'}</span>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+      <div className="space-y-4">
+        {testimonials.map(t => (
+          <Card key={t.id}>
+            <CardHeader className="flex flex-row items-center justify-between py-4">
+              <div className="flex items-center gap-4">
+                <CardTitle className="text-xl">{t.name}</CardTitle>
+                <Badge variant={t.status === 'PUBLISHED' ? 'default' : 'secondary'}>
                   {t.status}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {t.permissionStatus}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {t.isAnonymous ? 'Yes' : 'No'}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                  <Link href={`/admin/testimonials/${t.id}`} className="text-blue-600 hover:text-blue-900">
-                    Edit
-                  </Link>
-                </td>
-              </tr>
-            ))}
-            {testimonials.length === 0 && (
-              <tr>
-                <td colSpan={5} className="px-6 py-4 text-center text-sm text-gray-500">
-                  No testimonials found.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+                </Badge>
+                {t.isAnonymous && <Badge variant="outline">Anonymous</Badge>}
+              </div>
+              <div className="flex items-center gap-2">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/admin/testimonials/${t.id}`}>Edit</Link>
+                </Button>
+              </div>
+            </CardHeader>
+            <CardContent className="py-0 pb-4 text-sm text-muted-foreground flex flex-col gap-1">
+              <p>Role: {t.role || 'No role'} {t.organization ? `at ${t.organization}` : ''}</p>
+              <p>Permission: {t.permissionStatus}</p>
+            </CardContent>
+          </Card>
+        ))}
+        {testimonials.length === 0 && (
+          <p className="text-muted-foreground">No testimonials found.</p>
+        )}
       </div>
     </div>
   );

@@ -1,33 +1,48 @@
 'use client';
 import { useFormStatus } from 'react-dom';
 import { updateProfileAction } from './actions';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { MediaPicker } from '@/components/admin/MediaPicker';
 
 export function ProfileForm({ profile }: { profile: any }) {
+  const clientSubmit = (formData: FormData) => {
+    // Log avatarId for debugging
+    console.log('Submitting avatarId:', formData.get('avatarId'));
+    updateProfileAction(formData);
+  };
+
   return (
-    <form action={updateProfileAction} className="space-y-4 max-w-xl">
-      <div>
-        <label className="block text-sm font-medium">Name</label>
-        <input name="name" defaultValue={profile.name} required className="mt-1 block w-full rounded-md border p-2" />
+    <form action={clientSubmit} className="space-y-6 max-w-2xl bg-card border border-border p-6 rounded-lg">
+      <div className="space-y-2">
+        <Label>Avatar / Headshot</Label>
+        <MediaPicker name="avatarId" defaultValue={profile?.avatarId || ''} />
       </div>
-      <div>
-        <label className="block text-sm font-medium">Title</label>
-        <input name="title" defaultValue={profile.title} required className="mt-1 block w-full rounded-md border p-2" />
+      <div className="space-y-2">
+        <Label>Name</Label>
+        <Input name="name" defaultValue={profile?.name} required />
       </div>
-      <div>
-        <label className="block text-sm font-medium">Tagline</label>
-        <input name="tagline" defaultValue={profile.tagline} required className="mt-1 block w-full rounded-md border p-2" />
+      <div className="space-y-2">
+        <Label>Title</Label>
+        <Input name="title" defaultValue={profile?.title} required />
       </div>
-      <div>
-        <label className="block text-sm font-medium">Bio</label>
-        <textarea name="bio" defaultValue={profile.bio} required rows={4} className="mt-1 block w-full rounded-md border p-2" />
+      <div className="space-y-2">
+        <Label>Tagline</Label>
+        <Input name="tagline" defaultValue={profile?.tagline} required />
       </div>
-      <div>
-        <label className="block text-sm font-medium">Location</label>
-        <input name="locationLabel" defaultValue={profile.locationLabel || ''} className="mt-1 block w-full rounded-md border p-2" />
+      <div className="space-y-2">
+        <Label>Bio</Label>
+        <Textarea name="bio" defaultValue={profile?.bio} required rows={4} />
       </div>
-      <div>
-        <label className="block text-sm font-medium">Availability Status</label>
-        <input name="availabilityStatus" defaultValue={profile.availabilityStatus || ''} className="mt-1 block w-full rounded-md border p-2" />
+      <div className="space-y-2">
+        <Label>Location</Label>
+        <Input name="locationLabel" defaultValue={profile?.locationLabel || ''} />
+      </div>
+      <div className="space-y-2">
+        <Label>Availability Status</Label>
+        <Input name="availabilityStatus" defaultValue={profile?.availabilityStatus || ''} />
       </div>
       <SubmitButton />
     </form>
@@ -37,8 +52,8 @@ export function ProfileForm({ profile }: { profile: any }) {
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <button type="submit" disabled={pending} className="bg-blue-600 text-white px-4 py-2 rounded">
+    <Button type="submit" disabled={pending}>
       {pending ? 'Saving...' : 'Save Profile'}
-    </button>
+    </Button>
   );
 }

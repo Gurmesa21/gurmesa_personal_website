@@ -1,6 +1,10 @@
 import { inquiryService } from '@/server/services/inquiryService';
 import { InquiryStatus } from '@prisma/client';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
 
 export const metadata = {
   title: 'Inquiries - Admin',
@@ -10,11 +14,12 @@ export const metadata = {
 export default async function InquiriesPage({
   searchParams
 }: {
-  searchParams: { q?: string; status?: string; page?: string }
+  searchParams: Promise<{ q?: string; status?: string; page?: string }>
 }) {
-  const q = searchParams.q || '';
-  const statusParam = searchParams.status as InquiryStatus | undefined;
-  const page = parseInt(searchParams.page || '1', 10);
+  const resolvedParams = await searchParams;
+  const q = resolvedParams.q || '';
+  const statusParam = resolvedParams.status as InquiryStatus | undefined;
+  const page = parseInt(resolvedParams.page || '1', 10);
 
   const { items, total } = await inquiryService.listInquiries({
     search: q,
@@ -24,75 +29,63 @@ export default async function InquiriesPage({
   });
 
   return (
-    <div className="max-w-6xl mx-auto py-10 px-4">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Inquiries</h1>
-        <Link href="/admin" className="text-blue-600 hover:underline">
-          &larr; Back to Dashboard
-        </Link>
+    <div className="space-y-6 max-w-5xl">
+      <div className="flex justify-between items-center">
+        <h1 className="text-3xl font-bold">Manage Inquiries</h1>
       </div>
 
-      <div className="mb-6 flex gap-4">
-        <form method="get" className="flex gap-2">
-          <input 
+      <div className="flex gap-4">
+        <form method="get" className="flex gap-2 w-full max-w-2xl">
+          <Input 
             type="text" 
             name="q" 
             defaultValue={q} 
             placeholder="Search name or email..."
-            className="border p-2 rounded"
+            className="w-full"
           />
-          <select name="status" defaultValue={statusParam || ''} className="border p-2 rounded">
+          <select name="status" defaultValue={statusParam || ''} className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
             <option value="">All Statuses</option>
             {Object.values(InquiryStatus).map(s => (
               <option key={s} value={s}>{s}</option>
             ))}
           </select>
-          <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Filter</button>
+          <Button type="submit">Filter</Button>
         </form>
       </div>
 
-      <div className="bg-white shadow overflow-hidden sm:rounded-lg">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name / Email</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {items.map(inq => (
-              <tr key={inq.id}>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {new Date(inq.createdAt).toLocaleDateString()}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {inq.name} <br/>
-                  <span className="text-gray-500">{inq.email}</span>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+      <div className="space-y-4">
+        {items.map(inq => (
+          <Card key={inq.id}>
+            <CardHeader className="flex flex-row items-center justify-between py-4">
+              <div className="flex items-center gap-4">
+                <CardTitle className="text-xl">{inq.name}</CardTitle>
+                <Badge variant={
+                  inq.status === 'NEW' ? 'default' : 
+                  (inq.status === 'CONTACTED' || inq.status === 'QUALIFIED' || inq.status === 'PROPOSAL') ? 'secondary' : 
+                  inq.status === 'WON' ? 'default' :
+                  inq.status === 'LOST' ? 'destructive' : 'outline'
+                }>
                   {inq.status}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                  <Link href={`/admin/inquiries/${inq.id}`} className="text-blue-600 hover:text-blue-900">
-                    View
-                  </Link>
-                </td>
-              </tr>
-            ))}
-            {items.length === 0 && (
-              <tr>
-                <td colSpan={4} className="px-6 py-4 text-center text-sm text-gray-500">
-                  No inquiries found.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+                </Badge>
+              </div>
+              <div className="flex items-center gap-2">
+                <Button variant="outline" size="sm" asChild>
+                  <Link href={`/admin/inquiries/${inq.id}`}>View Details</Link>
+                </Button>
+              </div>
+            </CardHeader>
+            <CardContent className="py-0 pb-4 text-sm text-muted-foreground flex flex-col gap-1">
+              <p>Email: {inq.email}</p>
+              <p>Date: {new Date(inq.createdAt).toLocaleDateString()}</p>
+            </CardContent>
+          </Card>
+        ))}
+        {items.length === 0 && (
+          <p className="text-muted-foreground">No inquiries found.</p>
+        )}
       </div>
       
-      <div className="mt-4 text-sm text-gray-500">
+      <div className="mt-4 text-sm text-muted-foreground">
         Showing {items.length} of {total} inquiries
       </div>
     </div>

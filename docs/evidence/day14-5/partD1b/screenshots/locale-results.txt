@@ -1,0 +1,30 @@
+{
+  "logs": [
+    "Console info: %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "Console log: [HMR] connected",
+    "Console log: [Fast Refresh] rebuilding",
+    "Console log: [Fast Refresh] done in 915ms",
+    "Console log: [Fast Refresh] rebuilding",
+    "Console log: [Fast Refresh] done in 299ms",
+    "Console info: %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "Console log: [HMR] connected",
+    "Console log: [Fast Refresh] rebuilding",
+    "Console log: [Fast Refresh] done in 1311ms",
+    "Console log: [Fast Refresh] rebuilding",
+    "Console log: [Fast Refresh] done in 936ms",
+    "Console info: %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "Console log: [HMR] connected",
+    "Console error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\n%s%s https://react.dev/link/hydration-mismatch \n\n  ...\n    <RedirectErrorBoundary router={{...}}>\n      <InnerLayoutRouter url=\"/admin/login\" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>\n        <SegmentViewNode type=\"page\" pagePath=\"(admin)/ad...\">\n          <SegmentTrieNode>\n          <ClientPageRoot Component={function LoginPage} serverProvidedParams={{...}}>\n            <LoginPage params={Promise} searchParams={Promise}>\n              <div className=\"min-h-scre...\">\n                <div>\n                <_c className=\"w-full max...\">\n                  <div ref={null} className=\"card-base ...\">\n                    <_c2>\n                    <_c8 className=\"pb-8\">\n                      <div ref={null} className=\"p-6 pt-0 pb-8\">\n                        <form action={function bound dispatchActionState} className=\"flex flex-...\">\n                          <div>\n                          <div className=\"space-y-2\">\n                            <label>\n                            <_c id=\"password\" name=\"password\" type=\"password\" required={true} placeholder=\"••••••••\">\n                              <input\n                                type=\"password\"\n                                className=\"flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 tex...\"\n                                ref={null}\n                                id=\"password\"\n                                name=\"password\"\n                                required={true}\n                                placeholder=\"••••••••\"\n-                               style={{caret-color:\"transparent\"}}\n                              >\n                          ...\n        ...\n      ...\n",
+    "Console log: [Fast Refresh] rebuilding",
+    "Console log: [Fast Refresh] done in 1644ms",
+    "Console error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Console info: %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "Console log: [HMR] connected",
+    "Console log: [Fast Refresh] rebuilding",
+    "Console log: [Fast Refresh] done in 446ms",
+    "Console error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Console info: %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "Console log: [HMR] connected"
+  ],
+  "failedReqs": []
+}

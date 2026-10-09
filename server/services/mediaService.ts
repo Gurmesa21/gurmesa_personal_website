@@ -22,16 +22,16 @@ export async function uploadMedia(file: File, altText?: string) {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
 
-  await validateMediaUpload(file);
+  const detectedMimeType = await validateMediaUpload(file);
   
   const storage = getStorageAdapter();
-  const { key, size, mimeType } = await storage.upload(file, 'media/');
+  const { key, size, mimeType: _ } = await storage.upload(file, 'media/');
   
   const media = await prisma.mediaAsset.create({
     data: {
       storageKey: key,
       size,
-      mimeType,
+      mimeType: detectedMimeType,
       altText: altText || null
     }
   });

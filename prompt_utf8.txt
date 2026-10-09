@@ -1,0 +1,175 @@
+﻿<USER_REQUEST>
+==================================================
+DAY 14.5 ΓÇö PART B: VISUAL / UI DESIGN REFRESH
+==================================================
+
+ROLE
+
+You are the implementation engineer (Gemini Pro, Google Antigravity).
+Reporting rules unchanged: any output over ~20 lines goes to a file
+under docs/evidence/day14-5/partB/, not pasted inline. No git commit.
+If anything seems wrong, impossible, or uncertain, STOP and report
+rather than approximate.
+
+PROJECT CONTEXT
+
+Part A added i18n routing (English unprefixed, am/om prefixed),
+dark mode infrastructure, and a functional fix to the admin login
+page ΓÇö all verified with 93/93 Vitest and 50/50 Playwright passing,
+unmodified. This part is purely visual: make the site look like a
+professional, high-quality product, since it serves as the owner's
+proof of capability to prospective clients. Do not change page
+structure, routes, visible English text content, or business logic
+beyond what's needed to apply new styling.
+
+DESIGN APPROACH
+
+1. First, read the current app/globals.css (@theme tokens from Day 4,
+   extended in Part A for dark mode) and any frontend-design guidance
+   available in this environment. Propose a cohesive design token
+   system BEFORE touching individual pages:
+   - A real type scale (distinct sizes/weights for hero, section
+     headers, card titles, body, captions ΓÇö not just bold/not-bold)
+   - A color system with an actual primary/accent color used
+     throughout (derive a professional palette appropriate for a
+     developer's portfolio ΓÇö not just the logo gradient in isolation)
+   - A consistent spacing scale
+   - Consistent border-radius and shadow/elevation tokens
+   - Dark-mode variants for all of the above, extending Part A's
+     initial dark-mode token set with real, considered values
+2. Apply this system consistently across every page template ΓÇö not
+   page-by-page improvisation:
+   - Public: home, about, services (index + detail), work (index +
+     case study detail), blog (index + post detail), contact,
+     privacy/terms
+   - Admin: dashboard, every CRUD list/edit screen, login
+
+SPECIFIC KNOWN ISSUES TO FIX (confirmed from real screenshots ΓÇö
+verify each still exists in the current code before fixing; if
+something has already changed, adapt to what you actually find)
+
+1. /about page experience timeline: the node marker is misaligned
+   with its card and there's a large dead-space gap before it. This
+   is a layout bug, not just a style upgrade ΓÇö fix the actual
+   layout/alignment, not just the colors.
+2. Every CTA button currently uses the same flat-gray style
+   regardless of importance ("Learn More", "Read Case Study", "View
+   Portfolio" all identical). Introduce a real button hierarchy
+   (primary/secondary/tertiary) using the new tokens, and apply it
+   contextually ΓÇö primary action per page/section should stand out.
+3. Admin Dashboard currently renders as a bare list of blue underlined
+   links while Services/Inquiries admin screens already have real
+   card/table/badge styling. Bring the Dashboard up to the same visual
+   standard so the admin area is internally consistent.
+4. Admin Login: Part A fixed the functional affordance (visible input
+   borders, real button). Now give it a complete visual pass ΓÇö a
+   centered card layout instead of floating text on a blank page,
+   consistent with the rest of the admin area's new styling.
+5. Visible test-fixture-named content in default views (e.g. "Caching
+   Fintech", "Caching Dashboard", "Caching Service" appearing as real
+   homepage/services cards): confirm whether this is seed data that
+   will be replaced with real content before launch, or whether it's
+   actually reachable in a way that would embarrass the owner in front
+   of a client. State which you find and why, rather than guessing ΓÇö
+   do not silently delete seed data that the owner may still need for
+   demo purposes without flagging it first.
+6. Language switcher and dark-mode toggle (added functionally in Part
+   A): give them real, polished styling now ΓÇö they were intentionally
+   left plain in Part A.
+
+PERFORMANCE AND ACCESSIBILITY DISCIPLINE
+
+- No new heavy UI/animation libraries. No client-side JS bloat beyond
+  what Part A already added. Reuse the server-component-first pattern
+  that fixed Day 13c's performance regression ΓÇö if a component doesn't
+  need interactivity, it should not be a client component just because
+  it's being restyled.
+- Subtle, purposeful motion only (SRS 7.1), respecting
+  prefers-reduced-motion (established Day 4 ΓÇö do not regress it).
+- Do not change any visible English text content, route structure, or
+  DOM structure that existing Playwright locators depend on. If a test
+  breaks because text changed, that's a scope violation in this task,
+  not something to work around by editing the test.
+
+FINAL REGRESSION GATE (do all of this ΓÇö it covers Part A's one
+outstanding item plus Part B's own verification; the owner wants one
+combined audit covering both parts together)
+
+1. PROXY.TS VERIFICATION (carried over from Part A, unresolved):
+   a. Paste the actual Next.js deprecation warning (from a real
+      `npm run build` or `npm run dev` output) that justified renaming
+      middleware.ts to proxy.ts.
+   b. Confirm /admin/** routes are still protected after the i18n
+      restructuring ΓÇö specifically confirm the admin route group sits
+      OUTSIDE app/[locale]/ and was not swept into the locale-prefixed
+      structure. Run `curl -I http://localhost:3000/admin` (expect a
+      redirect to login) and paste the result.
+   c. Confirm locale prefixes cannot bypass the admin guard: attempt
+      `curl -I http://localhost:3000/am/admin` and
+      `curl -I http://localhost:3000/om/admin` ΓÇö both must either
+      404 or redirect to login, never serve admin content
+      unauthenticated. Paste both results.
+2. Axe accessibility scans on all public pages (already covering most
+   per Day 9-10) ΓÇö re-run after the redesign, zero critical/serious
+   violations. Pay specific attention to color contrast under the new
+   color system (both light and dark mode) and to focus-visible states
+   under the new button/input styling.
+3. Full suite: lint, typecheck, build, vitest, playwright (twice
+   consecutively). Write to file, report totals inline, reconciled
+   against Part A's confirmed baseline (93 Vitest, 50 Playwright).
+4. Lighthouse on the same four pages from Day 13c (home,
+   blog-first-post, services, work-os-dashboard) ΓÇö report a
+   before/after table against Day 13c's final numbers. A visual
+   refresh must not undo that performance work. If scores drop,
+   diagnose and fix using Day 13c's single-variable discipline (one
+   change, one re-measure) rather than stacking changes.
+5. Confirm dark mode and both non-English locales (am/om) each render
+   the restyled public pages correctly ΓÇö a quick visual check (not a
+   full test suite) that the new design tokens actually apply under
+   dark mode and that Amharic text renders in the Noto Sans Ethiopic
+   font without layout breakage from longer translated strings.
+
+OUT OF SCOPE
+
+1. Any change to business logic, API routes, Server Actions, database
+   schema, or the confidentiality/security boundary.
+2. Any change to the content-rendering/Markdown pipeline beyond CSS
+   styling of its output.
+3. Auto-translating dynamic/owner-authored content.
+4. RTL support.
+5. New feature work of any kind beyond what's listed above.
+
+FINAL REPORT ORDER
+
+1. Proxy.ts verification (the three items above) ΓÇö this is the first
+   thing I will check
+2. Design token system chosen (palette, type scale, spacing, radius,
+   shadow, dark-mode variants)
+3. Pages updated and how each specific known issue was addressed
+4. Files created/modified (Part B only ΓÇö Part A's list already given)
+5. Full-suite results, reconciled against the 93/50 baseline
+6. Before/after Lighthouse comparison
+7. Axe scan results post-redesign
+8. Dark mode / am / om visual spot-check results
+9. Known issues
+10. Technical debt
+==================================================
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-10-05T13:34:50+03:00.
+
+The user's current state is as follows:
+Active Document: c:\Users\Hp\Documents\Projects\Gurmesa_website\navigation.ts (LANGUAGE_TYPESCRIPT)
+Cursor is on line: 1
+Other open documents:
+- c:\Users\Hp\Documents\Projects\Gurmesa_website\next.config.ts (LANGUAGE_TYPESCRIPT)
+- c:\Users\Hp\Documents\Projects\Gurmesa_website\.env.test (LANGUAGE_UNSPECIFIED)
+- c:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\day14-5\partA\report.md (LANGUAGE_MARKDOWN)
+- c:\Users\Hp\Documents\Projects\Gurmesa_website\messages\am.json (LANGUAGE_JSON)
+- c:\Users\Hp\Documents\Projects\Gurmesa_website\app\globals.css (LANGUAGE_CSS)
+Running terminal commands:
+- npm run dev (in c:\Users\Hp\Documents\Projects\Gurmesa_website, running for 1m37s)
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from None to Gemini 3.1 Pro (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>

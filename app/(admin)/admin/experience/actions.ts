@@ -5,11 +5,19 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { auth } from '@/auth';
 
+function parseDateSafe(dateStr: string, fallback: Date | null = null): Date | null {
+  if (!dateStr || !dateStr.trim()) return fallback;
+  const d = new Date(dateStr);
+  return isNaN(d.getTime()) ? fallback : d;
+}
+
 export async function createAction(formData: FormData) {
   const organization = formData.get('organization') as string;
   const role = formData.get('role') as string;
-  const startDate = new Date(formData.get('startDate') as string);
-  const endDate = new Date(formData.get('endDate') as string);
+  const startDateStr = formData.get('startDate') as string;
+  const endDateStr = formData.get('endDate') as string;
+  const startDate = parseDateSafe(startDateStr, new Date()) as Date;
+  const endDate = parseDateSafe(endDateStr, null);
   const description = formData.get('description') as string;
   const items = await experienceRepository.findMany();
   const maxOrder = items.length > 0 ? Math.max(...items.map(i => i.order)) : 0;
@@ -23,8 +31,10 @@ export async function createAction(formData: FormData) {
 export async function updateAction(id: string, formData: FormData) {
   const organization = formData.get('organization') as string;
   const role = formData.get('role') as string;
-  const startDate = new Date(formData.get('startDate') as string);
-  const endDate = new Date(formData.get('endDate') as string);
+  const startDateStr = formData.get('startDate') as string;
+  const endDateStr = formData.get('endDate') as string;
+  const startDate = parseDateSafe(startDateStr, new Date()) as Date;
+  const endDate = parseDateSafe(endDateStr, null);
   const description = formData.get('description') as string;
   await updateExperience(id, { organization, role, startDate, endDate, description } as any);
   revalidatePath('/admin/experience');

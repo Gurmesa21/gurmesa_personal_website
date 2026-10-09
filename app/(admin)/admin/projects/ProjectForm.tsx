@@ -3,12 +3,18 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import Link from 'next/link';
-import { Project, CaseStudy } from '@prisma/client';
+import { Project, CaseStudy, ProjectMedia } from '@prisma/client';
 import { upsertCaseStudyAction } from './actions';
+import { MediaPicker } from '@/components/admin/MediaPicker';
 
-export function ProjectForm({ action, defaultValues = {} }: { action: (formData: FormData) => void; defaultValues?: Partial<Project> }) {
+export function ProjectForm({ action, defaultValues = {} }: { action: (formData: FormData) => void; defaultValues?: Partial<Project> & { media?: ProjectMedia[] } }) {
+  const featuredMedia = defaultValues.media?.find(m => m.order === 0);
   return (
     <form action={action} className="space-y-6 max-w-2xl bg-card border p-6 rounded-lg">
+      <div className="space-y-2">
+        <Label>Featured Image</Label>
+        <MediaPicker name="featuredMediaId" defaultValue={featuredMedia?.mediaId || ''} />
+      </div>
       <div className="space-y-2">
         <Label htmlFor="title">Title</Label>
         <Input id="title" name="title" defaultValue={defaultValues.title} required />

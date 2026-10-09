@@ -73,8 +73,8 @@ describe('Media Service', () => {
   });
 
   it('5. Oversized file upload rejected', async () => {
-    // Over 5MB limit
-    const hugeContent = new Uint8Array(6 * 1024 * 1024);
+    // Over 25MB limit
+    const hugeContent = new Uint8Array(26 * 1024 * 1024);
     const file = new File([hugeContent], 'huge.jpg', { type: 'image/jpeg' });
     await expect(uploadMedia(file)).rejects.toThrow(/size/i);
   });

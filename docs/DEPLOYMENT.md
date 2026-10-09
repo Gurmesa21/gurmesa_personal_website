@@ -14,6 +14,7 @@ The following environment variables are required for the application to function
 *Note: Variables marked as **[SECRET]** must be securely managed and never committed to source control.*
 
 ### Application & Routing
+- `APP_ENV`: Defines the deployment environment (e.g., `production`, `test`, `development`). Must be set to `production` in production.
 - `SITE_URL`: The canonical public URL of the deployment (e.g., `https://gurmesa.com`). Used for absolute URLs in metadata, sitemaps, and RSS feeds. (Not a secret).
 
 ### Database
@@ -47,7 +48,7 @@ To start the production server, run:
 ```bash
 npm run start
 ```
-*(Ensure `NODE_ENV=production` is set in your environment).*
+*(Ensure `APP_ENV=production` is set in your environment).*
 
 ## Database Migrations in Production
 

@@ -3,6 +3,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import Link from 'next/link';
+import { MediaPicker } from '@/components/admin/MediaPicker';
 
 import { Service } from '@prisma/client';
 
@@ -41,11 +42,16 @@ export function ServiceForm({ action, defaultValues = {} }: { action: (formData:
 
       <div className="space-y-2">
         <Label htmlFor="status">Status</Label>
-        <select id="status" name="status" defaultValue={defaultValues.status || 'DRAFT'} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+        <select id="status" name="status" defaultValue={defaultValues.status || 'DRAFT'} className="flex w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
           <option value="DRAFT">Draft</option>
           <option value="PUBLISHED">Published</option>
           <option value="ARCHIVED">Archived</option>
         </select>
+      </div>
+
+      <div className="space-y-2">
+        <Label>Featured Image</Label>
+        <MediaPicker name="featuredImageId" defaultValue={defaultValues.featuredImageId || ''} />
       </div>
 
       <div className="flex gap-4">

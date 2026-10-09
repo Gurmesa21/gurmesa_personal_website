@@ -11,6 +11,7 @@ export async function createServiceAction(formData: FormData) {
   const description = formData.get('description') as string;
   const startingPriceRange = formData.get('startingPriceRange') as string;
   const status = formData.get('status') as ServiceStatus || 'DRAFT';
+  const featuredImageId = formData.get('featuredImageId') as string;
   
   const deliverablesRaw = formData.get('deliverables') as string;
   const deliverables = deliverablesRaw ? deliverablesRaw.split(',').map(s => s.trim()).filter(Boolean) : [];
@@ -23,6 +24,7 @@ export async function createServiceAction(formData: FormData) {
     deliverables,
     startingPriceRange: startingPriceRange || null,
     status,
+    featuredImageId: featuredImageId || null,
     order: 999, // default last
   });
 
@@ -38,6 +40,7 @@ export async function updateServiceAction(id: string, formData: FormData) {
   const description = formData.get('description') as string;
   const startingPriceRange = formData.get('startingPriceRange') as string;
   const status = formData.get('status') as ServiceStatus;
+  const featuredImageId = formData.get('featuredImageId') as string;
   
   const deliverablesRaw = formData.get('deliverables') as string;
   const deliverables = deliverablesRaw ? deliverablesRaw.split(',').map(s => s.trim()).filter(Boolean) : [];
@@ -50,6 +53,7 @@ export async function updateServiceAction(id: string, formData: FormData) {
     deliverables,
     startingPriceRange: startingPriceRange || null,
     status,
+    featuredImageId: featuredImageId || null,
   });
 
   revalidatePath('/admin/services');

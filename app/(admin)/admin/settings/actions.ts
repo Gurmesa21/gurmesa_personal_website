@@ -6,7 +6,8 @@ import { redirect } from 'next/navigation';
 
 export async function updateSettingsAction(formData: FormData) {
   const publicContactEmail = formData.get('publicContactEmail') as string;
-  const inquiryRetentionDays = parseInt(formData.get('inquiryRetentionDays') as string, 10);
+  const inquiryRetentionDaysRaw = parseInt(formData.get('inquiryRetentionDays') as string, 10);
+  const inquiryRetentionDays = isNaN(inquiryRetentionDaysRaw) ? 30 : inquiryRetentionDaysRaw;
   const sendVisitorAcknowledgement = formData.get('sendVisitorAcknowledgement') === 'on';
   const availabilityMessage = formData.get('availabilityMessage') as string;
 

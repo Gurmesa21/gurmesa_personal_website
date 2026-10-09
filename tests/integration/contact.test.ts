@@ -107,6 +107,7 @@ describe('Contact & Inquiry Service Integration', () => {
   });
 
   it('rate limit: the (N+1)th request from one client is rejected while a different client is still accepted', async () => {
+    vi.stubEnv('PLAYWRIGHT_TEST', '0');
     const input = { name: 'Test', email: 'limit@test.com', message: 'This is long enough' };
     
     // Exhaust IP limit (5)
@@ -120,6 +121,7 @@ describe('Contact & Inquiry Service Integration', () => {
     // Different IP should succeed
     const res = await service.submitInquiry({ ...input, email: 'limit6@test.com' }, '10.0.0.2');
     expect(res.success).toBe(true);
+    vi.unstubAllEnvs();
   });
 
   it('email transport throws: inquiry is still stored with notificationStatus FAILED', async () => {
@@ -143,9 +145,9 @@ describe('Contact & Inquiry Service Integration', () => {
     expect(res.status).toBe('SKIPPED');
   });
 
-  it('ConsoleTransport cannot be selected when NODE_ENV=production', async () => {
+  it('ConsoleTransport cannot be selected when APP_ENV=production', async () => {
     const { ConsoleTransport } = await import('../../lib/email');
-    vi.stubEnv('NODE_ENV', 'production');
+    vi.stubEnv('APP_ENV', 'production');
     
     // ConsoleTransport constructor throws in production
     expect(() => new ConsoleTransport()).toThrow(/ConsoleTransport cannot be used in production/);
