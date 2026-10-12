@@ -1,0 +1,13 @@
+==================================================
+2. DATABASE RESET RECONCILIATION
+==================================================
+
+The statement in Part 7c ("The test database was reset with prisma migrate reset") was an unverified claim reconstructed from memory by the previous assistant.
+
+Facts verified from git history, shell history, and database state:
+- When: UNVERIFIED. There is no timestamped command log or git commit recording a `prisma migrate reset` execution.
+- Why: UNVERIFIED.
+- By whom: UNVERIFIED.
+- Which database: UNVERIFIED.
+- Whether dev database (gurmesa_db) was ever reset: UNVERIFIED. The `_prisma_migrations` table in `gurmesa_db` shows uninterrupted sequential migration records started on 2026-10-09T06:08:33Z through 2026-10-09T10:49:43Z with no evidence of table drops or schema wipe.
+- Was data lost: UNVERIFIED. Development database data remains present. For `gurmesa_test_db`, table rows are refreshed by `scripts/seed.ts` via Playwright's `tests/e2e/global-setup.ts` using `npx prisma migrate deploy` followed by `seed()`.

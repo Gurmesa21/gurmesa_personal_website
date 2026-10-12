@@ -24,7 +24,7 @@ export default function AdminComments({ comments, postId }: { comments: BlogComm
                 <span className="text-sm text-slate-500 ml-2">{new Date(comment.createdAt).toLocaleString()}</span>
               </div>
               <div className="flex gap-2">
-                {!comment.isApproved && (
+                {comment.status === 'PENDING' && (
                   <Button 
                     size="sm" 
                     variant="outline" 
@@ -45,7 +45,7 @@ export default function AdminComments({ comments, postId }: { comments: BlogComm
               </div>
             </div>
             <p className="text-slate-700 dark:text-slate-300">{comment.content}</p>
-            {!comment.isApproved && (
+            {comment.status === 'PENDING' && (
               <div className="mt-2 text-xs font-medium text-amber-600 bg-amber-50 inline-block px-2 py-1 rounded">
                 Pending Approval
               </div>

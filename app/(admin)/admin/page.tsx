@@ -16,6 +16,7 @@ export default async function AdminDashboard() {
     { href: '/admin/projects', title: 'Manage Projects & Case Studies', icon: Briefcase, desc: 'Portfolio and case study entries' },
     { href: '/admin/technologies', title: 'Manage Technologies', icon: Code2, desc: 'Tech stack tags and skills' },
     { href: '/admin/blog', title: 'Manage Blog Posts', icon: PenTool, desc: 'Articles and writings' },
+    { href: '/admin/comments', title: 'Moderate Comments', icon: MessageSquare, desc: 'Review and approve reader comments' },
     { href: '/admin/services', title: 'Manage Services', icon: LayoutTemplate, desc: 'Service offerings' },
     { href: '/admin/testimonials', title: 'Manage Testimonials', icon: MessageSquare, desc: 'Client reviews and feedback' },
     { href: '/admin/inquiries', title: 'Manage Inquiries', icon: Inbox, desc: 'Contact form submissions' },

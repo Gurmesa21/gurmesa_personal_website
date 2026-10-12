@@ -1,0 +1,78 @@
+# Axe Accessibility Audit Report
+
+Executed: 2026-10-12T15:04:29.028Z
+
+## 1. Public Pages (Light and Dark Mode)
+
+- `/` (light): PASS (0 critical/serious)
+- `/` (dark): PASS (0 critical/serious)
+- `/about` (light): PASS (0 critical/serious)
+- `/about` (dark): PASS (0 critical/serious)
+- `/services` (light): PASS (0 critical/serious)
+- `/services` (dark): PASS (0 critical/serious)
+- `/work` (light): PASS (0 critical/serious)
+- `/work` (dark): PASS (0 critical/serious)
+- `/blog` (light): PASS (0 critical/serious)
+- `/blog` (dark): PASS (0 critical/serious)
+- `/contact` (light): PASS (0 critical/serious)
+- `/contact` (dark): PASS (0 critical/serious)
+- `/testimonials` (light): PASS (0 critical/serious)
+- `/testimonials` (dark): PASS (0 critical/serious)
+- `/privacy` (light): PASS (0 critical/serious)
+- `/privacy` (dark): PASS (0 critical/serious)
+- `/terms` (light): PASS (0 critical/serious)
+- `/terms` (dark): PASS (0 critical/serious)
+
+## 2. Localized Pages (am/om versions of 4 templates in Light and Dark Mode)
+
+- `/am` (light): PASS (0 critical/serious)
+- `/am` (dark): PASS (0 critical/serious)
+- `/om` (light): PASS (0 critical/serious)
+- `/om` (dark): PASS (0 critical/serious)
+- `/am/about` (light): PASS (0 critical/serious)
+- `/am/about` (dark): PASS (0 critical/serious)
+- `/om/about` (light): PASS (0 critical/serious)
+- `/om/about` (dark): PASS (0 critical/serious)
+- `/am/services` (light): PASS (0 critical/serious)
+- `/am/services` (dark): PASS (0 critical/serious)
+- `/om/services` (light): PASS (0 critical/serious)
+- `/om/services` (dark): PASS (0 critical/serious)
+- `/am/contact` (light): PASS (0 critical/serious)
+- `/am/contact` (dark): PASS (0 critical/serious)
+- `/om/contact` (light): PASS (0 critical/serious)
+- `/om/contact` (dark): PASS (0 critical/serious)
+
+## 3. Main Admin Pages (Light and Dark Mode)
+
+- `/admin` (light): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin` (dark): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin/blog` (light): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin/blog` (dark): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin/comments` (light): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin/comments` (dark): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin/inquiries` (light): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin/inquiries` (dark): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin/testimonials` (light): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin/testimonials` (dark): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin/projects` (light): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin/projects` (dark): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin/services` (light): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin/services` (dark): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin/media` (light): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]
+- `/admin/media` (dark): FAIL (1 critical/serious)
+  - Details: [{"id":"document-title","impact":"serious","description":"Ensure each HTML document contains a non-empty <title> element","nodes":1}]

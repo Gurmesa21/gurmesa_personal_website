@@ -1,0 +1,37 @@
+==================================================
+7. AUDIT LOGGING RECONCILIATION
+==================================================
+
+1. RECONCILIATION OF THE MATRIX CLAIM:
+--------------------------------------------------
+In Part 7c, the specification compliance matrix stated:
+"Audit log: BUILT (logAdminAction called on blog admin operations)"
+This overstated the real system state: while audit logging functions exist in service code for comments (`approveComment`, `deleteComment`), NO admin UI or Server Actions currently call them. Therefore, admin audit logging for comments is in reality PARTIAL / UNEXPOSED.
+
+2. WHAT IS ACTUALLY AUDITED TODAY (Verified from Codebase):
+--------------------------------------------------
+In `lib/audit/index.ts`, `logAdminAction({ action, entity, entityId, metadata })` writes entries to the `AuditLog` database table.
+
+The following operations actually call `logAdminAction`:
+
+A. Blog Entities:
+- BlogPost CREATE (`server/services/blogService.ts`: `createPost`)
+- BlogPost UPDATE (`server/services/blogService.ts`: `updatePost`)
+- BlogPost DELETE (`server/services/blogService.ts`: `deletePost`)
+- BlogComment APPROVE (`server/services/blogService.ts`: `approveComment` - function exists in service layer, but NOT hooked to any UI or Server Action)
+- BlogComment DELETE (`server/services/blogService.ts`: `deleteComment` - function exists in service layer, but NOT hooked to any UI or Server Action)
+
+B. Core CMS Entities (Fully Active with UI & Actions):
+- Testimonial: CREATE, UPDATE, DELETE (`server/services/testimonialService.ts`)
+- Technology: CREATE, UPDATE, DELETE (`server/services/technologyService.ts`)
+- Service: CREATE, UPDATE, DELETE (`server/services/serviceService.ts`)
+- Project: CREATE, UPDATE, DELETE (`server/services/projectService.ts`)
+- Profile: CREATE, UPDATE, DELETE (`server/services/profileService.ts`)
+- MediaAsset: CREATE, UPDATE, DELETE (`server/services/mediaService.ts`)
+- Inquiry: CREATE, UPDATE, DELETE (`server/services/inquiryService.ts`)
+- SiteSetting: UPDATE (`server/services/siteSettingService.ts`)
+- Admin Authentication: LOGIN (`app/actions/auth.ts` / NextAuth signIn event)
+
+C. What is NOT Audited Today:
+- Visitor comment submission (`addComment` in `app/actions/blog.ts`): Creates a `Notification` (`NEW_COMMENT`), but does not log an admin audit action.
+- Comment moderation: Because there is no `/admin/comments` page or admin moderation action in the current build, no comment audit events can be triggered by admins today.

@@ -1,0 +1,103 @@
+﻿
+> gurmesa-website@0.1.0 test
+> vitest run
+
+node.exe : Γùç injected env (12) from .env.test
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γùç injected env (12) from .env.test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become 
+the default in a future major version of Vite:
+  - `__dirname` (vitest.config.ts:10:25). Use `import.meta.dirname` instead
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.2 [39m[90mC:/Users/Hp/Documents/Projects/Gurmesa_website[39m
+
+ [32mΓ£ô[39m tests/integration/guard.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 1859[2mms[22m[39m
+   [32mΓ£ô[39m Production Guard [2m(5)[22m
+     [33m[2mΓ£ô[22m[39m throws an error if PLAYWRIGHT_TEST=1 in production[33m 426[2mms[22m[39m
+     [33m[2mΓ£ô[22m[39m refuses to run seed.ts in production[33m 1313[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day3-auth.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 446[2mms[22m[39m
+   [32mΓ£ô[39m Day 3 - Authentication and DTO Boundary [2m(3)[22m
+     [33m[2mΓ£ô[22m[39m SEC-AUTH-03: Login validation accepts correct password and rejects wrong password[33m 357[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/audit-login.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 1472[2mms[22m[39m
+   [32mΓ£ô[39m Audit Logs (Login) [2m(1)[22m
+     [33m[2mΓ£ô[22m[39m 9c. Audit log entry is created for a login event[33m 1466[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1285[2mms[22m[39m
+   [32mΓ£ô[39m Blog SEC-ACL tests [2m(13)[22m
+     [33m[2mΓ£ô[22m[39m getPublicPosts() excludes DRAFT posts[33m 768[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/media.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 1825[2mms[22m[39m
+   [32mΓ£ô[39m Media Service [2m(7)[22m
+     [33m[2mΓ£ô[22m[39m 1. Unauthenticated media upload rejected[33m 638[2mms[22m[39m
+     [33m[2mΓ£ô[22m[39m 2. Unauthenticated media delete rejected[33m 505[2mms[22m[39m
+[90mstdout[2m | tests/integration/contact.test.ts[2m > [22m[2mContact & Inquiry Service Integration[2m > [22m[2mConsoleTransport records SKIPPED (never SENT)
+[22m[39m--- EMAIL SKIPPED (CONSOLE TRANSPORT) ---
+To: x
+Subject: y
+Body:
+z
+-----------------------------------------
+
+ [32mΓ£ô[39m tests/integration/audit.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 734[2mms[22m[39m
+   [32mΓ£ô[39m Audit Logs [2m(4)[22m
+     [33m[2mΓ£ô[22m[39m 9a. Audit log entry is created for a publish action[33m 380[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day6-portfolio.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 269[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/contact.test.ts [2m([22m[2m32 tests[22m[2m)[22m[33m 1547[2mms[22m[39m
+   [32mΓ£ô[39m Contact & Inquiry Service Integration [2m(16)[22m
+     [33m[2mΓ£ô[22m[39m valid submission stores an inquiry with status NEW[33m 374[2mms[22m[39m
+     [33m[2mΓ£ô[22m[39m rate limit: the (N+1)th request from one client is rejected while a different client is still accepted[33m 401[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day5-service.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 147[2mms[22m[39m
+[90mstdout[2m | tests/integration/rateLimit.test.ts[2m > [22m[2mRate Limiter with Redis[2m > [22m[2m11. Rate limiter: the (N+1)th request from one client is rejected while a different client is still accepted
+[22m[39mRedis keys created: [
+  [32m'4aafe41c5aaa827ce2f6f5626f93474252fa617770d6a39aeaf49b0f7b04d39a'[39m,
+  [32m'6514841da9308390baa90ebc4c07fc16ca4251d0a9db9adb5f8513afaf66187f'[39m,
+  [32m'899090e839ba3baf2660dd97474df0382eaf786e7c33abd3e9c21029ac682cda'[39m,
+  [32m'8ec73dcfbbaed22394257bbb2b77361386277155e22d09069fff819b3276d7ed'[39m,
+  [32m'58c059c84fbaa93f4653e59baf535ede2ff8a56f13480fb67612d4d9a977353b'[39m,
+  [32m'884be17533305fe39129351e51797722105a62076311ea15550220a08f038a0b'[39m,
+  [32m'e695c4ca2a24b18f1faf5b1180af5979ccd819ae8c28597a3c5fcf999e72ee13'[39m,
+  [32m'5f055293b83eb0f6baa5cf101e5039cd1a64cc101bb19621c76becb01dd94619'[39m,
+  [32m'0b1fa12af9f74d78e2a5a27a7629b80265781327c83428c080d7b1e0689ee248'[39m,
+  [32m'2e8404632c2bb73f662c02a3b95a825c03f75720bb7387e767aa30ea6497d61c'[39m,
+  [32m'af0f8a637cdee10af69403dc3426eee2cebb9eaacc68cc37156d66124e4c531e'[39m,
+  [32m'6ac5ee56e50096fb68878d731fcfbe1ad29cd479b1be45733b45a045a7886287'[39m,
+  [32m'202fd20da311819ca8ec4bae911d35de6f53f70bd0ab187fb0268d8389cdf7b8'[39m,
+  [32m'cbea3acf6325815c84d8daf7c9ac875e161027b3d1be7772310eb6fa0121b3bd'[39m,
+  [32m'6fad5cc6ea47d77f56914cb0304be811489a90c17d0f36d4d74698659a2c66aa'[39m,
+  [32m'eac72a56ded350cc8ab09b1217d5eab2819430364c5ccfd5560ddd861d2675e2'[39m,
+  [32m'4cd32b9b25130eb19de1262d1cb2462c097feccb13a9a15b8b747b6d63649197'[39m,
+  [32m'15907b5ccccd39f6d371a8f73c87de3d097bd9280f131db032fea7f5d87f96c5'[39m,
+  [32m'00952bad2573c18a8e5452891c36b20b61a3739241630697d501241f417dadba'[39m
+]
+
+ [32mΓ£ô[39m tests/integration/rateLimit.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 152[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/project-visibility.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 277[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/testimonialRateLimit.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 170[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/health.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 47[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/notifications.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 1130[2mms[22m[39m
+   [32mΓ£ô[39m Notification System [2m(3)[22m
+     [33m[2mΓ£ô[22m[39m 13. Submitting a new Inquiry creates a Notification row with the correct type and entityId[33m 339[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/profile.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/sanity.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day10b.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day10-admin.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 47[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog-likes.test.ts [2m([22m[2m20 tests[22m[2m)[22m[33m 3941[2mms[22m[39m
+   [32mΓ£ô[39m Blog Social Spec (20 Named Tests) [2m(20)[22m
+     [32mΓ£ô[39m Part A: Likes [2m(8)[22m
+       [33m[2mΓ£ô[22m[39m 1. Likes: toggle semantics (like -> unlike)[33m 703[2mms[22m[39m
+     [32mΓ£ô[39m Parts B & D: Comments [2m(9)[22m
+       [33m[2mΓ£ô[22m[39m 16. Comments: unapproved (PENDING or REJECTED) comments do not appear on public post[33m 397[2mms[22m[39m
+       [33m[2mΓ£ô[22m[39m 17. Comments: approved comments appear on public post with plain text author and content (no email)[33m 534[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m19 passed[39m[22m[90m (19)[39m
+[2m      Tests [22m [1m[32m122 passed[39m[22m[90m (122)[39m
+[2m   Start at [22m 17:18:29
+[2m   Duration [22m 8.03s[2m (transform 42%, tests 37%, import 20%, worker 1%)[22m
+
+[2m  Transform [22m [33mtransforming modules took 17.29s[39m[2m ┬╖ 42% of tracked time, re-done on every run[22m
+[2m            [22m [2mpersist transforms across runs with [22m[33mfsModuleCache: true[39m
+[2m            [22m [2mlearn more: https://vitest.dev/guide/improving-performance#caching-between-reruns[22m
+

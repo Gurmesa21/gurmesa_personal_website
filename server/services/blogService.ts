@@ -3,10 +3,14 @@ import { blogRepository } from '../repositories/blogRepository';
 import { toPublicPost, type PublicBlogPost } from '../../lib/dto/blogPost';
 import { auth } from '../../auth';
 import { logAdminAction } from '@/lib/audit';
-import type { Prisma } from '@prisma/client';
+import type { Prisma, CommentStatus } from '@prisma/client';
 import { headers } from 'next/headers';
+import { revalidatePath } from 'next/cache';
 import crypto from 'crypto';
 import { getIpFromHeaders } from '@/lib/rate-limit';
+import { assertLikeHashSecret } from '@/lib/auth/like-secret';
+
+assertLikeHashSecret();
 
 async function getCurrentVoterHash(): Promise<string | null> {
   try {
@@ -74,7 +78,7 @@ export const getPublicPostBySlug = async (slug: string): Promise<PublicBlogPost 
       tags: { include: { tag: true } },
       _count: { select: { likes: true } },
       comments: { 
-        where: { isApproved: true }, 
+        where: { status: 'APPROVED' }, 
         orderBy: { createdAt: 'desc' } 
       }
     }
@@ -158,27 +162,74 @@ export const getPreviewPostBySlug = async (slug: string) => {
   return toPublicPost(post);
 };
 
+export const getAdminComments = async (statusFilter?: 'ALL' | CommentStatus) => {
+  const session = await auth();
+  if (!session?.user) throw new Error('Unauthorized');
+  
+  const where = statusFilter && statusFilter !== 'ALL' ? { status: statusFilter } : {};
+  return prisma.blogComment.findMany({
+    where,
+    include: {
+      post: {
+        select: { id: true, title: true, slug: true }
+      }
+    },
+    orderBy: [
+      { status: 'asc' },
+      { createdAt: 'desc' }
+    ]
+  });
+};
+
 export const approveComment = async (id: string) => {
   const session = await auth();
-  if (!session) throw new Error('Unauthorized');
+  if (!session?.user?.id) throw new Error('Unauthorized');
   
   const comment = await prisma.blogComment.update({
     where: { id },
-    data: { isApproved: true }
+    data: { status: 'APPROVED', moderatedAt: new Date() },
+    include: { post: true }
   });
   
-  await logAdminAction({ action: 'APPROVE', entity: 'BlogComment', entityId: id });
+  await logAdminAction({ action: 'APPROVE', entity: 'BlogComment', entityId: id, actorId: session.user.id });
+  revalidatePath('/admin/comments');
+  if (comment.post) {
+    revalidatePath(`/blog/${comment.post.slug}`);
+  }
+  return comment;
+};
+
+export const rejectComment = async (id: string) => {
+  const session = await auth();
+  if (!session?.user?.id) throw new Error('Unauthorized');
+  
+  const comment = await prisma.blogComment.update({
+    where: { id },
+    data: { status: 'REJECTED', moderatedAt: new Date() },
+    include: { post: true }
+  });
+  
+  await logAdminAction({ action: 'REJECT', entity: 'BlogComment', entityId: id, actorId: session.user.id });
+  revalidatePath('/admin/comments');
+  if (comment.post) {
+    revalidatePath(`/blog/${comment.post.slug}`);
+  }
   return comment;
 };
 
 export const deleteComment = async (id: string) => {
   const session = await auth();
-  if (!session) throw new Error('Unauthorized');
+  if (!session?.user?.id) throw new Error('Unauthorized');
   
   const comment = await prisma.blogComment.delete({
-    where: { id }
+    where: { id },
+    include: { post: true }
   });
   
-  await logAdminAction({ action: 'DELETE', entity: 'BlogComment', entityId: id });
+  await logAdminAction({ action: 'DELETE', entity: 'BlogComment', entityId: id, actorId: session.user.id });
+  revalidatePath('/admin/comments');
+  if (comment.post) {
+    revalidatePath(`/blog/${comment.post.slug}`);
+  }
   return comment;
 };

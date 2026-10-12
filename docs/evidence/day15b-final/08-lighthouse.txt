@@ -1,0 +1,7 @@
+# Lighthouse Audit Summary
+
+- **home** (`http://localhost:3006/`): Performance: 56 | Accessibility: 90 | Best Practices: 100 | SEO: 92
+- **services** (`http://localhost:3006/services`): Performance: 76 | Accessibility: 92 | Best Practices: 100 | SEO: 91
+- **blog-first-post** (`http://localhost:3006/blog`): Performance: 73 | Accessibility: 90 | Best Practices: 100 | SEO: 100
+- **work-os-dashboard** (`http://localhost:3006/work`): Performance: 68 | Accessibility: 92 | Best Practices: 100 | SEO: 100
+- **testimonials** (`http://localhost:3006/testimonials`): Performance: 74 | Accessibility: 94 | Best Practices: 100 | SEO: 100

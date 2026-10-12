@@ -54,6 +54,12 @@ enum BlogPostStatus {
   ARCHIVED
 }
 
+enum CommentStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
 enum TestimonialPermissionStatus {
   PENDING
   AUTHORIZED
@@ -287,16 +293,19 @@ model BlogLike {
 }
 
 model BlogComment {
-  id        String   @id @default(cuid())
-  postId    String
-  author    String
-  content   String   @db.Text
-  createdAt DateTime @default(now()) @db.Timestamptz
-  isApproved Boolean @default(false)
+  id          String        @id @default(cuid())
+  postId      String
+  author      String
+  authorEmail String?
+  content     String        @db.Text
+  status      CommentStatus @default(PENDING)
+  moderatedAt DateTime?     @db.Timestamptz
+  createdAt   DateTime      @default(now()) @db.Timestamptz
 
-  post      BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  post        BlogPost      @relation(fields: [postId], references: [id], onDelete: Cascade)
 
   @@index([postId, createdAt])
+  @@index([status])
 }
 
 model Category {

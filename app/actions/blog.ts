@@ -71,14 +71,23 @@ import { z } from 'zod';
 import { commentRateLimiter } from '@/lib/rate-limit';
 import { createNotification } from '@/lib/notifications';
 
+import { assertLikeHashSecret } from '@/lib/auth/like-secret';
+assertLikeHashSecret();
+
 const commentSchema = z.object({
-  author: z.string().min(2, 'Author must be at least 2 characters').max(50, 'Author must be less than 50 characters'),
-  content: z.string().min(5, 'Content must be at least 5 characters').max(1000, 'Content must be less than 1000 characters')
+  author: z.string().trim().min(2, 'Author must be at least 2 characters').max(50, 'Author must be less than 50 characters'),
+  email: z.string().trim().email('Invalid email address'),
+  content: z.string().trim().min(3, 'Content must be at least 3 characters').max(1000, 'Content must be less than 1000 characters'),
+  honeypot: z.string().max(0, 'Spam detected').optional().or(z.literal(''))
 });
 
-export async function addComment(postId: string, data: { author: string, content: string }) {
+export async function addComment(postId: string, data: { author: string; email?: string; content: string; honeypot?: string }) {
   try {
     const validatedData = commentSchema.parse(data);
+
+    if (validatedData.honeypot && validatedData.honeypot.length > 0) {
+      return { success: false, error: 'Spam detected' };
+    }
     
     const headersList = await headers();
     const ip = getIpFromHeaders(headersList);
@@ -97,8 +106,9 @@ export async function addComment(postId: string, data: { author: string, content
       data: {
         postId,
         author: validatedData.author,
+        authorEmail: validatedData.email,
         content: validatedData.content,
-        isApproved: false,
+        status: 'PENDING',
       }
     });
 

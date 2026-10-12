@@ -36,6 +36,8 @@ export default async function NotificationsPage() {
               ? `/admin/inquiries/${n.entityId}`
               : n.type === 'NEW_TESTIMONIAL'
               ? `/admin/testimonials/${n.entityId}`
+              : n.type === 'NEW_COMMENT'
+              ? '/admin/comments'
               : '#';
 
             return (

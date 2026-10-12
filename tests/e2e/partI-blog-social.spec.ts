@@ -36,6 +36,11 @@ test.describe('Blog Social Interactions', () => {
     const nameInput = page.getByLabel(/Your Name/i);
     await expect(nameInput).toBeVisible();
     await nameInput.fill('Test User');
+
+    const emailInput = page.getByLabel(/Your Email/i);
+    if (await emailInput.isVisible()) {
+      await emailInput.fill('testuser@example.com');
+    }
     
     const commentInput = page.getByLabel(/What are your thoughts/i);
     await commentInput.fill('This is a highly insightful test comment.');

@@ -1,0 +1,113 @@
+==================================================
+5. STORAGE SELECTION RECONCILIATION
+==================================================
+
+CURRENT lib/storage/index.ts (IN FULL):
+--------------------------------------------------
+import { S3StorageAdapter } from './s3';
+import { LocalStorageAdapter } from './local';
+import { isTestMode } from '../test-mode';
+
+export interface StorageAdapter {
+  upload(file: File, keyPrefix?: string): Promise<{ url: string; key: string; size: number; mimeType: string }>;
+  delete(key: string): Promise<void>;
+  getUrl(key: string): Promise<string>;
+}
+
+class MockStorageAdapter implements StorageAdapter {
+  async upload(file: File, keyPrefix?: string): Promise<{ url: string; key: string; size: number; mimeType: string }> {
+    const uniqueId = crypto.randomUUID();
+    const ext = file.name.split('.').pop()?.toLowerCase() || 'bin';
+    const key = `${keyPrefix || 'media/'}${uniqueId}.${ext}`;
+    return {
+      url: await this.getUrl(key),
+      key,
+      size: file.size,
+      mimeType: file.type,
+    };
+  }
+
+  async delete(_key: string): Promise<void> {
+    // No-op
+  }
+
+  async getUrl(key: string): Promise<string> {
+    return `/mock-storage/${key}`;
+  }
+}
+
+let instance: StorageAdapter | null = null;
+
+export function getStorageAdapter(): StorageAdapter {
+  if (!instance) {
+    if (isTestMode()) {
+      instance = new MockStorageAdapter();
+    } else if (
+      !process.env.STORAGE_ACCESS_KEY ||
+      process.env.STORAGE_ACCESS_KEY.includes('your-storage') ||
+      process.env.NODE_ENV === 'development'
+    ) {
+      // Fallback to local storage if AWS keys aren't actually configured
+      instance = new LocalStorageAdapter();
+    } else {
+      instance = new S3StorageAdapter();
+    }
+  }
+  return instance;
+}
+
+--------------------------------------------------
+PROPOSED DIFF (NOT APPLIED):
+--------------------------------------------------
+```diff
+--- a/lib/storage/index.ts
++++ b/lib/storage/index.ts
+@@ -36,15 +36,33 @@ let instance: StorageAdapter | null = null;
+ export function getStorageAdapter(): StorageAdapter {
+   if (!instance) {
+-    if (isTestMode()) {
+-      instance = new MockStorageAdapter();
+-    } else if (
+-      !process.env.STORAGE_ACCESS_KEY ||
+-      process.env.STORAGE_ACCESS_KEY.includes('your-storage') ||
+-      process.env.NODE_ENV === 'development'
+-    ) {
+-      // Fallback to local storage if AWS keys aren't actually configured
+-      instance = new LocalStorageAdapter();
++    const appEnv = process.env.APP_ENV || (process.env.NODE_ENV === 'production' ? 'production' : 'development');
++    const provider = (process.env.STORAGE_PROVIDER || '').trim().toLowerCase();
++
++    if (appEnv === 'production') {
++      if (provider !== 's3' && provider !== 'r2') {
++        throw new Error(
++          `Invalid STORAGE_PROVIDER "${process.env.STORAGE_PROVIDER || ''}" in production. Must be explicitly "s3" or "r2". Local/mock adapters and missing credentials fallbacks are strictly forbidden in production.`
++        );
++      }
++      if (!process.env.STORAGE_ACCESS_KEY || !process.env.STORAGE_SECRET_KEY || !process.env.STORAGE_BUCKET) {
++        throw new Error(
++          'Missing required S3/R2 storage credentials in production (STORAGE_ACCESS_KEY, STORAGE_SECRET_KEY, STORAGE_BUCKET).'
++        );
++      }
++      instance = new S3StorageAdapter();
++    } else if (appEnv === 'test') {
++      if (provider === 'local') {
++        instance = new LocalStorageAdapter();
++      } else {
++        instance = new MockStorageAdapter();
++      }
++    } else if (appEnv === 'development') {
++      if (provider === 's3' || provider === 'r2') {
++        instance = new S3StorageAdapter();
++      } else if (provider === 'mock') {
++        instance = new MockStorageAdapter();
++      } else {
++        instance = new LocalStorageAdapter();
++      }
+     } else {
+-      instance = new S3StorageAdapter();
++      throw new Error(`Unrecognized APP_ENV "${appEnv}"`);
+     }
+   }
+   return instance;
+ }
+```

@@ -3,6 +3,7 @@ import NotificationBell from '@/components/admin/NotificationBell';
 import '../globals.css';
 
 export const metadata = {
+  title: 'Admin Dashboard | Gurmesa',
   robots: { index: false, follow: false },
 };
 
@@ -29,6 +30,7 @@ export default function AdminRootLayout({ children }: { children: React.ReactNod
               <Link href="/admin/services" className="hover:text-primary transition-colors">Services</Link>
               <Link href="/admin/projects" className="hover:text-primary transition-colors">Projects</Link>
               <Link href="/admin/blog" className="hover:text-primary transition-colors">Blog</Link>
+              <Link href="/admin/comments" className="hover:text-primary transition-colors">Comments</Link>
               <Link href="/admin/technologies" className="hover:text-primary transition-colors">Technologies</Link>
               <hr className="border-slate-700 my-2" />
               <Link href="/admin/inquiries" className="hover:text-primary transition-colors">Inquiries</Link>

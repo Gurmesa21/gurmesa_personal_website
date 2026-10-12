@@ -39,6 +39,8 @@ export default async function PrivacyPage() {
           <li>{t('li3')}</li>
           <li>{t('li4')}</li>
           <li>{t('li5')}</li>
+          <li>{t('li_likes')}</li>
+          <li>{t('li_comments')}</li>
         </ul>
         <p>
           {t('p1_2')} <strong>{t('p1_strong')}</strong>{t('p1_3')}

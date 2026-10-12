@@ -21,7 +21,9 @@ interface BlogCommentsProps {
 export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
   const [comments] = useState<Comment[]>(initialComments);
   const [author, setAuthor] = useState('');
+  const [email, setEmail] = useState('');
   const [content, setContent] = useState('');
+  const [honeypot, setHoneypot] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
   const t = useTranslations('Blog');
@@ -30,8 +32,8 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!author.trim() || !content.trim()) {
-      setError(t('nameRequired'));
+    if (!author.trim() || !email.trim() || !content.trim()) {
+      setError(t('fieldsRequired') || 'Name, email, and comment are required.');
       return;
     }
 
@@ -39,12 +41,14 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
     setError('');
     setSubmitSuccess(false);
 
-    const result = await addComment(postId, { author, content });
+    const result = await addComment(postId, { author, email, content, honeypot });
     
     if (result.success) {
       setSubmitSuccess(true);
       setAuthor('');
+      setEmail('');
       setContent('');
+      setHoneypot('');
     } else {
       setError(result.error || t('failedToComment'));
     }
@@ -63,12 +67,28 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
 
       <form onSubmit={handleSubmit} className="mb-12 bg-slate-50 dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-100 dark:border-slate-800">
         <h4 className="text-lg font-semibold mb-4 text-slate-800 dark:text-slate-200">{t('leaveComment')}</h4>
-        {error && <div className="text-rose-500 text-sm mb-4">{error}</div>}
-        {submitSuccess && <div className="text-emerald-500 text-sm mb-4">Your comment has been submitted for moderation.</div>}
+        {error && <div className="text-rose-500 text-sm mb-4" role="alert">{error}</div>}
+        {submitSuccess && (
+          <div className="text-emerald-500 text-sm mb-4" role="status">
+            {t('commentSubmittedForReview') || 'Your comment has been submitted and will appear after review.'}
+          </div>
+        )}
         
+        {/* Honeypot field */}
+        <input 
+          type="text" 
+          name="website" 
+          value={honeypot} 
+          onChange={(e) => setHoneypot(e.target.value)} 
+          tabIndex={-1} 
+          autoComplete="off" 
+          style={{ display: 'none' }} 
+          aria-hidden="true" 
+        />
+
         <div className="space-y-4">
           <div>
-            <label htmlFor="comment-author" className="sr-only">{t('yourName')}</label>
+            <label htmlFor="comment-author" className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">{t('yourName')}</label>
             <input 
               id="comment-author"
               type="text" 
@@ -81,7 +101,21 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
             />
           </div>
           <div>
-            <label htmlFor="comment-content" className="sr-only">{t('yourThoughts')}</label>
+            <label htmlFor="comment-email" className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">{t('yourEmail') || 'Your Email'}</label>
+            <input 
+              id="comment-email"
+              type="email" 
+              placeholder={t('yourEmail') || 'Your Email'} 
+              aria-label={t('yourEmail') || 'Your Email'}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50"
+              required
+            />
+            <p className="text-xs text-slate-500 mt-1">{t('emailNeverPublished') || 'Your email is private and will never be published.'}</p>
+          </div>
+          <div>
+            <label htmlFor="comment-content" className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">{t('yourThoughts')}</label>
             <textarea 
               id="comment-content"
               placeholder={t('yourThoughts')} 
@@ -93,6 +127,9 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
               required
             />
           </div>
+          <p className="text-xs text-slate-500">
+            {t('commentModerationNotice') || 'Comments are moderated and will appear publicly once approved.'}
+          </p>
           <Button type="submit" disabled={isSubmitting} className="rounded-full px-8">
             {isSubmitting ? t('posting') : t('postComment')}
           </Button>
