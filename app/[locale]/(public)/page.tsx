@@ -53,7 +53,8 @@ export default async function HomePage(props?: { searchParams?: Promise<{ [key: 
 
   let avatarMedia = null;
   if (profile?.avatarUrl) {
-    avatarMedia = { url: profile.avatarUrl, mimeType: 'image/jpeg', altText: profile?.name || 'Avatar' };
+    const isVideo = profile.avatarUrl.endsWith('.mp4') || profile.avatarUrl.endsWith('.webm');
+    avatarMedia = { url: profile.avatarUrl, mimeType: isVideo ? 'video/mp4' : 'image/jpeg', altText: profile?.name || 'Avatar' };
   }
 
   const services = await getPublicServices();
@@ -236,6 +237,9 @@ export default async function HomePage(props?: { searchParams?: Promise<{ [key: 
 
         {/* About Snapshot Section */}
         <section className="container mx-auto px-4 mb-12">
+          <div className="mb-6 flex items-center justify-between max-w-4xl mx-auto">
+            <h2 className="text-3xl font-heading font-bold tracking-tight text-slate-900 dark:text-slate-50">{t('aboutMe')}</h2>
+          </div>
           <div className="animated-container relative w-full max-w-4xl mx-auto p-0">
             <div className="bg-gradient-to-r from-primary/20 via-primary/10 to-secondary/20 h-40 sm:h-56 w-full relative rounded-t-2xl">
               <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary via-background to-background"></div>
@@ -274,7 +278,7 @@ export default async function HomePage(props?: { searchParams?: Promise<{ [key: 
 
               <div className="space-y-6">
                 <div>
-                  <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-1">{profile?.name || t('aboutMe')}</h1>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-1">{profile?.name || t('aboutMe')}</h2>
                   <p className="text-primary text-base font-medium mb-3">{profile?.title}</p>
                   {(profile?.locationLabel || profile?.availabilityStatus) && (
                     <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground font-medium">

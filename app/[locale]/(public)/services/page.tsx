@@ -1,4 +1,6 @@
 
+export const dynamic = 'force-dynamic';
+
 import Link from 'next/link';
 import { getPublicServices } from '@/server/services/serviceService';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';

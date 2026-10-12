@@ -30,10 +30,15 @@ test.describe('Part F - Public Media Rendering', () => {
   test('Profile Avatar Render', async ({ page }) => {
     await login(page);
     await page.goto('/admin/profile');
-    await page.locator('input[type="file"]').setInputFiles(dummyImagePath);
+    const uniqueName = `test-avatar-${Date.now()}.png`;
+    const uniquePath = path.join(process.cwd(), 'tests', 'e2e', uniqueName);
+    fs.writeFileSync(uniquePath, Buffer.from(pngBase64, 'base64'));
+
+    await page.locator('input[type="file"]').setInputFiles(uniquePath);
     await expect(page.locator('text=Uploading...')).toBeVisible();
     await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
-    await page.locator('.grid > .relative').first().click();
+    await page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`).dispatchEvent('click');
+    await expect(page.locator('text=1 asset selected')).toBeVisible();
     await page.click('button[type="submit"]:has-text("Save Profile")');
     await page.waitForLoadState('networkidle');
 
@@ -48,15 +53,33 @@ test.describe('Part F - Public Media Rendering', () => {
     fs.mkdirSync(outDir, { recursive: true });
     await visitorPage.screenshot({ path: path.join(outDir, 'proof-avatar.png') });
     await visitorContext.close();
+
+    // Cleanup
+    await page.goto('/admin/profile');
+    await page.click('button:has-text("Clear selection")');
+    await page.click('button[type="submit"]:has-text("Save Profile")');
+    await page.waitForLoadState('networkidle');
+    await page.goto('/admin/profile');
+    const assetCard = page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`);
+    page.on('dialog', dialog => dialog.accept());
+    await assetCard.hover();
+    await assetCard.locator('button.bg-destructive').click();
+    await expect(assetCard).toBeHidden();
+    if (fs.existsSync(uniquePath)) fs.unlinkSync(uniquePath);
   });
 
   test('Service Featured Image Render', async ({ page }) => {
     await login(page);
     await page.goto('/admin/services');
-    await page.locator('a[href*="/edit"]').first().click();
-    await page.locator('input[type="file"]').setInputFiles(dummyImagePath);
+    await page.locator('a[data-testid="edit-link"]').first().click();
+    const uniqueName = `test-service-${Date.now()}.png`;
+    const uniquePath = path.join(process.cwd(), 'tests', 'e2e', uniqueName);
+    fs.writeFileSync(uniquePath, Buffer.from(pngBase64, 'base64'));
+
+    await page.locator('input[type="file"]').setInputFiles(uniquePath);
     await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
-    await page.locator('.grid > .relative').first().click();
+    await page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`).dispatchEvent('click');
+    await expect(page.locator('text=1 asset selected')).toBeVisible();
     await page.click('button[type="submit"]');
     await page.waitForLoadState('networkidle');
 
@@ -74,17 +97,37 @@ test.describe('Part F - Public Media Rendering', () => {
     const outDir = path.join(process.cwd(), 'docs', 'evidence', 'day14-5', 'partF', 'screenshots');
     await visitorPage.screenshot({ path: path.join(outDir, 'proof-service.png') });
     await visitorContext.close();
+
+    // Cleanup
+    await page.goto('/admin/services');
+    await page.locator('a[data-testid="edit-link"]').first().click();
+    await page.click('button:has-text("Clear selection")');
+    await page.click('button[type="submit"]');
+    await page.waitForLoadState('networkidle');
+    await page.goto('/admin/services'); // just to reset
+    await page.locator('a[data-testid="edit-link"]').first().click(); // open editor again to access media picker
+    const assetCard = page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`);
+    page.on('dialog', dialog => dialog.accept());
+    await assetCard.hover();
+    await assetCard.locator('button.bg-destructive').click();
+    await expect(assetCard).toBeHidden();
+    if (fs.existsSync(uniquePath)) fs.unlinkSync(uniquePath);
   });
 
   test('Project Featured Image Render', async ({ page }) => {
     await login(page);
     await page.goto('/admin/projects');
-    await page.locator('a[href*="/edit"]').first().click();
-    await page.locator('input[type="file"]').setInputFiles(dummyImagePath);
+    await page.locator('[data-testid="admin-row"]:has-text("Caching Fintech") a[data-testid="edit-link"]').click();
+    const uniqueName = `test-project-${Date.now()}.png`;
+    const uniquePath = path.join(process.cwd(), 'tests', 'e2e', uniqueName);
+    fs.writeFileSync(uniquePath, Buffer.from(pngBase64, 'base64'));
+
+    await page.locator('input[type="file"]').setInputFiles(uniquePath);
     await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
-    await page.locator('.grid > .relative').first().click();
+    await page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`).dispatchEvent('click');
+    await expect(page.locator('text=1 asset selected')).toBeVisible();
     await page.click('button[type="submit"]');
-    await page.waitForLoadState('networkidle');
+    await page.waitForURL('/admin/projects');
 
     const visitorContext = await page.context().browser()!.newContext();
     const visitorPage = await visitorContext.newPage();
@@ -100,15 +143,35 @@ test.describe('Part F - Public Media Rendering', () => {
     const outDir = path.join(process.cwd(), 'docs', 'evidence', 'day14-5', 'partF', 'screenshots');
     await visitorPage.screenshot({ path: path.join(outDir, 'proof-project.png') });
     await visitorContext.close();
+
+    // Cleanup
+    await page.goto('/admin/projects');
+    await page.locator('[data-testid="admin-row"]:has-text("Caching Fintech") a[data-testid="edit-link"]').click();
+    await page.click('button:has-text("Clear selection")');
+    await page.click('button[type="submit"]');
+    await page.waitForURL('/admin/projects');
+    await page.goto('/admin/projects'); 
+    await page.locator('[data-testid="admin-row"]:has-text("Caching Fintech") a[data-testid="edit-link"]').click(); 
+    const assetCard = page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`);
+    page.on('dialog', dialog => dialog.accept());
+    await assetCard.hover();
+    await assetCard.locator('button.bg-destructive').click();
+    await expect(assetCard).toBeHidden();
+    if (fs.existsSync(uniquePath)) fs.unlinkSync(uniquePath);
   });
 
   test('Blog Featured Image Render', async ({ page }) => {
     await login(page);
     await page.goto('/admin/blog');
-    await page.locator('a[href*="/edit"]').first().click();
-    await page.locator('input[type="file"]').setInputFiles(dummyImagePath);
+    await page.locator('a[data-testid="edit-link"]').first().click();
+    const uniqueNameBlog = `test-blog-${Date.now()}.png`;
+    const uniquePathBlog = path.join(process.cwd(), 'tests', 'e2e', uniqueNameBlog);
+    fs.writeFileSync(uniquePathBlog, Buffer.from(pngBase64, 'base64'));
+
+    await page.locator('input[type="file"]').setInputFiles(uniquePathBlog);
     await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
-    await page.locator('.grid > .relative').first().click();
+    await page.locator(`.cursor-pointer:has(img[alt="${uniqueNameBlog}"])`).dispatchEvent('click');
+    await expect(page.locator('text=1 asset selected')).toBeVisible();
     await page.click('button[type="submit"]');
     await page.waitForLoadState('networkidle');
 
@@ -126,16 +189,45 @@ test.describe('Part F - Public Media Rendering', () => {
     const outDir = path.join(process.cwd(), 'docs', 'evidence', 'day14-5', 'partF', 'screenshots');
     await visitorPage.screenshot({ path: path.join(outDir, 'proof-blog.png') });
     await visitorContext.close();
+
+    // Cleanup
+    await page.goto('/admin/blog');
+    await page.locator('a[data-testid="edit-link"]').first().click();
+    await page.click('button:has-text("Clear selection")');
+    await page.click('button[type="submit"]');
+    await page.waitForLoadState('networkidle');
+    await page.goto('/admin/blog'); 
+    await page.locator('a[data-testid="edit-link"]').first().click(); 
+    const assetCardBlog = page.locator(`.cursor-pointer:has(img[alt="${uniqueNameBlog}"])`);
+    page.on('dialog', dialog => dialog.accept());
+    await assetCardBlog.hover();
+    await assetCardBlog.locator('button.bg-destructive').click();
+    await expect(assetCardBlog).toBeHidden();
+    if (fs.existsSync(uniquePathBlog)) fs.unlinkSync(uniquePathBlog);
   });
 
   test('Video Upload and Render Test', async ({ page }) => {
     await login(page);
     await page.goto('/admin/profile');
-    await page.locator('input[type="file"]').setInputFiles(dummyVideoPath);
-    await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
-    
-    // Verify it uploaded successfully (does not error)
-    const firstMediaCard = page.locator('.grid > .relative').first();
-    await expect(firstMediaCard).toBeVisible();
+    const uniqueName = `test-video-f-${Date.now()}.mp4`;
+    const uniquePath = path.join(process.cwd(), 'tests', 'e2e', uniqueName);
+    fs.writeFileSync(uniquePath, fs.readFileSync(dummyVideoPath));
+
+    try {
+      await page.locator('input[type="file"]').setInputFiles(uniquePath);
+      await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
+      
+      // Verify it uploaded successfully (does not error) and select specific asset by unique alt/name
+      const videoCard = page.locator(`[data-testid="media-card"][data-alt="${uniqueName}"]`);
+      await expect(videoCard).toBeVisible();
+
+      // Clean up uploaded asset
+      page.on('dialog', dialog => dialog.accept());
+      await videoCard.hover();
+      await videoCard.locator('button.bg-destructive').click();
+      await expect(videoCard).toBeHidden({ timeout: 10000 });
+    } finally {
+      if (fs.existsSync(uniquePath)) fs.unlinkSync(uniquePath);
+    }
   });
 });

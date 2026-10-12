@@ -3,16 +3,9 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 test.describe('Part G - Media Upload Limits and Video Rendering', () => {
-  const dummyLargeVideoPath = path.join(process.cwd(), 'tests', 'e2e', 'test-large-video-g.mp4');
   const dummyOversizedVideoPath = path.join(process.cwd(), 'tests', 'e2e', 'test-oversized-video-g.mp4');
 
   test.beforeAll(() => {
-    // Generate a ~6MB MP4
-    const largeBuffer = Buffer.alloc(6 * 1024 * 1024);
-    // Add ftyp header so validation.ts sees it as MP4
-    largeBuffer.write('00000018667479706D703432000000006D70343269736F6D0000000866726565000000086D646174', 0, 'hex');
-    fs.writeFileSync(dummyLargeVideoPath, largeBuffer);
-
     // Generate a ~26MB MP4 to test the oversized limit
     const oversizedBuffer = Buffer.alloc(26 * 1024 * 1024);
     oversizedBuffer.write('00000018667479706D703432000000006D70343269736F6D0000000866726565000000086D646174', 0, 'hex');
@@ -20,7 +13,6 @@ test.describe('Part G - Media Upload Limits and Video Rendering', () => {
   });
 
   test.afterAll(() => {
-    if (fs.existsSync(dummyLargeVideoPath)) fs.unlinkSync(dummyLargeVideoPath);
     if (fs.existsSync(dummyOversizedVideoPath)) fs.unlinkSync(dummyOversizedVideoPath);
   });
 
@@ -32,6 +24,12 @@ test.describe('Part G - Media Upload Limits and Video Rendering', () => {
     await page.waitForURL('/admin');
   }
 
+  function createDummyVideo(filePath: string) {
+    const largeBuffer = Buffer.alloc(6 * 1024 * 1024);
+    largeBuffer.write('00000018667479706D703432000000006D70343269736F6D0000000866726565000000086D646174', 0, 'hex');
+    fs.writeFileSync(filePath, largeBuffer);
+  }
+
   test('Upload file size limits (6MB succeeds, 26MB rejected)', async ({ page }) => {
     await login(page);
     await page.goto('/admin/profile');
@@ -40,48 +38,84 @@ test.describe('Part G - Media Upload Limits and Video Rendering', () => {
     await page.locator('input[type="file"]').setInputFiles(dummyOversizedVideoPath);
     await expect(page.locator('.text-destructive')).toContainText('exceeds the 25MB limit', { timeout: 10000 });
 
-    // 2. Upload 6MB video
-    await page.locator('input[type="file"]').setInputFiles(dummyLargeVideoPath);
-    await expect(page.locator('text=Uploading...')).toBeVisible();
-    await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 15000 });
-    
-    // Verify it uploaded successfully (does not error)
-    const firstMediaCard = page.locator('.grid > .relative').first();
-    await expect(firstMediaCard).toBeVisible();
+    // 2. Upload 6MB video with unique name
+    const uniqueName = `test-large-video-g1-${Date.now()}.mp4`;
+    const uniquePath = path.join(process.cwd(), 'tests', 'e2e', uniqueName);
+    createDummyVideo(uniquePath);
+
+    try {
+      await page.locator('input[type="file"]').setInputFiles(uniquePath);
+      await expect(page.locator('text=Uploading...')).toBeVisible();
+      await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 15000 });
+      
+      // Verify it uploaded successfully (does not error)
+      const uploadedCard = page.locator(`[data-testid="media-card"][data-alt="${uniqueName}"]`);
+      await expect(uploadedCard).toBeVisible();
+
+      // Clean up uploaded asset
+      page.on('dialog', dialog => dialog.accept());
+      await uploadedCard.hover();
+      await uploadedCard.locator('button').click();
+      await expect(uploadedCard).toBeHidden({ timeout: 10000 });
+    } finally {
+      if (fs.existsSync(uniquePath)) fs.unlinkSync(uniquePath);
+    }
   });
 
   test('Video rendering on public pages', async ({ page }) => {
     await login(page);
     await page.goto('/admin/profile');
     
-    // Select the large video
-    await page.locator('input[type="file"]').setInputFiles(dummyLargeVideoPath);
-    await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 15000 });
-    
-    await page.locator('.grid > .relative').first().click();
-    
-    // Wait for the hidden input to be updated by React
-    await page.waitForTimeout(2000);
-    
-    
-    // Force submit
-    await page.evaluate(() => {
-      const form = document.querySelector('form');
-      if (form) form.requestSubmit();
-    });
-    
-    await page.waitForTimeout(3000);
+    // Select the large video with unique name
+    const uniqueName = `test-large-video-g2-${Date.now()}.mp4`;
+    const uniquePath = path.join(process.cwd(), 'tests', 'e2e', uniqueName);
+    createDummyVideo(uniquePath);
 
-    // Verify on public page
-    const visitorContext = await page.context().browser()!.newContext();
-    const visitorPage = await visitorContext.newPage();
-    
-    await visitorPage.goto('/about');
-    
-    // It should render a <video> element instead of <img>
-    const videoLocator = visitorPage.locator('video.object-cover');
-    await expect(videoLocator).toBeVisible();
-    
-    await visitorContext.close();
+    try {
+      await page.locator('input[type="file"]').setInputFiles(uniquePath);
+      await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 15000 });
+      
+      const uploadedCard = page.locator(`[data-testid="media-card"][data-alt="${uniqueName}"]`);
+      await uploadedCard.dispatchEvent('click');
+      await expect(page.locator('text=1 asset selected')).toBeVisible();
+      
+      // Submit profile form
+      await page.click('button[type="submit"]:has-text("Save Profile")');
+      await page.waitForLoadState('networkidle');
+
+      // Verify on public page
+      const visitorContext = await page.context().browser()!.newContext();
+      const visitorPage = await visitorContext.newPage();
+      
+      await visitorPage.goto('/about');
+      
+      // It should render a <video> element instead of <img>
+      const videoLocator = visitorPage.locator('video.object-cover');
+      await expect(videoLocator).toBeVisible();
+      
+      await visitorContext.close();
+
+      // Cleanup: clear selection and delete uploaded asset
+      await page.goto('/admin/profile');
+      const clearBtn = page.locator('button:has-text("Clear selection")');
+      if (await clearBtn.isVisible()) {
+        await clearBtn.click();
+        await page.evaluate(() => {
+          const form = document.querySelector('form');
+          if (form) form.requestSubmit();
+        });
+        await page.waitForTimeout(1000);
+      }
+
+      page.on('dialog', dialog => dialog.accept());
+      const cardToDelete = page.locator(`[data-testid="media-card"][data-alt="${uniqueName}"]`);
+      if (await cardToDelete.count() > 0) {
+        await cardToDelete.hover();
+        await cardToDelete.locator('button').click();
+        await expect(cardToDelete).toBeHidden({ timeout: 10000 });
+      }
+    } finally {
+      if (fs.existsSync(uniquePath)) fs.unlinkSync(uniquePath);
+    }
   });
 });

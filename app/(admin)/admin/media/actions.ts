@@ -5,11 +5,16 @@ import { updateSiteSetting } from '@/server/services/siteSettingService';
 import { revalidatePath } from 'next/cache';
 
 export async function uploadMediaAction(formData: FormData) {
-  const file = formData.get('file') as File;
-  const altText = formData.get('altText') as string;
-  if (!file) throw new Error('File required');
-  await uploadMedia(file, altText);
-  revalidatePath('/admin/media');
+  try {
+    const file = formData.get('file') as File;
+    const altText = formData.get('altText') as string;
+    if (!file) return { ok: false, error: 'File required' };
+    await uploadMedia(file, altText);
+    revalidatePath('/admin/media');
+    return { ok: true };
+  } catch (err: any) {
+    return { ok: false, error: err.message || 'Upload failed' };
+  }
 }
 
 export async function deleteMediaAction(formData: FormData) {

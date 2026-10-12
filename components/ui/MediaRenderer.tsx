@@ -24,9 +24,17 @@ export function MediaRenderer({ url, mimeType, altText, fill, className, width, 
     );
   }
 
-  if (fill) {
-    return <Image src={url} alt={altText || 'Media'} fill className={className} />;
+  if (mimeType.startsWith('image/')) {
+    if (fill) {
+      return <Image src={url} alt={altText || 'Media'} fill className={className} />;
+    }
+    return <Image src={url} alt={altText || 'Media'} width={width} height={height} className={className} />;
   }
 
-  return <Image src={url} alt={altText || 'Media'} width={width} height={height} className={className} />;
+  // Fallback for PDF and other unsupported types
+  return (
+    <div className={`flex items-center justify-center bg-muted text-muted-foreground ${className}`}>
+      <span>Document</span>
+    </div>
+  );
 }

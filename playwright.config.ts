@@ -4,11 +4,11 @@ import { config } from 'dotenv';
 config({ path: '.env.test' });
 export default defineConfig({
   testDir: './tests/e2e',
+  globalSetup: './tests/e2e/global-setup.ts',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.PW_WORKERS ? parseInt(process.env.PW_WORKERS) : 1, // Limit workers to 1 to prevent Next.js/Turbopack dev server from choking on Windows
-  timeout: 90000, // Increase test timeout to 90s for compilation
+  workers: process.env.PW_WORKERS ? parseInt(process.env.PW_WORKERS, 10) : (process.env.CI ? 1 : undefined),
   reporter: 'html',
   use: {
     baseURL: 'http://localhost:3006',

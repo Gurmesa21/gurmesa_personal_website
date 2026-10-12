@@ -24,9 +24,9 @@ describe('Production Guard', () => {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     const { execSync } = require('child_process');
     expect(() => {
-      execSync('npx tsx scripts/seed.ts', { env: { ...process.env, APP_ENV: 'production' }, stdio: 'ignore' });
+      execSync('node node_modules/tsx/dist/cli.mjs scripts/seed.ts', { env: { ...process.env, APP_ENV: 'production' }, stdio: 'ignore' });
     }).toThrow();
-  }, 15000);
+  });
 
   describe('isTestMode', () => {
     it('returns true when APP_ENV=test and PLAYWRIGHT_TEST=1', async () => {

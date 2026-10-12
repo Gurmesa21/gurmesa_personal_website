@@ -9,7 +9,7 @@ import { getIpFromHeaders, blogLikeRateLimiter } from '@/lib/rate-limit';
 function getVoterHash(ip: string, userAgent: string): string {
   const secret = process.env.LIKE_HASH_SECRET;
   if (!secret) {
-    if (process.env.APP_ENV === 'production' || process.env.NODE_ENV === 'production') {
+    if (process.env.APP_ENV === 'production') {
       throw new Error('LIKE_HASH_SECRET is missing in production');
     }
     return crypto.createHmac('sha256', 'dev-secret').update(`${ip}:${userAgent}`).digest('hex');

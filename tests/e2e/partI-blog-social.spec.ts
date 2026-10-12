@@ -8,13 +8,16 @@ test.describe('Blog Social Interactions', () => {
     // Find first post and read it
     const postLink = page.getByRole('link', { name: /Read Article/i }).first();
     await postLink.click();
+    await page.waitForURL(/\/blog\/.+/);
     
     // Check Like button
     const likeBtn = page.getByRole('button', { name: /Like|Unlike/i });
     await expect(likeBtn).toBeVisible();
     
     // Click like
+    const likeResponse = page.waitForResponse(resp => resp.request().method() === 'POST');
     await likeBtn.click();
+    await likeResponse;
     // Verify it changed to Unlike (or aria-pressed=true)
     await expect(likeBtn).toHaveAttribute('aria-pressed', 'true');
     
@@ -24,7 +27,9 @@ test.describe('Blog Social Interactions', () => {
     await expect(likeBtnReloaded).toHaveAttribute('aria-pressed', 'true');
     
     // Click unlike
+    const unlikeResponse = page.waitForResponse(resp => resp.request().method() === 'POST');
     await likeBtnReloaded.click();
+    await unlikeResponse;
     await expect(likeBtnReloaded).toHaveAttribute('aria-pressed', 'false');
 
     // Add a comment

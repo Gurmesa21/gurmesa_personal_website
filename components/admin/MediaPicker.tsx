@@ -31,14 +31,27 @@ export function MediaPicker({
   const [media, setMedia] = useState<MediaAsset[]>([]);
   const [search, setSearch] = useState('');
   const [internalSelectedId, setInternalSelectedId] = useState(defaultValue);
+  const hiddenInputRef = useRef<HTMLInputElement>(null);
   
   const selectedId = value !== undefined ? value : internalSelectedId;
   
   const handleSelect = (id: string) => {
     const newId = selectedId === id ? '' : id;
+    if (hiddenInputRef.current) {
+      hiddenInputRef.current.value = newId;
+      hiddenInputRef.current.setAttribute('value', newId);
+      hiddenInputRef.current.dispatchEvent(new Event('input', { bubbles: true }));
+      hiddenInputRef.current.dispatchEvent(new Event('change', { bubbles: true }));
+    }
     if (onChange) onChange(newId);
     setInternalSelectedId(newId);
   };
+
+  const [prevDefault, setPrevDefault] = useState(defaultValue);
+  if (defaultValue !== prevDefault) {
+    setPrevDefault(defaultValue);
+    setInternalSelectedId(defaultValue);
+  }
 
   const [isUploading, setIsUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -68,7 +81,8 @@ export function MediaPicker({
       const formData = new FormData();
       formData.append('file', file);
       formData.append('altText', file.name);
-      await uploadMediaAction(formData);
+      const result = await uploadMediaAction(formData);
+      if (result && !result.ok) throw new Error(result.error);
       await loadMedia();
     } catch (err: any) {
       setError(err.message || 'Upload failed');
@@ -99,14 +113,16 @@ export function MediaPicker({
     }
   };
 
-  const filteredMedia = media.filter(m => 
-    (m.altText || '').toLowerCase().includes(search.toLowerCase()) ||
-    m.storageKey.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredMedia = media.filter(m => {
+    const matchesSearch = (m.altText || '').toLowerCase().includes(search.toLowerCase()) ||
+                          m.storageKey.toLowerCase().includes(search.toLowerCase());
+    const isImageOrVideo = m.mimeType.startsWith('image/') || m.mimeType.startsWith('video/');
+    return matchesSearch && isImageOrVideo;
+  });
 
   return (
     <div className="space-y-4 border border-border rounded-lg p-4 bg-muted/20">
-      <input type="hidden" name={name} value={selectedId} />
+      <input ref={hiddenInputRef} type="hidden" name={name} value={selectedId || ''} onChange={() => {}} />
 
       <div className="flex gap-4 items-center">
         <div className="relative flex-1">
@@ -141,10 +157,15 @@ export function MediaPicker({
           return (
             <Card 
               key={item.id} 
+              data-testid="media-card"
+              data-alt={item.altText || ''}
               className={`relative cursor-pointer overflow-hidden group transition-all ${isSelected ? 'ring-2 ring-primary ring-offset-2 border-primary' : 'hover:border-primary/50'}`}
               onClick={() => handleSelect(item.id)}
             >
-              <div className="aspect-square bg-muted relative">
+              <div 
+                className="aspect-square bg-muted relative"
+                onClick={() => handleSelect(item.id)}
+              >
                 {item.mimeType.startsWith('video/') ? (
                   <video src={item.url} className="object-cover w-full h-full pointer-events-none" muted />
                 ) : (

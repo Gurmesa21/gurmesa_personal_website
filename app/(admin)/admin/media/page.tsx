@@ -18,7 +18,10 @@ export default async function MediaLibraryPage() {
 
       <div className="bg-card p-6 rounded-lg border shadow-sm max-w-xl">
         <h2 className="text-xl font-semibold mb-4">Upload New File</h2>
-        <form action={uploadMediaAction} className="space-y-4">
+        <form action={async (formData: FormData) => {
+          'use server';
+          await uploadMediaAction(formData);
+        }} className="space-y-4">
           <div>
             <label className="block text-sm font-medium mb-1">File (max 5MB)</label>
             <input type="file" name="file" required className="block w-full border rounded p-2" />

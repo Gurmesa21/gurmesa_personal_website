@@ -19,7 +19,7 @@ const sanitizeOptions = {
 
 export function MarkdownRenderer({ content }: { content: string }) {
   return (
-    <div className="prose prose-lg dark:prose-invert max-w-none">
+    <div data-testid="markdown-content" className="prose prose-lg dark:prose-invert max-w-none">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[

@@ -11,7 +11,6 @@ export async function updateProfileAction(formData: FormData) {
   const locationLabel = formData.get('locationLabel') as string;
   const availabilityStatus = formData.get('availabilityStatus') as string;
   const avatarId = formData.get('avatarId') as string;
-  console.log('----- updateProfileAction received avatarId:', avatarId, '-----');
 
   await updateProfile({
     name,

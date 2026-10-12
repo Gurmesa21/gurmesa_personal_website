@@ -5,20 +5,16 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import { useState } from 'react';
 import { MediaPicker } from '@/components/admin/MediaPicker';
 
 export function ProfileForm({ profile }: { profile: any }) {
-  const clientSubmit = (formData: FormData) => {
-    // Log avatarId for debugging
-    console.log('Submitting avatarId:', formData.get('avatarId'));
-    updateProfileAction(formData);
-  };
-
+  const [avatarId, setAvatarId] = useState(profile?.avatarId || '');
   return (
-    <form action={clientSubmit} className="space-y-6 max-w-2xl bg-card border border-border p-6 rounded-lg">
+    <form action={updateProfileAction} className="space-y-6 max-w-2xl bg-card border border-border p-6 rounded-lg">
       <div className="space-y-2">
         <Label>Avatar / Headshot</Label>
-        <MediaPicker name="avatarId" defaultValue={profile?.avatarId || ''} />
+        <MediaPicker name="avatarId" value={avatarId} onChange={setAvatarId} />
       </div>
       <div className="space-y-2">
         <Label>Name</Label>

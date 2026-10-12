@@ -20,7 +20,7 @@ export default async function TestimonialsPage() {
 
       <div className="space-y-4">
         {testimonials.map(t => (
-          <Card key={t.id}>
+          <Card key={t.id} data-testid="admin-row">
             <CardHeader className="flex flex-row items-center justify-between py-4">
               <div className="flex items-center gap-4">
                 <CardTitle className="text-xl">{t.name}</CardTitle>
@@ -31,7 +31,7 @@ export default async function TestimonialsPage() {
               </div>
               <div className="flex items-center gap-2">
                 <Button variant="outline" size="sm" asChild>
-                  <Link href={`/admin/testimonials/${t.id}`}>Edit</Link>
+                  <Link href={`/admin/testimonials/${t.id}`} data-testid="edit-link">Edit</Link>
                 </Button>
               </div>
             </CardHeader>

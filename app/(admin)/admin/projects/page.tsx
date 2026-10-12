@@ -19,7 +19,7 @@ export default async function AdminProjectsPage() {
 
       <div className="space-y-4">
         {projects.map((project) => (
-          <Card key={project.id}>
+          <Card key={project.id} data-testid="admin-row">
             <CardHeader className="flex flex-row items-center justify-between py-4">
               <div className="flex items-center gap-4">
                 <CardTitle className="text-xl">{project.title}</CardTitle>
@@ -37,7 +37,7 @@ export default async function AdminProjectsPage() {
               </div>
               <div className="flex items-center gap-2">
                 <Button variant="outline" size="sm" asChild>
-                  <Link href={`/admin/projects/${project.id}/edit`}>Edit / Case Study</Link>
+                  <Link href={`/admin/projects/${project.id}/edit`} data-testid="edit-link">Edit / Case Study</Link>
                 </Button>
                 <form action={deleteProjectAction.bind(null, project.id)}>
                   <Button variant="destructive" size="sm" type="submit">Delete</Button>

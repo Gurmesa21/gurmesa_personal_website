@@ -1,4 +1,6 @@
 
+export const dynamic = 'force-dynamic';
+
 import {
   getPublicProfile,
   getPublicExperiences,
@@ -44,7 +46,8 @@ export default async function AboutPage() {
 
   let avatarMedia = null;
   if (profile?.avatarUrl) {
-    avatarMedia = { url: profile.avatarUrl, mimeType: 'image/jpeg', altText: profile?.name || 'Avatar' };
+    const isVideo = profile.avatarUrl.endsWith('.mp4') || profile.avatarUrl.endsWith('.webm');
+    avatarMedia = { url: profile.avatarUrl, mimeType: isVideo ? 'video/mp4' : 'image/jpeg', altText: profile?.name || 'Avatar' };
   }
 
   // Group skills by category
@@ -67,7 +70,7 @@ export default async function AboutPage() {
         
         <div className="px-6 pb-8 sm:px-10">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between -mt-16 sm:-mt-24 mb-6 gap-6">
-            <div className="shrink-0 rounded-full overflow-hidden w-32 h-32 sm:w-48 sm:h-48 relative border-4 sm:border-8 border-card dark:border-slate-900 bg-slate-100 dark:bg-slate-800 shadow-md z-10">
+            <div className="shrink-0 rounded-full overflow-hidden w-48 h-48 relative border-4 sm:border-8 border-card dark:border-slate-900 bg-slate-100 dark:bg-slate-800 shadow-md z-10">
               {avatarMedia ? (
                 <MediaRenderer url={avatarMedia.url} mimeType={avatarMedia.mimeType} altText={profile?.name || 'Avatar'} fill className="object-cover" />
               ) : (

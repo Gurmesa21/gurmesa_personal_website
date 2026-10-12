@@ -32,11 +32,11 @@ export default async function AdminBlogPage() {
             </thead>
             <tbody>
               {posts.map(post => (
-                <tr key={post.id} className="border-b border-border last:border-0 hover:bg-muted/20 transition-colors">
+                <tr key={post.id} data-testid="admin-row" className="border-b border-border last:border-0 hover:bg-muted/20 transition-colors">
                   <td className="p-4">{post.title}</td>
                   <td className="p-4">{post.status}</td>
                   <td className="p-4 space-x-2">
-                    <Link href={`/admin/blog/${post.id}/edit`}>
+                    <Link href={`/admin/blog/${post.id}/edit`} data-testid="edit-link">
                       <Button variant="outline" size="sm">Edit</Button>
                     </Link>
                     <Link href={`/admin/blog/${post.id}/preview`} target="_blank">

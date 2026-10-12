@@ -93,7 +93,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-slate-100 dark:border-slate-800 bg-slate-50 relative shrink-0">
                   {avatarUrl ? (
-                    <MediaRenderer url={avatarUrl} mimeType="image/jpeg" altText={profile?.name || 'Author'} fill className="object-cover" />
+                    <MediaRenderer url={avatarUrl} mimeType={avatarUrl.endsWith('.mp4') || avatarUrl.endsWith('.webm') ? 'video/mp4' : 'image/jpeg'} altText={profile?.name || 'Author'} fill className="object-cover" />
                   ) : (
                     <User className="w-6 h-6 text-slate-400 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
                   )}
@@ -126,7 +126,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
                 </div>
               )}
               <h2 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 dark:text-slate-50 group-hover:text-primary transition-colors duration-300 leading-tight">
-                <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                <Link href={`/blog/${post.slug}`} className="hover:underline">{post.title}</Link>
               </h2>
               <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
                 {post.excerpt}

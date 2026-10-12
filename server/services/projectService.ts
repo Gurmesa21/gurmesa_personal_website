@@ -71,6 +71,7 @@ export async function getAdminProjectById(id: string) {
     where: { id },
     include: {
       caseStudy: true,
+      media: true,
       technologies: {
         include: { technology: true }
       }

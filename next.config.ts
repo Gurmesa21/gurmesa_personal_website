@@ -1,10 +1,12 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 if (process.env.APP_ENV === 'production' && process.env.PLAYWRIGHT_TEST === '1') {
   throw new Error('PLAYWRIGHT_TEST=1 is not allowed in production');
 }
 
 const nextConfig: NextConfig = {
+  outputFileTracingRoot: path.resolve(__dirname),
   experimental: {
     serverActions: {
       bodySizeLimit: '30mb',

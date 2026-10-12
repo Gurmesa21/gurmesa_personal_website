@@ -27,7 +27,7 @@ export class LocalStorageAdapter implements StorageAdapter {
     const finalPrefix = keyPrefix ? prefix : '';
     const key = `${finalPrefix}${uniqueId}.${ext}`;
 
-    const targetPath = path.join(this.uploadDir, key);
+    const targetPath = path.join(/*turbopackIgnore: true*/ this.uploadDir, key);
     
     // Ensure the directory for this specific file exists
     await this.ensureDir(path.dirname(targetPath));
@@ -44,7 +44,7 @@ export class LocalStorageAdapter implements StorageAdapter {
   }
 
   async delete(key: string): Promise<void> {
-    const targetPath = path.join(this.uploadDir, key);
+    const targetPath = path.join(/*turbopackIgnore: true*/ this.uploadDir, key);
     try {
       await fs.unlink(targetPath);
     } catch (error) {

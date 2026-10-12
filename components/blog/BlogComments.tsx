@@ -68,9 +68,12 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
         
         <div className="space-y-4">
           <div>
+            <label htmlFor="comment-author" className="sr-only">{t('yourName')}</label>
             <input 
+              id="comment-author"
               type="text" 
               placeholder={t('yourName')} 
+              aria-label={t('yourName')}
               value={author}
               onChange={(e) => setAuthor(e.target.value)}
               className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50"
@@ -78,8 +81,11 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
             />
           </div>
           <div>
+            <label htmlFor="comment-content" className="sr-only">{t('yourThoughts')}</label>
             <textarea 
+              id="comment-content"
               placeholder={t('yourThoughts')} 
+              aria-label={t('yourThoughts')}
               value={content}
               onChange={(e) => setContent(e.target.value)}
               rows={4}

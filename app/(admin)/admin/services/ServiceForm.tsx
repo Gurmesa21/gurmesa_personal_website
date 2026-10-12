@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -5,9 +7,11 @@ import { Textarea } from '@/components/ui/textarea';
 import Link from 'next/link';
 import { MediaPicker } from '@/components/admin/MediaPicker';
 
+import { useState } from 'react';
 import { Service } from '@prisma/client';
 
 export function ServiceForm({ action, defaultValues = {} }: { action: (formData: FormData) => void; defaultValues?: Partial<Service> }) {
+  const [featuredImageId, setFeaturedImageId] = useState(defaultValues.featuredImageId || '');
   return (
     <form action={action} className="space-y-6 max-w-2xl bg-card border p-6 rounded-lg">
       <div className="space-y-2">
@@ -51,7 +55,7 @@ export function ServiceForm({ action, defaultValues = {} }: { action: (formData:
 
       <div className="space-y-2">
         <Label>Featured Image</Label>
-        <MediaPicker name="featuredImageId" defaultValue={defaultValues.featuredImageId || ''} />
+        <MediaPicker name="featuredImageId" value={featuredImageId} onChange={setFeaturedImageId} />
       </div>
 
       <div className="flex gap-4">

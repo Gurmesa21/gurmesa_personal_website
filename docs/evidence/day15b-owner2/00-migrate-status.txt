@@ -1,0 +1,7 @@
+﻿Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "gurmesa_db", schema "public" at "localhost:5433"
+
+6 migrations found in prisma/migrations
+
+Database schema is up to date!

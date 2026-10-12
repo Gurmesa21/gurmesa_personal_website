@@ -28,18 +28,18 @@ test.describe('Part 3 - Media Upload Widget', () => {
     await page.goto('/admin/profile');
 
     // 3. Use the MediaPicker to upload a new image
-    // Find the file input within the MediaPicker (it's hidden, but playwright can set input files)
-    const fileInput = page.locator('input[type="file"]');
-    await fileInput.setInputFiles(dummyImagePath);
+    const uniqueName = `test-avatar-${Date.now()}.png`;
+    const uniquePath = path.join(process.cwd(), 'tests', 'e2e', uniqueName);
+    fs.writeFileSync(uniquePath, Buffer.from(pngBase64, 'base64'));
 
-    // Wait for the upload to complete and the new image to appear in the grid
+    const fileInput = page.locator('input[type="file"]');
+    await fileInput.setInputFiles(uniquePath);
+
     await expect(page.locator('text=Uploading...')).toBeVisible();
     await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
 
-    // Click the newly uploaded image in the grid to select it
-    // The newly uploaded image should be the first one (since it's ordered by createdAt desc)
-    const firstMediaCard = page.locator('.grid > .relative').first();
-    await firstMediaCard.click();
+    const firstMediaCard = page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`);
+    await firstMediaCard.dispatchEvent('click');
 
     // Verify it's selected (shows '1 asset selected')
     await expect(page.locator('text=1 asset selected')).toBeVisible();
@@ -60,5 +60,22 @@ test.describe('Part 3 - Media Upload Widget', () => {
     const outDir = path.join(process.cwd(), 'docs', 'evidence', 'day14-5', 'partD', 'part3');
     fs.mkdirSync(outDir, { recursive: true });
     await page.screenshot({ path: path.join(outDir, 'proof-avatar-rendered.png') });
+
+    // 6. Cleanup: Go back to profile, unselect, save, delete media
+    await page.goto('/admin/profile');
+    await page.click('button:has-text("Clear selection")');
+    await page.click('button[type="submit"]:has-text("Save Profile")');
+    await page.waitForLoadState('networkidle');
+
+    // Delete the media using the trash button
+    await page.goto('/admin/profile'); // Reload to see media picker again
+    const assetCard = page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`);
+    
+    page.on('dialog', dialog => dialog.accept());
+    await assetCard.hover();
+    await assetCard.locator('button.bg-destructive').click();
+    await expect(assetCard).toBeHidden();
+    
+    if (fs.existsSync(uniquePath)) fs.unlinkSync(uniquePath);
   });
 });

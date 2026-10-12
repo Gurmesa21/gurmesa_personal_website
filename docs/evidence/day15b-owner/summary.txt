@@ -1,0 +1,5 @@
+﻿01-lint exit=0 seconds=17
+02-typecheck exit=0 seconds=20
+03-build exit=0 seconds=56
+04-vitest exit=0 seconds=19
+05-playwright-1 exit=1 seconds=909
