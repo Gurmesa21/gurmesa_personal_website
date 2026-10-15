@@ -15,7 +15,7 @@ export function MediaRenderer({ url, mimeType, altText, fill, className, width, 
     return (
       <video 
         src={url} 
-        className={className} 
+        className={fill ? `absolute inset-0 w-full h-full ${className || ''}` : className} 
         controls 
         muted 
         playsInline 
@@ -26,7 +26,15 @@ export function MediaRenderer({ url, mimeType, altText, fill, className, width, 
 
   if (mimeType.startsWith('image/')) {
     if (fill) {
-      return <Image src={url} alt={altText || 'Media'} fill className={className} />;
+      return (
+        <Image
+          src={url}
+          alt={altText || 'Media'}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className={className}
+        />
+      );
     }
     return <Image src={url} alt={altText || 'Media'} width={width} height={height} className={className} />;
   }

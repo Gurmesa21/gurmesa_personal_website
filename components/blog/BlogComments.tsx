@@ -57,19 +57,21 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
   };
 
   return (
-    <section id="comments" className="mt-16 pt-12 border-t border-slate-200 dark:border-slate-800">
-      <div className="flex items-center gap-3 mb-8">
-        <MessageCircle className="w-6 h-6 text-primary" />
-        <h3 className="text-2xl font-bold font-heading text-slate-900 dark:text-white">
+    <section id="comments" className="mt-10 pt-8 border-t border-[#292D45]">
+      <div className="flex items-center gap-2.5 mb-6">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#8063F7]">
+          <MessageCircle className="w-4 h-4" />
+        </div>
+        <h3 className="text-xl sm:text-2xl font-bold font-heading text-[#F5F6FC]">
           {t('commentsTitle')} ({comments.length})
         </h3>
       </div>
 
-      <form onSubmit={handleSubmit} className="mb-12 bg-slate-50 dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-100 dark:border-slate-800">
-        <h4 className="text-lg font-semibold mb-4 text-slate-800 dark:text-slate-200">{t('leaveComment')}</h4>
-        {error && <div className="text-rose-500 text-sm mb-4" role="alert">{error}</div>}
+      <form onSubmit={handleSubmit} className="mb-10 bg-[#101426] p-5 sm:p-6 rounded-2xl border border-[#292D45]">
+        <h4 className="text-base font-semibold mb-3 text-[#F5F6FC]">{t('leaveComment')}</h4>
+        {error && <div className="text-[#FF5C8A] text-sm mb-4" role="alert">{error}</div>}
         {submitSuccess && (
-          <div className="text-emerald-500 text-sm mb-4" role="status">
+          <div className="text-emerald-400 text-sm mb-4" role="status">
             {t('commentSubmittedForReview') || 'Your comment has been submitted and will appear after review.'}
           </div>
         )}
@@ -88,7 +90,7 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
 
         <div className="space-y-4">
           <div>
-            <label htmlFor="comment-author" className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">{t('yourName')}</label>
+            <label htmlFor="comment-author" className="block text-xs font-semibold uppercase tracking-wider mb-1.5 text-[#A5ABC1]">{t('yourName')}</label>
             <input 
               id="comment-author"
               type="text" 
@@ -96,12 +98,12 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
               aria-label={t('yourName')}
               value={author}
               onChange={(e) => setAuthor(e.target.value)}
-              className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50"
+              className="w-full bg-[#171D32] border border-[#292D45] rounded-xl px-4 py-2.5 text-sm text-[#F5F6FC] placeholder:text-[#A5ABC1]/50 focus:outline-none focus:border-[#8063F7] focus:ring-1 focus:ring-[#8063F7] transition-colors"
               required
             />
           </div>
           <div>
-            <label htmlFor="comment-email" className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">{t('yourEmail') || 'Your Email'}</label>
+            <label htmlFor="comment-email" className="block text-xs font-semibold uppercase tracking-wider mb-1.5 text-[#A5ABC1]">{t('yourEmail') || 'Your Email'}</label>
             <input 
               id="comment-email"
               type="email" 
@@ -109,13 +111,13 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
               aria-label={t('yourEmail') || 'Your Email'}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50"
+              className="w-full bg-[#171D32] border border-[#292D45] rounded-xl px-4 py-2.5 text-sm text-[#F5F6FC] placeholder:text-[#A5ABC1]/50 focus:outline-none focus:border-[#8063F7] focus:ring-1 focus:ring-[#8063F7] transition-colors"
               required
             />
-            <p className="text-xs text-slate-500 mt-1">{t('emailNeverPublished') || 'Your email is private and will never be published.'}</p>
+            <p className="text-xs text-[#A5ABC1] mt-1">{t('emailNeverPublished') || 'Your email is private and will never be published.'}</p>
           </div>
           <div>
-            <label htmlFor="comment-content" className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">{t('yourThoughts')}</label>
+            <label htmlFor="comment-content" className="block text-xs font-semibold uppercase tracking-wider mb-1.5 text-[#A5ABC1]">{t('yourThoughts')}</label>
             <textarea 
               id="comment-content"
               placeholder={t('yourThoughts')} 
@@ -123,38 +125,38 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
               value={content}
               onChange={(e) => setContent(e.target.value)}
               rows={4}
-              className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
+              className="w-full bg-[#171D32] border border-[#292D45] rounded-xl px-4 py-2.5 text-sm text-[#F5F6FC] placeholder:text-[#A5ABC1]/50 focus:outline-none focus:border-[#8063F7] focus:ring-1 focus:ring-[#8063F7] transition-colors resize-none"
               required
             />
           </div>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-[#A5ABC1]">
             {t('commentModerationNotice') || 'Comments are moderated and will appear publicly once approved.'}
           </p>
-          <Button type="submit" disabled={isSubmitting} className="rounded-full px-8">
+          <Button type="submit" disabled={isSubmitting} className="rounded-xl px-6 py-2 h-auto text-sm font-semibold bg-[#6A4BE4] hover:bg-[#8063F7] text-white transition-colors">
             {isSubmitting ? t('posting') : t('postComment')}
           </Button>
         </div>
       </form>
 
-      <div className="space-y-8">
+      <div className="space-y-4">
         {comments.length === 0 ? (
-          <div className="text-center py-8 text-slate-500">
+          <div className="text-center py-8 text-[#A5ABC1] border border-dashed border-[#292D45] rounded-xl">
             {t('noComments')}
           </div>
         ) : (
           comments.map(comment => (
-            <div key={comment.id} className="flex gap-4">
-              <div className="w-10 h-10 shrink-0 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1">
-                <User className="w-5 h-5" />
+            <div key={comment.id} className="flex gap-3.5 p-4 rounded-xl border border-[#292D45] bg-[#101426]">
+              <div className="w-8 h-8 shrink-0 rounded-lg bg-[#171D32] border border-[#292D45] flex items-center justify-center text-[#8063F7] mt-0.5">
+                <User className="w-4 h-4" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="font-bold text-slate-900 dark:text-slate-100">{comment.author}</span>
-                  <span className="text-xs text-slate-400">
+                  <span className="font-semibold text-sm text-[#F5F6FC]">{comment.author}</span>
+                  <span className="text-xs text-[#A5ABC1]">
                     {new Date(comment.createdAt).toLocaleDateString()}
                   </span>
                 </div>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="text-sm text-[#A5ABC1] leading-relaxed">
                   {comment.content}
                 </p>
               </div>

@@ -61,7 +61,7 @@ export default async function AdminDashboard() {
               </CardHeader>
               <CardContent className="mt-auto pt-4">
                 <Button variant="secondary" asChild className="w-full">
-                  <Link href={section.href}>Manage {section.title.split(' ').slice(1).join(' ')}</Link>
+                  <Link href={section.href}>   Manage {section.title.split(' ').slice(1).join(' ')}</Link>
                 </Button>
               </CardContent>
             </Card>

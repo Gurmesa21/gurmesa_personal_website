@@ -56,19 +56,19 @@
 
 .dark,
 [data-theme="dark"] {
-  --background: #0A0A0B;
-  --foreground: #FAFAFA;
-  --muted-foreground: #A1A1AA;
-  --card: #18181B;
-  --border: #27272A;
-  --primary: #6366F1;
+  --background: #080B16;
+  --foreground: #F5F6FC;
+  --muted-foreground: #A5ABC1;
+  --card: #101426;
+  --border: #292D45;
+  --primary: #8063F7;
   --primary-foreground: #FFFFFF;
-  --accent: #8B5CF6;
+  --accent: #4F6FF0;
   --success: #10B981;
   --warning: #F59E0B;
   --danger: #EF4444;
-  --primary-gradient: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
-  --muted: #27272A;
+  --primary-gradient: linear-gradient(135deg, #8063F7 0%, #4F6FF0 100%);
+  --muted: #171D32;
 }
 
 @layer base {
@@ -82,7 +82,7 @@
 
   /* Highly professional, clean, and stylistic headings */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-extrabold tracking-tight text-slate-900 dark:text-slate-50;
+    @apply font-heading font-extrabold tracking-tight text-slate-900 dark:text-[#F5F6FC];
   }
   
   h1 {
@@ -95,7 +95,7 @@
 
   /* Beautiful, readable paragraphs with elegant contrast */
   p {
-    @apply text-slate-600 dark:text-slate-300 leading-[1.7] font-medium font-sans;
+    @apply text-slate-600 dark:text-[#A5ABC1] leading-[1.7] font-medium font-sans;
   }
 
   :focus-visible {

@@ -1,12 +1,9 @@
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/server/repositories/db';
 import { ContactForm } from './ContactForm';
-import { TestimonialList } from '@/components/testimonials/TestimonialList';
 import { getTranslations } from 'next-intl/server';
-import { Card, CardContent } from '@/components/ui/card';
-import { Mail, Share2 } from 'lucide-react';
+import { getPublicProfile } from '@/server/services/profileService';
+import { Mail, Share2, MessageSquare, ArrowUpRight, Clock, ShieldCheck, Code2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-const prisma = new PrismaClient();
 
 export const metadata = {
   title: 'Contact - Gurmesa',
@@ -15,9 +12,10 @@ export const metadata = {
 
 export default async function ContactPage() {
   const t = await getTranslations('Contact');
-  const [emailSetting, socialLinks] = await Promise.all([
+  const [emailSetting, socialLinks, profile] = await Promise.all([
     prisma.siteSetting.findUnique({ where: { key: 'publicContactEmail' } }),
-    prisma.socialLink.findMany({ where: { visibility: 'PUBLIC' }, orderBy: { order: 'asc' } })
+    prisma.socialLink.findMany({ where: { visibility: 'PUBLIC' }, orderBy: { order: 'asc' } }),
+    getPublicProfile()
   ]);
 
   let publicEmail = 'contact@example.com';
@@ -30,67 +28,167 @@ export default async function ContactPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl space-y-16">
-      
-      {/* Header */}
-      <div className="text-center mb-16 space-y-4">
-        <h1 className="text-4xl md:text-5xl font-heading font-extrabold tracking-tight text-slate-900 dark:text-white">
-          {t('title')}
-        </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
-          {t('subtitle')}
-        </p>
+    <div className="min-h-[calc(100vh-4rem)] bg-[#080B16] text-[#F5F6FC] selection:bg-[#8063F7]/30 selection:text-white">
+      {/* Subtle ambient lighting */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#8063F7]/10 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 -right-32 w-96 h-96 bg-[#4F6FF0]/10 rounded-full blur-[120px]" />
       </div>
 
-      {/* Direct Contact Banner */}
-      <section className="animated-container">
-        <Card className="bg-primary/5 border-primary/10 shadow-none">
-          <CardContent className="p-8 text-center space-y-6">
-            <h2 className="text-2xl font-bold">{t('directContact')}</h2>
-            
-            <div className="flex flex-col items-center justify-center gap-2">
-              <div className="flex items-center gap-2 text-muted-foreground mb-1">
-                <Mail className="w-5 h-5" />
-                <span className="text-sm font-medium uppercase tracking-wider">{t('email')}</span>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 space-y-8 sm:space-y-10">
+        {/* Compact, aligned page header */}
+        <div className="space-y-2.5 max-w-2xl">
+          <div className="flex flex-wrap items-center gap-2.5">
+            <div className="flex items-center gap-2">
+
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#292D45] bg-[#171D32] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
+
+                {t('title')}
+              </span>
+            </div>
+            {profile?.availabilityStatus && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium border border-emerald-500/30 bg-emerald-500/10 text-emerald-400">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                {profile.availabilityStatus}
+              </span>
+            )}
+          </div>
+
+          <p className="text-sm sm:text-base text-[#A5ABC1] leading-relaxed">
+            {t('subtitle')}
+          </p>
+        </div>
+
+        {/* Main Content Grid: Balanced two-column desktop layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
+          {/* Left Column: Contact information & Socials (5 cols) */}
+          <aside className="lg:col-span-5 space-y-5">
+            <div className="group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-7 shadow-xl space-y-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10">
+              <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+              <div>
+                <div className="flex items-center gap-2.5 pb-4 border-b border-[#292D45]">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#8063F7]">
+                    <Mail className="w-4 h-4" />
+                  </span>
+                  <h2 className="text-lg sm:text-xl font-bold font-heading text-[#F5F6FC]">
+                    {t('directContact')}
+                  </h2>
+                </div>
+
+                <div className="space-y-1.5 p-4 rounded-xl border border-[#292D45] bg-[#171D32] hover:border-[#8063F7]/40 transition-colors mt-5">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[#858EA8] block">
+                    {t('email')}
+                  </span>
+                  <a
+                    href={`mailto:${publicEmail}`}
+                    className="text-sm sm:text-base font-semibold text-[#8063F7] hover:text-white transition-colors break-all block"
+                  >
+                    {publicEmail}
+                  </a>
+                </div>
               </div>
-              <a href={`mailto:${publicEmail}`} className="text-xl text-primary hover:underline font-bold">
-                {publicEmail}
-              </a>
+
+              {/* Response Expectations Card */}
+              <div className="p-4 rounded-xl border border-[#292D45]/70 bg-[#171D32]/60 space-y-1.5">
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#858EA8]">
+                  <Clock className="w-3.5 h-3.5 text-[#8063F7]" />
+                  <span>Response Time</span>
+                </div>
+                <p className="text-xs sm:text-sm text-[#A5ABC1] leading-relaxed">
+                  I typically respond to new project inquiries and technical consulting requests within 24–48 hours on business days.
+                </p>
+              </div>
+
+              {/* Social Profiles */}
+              {socialLinks.length > 0 && (
+                <div className="pt-4 border-t border-[#292D45] space-y-3">
+                  <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#858EA8]">
+                    <Share2 className="w-3.5 h-3.5 text-[#8063F7]" />
+                    <span>{t('connect')}</span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2">
+                    {socialLinks.map(link => (
+                      <Button
+                        key={link.id}
+                        variant="outline"
+                        size="sm"
+                        asChild
+                        className="w-full justify-start rounded-lg h-9 px-3.5 text-xs border-[#292D45] bg-[#171D32] text-[#F5F6FC] hover:border-[#8063F7]/50 hover:bg-[#1f2642] hover:text-white transition-all"
+                      >
+                        <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between w-full">
+                          <span className="truncate">{link.label || link.platform}</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#858EA8]" />
+                        </a>
+                      </Button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </aside>
+
+          {/* Right Column: Contact Message Form (7 cols) */}
+          <section className="lg:col-span-7">
+            <div className="group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 shadow-xl space-y-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10">
+              <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+              <div className="flex items-center gap-2.5 pb-4 border-b border-[#292D45]">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#8063F7]">
+                  <MessageSquare className="w-4 h-4" />
+                </span>
+                <div>
+                  <h2 className="text-lg sm:text-xl font-bold font-heading text-[#F5F6FC]">
+                    {t('sendAMessage')}
+                  </h2>
+                  <p className="text-xs sm:text-sm text-[#858EA8]">
+                    Share your requirements to explore project feasibility, timelines, and deliverables.
+                  </p>
+                </div>
+              </div>
+
+              <ContactForm />
+            </div>
+          </section>
+        </div>
+
+        {/* Supporting Details Row: Working arrangements & Scope */}
+        <section className="pt-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+            <div className="group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-5 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10">
+              <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
+                <Code2 className="w-4 h-4 text-[#8063F7]" />
+                <span>Project Scope</span>
+              </div>
+              <p className="text-xs sm:text-sm text-[#A5ABC1] leading-relaxed">
+                Full-stack web applications, scalable architectures, responsive interfaces, and API integrations.
+              </p>
             </div>
 
-            {socialLinks.length > 0 && (
-              <div className="pt-6 border-t border-primary/10">
-                <div className="flex items-center justify-center gap-2 text-muted-foreground mb-4">
-                  <Share2 className="w-5 h-5" />
-                  <span className="text-sm font-medium uppercase tracking-wider">{t('connect')}</span>
-                </div>
-                <div className="flex flex-wrap justify-center gap-3">
-                  {socialLinks.map(link => (
-                    <Button key={link.id} variant="outline" size="sm" asChild className="rounded-full bg-background">
-                      <a href={link.url} target="_blank" rel="noopener noreferrer">
-                        {link.label || link.platform}
-                      </a>
-                    </Button>
-                  ))}
-                </div>
+            <div className="group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-5 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10">
+              <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
+                <Clock className="w-4 h-4 text-[#8063F7]" />
+                <span>Working Arrangement</span>
               </div>
-            )}
-          </CardContent>
-        </Card>
-      </section>
+              <p className="text-xs sm:text-sm text-[#A5ABC1] leading-relaxed">
+                Available for remote contract work worldwide with flexible communication and clear milestone updates.
+              </p>
+            </div>
 
-      {/* Contact Form Section */}
-      <section className="animated-container max-w-3xl mx-auto space-y-8">
-        <h2 className="text-3xl font-bold text-center">{t('sendAMessage')}</h2>
-        <Card className="border shadow-sm p-6 md:p-8">
-          <ContactForm />
-        </Card>
-      </section>
-      
-      {/* Testimonials */}
-      <section className="pt-12 border-t animated-container">
-        <TestimonialList />
-      </section>
+            <div className="group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-5 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10">
+              <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
+                <ShieldCheck className="w-4 h-4 text-[#8063F7]" />
+                <span>Advisory & Audits</span>
+              </div>
+              <p className="text-xs sm:text-sm text-[#A5ABC1] leading-relaxed">
+                Technical evaluations, performance audits, security hygiene reviews, and refactoring strategies.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

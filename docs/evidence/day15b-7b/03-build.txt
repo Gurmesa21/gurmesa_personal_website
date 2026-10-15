@@ -1,0 +1,92 @@
+
+> gurmesa-website@0.1.0 build
+> prisma generate && next build
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+
+✔ Generated Prisma Client (v5.22.0) to .\node_modules\@prisma\client in 432ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
+
+▲ Next.js 16.3.6 (Turbopack)
+- Environments: .env
+✓ Running next.config.ts took 262ms
+- Experiments (use with caution):
+  · proxyClientMaxBodySize: 31457280
+  · serverActions
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 56s
+  Running TypeScript ...
+  Finished TypeScript in 24.2s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/31) ...
+  Generating static pages using 7 workers (7/31) 
+  Generating static pages using 7 workers (15/31) 
+  Generating static pages using 7 workers (23/31) 
+✓ Generating static pages using 7 workers (31/31) in 619ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /_not-found
+├ ƒ /[locale]
+├ ƒ /[locale]/about
+├ ƒ /[locale]/blog
+├ ƒ /[locale]/blog/[slug]
+├ ƒ /[locale]/contact
+├ ƒ /[locale]/privacy
+├ ƒ /[locale]/services
+├ ƒ /[locale]/services/[slug]
+├ ƒ /[locale]/terms
+├ ƒ /[locale]/testimonials
+├ ƒ /[locale]/work
+├ ƒ /[locale]/work/[slug]
+├ ƒ /admin
+├ ƒ /admin/audit-log
+├ ƒ /admin/blog
+├ ƒ /admin/blog/[id]/edit
+├ ƒ /admin/blog/[id]/preview
+├ ƒ /admin/blog/new
+├ ƒ /admin/comments
+├ ƒ /admin/experience
+├ ƒ /admin/experience/[id]/edit
+├ ƒ /admin/experience/new
+├ ƒ /admin/inquiries
+├ ƒ /admin/inquiries/[id]
+├ ƒ /admin/login
+├ ƒ /admin/media
+├ ƒ /admin/notifications
+├ ƒ /admin/profile
+├ ƒ /admin/projects
+├ ƒ /admin/projects/[id]/edit
+├ ƒ /admin/projects/new
+├ ƒ /admin/services
+├ ƒ /admin/services/[id]/edit
+├ ƒ /admin/services/new
+├ ƒ /admin/settings
+├ ƒ /admin/skills
+├ ƒ /admin/skills/[id]/edit
+├ ƒ /admin/skills/new
+├ ƒ /admin/social-links
+├ ƒ /admin/social-links/[id]/edit
+├ ƒ /admin/social-links/new
+├ ƒ /admin/technologies
+├ ƒ /admin/technologies/[id]/edit
+├ ƒ /admin/technologies/new
+├ ƒ /admin/testimonials
+├ ƒ /admin/testimonials/[id]
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/health
+├ ƒ /mock-storage/[...path]
+├ ○ /robots.txt
+└ ƒ /sitemap.xml
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

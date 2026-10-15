@@ -41,7 +41,7 @@ export default async function TestimonialEditPage({ params }: { params: Promise<
   }
 
   return (
-    <div className="space-y-6 max-w-3xl">
+    <div className="space-y-6 max-w-3xl min-w-0">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold">Edit Testimonial</h1>
         <Button variant="outline" asChild>
@@ -51,13 +51,13 @@ export default async function TestimonialEditPage({ params }: { params: Promise<
         </Button>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>{t.name}</CardTitle>
-          <p className="text-sm text-muted-foreground">{t.role} {t.organization ? `at ${t.organization}` : ''}</p>
+      <Card className="min-w-0 overflow-hidden">
+        <CardHeader className="min-w-0">
+          <CardTitle className="break-words [overflow-wrap:anywhere]">{t.name}</CardTitle>
+          <p className="text-sm text-muted-foreground break-words [overflow-wrap:anywhere]">{t.role} {t.organization ? `at ${t.organization}` : ''}</p>
         </CardHeader>
-        <CardContent className="space-y-6">
-          <blockquote className="p-4 italic border-l-4 bg-muted text-foreground rounded-r-md">
+        <CardContent className="space-y-6 min-w-0">
+          <blockquote className="p-4 italic border-l-4 bg-muted text-foreground rounded-r-md break-words [overflow-wrap:anywhere] [word-break:break-word]">
             &quot;{t.content}&quot;
           </blockquote>
 

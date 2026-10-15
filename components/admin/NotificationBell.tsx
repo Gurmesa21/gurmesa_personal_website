@@ -3,9 +3,15 @@ import { Bell } from 'lucide-react';
 import { prisma } from '@/server/repositories/db';
 
 export default async function NotificationBell() {
-  const unreadCount = await prisma.notification.count({
-    where: { isRead: false }
-  });
+  let unreadCount = 0;
+  try {
+    unreadCount = await prisma.notification.count({
+      where: { isRead: false }
+    });
+  } catch (error) {
+    // Graceful fallback to 0 if database is offline or reconnecting
+    unreadCount = 0;
+  }
 
   return (
     <Link href="/admin/notifications" className="relative p-2 rounded-full hover:bg-slate-800 transition-colors">

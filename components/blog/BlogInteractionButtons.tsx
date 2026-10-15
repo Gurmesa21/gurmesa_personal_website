@@ -81,7 +81,7 @@ export function BlogInteractionButtons({ postId, postSlug, initialLikesCount, in
   };
 
   return (
-    <div className="flex items-center gap-4 sm:gap-6 text-slate-500 dark:text-slate-400">
+    <div className="flex items-center gap-4 sm:gap-6 text-[#A5ABC1]">
       <button 
         onClick={handleLike}
         disabled={isLiking}
@@ -89,7 +89,7 @@ export function BlogInteractionButtons({ postId, postSlug, initialLikesCount, in
         aria-label={isLiked ? t('unlike') : t('like')}
         className={cn(
           "flex items-center gap-2 transition-all duration-300 active:scale-95 group/like",
-          isLiked ? "text-rose-500" : "hover:text-rose-500"
+          isLiked ? "text-[#FF5C8A]" : "hover:text-[#FF5C8A]"
         )}
       >
         <Heart 
@@ -104,7 +104,7 @@ export function BlogInteractionButtons({ postId, postSlug, initialLikesCount, in
       <button 
         onClick={handleCommentClick}
         aria-label={t('comment')}
-        className="flex items-center gap-2 hover:text-blue-500 transition-colors duration-300 active:scale-95 group/comment"
+        className="flex items-center gap-2 text-[#A5ABC1] hover:text-[#8063F7] transition-colors duration-300 active:scale-95 group/comment"
       >
         <MessageCircle className="w-5 h-5 transition-transform group-hover/comment:scale-110" />
         <span className="text-sm font-medium hidden sm:inline">{t('comment')}</span>
@@ -115,8 +115,8 @@ export function BlogInteractionButtons({ postId, postSlug, initialLikesCount, in
         aria-live="polite"
         aria-label={isCopied ? t('copied') : t('share')}
         className={cn(
-          "flex items-center gap-2 transition-colors duration-300 active:scale-95 group/share",
-          isCopied ? "text-emerald-500" : "hover:text-emerald-500"
+          "flex items-center gap-2 transition-colors duration-300 active:scale-95 group/share text-[#A5ABC1]",
+          isCopied ? "text-emerald-400" : "hover:text-[#8063F7]"
         )}
       >
         {isCopied ? (

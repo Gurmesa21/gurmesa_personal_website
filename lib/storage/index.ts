@@ -36,15 +36,18 @@ export function getStorageAdapter(): StorageAdapter {
   if (!instance) {
     if (isTestMode()) {
       instance = new MockStorageAdapter();
-    } else if (
-      !process.env.STORAGE_ACCESS_KEY ||
-      process.env.STORAGE_ACCESS_KEY.includes('your-storage') ||
-      process.env.NODE_ENV === 'development'
-    ) {
-      // Fallback to local storage if AWS keys aren't actually configured
-      instance = new LocalStorageAdapter();
     } else {
-      instance = new S3StorageAdapter();
+      const hasAccessKey = process.env.STORAGE_ACCESS_KEY || process.env.S3_ACCESS_KEY;
+      if (
+        !hasAccessKey ||
+        hasAccessKey.includes('your-storage') ||
+        process.env.NODE_ENV === 'development'
+      ) {
+        // Fallback to local storage if AWS keys aren't actually configured
+        instance = new LocalStorageAdapter();
+      } else {
+        instance = new S3StorageAdapter();
+      }
     }
   }
   return instance;
