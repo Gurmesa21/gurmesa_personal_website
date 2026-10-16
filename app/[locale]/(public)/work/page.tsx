@@ -147,15 +147,14 @@ export default async function WorkPage({
         {/* Compact, left-aligned page header aligned with the card grid */}
         <div className="mb-6 space-y-2">
           <div className="flex items-center gap-2">
-
             <span className="inline-flex items-center gap-2 rounded-full border border-[#292D45] bg-[#171D32] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
-
-              {t('title')}
+              Portfolio
             </span>
           </div>
-
-
+          <h1 className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-white">
+            {t('title')}
+          </h1>
         </div>
 
         {/* Technology Filters: compact pills, clear violet active state, left-aligned */}

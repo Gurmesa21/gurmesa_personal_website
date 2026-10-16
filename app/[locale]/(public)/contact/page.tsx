@@ -40,11 +40,9 @@ export default async function ContactPage() {
         <div className="space-y-2.5 max-w-2xl">
           <div className="flex flex-wrap items-center gap-2.5">
             <div className="flex items-center gap-2">
-
               <span className="inline-flex items-center gap-2 rounded-full border border-[#292D45] bg-[#171D32] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
-
-                {t('title')}
+                Get in Touch
               </span>
             </div>
             {profile?.availabilityStatus && (
@@ -54,6 +52,9 @@ export default async function ContactPage() {
               </span>
             )}
           </div>
+          <h1 className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-white">
+            {t('title')}
+          </h1>
 
           <p className="text-sm sm:text-base text-[#A5ABC1] leading-relaxed">
             {t('subtitle')}
@@ -82,7 +83,7 @@ export default async function ContactPage() {
                   </span>
                   <a
                     href={`mailto:${publicEmail}`}
-                    className="text-sm sm:text-base font-semibold text-[#8063F7] hover:text-white transition-colors break-all block"
+                    className="text-sm sm:text-base font-semibold text-[#A995FF] hover:text-white transition-colors break-all block"
                   >
                     {publicEmail}
                   </a>

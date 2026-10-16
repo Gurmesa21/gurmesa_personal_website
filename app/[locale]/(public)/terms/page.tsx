@@ -29,7 +29,7 @@ export default function TermsPage() {
       {/* Main Content Card */}
       <div className="group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10">
         <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
-        <div className="prose prose-invert max-w-none text-[#F5F6FC] prose-headings:font-heading prose-headings:text-[#F5F6FC] prose-headings:font-bold prose-headings:tracking-tight prose-p:text-[#A5ABC1] prose-p:leading-relaxed prose-li:text-[#A5ABC1] prose-strong:text-[#F5F6FC] prose-a:text-[#A995FF] hover:prose-a:text-white">
+        <div className="space-y-6 text-[#F5F6FC] [&>h2]:text-lg [&>h2]:sm:text-xl [&>h2]:font-bold [&>h2]:font-heading [&>h2]:text-[#F5F6FC] [&>h2]:pt-4 [&>h2]:border-t [&>h2]:border-[#292D45] [&>h2:first-child]:pt-0 [&>h2:first-child]:border-0 [&>p]:text-sm [&>p]:text-[#D0D4E4] [&>p]:leading-relaxed [&_strong]:text-[#F5F6FC] [&_strong]:font-semibold">
           <h2>{t('h1')}</h2>
           <p>{t('p1')}</p>
 

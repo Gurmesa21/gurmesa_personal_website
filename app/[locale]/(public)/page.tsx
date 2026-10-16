@@ -726,12 +726,11 @@ export default async function HomePage(props?: {
                   </div>
                   <Link
                     href="/about"
-
                     className="group flex items-center gap-0.5 text-xs font-semibold text-[#A995FF] transition-colors hover:text-white"
                   >
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-[#10B981]/25 bg-[#10B981]/10 px-2.5 py-1 text-xs font-medium text-[#10B981]">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#10B981] animate-pulse" />
-                      {t('readFullBio')}
+                      {t('learnMore')}
                       <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </span>
                   </Link>

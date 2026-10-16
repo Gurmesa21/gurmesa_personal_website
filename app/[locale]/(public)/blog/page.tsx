@@ -64,15 +64,14 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
           {/* Title and description on left */}
           <div className="space-y-2 max-w-xl">
             <div className="flex items-center gap-2">
-
               <span className="inline-flex items-center gap-2 rounded-full border border-[#292D45] bg-[#171D32] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
-
-                {t('title')}
+                Articles
               </span>
             </div>
-
-
+            <h1 className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-white">
+              {t('title')}
+            </h1>
           </div>
 
           {/* Search field and compact search action on right */}
@@ -165,7 +164,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
                 {/* Left-side Text: Vertically aligned along left edge and vertically centered in card */}
                 <div className="my-auto space-y-1.5">
                   <h2 className="font-heading text-lg sm:text-xl font-bold tracking-tight text-[#F5F6FC] transition-colors group-hover:text-[#A995FF]">
-                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                    <Link href={`/blog/${post.slug}`} className="hover:underline">{post.title}</Link>
                   </h2>
 
                   <p className="text-sm font-normal text-[#A5ABC1] leading-relaxed line-clamp-3">

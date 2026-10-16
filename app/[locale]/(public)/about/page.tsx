@@ -89,7 +89,7 @@ export default async function AboutPage() {
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 items-stretch">
             {/* Cinematic Profile Visual on Left (Vertical Composition) */}
             <div className="md:col-span-5 lg:col-span-4 flex flex-col items-center justify-center">
-              <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-none aspect-[3/4] rounded-2xl overflow-hidden border border-[#8063F7]/40 bg-[#171D32] shadow-2xl shadow-black/50 group-hover:border-[#8063F7]/70 group-hover:shadow-[0_12px_36px_rgba(128,99,247,0.2)] transition-all duration-500 flex items-center justify-center">
+              <div className="relative w-48 h-48 md:w-full md:h-auto max-w-[280px] sm:max-w-[320px] md:max-w-none aspect-[3/4] rounded-2xl overflow-hidden border border-[#8063F7]/40 bg-[#171D32] shadow-2xl shadow-black/50 group-hover:border-[#8063F7]/70 group-hover:shadow-[0_12px_36px_rgba(128,99,247,0.2)] transition-all duration-500 flex items-center justify-center">
                 {avatarMedia ? (
                   <MediaRenderer
                     url={avatarMedia.url}
@@ -231,7 +231,7 @@ export default async function AboutPage() {
                           {new Date(exp.startDate).getFullYear()} – {exp.endDate ? new Date(exp.endDate).getFullYear() : t('present')}
                         </span>
                       </div>
-                      <p className="text-xs sm:text-sm font-semibold text-[#8063F7]">
+                      <p className="text-xs sm:text-sm font-semibold text-[#A995FF]">
                         {exp.organization}
                       </p>
                       {exp.description && (
