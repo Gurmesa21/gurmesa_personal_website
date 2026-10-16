@@ -3,14 +3,20 @@ import { InquiryStatus } from '@prisma/client';
 import { notFound, redirect } from 'next/navigation';
 import Link from 'next/link';
 import { revalidatePath } from 'next/cache';
+import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Textarea } from '@/components/ui/textarea';
+
+import { DeleteInquiryForm } from './DeleteInquiryForm';
 
 export const metadata = {
   title: 'Inquiry Detail - Admin',
   robots: { index: false, follow: false }
 };
 
-export default async function InquiryDetailPage({ params }: { params: { id: string } }) {
-  const inquiry = await inquiryService.getInquiry(params.id);
+export default async function InquiryDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  const inquiry = await inquiryService.getInquiry(resolvedParams.id);
   
   if (!inquiry) {
     notFound();
@@ -41,105 +47,96 @@ export default async function InquiryDetailPage({ params }: { params: { id: stri
   }
 
   return (
-    <div className="max-w-4xl mx-auto py-10 px-4">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Inquiry Details</h1>
-        <Link href="/admin/inquiries" className="text-blue-600 hover:underline">
-          &larr; Back to Inquiries
-        </Link>
+    <div className="space-y-6 max-w-4xl">
+      <div className="flex justify-between items-center">
+        <h1 className="text-3xl font-bold">Inquiry Details</h1>
+        <Button variant="outline" asChild>
+          <Link href="/admin/inquiries">
+            &larr; Back to Inquiries
+          </Link>
+        </Button>
       </div>
 
-      <div className="bg-white shadow overflow-hidden sm:rounded-lg mb-8">
-        <div className="px-4 py-5 sm:px-6 flex justify-between items-center">
+      <Card>
+        <CardHeader className="flex flex-row items-center justify-between">
           <div>
-            <h3 className="text-lg leading-6 font-medium text-gray-900">Applicant Information</h3>
-            <p className="mt-1 max-w-2xl text-sm text-gray-500">Personal details and application.</p>
+            <CardTitle>Applicant Information</CardTitle>
+            <p className="text-sm text-muted-foreground mt-1">Personal details and application.</p>
           </div>
           
           <form action={updateStatus} className="flex items-center gap-2">
-            <select name="status" defaultValue={inquiry.status} className="border p-2 rounded text-sm">
+            <select name="status" defaultValue={inquiry.status} className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
               {Object.values(InquiryStatus).map(s => (
                 <option key={s} value={s}>{s}</option>
               ))}
             </select>
-            <button type="submit" className="bg-blue-600 text-white px-3 py-1.5 rounded text-sm">Update</button>
+            <Button type="submit">Update</Button>
           </form>
-        </div>
-        <div className="border-t border-gray-200">
-          <dl>
-            <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500">Full name</dt>
-              <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{inquiry.name}</dd>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <p className="text-sm font-medium text-muted-foreground">Full name</p>
+              <p className="text-sm font-medium">{inquiry.name}</p>
             </div>
-            <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500">Email address</dt>
-              <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                <a href={`mailto:${inquiry.email}`} className="text-blue-600 hover:underline">{inquiry.email}</a>
-              </dd>
+            <div>
+              <p className="text-sm font-medium text-muted-foreground">Email address</p>
+              <a href={`mailto:${inquiry.email}`} className="text-sm font-medium text-blue-600 hover:underline">{inquiry.email}</a>
             </div>
-            <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500">Organization / Project Type</dt>
-              <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                {inquiry.organization || 'N/A'} / {inquiry.projectType || 'N/A'}
-              </dd>
+            <div>
+              <p className="text-sm font-medium text-muted-foreground">Organization / Project Type</p>
+              <p className="text-sm font-medium">{inquiry.organization || 'N/A'} / {inquiry.projectType || 'N/A'}</p>
             </div>
-            <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500">Source</dt>
-              <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{inquiry.source || 'Direct'}</dd>
+            <div>
+              <p className="text-sm font-medium text-muted-foreground">Source</p>
+              <p className="text-sm font-medium">{inquiry.source || 'Direct'}</p>
             </div>
-            <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500">Notification Status</dt>
-              <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+            <div>
+              <p className="text-sm font-medium text-muted-foreground">Notification Status</p>
+              <p className="text-sm font-medium">
                 {inquiry.notificationStatus} 
-                {inquiry.notificationError && <span className="text-red-500 ml-2">({inquiry.notificationError})</span>}
-              </dd>
+                {inquiry.notificationError && <span className="text-destructive ml-2">({inquiry.notificationError})</span>}
+              </p>
             </div>
-            <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500">Message</dt>
-              <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 whitespace-pre-wrap">
-                {inquiry.message}
-              </dd>
+          </div>
+          <div>
+            <p className="text-sm font-medium text-muted-foreground">Message</p>
+            <div className="mt-2 text-sm p-4 bg-muted rounded-md whitespace-pre-wrap">
+              {inquiry.message}
             </div>
-          </dl>
-        </div>
-      </div>
+          </div>
+        </CardContent>
+      </Card>
 
-      <div className="bg-white shadow overflow-hidden sm:rounded-lg mb-8">
-        <div className="px-4 py-5 sm:px-6">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">Notes</h3>
-        </div>
-        <div className="border-t border-gray-200 px-4 py-5 sm:px-6">
-          <ul className="space-y-4 mb-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Notes</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="space-y-4">
             {inquiry.notes.map(note => (
-              <li key={note.id} className="bg-gray-50 p-4 rounded">
-                <p className="text-sm text-gray-900 whitespace-pre-wrap mb-2">{note.body}</p>
-                <p className="text-xs text-gray-500">By {note.author.name} on {new Date(note.createdAt).toLocaleString()}</p>
-              </li>
+              <div key={note.id} className="p-4 rounded-md bg-muted">
+                <p className="text-sm whitespace-pre-wrap mb-2">{note.body}</p>
+                <p className="text-xs text-muted-foreground">By {note.author.name} on {new Date(note.createdAt).toLocaleString()}</p>
+              </div>
             ))}
-            {inquiry.notes.length === 0 && <p className="text-sm text-gray-500">No notes yet.</p>}
-          </ul>
+            {inquiry.notes.length === 0 && <p className="text-sm text-muted-foreground">No notes yet.</p>}
+          </div>
 
           <form action={addNote} className="space-y-3">
-            <textarea 
+            <Textarea 
               name="body" 
               rows={3} 
               required
               placeholder="Add a note..."
-              className="w-full border p-2 rounded text-sm focus:ring-blue-500 focus:border-blue-500"
             />
-            <button type="submit" className="bg-gray-800 text-white px-4 py-2 rounded text-sm">Add Note</button>
+            <Button type="submit">Add Note</Button>
           </form>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
 
-      <div className="border-t pt-6">
-        <form action={deleteInquiry} onSubmit={(e) => {
-          if(!confirm('Are you sure you want to delete this inquiry?')) e.preventDefault();
-        }}>
-          <button type="submit" className="text-red-600 hover:text-red-800 font-medium text-sm">
-            Delete Inquiry
-          </button>
-        </form>
+      <div className="pt-4">
+        <DeleteInquiryForm action={deleteInquiry} />
       </div>
 
     </div>

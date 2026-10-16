@@ -2,8 +2,9 @@ import { Button } from '@/components/ui/button';
 import { updateAction } from '../../actions';
 import { skillRepository } from '@/server/repositories/skillRepository';
 
-export default async function EditPage({ params }: { params: { id: string } }) {
-  const item = await skillRepository.findUnique({ where: { id: params.id } });
+export default async function EditPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  const item = await skillRepository.findUnique({ where: { id: resolvedParams.id } });
   if (!item) return <div>Not found</div>;
 
   return (

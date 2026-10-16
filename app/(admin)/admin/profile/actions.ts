@@ -10,6 +10,7 @@ export async function updateProfileAction(formData: FormData) {
   const bio = formData.get('bio') as string;
   const locationLabel = formData.get('locationLabel') as string;
   const availabilityStatus = formData.get('availabilityStatus') as string;
+  const avatarId = formData.get('avatarId') as string;
 
   await updateProfile({
     name,
@@ -18,10 +19,9 @@ export async function updateProfileAction(formData: FormData) {
     bio,
     locationLabel: locationLabel || null,
     availabilityStatus: availabilityStatus || null,
+    avatarId: avatarId || null,
   });
 
-  revalidatePath('/admin/profile');
-  revalidatePath('/');
-  revalidatePath('/about');
+  revalidatePath('/', 'layout');
   redirect('/admin/profile');
 }

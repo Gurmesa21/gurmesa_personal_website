@@ -1,0 +1,113 @@
+﻿
+> gurmesa-website@0.1.0 build
+> next build
+
+â–² Next.js 16.3.6 (Turbopack)
+- Environments: .env
+âš  Warning: Next.js ignored package-lock.json in C:\Users\Hp because it is outside the current Git repository (C:\Users\Hp\Documents\Projects\Gurmesa_website).
+ To use this directory, set `turbopack.root` in your Next.js config.
+
+âœ“ Running next.config.ts took 217ms
+- Experiments (use with caution):
+  Â· proxyClientMaxBodySize: 31457280
+  Â· serverActions
+
+  Creating an optimized production build ...
+âœ“ Compiled successfully in 22.4s
+  Running TypeScript ...
+  Finished TypeScript in 20.2s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/32) ...
+  Generating static pages using 7 workers (8/32) 
+  Generating static pages using 7 workers (16/32) 
+  Generating static pages using 7 workers (24/32) 
+âœ“ Generating static pages using 7 workers (32/32) in 4.1s
+Turbopack build encountered 1 warning:
+./lib/storage/local.ts:30:24
+Warning: Dynamic filesystem access causes tracing of the whole project
+  [90m28 |[0m     [36mconst[0m key = [32m`[0m${finalPrefix[32m}[0m${uniqueId[32m}.[0m${ext[32m}`[0m;
+  [90m29 |[0m
+[33m[1m>[0m [90m30 |[0m     [36mconst[0m targetPath = path.join([36mthis[0m.uploadDir, key);
+  [90m   |[0m                        [33m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m31 |[0m     
+  [90m32 |[0m     [90m// Ensure the directory for this specific file exists[0m
+  [90m33 |[0m     [36mawait[0m [36mthis[0m.ensureDir(path.dirname(targetPath));
+
+Static analysis determined that this filesystem access causes the whole project to be traced and included in the output.
+This is usually unintentional and leads to all source files (including the public folder) to be deployed as part of the server code.
+This can slow down deployments or lead to failures when size limits are exceeded.
+To resolve this, you can
+- make sure the path is statically scoped to some subfolder, for example path.join(process.cwd(), 'data', bar), or
+- only use them in development, or
+- opt out by adding an ignore comment to the highlighted call: path.join(/*turbopackIgnore: true*/ ...), or
+- remove them.
+
+Import trace:
+  Server Component:
+    ./lib/storage/local.ts
+    ./lib/storage/index.ts
+    ./app/[locale]/(public)/services/page.tsx
+
+
+  Finalizing page optimization ...
+
+Route (app)
+â”Œ â—‹ /_not-found
+â”œ Æ’ /[locale]
+â”œ Æ’ /[locale]/about
+â”œ Æ’ /[locale]/blog
+â”œ Æ’ /[locale]/blog/[slug]
+â”œ Æ’ /[locale]/contact
+â”œ Æ’ /[locale]/privacy
+â”œ Æ’ /[locale]/services
+â”œ Æ’ /[locale]/services/[slug]
+â”œ Æ’ /[locale]/terms
+â”œ Æ’ /[locale]/testimonials
+â”œ Æ’ /[locale]/work
+â”œ Æ’ /[locale]/work/[slug]
+â”œ Æ’ /admin
+â”œ Æ’ /admin/audit-log
+â”œ Æ’ /admin/blog
+â”œ Æ’ /admin/blog/[id]/edit
+â”œ Æ’ /admin/blog/[id]/preview
+â”œ Æ’ /admin/blog/new
+â”œ Æ’ /admin/experience
+â”œ Æ’ /admin/experience/[id]/edit
+â”œ Æ’ /admin/experience/new
+â”œ Æ’ /admin/inquiries
+â”œ Æ’ /admin/inquiries/[id]
+â”œ Æ’ /admin/login
+â”œ Æ’ /admin/media
+â”œ Æ’ /admin/notifications
+â”œ Æ’ /admin/profile
+â”œ Æ’ /admin/projects
+â”œ Æ’ /admin/projects/[id]/edit
+â”œ Æ’ /admin/projects/new
+â”œ Æ’ /admin/services
+â”œ Æ’ /admin/services/[id]/edit
+â”œ Æ’ /admin/services/new
+â”œ Æ’ /admin/settings
+â”œ Æ’ /admin/skills
+â”œ Æ’ /admin/skills/[id]/edit
+â”œ Æ’ /admin/skills/new
+â”œ Æ’ /admin/social-links
+â”œ Æ’ /admin/social-links/[id]/edit
+â”œ Æ’ /admin/social-links/new
+â”œ Æ’ /admin/technologies
+â”œ Æ’ /admin/technologies/[id]/edit
+â”œ Æ’ /admin/technologies/new
+â”œ Æ’ /admin/testimonials
+â”œ Æ’ /admin/testimonials/[id]
+â”œ Æ’ /api/auth/[...nextauth]
+â”œ Æ’ /api/health
+â”œ Æ’ /mock-storage/[...path]
+â”œ â—‹ /mock-storage/icon.jpg
+â”œ â—‹ /robots.txt
+â”” Æ’ /sitemap.xml
+
+
+Æ’ Proxy (Middleware)
+
+â—‹  (Static)   prerendered as static content
+Æ’  (Dynamic)  server-rendered on demand
+

@@ -30,7 +30,7 @@ describe('Day 3 - Authentication and DTO Boundary', () => {
     expect(publicProfile).not.toBeNull();
     
     // Explicitly check keys
-    const expectedKeys = ['name', 'title', 'tagline', 'bio', 'locationLabel', 'availabilityStatus'];
+    const expectedKeys = ['name', 'title', 'tagline', 'bio', 'locationLabel', 'availabilityStatus', 'avatarUrl'];
     const actualKeys = Object.keys(publicProfile!);
     
     expect(actualKeys.sort()).toEqual(expectedKeys.sort());

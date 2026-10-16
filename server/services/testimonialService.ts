@@ -1,6 +1,7 @@
 import { PrismaClient, TestimonialStatus, TestimonialPermissionStatus, Prisma } from '@prisma/client';
 import { auth } from '../../auth';
 import { logAdminAction } from '@/lib/audit';
+import { createNotification } from '@/lib/notifications';
 
 const prisma = new PrismaClient();
 
@@ -25,6 +26,24 @@ export class TestimonialService {
         { createdAt: 'desc' }
       ]
     });
+  }
+
+  async submitPublicTestimonial(data: Prisma.TestimonialCreateInput) {
+    // Force safe default statuses for public submissions
+    const safeData = {
+      ...data,
+      status: TestimonialStatus.DRAFT,
+      permissionStatus: TestimonialPermissionStatus.PENDING,
+    };
+    const testimonial = await prisma.testimonial.create({ data: safeData });
+    
+    await createNotification({
+      type: 'NEW_TESTIMONIAL',
+      entityId: testimonial.id,
+      message: `New testimonial submitted by ${data.name}`
+    });
+
+    return testimonial;
   }
 
   // ADMIN

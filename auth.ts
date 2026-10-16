@@ -57,6 +57,9 @@ export const authOptions = {
   },
   callbacks: {
     async jwt({ token, user, trigger }: any) {
+      if (user) {
+        token.id = user.id;
+      }
       if (user && trigger === 'signIn') {
         const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
         const prismaSession = await prisma.session.create({
@@ -72,6 +75,9 @@ export const authOptions = {
     async session({ session, token }: any) {
       if (token.sessionId) {
         (session as any).sessionId = token.sessionId;
+      }
+      if (session.user) {
+        session.user.id = token.id || token.sub;
       }
       return session;
     },

@@ -1,0 +1,709 @@
+﻿â—‡ injected env (12) from .env.test
+[WebServer] âš  Warning: Next.js ignored package-lock.json in C:\Users\Hp because it is outside the current Git repository (C:\Users\Hp\Documents\Projects\Gurmesa_website).
+[WebServer]  To use this directory, set `outputFileTracingRoot` in your Next.js config.
+[WebServer] 
+
+Running 70 tests using 1 worker
+
+â—‡ injected env (0) from .env.test
+  âœ“   1 [chromium] â€º tests\e2e\accessibility.spec.ts:5:3 â€º Accessibility & Shell Features â€º Axe scan on / (homepage with AUTHORIZED+PUBLISHED testimonial) (2.3s)
+  âœ“   2 [chromium] â€º tests\e2e\accessibility.spec.ts:14:3 â€º Accessibility & Shell Features â€º Axe scan on /contact (2.0s)
+  âœ“   3 [chromium] â€º tests\e2e\accessibility.spec.ts:23:3 â€º Accessibility & Shell Features â€º Axe scan on /privacy (2.0s)
+  âœ“   4 [chromium] â€º tests\e2e\accessibility.spec.ts:32:3 â€º Accessibility & Shell Features â€º Axe scan on /about (2.1s)
+  âœ“   5 [chromium] â€º tests\e2e\accessibility.spec.ts:41:3 â€º Accessibility & Shell Features â€º Axe scan on /blog (1.5s)
+  âœ“   6 [chromium] â€º tests\e2e\accessibility.spec.ts:50:3 â€º Accessibility & Shell Features â€º Axe scan on /services (1.9s)
+  âœ“   7 [chromium] â€º tests\e2e\accessibility.spec.ts:59:3 â€º Accessibility & Shell Features â€º Axe scan on /work (1.9s)
+  âœ“   8 [chromium] â€º tests\e2e\accessibility.spec.ts:68:3 â€º Accessibility & Shell Features â€º Axe scan on /terms (1.8s)
+  âœ“   9 [chromium] â€º tests\e2e\accessibility.spec.ts:77:3 â€º Accessibility & Shell Features â€º skip-to-content link works correctly (702ms)
+[WebServer] â¨¯ Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+  âœ“  10 [chromium] â€º tests\e2e\accessibility.spec.ts:94:3 â€º Accessibility & Shell Features â€º mobile menu opens, traps focus, and closes with escape (941ms)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+  âœ“  11 [chromium] â€º tests\e2e\admin-crud.spec.ts:14:3 â€º Admin CRUD Edit and Persist â€º Services: Edit and persist (3.3s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+  âœ“  12 [chromium] â€º tests\e2e\admin-crud.spec.ts:51:3 â€º Admin CRUD Edit and Persist â€º Projects: Edit and persist (2.7s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  âœ˜  13 [chromium] â€º tests\e2e\admin-crud.spec.ts:81:3 â€º Admin CRUD Edit and Persist â€º Blog: Edit and persist (1.5m)
+â—‡ injected env (0) from .env.test
+  âœ“  14 [chromium] â€º tests\e2e\blog.spec.ts:28:3 â€º Blog SEC-ACL E2E Tests â€º Draft post is absent from public index HTML (567ms)
+  âœ“  15 [chromium] â€º tests\e2e\blog.spec.ts:34:3 â€º Blog SEC-ACL E2E Tests â€º Draft post returns 404 on direct lookup (591ms)
+  âœ“  16 [chromium] â€º tests\e2e\blog.spec.ts:39:3 â€º Blog SEC-ACL E2E Tests â€º Draft post is absent from sitemap (220ms)
+  âœ“  17 [chromium] â€º tests\e2e\blog.spec.ts:45:3 â€º Blog SEC-ACL E2E Tests â€º Unauthenticated request to the preview URL is redirected/rejected and contains no draft content (402ms)
+  âœ“  18 [chromium] â€º tests\e2e\blog.spec.ts:58:3 â€º Blog SEC-ACL E2E Tests â€º Playwright: /blog index renders seeded published posts (393ms)
+  âœ“  19 [chromium] â€º tests\e2e\blog.spec.ts:65:3 â€º Blog SEC-ACL E2E Tests â€º Playwright: article detail page loads from the index (1.2s)
+  âœ“  20 [chromium] â€º tests\e2e\blog.spec.ts:80:3 â€º Blog SEC-ACL E2E Tests â€º Playwright: search (?q=) filters results; a DRAFT post's title never appears in results (716ms)
+  âœ“  21 [chromium] â€º tests\e2e\blog.spec.ts:97:3 â€º Blog SEC-ACL E2E Tests â€º Playwright: category and tag filters work (435ms)
+  âœ“  22 [chromium] â€º tests\e2e\blog.spec.ts:103:3 â€º Blog SEC-ACL E2E Tests â€º Axe scan (zero critical/serious) on /blog and /blog/[slug] (3.4s)
+  âœ“  23 [chromium] â€º tests\e2e\blog.spec.ts:117:3 â€º Blog SEC-ACL E2E Tests â€º XSS: a post whose body contains <script> and <img src=x onerror=...> payloads renders them inert on /blog/[slug] (633ms)
+  âœ˜  24 [chromium] â€º tests\e2e\blog.spec.ts:137:3 â€º Blog SEC-ACL E2E Tests â€º XSS: CaseStudy content on /work/[slug] renders inert (543ms)
+â—‡ injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  âœ˜  25 [chromium] â€º tests\e2e\caching.spec.ts:13:3 â€º Caching and Revalidation (End-to-End) â€º i. Publish a testimonial -> appears on / (1.5m)
+â—‡ injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+  âœ“  26 [chromium] â€º tests\e2e\caching.spec.ts:36:3 â€º Caching and Revalidation (End-to-End) â€º ii. Mark a featured project DRAFT -> absent from / and /work (3.7s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+  âœ“  27 [chromium] â€º tests\e2e\caching.spec.ts:57:3 â€º Caching and Revalidation (End-to-End) â€º iii. Unpublish a service -> absent from /services and / (3.7s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  âœ˜  28 [chromium] â€º tests\e2e\caching.spec.ts:74:3 â€º Caching and Revalidation (End-to-End) â€º iv. Unpublish a blog post -> absent from / and /blog (1.5m)
+â—‡ injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+  âœ“  29 [chromium] â€º tests\e2e\caching.spec.ts:97:3 â€º Caching and Revalidation (End-to-End) â€º v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml (3.5s)
+  âœ“  30 [chromium] â€º tests\e2e\contact.spec.ts:12:3 â€º Inquiry & Testimonial E2E â€º contact form: happy path submits and shows confirmation, using keyboard only (1.4s)
+  âœ“  31 [chromium] â€º tests\e2e\contact.spec.ts:32:3 â€º Inquiry & Testimonial E2E â€º contact form: invalid submit focuses the error summary and associates errors with fields (811ms)
+  âœ“  32 [chromium] â€º tests\e2e\contact.spec.ts:46:3 â€º Inquiry & Testimonial E2E â€º inquiry-leak scan: assert the marker is absent from the HTML of public surfaces and sitemap (590ms)
+  âœ“  33 [chromium] â€º tests\e2e\contact.spec.ts:65:3 â€º Inquiry & Testimonial E2E â€º unauthenticated visit to /admin/inquiries and /admin/testimonials redirects to login (551ms)
+  âœ“  34 [chromium] â€º tests\e2e\day10-admin.spec.ts:5:3 â€º Day 10 - Admin & SEO E2E â€º HIDDEN social link absent from getPublicSocialLinks output AND from the rendered /about page HTML (560ms)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+  âœ“  35 [chromium] â€º tests\e2e\day10-admin.spec.ts:26:3 â€º Day 10 - Admin & SEO E2E â€º editing the Profile tagline via the admin UI shows the new tagline on / on the next request (1.8s)
+[WebServer] â¨¯ Error: simulated secret internal server error postgres://secret@db
+[WebServer]     at x (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1fo31we._.js:1:1598) {
+[WebServer]   digest: '3913719549'
+[WebServer] }
+  âœ“  36 [chromium] â€º tests\e2e\day10-admin.spec.ts:48:3 â€º Day 10 - Admin & SEO E2E â€º production error page shows no stack trace in the rendered HTML (610ms)
+  âœ“  37 [chromium] â€º tests\e2e\day10b.spec.ts:5:3 â€º Day 10b E2E â€º robots.ts disallows /admin and /api and references the sitemap (35ms)
+  âœ“  38 [chromium] â€º tests\e2e\day10b.spec.ts:13:3 â€º Day 10b E2E â€º sitemap includes the static pages and public entities, excludes the known private project, DRAFT case study, and DRAFT post (34ms)
+  âœ“  39 [chromium] â€º tests\e2e\day10b.spec.ts:21:3 â€º Day 10b E2E â€º /admin pages, /admin/login, and the blog preview page each return noindex (542ms)
+  âœ“  40 [chromium] â€º tests\e2e\day10b.spec.ts:31:3 â€º Day 10b E2E â€º canonical URL and OG title present in generateMetadata output for: home, one service detail, one case study, one blog post (793ms)
+  âœ“  41 [chromium] â€º tests\e2e\day10b.spec.ts:43:3 â€º Day 10b E2E â€º JSON-LD on at least one page parses as valid JSON, and a fixture with </script> in its title does not break out of the script element (3ms)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  âœ“  42 [chromium] â€º tests\e2e\day10b.spec.ts:60:3 â€º Day 10b E2E â€º login with an external callbackUrl does not redirect off-site (876ms)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  âœ“  43 [chromium] â€º tests\e2e\day10b.spec.ts:71:3 â€º Day 10b E2E â€º SEO override persists in admin UI and is rendered by generateMetadata (940ms)
+  âœ˜  44 [chromium] â€º tests\e2e\day5.spec.ts:4:3 â€º Day 5 - Public Pages and Navigation â€º homepage renders hero, services preview, about snapshot with real seeded data (757ms)
+â—‡ injected env (0) from .env.test
+  âœ“  45 [chromium] â€º tests\e2e\day5.spec.ts:20:3 â€º Day 5 - Public Pages and Navigation â€º services index -> click service -> detail page loads correctly (1.3s)
+  âœ“  46 [chromium] â€º tests\e2e\day6-portfolio.spec.ts:11:3 â€º Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) â€º SEC-ACL-02(c): /work page does NOT render the private project (493ms)
+  âœ“  47 [chromium] â€º tests\e2e\day6-portfolio.spec.ts:18:3 â€º Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) â€º SEC-ACL-02(d): /work/[slug] returns 404 for a private project (414ms)
+  âœ“  48 [chromium] â€º tests\e2e\day6-portfolio.spec.ts:23:3 â€º Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) â€º SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL (77ms)
+  âœ“  49 [chromium] â€º tests\e2e\day6-portfolio.spec.ts:30:3 â€º Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) â€º SEC-ACL-03(c): /work page does NOT render unpublished case studies (475ms)
+  âœ“  50 [chromium] â€º tests\e2e\day6-portfolio.spec.ts:36:3 â€º Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) â€º SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study (565ms)
+  âœ“  51 [chromium] â€º tests\e2e\day6-portfolio.spec.ts:41:3 â€º Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) â€º SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs (54ms)
+[WebServer] â¨¯ Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+  âœ“  52 [chromium] â€º tests\e2e\day6-portfolio.spec.ts:48:3 â€º Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) â€º Public /work page renders seeded public case studies (894ms)
+[WebServer] â¨¯ Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+  âœ“  53 [chromium] â€º tests\e2e\part1-i18n.spec.ts:5:1 â€º Capture Oromo Homepage (5.8s)
+  âœ˜  54 [chromium] â€º tests\e2e\part2a-screenshots.spec.ts:17:3 â€º Part 2A Screenshots â€º Capture light and dark mode screenshots (1.5m)
+â—‡ injected env (0) from .env.test
+  âœ˜  55 [chromium] â€º tests\e2e\part2b-screenshots.spec.ts:34:3 â€º Part 2B Screenshots â€º Capture sub-pages (1.5m)
+â—‡ injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  âœ˜  56 [chromium] â€º tests\e2e\part2c-screenshots.spec.ts:34:3 â€º Part 2C Screenshots â€º Capture admin pages (1.5m)
+â—‡ injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+  âœ˜  57 [chromium] â€º tests\e2e\part3-media-upload.spec.ts:19:3 â€º Part 3 - Media Upload Widget â€º Upload avatar in Profile edit and verify on public page (7.4s)
+â—‡ injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+  âœ˜  58 [chromium] â€º tests\e2e\partF-media-rendering.spec.ts:30:3 â€º Part F - Public Media Rendering â€º Profile Avatar Render (10.3s)
+â—‡ injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+  âœ˜  59 [chromium] â€º tests\e2e\partF-media-rendering.spec.ts:53:3 â€º Part F - Public Media Rendering â€º Service Featured Image Render (9.9s)
+â—‡ injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+  âœ˜  60 [chromium] â€º tests\e2e\partF-media-rendering.spec.ts:79:3 â€º Part F - Public Media Rendering â€º Project Featured Image Render (8.8s)
+â—‡ injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  âœ˜  61 [chromium] â€º tests\e2e\partF-media-rendering.spec.ts:105:3 â€º Part F - Public Media Rendering â€º Blog Featured Image Render (1.5m)
+â—‡ injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+  âœ“  62 [chromium] â€º tests\e2e\partF-media-rendering.spec.ts:131:3 â€º Part F - Public Media Rendering â€º Video Upload and Render Test (2.6s)
+  âœ“  63 [chromium] â€º tests\e2e\partG-testimonials.spec.ts:4:3 â€º Testimonials Moderation & Rate Limits â€º unauthorized testimonials are not public (2.7s)
+  âœ“  64 [chromium] â€º tests\e2e\partG-testimonials.spec.ts:18:3 â€º Testimonials Moderation & Rate Limits â€º honeypot traps spam bots (796ms)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+[WebServer] â¨¯ Error: File size exceeds the 25MB limit. (27262976 bytes)
+[WebServer]     at d (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1ks4c2r._.js:1:10321)
+[WebServer]     at h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1ks4c2r._.js:1:11375)
+[WebServer]     at async g (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1ks4c2r._.js:1:4292) {
+[WebServer]   digest: '2640127667'
+[WebServer] }
+  âœ˜  65 [chromium] â€º tests\e2e\partG-upload-and-video.spec.ts:35:3 â€º Part G - Media Upload Limits and Video Rendering â€º Upload file size limits (6MB succeeds, 26MB rejected) (12.3s)
+â—‡ injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/89c5a6a0-8514-45a7-89d8-77ed9c3099b0.pdf received application/pdf
+[WebServer] â¨¯ The requested resource isn't a valid image for /mock-storage/media/73ab7235-f572-4260-bf2b-b11289949722.pdf received application/pdf
+  âœ˜  66 [chromium] â€º tests\e2e\partG-upload-and-video.spec.ts:53:3 â€º Part G - Media Upload Limits and Video Rendering â€º Video rendering on public pages (12.1s)
+â—‡ injected env (0) from .env.test
+  âœ“  67 [chromium] â€º tests\e2e\partH-notifications.spec.ts:4:3 â€º Part H: Admin Notifications â€º 16. Unauthenticated access to the notifications list/API is rejected (492ms)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  âœ“  68 [chromium] â€º tests\e2e\partH-notifications.spec.ts:10:3 â€º Part H: Admin Notifications â€º 17. Submit a real inquiry as visitor, log in as admin, confirm bell icon shows incremented count and new notification appears (6.1s)
+  âœ˜  69 [chromium] â€º tests\e2e\partI-blog-social.spec.ts:4:3 â€º Blog Social Interactions â€º like toggle and comment submission (1.5m)
+â—‡ injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] â¨¯ Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+  âœ“  70 [chromium] â€º tests\e2e\resume.spec.ts:6:3 â€º Resume End-to-End â€º upload a PDF as admin, set it as current resume, request from /about unauthenticated (3.0s)
+
+
+  1) [chromium] â€º tests\e2e\admin-crud.spec.ts:81:3 â€º Admin CRUD Edit and Persist â€º Blog: Edit and persist 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.textContent: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for locator('tbody tr').first().locator('td').first()
+
+
+      83 |     
+      84 |     const firstRow = page.locator('tbody tr').first();
+    > 85 |     const originalTitle = await firstRow.locator('td').first().textContent();
+         |                                                                ^
+      86 |     const editLink = firstRow.locator('a:has-text("Edit")');
+      87 |     const href = await editLink.getAttribute('href');
+      88 |     if (!href) throw new Error('No edit link found');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\admin-crud.spec.ts:85:64
+
+    Error Context: test-results\admin-crud-Admin-CRUD-Edit-and-Persist-Blog-Edit-and-persist-chromium\error-context.md
+
+  2) [chromium] â€º tests\e2e\blog.spec.ts:137:3 â€º Blog SEC-ACL E2E Tests â€º XSS: CaseStudy content on /work/[slug] renders inert 
+
+    Error: locator.innerText: Error: strict mode violation: locator('.prose') resolved to 2 elements:
+        1) <section class="prose prose-lg dark:prose-invert max-w-none space-y-12">â€¦</section> aka getByText('The ProblempThe')
+        2) <div class="prose prose-lg dark:prose-invert max-w-none"></div> aka locator('div:nth-child(5) > .prose')
+
+    Call log:
+      - waiting for locator('.prose')
+
+
+      165 |     });
+      166 |     await page.goto('/work/xss-project');
+    > 167 |     const content = await page.locator('.prose').innerText();
+          |                                                  ^
+      168 |     expect(content).not.toContain('<script>');
+      169 |     const scriptCount = await page.locator('.prose script').count();
+      170 |     expect(scriptCount).toBe(0);
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\blog.spec.ts:167:50
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-bb71f--on-work-slug-renders-inert-chromium\error-context.md
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-bb71f--on-work-slug-renders-inert-chromium\error-context.md
+
+  3) [chromium] â€º tests\e2e\caching.spec.ts:13:3 â€º Caching and Revalidation (End-to-End) â€º i. Publish a testimonial -> appears on / 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.click: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for locator('tr:has-text("Caching Testimonial")').first().locator('a:has-text("Edit")')
+
+
+      14 |     await page.goto('/admin/testimonials');
+      15 |     const authorName = 'Caching Testimonial';
+    > 16 |     await page.locator(`tr:has-text("${authorName}")`).first().locator('a:has-text("Edit")').click();
+         |                                                                                              ^
+      17 |     
+      18 |     await page.selectOption('select[name="status"]', 'PUBLISHED');
+      19 |     await page.selectOption('select[name="permissionStatus"]', 'AUTHORIZED');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\caching.spec.ts:16:94
+
+    Error Context: test-results\caching-Caching-and-Revali-8c98b-a-testimonial---appears-on--chromium\error-context.md
+
+  4) [chromium] â€º tests\e2e\caching.spec.ts:74:3 â€º Caching and Revalidation (End-to-End) â€º iv. Unpublish a blog post -> absent from / and /blog 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.click: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for locator('tr:has(td:text-is("Caching Post"))').first().locator('a[href*="/edit"]')
+
+
+      75 |     await page.goto('/admin/blog');
+      76 |     const postTitle = "Caching Post";
+    > 77 |     await page.locator(`tr:has(td:text-is("${postTitle}"))`).first().locator('a[href*="/edit"]').click();
+         |                                                                                                  ^
+      78 |     await page.selectOption('select[name="status"]', 'DRAFT');
+      79 |     await page.locator('text=Save Post').click();
+      80 |     await expect(page).toHaveURL(/.*\/admin\/blog$/, { timeout: 15000 });
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\caching.spec.ts:77:98
+
+    Error Context: test-results\caching-Caching-and-Revali-5e4e7-post---absent-from-and-blog-chromium\error-context.md
+
+  5) [chromium] â€º tests\e2e\day5.spec.ts:4:3 â€º Day 5 - Public Pages and Navigation â€º homepage renders hero, services preview, about snapshot with real seeded data 
+
+    Error: expect(locator).not.toBeEmpty() failed
+
+    Locator: locator('h1')
+    Expected: not empty
+    Error: strict mode violation: locator('h1') resolved to 2 elements:
+        1) <h1 class="text-5xl font-heading font-bold tracking-tight text-slate-900 dark:text-slate-50">John Doe</h1> aka locator('section').filter({ hasText: 'John DoeFull Stack DeveloperNew Tagline 1791547659370Get in Touch' }).getByRole('heading')
+        2) <h1 class="text-2xl sm:text-3xl font-bold text-foreground mb-1">John Doe</h1> aka locator('section').filter({ hasText: 'Read Full BioGitHub' }).locator('h1')
+
+    Call log:
+      - Expect "not toBeEmpty" locator('h1') with timeout 5000ms
+      - waiting for locator('h1')
+
+
+       6 |     
+       7 |     // Check for Hero
+    >  8 |     await expect(page.locator('h1')).not.toBeEmpty();
+         |                                          ^
+       9 |     await expect(page.getByText('Get in Touch')).toBeVisible();
+      10 |
+      11 |     // Check for Services Preview (assuming seeded data has 'Services')
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\day5.spec.ts:8:42
+
+    Error Context: test-results\day5-Day-5---Public-Pages--b5ef9-pshot-with-real-seeded-data-chromium\error-context.md
+
+  6) [chromium] â€º tests\e2e\part2a-screenshots.spec.ts:17:3 â€º Part 2A Screenshots â€º Capture light and dark mode screenshots 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: page.waitForLoadState: Test timeout of 90000ms exceeded.
+
+      23 |       await page.goto(p.path);
+      24 |       // Ensure page is fully loaded and any animations finished
+    > 25 |       await page.waitForLoadState('networkidle');
+         |                  ^
+      26 |       // For local testing, force theme to light if needed by setting localStorage
+      27 |       await page.evaluate(() => {
+      28 |         localStorage.setItem('theme', 'light');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\part2a-screenshots.spec.ts:25:18
+
+    Error Context: test-results\part2a-screenshots-Part-2A-c36b1-t-and-dark-mode-screenshots-chromium\error-context.md
+
+  7) [chromium] â€º tests\e2e\part2b-screenshots.spec.ts:34:3 â€º Part 2B Screenshots â€º Capture sub-pages 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.getAttribute: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for locator('a[href^="/blog/"]').first()
+
+
+      51 |     // 3. Blog Detail
+      52 |     await page.goto('/blog');
+    > 53 |     const blogLink = await page.locator('a[href^="/blog/"]').first().getAttribute('href');
+         |                                                                      ^
+      54 |     if (blogLink) {
+      55 |       await captureLightDark(page, blogLink, 'blog-detail');
+      56 |     }
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\part2b-screenshots.spec.ts:53:70
+
+    Error Context: test-results\part2b-screenshots-Part-2B-Screenshots-Capture-sub-pages-chromium\error-context.md
+
+  8) [chromium] â€º tests\e2e\part2c-screenshots.spec.ts:34:3 â€º Part 2C Screenshots â€º Capture admin pages 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.getAttribute: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for locator('tbody tr').first().locator('a:has-text("Edit")')
+
+
+      55 |     const firstRow = page.locator('tbody tr').first();
+      56 |     const editLink = firstRow.locator('a:has-text("Edit")');
+    > 57 |     const href = await editLink.getAttribute('href');
+         |                                 ^
+      58 |     if (href) {
+      59 |       await captureLightDark(page, href, 'blog-edit');
+      60 |     }
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\part2c-screenshots.spec.ts:57:33
+
+    Error Context: test-results\part2c-screenshots-Part-2C-Screenshots-Capture-admin-pages-chromium\error-context.md
+
+  9) [chromium] â€º tests\e2e\part3-media-upload.spec.ts:19:3 â€º Part 3 - Media Upload Widget â€º Upload avatar in Profile edit and verify on public page 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('text=1 asset selected')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('text=1 asset selected') with timeout 5000ms
+      - waiting for locator('text=1 asset selected')
+
+
+      43 |
+      44 |     // Verify it's selected (shows '1 asset selected')
+    > 45 |     await expect(page.locator('text=1 asset selected')).toBeVisible();
+         |                                                         ^
+      46 |
+      47 |     // Submit the form
+      48 |     await page.click('button[type="submit"]:has-text("Save Profile")');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\part3-media-upload.spec.ts:45:57
+
+    Error Context: test-results\part3-media-upload-Part-3--43a7b-t-and-verify-on-public-page-chromium\error-context.md
+
+    Error Context: test-results\part3-media-upload-Part-3--43a7b-t-and-verify-on-public-page-chromium\error-context.md
+
+  10) [chromium] â€º tests\e2e\partF-media-rendering.spec.ts:30:3 â€º Part F - Public Media Rendering â€º Profile Avatar Render 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.w-48.h-48 img')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.w-48.h-48 img') with timeout 5000ms
+      - waiting for locator('.w-48.h-48 img')
+
+
+      43 |     
+      44 |     await visitorPage.goto('/about');
+    > 45 |     await expect(visitorPage.locator('.w-48.h-48 img')).toBeVisible();
+         |                                                         ^
+      46 |     
+      47 |     const outDir = path.join(process.cwd(), 'docs', 'evidence', 'day14-5', 'partF', 'screenshots');
+      48 |     fs.mkdirSync(outDir, { recursive: true });
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partF-media-rendering.spec.ts:45:57
+
+    Error Context: test-results\partF-media-rendering-Part-be317-ering-Profile-Avatar-Render-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-be317-ering-Profile-Avatar-Render-chromium\error-context.md
+
+  11) [chromium] â€º tests\e2e\partF-media-rendering.spec.ts:53:3 â€º Part F - Public Media Rendering â€º Service Featured Image Render 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('img.object-cover').first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('img.object-cover').first() with timeout 5000ms
+      - waiting for locator('img.object-cover').first()
+
+
+      66 |     // Index page
+      67 |     await visitorPage.goto('/services');
+    > 68 |     await expect(visitorPage.locator('img.object-cover').first()).toBeVisible();
+         |                                                                   ^
+      69 |     
+      70 |     // Detail page
+      71 |     await visitorPage.locator('a:has-text("View Details")').first().click();
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partF-media-rendering.spec.ts:68:67
+
+    Error Context: test-results\partF-media-rendering-Part-01b6b-rvice-Featured-Image-Render-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-01b6b-rvice-Featured-Image-Render-chromium\error-context.md
+
+  12) [chromium] â€º tests\e2e\partF-media-rendering.spec.ts:79:3 â€º Part F - Public Media Rendering â€º Project Featured Image Render 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('img.object-cover').first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('img.object-cover').first() with timeout 5000ms
+      - waiting for locator('img.object-cover').first()
+
+
+      92 |     // Index page
+      93 |     await visitorPage.goto('/work');
+    > 94 |     await expect(visitorPage.locator('img.object-cover').first()).toBeVisible();
+         |                                                                   ^
+      95 |     
+      96 |     // Detail page
+      97 |     await visitorPage.locator('a:has-text("Read Case Study")').first().click();
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partF-media-rendering.spec.ts:94:67
+
+    Error Context: test-results\partF-media-rendering-Part-f4f46-oject-Featured-Image-Render-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-f4f46-oject-Featured-Image-Render-chromium\error-context.md
+
+  13) [chromium] â€º tests\e2e\partF-media-rendering.spec.ts:105:3 â€º Part F - Public Media Rendering â€º Blog Featured Image Render 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.click: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for locator('a[href*="/edit"]').first()
+
+
+      106 |     await login(page);
+      107 |     await page.goto('/admin/blog');
+    > 108 |     await page.locator('a[href*="/edit"]').first().click();
+          |                                                    ^
+      109 |     await page.locator('input[type="file"]').setInputFiles(dummyImagePath);
+      110 |     await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
+      111 |     await page.locator('.grid > .relative').first().click();
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partF-media-rendering.spec.ts:108:52
+
+    Error Context: test-results\partF-media-rendering-Part-e77bf--Blog-Featured-Image-Render-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-e77bf--Blog-Featured-Image-Render-chromium\error-context.md
+
+  14) [chromium] â€º tests\e2e\partG-upload-and-video.spec.ts:35:3 â€º Part G - Media Upload Limits and Video Rendering â€º Upload file size limits (6MB succeeds, 26MB rejected) 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.text-destructive')
+    Expected substring: "exceeds the 25MB limit"
+    Received string:    "Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    Timeout: 10000ms
+
+    Call log:
+      - Expect "toContainText" locator('.text-destructive') with timeout 10000ms
+      - waiting for locator('.text-destructive')
+        18 Ã— locator resolved to <div class="text-sm text-destructive font-medium">Minified React error #441; visit https://react.deâ€¦</div>
+           - unexpected value "Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+
+
+      39 |     // 1. Upload oversized video
+      40 |     await page.locator('input[type="file"]').setInputFiles(dummyOversizedVideoPath);
+    > 41 |     await expect(page.locator('.text-destructive')).toContainText('exceeds the 25MB limit', { timeout: 10000 });
+         |                                                     ^
+      42 |
+      43 |     // 2. Upload 6MB video
+      44 |     await page.locator('input[type="file"]').setInputFiles(dummyLargeVideoPath);
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partG-upload-and-video.spec.ts:41:53
+
+    Error Context: test-results\partG-upload-and-video-Par-dd4d3-6MB-succeeds-26MB-rejected--chromium\error-context.md
+
+    Error Context: test-results\partG-upload-and-video-Par-dd4d3-6MB-succeeds-26MB-rejected--chromium\error-context.md
+
+  15) [chromium] â€º tests\e2e\partG-upload-and-video.spec.ts:53:3 â€º Part G - Media Upload Limits and Video Rendering â€º Video rendering on public pages 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('video.object-cover')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('video.object-cover') with timeout 5000ms
+      - waiting for locator('video.object-cover')
+
+
+      81 |     // It should render a <video> element instead of <img>
+      82 |     const videoLocator = visitorPage.locator('video.object-cover');
+    > 83 |     await expect(videoLocator).toBeVisible();
+         |                                ^
+      84 |     
+      85 |     await visitorContext.close();
+      86 |   });
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partG-upload-and-video.spec.ts:83:32
+
+    Error Context: test-results\partG-upload-and-video-Par-dfee0-o-rendering-on-public-pages-chromium\error-context.md
+
+    Error Context: test-results\partG-upload-and-video-Par-dfee0-o-rendering-on-public-pages-chromium\error-context.md
+
+  16) [chromium] â€º tests\e2e\partI-blog-social.spec.ts:4:3 â€º Blog Social Interactions â€º like toggle and comment submission 
+
+    Test timeout of 90000ms exceeded.
+
+    Error: locator.click: Test timeout of 90000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: /Read Article/i }).first()
+
+
+       8 |     // Find first post and read it
+       9 |     const postLink = page.getByRole('link', { name: /Read Article/i }).first();
+    > 10 |     await postLink.click();
+         |                    ^
+      11 |     
+      12 |     // Check Like button
+      13 |     const likeBtn = page.getByRole('button', { name: /Like|Unlike/i });
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partI-blog-social.spec.ts:10:20
+
+    Error Context: test-results\partI-blog-social-Blog-Soc-d72af-ggle-and-comment-submission-chromium\error-context.md
+
+  16 failed
+    [chromium] â€º tests\e2e\admin-crud.spec.ts:81:3 â€º Admin CRUD Edit and Persist â€º Blog: Edit and persist 
+    [chromium] â€º tests\e2e\blog.spec.ts:137:3 â€º Blog SEC-ACL E2E Tests â€º XSS: CaseStudy content on /work/[slug] renders inert 
+    [chromium] â€º tests\e2e\caching.spec.ts:13:3 â€º Caching and Revalidation (End-to-End) â€º i. Publish a testimonial -> appears on / 
+    [chromium] â€º tests\e2e\caching.spec.ts:74:3 â€º Caching and Revalidation (End-to-End) â€º iv. Unpublish a blog post -> absent from / and /blog 
+    [chromium] â€º tests\e2e\day5.spec.ts:4:3 â€º Day 5 - Public Pages and Navigation â€º homepage renders hero, services preview, about snapshot with real seeded data 
+    [chromium] â€º tests\e2e\part2a-screenshots.spec.ts:17:3 â€º Part 2A Screenshots â€º Capture light and dark mode screenshots 
+    [chromium] â€º tests\e2e\part2b-screenshots.spec.ts:34:3 â€º Part 2B Screenshots â€º Capture sub-pages 
+    [chromium] â€º tests\e2e\part2c-screenshots.spec.ts:34:3 â€º Part 2C Screenshots â€º Capture admin pages 
+    [chromium] â€º tests\e2e\part3-media-upload.spec.ts:19:3 â€º Part 3 - Media Upload Widget â€º Upload avatar in Profile edit and verify on public page 
+    [chromium] â€º tests\e2e\partF-media-rendering.spec.ts:30:3 â€º Part F - Public Media Rendering â€º Profile Avatar Render 
+    [chromium] â€º tests\e2e\partF-media-rendering.spec.ts:53:3 â€º Part F - Public Media Rendering â€º Service Featured Image Render 
+    [chromium] â€º tests\e2e\partF-media-rendering.spec.ts:79:3 â€º Part F - Public Media Rendering â€º Project Featured Image Render 
+    [chromium] â€º tests\e2e\partF-media-rendering.spec.ts:105:3 â€º Part F - Public Media Rendering â€º Blog Featured Image Render 
+    [chromium] â€º tests\e2e\partG-upload-and-video.spec.ts:35:3 â€º Part G - Media Upload Limits and Video Rendering â€º Upload file size limits (6MB succeeds, 26MB rejected) 
+    [chromium] â€º tests\e2e\partG-upload-and-video.spec.ts:53:3 â€º Part G - Media Upload Limits and Video Rendering â€º Video rendering on public pages 
+    [chromium] â€º tests\e2e\partI-blog-social.spec.ts:4:3 â€º Blog Social Interactions â€º like toggle and comment submission 
+  54 passed (15.2m)

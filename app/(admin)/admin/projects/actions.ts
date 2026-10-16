@@ -1,7 +1,7 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import { createProject, updateProject, deleteProject, upsertCaseStudy } from '@/server/services/projectService';
+import { createProject, updateProject, deleteProject, upsertCaseStudy, setProjectFeaturedMedia } from '@/server/services/projectService';
 import { ProjectStatus, ProjectConfidentiality, CaseStudyStatus } from '@prisma/client';
 import { redirect } from 'next/navigation';
 
@@ -14,7 +14,9 @@ export async function createProjectAction(formData: FormData) {
   const status = formData.get('status') as ProjectStatus;
   const confidentiality = formData.get('confidentiality') as ProjectConfidentiality;
 
-  await createProject({
+  const featuredMediaId = formData.get('featuredMediaId') as string;
+
+  const project = await createProject({
     title,
     slug,
     summary,
@@ -23,6 +25,10 @@ export async function createProjectAction(formData: FormData) {
     status,
     confidentiality,
   });
+
+  if (featuredMediaId) {
+    await setProjectFeaturedMedia(project.id, featuredMediaId);
+  }
 
   revalidatePath('/admin/projects');
   revalidatePath('/work');
@@ -39,6 +45,8 @@ export async function updateProjectAction(id: string, formData: FormData) {
   const status = formData.get('status') as ProjectStatus;
   const confidentiality = formData.get('confidentiality') as ProjectConfidentiality;
 
+  const featuredMediaId = formData.get('featuredMediaId') as string;
+
   await updateProject(id, {
     title,
     slug,
@@ -48,6 +56,8 @@ export async function updateProjectAction(id: string, formData: FormData) {
     status,
     confidentiality,
   });
+
+  await setProjectFeaturedMedia(id, featuredMediaId || null);
 
   revalidatePath('/admin/projects');
   revalidatePath('/work');

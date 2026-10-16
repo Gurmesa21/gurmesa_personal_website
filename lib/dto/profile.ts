@@ -1,8 +1,8 @@
 import { Profile, Experience, Skill, SocialLink } from '@prisma/client';
 
-export type PublicProfile = Pick<Profile, 'name' | 'title' | 'tagline' | 'bio' | 'locationLabel' | 'availabilityStatus'>;
+export type PublicProfile = Pick<Profile, 'name' | 'title' | 'tagline' | 'bio' | 'locationLabel' | 'availabilityStatus'> & { avatarUrl: string | null };
 
-export function toPublicProfile(profile: Profile): PublicProfile {
+export function toPublicProfile(profile: Profile & { avatarUrl?: string | null }): PublicProfile {
   return {
     name: profile.name,
     title: profile.title,
@@ -10,6 +10,7 @@ export function toPublicProfile(profile: Profile): PublicProfile {
     bio: profile.bio,
     locationLabel: profile.locationLabel,
     availabilityStatus: profile.availabilityStatus,
+    avatarUrl: profile.avatarUrl || null,
   };
 }
 

@@ -1,0 +1,167 @@
+◇ injected env (12) from .env.test
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - `__dirname` (vitest.config.ts:10:25). Use `import.meta.dirname` instead
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.2 [39m[90mC:/Users/Hp/Documents/Projects/Gurmesa_website[39m
+
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mPart A: Likes[2m > [22m1. Likes: toggle semantics (like -> unlike)[32m 211[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mPart A: Likes[2m > [22m2. Likes: voterHash is HMAC-SHA256 of ip+user-agent keyed by LIKE_HASH_SECRET[32m 84[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mPart A: Likes[2m > [22m3. Likes: throws in production if LIKE_HASH_SECRET is unset[32m 58[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mPart A: Likes[2m > [22m4. Likes: rejected on DRAFT post[32m 82[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mPart A: Likes[2m > [22m5. Likes: rejected on ARCHIVED post[32m 71[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mPart A: Likes[2m > [22m6. Likes: rejected on non-existent post[32m 57[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mPart A: Likes[2m > [22m7. Likes: rate limit enforced (rejects after limit exceeded)[32m 82[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mPart A: Likes[2m > [22m8. Likes: DTO exposes only likesCount and likedByMe, no raw IP stored or exposed[32m 43[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mParts B & D: Comments[2m > [22m9. Comments: valid submission creates comment with status PENDING and sends notification[32m 99[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mParts B & D: Comments[2m > [22m10. Comments: rejected with invalid email[32m 47[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mParts B & D: Comments[2m > [22m11. Comments: rejected with content < 3 chars[32m 44[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mParts B & D: Comments[2m > [22m12. Comments: rejected with content > 1000 chars[32m 44[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mParts B & D: Comments[2m > [22m13. Comments: honeypot rejects spam[32m 56[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mParts B & D: Comments[2m > [22m14. Comments: rate limit enforced on comments[32m 56[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mParts B & D: Comments[2m > [22m15. Comments: rejected on non-PUBLISHED (DRAFT) post[32m 69[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mParts B & D: Comments[2m > [22m16. Comments: unapproved (PENDING or REJECTED) comments do not appear on public post[32m 92[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mParts B & D: Comments[2m > [22m17. Comments: approved comments appear on public post with plain text author and content (no email)[32m 74[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mPart C: Admin Queue & Audit Logging[2m > [22m18. Admin Queue: approveCommentAction requires session, updates status to APPROVED and logs audit entry[32m 130[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mPart C: Admin Queue & Audit Logging[2m > [22m19. Admin Queue: rejectCommentAction requires session, updates status to REJECTED and logs audit entry[32m 97[2mms[22m[39m
+ [32m✓[39m tests/integration/blog-likes.test.ts[2m > [22mBlog Social Spec (20 Named Tests)[2m > [22mPart C: Admin Queue & Audit Logging[2m > [22m20. Admin Queue: deleteCommentAction requires session, deletes comment and logs audit entry[32m 92[2mms[22m[39m
+ [32m✓[39m tests/integration/guard.test.ts[2m > [22mProduction Guard[2m > [22mthrows an error if PLAYWRIGHT_TEST=1 in production[32m 159[2mms[22m[39m
+ [32m✓[39m tests/integration/guard.test.ts[2m > [22mProduction Guard[2m > [22mdoes not throw if PLAYWRIGHT_TEST is missing in production[32m 6[2mms[22m[39m
+ [32m✓[39m tests/integration/guard.test.ts[2m > [22mProduction Guard[2m > [22mrefuses to run seed.ts in production[33m 643[2mms[22m[39m
+ [32m✓[39m tests/integration/guard.test.ts[2m > [22mProduction Guard[2m > [22misTestMode[2m > [22mreturns true when APP_ENV=test and PLAYWRIGHT_TEST=1[32m 3[2mms[22m[39m
+ [32m✓[39m tests/integration/guard.test.ts[2m > [22mProduction Guard[2m > [22misTestMode[2m > [22mreturns false otherwise[32m 2[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mvalid submission stores an inquiry with status NEW[32m 184[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input is rejected with field errors[32m 9[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: missing email[32m 5[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: invalid email[32m 5[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: message too short[32m 5[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: message too long[32m 6[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22minvalid input rejected: unknown projectType[32m 5[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22munknown/extra fields are rejected[32m 5[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mhoneypot filled: nothing stored, nothing sent, success-shaped reply[32m 12[2mms[22m[39m
+[90mstdout[2m | tests/integration/contact.test.ts[2m > [22m[2mContact & Inquiry Service Integration[2m > [22m[2mConsoleTransport records SKIPPED (never SENT)
+[22m[39m--- EMAIL SKIPPED (CONSOLE TRANSPORT) ---
+To: x
+Subject: y
+Body:
+z
+-----------------------------------------
+
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mrate limit: the (N+1)th request from one client is rejected while a different client is still accepted[32m 192[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22memail transport throws: inquiry is still stored with notificationStatus FAILED[32m 40[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mConsoleTransport records SKIPPED (never SENT)[32m 6[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mConsoleTransport cannot be selected when APP_ENV=production[32m 5[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22mheader-injection attempt does not alter the outgoing email headers/subject[32m 4[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22msource with a full URL, protocol, or query string is rejected or normalized to a safe path[32m 4[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mContact & Inquiry Service Integration[2m > [22macknowledgement is not sent when the toggle is off[32m 37[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated: list, get, status change, add note, delete each rejected[32m 3[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: list rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: get rejected[32m 0[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: status change rejected[32m 0[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: add note rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22munauthenticated inquiry admin: delete rejected[32m 0[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mAdmin Inquiries[2m > [22madd note stores the session user as author regardless of any client-supplied authorId[32m 92[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22mPENDING+published testimonial excluded from public[32m 55[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22mAUTHORIZED+DRAFT excluded from public[32m 13[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22mREVOKED+published excluded from public[32m 12[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22mtoPublicTestimonial allowlist keys match exactly[32m 11[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22manonymous testimonial omits name and organization[32m 10[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22munauthenticated testimonial mutations rejected[32m 2[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22munauthenticated testimonial create rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22munauthenticated testimonial update rejected[32m 0[2mms[22m[39m
+ [32m✓[39m tests/integration/contact.test.ts[2m > [22mTestimonials[2m > [22munauthenticated testimonial delete rejected[32m 0[2mms[22m[39m
+ [32m✓[39m tests/integration/media.test.ts[2m > [22mMedia Service[2m > [22m1. Unauthenticated media upload rejected[32m 79[2mms[22m[39m
+ [32m✓[39m tests/integration/media.test.ts[2m > [22mMedia Service[2m > [22m2. Unauthenticated media delete rejected[32m 22[2mms[22m[39m
+ [32m✓[39m tests/integration/media.test.ts[2m > [22mMedia Service[2m > [22m3. Unauthenticated media list (admin) access rejected[32m 21[2mms[22m[39m
+ [32m✓[39m tests/integration/media.test.ts[2m > [22mMedia Service[2m > [22m4. Malformed/disguised file upload rejected[32m 22[2mms[22m[39m
+ [32m✓[39m tests/integration/media.test.ts[2m > [22mMedia Service[2m > [22m5. Oversized file upload rejected[32m 40[2mms[22m[39m
+ [32m✓[39m tests/integration/media.test.ts[2m > [22mMedia Service[2m > [22m6. Storage key is not derived from the original filename[32m 95[2mms[22m[39m
+ [32m✓[39m tests/integration/media.test.ts[2m > [22mMedia Service[2m > [22m7. Deleting a MediaAsset that is referenced elsewhere behaves per whatever behavior you actually implemented[32m 93[2mms[22m[39m
+ [32m✓[39m tests/integration/notifications.test.ts[2m > [22mNotification System[2m > [22m13. Submitting a new Inquiry creates a Notification row with the correct type and entityId[32m 128[2mms[22m[39m
+ [32m✓[39m tests/integration/notifications.test.ts[2m > [22mNotification System[2m > [22m14. Submitting a new Testimonial creates a Notification row with the correct type and entityId[32m 60[2mms[22m[39m
+ [32m✓[39m tests/integration/notifications.test.ts[2m > [22mNotification System[2m > [22m15. Marking a notification read updates isRead and is reflected in the unread count[32m 28[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mgetPublicPosts() excludes DRAFT posts[32m 106[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mgetPublicPosts() excludes ARCHIVED posts[32m 34[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mgetPublicPostBySlug(slug) returns null for a DRAFT post's real slug[32m 32[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mgetPublicPostBySlug(slug) returns null for an ARCHIVED post[32m 27[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22mtoPublicPost() output keys match the declared allowlist exactly[32m 6[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: createPost rejected[32m 8[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: updatePost rejected[32m 4[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: publish rejected[32m 4[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: deletePost rejected[32m 5[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: category create rejected[32m 65[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: category delete rejected[32m 5[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: tag create rejected[32m 4[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts[2m > [22mBlog SEC-ACL tests[2m > [22munauthenticated: tag delete rejected[32m 5[2mms[22m[39m
+ [32m✓[39m tests/integration/audit-login.test.ts[2m > [22mAudit Logs (Login)[2m > [22m9c. Audit log entry is created for a login event[33m 539[2mms[22m[39m
+ [32m✓[39m tests/integration/audit.test.ts[2m > [22mAudit Logs[2m > [22m9a. Audit log entry is created for a publish action[32m 207[2mms[22m[39m
+ [32m✓[39m tests/integration/audit.test.ts[2m > [22mAudit Logs[2m > [22m9b. Audit log entry is created for a settings change[32m 60[2mms[22m[39m
+ [32m✓[39m tests/integration/audit.test.ts[2m > [22mAudit Logs[2m > [22m9d. Audit log entry is created for a media delete[32m 82[2mms[22m[39m
+ [32m✓[39m tests/integration/audit.test.ts[2m > [22mAudit Logs[2m > [22m10. Unauthenticated audit log viewer access rejected[32m 37[2mms[22m[39m
+ [32m✓[39m tests/integration/day3-auth.test.ts[2m > [22mDay 3 - Authentication and DTO Boundary[2m > [22mSEC-ACL-05: getPublicProfile() output keys match exactly the declared public allowlist[32m 65[2mms[22m[39m
+ [32m✓[39m tests/integration/day3-auth.test.ts[2m > [22mDay 3 - Authentication and DTO Boundary[2m > [22mSEC-ACL-01: unauthenticated access to admin action (getAdminProfile) is rejected[32m 3[2mms[22m[39m
+ [32m✓[39m tests/integration/day3-auth.test.ts[2m > [22mDay 3 - Authentication and DTO Boundary[2m > [22mSEC-AUTH-03: Login validation accepts correct password and rejects wrong password[33m 366[2mms[22m[39m
+ [32m✓[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mSEC-ACL-02: Private Project Isolation[2m > [22m(a) getPublicProjects() — never appears in the list[32m 78[2mms[22m[39m
+ [32m✓[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mSEC-ACL-02: Private Project Isolation[2m > [22m(b) getPublicCaseStudyBySlug(slug) — returns null for private project[32m 10[2mms[22m[39m
+ [32m✓[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mSEC-ACL-03: Unpublished Case Study Isolation[2m > [22m(a) getPublicProjects() — never appears in the list if case study is DRAFT[32m 12[2mms[22m[39m
+ [32m✓[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mSEC-ACL-03: Unpublished Case Study Isolation[2m > [22m(b) getPublicCaseStudyBySlug(slug) — returns null if case study is DRAFT[32m 6[2mms[22m[39m
+ [32m✓[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mDTO Allowlist[2m > [22mtoPublicCaseStudy() output keys exclude clientRef and internalNotes and match the declared allowlist exactly[32m 3[2mms[22m[39m
+ [32m✓[39m tests/integration/day6-portfolio.test.ts[2m > [22mDay 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL-03)[2m > [22mAdmin Mutations (SEC-ACL-01 equivalent)[2m > [22mProject/CaseStudy mutations reject unauthenticated requests[32m 5[2mms[22m[39m
+ [32m✓[39m tests/integration/day5-service.test.ts[2m > [22mService Integration Tests[2m > [22mgetPublicServices() excludes DRAFT/ARCHIVED services[32m 81[2mms[22m[39m
+ [32m✓[39m tests/integration/day5-service.test.ts[2m > [22mService Integration Tests[2m > [22mtoPublicService() output keys match exactly the declared public allowlist[32m 3[2mms[22m[39m
+ [32m✓[39m tests/integration/day5-service.test.ts[2m > [22mService Integration Tests[2m > [22munauthenticated request to a Service admin mutation is rejected[32m 5[2mms[22m[39m
+ [32m✓[39m tests/integration/project-visibility.test.ts[2m > [22mProject query can filter by confidentiality[32m 61[2mms[22m[39m
+[90mstdout[2m | tests/integration/rateLimit.test.ts[2m > [22m[2mRate Limiter with Redis[2m > [22m[2m11. Rate limiter: the (N+1)th request from one client is rejected while a different client is still accepted
+[22m[39mRedis keys created: [
+  [32m'268d7f3b64cc81c71a931fef2ea4a1cb6bba5b224c85c73c87ef4687bdf7161a'[39m,
+  [32m'd8537e61d3e45d076b089484ba72b8a565c00a621de38335f9ab20976b28f333'[39m,
+  [32m'5116eff471903903809afd984f341f8304353e800c56c57c1380a10243d49a03'[39m,
+  [32m'8040e5e87794e1338b5bfd0dcbe0e8d6ade738a7c91a463373d1b3c526ab09ed'[39m,
+  [32m'6fad5cc6ea47d77f56914cb0304be811489a90c17d0f36d4d74698659a2c66aa'[39m,
+  [32m'a02c661b3875c2a0554604b22551308abf96c036053edcc83abe9800ac736d43'[39m,
+  [32m'8475dcb4016bc41f512c89e9861f5897e06a3daea0bc1bd39bbac8b9f34a150a'[39m,
+  [32m'6c52b9b840a45d3d93f3487e891d7016f13d18d2c760b56f82ace41f40673438'[39m,
+  [32m'f455ace5019ee40d8a89a6ddd4a17b208014fa82e67e77de3f2b28d67d1b0058'[39m,
+  [32m'8ec73dcfbbaed22394257bbb2b77361386277155e22d09069fff819b3276d7ed'[39m,
+  [32m'af0f8a637cdee10af69403dc3426eee2cebb9eaacc68cc37156d66124e4c531e'[39m,
+  [32m'0551a7f0be400fdfef92aa76d7db09a705f80c4e4011110676fb968ae0c50379'[39m,
+  [32m'8665a28bccae26984853ba1dfb5a4078e20a5428a6fd5578f0eaeb136ecb20ae'[39m,
+  [32m'344519f260372b4c7b185aa04a8f28b8ddd3bee1351dbfd08d81eb48fdfbae9d'[39m,
+  [32m'e695c4ca2a24b18f1faf5b1180af5979ccd819ae8c28597a3c5fcf999e72ee13'[39m,
+  [32m'5f055293b83eb0f6baa5cf101e5039cd1a64cc101bb19621c76becb01dd94619'[39m,
+  [32m'83c0398811c8b97344916bb42754ab28227cc4dd3f972bb7a47520862a090566'[39m
+]
+
+ [32m✓[39m tests/integration/rateLimit.test.ts[2m > [22mRate Limiter with Redis[2m > [22m11. Rate limiter: the (N+1)th request from one client is rejected while a different client is still accepted[32m 42[2mms[22m[39m
+ [32m✓[39m tests/integration/testimonialRateLimit.test.ts[2m > [22mTestimonial Rate Limiter with Redis[2m > [22m12. Testimonial Rate limiter: the (N+1)th request from one IP is rejected while a different IP is still accepted[32m 35[2mms[22m[39m
+ [32m✓[39m tests/integration/health.test.ts[2m > [22mDay 10 - /api/health[2m > [22m/api/health returns 200 and {status:"ok"} with the DB reachable[32m 15[2mms[22m[39m
+ [32m✓[39m tests/integration/health.test.ts[2m > [22mDay 10 - /api/health[2m > [22m/api/health returns 503 and {status:"degraded"} when the DB call is fault-injected to fail; response body contains no internal detail[32m 2[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated Profile update rejected[32m 8[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated Experience create rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated Experience update rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated Experience delete rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated Skill create rejected[32m 3[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated Skill update rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated Skill delete rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated SocialLink create rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated SocialLink update rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated SocialLink delete rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22munauthenticated SiteSetting update rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22mSiteSetting update with an unknown/non-whitelisted key is rejected[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22mSiteSetting invalid values rejected: retention out of range[32m 3[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - Admin Content Management (SEC-ACL-01)[2m > [22mSiteSetting invalid values rejected: malformed email[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts[2m > [22mDay 10 - SEO/headers[2m > [22mHSTS header present when NODE_ENV=production, absent otherwise[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/profile.test.ts[2m > [22mProfile DTO tests[2m > [22mtoPublicProfile() output keys match the declared allowlist exactly[32m 9[2mms[22m[39m
+ [32m✓[39m tests/unit/sanity.test.ts[2m > [22msanity check[32m 6[2mms[22m[39m
+ [32m✓[39m tests/integration/day10b.test.ts[2m > [22mDay 10b - Missing Verification Tests[2m > [22mrobots.ts disallows /admin and /api and references the sitemap[32m 4[2mms[22m[39m
+ [32m✓[39m tests/integration/day10b.test.ts[2m > [22mDay 10b - Missing Verification Tests[2m > [22mJSON-LD on at least one page parses as valid JSON, and a fixture with </script> in its title does not break out of the script element[32m 1[2mms[22m[39m
+ [32m✓[39m tests/integration/day10b.test.ts[2m > [22mDay 10b - Missing Verification Tests[2m > [22mlogin with an external callbackUrl does not redirect off-site[32m 1[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m19 passed[39m[22m[90m (19)[39m
+[2m      Tests [22m [1m[32m122 passed[39m[22m[90m (122)[39m
+[2m   Start at [22m 16:38:27
+[2m   Duration [22m 18.46s[2m (tests 51%, import 38%, transform 9%, worker 2%)[22m
+
+[2m    Isolate [22m [33m19 workers spawned[39m[2m · ~324ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~5.83s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+

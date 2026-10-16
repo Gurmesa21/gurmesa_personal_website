@@ -4,148 +4,306 @@
 
 @theme {
   --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+  --color-input: var(--border);
+  --color-ring: var(--primary);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
 
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-
-  --color-success: var(--success);
-  --color-success-foreground: var(--success-foreground);
-
-  --color-warning: var(--warning);
-  --color-warning-foreground: var(--warning-foreground);
-
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
 
   --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-foreground: var(--primary-foreground);
 
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
+  --color-destructive: var(--danger);
+  --color-destructive-foreground: var(--primary-foreground);
+
+  --color-success: var(--success);
+  --color-success-foreground: var(--primary-foreground);
+
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--primary-foreground);
 
   --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
+  --color-card-foreground: var(--foreground);
+  
+  --color-surface: var(--card);
 
   --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
   --font-mono: var(--font-mono);
+  --font-ethiopic: var(--font-ethiopic);
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #09090b;
-
-  --card: #ffffff;
-  --card-foreground: #09090b;
-
-  --popover: #ffffff;
-  --popover-foreground: #09090b;
-
-  --primary: #18181b;
-  --primary-foreground: #fafafa;
-
-  --secondary: #f4f4f5;
-  --secondary-foreground: #18181b;
-
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-
-  --accent: #f4f4f5;
-  --accent-foreground: #18181b;
-
-  --destructive: #ef4444;
-  --destructive-foreground: #fafafa;
-  
-  --success: #22c55e;
-  --success-foreground: #ffffff;
-  
-  --warning: #f59e0b;
-  --warning-foreground: #ffffff;
-
-  --border: #e4e4e7;
-  --input: #e4e4e7;
-  --ring: #18181b;
-
-  --radius: 0.5rem;
+  --background: #FAFAFA;
+  --foreground: #18181B;
+  --muted-foreground: #71717A;
+  --card: #FFFFFF;
+  --border: #E4E4E7;
+  --primary: #4F46E5;
+  --primary-foreground: #FFFFFF;
+  --accent: #7C3AED;
+  --success: #059669;
+  --warning: #D97706;
+  --danger: #DC2626;
+  --primary-gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  --muted: #F4F4F5;
 }
 
-.dark, [data-theme="dark"] {
-  --background: #09090b;
-  --foreground: #fafafa;
-
-  --card: #09090b;
-  --card-foreground: #fafafa;
-
-  --popover: #09090b;
-  --popover-foreground: #fafafa;
-
-  --primary: #fafafa;
-  --primary-foreground: #18181b;
-
-  --secondary: #27272a;
-  --secondary-foreground: #fafafa;
-
-  --muted: #27272a;
-  --muted-foreground: #a1a1aa;
-
-  --accent: #27272a;
-  --accent-foreground: #fafafa;
-
-  --destructive: #7f1d1d;
-  --destructive-foreground: #fafafa;
-  
-  --success: #14532d;
-  --success-foreground: #ffffff;
-  
-  --warning: #78350f;
-  --warning-foreground: #ffffff;
-
-  --border: #27272a;
-  --input: #27272a;
-  --ring: #d4d4d8;
+.dark,
+[data-theme="dark"] {
+  --background: #080B16;
+  --foreground: #F5F6FC;
+  --muted-foreground: #A5ABC1;
+  --card: #101426;
+  --border: #292D45;
+  --primary: #8063F7;
+  --primary-foreground: #FFFFFF;
+  --accent: #4F6FF0;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --primary-gradient: linear-gradient(135deg, #8063F7 0%, #4F6FF0 100%);
+  --muted: #171D32;
 }
 
-/* Base resets & focus-visible enforcement */
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground antialiased font-sans;
+    @apply bg-background text-foreground antialiased font-sans transition-colors duration-300;
   }
 
-  /* Enforce focus-visible styling globally on interactive elements if relying on Tailwind */
+  /* Highly professional, clean, and stylistic headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-extrabold tracking-tight text-slate-900 dark:text-[#F5F6FC];
+  }
+  
+  h1 {
+    @apply tracking-tighter leading-[1.1];
+  }
+
+  h2, h3 {
+    @apply tracking-tight leading-[1.2];
+  }
+
+  /* Beautiful, readable paragraphs with elegant contrast */
+  p {
+    @apply text-slate-600 dark:text-[#A5ABC1] leading-[1.7] font-medium font-sans;
+  }
+
   :focus-visible {
     @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
   }
-  
-  /* Reduced motion preference */
-  @media (prefers-reduced-motion: reduce) {
-    *, ::before, ::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
 }
 
-/* Typography Scale */
-h1 { @apply text-4xl font-extrabold tracking-tight lg:text-5xl; }
-h2 { @apply text-3xl font-semibold tracking-tight; }
-h3 { @apply text-2xl font-semibold tracking-tight; }
-h4 { @apply text-xl font-semibold tracking-tight; }
-p { @apply leading-7; }
+@layer utilities {
+  .text-hero {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight;
+  }
+  
+  .text-section-header {
+    @apply text-3xl md:text-4xl font-bold tracking-tight;
+  }
+  
+  .text-card-title {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+  
+  .text-body {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+  
+  .text-caption {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28;
+  }
+
+  .card-base {
+    @apply rounded-2xl border border-border bg-card p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  .bg-primary-gradient {
+    background: var(--primary-gradient);
+  }
+  
+  .text-primary-gradient {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-lg px-6 py-3 font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .btn-primary {
+    background: var(--primary-gradient);
+    @apply text-primary-foreground shadow-sm hover:opacity-90 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply border border-border bg-transparent hover:bg-muted active:scale-95;
+  }
+  
+  .btn-tertiary {
+    @apply text-foreground hover:bg-muted border-none shadow-none active:scale-95;
+  }
+  
+  .btn-icon {
+    @apply h-11 w-11 p-0 flex items-center justify-center rounded-lg border border-border bg-card text-foreground hover:bg-muted transition-colors;
+  }
+
+  .animated-container {
+    @apply relative overflow-hidden rounded-3xl border-0 bg-slate-50 dark:bg-slate-900/50 backdrop-blur-xl shadow-sm hover:shadow-lg transition-all duration-500 ease-out;
+  }
+
+  .animated-card {
+    @apply relative flex flex-col h-full !border-0 !bg-transparent !shadow-none !p-0 transition-all duration-500 ease-out;
+  }
+
+  /* 5 Vibrant Dynamic Color Palettes for Cards */
+  .animated-card:nth-child(5n + 1) {
+    --card-gradient: linear-gradient(135deg, #5B3DF5 0%, #8E6BFF 50%, #FF8FB1 100%);
+  }
+  .animated-card:nth-child(5n + 2) {
+    --card-gradient: linear-gradient(135deg, #2563EB 0%, #4F46E5 50%, #7C3AED 100%);
+  }
+  .animated-card:nth-child(5n + 3) {
+    --card-gradient: linear-gradient(135deg, #06B6D4 0%, #0EA5E9 50%, #2563EB 100%);
+  }
+  .animated-card:nth-child(5n + 4) {
+    --card-gradient: linear-gradient(135deg, #10B981 0%, #14B8A6 50%, #3B82F6 100%);
+  }
+  .animated-card:nth-child(5n + 5) {
+    --card-gradient: linear-gradient(135deg, #EC4899 0%, #F43F5E 50%, #F97316 100%);
+  }
+
+  /* Target the media container specifically to avoid breaking text-only cards like testimonials */
+  .animated-card > .aspect-video {
+    @apply relative !w-full !aspect-[4/3] !rounded-3xl overflow-hidden mb-4 border border-slate-200 dark:border-slate-800/60 shadow-sm transition-all duration-500 ease-out flex items-center justify-center !p-6 md:!p-8;
+    background: var(--card-gradient) !important;
+  }
+
+  .animated-card:hover > .aspect-video {
+    @apply -translate-y-2 shadow-2xl border-transparent;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+  }
+
+  .animated-card > .aspect-video::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500 pointer-events-none z-0;
+    background: var(--card-gradient);
+    filter: brightness(1.2) blur(20px);
+  }
+  
+  .animated-card:hover > .aspect-video::before {
+    @apply opacity-40;
+  }
+
+  /* Make the image/video inside look like an inset mockup */
+  .animated-card > .aspect-video > img,
+  .animated-card > .aspect-video > video {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    @apply rounded-xl shadow-2xl transition-transform duration-500 z-10;
+  }
+
+  .animated-card:hover > .aspect-video > img,
+  .animated-card:hover > .aspect-video > video {
+    @apply scale-[1.05];
+  }
+
+  /* Enhance typography and layout for text inside cards */
+  .animated-card h3 {
+    @apply !text-xl md:!text-2xl !font-bold !tracking-tight !text-slate-900 dark:!text-white transition-all duration-300;
+  }
+  
+  .animated-card:hover h3 {
+    /* Gradient text on hover matching the card's palette */
+    background: var(--card-gradient) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+  }
+
+  .animated-card p {
+    @apply !text-sm !font-medium !text-slate-500 dark:!text-slate-400 !leading-relaxed line-clamp-2 transition-all duration-300;
+  }
+  
+  /* Apply gradient text on hover to title, summary, and price text */
+  .animated-card:hover h3,
+  .animated-card:hover p,
+  .animated-card:hover .text-primary {
+    background: var(--card-gradient) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+  }
+
+  /* For SVG icons inside gradient text blocks, they often vanish because currentColor becomes transparent. This forces them to stay visible using the default theme primary color or a solid fallback. */
+  .animated-card:hover h3 svg,
+  .animated-card:hover p svg,
+  .animated-card:hover .text-primary svg {
+    color: #8b5cf6 !important; /* Vibrant fallback purple/blue so it matches most gradients */
+    stroke: currentColor !important;
+    opacity: 1 !important;
+  }
+
+  /* Make Technology Badges use the dynamic gradient background on hover */
+  .animated-card .inline-flex.rounded-full {
+    @apply transition-all duration-300;
+  }
+  .animated-card:hover .inline-flex.rounded-full {
+    background: var(--card-gradient) !important;
+    color: white !important;
+    border: none !important;
+    -webkit-text-fill-color: white !important;
+  }
+
+  /* Target CardHeader, CardContent, CardFooter to remove their backgrounds and paddings */
+  .animated-card > div:not(.aspect-video) {
+    @apply !p-0 !px-1 bg-transparent border-0 shadow-none;
+  }
+  
+  /* The CardHeader (Title) */
+  .animated-card > div:nth-of-type(2):not(.aspect-video) {
+    @apply !mt-5 !mb-1;
+  }
+
+  /* The CardContent (Summary text) */
+  .animated-card > div:nth-of-type(3):not(.aspect-video) {
+    @apply !mt-0 !mb-5;
+  }
+
+  /* The CardFooter (Button) */
+  .animated-card > div:nth-of-type(4):not(.aspect-video) {
+    @apply !mt-auto !pt-2;
+  }
+
+  /* Make buttons inside animated cards use the card's dynamic gradient */
+  .animated-card .btn {
+    background: var(--card-gradient) !important;
+    color: white !important;
+    border: none !important;
+    @apply opacity-90 transition-all duration-300 shadow-md;
+  }
+  .animated-card:hover .btn {
+    @apply opacity-100 shadow-lg -translate-y-0.5;
+  }
+}

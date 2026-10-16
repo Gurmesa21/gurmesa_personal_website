@@ -1,0 +1,14 @@
+﻿node.exe : Γùç injected env (12) from .env.test
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γùç injected env (12) from .env.test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[WebServer] ΓÜá Warning: Next.js ignored package-lock.json in C:\Users\Hp because it is outside the current Git 
+repository (C:\Users\Hp\Documents\Projects\Gurmesa_website).
+[WebServer]  To use this directory, set `turbopack.root` in your Next.js config.
+[WebServer] 
+
+Error: Timed out waiting 120000ms from config.webServer.
+

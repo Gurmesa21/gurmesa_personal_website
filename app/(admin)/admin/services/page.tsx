@@ -19,7 +19,7 @@ export default async function AdminServicesPage() {
 
       <div className="space-y-4">
         {services.map((service, index) => (
-          <Card key={service.id}>
+          <Card key={service.id} data-testid="admin-row">
             <CardHeader className="flex flex-row items-center justify-between py-4">
               <div className="flex items-center gap-4">
                 <CardTitle className="text-xl">{service.title}</CardTitle>
@@ -40,7 +40,7 @@ export default async function AdminServicesPage() {
                   </Button>
                 </form>
                 <Button variant="outline" size="sm" asChild>
-                  <Link href={`/admin/services/${service.id}/edit`}>Edit</Link>
+                  <Link href={`/admin/services/${service.id}/edit`} data-testid="edit-link">Edit</Link>
                 </Button>
                 <form action={deleteServiceAction.bind(null, service.id)}>
                   <Button variant="destructive" size="sm" type="submit">Delete</Button>

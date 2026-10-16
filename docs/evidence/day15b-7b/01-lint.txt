@@ -1,0 +1,181 @@
+
+> gurmesa-website@0.1.0 lint
+> eslint app/ server/ lib/ components/ features/ tests/ scripts/
+
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\blog\BlogForm.tsx
+  22:19  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\blog\[id]\edit\page.tsx
+  20:41  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\experience\actions.ts
+  25:106  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  39:89   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\experience\new\page.tsx
+  5:15  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\experience\page.tsx
+  20:56   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:86   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:108  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\media\actions.ts
+  15:17  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\media\page.tsx
+  48:19  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\profile\ProfileForm.tsx
+  11:53  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\settings\page.tsx
+  7:48  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\skills\actions.ts
+  15:82  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:65  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\skills\new\page.tsx
+  5:15  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\skills\page.tsx
+  20:56   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:86   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:108  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\social-links\actions.ts
+  16:87  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  27:70  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\social-links\new\page.tsx
+  5:15  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\social-links\page.tsx
+  20:56   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:86   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:108  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\[locale]\(public)\testimonials\actions.ts
+  38:63  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  41:19  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\actions\blog.ts
+  124:29  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  124:68  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\api\health\route.ts
+  21:12  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\components\admin\MediaPicker.tsx
+   64:14  warning  'err' is defined but never used                                                                 @typescript-eslint/no-unused-vars
+   64:19  warning  Unexpected any. Specify a different type                                                        @typescript-eslint/no-explicit-any
+   70:5   warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+   87:19  warning  Unexpected any. Specify a different type                                                        @typescript-eslint/no-explicit-any
+  111:19  warning  Unexpected any. Specify a different type                                                        @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\components\admin\NotificationBell.tsx
+  11:12  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\components\blog\BlogInteractionButtons.tsx
+  60:16  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\lib\audit\index.ts
+  15:14  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  27:41  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\lib\jsonLd.ts
+  1:39  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\lib\storage\index.ts
+  24:16  warning  '_key' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\scripts\reproduce-d1.cjs
+  24:15  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\scripts\run-axe-and-lighthouse.mjs
+  12:14  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\scripts\seed.ts
+  31:20  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  31:55  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  32:20  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  32:52  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\scripts\take-all-screenshots.cjs
+  44:13  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\server\services\mediaService.ts
+  28:32  warning  '_' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\server\services\siteSettingService.ts
+  32:61  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  36:45  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\global-setup.ts
+  17:12  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\integration\audit-login.test.ts
+  17:52  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:75  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\integration\audit.test.ts
+   29:17  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   44:14  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   84:33  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  110:14  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\integration\blog-likes.test.ts
+   32:13  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   33:18  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   51:10  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  187:12  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  191:28  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  192:28  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  337:44  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  355:53  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  385:53  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  415:53  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\integration\blog.test.ts
+   90:44  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  101:44  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\integration\day10-admin.test.ts
+  18:14   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  28:145  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  65:14   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  70:14   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  76:14   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  86:43   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  88:41   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  92:39   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  94:37   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\integration\health.test.ts
+  17:26  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  26:26  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\integration\media.test.ts
+  27:17  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  42:14  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  52:14  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  58:14  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  63:14  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\integration\rateLimit.test.ts
+  17:14  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\integration\testimonialRateLimit.test.ts
+  15:14  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\screenshots\part2b-screenshots.spec.ts
+  7:39  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\screenshots\part2c-screenshots.spec.ts
+  7:39  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 89 problems (0 errors, 89 warnings)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+

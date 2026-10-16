@@ -1,0 +1,52 @@
+==================================================
+1. MIGRATIONS
+==================================================
+
+DIRECTORY LISTING: ls prisma/migrations
+--------------------------------------------------
+20260926114052_init
+20260928083821_day8_inquiry_delivery_testimonial_anonymity
+20261008085400_add_notification
+20261009060957_sync_schema
+20261009104637_blog_likes
+20261009104943_blog_comments_approval
+migration_lock.toml
+
+SQL QUERY:
+SELECT migration_name, finished_at FROM _prisma_migrations ORDER BY started_at;
+
+DATABASE 1: gurmesa_db (postgresql://dev_user:dev_password@localhost:5433/gurmesa_db)
+--------------------------------------------------
+migration_name                                               | finished_at
+-------------------------------------------------------------+------------------------------
+20260926114052_init                                         | 2026-10-09T06:08:33.832Z
+20260928083821_day8_inquiry_delivery_testimonial_anonymity  | 2026-10-09T06:08:34.329Z
+20261008085400_add_notification                             | 2026-10-09T06:08:34.763Z
+20261009060957_sync_schema                                  | 2026-10-09T06:09:58.267Z
+20261009104637_blog_likes                                   | 2026-10-09T10:46:37.548Z
+20261009104943_blog_comments_approval                       | 2026-10-09T10:49:43.428Z
+
+DATABASE 2: gurmesa_test_db (postgresql://dev_user:dev_password@127.0.0.1:5433/gurmesa_test_db)
+--------------------------------------------------
+migration_name                                               | finished_at
+-------------------------------------------------------------+------------------------------
+20260926114052_init                                         | 2026-10-09T07:31:53.184Z
+20260928083821_day8_inquiry_delivery_testimonial_anonymity  | 2026-10-09T07:31:53.549Z
+20261008085400_add_notification                             | 2026-10-09T07:31:54.035Z
+20261009060957_sync_schema                                  | 2026-10-09T07:31:54.165Z
+20261009104637_blog_likes                                   | 2026-10-12T07:14:28.987Z
+20261009104943_blog_comments_approval                       | 2026-10-12T07:15:00.574Z
+
+WHERE DID THE INCORRECT LIST IN PART 7c COME FROM?
+--------------------------------------------------
+The list in Part 7c ("20261001000000_init", "20261003120000_add_profile_seo", "20261005100000_add_media_asset", "20261007000000_add_audit_and_notifications") was an unverified reconstruction / hallucination by the previous assistant in Part 7c. It was not read from the filesystem or from the database.
+
+CORRECTION:
+--------------------------------------------------
+The real, verified migration history across both databases and filesystem is:
+1. 20260926114052_init
+2. 20260928083821_day8_inquiry_delivery_testimonial_anonymity
+3. 20261008085400_add_notification
+4. 20261009060957_sync_schema
+5. 20261009104637_blog_likes (created at 10:46 UTC / 13:46 local)
+6. 20261009104943_blog_comments_approval (created at 10:49 UTC / 13:49 local)

@@ -1,11 +1,30 @@
 import { NextResponse } from 'next/server';
+import { isTestMode } from '@/lib/test-mode';
 
 export async function GET(_request: Request) {
-  if (process.env.PLAYWRIGHT_TEST !== '1') {
+  if (!isTestMode()) {
     return new NextResponse('Not Found', { status: 404 });
   }
 
-  // Return a dummy PDF
+  const urlPath = _request.url;
+  
+  if (urlPath.endsWith('.jpg') || urlPath.endsWith('.png') || urlPath.endsWith('.jpeg')) {
+    // 1x1 transparent PNG
+    const dummyImage = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=', 'base64');
+    return new NextResponse(dummyImage, {
+      headers: { 'Content-Type': 'image/png' },
+    });
+  }
+
+  if (urlPath.endsWith('.mp4') || urlPath.endsWith('.webm')) {
+    // Dummy tiny valid mp4
+    const dummyVideo = Buffer.from('AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAhxtZGF0AAACrgYF//+//7z4UItHWW1/1gAEqAOR7QAAAAA=', 'base64');
+    return new NextResponse(dummyVideo, {
+      headers: { 'Content-Type': 'video/mp4' },
+    });
+  }
+
+  // Return a dummy PDF for everything else
   const dummyPdfContent = `%PDF-1.4
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
@@ -40,8 +59,6 @@ startxref
 %%EOF`;
 
   return new NextResponse(dummyPdfContent, {
-    headers: {
-      'Content-Type': 'application/pdf',
-    },
+    headers: { 'Content-Type': 'application/pdf' },
   });
 }

@@ -34,7 +34,7 @@ describe('Rate Limiter with Redis', () => {
   it('11. Rate limiter: the (N+1)th request from one client is rejected while a different client is still accepted', async () => {
     const email1 = 'client1@test.com';
     const email2 = 'client2@test.com';
-    const ip = '127.0.0.1';
+    const ip = '127.0.0.111'; // Unique IP for this test
 
     // Disable playwright test bypass
     process.env.PLAYWRIGHT_TEST = '0';

@@ -164,9 +164,10 @@ test.describe('Blog SEC-ACL E2E Tests', () => {
       }
     });
     await page.goto('/work/xss-project');
-    const content = await page.locator('article').innerText();
+    const markdownWrapper = page.getByTestId('markdown-content');
+    const content = await markdownWrapper.innerText();
     expect(content).not.toContain('<script>');
-    const scriptCount = await page.locator('article script').count();
+    const scriptCount = await markdownWrapper.locator('script').count();
     expect(scriptCount).toBe(0);
     
     await prisma.caseStudy.delete({ where: { id: caseStudy.id } });

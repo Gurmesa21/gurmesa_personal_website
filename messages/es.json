@@ -1,0 +1,11 @@
+{
+  "Blog": {
+    "like": "Me gusta",
+    "unlike": "Ya no me gusta",
+    "share": "Compartir",
+    "copied": "¡Copiado!",
+    "comment": "Comentar",
+    "submit_comment": "Enviar comentario",
+    "checkOutPost": "Mira esta publicación"
+  }
+}

@@ -1,0 +1,46 @@
+==================================================
+4. /admin/blog LIST RENDERING RECONCILIATION
+==================================================
+
+1. REAL OR ILLUSTRATIVE SAMPLE IN PART 7c?
+--------------------------------------------------
+The sample presented in Part 7c (showing "Architecting Resilient Distributed Systems", date "Oct 09, 2026", category "Engineering") was purely ILLUSTRATIVE (synthetic). It was fabricated from imagination by the previous assistant. No post by that title exists in the codebase or seed data.
+
+2. PAGE STRUCTURE: TABLE OR CARDS?
+--------------------------------------------------
+The page layout at `app/(admin)/admin/blog/page.tsx` wraps a standard HTML <table> within a shadcn/ui <Card> container:
+- Top-level: <div className="space-y-8 p-8 max-w-6xl">
+- Card wrapper: <Card><CardContent className="p-0"><table className="w-full">
+- The rows are table rows: <thead> and <tbody> with <tr>, <th>, and <td> elements.
+- Therefore, the posts are presented as a TABLE (enclosed in a Card wrapper), NOT as cards.
+
+3. REAL RENDERED HTML OF ONE ROW (from production build against test DB):
+--------------------------------------------------
+For the seeded post "First Post":
+
+```html
+<tr data-testid="admin-row" class="border-b border-border last:border-0 hover:bg-muted/20 transition-colors">
+  <td class="p-4">First Post</td>
+  <td class="p-4">PUBLISHED</td>
+  <td class="p-4 space-x-2">
+    <a data-testid="edit-link" href="/admin/blog/c.../edit">
+      <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs" variant="outline">
+        Edit
+      </button>
+    </a>
+    <a target="_blank" href="/admin/blog/c.../preview">
+      <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs" variant="outline">
+        Preview
+      </button>
+    </a>
+    <form class="inline" action="...">
+      <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-destructive text-destructive-foreground shadow-xs hover:bg-destructive/90 h-8 rounded-md px-3 text-xs" type="submit">
+        Delete
+      </button>
+    </form>
+  </td>
+</tr>
+```
+
+- Edit link exists: Yes (`<a data-testid="edit-link" href="/admin/blog/[id]/edit">...</a>`).
+- Columns present: Title, Status, Actions (3 columns).

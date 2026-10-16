@@ -1,6 +1,18 @@
 import type { NextConfig } from "next";
+import path from "path";
+
+if (process.env.APP_ENV === 'production' && process.env.PLAYWRIGHT_TEST === '1') {
+  throw new Error('PLAYWRIGHT_TEST=1 is not allowed in production');
+}
 
 const nextConfig: NextConfig = {
+  outputFileTracingRoot: path.resolve(__dirname),
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '30mb',
+    },
+    proxyClientMaxBodySize: 30 * 1024 * 1024,
+  },
   images: {
     remotePatterns: [
       {
@@ -35,4 +47,8 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./i18n.ts');
+
+export default withNextIntl(nextConfig);

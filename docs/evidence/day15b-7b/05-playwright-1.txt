@@ -1,0 +1,2016 @@
+﻿node.exe : Γùç injected env (12) from .env.test
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γùç injected env (12) from .env.test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γùç injected env (0) from .env.test
+[globalSetup] Resetting and seeding test database: gurmesa_test_db...
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "gurmesa_test_db", schema "public" at "127.0.0.1:5433"
+
+8 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+Seed completed.
+[globalSetup] Test database gurmesa_test_db reset and seeded successfully.
+
+Running 85 tests using 1 worker
+
+Γùç injected env (0) from .env.test
+  ok  1 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:5:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on / (homepage with AUTHORIZED+PUBLISHED testimonial) (4.1s)
+[WebServer] Γ¿» Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+[WebServer] Γ¿» Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+  x   2 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:14:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /contact (2.0s)
+Γùç injected env (0) from .env.test
+  x   3 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:23:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /privacy (2.2s)
+Γùç injected env (0) from .env.test
+  x   4 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:32:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /about (2.3s)
+Γùç injected env (0) from .env.test
+  ok  5 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:41:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /blog (2.2s)
+  ok  6 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:50:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /services (1.9s)
+  ok  7 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:59:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /work (2.2s)
+  x   8 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:68:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /terms (2.0s)
+Γùç injected env (0) from .env.test
+  ok  9 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:77:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ skip-to-content link works correctly (987ms)
+  ok 10 [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:94:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ mobile menu opens, traps focus, and closes with escape (1.2s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 11 [chromium] ΓÇ║ tests\e2e\admin-comments.spec.ts:14:3 ΓÇ║ Admin Comments Moderation Queue ΓÇ║ navigates to /admin/comments and verifies queue filters and UI (2.4s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 12 [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:14:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Services: Edit and persist (2.8s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 13 [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:51:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Projects: Edit and persist (2.9s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 14 [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:81:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Blog: Edit and persist (2.9s)
+  ok 15 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:28:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post is absent from public index HTML (586ms)
+  ok 16 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:34:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post returns 404 on direct lookup (542ms)
+  ok 17 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:39:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post is absent from sitemap (96ms)
+  ok 18 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:45:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Unauthenticated request to the preview URL is redirected/rejected and contains no draft content (436ms)
+  ok 19 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:58:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: /blog index renders seeded published posts (514ms)
+  ok 20 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:65:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: article detail page loads from the index (1.9s)
+  ok 21 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:80:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: search (?q=) filters results; a DRAFT post's title never appears in results (1.1s)
+  ok 22 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:97:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: category and tag filters work (580ms)
+  ok 23 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:103:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Axe scan (zero critical/serious) on /blog and /blog/[slug] (3.8s)
+  ok 24 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:117:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ XSS: a post whose body contains <script> and <img src=x onerror=...> payloads renders them inert on /blog/[slug] (725ms)
+  ok 25 [chromium] ΓÇ║ tests\e2e\blog.spec.ts:137:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ XSS: CaseStudy content on /work/[slug] renders inert (779ms)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 26 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:13:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ i. Publish a testimonial -> appears on / (3.7s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 27 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:36:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ ii. Mark a featured project DRAFT -> absent from / and /work (3.3s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 28 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:57:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iii. Unpublish a service -> absent from /services and / (3.6s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 29 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:74:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iv. Unpublish a blog post -> absent from / and /blog (4.7s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 30 [chromium] ΓÇ║ tests\e2e\caching.spec.ts:97:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml (3.2s)
+  ok 31 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:12:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ contact form: happy path submits and shows confirmation, using keyboard only (1.4s)
+  ok 32 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:32:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ contact form: invalid submit focuses the error summary and associates errors with fields (901ms)
+  ok 33 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:46:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ inquiry-leak scan: assert the marker is absent from the HTML of public surfaces and sitemap (516ms)
+  ok 34 [chromium] ΓÇ║ tests\e2e\contact.spec.ts:65:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ unauthenticated visit to /admin/inquiries and /admin/testimonials redirects to login (619ms)
+  ok 35 [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:5:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ HIDDEN social link absent from getPublicSocialLinks output AND from the rendered /about page HTML (606ms)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 36 [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:26:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ editing the Profile tagline via the admin UI shows the new tagline on / on the next request (1.9s)
+[WebServer] Γ¿» Error: simulated secret internal server error postgres://secret@db
+[WebServer]     at K (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_0l7ooyk._.js:1:1985) {
+[WebServer]   digest: '3336167416'
+[WebServer] }
+  ok 37 [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:48:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ production error page shows no stack trace in the rendered HTML (618ms)
+  x  38 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:5:3 ΓÇ║ Day 10b E2E ΓÇ║ robots.ts disallows /admin and /api and references the sitemap (59ms)
+Γùç injected env (0) from .env.test
+  x  39 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:13:3 ΓÇ║ Day 10b E2E ΓÇ║ sitemap includes the static pages and public entities, excludes the known private project, DRAFT case study, and DRAFT post (92ms)
+Γùç injected env (0) from .env.test
+  ok 40 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:21:3 ΓÇ║ Day 10b E2E ΓÇ║ /admin pages, /admin/login, and the blog preview page each return noindex (972ms)
+  ok 41 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:31:3 ΓÇ║ Day 10b E2E ΓÇ║ canonical URL and OG title present in generateMetadata output for: home, one service detail, one case study, one blog post (1.1s)
+  ok 42 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:43:3 ΓÇ║ Day 10b E2E ΓÇ║ JSON-LD on at least one page parses as valid JSON, and a fixture with </script> in its title does not break out of the script element (4ms)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 43 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:60:3 ΓÇ║ Day 10b E2E ΓÇ║ login with an external callbackUrl does not redirect off-site (1.1s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 44 [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:71:3 ΓÇ║ Day 10b E2E ΓÇ║ SEO override persists in admin UI and is rendered by generateMetadata (1.3s)
+  x  45 [chromium] ΓÇ║ tests\e2e\day5.spec.ts:4:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ homepage renders hero, services preview, about snapshot with real seeded data (1.0s)
+Γùç injected env (0) from .env.test
+  x  46 [chromium] ΓÇ║ tests\e2e\day5.spec.ts:20:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ services index -> click service -> detail page loads correctly (5.5s)
+Γùç injected env (0) from .env.test
+  ok 47 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:11:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(c): /work page does NOT render the private project (769ms)
+  ok 48 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:18:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(d): /work/[slug] returns 404 for a private project (407ms)
+  x  49 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:23:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL (82ms)
+Γùç injected env (0) from .env.test
+  ok 50 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:30:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(c): /work page does NOT render unpublished case studies (764ms)
+  ok 51 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:36:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study (408ms)
+  x  52 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:41:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs (70ms)
+Γùç injected env (0) from .env.test
+  ok 53 [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:48:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ Public /work page renders seeded public case studies (1.5s)
+  ok 54 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] / has exactly one h1 (695ms)
+  ok 55 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /about has exactly one h1 (533ms)
+  x  56 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /services has exactly one h1 (651ms)
+Γùç injected env (0) from .env.test
+  x  57 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /work has exactly one h1 (845ms)
+Γùç injected env (0) from .env.test
+  x  58 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /blog has exactly one h1 (752ms)
+Γùç injected env (0) from .env.test
+  x  59 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /contact has exactly one h1 (905ms)
+Γùç injected env (0) from .env.test
+  ok 60 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] / has exactly one h1 (903ms)
+  ok 61 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /about has exactly one h1 (692ms)
+  x  62 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /services has exactly one h1 (615ms)
+Γùç injected env (0) from .env.test
+  x  63 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /work has exactly one h1 (902ms)
+Γùç injected env (0) from .env.test
+  x  64 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /blog has exactly one h1 (802ms)
+Γùç injected env (0) from .env.test
+  x  65 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /contact has exactly one h1 (947ms)
+Γùç injected env (0) from .env.test
+  ok 66 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] / has exactly one h1 (820ms)
+  ok 67 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /about has exactly one h1 (557ms)
+  x  68 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /services has exactly one h1 (613ms)
+Γùç injected env (0) from .env.test
+  x  69 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /work has exactly one h1 (744ms)
+Γùç injected env (0) from .env.test
+  x  70 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /blog has exactly one h1 (811ms)
+Γùç injected env (0) from .env.test
+[WebServer] Γ¿» Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+[WebServer] Γ¿» Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+  x  71 [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /contact has exactly one h1 (1.0s)
+Γùç injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  x  72 [chromium] ΓÇ║ tests\e2e\part3-media-upload.spec.ts:19:3 ΓÇ║ Part 3 - Media Upload Widget ΓÇ║ Upload avatar in Profile edit and verify on public page (8.1s)
+Γùç injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  x  73 [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:30:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Profile Avatar Render (8.3s)
+Γùç injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 74 [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:71:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Service Featured Image Render (7.2s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 75 [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:117:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Project Featured Image Render (4.5s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  x  76 [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:163:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Blog Featured Image Render (30.1s)
+Γùç injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 77 [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:209:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Video Upload and Render Test (1.7s)
+  ok 78 [chromium] ΓÇ║ tests\e2e\partG-testimonials.spec.ts:4:3 ΓÇ║ Testimonials Moderation & Rate Limits ΓÇ║ unauthorized testimonials are not public (1.1s)
+  ok 79 [chromium] ΓÇ║ tests\e2e\partG-testimonials.spec.ts:18:3 ΓÇ║ Testimonials Moderation & Rate Limits ΓÇ║ honeypot traps spam bots (950ms)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 80 [chromium] ΓÇ║ tests\e2e\partG-upload-and-video.spec.ts:33:3 ΓÇ║ Part G - Media Upload Limits and Video Rendering ΓÇ║ Upload file size limits (6MB succeeds, 26MB rejected) (3.5s)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 81 [chromium] ΓÇ║ tests\e2e\partG-upload-and-video.spec.ts:65:3 ΓÇ║ Part G - Media Upload Limits and Video Rendering ΓÇ║ Video rendering on public pages (7.0s)
+  ok 82 [chromium] ΓÇ║ tests\e2e\partH-notifications.spec.ts:4:3 ΓÇ║ Part H: Admin Notifications ΓÇ║ 16. Unauthenticated access to the notifications list/API is rejected (527ms)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 83 [chromium] ΓÇ║ tests\e2e\partH-notifications.spec.ts:10:3 ΓÇ║ Part H: Admin Notifications ΓÇ║ 17. Submit a real inquiry as visitor, log in as admin, confirm bell icon shows incremented count and new notification appears (3.6s)
+  x  84 [chromium] ΓÇ║ tests\e2e\partI-blog-social.spec.ts:4:3 ΓÇ║ Blog Social Interactions ΓÇ║ like toggle and comment submission (7.7s)
+Γùç injected env (0) from .env.test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  ok 85 [chromium] ΓÇ║ tests\e2e\resume.spec.ts:6:3 ΓÇ║ Resume End-to-End ΓÇ║ upload a PDF as admin, set it as current resume, request from /about unauthenticated (2.6s)
+
+
+  1) [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:14:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /contact 
+
+    Error: Violations found on /contact
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 58
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#171d32",
+    +               "contrastRatio": 4.01,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#8063f7",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.01 (foreground color: #8063f7, background color: #171d32, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"space-y-1.5 p-4 rounded-xl border border-[#292D45] bg-[#171D32] hover:border-[#8063F7]/40 transition-colors mt-5\">",
+    +                 "target": Array [
+    +                   ".hover\\:border-\\[\\#8063F7\\]\\/40",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.01 (foreground color: #8063f7, background color: #171d32, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<a href=\"mailto:contact@example.com\" class=\"text-sm sm:text-base font-semibold text-[#8063F7] hover:text-white transition-colors break-all block\">contact@example.com</a>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".break-all",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +       "RGAAv4",
+    +       "RGAA-3.2.1",
+    +     ],
+    +   },
+    + ]
+
+      18 |       .analyze();
+      19 |     const criticalOrSerious = accessibilityScanResults.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
+    > 20 |     expect(criticalOrSerious, `Violations found on /contact`).toEqual([]);
+         |                                                               ^
+      21 |   });
+      22 |
+      23 |   test('Axe scan on /privacy', async ({ page }) => {
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\accessibility.spec.ts:20:63
+
+    Error Context: test-results\accessibility-Accessibilit-7c399-eatures-Axe-scan-on-contact-chromium\error-context.md
+
+  2) [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:23:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /privacy 
+
+    Error: Violations found on /privacy
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  -   1
+    + Received  + 478
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 1.02,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#0f172b",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "bold",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +         "html": "<h2>1. Information We Collect</h2>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "h2:nth-child(1)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 2.4,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#45556c",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p>When you submit an inquiry through our contact form or interact with our blog, we collect only the information you voluntarily provide:</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".prose > p:nth-child(2)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 2.4,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#45556c",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p>We also record the internal source page from which you submitted the form. <!-- --> <strong>We do not store your raw IP address or user-agent string</strong> in our inquiry or like records.</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "p:nth-child(4)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 2.4,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#45556c",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "bold",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +         "html": "<strong>We do not store your raw IP address or user-agent string</strong>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "p:nth-child(4) > strong",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 1.02,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#0f172b",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "bold",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +         "html": "<h2>2. How We Use Your Information</h2>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "h2:nth-child(5)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 2.4,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#45556c",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p>We use the collected information solely to:</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "p:nth-child(6)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 1.02,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#0f172b",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "bold",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +         "html": "<h2>3. Data Retention</h2>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "h2:nth-child(8)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 2.4,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#45556c",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p>We retain your inquiry data for a maximum of <!-- --> <strong>365 days</strong>. After this period, your inquiry records are permanently deleted from our database.</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "p:nth-child(9)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 2.4,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#45556c",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "bold",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +         "html": "<strong>365 days</strong>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "p:nth-child(9) > strong",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 1.02,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#0f172b",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "bold",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +         "html": "<h2>4. Data Sharing and Security</h2>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "h2:nth-child(10)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 2.4,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#45556c",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p>We do not sell, rent, or trade your personal information to third parties. We use secure email transport to deliver your inquiry to our team.</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "p:nth-child(11)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 1.02,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#0f172b",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "bold",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +         "html": "<h2>5. Contact Us</h2>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "h2:nth-child(12)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 2.4,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#45556c",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p>If you have questions about this privacy policy, please <!-- --> <a class=\"text-[#A995FF] hover:underline font-semibold\" href=\"/contact\">contact us</a>.</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "p:nth-child(13)",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +       "RGAAv4",
+    +       "RGAA-3.2.1",
+    +     ],
+    +   },
+    + ]
+
+      27 |       .analyze();
+      28 |     const criticalOrSerious = accessibilityScanResults.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
+    > 29 |     expect(criticalOrSerious, `Violations found on /privacy`).toEqual([]);
+         |                                                               ^
+      30 |   });
+      31 |
+      32 |   test('Axe scan on /about', async ({ page }) => {
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\accessibility.spec.ts:29:63
+
+    Error Context: test-results\accessibility-Accessibilit-6fea0-eatures-Axe-scan-on-privacy-chromium\error-context.md
+
+  3) [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:32:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /about 
+
+    Error: Violations found on /about
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 93
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 4.38,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#8063f7",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.38 (foreground color: #8063f7, background color: #101426, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"rounded-2xl  p-6 sm:p-7  border border-[#292D45] bg-[#101426]  transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 overflow-hidden \">",
+    +                 "target": Array [
+    +                   ".lg\\:col-span-7 > .sm\\:p-7.hover\\:shadow-xl.p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.38 (foreground color: #8063f7, background color: #101426, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"text-xs sm:text-sm font-semibold text-[#8063F7]\">Tech Corp</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".group.relative:nth-child(1) > .space-y-1\\.5 > .text-\\[\\#8063F7\\]",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 4.38,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#8063f7",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.38 (foreground color: #8063f7, background color: #101426, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"rounded-2xl  p-6 sm:p-7  border border-[#292D45] bg-[#101426]  transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 overflow-hidden \">",
+    +                 "target": Array [
+    +                   ".lg\\:col-span-7 > .sm\\:p-7.hover\\:shadow-xl.p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.38 (foreground color: #8063f7, background color: #101426, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"text-xs sm:text-sm font-semibold text-[#8063F7]\">Web Studio</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".group.relative:nth-child(2) > .space-y-1\\.5 > .text-\\[\\#8063F7\\]",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +       "RGAAv4",
+    +       "RGAA-3.2.1",
+    +     ],
+    +   },
+    + ]
+
+      36 |       .analyze();
+      37 |     const criticalOrSerious = accessibilityScanResults.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
+    > 38 |     expect(criticalOrSerious, `Violations found on /about`).toEqual([]);
+         |                                                             ^
+      39 |   });
+      40 |
+      41 |   test('Axe scan on /blog', async ({ page }) => {
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\accessibility.spec.ts:38:61
+
+    Error Context: test-results\accessibility-Accessibility-Shell-Features-Axe-scan-on-about-chromium\error-context.md
+
+  4) [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:68:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /terms 
+
+    Error: Violations found on /terms
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  -   1
+    + Received  + 443
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 1.02,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#0f172b",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "bold",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +         "html": "<h2>1. Acceptance of Terms</h2>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "h2:nth-child(1)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 2.4,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#45556c",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p>By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".prose > p:nth-child(2)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 1.02,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#0f172b",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "bold",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +         "html": "<h2>2. Use of Site</h2>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "h2:nth-child(3)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 2.4,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#45556c",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p>You may use our site for lawful purposes only. You must not use our site in any way that breaches any applicable local, national, or international law or regulation.</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "p:nth-child(4)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 1.02,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#0f172b",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "bold",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +         "html": "<h2>3. Intellectual Property</h2>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "h2:nth-child(5)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 2.4,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#45556c",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p>The content on this website, including but not limited to case studies, portfolio projects, blog posts, text, and graphics, is the property of Gurmesa and is protected by copyright laws. You may not reproduce or distribute it without explicit permission.</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "p:nth-child(6)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 1.02,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#0f172b",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "bold",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +         "html": "<h2>4. Limitation of Liability</h2>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "h2:nth-child(7)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 2.4,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#45556c",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p>We will not be liable for any direct, indirect, incidental, or consequential damages arising from the use or inability to use our services or website.</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "p:nth-child(8)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 1.02,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#0f172b",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "bold",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +         "html": "<h2>5. Changes to Terms</h2>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "h2:nth-child(9)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 2.4,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#45556c",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p>We reserve the right to modify these terms at any time. We do so by posting and drawing attention to the updated terms on the site. Your decision to continue to visit and make use of the site after such changes have been made constitutes your formal acceptance of the new Terms of Service.</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "p:nth-child(10)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 1.02,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#0f172b",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "bold",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 1.02 (foreground color: #0f172b, background color: #101426, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1",
+    +         "html": "<h2>6. Contact Us</h2>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "h2:nth-child(11)",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#101426",
+    +               "contrastRatio": 2.4,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#45556c",
+    +               "fontSize": "12.0pt (16px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10\">",
+    +                 "target": Array [
+    +                   ".p-6",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 2.4 (foreground color: #45556c, background color: #101426, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p>If you have any questions about these Terms, please <!-- --> <a class=\"text-[#A995FF] hover:underline font-semibold\" href=\"/contact\">contact us</a>.</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "p:nth-child(12)",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +       "RGAAv4",
+    +       "RGAA-3.2.1",
+    +     ],
+    +   },
+    + ]
+
+      72 |       .analyze();
+      73 |     const criticalOrSerious = accessibilityScanResults.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
+    > 74 |     expect(criticalOrSerious, `Violations found on /terms`).toEqual([]);
+         |                                                             ^
+      75 |   });
+      76 |
+      77 |   test('skip-to-content link works correctly', async ({ page }) => {
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\accessibility.spec.ts:74:61
+
+    Error Context: test-results\accessibility-Accessibility-Shell-Features-Axe-scan-on-terms-chromium\error-context.md
+
+  5) [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:5:3 ΓÇ║ Day 10b E2E ΓÇ║ robots.ts disallows /admin and /api and references the sitemap 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "Disallow: /admin"
+    Received string:    "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/066_9qs-fr7km.js\"/><script src=\"/_next/static/chunks/43teerlvvsk8l.js\" async=\"\"></script><script src=\"/_next/static/chunks/2i-ywy0-efqgg.js\" async=\"\"></script><script src=\"/_next/static/chunks/045d148pn9xan.js\" async=\"\"></script><script src=\"/_next/static/chunks/0ay527mnq1105.js\" async=\"\"></script><script src=\"/_next/static/chunks/turbopack-3sft5rb0v4au0.js\" async=\"\"></script><script src=\"/_next/static/chunks/0ehjiuuxbbhq9.js\" async=\"\"></script><script src=\"/_next/static/chunks/37frzjzgdb-yt.js\" async=\"\"></script><meta name=\"robots\" content=\"noindex\"/><link rel=\"icon\" href=\"/favicon.ico?favicon.2vob68tjqpejf.ico\" sizes=\"256x256\" type=\"image/x-icon\"/><meta name=\"next-size-adjust\" content=\"\"/><title>404: This page could not be found.</title><script src=\"/_next/static/chunks/0cz1d0mv5g_q7.js\" noModule=\"\"></script></head><body><div hidden=\"\"><!--$--><!--/$--></div><div style=\"font-family:system-ui,&quot;Segoe UI&quot;,Roboto,Helvetica,Arial,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;;height:100vh;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center\"><div><style>body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}</style><h1 class=\"next-error-h1\" style=\"display:inline-block;margin:0 20px 0 0;padding:0 23px 0 0;font-size:24px;font-weight:500;vertical-align:top;line-height:49px\">404</h1><div style=\"display:inline-block\"><h2 style=\"font-size:14px;font-weight:400;line-height:49px;margin:0\">This page could not be found.</h2></div></div></div><!--$--><!--/$--><script src=\"/_next/static/chunks/066_9qs-fr7km.js\" id=\"_R_\" async=\"\"></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n2:I[39756,[\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\"],\\\"default\\\"]\\n3:I[37457,[\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\"],\\\"default\\\"]\\n4:I[97367,[\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\"],\\\"OutletBoundary\\\"]\\n5:\\\"$Sreact.suspense\\\"\\n8:I[97367,[\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\"],\\\"ViewportBoundary\\\"]\\na:I[97367,[\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\"],\\\"MetadataBoundary\\\"]\\nc:I[53348,[\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\",\\\"/_next/static/chunks/37frzjzgdb-yt.js\\\"],\\\"default\\\"]\\n7:X\\n0:{\\\"P\\\":null,\\\"c\\\":[\\\"\\\",\\\"en\\\",\\\"robots.txt\\\"],\\\"q\\\":\\\"\\\",\\\"i\\\":false,\\\"f\\\":[[[\\\"\\\",{\\\"children\\\":[\\\"/_not-found\\\",{\\\"children\\\":[\\\"__PAGE__\\\",{},\\\"$undefined\\\",\\\"$undefined\\\",4256]},\\\"$undefined\\\",\\\"$undefined\\\",4192]},\\\"$undefined\\\",\\\"$undefined\\\",4176],[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"script\\\",\\\"script-0\\\",{\\\"src\\\":\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\",\\\"async\\\":true,\\\"nonce\\\":\\\"$undefined\\\"}]],[\\\"$\\\",\\\"html\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"body\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$L2\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L3\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":[[[\\\"$\\\",\\\"title\\\",null,{\\\"children\\\":\\\"404: This page could not be found.\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":{\\\"fontFamily\\\":\\\"system-ui,\\\\\\\"Segoe UI\\\\\\\",Roboto,Helvetica,Arial,sans-serif,\\\\\\\"Apple Color Emoji\\\\\\\",\\\\\\\"Segoe UI Emoji\\\\\\\"\\\",\\\"height\\\":\\\"100vh\\\",\\\"textAlign\\\":\\\"center\\\",\\\"display\\\":\\\"flex\\\",\\\"flexDirection\\\":\\\"column\\\",\\\"alignItems\\\":\\\"center\\\",\\\"justifyContent\\\":\\\"center\\\"},\\\"children\\\":[\\\"$\\\",\\\"div\\\",null,{\\\"children\\\":[[\\\"$\\\",\\\"style\\\",null,{\\\"dangerouslySetInnerHTML\\\":{\\\"__html\\\":\\\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\\\"}}],[\\\"$\\\",\\\"h1\\\",null,{\\\"className\\\":\\\"next-error-h1\\\",\\\"style\\\":{\\\"display\\\":\\\"inline-block\\\",\\\"margin\\\":\\\"0 20px 0 0\\\",\\\"padding\\\":\\\"0 23px 0 0\\\",\\\"fontSize\\\":24,\\\"fontWeight\\\":500,\\\"verticalAlign\\\":\\\"top\\\",\\\"lineHeight\\\":\\\"49px\\\"},\\\"children\\\":404}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":{\\\"display\\\":\\\"inline-block\\\"},\\\"children\\\":[\\\"$\\\",\\\"h2\\\",null,{\\\"style\\\":{\\\"fontSize\\\":14,\\\"fontWeight\\\":400,\\\"lineHeight\\\":\\\"49px\\\",\\\"margin\\\":0},\\\"children\\\":\\\"This page could not be found.\\\"}]}]]}]}]],[]],\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]}]}]]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$L2\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L3\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"title\\\",null,{\\\"children\\\":\\\"404: This page could not be found.\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":\\\"$0:f:0:1:0:props:children:1:props:children:props:children:props:notFound:0:1:props:style\\\",\\\"children\\\":[\\\"$\\\",\\\"div\\\",null,{\\\"children\\\":[[\\\"$\\\",\\\"style\\\",null,{\\\"dangerouslySetInnerHTML\\\":{\\\"__html\\\":\\\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\\\"}}],[\\\"$\\\",\\\"h1\\\",null,{\\\"className\\\":\\\"next-error-h1\\\",\\\"style\\\":\\\"$0:f:0:1:0:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:1:props:style\\\",\\\"children\\\":404}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":\\\"$0:f:0:1:0:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:style\\\",\\\"children\\\":[\\\"$\\\",\\\"h2\\\",null,{\\\"style\\\":\\\"$0:f:0:1:0:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:children:props:style\\\",\\\"children\\\":\\\"This page could not be found.\\\"}]}]]}]}]],null,[\\\"$\\\",\\\"$L4\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$5\\\",null,{\\\"name\\\":\\\"Next.MetadataOutlet\\\",\\\"children\\\":\\\"$@6\\\"}]}]]}],{},null,false,null]},null,false,\\\"$7\\\"]},null,false,null],[\\\"$\\\",\\\"$1\\\",\\\"h\\\",{\\\"children\\\":[[\\\"$\\\",\\\"meta\\\",null,{\\\"name\\\":\\\"robots\\\",\\\"content\\\":\\\"noindex\\\"}],[\\\"$\\\",\\\"$L8\\\",null,{\\\"children\\\":\\\"$L9\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"hidden\\\":true,\\\"children\\\":[\\\"$\\\",\\\"$La\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$5\\\",null,{\\\"name\\\":\\\"Next.Metadata\\\",\\\"children\\\":\\\"$Lb\\\"}]}]}],[\\\"$\\\",\\\"meta\\\",null,{\\\"name\\\":\\\"next-size-adjust\\\",\\\"content\\\":\\\"\\\"}]]}],false]],\\\"m\\\":\\\"$undefined\\\",\\\"G\\\":[\\\"$c\\\",[]],\\\"S\\\":true,\\\"h\\\":null,\\\"r\\\":\\\"$undefined\\\",\\\"s\\\":\\\"$undefined\\\",\\\"a\\\":\\\"$undefined\\\",\\\"l\\\":\\\"$undefined\\\",\\\"p\\\":\\\"$undefined\\\",\\\"d\\\":\\\"$undefined\\\",\\\"b\\\":\\\"8Fmp2S9qR6hCWPcYNMMol\\\"}\\n7:C\\n9:[[\\\"$\\\",\\\"meta\\\",\\\"0\\\",{\\\"charSet\\\":\\\"utf-8\\\"}],[\\\"$\\\",\\\"meta\\\",\\\"1\\\",{\\\"name\\\":\\\"viewport\\\",\\\"content\\\":\\\"width=device-width, initial-scale=1\\\"}]]\\nd:I[27201,[\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\"],\\\"IconMark\\\"]\\n6:null\\nb:[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"icon\\\",\\\"href\\\":\\\"/favicon.ico?favicon.2vob68tjqpejf.ico\\\",\\\"sizes\\\":\\\"256x256\\\",\\\"type\\\":\\\"image/x-icon\\\"}],[\\\"$\\\",\\\"$Ld\\\",\\\"1\\\",{}]]\\n\"])</script></body></html>"
+
+       6 |     const response = await request.get('/robots.txt');
+       7 |     const text = await response.text();
+    >  8 |     expect(text).toContain('Disallow: /admin');
+         |                  ^
+       9 |     expect(text).toContain('Disallow: /api');
+      10 |     expect(text).toContain('Sitemap:');
+      11 |   });
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\day10b.spec.ts:8:18
+
+    Error Context: test-results\day10b-Day-10b-E2E-robots--2f284--and-references-the-sitemap-chromium\error-context.md
+
+  6) [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:13:3 ΓÇ║ Day 10b E2E ΓÇ║ sitemap includes the static pages and public entities, excludes the known private project, DRAFT case study, and DRAFT post 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "/about"
+    Received string:    "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunks/066_9qs-fr7km.js\"/><script src=\"/_next/static/chunks/43teerlvvsk8l.js\" async=\"\"></script><script src=\"/_next/static/chunks/2i-ywy0-efqgg.js\" async=\"\"></script><script src=\"/_next/static/chunks/045d148pn9xan.js\" async=\"\"></script><script src=\"/_next/static/chunks/0ay527mnq1105.js\" async=\"\"></script><script src=\"/_next/static/chunks/turbopack-3sft5rb0v4au0.js\" async=\"\"></script><script src=\"/_next/static/chunks/0ehjiuuxbbhq9.js\" async=\"\"></script><script src=\"/_next/static/chunks/37frzjzgdb-yt.js\" async=\"\"></script><meta name=\"robots\" content=\"noindex\"/><link rel=\"icon\" href=\"/favicon.ico?favicon.2vob68tjqpejf.ico\" sizes=\"256x256\" type=\"image/x-icon\"/><meta name=\"next-size-adjust\" content=\"\"/><title>404: This page could not be found.</title><script src=\"/_next/static/chunks/0cz1d0mv5g_q7.js\" noModule=\"\"></script></head><body><div hidden=\"\"><!--$--><!--/$--></div><div style=\"font-family:system-ui,&quot;Segoe UI&quot;,Roboto,Helvetica,Arial,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;;height:100vh;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center\"><div><style>body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}</style><h1 class=\"next-error-h1\" style=\"display:inline-block;margin:0 20px 0 0;padding:0 23px 0 0;font-size:24px;font-weight:500;vertical-align:top;line-height:49px\">404</h1><div style=\"display:inline-block\"><h2 style=\"font-size:14px;font-weight:400;line-height:49px;margin:0\">This page could not be found.</h2></div></div></div><!--$--><!--/$--><script src=\"/_next/static/chunks/066_9qs-fr7km.js\" id=\"_R_\" async=\"\"></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n2:I[39756,[\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\"],\\\"default\\\"]\\n3:I[37457,[\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\"],\\\"default\\\"]\\n4:I[97367,[\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\"],\\\"OutletBoundary\\\"]\\n5:\\\"$Sreact.suspense\\\"\\n8:I[97367,[\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\"],\\\"ViewportBoundary\\\"]\\na:I[97367,[\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\"],\\\"MetadataBoundary\\\"]\\nc:I[53348,[\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\",\\\"/_next/static/chunks/37frzjzgdb-yt.js\\\"],\\\"default\\\"]\\n7:X\\n0:{\\\"P\\\":null,\\\"c\\\":[\\\"\\\",\\\"en\\\",\\\"robots.txt\\\"],\\\"q\\\":\\\"\\\",\\\"i\\\":false,\\\"f\\\":[[[\\\"\\\",{\\\"children\\\":[\\\"/_not-found\\\",{\\\"children\\\":[\\\"__PAGE__\\\",{},\\\"$undefined\\\",\\\"$undefined\\\",4256]},\\\"$undefined\\\",\\\"$undefined\\\",4192]},\\\"$undefined\\\",\\\"$undefined\\\",4176],[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"script\\\",\\\"script-0\\\",{\\\"src\\\":\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\",\\\"async\\\":true,\\\"nonce\\\":\\\"$undefined\\\"}]],[\\\"$\\\",\\\"html\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"body\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$L2\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L3\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":[[[\\\"$\\\",\\\"title\\\",null,{\\\"children\\\":\\\"404: This page could not be found.\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":{\\\"fontFamily\\\":\\\"system-ui,\\\\\\\"Segoe UI\\\\\\\",Roboto,Helvetica,Arial,sans-serif,\\\\\\\"Apple Color Emoji\\\\\\\",\\\\\\\"Segoe UI Emoji\\\\\\\"\\\",\\\"height\\\":\\\"100vh\\\",\\\"textAlign\\\":\\\"center\\\",\\\"display\\\":\\\"flex\\\",\\\"flexDirection\\\":\\\"column\\\",\\\"alignItems\\\":\\\"center\\\",\\\"justifyContent\\\":\\\"center\\\"},\\\"children\\\":[\\\"$\\\",\\\"div\\\",null,{\\\"children\\\":[[\\\"$\\\",\\\"style\\\",null,{\\\"dangerouslySetInnerHTML\\\":{\\\"__html\\\":\\\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\\\"}}],[\\\"$\\\",\\\"h1\\\",null,{\\\"className\\\":\\\"next-error-h1\\\",\\\"style\\\":{\\\"display\\\":\\\"inline-block\\\",\\\"margin\\\":\\\"0 20px 0 0\\\",\\\"padding\\\":\\\"0 23px 0 0\\\",\\\"fontSize\\\":24,\\\"fontWeight\\\":500,\\\"verticalAlign\\\":\\\"top\\\",\\\"lineHeight\\\":\\\"49px\\\"},\\\"children\\\":404}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":{\\\"display\\\":\\\"inline-block\\\"},\\\"children\\\":[\\\"$\\\",\\\"h2\\\",null,{\\\"style\\\":{\\\"fontSize\\\":14,\\\"fontWeight\\\":400,\\\"lineHeight\\\":\\\"49px\\\",\\\"margin\\\":0},\\\"children\\\":\\\"This page could not be found.\\\"}]}]]}]}]],[]],\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]}]}]]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$L2\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L3\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"title\\\",null,{\\\"children\\\":\\\"404: This page could not be found.\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":\\\"$0:f:0:1:0:props:children:1:props:children:props:children:props:notFound:0:1:props:style\\\",\\\"children\\\":[\\\"$\\\",\\\"div\\\",null,{\\\"children\\\":[[\\\"$\\\",\\\"style\\\",null,{\\\"dangerouslySetInnerHTML\\\":{\\\"__html\\\":\\\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\\\"}}],[\\\"$\\\",\\\"h1\\\",null,{\\\"className\\\":\\\"next-error-h1\\\",\\\"style\\\":\\\"$0:f:0:1:0:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:1:props:style\\\",\\\"children\\\":404}],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":\\\"$0:f:0:1:0:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:style\\\",\\\"children\\\":[\\\"$\\\",\\\"h2\\\",null,{\\\"style\\\":\\\"$0:f:0:1:0:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:children:props:style\\\",\\\"children\\\":\\\"This page could not be found.\\\"}]}]]}]}]],null,[\\\"$\\\",\\\"$L4\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$5\\\",null,{\\\"name\\\":\\\"Next.MetadataOutlet\\\",\\\"children\\\":\\\"$@6\\\"}]}]]}],{},null,false,null]},null,false,\\\"$7\\\"]},null,false,null],[\\\"$\\\",\\\"$1\\\",\\\"h\\\",{\\\"children\\\":[[\\\"$\\\",\\\"meta\\\",null,{\\\"name\\\":\\\"robots\\\",\\\"content\\\":\\\"noindex\\\"}],[\\\"$\\\",\\\"$L8\\\",null,{\\\"children\\\":\\\"$L9\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"hidden\\\":true,\\\"children\\\":[\\\"$\\\",\\\"$La\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$5\\\",null,{\\\"name\\\":\\\"Next.Metadata\\\",\\\"children\\\":\\\"$Lb\\\"}]}]}],[\\\"$\\\",\\\"meta\\\",null,{\\\"name\\\":\\\"next-size-adjust\\\",\\\"content\\\":\\\"\\\"}]]}],false]],\\\"m\\\":\\\"$undefined\\\",\\\"G\\\":[\\\"$c\\\",[]],\\\"S\\\":true,\\\"h\\\":null,\\\"r\\\":\\\"$undefined\\\",\\\"s\\\":\\\"$undefined\\\",\\\"a\\\":\\\"$undefined\\\",\\\"l\\\":\\\"$undefined\\\",\\\"p\\\":\\\"$undefined\\\",\\\"d\\\":\\\"$undefined\\\",\\\"b\\\":\\\"8Fmp2S9qR6hCWPcYNMMol\\\"}\\n7:C\\n9:[[\\\"$\\\",\\\"meta\\\",\\\"0\\\",{\\\"charSet\\\":\\\"utf-8\\\"}],[\\\"$\\\",\\\"meta\\\",\\\"1\\\",{\\\"name\\\":\\\"viewport\\\",\\\"content\\\":\\\"width=device-width, initial-scale=1\\\"}]]\\nd:I[27201,[\\\"/_next/static/chunks/0ehjiuuxbbhq9.js\\\"],\\\"IconMark\\\"]\\n6:null\\nb:[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"icon\\\",\\\"href\\\":\\\"/favicon.ico?favicon.2vob68tjqpejf.ico\\\",\\\"sizes\\\":\\\"256x256\\\",\\\"type\\\":\\\"image/x-icon\\\"}],[\\\"$\\\",\\\"$Ld\\\",\\\"1\\\",{}]]\\n\"])</script></body></html>"
+
+      14 |     const response = await request.get('/sitemap.xml');
+      15 |     const text = await response.text();
+    > 16 |     expect(text).toContain('/about');
+         |                  ^
+      17 |     expect(text).not.toContain('private-project');
+      18 |     expect(text).not.toContain('draft-post');
+      19 |   });
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\day10b.spec.ts:16:18
+
+    Error Context: test-results\day10b-Day-10b-E2E-sitemap-074e7-T-case-study-and-DRAFT-post-chromium\error-context.md
+
+  7) [chromium] ΓÇ║ tests\e2e\day5.spec.ts:4:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ homepage renders hero, services preview, about snapshot with real seeded data 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Read Full Bio')
+    Expected: visible
+    Error: strict mode violation: getByText('Read Full Bio') resolved to 2 elements:
+        1) <span class="inline-flex items-center gap-1.5 rounded-full border border-[#10B981]/25 bg-[#10B981]/10 px-2.5 py-1 text-xs font-medium text-[#10B981]">ΓÇª</span> aka getByRole('link', { name: 'Read Full Bio' }).first()
+        2) <a href="/about" class="inline-flex items-center gap-1 text-xs font-semibold text-[#A995FF] transition-colors hover:text-white">ΓÇª</a> aka getByRole('link', { name: 'Read Full Bio' }).nth(1)
+
+    Call log:
+      - Expect "toBeVisible" getByText('Read Full Bio') with timeout 5000ms
+      - waiting for getByText('Read Full Bio')
+
+
+      15 |     // Check for About Snapshot
+      16 |     await expect(page.getByRole('heading', { name: 'About Me' })).toBeVisible();
+    > 17 |     await expect(page.getByText('Read Full Bio')).toBeVisible();
+         |                                                   ^
+      18 |   });
+      19 |
+      20 |   test('services index -> click service -> detail page loads correctly', async ({ page }) => {
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\day5.spec.ts:17:51
+
+    Error Context: test-results\day5-Day-5---Public-Pages--b5ef9-pshot-with-real-seeded-data-chromium\error-context.md
+
+  8) [chromium] ΓÇ║ tests\e2e\day5.spec.ts:20:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ services index -> click service -> detail page loads correctly 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('h1')
+    Expected: "Services"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveText" locator('h1') with timeout 5000ms
+      - waiting for locator('h1')
+
+
+      21 |     await page.goto('/services');
+      22 |     
+    > 23 |     await expect(page.locator('h1')).toHaveText('Services');
+         |                                      ^
+      24 |     
+      25 |     // Click the first service's 'View Details' link
+      26 |     const firstServiceLink = page.getByText('View Details').first();
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\day5.spec.ts:23:38
+
+    Error Context: test-results\day5-Day-5---Public-Pages--6ddd1-detail-page-loads-correctly-chromium\error-context.md
+
+  9) [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:23:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL 
+
+    Error: expect(received).toBeTruthy()
+
+    Received: false
+
+      23 |   test('SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL', async ({ request }) => {
+      24 |     const response = await request.get('/sitemap.xml');
+    > 25 |     expect(response.ok()).toBeTruthy();
+         |                           ^
+      26 |     const xml = await response.text();
+      27 |     expect(xml).not.toContain(`/work/${privateProjectSlug}`);
+      28 |   });
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\day6-portfolio.spec.ts:25:27
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-4b21a-ain-the-private-project-URL-chromium\error-context.md
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-4b21a-ain-the-private-project-URL-chromium\error-context.md
+
+  10) [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:41:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs 
+
+    Error: expect(received).toBeTruthy()
+
+    Received: false
+
+      41 |   test('SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs', async ({ request }) => {
+      42 |     const response = await request.get('/sitemap.xml');
+    > 43 |     expect(response.ok()).toBeTruthy();
+         |                           ^
+      44 |     const xml = await response.text();
+      45 |     expect(xml).not.toContain(`/work/${unpublishedCaseStudySlug}`);
+      46 |   });
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\day6-portfolio.spec.ts:43:27
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-051ad-unpublished-case-study-URLs-chromium\error-context.md
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-051ad-unpublished-case-study-URLs-chromium\error-context.md
+
+  11) [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /services has exactly one h1 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      22 |         // Count h1 tags
+      23 |         const h1Count = await page.locator('h1').count();
+    > 24 |         expect(h1Count).toBe(1);
+         |                         ^
+      25 |       });
+      26 |     }
+      27 |   }
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\h1.spec.ts:24:25
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-en-services-has-exactly-one-h1-chromium\error-context.md
+
+  12) [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /work has exactly one h1 ΓöÇ
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      22 |         // Count h1 tags
+      23 |         const h1Count = await page.locator('h1').count();
+    > 24 |         expect(h1Count).toBe(1);
+         |                         ^
+      25 |       });
+      26 |     }
+      27 |   }
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\h1.spec.ts:24:25
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-en-work-has-exactly-one-h1-chromium\error-context.md
+
+  13) [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /blog has exactly one h1 ΓöÇ
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      22 |         // Count h1 tags
+      23 |         const h1Count = await page.locator('h1').count();
+    > 24 |         expect(h1Count).toBe(1);
+         |                         ^
+      25 |       });
+      26 |     }
+      27 |   }
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\h1.spec.ts:24:25
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-en-blog-has-exactly-one-h1-chromium\error-context.md
+
+  14) [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /contact has exactly one h1 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      22 |         // Count h1 tags
+      23 |         const h1Count = await page.locator('h1').count();
+    > 24 |         expect(h1Count).toBe(1);
+         |                         ^
+      25 |       });
+      26 |     }
+      27 |   }
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\h1.spec.ts:24:25
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-en-contact-has-exactly-one-h1-chromium\error-context.md
+
+  15) [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /services has exactly one h1 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      22 |         // Count h1 tags
+      23 |         const h1Count = await page.locator('h1').count();
+    > 24 |         expect(h1Count).toBe(1);
+         |                         ^
+      25 |       });
+      26 |     }
+      27 |   }
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\h1.spec.ts:24:25
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-am-services-has-exactly-one-h1-chromium\error-context.md
+
+  16) [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /work has exactly one h1 ΓöÇ
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      22 |         // Count h1 tags
+      23 |         const h1Count = await page.locator('h1').count();
+    > 24 |         expect(h1Count).toBe(1);
+         |                         ^
+      25 |       });
+      26 |     }
+      27 |   }
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\h1.spec.ts:24:25
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-am-work-has-exactly-one-h1-chromium\error-context.md
+
+  17) [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /blog has exactly one h1 ΓöÇ
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      22 |         // Count h1 tags
+      23 |         const h1Count = await page.locator('h1').count();
+    > 24 |         expect(h1Count).toBe(1);
+         |                         ^
+      25 |       });
+      26 |     }
+      27 |   }
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\h1.spec.ts:24:25
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-am-blog-has-exactly-one-h1-chromium\error-context.md
+
+  18) [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /contact has exactly one h1 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      22 |         // Count h1 tags
+      23 |         const h1Count = await page.locator('h1').count();
+    > 24 |         expect(h1Count).toBe(1);
+         |                         ^
+      25 |       });
+      26 |     }
+      27 |   }
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\h1.spec.ts:24:25
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-am-contact-has-exactly-one-h1-chromium\error-context.md
+
+  19) [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /services has exactly one h1 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      22 |         // Count h1 tags
+      23 |         const h1Count = await page.locator('h1').count();
+    > 24 |         expect(h1Count).toBe(1);
+         |                         ^
+      25 |       });
+      26 |     }
+      27 |   }
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\h1.spec.ts:24:25
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-om-services-has-exactly-one-h1-chromium\error-context.md
+
+  20) [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /work has exactly one h1 ΓöÇ
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      22 |         // Count h1 tags
+      23 |         const h1Count = await page.locator('h1').count();
+    > 24 |         expect(h1Count).toBe(1);
+         |                         ^
+      25 |       });
+      26 |     }
+      27 |   }
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\h1.spec.ts:24:25
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-om-work-has-exactly-one-h1-chromium\error-context.md
+
+  21) [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /blog has exactly one h1 ΓöÇ
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      22 |         // Count h1 tags
+      23 |         const h1Count = await page.locator('h1').count();
+    > 24 |         expect(h1Count).toBe(1);
+         |                         ^
+      25 |       });
+      26 |     }
+      27 |   }
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\h1.spec.ts:24:25
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-om-blog-has-exactly-one-h1-chromium\error-context.md
+
+  22) [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /contact has exactly one h1 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      22 |         // Count h1 tags
+      23 |         const h1Count = await page.locator('h1').count();
+    > 24 |         expect(h1Count).toBe(1);
+         |                         ^
+      25 |       });
+      26 |     }
+      27 |   }
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\h1.spec.ts:24:25
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-om-contact-has-exactly-one-h1-chromium\error-context.md
+
+  23) [chromium] ΓÇ║ tests\e2e\part3-media-upload.spec.ts:19:3 ΓÇ║ Part 3 - Media Upload Widget ΓÇ║ Upload avatar in Profile edit and verify on public page 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.w-48.h-48 img')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.w-48.h-48 img') with timeout 5000ms
+      - waiting for locator('.w-48.h-48 img')
+
+
+      55 |     // Look for the image inside the w-48 h-48 container
+      56 |     const avatarImage = page.locator('.w-48.h-48 img');
+    > 57 |     await expect(avatarImage).toBeVisible();
+         |                               ^
+      58 |
+      59 |     // Take a screenshot as proof
+      60 |     const outDir = path.join(process.cwd(), 'docs', 'evidence', 'day14-5', 'partD', 'part3');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\part3-media-upload.spec.ts:57:31
+
+    Error Context: test-results\part3-media-upload-Part-3--43a7b-t-and-verify-on-public-page-chromium\error-context.md
+
+    Error Context: test-results\part3-media-upload-Part-3--43a7b-t-and-verify-on-public-page-chromium\error-context.md
+
+  24) [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:30:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Profile Avatar Render 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.w-48.h-48 img')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.w-48.h-48 img') with timeout 5000ms
+      - waiting for locator('.w-48.h-48 img')
+
+
+      48 |     
+      49 |     await visitorPage.goto('/about');
+    > 50 |     await expect(visitorPage.locator('.w-48.h-48 img')).toBeVisible();
+         |                                                         ^
+      51 |     
+      52 |     const outDir = path.join(process.cwd(), 'docs', 'evidence', 'day14-5', 'partF', 'screenshots');
+      53 |     fs.mkdirSync(outDir, { recursive: true });
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partF-media-rendering.spec.ts:50:57
+
+    Error Context: test-results\partF-media-rendering-Part-be317-ering-Profile-Avatar-Render-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-be317-ering-Profile-Avatar-Render-chromium\error-context.md
+
+  25) [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:163:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Blog Featured Image Render 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for locator('a.hover\\:underline').first()
+
+
+      184 |     
+      185 |     // Detail page
+    > 186 |     await visitorPage.locator('a.hover\\:underline').first().click();
+          |                                                              ^
+      187 |     await expect(visitorPage.locator('img.object-cover').first()).toBeVisible();
+      188 |     
+      189 |     const outDir = path.join(process.cwd(), 'docs', 'evidence', 'day14-5', 'partF', 'screenshots');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partF-media-rendering.spec.ts:186:62
+
+    Error Context: test-results\partF-media-rendering-Part-e77bf--Blog-Featured-Image-Render-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-e77bf--Blog-Featured-Image-Render-chromium\error-context.md
+
+  26) [chromium] ΓÇ║ tests\e2e\partI-blog-social.spec.ts:4:3 ΓÇ║ Blog Social Interactions ΓÇ║ like toggle and comment submission 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByLabel(/Your Name/i)
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByLabel(/Your Name/i) with timeout 5000ms
+      - waiting for getByLabel(/Your Name/i)
+
+
+      35 |     // Add a comment
+      36 |     const nameInput = page.getByLabel(/Your Name/i);
+    > 37 |     await expect(nameInput).toBeVisible();
+         |                             ^
+      38 |     await nameInput.fill('Test User');
+      39 |
+      40 |     const emailInput = page.getByLabel(/Your Email/i);
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partI-blog-social.spec.ts:37:29
+
+    Error Context: test-results\partI-blog-social-Blog-Soc-d72af-ggle-and-comment-submission-chromium\error-context.md
+
+  26 failed
+    [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:14:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /contact 
+    [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:23:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /privacy 
+    [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:32:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /about 
+    [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:68:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /terms 
+    [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:5:3 ΓÇ║ Day 10b E2E ΓÇ║ robots.ts disallows /admin and /api and references the sitemap 
+    [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:13:3 ΓÇ║ Day 10b E2E ΓÇ║ sitemap includes the static pages and public entities, excludes the known private project, DRAFT case study, and DRAFT post 
+    [chromium] ΓÇ║ tests\e2e\day5.spec.ts:4:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ homepage renders hero, services preview, about snapshot with real seeded data 
+    [chromium] ΓÇ║ tests\e2e\day5.spec.ts:20:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ services index -> click service -> detail page loads correctly 
+    [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:23:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL 
+    [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:41:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs 
+    [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /services has exactly one h1 
+    [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /work has exactly one h1 ΓöÇΓöÇΓöÇ
+    [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /blog has exactly one h1 ΓöÇΓöÇΓöÇ
+    [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /contact has exactly one h1 
+    [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /services has exactly one h1 
+    [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /work has exactly one h1 ΓöÇΓöÇΓöÇ
+    [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /blog has exactly one h1 ΓöÇΓöÇΓöÇ
+    [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /contact has exactly one h1 
+    [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /services has exactly one h1 
+    [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /work has exactly one h1 ΓöÇΓöÇΓöÇ
+    [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /blog has exactly one h1 ΓöÇΓöÇΓöÇ
+    [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /contact has exactly one h1 
+    [chromium] ΓÇ║ tests\e2e\part3-media-upload.spec.ts:19:3 ΓÇ║ Part 3 - Media Upload Widget ΓÇ║ Upload avatar in Profile edit and verify on public page 
+    [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:30:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Profile Avatar Render 
+    [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:163:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Blog Featured Image Render 
+    [chromium] ΓÇ║ tests\e2e\partI-blog-social.spec.ts:4:3 ΓÇ║ Blog Social Interactions ΓÇ║ like toggle and comment submission 
+  59 passed (4.1m)

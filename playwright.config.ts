@@ -4,13 +4,14 @@ import { config } from 'dotenv';
 config({ path: '.env.test' });
 export default defineConfig({
   testDir: './tests/e2e',
+  globalSetup: './tests/e2e/global-setup.ts',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.PW_WORKERS ? parseInt(process.env.PW_WORKERS, 10) : (process.env.CI ? 1 : undefined),
   reporter: 'html',
   use: {
-    baseURL: 'http://localhost:3000',
+    baseURL: 'http://localhost:3006',
     trace: 'on-first-retry',
   },
   projects: [
@@ -20,15 +21,19 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run build && npm run start',
-    url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.CI,
-    timeout: 120000,
+    command: process.env.PW_PREBUILT === '1' ? 'npm run start -- -p 3006' : 'npm run build && npm run start -- -p 3006',
+    url: 'http://localhost:3006',
+    reuseExistingServer: false,
+    timeout: 300000,
     env: {
-      AUTH_TRUST_HOST: 'true',
-      AUTH_URL: 'http://localhost:3000',
-      AUTH_SECRET: 'dummy-secret-for-ci-tests-1234567890',
+      APP_ENV: 'test',
       PLAYWRIGHT_TEST: '1',
+      // Deployment settings for Auth.js
+      AUTH_TRUST_HOST: 'true',
+      AUTH_URL: 'http://localhost:3006',
+      NEXTAUTH_URL: 'http://localhost:3006',
+      AUTH_SECRET: 'dummy-secret-for-ci-tests-1234567890',
+      PORT: '3006',
       DATABASE_URL: process.env.DATABASE_URL || 'postgresql://dev_user:dev_password@127.0.0.1:5433/gurmesa_test_db?schema=public'
     }
   },

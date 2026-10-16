@@ -1,0 +1,49 @@
+==================================================
+6. TURBOPACK TRACING WARNING RECONCILIATION
+==================================================
+
+1. EXACT FIX APPLIED IN REPOSITORY (Commit 8c37539):
+--------------------------------------------------
+In `lib/storage/local.ts`:
+Line 30:
+```ts
+const targetPath = path.join(/*turbopackIgnore: true*/ this.uploadDir, key);
+```
+Line 47:
+```ts
+const targetPath = path.join(/*turbopackIgnore: true*/ this.uploadDir, key);
+```
+
+2. WHY THE TURBOPACK WARNING OCCURS:
+--------------------------------------------------
+Next.js / Turbopack includes a static file tracer (NFT). When it encounters filesystem calls with dynamic variables:
+```ts
+this.uploadDir = path.join(process.cwd(), 'public', 'uploads');
+path.join(this.uploadDir, key);
+```
+Because `this.uploadDir` is resolved at runtime on an instantiated class rather than statically analyzed as a string literal, Turbopack cannot compute the static folder boundaries at build time. It assumes the operation might access anything under `process.cwd()`, outputting a warning that it is tracing the entire workspace directory into the build output bundle.
+
+3. EVALUATION OF PROPOSED FIXES:
+--------------------------------------------------
+A) Inline comment `/*turbopackIgnore: true*/`:
+While placed in commit 8c37539, inline comments inside function arguments (`path.join(...)`) are non-standard for NFT / Turbopack AST parsers and may be discarded by minifiers / Babel / SWC AST transforms.
+
+B) `outputFileTracingIncludes` (in `next.config.ts`):
+Configuring `outputFileTracingIncludes` in `next.config.ts` tells the Next.js bundle tracer explicitly which files or directories to trace for given route patterns. However, `next.config.ts` in this repo currently only sets `outputFileTracingRoot: path.resolve(__dirname)` and does NOT currently set `outputFileTracingIncludes`.
+
+C) Cleanest Code-Level Fix (Static Scoping):
+Static scoping eliminates the warning at the source without relying on AST comments or bundler flags. Instead of computing `path.join(this.uploadDir, key)` where `this.uploadDir` is an instance property, define a module-level static base and validate the resolved target path:
+
+```ts
+const UPLOAD_ROOT = path.join(process.cwd(), 'public', 'uploads');
+
+function getSafeUploadPath(key: string): string {
+  const safeKey = path.normalize(key).replace(/^(\.\.[\/\\])+/, '');
+  const target = path.resolve(UPLOAD_ROOT, safeKey);
+  if (!target.startsWith(UPLOAD_ROOT)) {
+    throw new Error('Path traversal detected');
+  }
+  return target;
+}
+```
+Because the base path `UPLOAD_ROOT` is statically localized and sanitized, Turbopack's analyzer avoids whole-project directory tracing.

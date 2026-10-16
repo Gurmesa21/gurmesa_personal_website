@@ -5,15 +5,17 @@ export async function logAdminAction({
   action,
   entity,
   entityId,
+  actorId: explicitActorId,
   metadata
 }: {
   action: string;
   entity: string;
   entityId?: string;
+  actorId?: string;
   metadata?: any;
 }) {
   const session = await auth();
-  const actorId = session?.user?.id;
+  const actorId = explicitActorId || session?.user?.id;
 
   // We should log even if unauthenticated/system actions happen, but with a missing actorId
   await prisma.auditLog.create({

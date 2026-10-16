@@ -1,0 +1,388 @@
+﻿node.exe : Γùç injected env (12) from .env.test
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γùç injected env (12) from .env.test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γùç injected env (0) from .env.test
+[globalSetup] Resetting and seeding test database: gurmesa_test_db...
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "gurmesa_test_db", schema "public" at "127.0.0.1:5433"
+
+8 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+Seed completed.
+[globalSetup] Test database gurmesa_test_db reset and seeded successfully.
+
+Running 85 tests using 1 worker
+
+Γùç injected env (0) from .env.test
+
+[1/85] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:5:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on / (homepage with AUTHORIZED+PUBLISHED testimonial)
+[2/85] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:14:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /contact
+[3/85] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:23:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /privacy
+[4/85] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:32:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /about
+[5/85] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:41:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /blog
+[6/85] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:50:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /services
+[7/85] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:59:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /work
+[8/85] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:68:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /terms
+[9/85] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:77:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ skip-to-content link works correctly
+[10/85] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:94:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ mobile menu opens, traps focus, and closes with escape
+[11/85] [chromium] ΓÇ║ tests\e2e\admin-comments.spec.ts:14:3 ΓÇ║ Admin Comments Moderation Queue ΓÇ║ navigates to /admin/comments and verifies queue filters and UI
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[12/85] [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:14:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Services: Edit and persist
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[13/85] [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:51:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Projects: Edit and persist
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[14/85] [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:81:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Blog: Edit and persist
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[15/85] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:28:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post is absent from public index HTML
+[16/85] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:34:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post returns 404 on direct lookup
+[17/85] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:39:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post is absent from sitemap
+[18/85] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:45:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Unauthenticated request to the preview URL is redirected/rejected and contains no draft content
+[19/85] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:58:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: /blog index renders seeded published posts
+[20/85] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:65:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: article detail page loads from the index
+[21/85] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:80:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: search (?q=) filters results; a DRAFT post's title never appears in results
+[22/85] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:97:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: category and tag filters work
+[23/85] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:103:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Axe scan (zero critical/serious) on /blog and /blog/[slug]
+[24/85] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:117:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ XSS: a post whose body contains <script> and <img src=x onerror=...> payloads renders them inert on /blog/[slug]
+[25/85] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:137:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ XSS: CaseStudy content on /work/[slug] renders inert
+[26/85] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:13:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ i. Publish a testimonial -> appears on /
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[27/85] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:36:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ ii. Mark a featured project DRAFT -> absent from / and /work
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[28/85] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:57:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iii. Unpublish a service -> absent from /services and /
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[29/85] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:74:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iv. Unpublish a blog post -> absent from / and /blog
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] Γ¿» Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+
+
+[WebServer] Γ¿» Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+[30/85] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:97:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[31/85] [chromium] ΓÇ║ tests\e2e\contact.spec.ts:12:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ contact form: happy path submits and shows confirmation, using keyboard only
+[32/85] [chromium] ΓÇ║ tests\e2e\contact.spec.ts:32:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ contact form: invalid submit focuses the error summary and associates errors with fields
+[33/85] [chromium] ΓÇ║ tests\e2e\contact.spec.ts:46:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ inquiry-leak scan: assert the marker is absent from the HTML of public surfaces and sitemap
+[34/85] [chromium] ΓÇ║ tests\e2e\contact.spec.ts:65:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ unauthenticated visit to /admin/inquiries and /admin/testimonials redirects to login
+[35/85] [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:5:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ HIDDEN social link absent from getPublicSocialLinks output AND from the rendered /about page HTML
+[36/85] [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:26:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ editing the Profile tagline via the admin UI shows the new tagline on / on the next request
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[37/85] [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:48:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ production error page shows no stack trace in the rendered HTML
+[WebServer] Γ¿» Error: simulated secret internal server error postgres://secret@db
+[WebServer]     at x (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_0l7ooyk._.js:1:898) {
+[WebServer]   digest: '2467381719'
+[WebServer] }
+
+[38/85] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:5:3 ΓÇ║ Day 10b E2E ΓÇ║ robots.ts disallows /admin and /api and references the sitemap
+[39/85] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:13:3 ΓÇ║ Day 10b E2E ΓÇ║ sitemap includes the static pages and public entities, excludes the known private project, DRAFT case study, and DRAFT post
+[40/85] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:21:3 ΓÇ║ Day 10b E2E ΓÇ║ /admin pages, /admin/login, and the blog preview page each return noindex
+[41/85] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:31:3 ΓÇ║ Day 10b E2E ΓÇ║ canonical URL and OG title present in generateMetadata output for: home, one service detail, one case study, one blog post
+[42/85] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:43:3 ΓÇ║ Day 10b E2E ΓÇ║ JSON-LD on at least one page parses as valid JSON, and a fixture with </script> in its title does not break out of the script element
+[43/85] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:60:3 ΓÇ║ Day 10b E2E ΓÇ║ login with an external callbackUrl does not redirect off-site
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[44/85] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:71:3 ΓÇ║ Day 10b E2E ΓÇ║ SEO override persists in admin UI and is rendered by generateMetadata
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[45/85] [chromium] ΓÇ║ tests\e2e\day5.spec.ts:4:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ homepage renders hero, services preview, about snapshot with real seeded data
+[46/85] [chromium] ΓÇ║ tests\e2e\day5.spec.ts:20:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ services index -> click service -> detail page loads correctly
+[47/85] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:11:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(c): /work page does NOT render the private project
+[48/85] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:18:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(d): /work/[slug] returns 404 for a private project
+[49/85] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:23:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL
+[50/85] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:30:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(c): /work page does NOT render unpublished case studies
+[51/85] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:36:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study
+[52/85] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:41:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs
+[53/85] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:48:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ Public /work page renders seeded public case studies
+[54/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] / has exactly one h1
+[55/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /about has exactly one h1
+[56/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /services has exactly one h1
+[57/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /work has exactly one h1
+[58/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /blog has exactly one h1
+[59/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /contact has exactly one h1
+[60/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] / has exactly one h1
+[61/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /about has exactly one h1
+[62/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /services has exactly one h1
+[63/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /work has exactly one h1
+[64/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /blog has exactly one h1
+[65/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /contact has exactly one h1
+[66/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] / has exactly one h1
+[67/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /about has exactly one h1
+[68/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /services has exactly one h1
+[69/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /work has exactly one h1
+[70/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /blog has exactly one h1
+[71/85] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:17:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /contact has exactly one h1
+[72/85] [chromium] ΓÇ║ tests\e2e\part3-media-upload.spec.ts:19:3 ΓÇ║ Part 3 - Media Upload Widget ΓÇ║ Upload avatar in Profile edit and verify on public page
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[73/85] [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:30:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Profile Avatar Render
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[74/85] [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:71:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Service Featured Image Render
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[75/85] [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:117:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Project Featured Image Render
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] Γ¿» Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+
+[76/85] [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:163:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Blog Featured Image Render
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] Γ¿» Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+
+[77/85] [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:209:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Video Upload and Render Test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[78/85] [chromium] ΓÇ║ tests\e2e\partG-testimonials.spec.ts:4:3 ΓÇ║ Testimonials Moderation & Rate Limits ΓÇ║ unauthorized testimonials are not public
+[79/85] [chromium] ΓÇ║ tests\e2e\partG-testimonials.spec.ts:18:3 ΓÇ║ Testimonials Moderation & Rate Limits ΓÇ║ honeypot traps spam bots
+[80/85] [chromium] ΓÇ║ tests\e2e\partG-upload-and-video.spec.ts:33:3 ΓÇ║ Part G - Media Upload Limits and Video Rendering ΓÇ║ Upload file size limits (6MB succeeds, 26MB rejected)
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[81/85] [chromium] ΓÇ║ tests\e2e\partG-upload-and-video.spec.ts:65:3 ΓÇ║ Part G - Media Upload Limits and Video Rendering ΓÇ║ Video rendering on public pages
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[82/85] [chromium] ΓÇ║ tests\e2e\partH-notifications.spec.ts:4:3 ΓÇ║ Part H: Admin Notifications ΓÇ║ 16. Unauthenticated access to the notifications list/API is rejected
+[83/85] [chromium] ΓÇ║ tests\e2e\partH-notifications.spec.ts:10:3 ΓÇ║ Part H: Admin Notifications ΓÇ║ 17. Submit a real inquiry as visitor, log in as admin, confirm bell icon shows incremented count and new notification appears
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[84/85] [chromium] ΓÇ║ tests\e2e\partI-blog-social.spec.ts:4:3 ΓÇ║ Blog Social Interactions ΓÇ║ like toggle and comment submission
+[85/85] [chromium] ΓÇ║ tests\e2e\resume.spec.ts:6:3 ΓÇ║ Resume End-to-End ΓÇ║ upload a PDF as admin, set it as current resume, request from /about unauthenticated
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4757)
+[WebServer]     at j 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1j421q6._.js:1:4935)
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__1i_dckc._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  85 passed (2.1m)

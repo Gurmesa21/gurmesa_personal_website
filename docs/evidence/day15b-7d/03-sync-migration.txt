@@ -1,0 +1,48 @@
+==================================================
+3. SQL OF 20261009060957_sync_schema
+==================================================
+
+File: prisma/migrations/20261009060957_sync_schema/migration.sql
+
+```sql
+-- AlterTable
+ALTER TABLE "BlogPost" ADD COLUMN     "likesCount" INTEGER NOT NULL DEFAULT 0;
+
+-- AlterTable
+ALTER TABLE "Profile" ADD COLUMN     "avatarId" TEXT;
+
+-- AlterTable
+ALTER TABLE "Service" ADD COLUMN     "featuredImageId" TEXT;
+
+-- CreateTable
+CREATE TABLE "BlogComment" (
+    "id" TEXT NOT NULL,
+    "postId" TEXT NOT NULL,
+    "author" TEXT NOT NULL,
+    "content" TEXT NOT NULL,
+    "createdAt" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "isApproved" BOOLEAN NOT NULL DEFAULT true,
+
+    CONSTRAINT "BlogComment_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateIndex
+CREATE INDEX "BlogComment_postId_createdAt_idx" ON "BlogComment"("postId", "createdAt");
+
+-- AddForeignKey
+ALTER TABLE "Profile" ADD CONSTRAINT "Profile_avatarId_fkey" FOREIGN KEY ("avatarId") REFERENCES "MediaAsset"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Service" ADD CONSTRAINT "Service_featuredImageId_fkey" FOREIGN KEY ("featuredImageId") REFERENCES "MediaAsset"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "BlogComment" ADD CONSTRAINT "BlogComment_postId_fkey" FOREIGN KEY ("postId") REFERENCES "BlogPost"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+```
+
+EARLIER CHANGES CONTAINED IN THIS MIGRATION:
+--------------------------------------------------
+This single migration consolidated several schema updates that were introduced in earlier application features:
+1. Profile Avatar Media Relation: Adds "avatarId" column and foreign key constraint "Profile_avatarId_fkey" linking "Profile"("avatarId") to "MediaAsset"("id").
+2. Service Featured Image Media Relation: Adds "featuredImageId" column and foreign key constraint "Service_featuredImageId_fkey" linking "Service"("featuredImageId") to "MediaAsset"("id").
+3. Blog Likes Count Counter: Adds "likesCount" integer column (default 0) to "BlogPost".
+4. Initial Blog Comments Table: Creates "BlogComment" table with columns id, postId, author, content, createdAt, and isApproved (default true), plus foreign key "BlogComment_postId_fkey" and index "BlogComment_postId_createdAt_idx".

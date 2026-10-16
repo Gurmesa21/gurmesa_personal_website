@@ -8,6 +8,7 @@ export type PublicServiceDTO = {
   description: string;
   deliverables: string[];
   startingPriceRange: string | null;
+  featuredImageId: string | null;
   order: number;
 };
 
@@ -20,6 +21,7 @@ export function toPublicService(service: Service): PublicServiceDTO {
     description: service.description,
     deliverables: service.deliverables,
     startingPriceRange: service.startingPriceRange,
+    featuredImageId: service.featuredImageId,
     order: service.order,
   };
 }

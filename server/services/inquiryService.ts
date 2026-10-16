@@ -1,6 +1,7 @@
 import { PrismaClient, InquiryStatus, NotificationStatus, Prisma } from '@prisma/client';
 import { auth } from '../../auth';
 import { logAdminAction } from '@/lib/audit';
+import { createNotification } from '@/lib/notifications';
 import { inquirySchema, InquiryInput } from '../../lib/validation/inquiry';
 import { contactRateLimiter, ContactRateLimiter } from '../../lib/rate-limit';
 import { getEmailTransport, EmailTransport } from '../../lib/email';
@@ -42,6 +43,13 @@ export class InquiryService {
         status: InquiryStatus.NEW,
         notificationStatus: NotificationStatus.PENDING,
       }
+    });
+
+    // 4.5 Record in-app notification
+    await createNotification({
+      type: 'NEW_INQUIRY',
+      entityId: inquiry.id,
+      message: `New inquiry from ${data.name}`
     });
 
     // 5. Notify owner

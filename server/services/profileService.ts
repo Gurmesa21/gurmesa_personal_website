@@ -16,10 +16,22 @@ import { socialLinkRepository } from '../repositories/socialLinkRepository';
  * Retrieves the profile data for public consumption, stripped of any private fields.
  */
 export async function getPublicProfile(): Promise<PublicProfile | null> {
-  const profiles = await profileRepository.findMany();
-  const profile = profiles[0];
+  const profiles = await profileRepository.findMany({
+    include: { avatar: true }
+  });
+  const profile = profiles[0] as typeof profiles[0] & { avatar?: { storageKey: string, mimeType: string } | null };
   if (!profile) return null;
-  return toPublicProfile(profile);
+  
+  let avatarUrl = null;
+  if (profile.avatar) {
+    const storage = await import('@/lib/storage').then(m => m.getStorageAdapter());
+    avatarUrl = await storage.getUrl(profile.avatar.storageKey);
+  }
+  
+  return toPublicProfile({
+    ...profile,
+    avatarUrl
+  });
 }
 
 export async function getPublicExperiences(): Promise<PublicExperience[]> {
