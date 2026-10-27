@@ -8,10 +8,21 @@ import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { MediaPicker } from '@/components/admin/MediaPicker';
 
-export function ProfileForm({ profile }: { profile: any }) {
+export function ProfileForm({ profile, publicContactEmail }: { profile: any; publicContactEmail?: string }) {
   const [avatarId, setAvatarId] = useState(profile?.avatarId || '');
   return (
     <form action={updateProfileAction} className="space-y-6 max-w-2xl bg-card border border-border p-6 rounded-lg">
+      <div className="space-y-2">
+        <Label htmlFor="publicContactEmail">Public Contact Email</Label>
+        <Input
+          id="publicContactEmail"
+          name="publicContactEmail"
+          type="email"
+          placeholder="contact@example.com"
+          defaultValue={publicContactEmail || ''}
+        />
+        <p className="text-xs text-muted-foreground">The email address displayed publicly on your Contact page.</p>
+      </div>
       <div className="space-y-2">
         <Label>Avatar / Headshot</Label>
         <MediaPicker name="avatarId" value={avatarId} onChange={setAvatarId} />

@@ -2,32 +2,67 @@ import { S3Client, PutObjectCommand, DeleteObjectCommand, GetObjectCommand } fro
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { StorageAdapter } from './index';
 
+export function getExtensionFromMime(mimeType: string, filename?: string): string {
+  const mime = mimeType?.toLowerCase().trim();
+  switch (mime) {
+    case 'image/jpeg':
+    case 'image/jpg':
+      return 'jpg';
+    case 'image/png':
+      return 'png';
+    case 'image/gif':
+      return 'gif';
+    case 'image/webp':
+      return 'webp';
+    case 'application/pdf':
+      return 'pdf';
+    case 'video/mp4':
+      return 'mp4';
+    case 'image/svg+xml':
+      return 'svg';
+    case 'image/avif':
+      return 'avif';
+    case 'video/webm':
+      return 'webm';
+    case 'video/quicktime':
+      return 'mov';
+    default: {
+      const ext = filename?.split('.').pop()?.toLowerCase().replace(/[^a-z0-9]/g, '');
+      return ext && ext.length <= 5 ? ext : 'bin';
+    }
+  }
+}
+
 export class S3StorageAdapter implements StorageAdapter {
   private client: S3Client;
   private bucket: string;
   private publicUrlBase?: string;
 
   constructor() {
-    this.bucket = process.env.STORAGE_BUCKET || process.env.S3_BUCKET || 'gurmesa-media';
-    this.publicUrlBase = process.env.STORAGE_PUBLIC_URL_BASE || process.env.S3_PUBLIC_URL_BASE;
-    
+    this.bucket = process.env.STORAGE_BUCKET || process.env.S3_BUCKET || 'avenor-media';
+    const publicBase = process.env.STORAGE_PUBLIC_URL_BASE ?? process.env.S3_PUBLIC_URL_BASE;
+    this.publicUrlBase = publicBase && publicBase.trim().length > 0 ? publicBase.trim() : undefined;
+
+    const endpoint = process.env.STORAGE_ENDPOINT || process.env.S3_ENDPOINT;
+    const region = process.env.STORAGE_REGION || process.env.S3_REGION || 'us-east-2';
+    const accessKeyId = process.env.STORAGE_ACCESS_KEY || process.env.S3_ACCESS_KEY || '';
+    const secretAccessKey = process.env.STORAGE_SECRET_KEY || process.env.S3_SECRET_KEY || '';
+
     this.client = new S3Client({
-      region: process.env.STORAGE_REGION || process.env.S3_REGION || 'us-east-1',
-      endpoint: process.env.STORAGE_ENDPOINT || process.env.S3_ENDPOINT, // e.g. for MinIO, DigitalOcean, Cloudflare R2
+      region,
+      endpoint: endpoint || undefined,
       credentials: {
-        accessKeyId: process.env.STORAGE_ACCESS_KEY || process.env.S3_ACCESS_KEY || '',
-        secretAccessKey: process.env.STORAGE_SECRET_KEY || process.env.S3_SECRET_KEY || '',
+        accessKeyId,
+        secretAccessKey,
       },
-      // Force path style for local testing (MinIO/Localstack) if endpoint is set
-      forcePathStyle: !!(process.env.STORAGE_ENDPOINT || process.env.S3_ENDPOINT),
+      // Neon Object Storage requires path-style addressing
+      forcePathStyle: true,
     });
   }
 
   async upload(file: File, keyPrefix: string = 'media/'): Promise<{ url: string; key: string; size: number; mimeType: string }> {
-    // Generate safe key
     const uniqueId = crypto.randomUUID();
-    const ext = file.name.split('.').pop()?.toLowerCase() || 'bin';
-    // keyPrefix might be empty, ensure no double slashes
+    const ext = getExtensionFromMime(file.type, file.name);
     const prefix = keyPrefix.endsWith('/') ? keyPrefix : `${keyPrefix}/`;
     const finalPrefix = keyPrefix ? prefix : '';
     const key = `${finalPrefix}${uniqueId}.${ext}`;
@@ -39,9 +74,6 @@ export class S3StorageAdapter implements StorageAdapter {
       Key: key,
       Body: buffer,
       ContentType: file.type,
-      // If we are using a public bucket, we might want ACL: 'public-read'
-      // But standard S3 practice now is bucket policies. We will assume bucket policy makes it public,
-      // or we return a presigned URL if publicUrlBase is not set.
     });
 
     await this.client.send(command);
@@ -64,16 +96,15 @@ export class S3StorageAdapter implements StorageAdapter {
 
   async getUrl(key: string): Promise<string> {
     if (this.publicUrlBase) {
-      // e.g. https://cdn.example.com
       const baseUrl = this.publicUrlBase.endsWith('/') ? this.publicUrlBase.slice(0, -1) : this.publicUrlBase;
       return `${baseUrl}/${key}`;
     }
 
-    // Fallback: generate presigned URL (useful for private buckets or local dev)
+    // For private bucket: generate presigned GET URL
     const command = new GetObjectCommand({
       Bucket: this.bucket,
       Key: key,
     });
-    return getSignedUrl(this.client, command, { expiresIn: 3600 * 24 * 7 }); // 7 days
+    return getSignedUrl(this.client, command, { expiresIn: 3600 * 24 * 7 });
   }
 }

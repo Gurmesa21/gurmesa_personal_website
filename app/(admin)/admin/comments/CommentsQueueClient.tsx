@@ -54,7 +54,7 @@ export function CommentsQueueClient({ comments }: { comments: AdminCommentItem[]
   return (
     <div className="overflow-x-auto">
       <table className="w-full text-left text-sm">
-        <thead className="bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 font-medium">
+        <thead className="bg-muted/40 border-b border-border text-muted-foreground font-medium text-xs uppercase tracking-wider">
           <tr>
             <th className="p-4">Author</th>
             <th className="p-4">Post</th>
@@ -64,24 +64,24 @@ export function CommentsQueueClient({ comments }: { comments: AdminCommentItem[]
             <th className="p-4 text-right">Actions</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
+        <tbody className="divide-y divide-border">
           {comments.map((comment) => (
             <tr 
               key={comment.id} 
               data-testid="comment-row" 
-              className="hover:bg-slate-50/50 dark:hover:bg-slate-900/50 transition-colors"
+              className="hover:bg-muted/30 transition-colors"
             >
               <td className="p-4 align-top">
-                <div className="font-semibold text-slate-900 dark:text-slate-100">{comment.author}</div>
+                <div className="font-semibold text-foreground">{comment.author}</div>
                 {comment.authorEmail && (
-                  <div className="text-xs text-slate-500">{comment.authorEmail}</div>
+                  <div className="text-xs text-muted-foreground">{comment.authorEmail}</div>
                 )}
               </td>
               <td className="p-4 align-top max-w-xs">
                 <Link 
                   href={`/blog/${comment.post.slug}`} 
                   target="_blank" 
-                  className="font-medium text-blue-600 hover:underline line-clamp-2"
+                  className="font-medium text-primary hover:underline line-clamp-2"
                 >
                   {comment.post.title}
                 </Link>

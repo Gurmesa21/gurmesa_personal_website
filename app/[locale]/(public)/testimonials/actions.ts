@@ -35,6 +35,10 @@ export async function submitTestimonialForm(formData: FormData) {
       return { success: false, error: 'Name and text are required.' };
     }
 
+    if (input.content.length > 200) {
+      return { success: false, error: 'Testimonial text must not exceed 200 characters.' };
+    }
+
     await testimonialService.submitPublicTestimonial(input as any);
 
     return { success: true };

@@ -46,10 +46,10 @@ export function ServiceForm({ action, defaultValues = {} }: { action: (formData:
 
       <div className="space-y-2">
         <Label htmlFor="status">Status</Label>
-        <select id="status" name="status" defaultValue={defaultValues.status || 'DRAFT'} className="flex w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
-          <option value="DRAFT">Draft</option>
-          <option value="PUBLISHED">Published</option>
-          <option value="ARCHIVED">Archived</option>
+        <select id="status" name="status" defaultValue={defaultValues.status || 'DRAFT'} className="flex w-full rounded-lg border border-input bg-card text-foreground px-4 py-2.5 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+          <option value="DRAFT" className="bg-[#101426] text-[#F5F6FC]">Draft</option>
+          <option value="PUBLISHED" className="bg-[#101426] text-[#F5F6FC]">Published</option>
+          <option value="ARCHIVED" className="bg-[#101426] text-[#F5F6FC]">Archived</option>
         </select>
       </div>
 

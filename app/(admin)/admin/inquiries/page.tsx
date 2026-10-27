@@ -43,10 +43,14 @@ export default async function InquiriesPage({
             placeholder="Search name or email..."
             className="w-full"
           />
-          <select name="status" defaultValue={statusParam || ''} className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
-            <option value="">All Statuses</option>
+          <select
+            name="status"
+            defaultValue={statusParam || ''}
+            className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-card text-foreground px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <option value="" className="bg-[#101426] text-[#F5F6FC]">All Statuses</option>
             {Object.values(InquiryStatus).map(s => (
-              <option key={s} value={s}>{s}</option>
+              <option key={s} value={s} className="bg-[#101426] text-[#F5F6FC]">{s}</option>
             ))}
           </select>
           <Button type="submit">Filter</Button>

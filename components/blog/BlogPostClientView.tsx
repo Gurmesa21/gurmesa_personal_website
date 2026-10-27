@@ -84,6 +84,7 @@ export function BlogPostClientView({
 }: BlogPostClientViewProps) {
   const t = useTranslations('Blog');
   const tHome = useTranslations('Home');
+  const tNav = useTranslations('Navigation');
 
   // Active view: 'article' (default reading) or 'comments' (on-demand dedicated screen)
   const [view, setView] = useState<'article' | 'comments'>(() => {
@@ -234,11 +235,11 @@ export function BlogPostClientView({
         <div className="flex items-center justify-between pb-4 border-b border-[#292D45]">
           <button
             onClick={handleBackToPost}
-            aria-label="Back to Article"
+            aria-label={t('backToArticle') || 'Back to Article'}
             className="inline-flex items-center gap-2 text-sm font-semibold text-[#8063F7] hover:text-[#A995FF] transition-colors focus:outline-none focus:ring-2 focus:ring-[#8063F7]/50 rounded-lg px-2 py-1 -ml-2"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Back to Article</span>
+            <span>{t('backToArticle') || 'Back to Article'}</span>
           </button>
 
           <span className="text-xs text-[#A5ABC1] truncate max-w-xs hidden sm:inline">
@@ -261,7 +262,7 @@ export function BlogPostClientView({
               </span>
             </div>
             <p className="text-xs sm:text-sm text-[#A5ABC1] pl-10">
-              Join the conversation and share your insights on this topic.
+              {t('joinConversation') || 'Join the conversation and share your insights on this topic.'}
             </p>
           </div>
         </div>
@@ -307,7 +308,7 @@ export function BlogPostClientView({
                 <input
                   id="comment-author"
                   type="text"
-                  placeholder="Your Name"
+                  placeholder={t('yourName') || 'Your Name'}
                   value={author}
                   onChange={e => setAuthor(e.target.value)}
                   className="w-full bg-[#171D32] border border-[#292D45] rounded-xl px-3.5 py-2.5 text-sm text-[#F5F6FC] placeholder:text-[#A5ABC1]/50 focus:outline-none focus:border-[#8063F7] focus:ring-1 focus:ring-[#8063F7] transition-colors"
@@ -364,13 +365,13 @@ export function BlogPostClientView({
         {/* Existing Comments Feed */}
         <div className="space-y-4">
           <h2 className="text-xs font-semibold uppercase tracking-wider text-[#A5ABC1]">
-            Discussion Stream
+            {t('discussionStream') || 'Discussion Stream'}
           </h2>
 
           {commentsList.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-[#292D45] bg-[#101426]/50 p-8 sm:p-12 text-center space-y-2">
               <MessageCircle className="w-8 h-8 text-[#A5ABC1]/60 mx-auto" />
-              <p className="text-sm font-medium text-[#F5F6FC]">No comments yet</p>
+              <p className="text-sm font-medium text-[#F5F6FC]">{t('noCommentsYet') || 'No comments yet'}</p>
               <p className="text-xs text-[#A5ABC1]">
                 {t('noComments') || 'Be the first to share your thoughts on this article!'}
               </p>
@@ -415,7 +416,7 @@ export function BlogPostClientView({
             className="inline-flex items-center gap-2 text-xs font-semibold text-[#8063F7] hover:text-[#A995FF] transition-colors py-2 px-4 rounded-xl border border-[#8063F7]/30 hover:border-[#8063F7] bg-[#8063F7]/5"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Return to Article</span>
+            <span>{t('backToArticle') || 'Return to Article'}</span>
           </button>
         </div>
       </div>
@@ -429,9 +430,9 @@ export function BlogPostClientView({
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-8 lg:space-y-10">
       {/* Compact Breadcrumb Navigation */}
       <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-[#A5ABC1]">
-        <Link href="/" className="hover:text-[#F5F6FC] transition-colors">Home</Link>
+        <Link href="/" className="hover:text-[#F5F6FC] transition-colors">{tNav('home')}</Link>
         <ChevronRight className="w-3.5 h-3.5 text-[#292D45]" />
-        <Link href="/blog" className="hover:text-[#F5F6FC] transition-colors">Blog</Link>
+        <Link href="/blog" className="hover:text-[#F5F6FC] transition-colors">{tNav('blog')}</Link>
         <ChevronRight className="w-3.5 h-3.5 text-[#292D45]" />
         <span className="text-[#F5F6FC] font-medium truncate max-w-[240px] sm:max-w-md">{post.title}</span>
       </nav>
@@ -502,7 +503,7 @@ export function BlogPostClientView({
             {post.tags.length > 0 && (
               <div className="pt-6 mt-8 border-t border-[#292D45]/60 flex flex-wrap items-center gap-2">
                 <Tag className="w-3.5 h-3.5 text-[#8063F7]" />
-                <span className="text-xs font-semibold uppercase tracking-wider text-[#A5ABC1] mr-1">Tags:</span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#A5ABC1] mr-1">{t('tags') || 'Tags:'}</span>
                 {post.tags.map(t => (
                   <span
                     key={t.tag.id}
@@ -675,24 +676,24 @@ export function BlogPostClientView({
           <div className="rounded-2xl border border-[#292D45] bg-[#101426] p-5 shadow-lg shadow-black/30 from-[#101426] via-[#171D32]/60 to-[#101426] p-5 sm:p-6 space-y-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
-                Discussion
+                {t('discussion') || 'Discussion'}
               </span>
               <span className="text-xs font-mono font-bold text-[#8063F7] bg-[#8063F7]/10 border border-[#8063F7]/25 px-2 py-0.5 rounded">
                 {commentsList.length}
               </span>
             </div>
             <h4 className="font-heading font-bold text-base text-[#F5F6FC]">
-              Have thoughts on this?
+              {t('haveThoughts') || 'Have thoughts on this?'}
             </h4>
             <p className="text-xs text-[#A5ABC1] leading-relaxed">
-              Read what other developers are saying or share your own perspective on this article.
+              {t('discussionPrompt') || 'Read what other developers are saying or share your own perspective on this article.'}
             </p>
             <Button
               onClick={handleOpenComments}
               className="w-full rounded-xl border-0 bg-gradient-to-r from-[#8063F7] to-[#4F6FF0] py-2 text-xs sm:text-sm font-semibold text-white shadow-md shadow-[#8063F7]/25 hover:from-[#7154e6] hover:to-[#3e5edb] active:scale-95 transition-all"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
-              <span>{commentsList.length > 0 ? `View ${commentsList.length} Comments` : 'Leave a Comment'}</span>
+              <span>{commentsList.length > 0 ? `${commentsList.length} ${t('commentsTitle') || 'Comments'}` : (t('leaveComment') || 'Leave a Comment')}</span>
             </Button>
           </div>
 
@@ -703,7 +704,7 @@ export function BlogPostClientView({
               className="inline-flex items-center gap-1.5 text-xs text-[#A5ABC1] hover:text-[#8063F7] transition-colors"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
-              <span>Back to all articles</span>
+              <span>{t('backToAllArticles') || 'Back to all articles'}</span>
             </Link>
           </div>
         </aside>

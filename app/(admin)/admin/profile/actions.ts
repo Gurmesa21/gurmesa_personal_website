@@ -1,5 +1,6 @@
 'use server';
 import { updateProfile } from '@/server/services/profileService';
+import { updateSiteSetting } from '@/server/services/siteSettingService';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
@@ -11,6 +12,7 @@ export async function updateProfileAction(formData: FormData) {
   const locationLabel = formData.get('locationLabel') as string;
   const availabilityStatus = formData.get('availabilityStatus') as string;
   const avatarId = formData.get('avatarId') as string;
+  const publicContactEmail = formData.get('publicContactEmail') as string | null;
 
   await updateProfile({
     name,
@@ -22,6 +24,21 @@ export async function updateProfileAction(formData: FormData) {
     avatarId: avatarId || null,
   });
 
+  if (publicContactEmail !== null && publicContactEmail !== undefined) {
+    const trimmed = publicContactEmail.trim();
+    if (trimmed) {
+      // Basic email regex validation before saving
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(trimmed)) {
+        throw new Error('Invalid email format for Public Contact Email');
+      }
+      await updateSiteSetting('publicContactEmail', trimmed);
+    }
+  }
+
   revalidatePath('/', 'layout');
+  revalidatePath('/[locale]/contact', 'page');
+  revalidatePath('/[locale]/about', 'page');
+  revalidatePath('/admin/profile');
   redirect('/admin/profile');
 }

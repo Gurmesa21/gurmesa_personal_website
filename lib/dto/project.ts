@@ -22,8 +22,8 @@ export type PublicCaseStudyDTO = {
     category: string;
     slug: string;
   }[];
+  liveUrl: string | null;
   // media...
-  // live/demo repo links could go here if added in schema
 };
 
 type ProjectWithRelations = Project & {
@@ -53,6 +53,7 @@ export function toPublicCaseStudy(project: ProjectWithRelations): PublicCaseStud
     content: project.caseStudy.content,
     publishedAt: project.caseStudy.publishedAt,
     updatedAt: project.caseStudy.updatedAt,
+    liveUrl: project.liveUrl ?? null,
     technologies: project.technologies.map(pt => ({
       id: pt.technology.id,
       name: pt.technology.name,

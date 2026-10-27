@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -42,6 +43,8 @@ next-env.d.ts
 node_modules/
 dist/
 .env
-
+.env*.local
+*.env.bak
+/scratch/
 playwright-report/
 test-results/

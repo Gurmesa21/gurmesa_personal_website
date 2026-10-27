@@ -49,10 +49,10 @@ export default async function LocaleLayout(props: {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning className={`${inter.variable} ${outfit.variable} ${locale === 'am' ? notoSansEthiopic.variable + ' font-ethiopic' : ''}`}>
+    <html lang={locale} suppressHydrationWarning className={`dark ${inter.variable} ${outfit.variable} ${locale === 'am' ? notoSansEthiopic.variable + ' font-ethiopic' : ''}`}>
       <body className="min-h-screen flex flex-col antialiased bg-background text-foreground font-sans w-full">
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" enableSystem={false} disableTransitionOnChange>
             {props.children}
           </ThemeProvider>
         </NextIntlClientProvider>

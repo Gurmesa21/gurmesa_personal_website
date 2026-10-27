@@ -152,9 +152,7 @@ export default async function WorkPage({
               Portfolio
             </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-white">
-            {t('title')}
-          </h1>
+
         </div>
 
         {/* Technology Filters: compact pills, clear violet active state, left-aligned */}

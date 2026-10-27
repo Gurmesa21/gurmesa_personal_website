@@ -3,7 +3,7 @@ import { auth, signOut } from '../../../auth';
 import { redirect } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { LayoutDashboard, LogOut, Briefcase, Code2, PenTool, LayoutTemplate, MessageSquare, Inbox } from 'lucide-react';
+import { LayoutDashboard, LogOut, Briefcase, Code2, PenTool, LayoutTemplate, MessageSquare, Inbox, FolderOpen, ShieldCheck } from 'lucide-react';
 
 export default async function AdminDashboard() {
   const session = await auth();
@@ -20,11 +20,13 @@ export default async function AdminDashboard() {
     { href: '/admin/services', title: 'Manage Services', icon: LayoutTemplate, desc: 'Service offerings' },
     { href: '/admin/testimonials', title: 'Manage Testimonials', icon: MessageSquare, desc: 'Client reviews and feedback' },
     { href: '/admin/inquiries', title: 'Manage Inquiries', icon: Inbox, desc: 'Contact form submissions' },
+    { href: '/admin/media', title: 'Media Library', icon: FolderOpen, desc: 'Centralized assets and uploads' },
+    { href: '/admin/audit-log', title: 'Audit Logs', icon: ShieldCheck, desc: 'Track administrative actions and security events' },
   ];
 
   return (
     <div className="container mx-auto p-8 max-w-6xl space-y-12">
-      <div className="flex items-center justify-between border-b pb-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-border pb-8">
         <div>
           <h1 className="text-4xl font-extrabold tracking-tight flex items-center gap-4 text-foreground">
             <LayoutDashboard className="h-10 w-10 text-primary" />

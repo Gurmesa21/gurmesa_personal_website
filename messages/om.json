@@ -75,7 +75,8 @@
     "phase6Desc": "Suphaa fi fooyya'iinsa itti fufiinsa qabu.",
     "readyToGetStarted": "Jalqabuuf qophii dha?",
     "readyDescription": "Tajaajilli kun galma keessan milkeessuuf akkamitti akka isin gargaaru haa mari'annu. Marii bilisaaf har'a na quunnamaa.",
-    "startConversation": "Marii Eegali"
+    "startConversation": "Marii Eegali",
+    "service": "Tajaajila"
   },
   "Work": {
     "title": "Hojiiwwan Filataman",
@@ -94,7 +95,14 @@
     "outcome": "Bu'aa",
     "deepDive": "Ibsa Gad-fagoo",
     "haveSimilarProblem": "Rakkoo walfakkaatu furuuf qabduu?",
-    "getInTouch": "Nu Quunnamaa"
+    "getInTouch": "Nu Quunnamaa",
+    "projectOverview": "Ibsa Pirojektii",
+    "activeCaseStudy": "Qorannoo Hojii Hojiirra Jiru",
+    "type": "Gosa",
+    "scope": "Bal'ina Hojii",
+    "technologies": "Teeknooloojiiwwan",
+    "visitLiveProject": "Pirojektii Kallattii Daawwadhaa",
+    "caseStudy": "Qorannoo Hojii"
   },
   "Blog": {
     "title": "Barreeffama",
@@ -103,6 +111,7 @@
     "noPosts": "Barreeffamni hin argamne.",
     "readArticle": "Barreeffama Dubbisi",
     "like": "Jaalladhu",
+    "unlike": "Hin Jaallatin",
     "comment": "Yaada",
     "share": "Qoodi",
     "copied": "Garfameera!",
@@ -114,13 +123,23 @@
     "yourThoughts": "Maal yaadda?",
     "posting": "Maxxansaa jira...",
     "postComment": "Yaada Maxxansi",
+    "submit_comment": "Yaada Galchi",
     "noComments": "Yaadni hin jiru. Yaada kee qooduun nama duraa ta'i!",
     "failedToComment": "Yaada dabaluun hin milkoofne.",
     "yourEmail": "Imeelii keessan",
     "emailNeverPublished": "Imeeliin kee iccitii dha, matumaa hin maxxanfamu.",
     "fieldsRequired": "Maqaa, imeelii fi yaada guutuun dirqama.",
     "commentModerationNotice": "Yaadonni ni gamaggamamu, erga mirkanaa'anii booda ifatti mul'atu.",
-    "commentSubmittedForReview": "Yaadni kee dhiyaateera, erga gamaggamamee booda ni mul'ata."
+    "commentSubmittedForReview": "Yaadni kee dhiyaateera, erga gamaggamamee booda ni mul'ata.",
+    "backToArticle": "Gara Barreeffamaatti Deebi'aa",
+    "joinConversation": "Marii kana keessatti hirmaadhaatii yaada keessan qoodaa.",
+    "discussionStream": "Yaada Marii",
+    "noCommentsYet": "Hanga ammaatti yaanni hin jiru",
+    "discussion": "Marii",
+    "haveThoughts": "Yaada qabduu?",
+    "discussionPrompt": "Warri kaan maal akka jedhan dubbisaa ykn yaada keessan qoodaa.",
+    "backToAllArticles": "Gara barreeffamoota hundaatti deebi'aa",
+    "tags": "Tags:"
   },
   "Contact": {
     "title": "Nu Quunnamaa",
@@ -220,6 +239,7 @@
     "successTitle": "Galatoomaa!",
     "successMessage": "Ragaan keessan galeera, gamaggamaaf eegaa jira.",
     "submitAnother": "Kan biraa galchi",
-    "formError": "Ragaa galchuun hin milkoofne. Maaloo irra deebi'aa yaalaa."
+    "formError": "Ragaa galchuun hin milkoofne. Maaloo irra deebi'aa yaalaa.",
+    "textTooLong": "Barreeffamni ragaa arfiilee 200 caaluu hin qabu."
   }
 }

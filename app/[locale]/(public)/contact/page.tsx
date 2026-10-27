@@ -18,12 +18,17 @@ export default async function ContactPage() {
     getPublicProfile()
   ]);
 
-  let publicEmail = 'contact@example.com';
+  let publicEmail: string | null = null;
   if (emailSetting?.value) {
     try {
-      publicEmail = JSON.parse(emailSetting.value as string);
+      const parsed = JSON.parse(emailSetting.value as string);
+      publicEmail = typeof parsed === 'string' ? parsed : String(emailSetting.value);
     } catch {
-      publicEmail = emailSetting.value as string;
+      publicEmail = String(emailSetting.value);
+    }
+    publicEmail = publicEmail.replace(/^["']|["']$/g, '').trim();
+    if (!publicEmail || !publicEmail.includes('@')) {
+      publicEmail = null;
     }
   }
 
@@ -52,9 +57,6 @@ export default async function ContactPage() {
               </span>
             )}
           </div>
-          <h1 className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-white">
-            {t('title')}
-          </h1>
 
           <p className="text-sm sm:text-base text-[#A5ABC1] leading-relaxed">
             {t('subtitle')}
@@ -81,12 +83,18 @@ export default async function ContactPage() {
                   <span className="text-[11px] font-semibold uppercase tracking-wider text-[#858EA8] block">
                     {t('email')}
                   </span>
-                  <a
-                    href={`mailto:${publicEmail}`}
-                    className="text-sm sm:text-base font-semibold text-[#A995FF] hover:text-white transition-colors break-all block"
-                  >
-                    {publicEmail}
-                  </a>
+                  {publicEmail ? (
+                    <a
+                      href={`mailto:${publicEmail}`}
+                      className="text-sm sm:text-base font-semibold text-[#A995FF] hover:text-white transition-colors break-all block"
+                    >
+                      {publicEmail}
+                    </a>
+                  ) : (
+                    <p className="text-xs sm:text-sm text-[#A5ABC1]">
+                      Available via inquiry form on this page.
+                    </p>
+                  )}
                 </div>
               </div>
 

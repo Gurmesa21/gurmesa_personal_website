@@ -1,0 +1,1416 @@
+◇ injected env (12) from .env.test
+◇ injected env (0) from .env.test
+[WebServer] ┌─────────────────────────────────────────────────────────┐
+[WebServer] │  Update available 5.22.0 -> 8.0.0-rc.28                 │
+[WebServer] │                                                         │
+[WebServer] │  This is a major update - please follow the guide at    │
+[WebServer] │  https://pris.ly/d/major-version-upgrade                │
+[WebServer] │                                                         │
+[WebServer] │  Run the following to update                            │
+[WebServer] │    npm i --save-dev prisma@latest                       │
+[WebServer] │    npm i @prisma/client@latest                          │
+[WebServer] └─────────────────────────────────────────────────────────┘
+◇ injected env (0) from .env.test
+[globalSetup] Resetting and seeding test database: gurmesa_test_db...
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "gurmesa_test_db", schema "public" at "127.0.0.1:5433"
+
+8 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+Seed completed.
+[globalSetup] Test database gurmesa_test_db reset and seeded successfully.
+
+Running 85 tests using 4 workers
+
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x   1 [chromium] › tests\e2e\accessibility.spec.ts:5:3 › Accessibility & Shell Features › Axe scan on / (homepage with AUTHORIZED+PUBLISHED testimonial) (8ms)
+  x   2 [chromium] › tests\e2e\accessibility.spec.ts:14:3 › Accessibility & Shell Features › Axe scan on /contact (8ms)
+  x   4 [chromium] › tests\e2e\accessibility.spec.ts:23:3 › Accessibility & Shell Features › Axe scan on /privacy (7ms)
+  x   3 [chromium] › tests\e2e\accessibility.spec.ts:32:3 › Accessibility & Shell Features › Axe scan on /about (8ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x   5 [chromium] › tests\e2e\accessibility.spec.ts:41:3 › Accessibility & Shell Features › Axe scan on /blog (7ms)
+  x   6 [chromium] › tests\e2e\accessibility.spec.ts:68:3 › Accessibility & Shell Features › Axe scan on /terms (7ms)
+  x   8 [chromium] › tests\e2e\accessibility.spec.ts:59:3 › Accessibility & Shell Features › Axe scan on /work (7ms)
+  x   7 [chromium] › tests\e2e\accessibility.spec.ts:50:3 › Accessibility & Shell Features › Axe scan on /services (9ms)
+◇ injected env (0) from .env.test
+  x   9 [chromium] › tests\e2e\accessibility.spec.ts:77:3 › Accessibility & Shell Features › skip-to-content link works correctly (9ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  10 [chromium] › tests\e2e\admin-crud.spec.ts:14:3 › Admin CRUD Edit and Persist › Services: Edit and persist (10ms)
+  x  11 [chromium] › tests\e2e\admin-comments.spec.ts:14:3 › Admin Comments Moderation Queue › navigates to /admin/comments and verifies queue filters and UI (14ms)
+  x  12 [chromium] › tests\e2e\accessibility.spec.ts:94:3 › Accessibility & Shell Features › mobile menu opens, traps focus, and closes with escape (7ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  13 [chromium] › tests\e2e\admin-crud.spec.ts:51:3 › Admin CRUD Edit and Persist › Projects: Edit and persist (12ms)
+◇ injected env (0) from .env.test
+  x  14 [chromium] › tests\e2e\admin-crud.spec.ts:81:3 › Admin CRUD Edit and Persist › Blog: Edit and persist (12ms)
+◇ injected env (0) from .env.test
+  x  16 [chromium] › tests\e2e\blog.spec.ts:28:3 › Blog SEC-ACL E2E Tests › Draft post is absent from public index HTML (4ms)
+  x  15 [chromium] › tests\e2e\blog.spec.ts:45:3 › Blog SEC-ACL E2E Tests › Unauthenticated request to the preview URL is redirected/rejected and contains no draft content (4ms)
+  x  17 [chromium] › tests\e2e\blog.spec.ts:80:3 › Blog SEC-ACL E2E Tests › Playwright: search (?q=) filters results; a DRAFT post's title never appears in results (3ms)
+  x  18 [chromium] › tests\e2e\blog.spec.ts:117:3 › Blog SEC-ACL E2E Tests › XSS: a post whose body contains <script> and <img src=x onerror=...> payloads renders them inert on /blog/[slug] (6ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  19 [chromium] › tests\e2e\blog.spec.ts:58:3 › Blog SEC-ACL E2E Tests › Playwright: /blog index renders seeded published posts (5ms)
+  x  20 [chromium] › tests\e2e\blog.spec.ts:34:3 › Blog SEC-ACL E2E Tests › Draft post returns 404 on direct lookup (5ms)
+  x  21 [chromium] › tests\e2e\blog.spec.ts:97:3 › Blog SEC-ACL E2E Tests › Playwright: category and tag filters work (5ms)
+◇ injected env (0) from .env.test
+  x  22 [chromium] › tests\e2e\blog.spec.ts:137:3 › Blog SEC-ACL E2E Tests › XSS: CaseStudy content on /work/[slug] renders inert (5ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  23 [chromium] › tests\e2e\blog.spec.ts:65:3 › Blog SEC-ACL E2E Tests › Playwright: article detail page loads from the index (4ms)
+  x  25 [chromium] › tests\e2e\blog.spec.ts:103:3 › Blog SEC-ACL E2E Tests › Axe scan (zero critical/serious) on /blog and /blog/[slug] (5ms)
+  ok 24 [chromium] › tests\e2e\blog.spec.ts:39:3 › Blog SEC-ACL E2E Tests › Draft post is absent from sitemap (472ms)
+◇ injected env (0) from .env.test
+  x  26 [chromium] › tests\e2e\caching.spec.ts:74:3 › Caching and Revalidation (End-to-End) › iv. Unpublish a blog post -> absent from / and /blog (3ms)
+  x  27 [chromium] › tests\e2e\caching.spec.ts:13:3 › Caching and Revalidation (End-to-End) › i. Publish a testimonial -> appears on / (8ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  28 [chromium] › tests\e2e\caching.spec.ts:36:3 › Caching and Revalidation (End-to-End) › ii. Mark a featured project DRAFT -> absent from / and /work (9ms)
+  x  29 [chromium] › tests\e2e\caching.spec.ts:57:3 › Caching and Revalidation (End-to-End) › iii. Unpublish a service -> absent from /services and / (9ms)
+◇ injected env (0) from .env.test
+  x  30 [chromium] › tests\e2e\caching.spec.ts:97:3 › Caching and Revalidation (End-to-End) › v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml (11ms)
+◇ injected env (0) from .env.test
+  x  31 [chromium] › tests\e2e\contact.spec.ts:12:3 › Inquiry & Testimonial E2E › contact form: happy path submits and shows confirmation, using keyboard only (7ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  32 [chromium] › tests\e2e\contact.spec.ts:32:3 › Inquiry & Testimonial E2E › contact form: invalid submit focuses the error summary and associates errors with fields (11ms)
+◇ injected env (0) from .env.test
+  x  34 [chromium] › tests\e2e\contact.spec.ts:65:3 › Inquiry & Testimonial E2E › unauthenticated visit to /admin/inquiries and /admin/testimonials redirects to login (9ms)
+◇ injected env (0) from .env.test
+  ok 33 [chromium] › tests\e2e\contact.spec.ts:46:3 › Inquiry & Testimonial E2E › inquiry-leak scan: assert the marker is absent from the HTML of public surfaces and sitemap (1.2s)
+  x  35 [chromium] › tests\e2e\day10-admin.spec.ts:5:3 › Day 10 - Admin & SEO E2E › HIDDEN social link absent from getPublicSocialLinks output AND from the rendered /about page HTML (8ms)
+  ok 36 [chromium] › tests\e2e\day10b.spec.ts:5:3 › Day 10b E2E › robots.ts disallows /admin and /api and references the sitemap (41ms)
+  x  37 [chromium] › tests\e2e\day10b.spec.ts:21:3 › Day 10b E2E › /admin pages, /admin/login, and the blog preview page each return noindex (3ms)
+◇ injected env (0) from .env.test
+  x  38 [chromium] › tests\e2e\day10-admin.spec.ts:26:3 › Day 10 - Admin & SEO E2E › editing the Profile tagline via the admin UI shows the new tagline on / on the next request (8ms)
+◇ injected env (0) from .env.test
+  x  39 [chromium] › tests\e2e\day10-admin.spec.ts:48:3 › Day 10 - Admin & SEO E2E › production error page shows no stack trace in the rendered HTML (8ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  ok 40 [chromium] › tests\e2e\day10b.spec.ts:13:3 › Day 10b E2E › sitemap includes the static pages and public entities, excludes the known private project, DRAFT case study, and DRAFT post (142ms)
+  x  41 [chromium] › tests\e2e\day10b.spec.ts:31:3 › Day 10b E2E › canonical URL and OG title present in generateMetadata output for: home, one service detail, one case study, one blog post (7ms)
+  x  42 [chromium] › tests\e2e\day10b.spec.ts:71:3 › Day 10b E2E › SEO override persists in admin UI and is rendered by generateMetadata (3ms)
+◇ injected env (0) from .env.test
+  ok 43 [chromium] › tests\e2e\day10b.spec.ts:43:3 › Day 10b E2E › JSON-LD on at least one page parses as valid JSON, and a fixture with </script> in its title does not break out of the script element (34ms)
+  x  44 [chromium] › tests\e2e\day6-portfolio.spec.ts:11:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-02(c): /work page does NOT render the private project (6ms)
+◇ injected env (0) from .env.test
+  x  45 [chromium] › tests\e2e\day10b.spec.ts:60:3 › Day 10b E2E › login with an external callbackUrl does not redirect off-site (29ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  46 [chromium] › tests\e2e\day5.spec.ts:4:3 › Day 5 - Public Pages and Navigation › homepage renders hero, services preview, about snapshot with real seeded data (11ms)
+  x  47 [chromium] › tests\e2e\day5.spec.ts:20:3 › Day 5 - Public Pages and Navigation › services index -> click service -> detail page loads correctly (12ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  48 [chromium] › tests\e2e\day6-portfolio.spec.ts:18:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-02(d): /work/[slug] returns 404 for a private project (10ms)
+  ok 49 [chromium] › tests\e2e\day6-portfolio.spec.ts:23:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL (144ms)
+  x  50 [chromium] › tests\e2e\day6-portfolio.spec.ts:30:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-03(c): /work page does NOT render unpublished case studies (3ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  51 [chromium] › tests\e2e\day6-portfolio.spec.ts:36:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study (5ms)
+  x  52 [chromium] › tests\e2e\day6-portfolio.spec.ts:48:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › Public /work page renders seeded public case studies (8ms)
+◇ injected env (0) from .env.test
+  x  53 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] / has exactly one h1 (12ms)
+◇ injected env (0) from .env.test
+  x  54 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /about has exactly one h1 (8ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  56 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /services has exactly one h1 (7ms)
+  ok 55 [chromium] › tests\e2e\day6-portfolio.spec.ts:41:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs (152ms)
+  x  57 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] / has exactly one h1 (3ms)
+◇ injected env (0) from .env.test
+  x  58 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /work has exactly one h1 (8ms)
+◇ injected env (0) from .env.test
+  x  59 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /blog has exactly one h1 (8ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  60 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /contact has exactly one h1 (11ms)
+  x  61 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /about has exactly one h1 (10ms)
+◇ injected env (0) from .env.test
+  x  62 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /services has exactly one h1 (7ms)
+◇ injected env (0) from .env.test
+  x  63 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /work has exactly one h1 (17ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  64 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /blog has exactly one h1 (10ms)
+  x  65 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /contact has exactly one h1 (11ms)
+◇ injected env (0) from .env.test
+  x  66 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] / has exactly one h1 (9ms)
+◇ injected env (0) from .env.test
+  x  67 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /about has exactly one h1 (9ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  68 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /services has exactly one h1 (12ms)
+  x  69 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /work has exactly one h1 (10ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  70 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /blog has exactly one h1 (11ms)
+  x  71 [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /contact has exactly one h1 (9ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  72 [chromium] › tests\e2e\part3-media-upload.spec.ts:19:3 › Part 3 - Media Upload Widget › Upload avatar in Profile edit and verify on public page (4ms)
+  x  73 [chromium] › tests\e2e\partF-media-rendering.spec.ts:30:3 › Part F - Public Media Rendering › Profile Avatar Render (5ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  74 [chromium] › tests\e2e\partF-media-rendering.spec.ts:117:3 › Part F - Public Media Rendering › Project Featured Image Render (5ms)
+  x  75 [chromium] › tests\e2e\partF-media-rendering.spec.ts:209:3 › Part F - Public Media Rendering › Video Upload and Render Test (7ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  76 [chromium] › tests\e2e\partG-testimonials.spec.ts:4:3 › Testimonials Moderation & Rate Limits › unauthorized testimonials are not public (7ms)
+  x  77 [chromium] › tests\e2e\partF-media-rendering.spec.ts:71:3 › Part F - Public Media Rendering › Service Featured Image Render (6ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  78 [chromium] › tests\e2e\partF-media-rendering.spec.ts:163:3 › Part F - Public Media Rendering › Blog Featured Image Render (6ms)
+  x  79 [chromium] › tests\e2e\partG-testimonials.spec.ts:18:3 › Testimonials Moderation & Rate Limits › honeypot traps spam bots (11ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  80 [chromium] › tests\e2e\partG-upload-and-video.spec.ts:33:3 › Part G - Media Upload Limits and Video Rendering › Upload file size limits (6MB succeeds, 26MB rejected) (8ms)
+  x  81 [chromium] › tests\e2e\partG-upload-and-video.spec.ts:65:3 › Part G - Media Upload Limits and Video Rendering › Video rendering on public pages (6ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  82 [chromium] › tests\e2e\partH-notifications.spec.ts:4:3 › Part H: Admin Notifications › 16. Unauthenticated access to the notifications list/API is rejected (10ms)
+  x  83 [chromium] › tests\e2e\partH-notifications.spec.ts:10:3 › Part H: Admin Notifications › 17. Submit a real inquiry as visitor, log in as admin, confirm bell icon shows incremented count and new notification appears (11ms)
+◇ injected env (0) from .env.test
+◇ injected env (0) from .env.test
+  x  84 [chromium] › tests\e2e\partI-blog-social.spec.ts:4:3 › Blog Social Interactions › like toggle and comment submission (7ms)
+  x  85 [chromium] › tests\e2e\resume.spec.ts:6:3 › Resume End-to-End › upload a PDF as admin, set it as current resume, request from /about unauthenticated (6ms)
+
+
+  1) [chromium] › tests\e2e\accessibility.spec.ts:5:3 › Accessibility & Shell Features › Axe scan on / (homepage with AUTHORIZED+PUBLISHED testimonial) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\accessibility-Accessibilit-50e90-IZED-PUBLISHED-testimonial--chromium\error-context.md
+
+  2) [chromium] › tests\e2e\accessibility.spec.ts:14:3 › Accessibility & Shell Features › Axe scan on /contact 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\accessibility-Accessibilit-7c399-eatures-Axe-scan-on-contact-chromium\error-context.md
+
+  3) [chromium] › tests\e2e\accessibility.spec.ts:23:3 › Accessibility & Shell Features › Axe scan on /privacy 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\accessibility-Accessibilit-6fea0-eatures-Axe-scan-on-privacy-chromium\error-context.md
+
+  4) [chromium] › tests\e2e\accessibility.spec.ts:32:3 › Accessibility & Shell Features › Axe scan on /about 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\accessibility-Accessibility-Shell-Features-Axe-scan-on-about-chromium\error-context.md
+
+  5) [chromium] › tests\e2e\accessibility.spec.ts:41:3 › Accessibility & Shell Features › Axe scan on /blog 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\accessibility-Accessibility-Shell-Features-Axe-scan-on-blog-chromium\error-context.md
+
+  6) [chromium] › tests\e2e\accessibility.spec.ts:50:3 › Accessibility & Shell Features › Axe scan on /services 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\accessibility-Accessibilit-5ce63-atures-Axe-scan-on-services-chromium\error-context.md
+
+  7) [chromium] › tests\e2e\accessibility.spec.ts:59:3 › Accessibility & Shell Features › Axe scan on /work 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\accessibility-Accessibility-Shell-Features-Axe-scan-on-work-chromium\error-context.md
+
+  8) [chromium] › tests\e2e\accessibility.spec.ts:68:3 › Accessibility & Shell Features › Axe scan on /terms 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\accessibility-Accessibility-Shell-Features-Axe-scan-on-terms-chromium\error-context.md
+
+  9) [chromium] › tests\e2e\accessibility.spec.ts:77:3 › Accessibility & Shell Features › skip-to-content link works correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\accessibility-Accessibilit-8ead2-ontent-link-works-correctly-chromium\error-context.md
+
+  10) [chromium] › tests\e2e\accessibility.spec.ts:94:3 › Accessibility & Shell Features › mobile menu opens, traps focus, and closes with escape 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\accessibility-Accessibilit-9cca2-ocus-and-closes-with-escape-chromium\error-context.md
+
+  11) [chromium] › tests\e2e\admin-comments.spec.ts:14:3 › Admin Comments Moderation Queue › navigates to /admin/comments and verifies queue filters and UI 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\admin-comments-Admin-Comme-53425-rifies-queue-filters-and-UI-chromium\error-context.md
+
+  12) [chromium] › tests\e2e\admin-crud.spec.ts:14:3 › Admin CRUD Edit and Persist › Services: Edit and persist 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\admin-crud-Admin-CRUD-Edit-074db-t-Services-Edit-and-persist-chromium\error-context.md
+
+  13) [chromium] › tests\e2e\admin-crud.spec.ts:51:3 › Admin CRUD Edit and Persist › Projects: Edit and persist 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\admin-crud-Admin-CRUD-Edit-65969-t-Projects-Edit-and-persist-chromium\error-context.md
+
+  14) [chromium] › tests\e2e\admin-crud.spec.ts:81:3 › Admin CRUD Edit and Persist › Blog: Edit and persist 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\admin-crud-Admin-CRUD-Edit-and-Persist-Blog-Edit-and-persist-chromium\error-context.md
+
+  15) [chromium] › tests\e2e\blog.spec.ts:28:3 › Blog SEC-ACL E2E Tests › Draft post is absent from public index HTML 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-d2bf2-sent-from-public-index-HTML-chromium\error-context.md
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-d2bf2-sent-from-public-index-HTML-chromium\error-context.md
+
+  16) [chromium] › tests\e2e\blog.spec.ts:34:3 › Blog SEC-ACL E2E Tests › Draft post returns 404 on direct lookup 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-d89b6-eturns-404-on-direct-lookup-chromium\error-context.md
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-d89b6-eturns-404-on-direct-lookup-chromium\error-context.md
+
+  17) [chromium] › tests\e2e\blog.spec.ts:45:3 › Blog SEC-ACL E2E Tests › Unauthenticated request to the preview URL is redirected/rejected and contains no draft content 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-408a8-d-contains-no-draft-content-chromium\error-context.md
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-408a8-d-contains-no-draft-content-chromium\error-context.md
+
+  18) [chromium] › tests\e2e\blog.spec.ts:58:3 › Blog SEC-ACL E2E Tests › Playwright: /blog index renders seeded published posts 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-9ce9c-ders-seeded-published-posts-chromium\error-context.md
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-9ce9c-ders-seeded-published-posts-chromium\error-context.md
+
+  19) [chromium] › tests\e2e\blog.spec.ts:65:3 › Blog SEC-ACL E2E Tests › Playwright: article detail page loads from the index 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-247be-l-page-loads-from-the-index-chromium\error-context.md
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-247be-l-page-loads-from-the-index-chromium\error-context.md
+
+  20) [chromium] › tests\e2e\blog.spec.ts:80:3 › Blog SEC-ACL E2E Tests › Playwright: search (?q=) filters results; a DRAFT post's title never appears in results 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-f8e07-le-never-appears-in-results-chromium\error-context.md
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-f8e07-le-never-appears-in-results-chromium\error-context.md
+
+  21) [chromium] › tests\e2e\blog.spec.ts:97:3 › Blog SEC-ACL E2E Tests › Playwright: category and tag filters work 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-d24e2-tegory-and-tag-filters-work-chromium\error-context.md
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-d24e2-tegory-and-tag-filters-work-chromium\error-context.md
+
+  22) [chromium] › tests\e2e\blog.spec.ts:103:3 › Blog SEC-ACL E2E Tests › Axe scan (zero critical/serious) on /blog and /blog/[slug] 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-d5b1a-ious-on-blog-and-blog-slug--chromium\error-context.md
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-d5b1a-ious-on-blog-and-blog-slug--chromium\error-context.md
+
+  23) [chromium] › tests\e2e\blog.spec.ts:117:3 › Blog SEC-ACL E2E Tests › XSS: a post whose body contains <script> and <img src=x onerror=...> payloads renders them inert on /blog/[slug] 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-cf28b-rs-them-inert-on-blog-slug--chromium\error-context.md
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-cf28b-rs-them-inert-on-blog-slug--chromium\error-context.md
+
+  24) [chromium] › tests\e2e\blog.spec.ts:137:3 › Blog SEC-ACL E2E Tests › XSS: CaseStudy content on /work/[slug] renders inert 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-bb71f--on-work-slug-renders-inert-chromium\error-context.md
+
+    Error Context: test-results\blog-Blog-SEC-ACL-E2E-Test-bb71f--on-work-slug-renders-inert-chromium\error-context.md
+
+  25) [chromium] › tests\e2e\caching.spec.ts:13:3 › Caching and Revalidation (End-to-End) › i. Publish a testimonial -> appears on / 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\caching-Caching-and-Revali-8c98b-a-testimonial---appears-on--chromium\error-context.md
+
+  26) [chromium] › tests\e2e\caching.spec.ts:36:3 › Caching and Revalidation (End-to-End) › ii. Mark a featured project DRAFT -> absent from / and /work 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\caching-Caching-and-Revali-de1a7-RAFT---absent-from-and-work-chromium\error-context.md
+
+  27) [chromium] › tests\e2e\caching.spec.ts:57:3 › Caching and Revalidation (End-to-End) › iii. Unpublish a service -> absent from /services and / 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\caching-Caching-and-Revali-bef4a---absent-from-services-and--chromium\error-context.md
+
+  28) [chromium] › tests\e2e\caching.spec.ts:74:3 › Caching and Revalidation (End-to-End) › iv. Unpublish a blog post -> absent from / and /blog 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\caching-Caching-and-Revali-5e4e7-post---absent-from-and-blog-chromium\error-context.md
+
+  29) [chromium] › tests\e2e\caching.spec.ts:97:3 › Caching and Revalidation (End-to-End) › v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\caching-Caching-and-Revali-810af-t-from-work-and-sitemap-xml-chromium\error-context.md
+
+  30) [chromium] › tests\e2e\contact.spec.ts:12:3 › Inquiry & Testimonial E2E › contact form: happy path submits and shows confirmation, using keyboard only 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\contact-Inquiry-Testimonia-9ca62-rmation-using-keyboard-only-chromium\error-context.md
+
+    Error Context: test-results\contact-Inquiry-Testimonia-9ca62-rmation-using-keyboard-only-chromium\error-context.md
+
+  31) [chromium] › tests\e2e\contact.spec.ts:32:3 › Inquiry & Testimonial E2E › contact form: invalid submit focuses the error summary and associates errors with fields 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\contact-Inquiry-Testimonia-70523-sociates-errors-with-fields-chromium\error-context.md
+
+    Error Context: test-results\contact-Inquiry-Testimonia-70523-sociates-errors-with-fields-chromium\error-context.md
+
+  32) [chromium] › tests\e2e\contact.spec.ts:65:3 › Inquiry & Testimonial E2E › unauthenticated visit to /admin/inquiries and /admin/testimonials redirects to login 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\contact-Inquiry-Testimonia-457b8-imonials-redirects-to-login-chromium\error-context.md
+
+    Error Context: test-results\contact-Inquiry-Testimonia-457b8-imonials-redirects-to-login-chromium\error-context.md
+
+  33) [chromium] › tests\e2e\day10-admin.spec.ts:5:3 › Day 10 - Admin & SEO E2E › HIDDEN social link absent from getPublicSocialLinks output AND from the rendered /about page HTML 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\day10-admin-Day-10---Admin-173e6-he-rendered-about-page-HTML-chromium\error-context.md
+
+  34) [chromium] › tests\e2e\day10-admin.spec.ts:26:3 › Day 10 - Admin & SEO E2E › editing the Profile tagline via the admin UI shows the new tagline on / on the next request 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\day10-admin-Day-10---Admin-cf44a-line-on-on-the-next-request-chromium\error-context.md
+
+  35) [chromium] › tests\e2e\day10-admin.spec.ts:48:3 › Day 10 - Admin & SEO E2E › production error page shows no stack trace in the rendered HTML 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\day10-admin-Day-10---Admin-04961--trace-in-the-rendered-HTML-chromium\error-context.md
+
+  36) [chromium] › tests\e2e\day10b.spec.ts:21:3 › Day 10b E2E › /admin pages, /admin/login, and the blog preview page each return noindex 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\day10b-Day-10b-E2E-admin-p-10d0d-ew-page-each-return-noindex-chromium\error-context.md
+
+  37) [chromium] › tests\e2e\day10b.spec.ts:31:3 › Day 10b E2E › canonical URL and OG title present in generateMetadata output for: home, one service detail, one case study, one blog post 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\day10b-Day-10b-E2E-canonic-289b7-ne-case-study-one-blog-post-chromium\error-context.md
+
+  38) [chromium] › tests\e2e\day10b.spec.ts:60:3 › Day 10b E2E › login with an external callbackUrl does not redirect off-site 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\day10b-Day-10b-E2E-login-w-7d29c--does-not-redirect-off-site-chromium\error-context.md
+
+  39) [chromium] › tests\e2e\day10b.spec.ts:71:3 › Day 10b E2E › SEO override persists in admin UI and is rendered by generateMetadata 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\day10b-Day-10b-E2E-SEO-ove-f30d4-endered-by-generateMetadata-chromium\error-context.md
+
+  40) [chromium] › tests\e2e\day5.spec.ts:4:3 › Day 5 - Public Pages and Navigation › homepage renders hero, services preview, about snapshot with real seeded data 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\day5-Day-5---Public-Pages--b5ef9-pshot-with-real-seeded-data-chromium\error-context.md
+
+  41) [chromium] › tests\e2e\day5.spec.ts:20:3 › Day 5 - Public Pages and Navigation › services index -> click service -> detail page loads correctly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\day5-Day-5---Public-Pages--6ddd1-detail-page-loads-correctly-chromium\error-context.md
+
+  42) [chromium] › tests\e2e\day6-portfolio.spec.ts:11:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-02(c): /work page does NOT render the private project 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-3dcfd--render-the-private-project-chromium\error-context.md
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-3dcfd--render-the-private-project-chromium\error-context.md
+
+  43) [chromium] › tests\e2e\day6-portfolio.spec.ts:18:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-02(d): /work/[slug] returns 404 for a private project 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-e4970-s-404-for-a-private-project-chromium\error-context.md
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-e4970-s-404-for-a-private-project-chromium\error-context.md
+
+  44) [chromium] › tests\e2e\day6-portfolio.spec.ts:30:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-03(c): /work page does NOT render unpublished case studies 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-66879-er-unpublished-case-studies-chromium\error-context.md
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-66879-er-unpublished-case-studies-chromium\error-context.md
+
+  45) [chromium] › tests\e2e\day6-portfolio.spec.ts:36:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-6ced2-r-an-unpublished-case-study-chromium\error-context.md
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-6ced2-r-an-unpublished-case-study-chromium\error-context.md
+
+  46) [chromium] › tests\e2e\day6-portfolio.spec.ts:48:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › Public /work page renders seeded public case studies 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-2f817--seeded-public-case-studies-chromium\error-context.md
+
+    Error Context: test-results\day6-portfolio-Day-6---Por-2f817--seeded-public-case-studies-chromium\error-context.md
+
+  47) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] / has exactly one h1 ─────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-en-has-exactly-one-h1-chromium\error-context.md
+
+  48) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /about has exactly one h1 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-en-about-has-exactly-one-h1-chromium\error-context.md
+
+  49) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /services has exactly one h1 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-en-services-has-exactly-one-h1-chromium\error-context.md
+
+  50) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /work has exactly one h1 ─
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-en-work-has-exactly-one-h1-chromium\error-context.md
+
+  51) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /blog has exactly one h1 ─
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-en-blog-has-exactly-one-h1-chromium\error-context.md
+
+  52) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /contact has exactly one h1 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-en-contact-has-exactly-one-h1-chromium\error-context.md
+
+  53) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] / has exactly one h1 ─────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-am-has-exactly-one-h1-chromium\error-context.md
+
+  54) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /about has exactly one h1 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-am-about-has-exactly-one-h1-chromium\error-context.md
+
+  55) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /services has exactly one h1 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-am-services-has-exactly-one-h1-chromium\error-context.md
+
+  56) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /work has exactly one h1 ─
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-am-work-has-exactly-one-h1-chromium\error-context.md
+
+  57) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /blog has exactly one h1 ─
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-am-blog-has-exactly-one-h1-chromium\error-context.md
+
+  58) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /contact has exactly one h1 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-am-contact-has-exactly-one-h1-chromium\error-context.md
+
+  59) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] / has exactly one h1 ─────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-om-has-exactly-one-h1-chromium\error-context.md
+
+  60) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /about has exactly one h1 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-om-about-has-exactly-one-h1-chromium\error-context.md
+
+  61) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /services has exactly one h1 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-om-services-has-exactly-one-h1-chromium\error-context.md
+
+  62) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /work has exactly one h1 ─
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-om-work-has-exactly-one-h1-chromium\error-context.md
+
+  63) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /blog has exactly one h1 ─
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-om-blog-has-exactly-one-h1-chromium\error-context.md
+
+  64) [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /contact has exactly one h1 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\h1-Exactly-One-H1-Test-om-contact-has-exactly-one-h1-chromium\error-context.md
+
+  65) [chromium] › tests\e2e\part3-media-upload.spec.ts:19:3 › Part 3 - Media Upload Widget › Upload avatar in Profile edit and verify on public page 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\part3-media-upload-Part-3--43a7b-t-and-verify-on-public-page-chromium\error-context.md
+
+    Error Context: test-results\part3-media-upload-Part-3--43a7b-t-and-verify-on-public-page-chromium\error-context.md
+
+  66) [chromium] › tests\e2e\partF-media-rendering.spec.ts:30:3 › Part F - Public Media Rendering › Profile Avatar Render 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\partF-media-rendering-Part-be317-ering-Profile-Avatar-Render-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-be317-ering-Profile-Avatar-Render-chromium\error-context.md
+
+  67) [chromium] › tests\e2e\partF-media-rendering.spec.ts:71:3 › Part F - Public Media Rendering › Service Featured Image Render 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\partF-media-rendering-Part-01b6b-rvice-Featured-Image-Render-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-01b6b-rvice-Featured-Image-Render-chromium\error-context.md
+
+  68) [chromium] › tests\e2e\partF-media-rendering.spec.ts:117:3 › Part F - Public Media Rendering › Project Featured Image Render 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\partF-media-rendering-Part-f4f46-oject-Featured-Image-Render-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-f4f46-oject-Featured-Image-Render-chromium\error-context.md
+
+  69) [chromium] › tests\e2e\partF-media-rendering.spec.ts:163:3 › Part F - Public Media Rendering › Blog Featured Image Render 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\partF-media-rendering-Part-e77bf--Blog-Featured-Image-Render-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-e77bf--Blog-Featured-Image-Render-chromium\error-context.md
+
+  70) [chromium] › tests\e2e\partF-media-rendering.spec.ts:209:3 › Part F - Public Media Rendering › Video Upload and Render Test 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\partF-media-rendering-Part-a72bf-ideo-Upload-and-Render-Test-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-a72bf-ideo-Upload-and-Render-Test-chromium\error-context.md
+
+  71) [chromium] › tests\e2e\partG-testimonials.spec.ts:4:3 › Testimonials Moderation & Rate Limits › unauthorized testimonials are not public 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\partG-testimonials-Testimo-4e30a-testimonials-are-not-public-chromium\error-context.md
+
+  72) [chromium] › tests\e2e\partG-testimonials.spec.ts:18:3 › Testimonials Moderation & Rate Limits › honeypot traps spam bots 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\partG-testimonials-Testimo-c9e20-ts-honeypot-traps-spam-bots-chromium\error-context.md
+
+  73) [chromium] › tests\e2e\partG-upload-and-video.spec.ts:33:3 › Part G - Media Upload Limits and Video Rendering › Upload file size limits (6MB succeeds, 26MB rejected) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\partG-upload-and-video-Par-dd4d3-6MB-succeeds-26MB-rejected--chromium\error-context.md
+
+    Error Context: test-results\partG-upload-and-video-Par-dd4d3-6MB-succeeds-26MB-rejected--chromium\error-context.md
+
+  74) [chromium] › tests\e2e\partG-upload-and-video.spec.ts:65:3 › Part G - Media Upload Limits and Video Rendering › Video rendering on public pages 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\partG-upload-and-video-Par-dfee0-o-rendering-on-public-pages-chromium\error-context.md
+
+    Error Context: test-results\partG-upload-and-video-Par-dfee0-o-rendering-on-public-pages-chromium\error-context.md
+
+  75) [chromium] › tests\e2e\partH-notifications.spec.ts:4:3 › Part H: Admin Notifications › 16. Unauthenticated access to the notifications list/API is rejected 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\partH-notifications-Part-H-b930a-ations-list-API-is-rejected-chromium\error-context.md
+
+  76) [chromium] › tests\e2e\partH-notifications.spec.ts:10:3 › Part H: Admin Notifications › 17. Submit a real inquiry as visitor, log in as admin, confirm bell icon shows incremented count and new notification appears 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\partH-notifications-Part-H-f94fb-nd-new-notification-appears-chromium\error-context.md
+
+  77) [chromium] › tests\e2e\partI-blog-social.spec.ts:4:3 › Blog Social Interactions › like toggle and comment submission 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\partI-blog-social-Blog-Soc-d72af-ggle-and-comment-submission-chromium\error-context.md
+
+  78) [chromium] › tests\e2e\resume.spec.ts:6:3 › Resume End-to-End › upload a PDF as admin, set it as current resume, request from /about unauthenticated 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Hp\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\resume-Resume-End-to-End-u-016e4--from-about-unauthenticated-chromium\error-context.md
+
+  78 failed
+    [chromium] › tests\e2e\accessibility.spec.ts:5:3 › Accessibility & Shell Features › Axe scan on / (homepage with AUTHORIZED+PUBLISHED testimonial) 
+    [chromium] › tests\e2e\accessibility.spec.ts:14:3 › Accessibility & Shell Features › Axe scan on /contact 
+    [chromium] › tests\e2e\accessibility.spec.ts:23:3 › Accessibility & Shell Features › Axe scan on /privacy 
+    [chromium] › tests\e2e\accessibility.spec.ts:32:3 › Accessibility & Shell Features › Axe scan on /about 
+    [chromium] › tests\e2e\accessibility.spec.ts:41:3 › Accessibility & Shell Features › Axe scan on /blog 
+    [chromium] › tests\e2e\accessibility.spec.ts:50:3 › Accessibility & Shell Features › Axe scan on /services 
+    [chromium] › tests\e2e\accessibility.spec.ts:59:3 › Accessibility & Shell Features › Axe scan on /work 
+    [chromium] › tests\e2e\accessibility.spec.ts:68:3 › Accessibility & Shell Features › Axe scan on /terms 
+    [chromium] › tests\e2e\accessibility.spec.ts:77:3 › Accessibility & Shell Features › skip-to-content link works correctly 
+    [chromium] › tests\e2e\accessibility.spec.ts:94:3 › Accessibility & Shell Features › mobile menu opens, traps focus, and closes with escape 
+    [chromium] › tests\e2e\admin-comments.spec.ts:14:3 › Admin Comments Moderation Queue › navigates to /admin/comments and verifies queue filters and UI 
+    [chromium] › tests\e2e\admin-crud.spec.ts:14:3 › Admin CRUD Edit and Persist › Services: Edit and persist 
+    [chromium] › tests\e2e\admin-crud.spec.ts:51:3 › Admin CRUD Edit and Persist › Projects: Edit and persist 
+    [chromium] › tests\e2e\admin-crud.spec.ts:81:3 › Admin CRUD Edit and Persist › Blog: Edit and persist 
+    [chromium] › tests\e2e\blog.spec.ts:28:3 › Blog SEC-ACL E2E Tests › Draft post is absent from public index HTML 
+    [chromium] › tests\e2e\blog.spec.ts:34:3 › Blog SEC-ACL E2E Tests › Draft post returns 404 on direct lookup 
+    [chromium] › tests\e2e\blog.spec.ts:45:3 › Blog SEC-ACL E2E Tests › Unauthenticated request to the preview URL is redirected/rejected and contains no draft content 
+    [chromium] › tests\e2e\blog.spec.ts:58:3 › Blog SEC-ACL E2E Tests › Playwright: /blog index renders seeded published posts 
+    [chromium] › tests\e2e\blog.spec.ts:65:3 › Blog SEC-ACL E2E Tests › Playwright: article detail page loads from the index 
+    [chromium] › tests\e2e\blog.spec.ts:80:3 › Blog SEC-ACL E2E Tests › Playwright: search (?q=) filters results; a DRAFT post's title never appears in results 
+    [chromium] › tests\e2e\blog.spec.ts:97:3 › Blog SEC-ACL E2E Tests › Playwright: category and tag filters work 
+    [chromium] › tests\e2e\blog.spec.ts:103:3 › Blog SEC-ACL E2E Tests › Axe scan (zero critical/serious) on /blog and /blog/[slug] 
+    [chromium] › tests\e2e\blog.spec.ts:117:3 › Blog SEC-ACL E2E Tests › XSS: a post whose body contains <script> and <img src=x onerror=...> payloads renders them inert on /blog/[slug] 
+    [chromium] › tests\e2e\blog.spec.ts:137:3 › Blog SEC-ACL E2E Tests › XSS: CaseStudy content on /work/[slug] renders inert 
+    [chromium] › tests\e2e\caching.spec.ts:13:3 › Caching and Revalidation (End-to-End) › i. Publish a testimonial -> appears on / 
+    [chromium] › tests\e2e\caching.spec.ts:36:3 › Caching and Revalidation (End-to-End) › ii. Mark a featured project DRAFT -> absent from / and /work 
+    [chromium] › tests\e2e\caching.spec.ts:57:3 › Caching and Revalidation (End-to-End) › iii. Unpublish a service -> absent from /services and / 
+    [chromium] › tests\e2e\caching.spec.ts:74:3 › Caching and Revalidation (End-to-End) › iv. Unpublish a blog post -> absent from / and /blog 
+    [chromium] › tests\e2e\caching.spec.ts:97:3 › Caching and Revalidation (End-to-End) › v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml 
+    [chromium] › tests\e2e\contact.spec.ts:12:3 › Inquiry & Testimonial E2E › contact form: happy path submits and shows confirmation, using keyboard only 
+    [chromium] › tests\e2e\contact.spec.ts:32:3 › Inquiry & Testimonial E2E › contact form: invalid submit focuses the error summary and associates errors with fields 
+    [chromium] › tests\e2e\contact.spec.ts:65:3 › Inquiry & Testimonial E2E › unauthenticated visit to /admin/inquiries and /admin/testimonials redirects to login 
+    [chromium] › tests\e2e\day10-admin.spec.ts:5:3 › Day 10 - Admin & SEO E2E › HIDDEN social link absent from getPublicSocialLinks output AND from the rendered /about page HTML 
+    [chromium] › tests\e2e\day10-admin.spec.ts:26:3 › Day 10 - Admin & SEO E2E › editing the Profile tagline via the admin UI shows the new tagline on / on the next request 
+    [chromium] › tests\e2e\day10-admin.spec.ts:48:3 › Day 10 - Admin & SEO E2E › production error page shows no stack trace in the rendered HTML 
+    [chromium] › tests\e2e\day10b.spec.ts:21:3 › Day 10b E2E › /admin pages, /admin/login, and the blog preview page each return noindex 
+    [chromium] › tests\e2e\day10b.spec.ts:31:3 › Day 10b E2E › canonical URL and OG title present in generateMetadata output for: home, one service detail, one case study, one blog post 
+    [chromium] › tests\e2e\day10b.spec.ts:60:3 › Day 10b E2E › login with an external callbackUrl does not redirect off-site 
+    [chromium] › tests\e2e\day10b.spec.ts:71:3 › Day 10b E2E › SEO override persists in admin UI and is rendered by generateMetadata 
+    [chromium] › tests\e2e\day5.spec.ts:4:3 › Day 5 - Public Pages and Navigation › homepage renders hero, services preview, about snapshot with real seeded data 
+    [chromium] › tests\e2e\day5.spec.ts:20:3 › Day 5 - Public Pages and Navigation › services index -> click service -> detail page loads correctly 
+    [chromium] › tests\e2e\day6-portfolio.spec.ts:11:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-02(c): /work page does NOT render the private project 
+    [chromium] › tests\e2e\day6-portfolio.spec.ts:18:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-02(d): /work/[slug] returns 404 for a private project 
+    [chromium] › tests\e2e\day6-portfolio.spec.ts:30:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-03(c): /work page does NOT render unpublished case studies 
+    [chromium] › tests\e2e\day6-portfolio.spec.ts:36:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study 
+    [chromium] › tests\e2e\day6-portfolio.spec.ts:48:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › Public /work page renders seeded public case studies 
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] / has exactly one h1 ───────
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /about has exactly one h1 ──
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /services has exactly one h1 
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /work has exactly one h1 ───
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /blog has exactly one h1 ───
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [en] /contact has exactly one h1 
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] / has exactly one h1 ───────
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /about has exactly one h1 ──
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /services has exactly one h1 
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /work has exactly one h1 ───
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /blog has exactly one h1 ───
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [am] /contact has exactly one h1 
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] / has exactly one h1 ───────
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /about has exactly one h1 ──
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /services has exactly one h1 
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /work has exactly one h1 ───
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /blog has exactly one h1 ───
+    [chromium] › tests\e2e\h1.spec.ts:17:7 › Exactly One H1 Test › [om] /contact has exactly one h1 
+    [chromium] › tests\e2e\part3-media-upload.spec.ts:19:3 › Part 3 - Media Upload Widget › Upload avatar in Profile edit and verify on public page 
+    [chromium] › tests\e2e\partF-media-rendering.spec.ts:30:3 › Part F - Public Media Rendering › Profile Avatar Render 
+    [chromium] › tests\e2e\partF-media-rendering.spec.ts:71:3 › Part F - Public Media Rendering › Service Featured Image Render 
+    [chromium] › tests\e2e\partF-media-rendering.spec.ts:117:3 › Part F - Public Media Rendering › Project Featured Image Render 
+    [chromium] › tests\e2e\partF-media-rendering.spec.ts:163:3 › Part F - Public Media Rendering › Blog Featured Image Render 
+    [chromium] › tests\e2e\partF-media-rendering.spec.ts:209:3 › Part F - Public Media Rendering › Video Upload and Render Test 
+    [chromium] › tests\e2e\partG-testimonials.spec.ts:4:3 › Testimonials Moderation & Rate Limits › unauthorized testimonials are not public 
+    [chromium] › tests\e2e\partG-testimonials.spec.ts:18:3 › Testimonials Moderation & Rate Limits › honeypot traps spam bots 
+    [chromium] › tests\e2e\partG-upload-and-video.spec.ts:33:3 › Part G - Media Upload Limits and Video Rendering › Upload file size limits (6MB succeeds, 26MB rejected) 
+    [chromium] › tests\e2e\partG-upload-and-video.spec.ts:65:3 › Part G - Media Upload Limits and Video Rendering › Video rendering on public pages 
+    [chromium] › tests\e2e\partH-notifications.spec.ts:4:3 › Part H: Admin Notifications › 16. Unauthenticated access to the notifications list/API is rejected 
+    [chromium] › tests\e2e\partH-notifications.spec.ts:10:3 › Part H: Admin Notifications › 17. Submit a real inquiry as visitor, log in as admin, confirm bell icon shows incremented count and new notification appears 
+    [chromium] › tests\e2e\partI-blog-social.spec.ts:4:3 › Blog Social Interactions › like toggle and comment submission 
+    [chromium] › tests\e2e\resume.spec.ts:6:3 › Resume End-to-End › upload a PDF as admin, set it as current resume, request from /about unauthenticated 
+  7 passed (1.6m)

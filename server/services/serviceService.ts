@@ -4,10 +4,15 @@ import { Service, Prisma } from '@prisma/client';
 import { auth } from '../../auth';
 import { logAdminAction } from '@/lib/audit';
 
-export async function getPublicServices(): Promise<PublicServiceDTO[]> {
+export async function getPublicServices(options?: { limit?: number; orderBy?: 'createdAt' | 'order' }): Promise<PublicServiceDTO[]> {
+  const orderBy = options?.orderBy === 'createdAt'
+    ? { createdAt: 'desc' as const }
+    : { order: 'asc' as const };
+
   const services = await serviceRepository.findMany({
     where: { status: 'PUBLISHED' },
-    orderBy: { order: 'asc' },
+    orderBy,
+    take: options?.limit,
   });
   return services.map(toPublicService);
 }

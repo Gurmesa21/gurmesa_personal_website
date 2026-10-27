@@ -75,7 +75,8 @@
     "phase6Desc": "ቀጣይነት ያለው ጥገና እና ማመቻቸት።",
     "readyToGetStarted": "ለመጀመር ዝግጁ ነዎት?",
     "readyDescription": "ይህ አገልግሎት ግቦችዎን ለማሳካት እንዴት እንደሚረዳዎ እንወያይ። ለነፃ ምክክር ዛሬውኑ ያግኙኝ።",
-    "startConversation": "ውይይት ይጀምሩ"
+    "startConversation": "ውይይት ይጀምሩ",
+    "service": "አገልግሎት"
   },
   "Work": {
     "title": "የተመረጡ ስራዎች",
@@ -94,7 +95,14 @@
     "outcome": "ውጤት",
     "deepDive": "ጥልቅ ማብራሪያ",
     "haveSimilarProblem": "ተመሳሳይ የሚፈታ ችግር አለዎት?",
-    "getInTouch": "ያግኙን"
+    "getInTouch": "ያግኙን",
+    "projectOverview": "የፕሮጀክት አጠቃላይ እይታ",
+    "activeCaseStudy": "ንቁ የስራ ጥናት",
+    "type": "አይነት",
+    "scope": "ወሰን",
+    "technologies": "ቴክኖሎጂዎች",
+    "visitLiveProject": "የቀጥታ ፕሮጀክቱን ይጎብኙ",
+    "caseStudy": "የስራ ጥናት"
   },
   "Blog": {
     "title": "ጦማር",
@@ -103,6 +111,7 @@
     "noPosts": "ምንም ፅሁፎች አልተገኙም።",
     "readArticle": "ጽሑፉን ያንብቡ",
     "like": "ውደድ",
+    "unlike": "አትውደድ",
     "comment": "አስተያየት",
     "share": "አጋራ",
     "copied": "ተቀድቷል!",
@@ -114,13 +123,23 @@
     "yourThoughts": "ምን ያስባሉ?",
     "posting": "በመለጠፍ ላይ...",
     "postComment": "አስተያየት ይለጥፉ",
+    "submit_comment": "አስተያየት አስገባ",
     "noComments": "ምንም አስተያየቶች የሉም። ሃሳብዎን በማካፈል የመጀመሪያው ይሁኑ!",
     "failedToComment": "አስተያየት ማከል አልተሳካም።",
     "yourEmail": "የእርስዎ ኢሜይል",
     "emailNeverPublished": "ኢሜይልዎ ሚስጥራዊ ነው እና ፈጽሞ አይታተምም።",
     "fieldsRequired": "ስም፣ ኢሜይል እና አስተያየት ያስፈልጋሉ።",
     "commentModerationNotice": "አስተያየቶች በመገምገም ላይ ናቸው እና ከጸደቁ በኋላ በይፋ ይታያሉ።",
-    "commentSubmittedForReview": "አስተያየትዎ ቀርቧል እና ከግምገማ በኋላ ይታያል።"
+    "commentSubmittedForReview": "አስተያየትዎ ቀርቧል እና ከግምገማ በኋላ ይታያል።",
+    "backToArticle": "ወደ ጽሑፉ ተመለስ",
+    "joinConversation": "ውይይቱን ይቀላቀሉ እና በዚህ ርዕስ ላይ ያለዎትን ግንዛቤ ያካፍሉ።",
+    "discussionStream": "የውይይት ፍሰት",
+    "noCommentsYet": "እስካሁን ምንም አስተያየት የለም",
+    "discussion": "ውይይት",
+    "haveThoughts": "በዚህ ላይ ሃሳብ አለዎት?",
+    "discussionPrompt": "ሌሎች ምን እያሉ እንደሆነ ያንብቡ ወይም የራስዎን አመለካከት በዚህ ጽሑፍ ላይ ያካፍሉ።",
+    "backToAllArticles": "ወደ ሁሉም ጽሑፎች ተመለስ",
+    "tags": "መለያዎች:"
   },
   "Contact": {
     "title": "ያግኙን",
@@ -220,6 +239,7 @@
     "successTitle": "እናመሰግናለን!",
     "successMessage": "ምስክርነትዎ ገብቷል እናም በግምገማ ላይ ነው።",
     "submitAnother": "ሌላ አስገባ",
-    "formError": "ምስክርነት ማስገባት አልተሳካም። እባክዎ እንደገና ይሞክሩ።"
+    "formError": "ምስክርነት ማስገባት አልተሳካም። እባክዎ እንደገና ይሞክሩ።",
+    "textTooLong": "የምስክርነት ጽሑፍ ከ 200 ቁምፊዎች መብለጥ የለበትም።"
   }
 }

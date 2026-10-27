@@ -67,7 +67,7 @@ describe('Day 6 - Portfolio & Case Studies Confidentiality (SEC-ACL-02 & SEC-ACL
       const publicDto = toPublicCaseStudy(mockProject);
       
       const allowedKeys = [
-        'id', 'title', 'slug', 'summary', 'problem', 'solution', 'role', 'scope', 'architectureSummary', 
+        'id', 'title', 'slug', 'summary', 'liveUrl', 'problem', 'solution', 'role', 'scope', 'architectureSummary', 
         'keyDecisions', 'challenges', 'outcome', 'content', 'publishedAt', 'updatedAt', 'technologies'
       ];
       

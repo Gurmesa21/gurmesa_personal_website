@@ -29,6 +29,18 @@ export function ProjectForm({ action, defaultValues = {} }: { action: (formData:
         <Label htmlFor="slug">Slug</Label>
         <Input id="slug" name="slug" defaultValue={defaultValues.slug} required />
       </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="liveUrl">Live Project URL</Label>
+        <Input
+          id="liveUrl"
+          name="liveUrl"
+          type="url"
+          placeholder="https://example.com"
+          defaultValue={defaultValues.liveUrl || ''}
+        />
+        <p className="text-xs text-muted-foreground">Optional link to the deployed/live project website.</p>
+      </div>
       
       <div className="space-y-2">
         <Label htmlFor="summary">Summary</Label>
@@ -38,20 +50,20 @@ export function ProjectForm({ action, defaultValues = {} }: { action: (formData:
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label htmlFor="status">Project Status</Label>
-          <select id="status" name="status" defaultValue={defaultValues.status || 'INQUIRY'} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background">
-            <option value="INQUIRY">Inquiry</option>
-            <option value="ACTIVE">Active</option>
-            <option value="DELIVERED">Delivered</option>
-            <option value="ARCHIVED">Archived</option>
+          <select id="status" name="status" defaultValue={defaultValues.status || 'INQUIRY'} className="flex h-10 w-full rounded-md border border-input bg-card text-foreground px-3 py-2 text-sm ring-offset-background">
+            <option value="INQUIRY" className="bg-[#101426] text-[#F5F6FC]">Inquiry</option>
+            <option value="ACTIVE" className="bg-[#101426] text-[#F5F6FC]">Active</option>
+            <option value="DELIVERED" className="bg-[#101426] text-[#F5F6FC]">Delivered</option>
+            <option value="ARCHIVED" className="bg-[#101426] text-[#F5F6FC]">Archived</option>
           </select>
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="confidentiality">Confidentiality</Label>
-          <select id="confidentiality" name="confidentiality" defaultValue={defaultValues.confidentiality || 'PRIVATE'} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background">
-            <option value="PUBLIC">Public</option>
-            <option value="ANONYMIZED">Anonymized</option>
-            <option value="PRIVATE">Private</option>
+          <select id="confidentiality" name="confidentiality" defaultValue={defaultValues.confidentiality || 'PRIVATE'} className="flex h-10 w-full rounded-md border border-input bg-card text-foreground px-3 py-2 text-sm ring-offset-background">
+            <option value="PUBLIC" className="bg-[#101426] text-[#F5F6FC]">Public</option>
+            <option value="ANONYMIZED" className="bg-[#101426] text-[#F5F6FC]">Anonymized</option>
+            <option value="PRIVATE" className="bg-[#101426] text-[#F5F6FC]">Private</option>
           </select>
         </div>
       </div>
@@ -119,9 +131,9 @@ export function CaseStudyForm({ projectId, defaultValues = {} }: { projectId: st
       </div>
       <div className="space-y-2">
         <Label htmlFor="status">Case Study Status</Label>
-        <select id="status" name="status" defaultValue={defaultValues.status || 'DRAFT'} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background">
-          <option value="DRAFT">Draft</option>
-          <option value="PUBLISHED">Published</option>
+        <select id="status" name="status" defaultValue={defaultValues.status || 'DRAFT'} className="flex h-10 w-full rounded-md border border-input bg-card text-foreground px-3 py-2 text-sm ring-offset-background">
+          <option value="DRAFT" className="bg-[#101426] text-[#F5F6FC]">Draft</option>
+          <option value="PUBLISHED" className="bg-[#101426] text-[#F5F6FC]">Published</option>
         </select>
       </div>
 

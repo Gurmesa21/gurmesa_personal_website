@@ -19,5 +19,9 @@ export async function updateSettingsAction(formData: FormData) {
   revalidatePath('/admin/settings');
   revalidatePath('/');
   revalidatePath('/about');
+  revalidatePath('/contact');
+  revalidatePath('/', 'layout');
+  revalidatePath('/[locale]/contact', 'page');
+  revalidatePath('/[locale]/about', 'page');
   redirect('/admin/settings');
 }

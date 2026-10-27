@@ -20,43 +20,45 @@ export default async function AdminBlogPage() {
         </Link>
       </div>
       
-      <Card>
+      <Card className="bg-card border-border overflow-hidden">
         <CardContent className="p-0">
-          <table className="w-full">
-            <thead className="bg-muted/40">
-              <tr className="text-left border-b border-border">
-                <th className="p-4 font-medium">Title</th>
-                <th className="p-4 font-medium">Status</th>
-                <th className="p-4 font-medium">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {posts.map(post => (
-                <tr key={post.id} data-testid="admin-row" className="border-b border-border last:border-0 hover:bg-muted/20 transition-colors">
-                  <td className="p-4">{post.title}</td>
-                  <td className="p-4">{post.status}</td>
-                  <td className="p-4 space-x-2">
-                    <Link href={`/admin/blog/${post.id}/edit`} data-testid="edit-link">
-                      <Button variant="outline" size="sm">Edit</Button>
-                    </Link>
-                    <Link href={`/admin/blog/${post.id}/preview`} target="_blank">
-                      <Button variant="outline" size="sm">Preview</Button>
-                    </Link>
-                    <form action={async () => {
-                      'use server';
-                      await deleteBlogPostAction(post.id);
-                    }} className="inline">
-                      <Button variant="destructive" size="sm" type="submit">Delete</Button>
-                    </form>
-                  </td>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead className="bg-muted/40 text-xs text-muted-foreground uppercase tracking-wider font-semibold">
+                <tr className="text-left border-b border-border">
+                  <th className="p-4">Title</th>
+                  <th className="p-4">Status</th>
+                  <th className="p-4">Actions</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="divide-y divide-border">
+                {posts.map(post => (
+                  <tr key={post.id} data-testid="admin-row" className="hover:bg-muted/20 transition-colors">
+                    <td className="p-4 font-medium text-foreground">{post.title}</td>
+                    <td className="p-4 text-sm text-muted-foreground">{post.status}</td>
+                    <td className="p-4 space-x-2 whitespace-nowrap">
+                      <Link href={`/admin/blog/${post.id}/edit`} data-testid="edit-link">
+                        <Button variant="outline" size="sm">Edit</Button>
+                      </Link>
+                      <Link href={`/admin/blog/${post.id}/preview`} target="_blank">
+                        <Button variant="outline" size="sm">Preview</Button>
+                      </Link>
+                      <form action={async () => {
+                        'use server';
+                        await deleteBlogPostAction(post.id);
+                      }} className="inline">
+                        <Button variant="destructive" size="sm" type="submit">Delete</Button>
+                      </form>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="bg-card border-border">
         <CardHeader>
           <CardTitle>Categories</CardTitle>
         </CardHeader>

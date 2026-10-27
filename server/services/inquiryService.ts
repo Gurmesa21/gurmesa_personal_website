@@ -1,12 +1,11 @@
-import { PrismaClient, InquiryStatus, NotificationStatus, Prisma } from '@prisma/client';
+import { InquiryStatus, NotificationStatus, Prisma } from '@prisma/client';
+import { prisma } from '@/server/repositories/db';
 import { auth } from '../../auth';
 import { logAdminAction } from '@/lib/audit';
 import { createNotification } from '@/lib/notifications';
 import { inquirySchema, InquiryInput } from '../../lib/validation/inquiry';
 import { contactRateLimiter, ContactRateLimiter } from '../../lib/rate-limit';
 import { getEmailTransport, EmailTransport } from '../../lib/email';
-
-const prisma = new PrismaClient();
 
 export class InquiryService {
   constructor(

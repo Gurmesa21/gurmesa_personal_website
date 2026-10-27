@@ -5,6 +5,21 @@ import { createProject, updateProject, deleteProject, upsertCaseStudy, setProjec
 import { ProjectStatus, ProjectConfidentiality, CaseStudyStatus } from '@prisma/client';
 import { redirect } from 'next/navigation';
 
+function validateLiveUrl(url: string | null | undefined): string | null {
+  if (!url) return null;
+  const trimmed = url.trim();
+  if (!trimmed) return null;
+  try {
+    const parsed = new URL(trimmed);
+    if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+      throw new Error('Live URL must begin with http:// or https://');
+    }
+    return trimmed;
+  } catch {
+    throw new Error('Invalid URL format for Live Project URL');
+  }
+}
+
 export async function createProjectAction(formData: FormData) {
   const title = formData.get('title') as string;
   const slug = formData.get('slug') as string;
@@ -13,6 +28,7 @@ export async function createProjectAction(formData: FormData) {
   const internalNotes = formData.get('internalNotes') as string;
   const status = formData.get('status') as ProjectStatus;
   const confidentiality = formData.get('confidentiality') as ProjectConfidentiality;
+  const liveUrlRaw = formData.get('liveUrl') as string | null;
 
   const featuredMediaId = formData.get('featuredMediaId') as string;
 
@@ -20,6 +36,7 @@ export async function createProjectAction(formData: FormData) {
     title,
     slug,
     summary,
+    liveUrl: validateLiveUrl(liveUrlRaw),
     clientRef: clientRef || null,
     internalNotes: internalNotes || null,
     status,
@@ -33,6 +50,8 @@ export async function createProjectAction(formData: FormData) {
   revalidatePath('/admin/projects');
   revalidatePath('/work');
   revalidatePath('/');
+  revalidatePath('/', 'layout');
+  revalidatePath('/[locale]/work', 'page');
   redirect('/admin/projects');
 }
 
@@ -44,6 +63,7 @@ export async function updateProjectAction(id: string, formData: FormData) {
   const internalNotes = formData.get('internalNotes') as string;
   const status = formData.get('status') as ProjectStatus;
   const confidentiality = formData.get('confidentiality') as ProjectConfidentiality;
+  const liveUrlRaw = formData.get('liveUrl') as string | null;
 
   const featuredMediaId = formData.get('featuredMediaId') as string;
 
@@ -51,6 +71,7 @@ export async function updateProjectAction(id: string, formData: FormData) {
     title,
     slug,
     summary,
+    liveUrl: validateLiveUrl(liveUrlRaw),
     clientRef: clientRef || null,
     internalNotes: internalNotes || null,
     status,
@@ -63,6 +84,9 @@ export async function updateProjectAction(id: string, formData: FormData) {
   revalidatePath('/work');
   revalidatePath('/');
   revalidatePath(`/work/${slug}`);
+  revalidatePath('/', 'layout');
+  revalidatePath('/[locale]/work', 'page');
+  revalidatePath('/[locale]/work/[slug]', 'page');
   redirect('/admin/projects');
 }
 
@@ -95,6 +119,9 @@ export async function upsertCaseStudyAction(projectId: string, formData: FormDat
   revalidatePath('/admin/projects');
   revalidatePath('/work');
   revalidatePath('/');
+  revalidatePath('/', 'layout');
+  revalidatePath('/[locale]/work', 'page');
+  revalidatePath('/[locale]/work/[slug]', 'page');
   redirect('/admin/projects');
 }
 
@@ -103,4 +130,7 @@ export async function deleteProjectAction(id: string) {
   revalidatePath('/admin/projects');
   revalidatePath('/work');
   revalidatePath('/');
+  revalidatePath('/', 'layout');
+  revalidatePath('/[locale]/work', 'page');
+  revalidatePath('/[locale]/work/[slug]', 'page');
 }

@@ -11,16 +11,27 @@ interface MediaRendererProps {
 }
 
 export function MediaRenderer({ url, mimeType, altText, fill, className, width, height }: MediaRendererProps) {
-  if (mimeType.startsWith('video/')) {
+  const isVideo = mimeType?.startsWith('video/') || url?.endsWith('.mp4') || url?.endsWith('.webm');
+  if (isVideo) {
+    const videoMime = mimeType?.startsWith('video/')
+      ? mimeType
+      : url?.endsWith('.webm')
+      ? 'video/webm'
+      : 'video/mp4';
+
     return (
       <video 
-        src={url} 
-        className={fill ? `absolute inset-0 w-full h-full ${className || ''}` : className} 
+        className={fill ? `absolute inset-0 w-full h-full object-cover ${className || ''}` : className} 
         controls 
         muted 
         playsInline 
         autoPlay
-      />
+        loop
+        preload="metadata"
+      >
+        <source src={url} type={videoMime} />
+        Your browser does not support the video tag.
+      </video>
     );
   }
 

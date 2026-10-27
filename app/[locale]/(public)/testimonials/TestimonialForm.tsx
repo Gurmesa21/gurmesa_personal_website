@@ -12,9 +12,15 @@ export function TestimonialForm() {
   const t = useTranslations('Testimonials');
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [text, setText] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (text.length > 200) {
+      setStatus('error');
+      setErrorMessage(t('textTooLong') || 'Testimonial text must not exceed 200 characters.');
+      return;
+    }
     setStatus('submitting');
     setErrorMessage('');
 
@@ -23,6 +29,7 @@ export function TestimonialForm() {
       const res = await submitTestimonialForm(formData);
       if (res.success) {
         setStatus('success');
+        setText('');
       } else {
         setStatus('error');
         setErrorMessage(res.error || t('formError'));
@@ -42,7 +49,10 @@ export function TestimonialForm() {
         <div className="pt-2">
           <Button
             variant="outline"
-            onClick={() => setStatus('idle')}
+            onClick={() => {
+              setStatus('idle');
+              setText('');
+            }}
             className="text-xs border-[#292D45] bg-[#171D32] text-[#F5F6FC] hover:bg-[#8063F7] hover:border-[#8063F7] hover:text-white h-9 px-4 rounded-lg"
           >
             {t('submitAnother')}
@@ -106,14 +116,27 @@ export function TestimonialForm() {
       </div>
 
       <div className="space-y-1.5">
-        <label htmlFor="text" className="text-xs font-semibold uppercase tracking-wider text-[#A5ABC1]">
-          {t('textLabel')}
-        </label>
+        <div className="flex justify-between items-center">
+          <label htmlFor="text" className="text-xs font-semibold uppercase tracking-wider text-[#A5ABC1]">
+            {t('textLabel')}
+          </label>
+          <span 
+            aria-live="polite"
+            className={`text-xs font-mono transition-colors ${
+              text.length >= 200 ? 'text-[#FF5C8A] font-bold' : text.length >= 180 ? 'text-amber-400' : 'text-[#858EA8]'
+            }`}
+          >
+            {text.length} / 200
+          </span>
+        </div>
         <Textarea
           id="text"
           name="text"
           required
           rows={4}
+          maxLength={200}
+          value={text}
+          onChange={(e) => setText(e.target.value.slice(0, 200))}
           placeholder={t('textPlaceholder')}
           className="bg-[#171D32] border-[#292D45] text-[#F5F6FC] placeholder:text-[#858EA8] focus-visible:border-[#8063F7] focus-visible:ring-[#8063F7] rounded-lg"
         />

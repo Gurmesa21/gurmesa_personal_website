@@ -8,6 +8,7 @@ import { MediaRenderer } from '@/components/ui/MediaRenderer';
 import { Search, Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { BlogInteractionButtons } from '@/components/blog/BlogInteractionButtons';
+import { formatReadingTime } from '@/lib/reading-time';
 
 export const dynamic = 'force-dynamic';
 
@@ -46,7 +47,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
         altText: post.featuredImage.altText
       };
     }
-    const readTime = Math.max(1, Math.ceil((post.body?.length || 500) / 1000)) + " min read";
+    const readTime = formatReadingTime(post.body || '');
     return { ...post, mediaObj, readTime };
   }));
 
@@ -69,9 +70,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
                 Articles
               </span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-white">
-              {t('title')}
-            </h1>
+
           </div>
 
           {/* Search field and compact search action on right */}

@@ -1,0 +1,12 @@
+app/(admin)/admin/login/page.tsx:37 [example.com] <Input id="email" name="email" type="email" required placeholder="admin@example.com" />
+app/(admin)/admin/profile/ProfileForm.tsx:21 [example.com] placeholder="contact@example.com"
+app/(admin)/admin/projects/ProjectForm.tsx:39 [example.com] placeholder="https://example.com"
+components/blog/BlogPostClientView.tsx:326 [example.com] placeholder="you@example.com"
+scripts/reproduce-d1.cjs:32 [example.com] await page.fill('input[name="email"]', 'admin@example.com');
+scripts/run-axe-and-lighthouse.mjs:128 [example.com] await page.fill('input[name="email"]', 'admin@example.com');
+scripts/seed-prod.ts:62 [example.com] { key: 'publicContactEmail', value: '"contact@example.com"', type: 'string' },
+scripts/seed.ts:54 [example.com] email: 'admin@example.com',
+scripts/seed.ts:250 [literal_email] name: 'Client A', email: 'clienta@test.com', message: 'Hello', status: InquiryStatus.NEW,
+scripts/seed.ts:256 [literal_email] data: { name: 'Client B', email: 'clientb@test.com', message: 'Quote please', status: InquiryStatus.CONTACTED }
+scripts/seed.ts:264 [example.com] { key: 'publicContactEmail', value: '"contact@example.com"', type: 'string' },
+scripts/take-all-screenshots.cjs:68 [literal_email] await page.fill('input[name="email"]', 'admin@gurmesa.com');

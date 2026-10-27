@@ -24,7 +24,7 @@ async function getCurrentVoterHash(): Promise<string | null> {
   }
 }
 
-export const getPublicPosts = async (filters?: { category?: string; tag?: string; search?: string }): Promise<PublicBlogPost[]> => {
+export const getPublicPosts = async (filters?: { category?: string; tag?: string; search?: string; limit?: number }): Promise<PublicBlogPost[]> => {
   const where: Prisma.BlogPostWhereInput = {
     status: 'PUBLISHED',
   };
@@ -45,6 +45,7 @@ export const getPublicPosts = async (filters?: { category?: string; tag?: string
 
   const posts = await blogRepository.findMany({
     where,
+    take: filters?.limit,
     include: {
       category: true,
       featuredImage: true,

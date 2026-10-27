@@ -1,0 +1,74 @@
+[
+  {
+    "file": "app/(admin)/admin/login/page.tsx",
+    "line": 37,
+    "matchedPattern": "example.com",
+    "content": "<Input id=\"email\" name=\"email\" type=\"email\" required placeholder=\"admin@example.com\" />"
+  },
+  {
+    "file": "app/(admin)/admin/profile/ProfileForm.tsx",
+    "line": 21,
+    "matchedPattern": "example.com",
+    "content": "placeholder=\"contact@example.com\""
+  },
+  {
+    "file": "app/(admin)/admin/projects/ProjectForm.tsx",
+    "line": 39,
+    "matchedPattern": "example.com",
+    "content": "placeholder=\"https://example.com\""
+  },
+  {
+    "file": "components/blog/BlogPostClientView.tsx",
+    "line": 326,
+    "matchedPattern": "example.com",
+    "content": "placeholder=\"you@example.com\""
+  },
+  {
+    "file": "scripts/reproduce-d1.cjs",
+    "line": 32,
+    "matchedPattern": "example.com",
+    "content": "await page.fill('input[name=\"email\"]', 'admin@example.com');"
+  },
+  {
+    "file": "scripts/run-axe-and-lighthouse.mjs",
+    "line": 128,
+    "matchedPattern": "example.com",
+    "content": "await page.fill('input[name=\"email\"]', 'admin@example.com');"
+  },
+  {
+    "file": "scripts/seed-prod.ts",
+    "line": 62,
+    "matchedPattern": "example.com",
+    "content": "{ key: 'publicContactEmail', value: '\"contact@example.com\"', type: 'string' },"
+  },
+  {
+    "file": "scripts/seed.ts",
+    "line": 54,
+    "matchedPattern": "example.com",
+    "content": "email: 'admin@example.com',"
+  },
+  {
+    "file": "scripts/seed.ts",
+    "line": 250,
+    "matchedPattern": "literal_email",
+    "content": "name: 'Client A', email: 'clienta@test.com', message: 'Hello', status: InquiryStatus.NEW,"
+  },
+  {
+    "file": "scripts/seed.ts",
+    "line": 256,
+    "matchedPattern": "literal_email",
+    "content": "data: { name: 'Client B', email: 'clientb@test.com', message: 'Quote please', status: InquiryStatus.CONTACTED }"
+  },
+  {
+    "file": "scripts/seed.ts",
+    "line": 264,
+    "matchedPattern": "example.com",
+    "content": "{ key: 'publicContactEmail', value: '\"contact@example.com\"', type: 'string' },"
+  },
+  {
+    "file": "scripts/take-all-screenshots.cjs",
+    "line": 68,
+    "matchedPattern": "literal_email",
+    "content": "await page.fill('input[name=\"email\"]', 'admin@gurmesa.com');"
+  }
+]

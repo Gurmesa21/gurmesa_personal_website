@@ -1,10 +1,7 @@
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/server/repositories/db';
 import Link from 'next/link';
-import { TestimonialList } from '@/components/testimonials/TestimonialList';
 import { getTranslations } from 'next-intl/server';
 import { ShieldCheck } from 'lucide-react';
-
-const prisma = new PrismaClient();
 
 export const metadata = {
   title: 'Privacy Policy - Gurmesa',
@@ -80,11 +77,6 @@ export default async function PrivacyPage() {
           </p>
         </div>
       </div>
-
-      {/* Testimonials List */}
-      <section className="pt-6 border-t border-[#292D45]">
-        <TestimonialList />
-      </section>
     </div>
   );
 }

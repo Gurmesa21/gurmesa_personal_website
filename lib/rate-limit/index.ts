@@ -39,29 +39,105 @@ export class RedisStore implements RateLimitStore {
   private redis: Redis;
 
   constructor(url: string) {
-    this.redis = new Redis(url);
+    // Standard Redis TCP/TLS connection using ioredis
+    this.redis = new Redis(url, {
+      maxRetriesPerRequest: 1,
+      enableReadyCheck: false,
+      lazyConnect: false,
+    });
+
+    // Redis error listener: log controlled, useful error information without exposing credentials or REDIS_URL
+    this.redis.on('error', (err: any) => {
+      const msg = err && typeof err.message === 'string' ? err.message : 'Unknown error';
+      console.error(`[RateLimit Redis] Connection error: ${msg}`);
+    });
   }
 
   async increment(key: string, windowMs: number): Promise<number> {
-    const multi = this.redis.multi();
-    multi.incr(key);
-    multi.pttl(key);
-    const results = await multi.exec();
-    
-    if (!results) return 1;
+    try {
+      const multi = this.redis.multi();
+      multi.incr(key);
+      multi.pttl(key);
+      const results = await multi.exec();
 
-    const count = results[0][1] as number;
-    const ttl = results[1][1] as number;
+      if (!results) {
+        console.warn('[RateLimit Redis] Multi command returned null; failing open to preserve application availability.');
+        return 1;
+      }
 
-    if (ttl === -1 || ttl === -2) {
-      await this.redis.pexpire(key, windowMs);
+      const [incrErr, incrResult] = results[0];
+      const [pttlErr, pttlResult] = results[1];
+
+      if (incrErr) throw incrErr;
+      if (pttlErr) throw pttlErr;
+
+      const count = incrResult as number;
+      const ttl = pttlResult as number;
+
+      if (ttl === -1 || ttl === -2) {
+        try {
+          await this.redis.pexpire(key, windowMs);
+        } catch (pexpireErr: any) {
+          console.warn('[RateLimit Redis] Failed to set pexpire:', pexpireErr?.message || 'Unknown error');
+        }
+      }
+
+      return count;
+    } catch (err: any) {
+      // Operational trade-off: fail-open behavior preserves application availability
+      // but temporarily reduces rate-limit enforcement while Redis is unavailable or quota is exhausted.
+      const errorMsg = err && typeof err.message === 'string' ? err.message : 'Unknown error';
+      console.error(
+        `[RateLimit Redis] Operation failed (${errorMsg}); failing open to preserve application availability.`
+      );
+      return 1;
     }
-    
-    return count;
+  }
+
+  async disconnect(): Promise<void> {
+    try {
+      await this.redis.quit();
+    } catch {
+      this.redis.disconnect();
+    }
+  }
+
+  get client(): Redis {
+    return this.redis;
   }
 }
 
-const defaultStore = process.env.REDIS_URL ? new RedisStore(process.env.REDIS_URL) : new InMemoryStore();
+export function resolveRateLimitStore(): RateLimitStore {
+  const redisUrl = process.env.REDIS_URL?.trim();
+
+  if (process.env.APP_ENV === 'production') {
+    if (!redisUrl) {
+      throw new Error(
+        'REDIS_URL is missing in production environment. A valid Redis connection string is required for distributed rate limiting.'
+      );
+    }
+    return new RedisStore(redisUrl);
+  }
+
+  if (redisUrl) {
+    return new RedisStore(redisUrl);
+  }
+
+  return new InMemoryStore();
+}
+
+let defaultStoreInstance: RateLimitStore | null = null;
+
+export function getDefaultStore(): RateLimitStore {
+  if (!defaultStoreInstance) {
+    defaultStoreInstance = resolveRateLimitStore();
+  }
+  return defaultStoreInstance;
+}
+
+export function resetDefaultStore(): void {
+  defaultStoreInstance = null;
+}
 
 export function getIpFromHeaders(headers: Headers): string {
   const forwardedFor = headers.get('x-forwarded-for');
@@ -84,8 +160,8 @@ export class ContactRateLimiter {
   private readonly EMAIL_LIMIT = 3;
   private readonly EMAIL_WINDOW_MS = 60 * 60 * 1000;
 
-  constructor(store: RateLimitStore = defaultStore) {
-    this.store = store;
+  constructor(store?: RateLimitStore) {
+    this.store = store ?? getDefaultStore();
   }
 
   async check(ip: string, email: string): Promise<{ allowed: boolean; reason?: string }> {
@@ -115,8 +191,8 @@ export class LoginRateLimiter {
   private readonly EMAIL_LIMIT = 5;
   private readonly EMAIL_WINDOW_MS = 5 * 60 * 1000; // 5 attempts per 5 minutes
 
-  constructor(store: RateLimitStore = defaultStore) {
-    this.store = store;
+  constructor(store?: RateLimitStore) {
+    this.store = store ?? getDefaultStore();
   }
 
   async check(email: string): Promise<boolean> {
@@ -138,8 +214,8 @@ export class TestimonialRateLimiter {
   private readonly LIMIT = 3;
   private readonly WINDOW_MS = 60 * 60 * 1000;
 
-  constructor(store: RateLimitStore = defaultStore) {
-    this.store = store;
+  constructor(store?: RateLimitStore) {
+    this.store = store ?? getDefaultStore();
   }
 
   async check(ip: string): Promise<boolean> {
@@ -157,8 +233,8 @@ export class BlogLikeRateLimiter {
   private readonly LIMIT = 10;
   private readonly WINDOW_MS = 60 * 1000; // 10 likes per minute
 
-  constructor(store: RateLimitStore = defaultStore) {
-    this.store = store;
+  constructor(store?: RateLimitStore) {
+    this.store = store ?? getDefaultStore();
   }
 
   async check(ip: string, voterHash: string): Promise<boolean> {
@@ -180,8 +256,8 @@ export class CommentRateLimiter {
   private readonly LIMIT = 5;
   private readonly WINDOW_MS = 60 * 60 * 1000; // 5 comments per hour
 
-  constructor(store: RateLimitStore = defaultStore) {
-    this.store = store;
+  constructor(store?: RateLimitStore) {
+    this.store = store ?? getDefaultStore();
   }
 
   async check(ip: string): Promise<boolean> {

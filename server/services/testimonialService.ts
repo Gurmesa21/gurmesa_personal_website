@@ -1,9 +1,8 @@
-import { PrismaClient, TestimonialStatus, TestimonialPermissionStatus, Prisma } from '@prisma/client';
+import { TestimonialStatus, TestimonialPermissionStatus, Prisma } from '@prisma/client';
+import { prisma } from '@/server/repositories/db';
 import { auth } from '../../auth';
 import { logAdminAction } from '@/lib/audit';
 import { createNotification } from '@/lib/notifications';
-
-const prisma = new PrismaClient();
 
 export class TestimonialService {
   private async requireAuth() {
@@ -15,20 +14,25 @@ export class TestimonialService {
   }
 
   // PUBLIC
-  async getPublicTestimonials() {
+  async getPublicTestimonials(options?: { limit?: number; orderBy?: 'createdAt' | 'featured' }) {
+    const orderBy = options?.orderBy === 'createdAt'
+      ? [{ createdAt: 'desc' as const }]
+      : [{ featured: 'desc' as const }, { createdAt: 'desc' as const }];
+
     return prisma.testimonial.findMany({
       where: {
         status: TestimonialStatus.PUBLISHED,
         permissionStatus: TestimonialPermissionStatus.AUTHORIZED
       },
-      orderBy: [
-        { featured: 'desc' },
-        { createdAt: 'desc' }
-      ]
+      orderBy,
+      take: options?.limit
     });
   }
 
   async submitPublicTestimonial(data: Prisma.TestimonialCreateInput) {
+    if (data.content && data.content.length > 200) {
+      throw new Error('Testimonial text must not exceed 200 characters.');
+    }
     // Force safe default statuses for public submissions
     const safeData = {
       ...data,

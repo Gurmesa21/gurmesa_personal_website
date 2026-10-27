@@ -30,6 +30,8 @@ export async function createBlogPostAction(formData: FormData) {
   revalidatePath('/blog');
   revalidatePath('/admin/blog');
   revalidatePath('/');
+  revalidatePath('/', 'layout');
+  revalidatePath('/[locale]/blog', 'page');
   redirect('/admin/blog');
 }
 
@@ -72,6 +74,9 @@ export async function updateBlogPostAction(id: string, formData: FormData) {
   revalidatePath(`/blog/${slug}`);
   revalidatePath('/admin/blog');
   revalidatePath('/');
+  revalidatePath('/', 'layout');
+  revalidatePath('/[locale]/blog', 'page');
+  revalidatePath('/[locale]/blog/[slug]', 'page');
   redirect('/admin/blog');
 }
 
@@ -80,6 +85,9 @@ export async function deleteBlogPostAction(id: string) {
   revalidatePath('/blog');
   revalidatePath('/admin/blog');
   revalidatePath('/');
+  revalidatePath('/', 'layout');
+  revalidatePath('/[locale]/blog', 'page');
+  revalidatePath('/[locale]/blog/[slug]', 'page');
 }
 
 export async function createCategoryAction(formData: FormData) {

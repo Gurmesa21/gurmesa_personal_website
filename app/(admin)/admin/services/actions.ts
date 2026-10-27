@@ -31,6 +31,8 @@ export async function createServiceAction(formData: FormData) {
   revalidatePath('/admin/services');
   revalidatePath('/services');
   revalidatePath('/');
+  revalidatePath('/', 'layout');
+  revalidatePath('/[locale]/services', 'page');
 }
 
 export async function updateServiceAction(id: string, formData: FormData) {
@@ -60,6 +62,9 @@ export async function updateServiceAction(id: string, formData: FormData) {
   revalidatePath('/services');
   revalidatePath(`/services/${slug}`);
   revalidatePath('/');
+  revalidatePath('/', 'layout');
+  revalidatePath('/[locale]/services', 'page');
+  revalidatePath('/[locale]/services/[slug]', 'page');
 }
 
 export async function deleteServiceAction(id: string) {
@@ -67,6 +72,9 @@ export async function deleteServiceAction(id: string) {
   revalidatePath('/admin/services');
   revalidatePath('/services');
   revalidatePath('/');
+  revalidatePath('/', 'layout');
+  revalidatePath('/[locale]/services', 'page');
+  revalidatePath('/[locale]/services/[slug]', 'page');
 }
 
 export async function togglePublishAction(id: string, currentStatus: ServiceStatus) {
@@ -75,6 +83,9 @@ export async function togglePublishAction(id: string, currentStatus: ServiceStat
   revalidatePath('/admin/services');
   revalidatePath('/services');
   revalidatePath('/');
+  revalidatePath('/', 'layout');
+  revalidatePath('/[locale]/services', 'page');
+  revalidatePath('/[locale]/services/[slug]', 'page');
 }
 
 export async function moveServiceAction(id: string, newOrder: number) {
@@ -82,4 +93,6 @@ export async function moveServiceAction(id: string, newOrder: number) {
   revalidatePath('/admin/services');
   revalidatePath('/services');
   revalidatePath('/');
+  revalidatePath('/', 'layout');
+  revalidatePath('/[locale]/services', 'page');
 }

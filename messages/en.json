@@ -75,7 +75,8 @@
     "phase6Desc": "Ongoing maintenance and optimization.",
     "readyToGetStarted": "Ready to get started?",
     "readyDescription": "Let's discuss how this service can help you achieve your goals. Contact me today for a free consultation.",
-    "startConversation": "Start a Conversation"
+    "startConversation": "Start a Conversation",
+    "service": "Service"
   },
   "Work": {
     "title": "Selected Work",
@@ -94,7 +95,14 @@
     "outcome": "Outcome",
     "deepDive": "Deep Dive",
     "haveSimilarProblem": "Have a similar problem to solve?",
-    "getInTouch": "Get in Touch"
+    "getInTouch": "Get in Touch",
+    "projectOverview": "Project Overview",
+    "activeCaseStudy": "Active Case Study",
+    "type": "Type",
+    "scope": "Scope",
+    "technologies": "Technologies",
+    "visitLiveProject": "Visit Live Project",
+    "caseStudy": "Case Study"
   },
   "Blog": {
     "title": "Blog",
@@ -122,7 +130,16 @@
     "emailNeverPublished": "Your email is private and will never be published.",
     "fieldsRequired": "Name, email, and comment are required.",
     "commentModerationNotice": "Comments are moderated and will appear publicly once approved.",
-    "commentSubmittedForReview": "Your comment has been submitted and will appear after review."
+    "commentSubmittedForReview": "Your comment has been submitted and will appear after review.",
+    "backToArticle": "Back to Article",
+    "joinConversation": "Join the conversation and share your insights on this topic.",
+    "discussionStream": "Discussion Stream",
+    "noCommentsYet": "No comments yet",
+    "discussion": "Discussion",
+    "haveThoughts": "Have thoughts on this?",
+    "discussionPrompt": "Read what other developers are saying or share your own perspective on this article.",
+    "backToAllArticles": "Back to all articles",
+    "tags": "Tags:"
   },
   "Contact": {
     "title": "Get in Touch",
@@ -222,6 +239,7 @@
     "successTitle": "Thank You!",
     "successMessage": "Your testimonial has been submitted and is pending review.",
     "submitAnother": "Submit Another",
-    "formError": "Failed to submit testimonial. Please try again."
+    "formError": "Failed to submit testimonial. Please try again.",
+    "textTooLong": "Testimonial text must not exceed 200 characters."
   }
 }

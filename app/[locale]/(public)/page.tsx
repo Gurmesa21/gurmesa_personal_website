@@ -163,10 +163,11 @@ export default async function HomePage(props?: {
     };
   }
 
-  const rawServices = await getPublicServices();
-  const rawProjects = await getPublicProjects();
-  const rawPosts = await getPublicPosts();
-  const rawTestimonials = await testimonialService.getPublicTestimonials();
+  // Enforce TASK 4 homepage limits: Services (6), Projects (5), Blog posts (2), Testimonials (2)
+  const rawServices = await getPublicServices({ limit: 6, orderBy: 'createdAt' });
+  const rawProjects = await getPublicProjects({ limit: 5 });
+  const rawPosts = await getPublicPosts({ limit: 2 });
+  const rawTestimonials = await testimonialService.getPublicTestimonials({ limit: 2, orderBy: 'createdAt' });
 
   // Testimonials: filter & sort to display only the last 2 most recent testimonials
   const sortedTestimonials = [...rawTestimonials].sort((a, b) => {
@@ -174,10 +175,11 @@ export default async function HomePage(props?: {
   });
   const testimonials = sortedTestimonials.slice(0, 2).map(toPublicTestimonial);
 
-  // Pre-resolve media for ALL projects (fully dynamic list for public homepage)
+  // Pre-resolve media for at most 5 most recent projects
   const storage = getStorageAdapter();
+  const recentProjects = rawProjects.slice(0, 5);
   const projects = await Promise.all(
-    rawProjects.map(async (project) => {
+    recentProjects.map(async (project) => {
       let mediaObj = null;
       try {
         const pm = await prisma.projectMedia.findFirst({
@@ -198,9 +200,10 @@ export default async function HomePage(props?: {
     })
   );
 
-  // Pre-resolve media for ALL services (fully dynamic list for public homepage)
+  // Pre-resolve media for at most 6 most recent services
+  const recentServices = rawServices.slice(0, 6);
   const services = await Promise.all(
-    rawServices.map(async (service) => {
+    recentServices.map(async (service) => {
       let mediaObj = null;
       try {
         if (service.featuredImageId) {

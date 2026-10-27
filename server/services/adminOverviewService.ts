@@ -1,8 +1,6 @@
-import { PrismaClient, InquiryStatus, BlogPostStatus } from '@prisma/client';
+import { InquiryStatus, BlogPostStatus } from '@prisma/client';
+import { prisma } from '@/server/repositories/db';
 import { auth } from '../../auth';
-
-
-const prisma = new PrismaClient();
 
 export class AdminOverviewService {
   async getCounts() {

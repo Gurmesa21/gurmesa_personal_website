@@ -12,6 +12,9 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
 
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
 
@@ -39,23 +42,7 @@
 }
 
 :root {
-  --background: #FAFAFA;
-  --foreground: #18181B;
-  --muted-foreground: #71717A;
-  --card: #FFFFFF;
-  --border: #E4E4E7;
-  --primary: #4F46E5;
-  --primary-foreground: #FFFFFF;
-  --accent: #7C3AED;
-  --success: #059669;
-  --warning: #D97706;
-  --danger: #DC2626;
-  --primary-gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
-  --muted: #F4F4F5;
-}
-
-.dark,
-[data-theme="dark"] {
+  color-scheme: dark;
   --background: #080B16;
   --foreground: #F5F6FC;
   --muted-foreground: #A5ABC1;
@@ -64,6 +51,28 @@
   --primary: #8063F7;
   --primary-foreground: #FFFFFF;
   --accent: #4F6FF0;
+  --secondary: #171D32;
+  --secondary-foreground: #F5F6FC;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --primary-gradient: linear-gradient(135deg, #8063F7 0%, #4F6FF0 100%);
+  --muted: #171D32;
+}
+
+.dark,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #080B16;
+  --foreground: #F5F6FC;
+  --muted-foreground: #A5ABC1;
+  --card: #101426;
+  --border: #292D45;
+  --primary: #8063F7;
+  --primary-foreground: #FFFFFF;
+  --accent: #4F6FF0;
+  --secondary: #171D32;
+  --secondary-foreground: #F5F6FC;
   --success: #10B981;
   --warning: #F59E0B;
   --danger: #EF4444;
@@ -80,9 +89,25 @@
     @apply bg-background text-foreground antialiased font-sans transition-colors duration-300;
   }
 
+  input, textarea, select {
+    color-scheme: dark;
+  }
+
+  select {
+    color-scheme: dark;
+    background-color: var(--card);
+    color: var(--foreground);
+    border-color: var(--border);
+  }
+
+  select option {
+    background-color: #101426;
+    color: #F5F6FC;
+  }
+
   /* Highly professional, clean, and stylistic headings */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-extrabold tracking-tight text-slate-900 dark:text-[#F5F6FC];
+    @apply font-heading font-extrabold tracking-tight text-[#F5F6FC];
   }
   
   h1 {
@@ -95,7 +120,7 @@
 
   /* Beautiful, readable paragraphs with elegant contrast */
   p {
-    @apply text-slate-600 dark:text-[#A5ABC1] leading-[1.7] font-medium font-sans;
+    @apply text-[#A5ABC1] leading-[1.7] font-medium font-sans;
   }
 
   :focus-visible {

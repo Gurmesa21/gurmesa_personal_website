@@ -29,6 +29,9 @@ export default async function TestimonialEditPage({ params }: { params: Promise<
     });
     const { revalidatePath } = await import('next/cache');
     revalidatePath('/');
+    revalidatePath('/testimonials');
+    revalidatePath('/', 'layout');
+    revalidatePath('/[locale]/testimonials', 'page');
     redirect('/admin/testimonials');
   }
 
@@ -37,6 +40,9 @@ export default async function TestimonialEditPage({ params }: { params: Promise<
     await testimonialService.deleteTestimonial(t!.id);
     const { revalidatePath } = await import('next/cache');
     revalidatePath('/');
+    revalidatePath('/testimonials');
+    revalidatePath('/', 'layout');
+    revalidatePath('/[locale]/testimonials', 'page');
     redirect('/admin/testimonials');
   }
 
@@ -65,14 +71,14 @@ export default async function TestimonialEditPage({ params }: { params: Promise<
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="status">Status</Label>
-                <select id="status" name="status" defaultValue={t.status} className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
-                  {Object.values(TestimonialStatus).map(s => <option key={s} value={s}>{s}</option>)}
+                <select id="status" name="status" defaultValue={t.status} className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-card text-foreground px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                  {Object.values(TestimonialStatus).map(s => <option key={s} value={s} className="bg-[#101426] text-[#F5F6FC]">{s}</option>)}
                 </select>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="permissionStatus">Permission</Label>
-                <select id="permissionStatus" name="permissionStatus" defaultValue={t.permissionStatus} className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
-                  {Object.values(TestimonialPermissionStatus).map(s => <option key={s} value={s}>{s}</option>)}
+                <select id="permissionStatus" name="permissionStatus" defaultValue={t.permissionStatus} className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-card text-foreground px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                  {Object.values(TestimonialPermissionStatus).map(s => <option key={s} value={s} className="bg-[#101426] text-[#F5F6FC]">{s}</option>)}
                 </select>
               </div>
             </div>

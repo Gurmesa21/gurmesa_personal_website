@@ -7,6 +7,7 @@ import { getStorageAdapter } from '@/lib/storage';
 import { BlogPostClientView } from '@/components/blog/BlogPostClientView';
 import { getPublicProfile, getPublicSocialLinks } from '@/server/services/profileService';
 import { getResumeUrl } from '@/server/services/mediaService';
+import { formatReadingTime } from '@/lib/reading-time';
 
 export const dynamic = 'force-dynamic';
 
@@ -56,8 +57,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     ]
   };
 
-  const words = (post.body || '').trim().split(/\s+/).length;
-  const readTime = `${Math.max(1, Math.ceil(words / 200))} min read`;
+  const readTime = formatReadingTime(post.body || '');
 
   let mediaObj = null;
   if (post.featuredImage?.storageKey) {

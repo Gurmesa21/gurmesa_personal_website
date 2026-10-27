@@ -1,0 +1,46 @@
+{
+  "identicalAm": [
+    {
+      "key": "Language.en",
+      "value": "English"
+    },
+    {
+      "key": "Language.am",
+      "value": "አማርኛ"
+    },
+    {
+      "key": "Language.om",
+      "value": "Afaan Oromoo"
+    }
+  ],
+  "identicalOm": [
+    {
+      "key": "Language.en",
+      "value": "English"
+    },
+    {
+      "key": "Language.am",
+      "value": "አማርኛ"
+    },
+    {
+      "key": "Language.om",
+      "value": "Afaan Oromoo"
+    },
+    {
+      "key": "Blog.tags",
+      "value": "Tags:"
+    },
+    {
+      "key": "Testimonials.namePlaceholder",
+      "value": "Jane Doe"
+    },
+    {
+      "key": "Testimonials.orgPlaceholder",
+      "value": "Acme Corp"
+    },
+    {
+      "key": "Testimonials.rolePlaceholder",
+      "value": "CTO"
+    }
+  ]
+}

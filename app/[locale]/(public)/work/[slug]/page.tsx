@@ -14,7 +14,8 @@ import {
   ImageIcon,
   ChevronRight,
   Calendar,
-  ArrowRight
+  ArrowRight,
+  ExternalLink
 } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -41,6 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
   const t = await getTranslations('Work');
+  const tNav = await getTranslations('Navigation');
   const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
 
   const rawSlug = (await params).slug;
@@ -101,9 +103,9 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-8 lg:space-y-10">
         {/* Compact Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-[#A5ABC1]">
-          <Link href="/" className="hover:text-[#F5F6FC] transition-colors">Home</Link>
+          <Link href="/" className="hover:text-[#F5F6FC] transition-colors">{tNav('home')}</Link>
           <ChevronRight className="w-3.5 h-3.5 text-[#292D45]" />
-          <Link href="/work" className="hover:text-[#F5F6FC] transition-colors">Work</Link>
+          <Link href="/work" className="hover:text-[#F5F6FC] transition-colors">{tNav('work')}</Link>
           <ChevronRight className="w-3.5 h-3.5 text-[#292D45]" />
           <span className="text-[#F5F6FC] font-medium truncate max-w-[240px] sm:max-w-md">{project.title}</span>
         </nav>
@@ -113,7 +115,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           <div className="flex flex-wrap items-center gap-2.5">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#A995FF]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
-              Case Study
+              {t('caseStudy')}
             </span>
             {project.role && (
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#A995FF]">
@@ -363,20 +365,20 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                   <div className="flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-[#8063F7] animate-pulse" />
                     <h3 className="text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
-                      Project Overview
+                      {t('projectOverview')}
                     </h3>
                   </div>
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-[#10B981]/25 bg-[#10B981]/10 px-2.5 py-0.5 text-xs font-medium text-[#10B981]">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#10B981] animate-pulse" />
-                    Active Case Study
+                    {t('activeCaseStudy')}
                   </span>
                 </div>
 
                 {/* Metadata Specifications */}
                 <dl className="space-y-3 text-sm">
                   <div className="flex items-center justify-between pb-2.5 border-b border-[#292D45]/50">
-                    <dt className="text-xs text-[#A5ABC1]">Type</dt>
-                    <dd className="text-xs font-semibold text-[#F5F6FC]">Case Study</dd>
+                    <dt className="text-xs text-[#A5ABC1]">{t('type')}</dt>
+                    <dd className="text-xs font-semibold text-[#F5F6FC]">{t('caseStudy')}</dd>
                   </div>
                   {project.role && (
                     <div className="flex items-center justify-between pb-2.5 border-b border-[#292D45]/50">
@@ -386,13 +388,13 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                   )}
                   {project.scope && (
                     <div className="flex items-center justify-between pb-2.5 border-b border-[#292D45]/50">
-                      <dt className="text-xs text-[#A5ABC1]">Scope</dt>
+                      <dt className="text-xs text-[#A5ABC1]">{t('scope')}</dt>
                       <dd className="text-xs font-semibold text-[#F5F6FC]">{project.scope}</dd>
                     </div>
                   )}
                   {project.publishedAt && (
                     <div className="flex items-center justify-between">
-                      <dt className="text-xs text-[#A5ABC1]">Published</dt>
+                      <dt className="text-xs text-[#A5ABC1]">{t('published')}</dt>
                       <dd className="text-xs font-semibold text-[#F5F6FC]">
                         {new Date(project.publishedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}
                       </dd>
@@ -400,11 +402,31 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                   )}
                 </dl>
 
+                {project.liveUrl && (
+                  <div className="pt-2">
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="w-full rounded-xl border-[#8063F7]/40 bg-[#8063F7]/10 text-xs sm:text-sm font-semibold text-[#A995FF] hover:bg-[#8063F7]/20 hover:text-white hover:border-[#8063F7] transition-all shadow-sm"
+                    >
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2"
+                      >
+                        <span>{t('visitLiveProject')}</span>
+                        <ExternalLink className="w-3.5 h-3.5 text-[#A995FF]" />
+                      </a>
+                    </Button>
+                  </div>
+                )}
+
                 {/* Technologies Stack */}
                 {project.technologies.length > 0 && (
                   <div className="pt-3 border-t border-[#292D45]/60 space-y-2.5">
                     <h4 className="text-xs font-semibold uppercase tracking-wider text-[#A5ABC1]">
-                      Technologies
+                      {t('technologies')}
                     </h4>
                     <div className="flex flex-wrap gap-1.5">
                       {project.technologies.map(tech => (

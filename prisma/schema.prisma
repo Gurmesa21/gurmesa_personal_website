@@ -196,6 +196,7 @@ model Project {
   endDate         DateTime?              @db.Timestamptz
   summary         String                 @db.Text
   internalNotes   String?                @db.Text
+  liveUrl         String?
   createdAt       DateTime               @default(now()) @db.Timestamptz
   updatedAt       DateTime               @updatedAt @db.Timestamptz
 

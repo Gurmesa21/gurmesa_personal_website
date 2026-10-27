@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { TestimonialList } from '@/components/testimonials/TestimonialList';
 import { useTranslations } from 'next-intl';
 import { FileText } from 'lucide-react';
 
@@ -51,11 +50,6 @@ export default function TermsPage() {
           </p>
         </div>
       </div>
-
-      {/* Testimonials List */}
-      <section className="pt-6 border-t border-[#292D45]">
-        <TestimonialList />
-      </section>
     </div>
   );
 }

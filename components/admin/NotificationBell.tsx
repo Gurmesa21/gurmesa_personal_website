@@ -14,10 +14,10 @@ export default async function NotificationBell() {
   }
 
   return (
-    <Link href="/admin/notifications" className="relative p-2 rounded-full hover:bg-slate-800 transition-colors">
-      <Bell className="w-6 h-6 text-slate-300" />
+    <Link href="/admin/notifications" className="relative p-2 rounded-full hover:bg-muted text-muted-foreground hover:text-foreground transition-colors" title="Notifications">
+      <Bell className="w-5 h-5" />
       {unreadCount > 0 && (
-        <span className="absolute top-0 right-0 inline-flex items-center justify-center w-5 h-5 text-xs font-bold leading-none text-white bg-red-600 rounded-full">
+        <span className="absolute top-1 right-1 inline-flex items-center justify-center w-4 h-4 text-[10px] font-bold leading-none text-white bg-red-600 bg-destructive rounded-full shadow-sm animate-pulse">
           {unreadCount > 99 ? '99+' : unreadCount}
         </span>
       )}

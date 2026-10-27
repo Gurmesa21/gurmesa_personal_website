@@ -14,7 +14,7 @@ async function requireAdmin() {
  * Returns ONLY projects where confidentiality != 'PRIVATE' AND an associated CaseStudy exists 
  * AND that CaseStudy's status == 'PUBLISHED'.
  */
-export async function getPublicProjects(): Promise<PublicCaseStudyDTO[]> {
+export async function getPublicProjects(options?: { limit?: number }): Promise<PublicCaseStudyDTO[]> {
   const projects = await prisma.project.findMany({
     where: {
       confidentiality: { not: 'PRIVATE' },
@@ -28,7 +28,8 @@ export async function getPublicProjects(): Promise<PublicCaseStudyDTO[]> {
         include: { technology: true }
       }
     },
-    orderBy: { createdAt: 'desc' }
+    orderBy: { createdAt: 'desc' },
+    take: options?.limit
   });
 
   return projects.map(toPublicCaseStudy);

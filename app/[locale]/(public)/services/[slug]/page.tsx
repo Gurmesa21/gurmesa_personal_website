@@ -41,6 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const t = await getTranslations('Services');
+  const tNav = await getTranslations('Navigation');
   const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
 
   const service = await getPublicServiceBySlug((await params).slug);
@@ -82,9 +83,9 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-8 lg:space-y-10">
         {/* Compact Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-[#A5ABC1]">
-          <Link href="/" className="hover:text-[#F5F6FC] transition-colors">Home</Link>
+          <Link href="/" className="hover:text-[#F5F6FC] transition-colors">{tNav('home')}</Link>
           <ChevronRight className="w-3.5 h-3.5 text-[#292D45]" />
-          <Link href="/services" className="hover:text-[#F5F6FC] transition-colors">Services</Link>
+          <Link href="/services" className="hover:text-[#F5F6FC] transition-colors">{tNav('services')}</Link>
           <ChevronRight className="w-3.5 h-3.5 text-[#292D45]" />
           <span className="text-[#F5F6FC] font-medium truncate max-w-[240px] sm:max-w-md">{service.title}</span>
         </nav>
@@ -94,7 +95,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <div className="flex flex-wrap items-center gap-2.5">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#A995FF]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
-              Service
+              {t('service')}
             </span>
             {service.startingPriceRange && (
               <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border border-[#292D45] bg-[#101426] text-[#A5ABC1]">

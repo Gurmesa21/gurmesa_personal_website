@@ -30,6 +30,10 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  if (pathname.startsWith('/uploads') || pathname.startsWith('/mock-storage')) {
+    return NextResponse.next();
+  }
+
   if (pathname === '/robots.txt' || pathname === '/sitemap.xml') {
     return NextResponse.next();
   }
@@ -39,5 +43,5 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|mock-storage|favicon\\.ico|robots\\.txt|sitemap\\.xml|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|woff2?|map|txt|xml)).*)'],
+  matcher: ['/((?!api|_next/static|_next/image|uploads|mock-storage|favicon\\.ico|robots\\.txt|sitemap\\.xml|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|woff2?|map|txt|xml|mp4|webm|ogg|mp3|wav|pdf|mov)).*)'],
 };

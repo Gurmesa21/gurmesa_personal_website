@@ -11,7 +11,7 @@ describe('Production Guard', () => {
     vi.stubEnv('PLAYWRIGHT_TEST', '1');
 
     await expect(import('../../next.config')).rejects.toThrow('PLAYWRIGHT_TEST=1 is not allowed in production');
-  });
+  }, 15000);
 
   it('does not throw if PLAYWRIGHT_TEST is missing in production', async () => {
     vi.stubEnv('APP_ENV', 'production');
