@@ -30,7 +30,11 @@ export class TestimonialService {
   }
 
   async submitPublicTestimonial(data: Prisma.TestimonialCreateInput) {
-    if (data.content && data.content.length > 200) {
+    const trimmed = (data.content || '').trim();
+    if (trimmed.length < 20) {
+      throw new Error('Testimonial text must be at least 20 characters.');
+    }
+    if (trimmed.length > 200) {
       throw new Error('Testimonial text must not exceed 200 characters.');
     }
     // Force safe default statuses for public submissions

@@ -81,7 +81,12 @@ export default async function ServicesPage() {
               Services
             </span>
           </div>
-
+          <h1 className="text-3xl sm:text-4xl font-heading font-bold tracking-tight text-[#F5F6FC]">
+            {t('title')}
+          </h1>
+          <p className="text-sm sm:text-base text-[#A5ABC1]">
+            {t('subtitle')}
+          </p>
         </div>
 
         {/* Services Grid: balanced two-column layout on desktop, 1 column on mobile, 16-20px gap */}

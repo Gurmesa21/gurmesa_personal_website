@@ -1,0 +1,93 @@
+﻿
+> gurmesa-website@0.1.0 build
+> prisma generate && next build
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+
+Γ£ö Generated Prisma Client (v5.22.0) to .\node_modules\@prisma\client in 494ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to react to database changes in your app as they happen? Discover how with Pulse: https://pris.ly/tip-1-pulse
+
+Γû▓ Next.js 16.3.6 (Turbopack)
+- Environments: .env.production, .env
+Γ£ô Running next.config.ts took 223ms
+- Experiments (use with caution):
+  ┬╖ proxyClientMaxBodySize: 31457280
+  ┬╖ serverActions
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 8.8s
+  Running TypeScript ...
+  Finished TypeScript in 12.1s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/31) ...
+  Generating static pages using 7 workers (7/31) 
+  Generating static pages using 7 workers (15/31) 
+  Generating static pages using 7 workers (23/31) 
+Γ£ô Generating static pages using 7 workers (31/31) in 673ms
+  Finalizing page optimization ...
+
+Route (app)
+Γöî Γùï /_not-found
+Γö£ ╞Æ /[locale]
+Γö£ ╞Æ /[locale]/about
+Γö£ ╞Æ /[locale]/blog
+Γö£ ╞Æ /[locale]/blog/[slug]
+Γö£ ╞Æ /[locale]/contact
+Γö£ ╞Æ /[locale]/privacy
+Γö£ ╞Æ /[locale]/services
+Γö£ ╞Æ /[locale]/services/[slug]
+Γö£ ╞Æ /[locale]/terms
+Γö£ ╞Æ /[locale]/testimonials
+Γö£ ╞Æ /[locale]/work
+Γö£ ╞Æ /[locale]/work/[slug]
+Γö£ ╞Æ /admin
+Γö£ ╞Æ /admin/audit-log
+Γö£ ╞Æ /admin/audit-logs
+Γö£ ╞Æ /admin/blog
+Γö£ ╞Æ /admin/blog/[id]/edit
+Γö£ ╞Æ /admin/blog/[id]/preview
+Γö£ ╞Æ /admin/blog/new
+Γö£ ╞Æ /admin/comments
+Γö£ ╞Æ /admin/experience
+Γö£ ╞Æ /admin/experience/[id]/edit
+Γö£ ╞Æ /admin/experience/new
+Γö£ ╞Æ /admin/inquiries
+Γö£ ╞Æ /admin/inquiries/[id]
+Γö£ ╞Æ /admin/login
+Γö£ ╞Æ /admin/media
+Γö£ ╞Æ /admin/notifications
+Γö£ ╞Æ /admin/profile
+Γö£ ╞Æ /admin/projects
+Γö£ ╞Æ /admin/projects/[id]/edit
+Γö£ ╞Æ /admin/projects/new
+Γö£ ╞Æ /admin/services
+Γö£ ╞Æ /admin/services/[id]/edit
+Γö£ ╞Æ /admin/services/new
+Γö£ ╞Æ /admin/settings
+Γö£ ╞Æ /admin/skills
+Γö£ ╞Æ /admin/skills/[id]/edit
+Γö£ ╞Æ /admin/skills/new
+Γö£ ╞Æ /admin/social-links
+Γö£ ╞Æ /admin/social-links/[id]/edit
+Γö£ ╞Æ /admin/social-links/new
+Γö£ ╞Æ /admin/technologies
+Γö£ ╞Æ /admin/technologies/[id]/edit
+Γö£ ╞Æ /admin/technologies/new
+Γö£ ╞Æ /admin/testimonials
+Γö£ ╞Æ /admin/testimonials/[id]
+Γö£ ╞Æ /api/auth/[...nextauth]
+Γö£ ╞Æ /api/health
+Γö£ ╞Æ /mock-storage/[...path]
+Γö£ Γùï /robots.txt
+Γöö ╞Æ /sitemap.xml
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+╞Æ  (Dynamic)  server-rendered on demand
+

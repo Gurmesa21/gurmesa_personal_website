@@ -44,7 +44,7 @@ describe('Notification System', () => {
   it('14. Submitting a new Testimonial creates a Notification row with the correct type and entityId', async () => {
     const input = {
       name: 'Jane Smith',
-      content: 'Great work!',
+      content: 'Great work on the full stack development project!',
       status: TestimonialStatus.DRAFT,
       permissionStatus: TestimonialPermissionStatus.PENDING
     };

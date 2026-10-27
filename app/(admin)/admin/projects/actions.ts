@@ -5,20 +5,8 @@ import { createProject, updateProject, deleteProject, upsertCaseStudy, setProjec
 import { ProjectStatus, ProjectConfidentiality, CaseStudyStatus } from '@prisma/client';
 import { redirect } from 'next/navigation';
 
-function validateLiveUrl(url: string | null | undefined): string | null {
-  if (!url) return null;
-  const trimmed = url.trim();
-  if (!trimmed) return null;
-  try {
-    const parsed = new URL(trimmed);
-    if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
-      throw new Error('Live URL must begin with http:// or https://');
-    }
-    return trimmed;
-  } catch {
-    throw new Error('Invalid URL format for Live Project URL');
-  }
-}
+import { validateLiveUrl } from '@/lib/validation/project';
+export { validateLiveUrl };
 
 export async function createProjectAction(formData: FormData) {
   const title = formData.get('title') as string;

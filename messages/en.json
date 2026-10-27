@@ -240,6 +240,7 @@
     "successMessage": "Your testimonial has been submitted and is pending review.",
     "submitAnother": "Submit Another",
     "formError": "Failed to submit testimonial. Please try again.",
+    "textTooShort": "Testimonial text must be at least 20 characters.",
     "textTooLong": "Testimonial text must not exceed 200 characters."
   }
 }

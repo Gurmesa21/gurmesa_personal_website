@@ -53,7 +53,7 @@ export function toPublicCaseStudy(project: ProjectWithRelations): PublicCaseStud
     content: project.caseStudy.content,
     publishedAt: project.caseStudy.publishedAt,
     updatedAt: project.caseStudy.updatedAt,
-    liveUrl: project.liveUrl ?? null,
+    liveUrl: project.confidentiality === 'PUBLIC' ? (project.liveUrl ?? null) : null,
     technologies: project.technologies.map(pt => ({
       id: pt.technology.id,
       name: pt.technology.name,

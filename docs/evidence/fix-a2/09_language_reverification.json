@@ -1,0 +1,97 @@
+{
+  "pages": {
+    "/": {
+      "am": [],
+      "om": []
+    },
+    "/about": {
+      "am": [],
+      "om": []
+    },
+    "/services": {
+      "am": [],
+      "om": []
+    },
+    "/work": {
+      "am": [],
+      "om": []
+    },
+    "/blog": {
+      "am": [],
+      "om": [
+        {
+          "key": "Blog.tags",
+          "value": "Tags:"
+        }
+      ]
+    },
+    "/contact": {
+      "am": [],
+      "om": []
+    },
+    "/testimonials": {
+      "am": [],
+      "om": [
+        {
+          "key": "Testimonials.namePlaceholder",
+          "value": "Jane Doe"
+        },
+        {
+          "key": "Testimonials.orgPlaceholder",
+          "value": "Acme Corp"
+        },
+        {
+          "key": "Testimonials.rolePlaceholder",
+          "value": "CTO"
+        }
+      ]
+    },
+    "/privacy": {
+      "am": [],
+      "om": [
+        {
+          "key": "Privacy.p5_2",
+          "value": "."
+        }
+      ]
+    },
+    "/terms": {
+      "am": [],
+      "om": [
+        {
+          "key": "Terms.p6_2",
+          "value": "."
+        }
+      ]
+    }
+  },
+  "overall": {
+    "am": [],
+    "om": [
+      {
+        "key": "Blog.tags",
+        "value": "Tags:"
+      },
+      {
+        "key": "Privacy.p5_2",
+        "value": "."
+      },
+      {
+        "key": "Terms.p6_2",
+        "value": "."
+      },
+      {
+        "key": "Testimonials.namePlaceholder",
+        "value": "Jane Doe"
+      },
+      {
+        "key": "Testimonials.orgPlaceholder",
+        "value": "Acme Corp"
+      },
+      {
+        "key": "Testimonials.rolePlaceholder",
+        "value": "CTO"
+      }
+    ]
+  }
+}

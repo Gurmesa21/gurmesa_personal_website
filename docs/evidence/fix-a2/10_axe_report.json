@@ -1,0 +1,118 @@
+{
+  "/": {
+    "totalViolations": 0,
+    "critical": 0,
+    "serious": 0,
+    "contrastFailures": 0,
+    "documentTitlePassed": true,
+    "violations": []
+  },
+  "/about": {
+    "totalViolations": 0,
+    "critical": 0,
+    "serious": 0,
+    "contrastFailures": 0,
+    "documentTitlePassed": true,
+    "violations": []
+  },
+  "/services": {
+    "totalViolations": 0,
+    "critical": 0,
+    "serious": 0,
+    "contrastFailures": 0,
+    "documentTitlePassed": true,
+    "violations": []
+  },
+  "/work": {
+    "totalViolations": 0,
+    "critical": 0,
+    "serious": 0,
+    "contrastFailures": 0,
+    "documentTitlePassed": true,
+    "violations": []
+  },
+  "/blog": {
+    "totalViolations": 0,
+    "critical": 0,
+    "serious": 0,
+    "contrastFailures": 0,
+    "documentTitlePassed": true,
+    "violations": []
+  },
+  "/contact": {
+    "totalViolations": 0,
+    "critical": 0,
+    "serious": 0,
+    "contrastFailures": 0,
+    "documentTitlePassed": true,
+    "violations": []
+  },
+  "/privacy": {
+    "totalViolations": 0,
+    "critical": 0,
+    "serious": 0,
+    "contrastFailures": 0,
+    "documentTitlePassed": true,
+    "violations": []
+  },
+  "/terms": {
+    "totalViolations": 0,
+    "critical": 0,
+    "serious": 0,
+    "contrastFailures": 0,
+    "documentTitlePassed": true,
+    "violations": []
+  },
+  "/admin/login": {
+    "totalViolations": 0,
+    "critical": 0,
+    "serious": 0,
+    "contrastFailures": 0,
+    "documentTitlePassed": true,
+    "violations": []
+  },
+  "/admin": {
+    "totalViolations": 0,
+    "critical": 0,
+    "serious": 0,
+    "contrastFailures": 0,
+    "documentTitlePassed": true,
+    "violations": []
+  },
+  "/admin/services": {
+    "totalViolations": 1,
+    "critical": 0,
+    "serious": 1,
+    "contrastFailures": 1,
+    "documentTitlePassed": true,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds"
+      }
+    ]
+  },
+  "/admin/profile": {
+    "totalViolations": 2,
+    "critical": 1,
+    "serious": 1,
+    "contrastFailures": 1,
+    "documentTitlePassed": true,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds"
+      },
+      {
+        "id": "label",
+        "impact": "critical",
+        "description": "Ensure every form element has a label",
+        "help": "Form elements must have labels"
+      }
+    ]
+  }
+}

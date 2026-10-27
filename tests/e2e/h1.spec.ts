@@ -5,9 +5,16 @@ test.describe('Exactly One H1 Test', () => {
     '/',
     '/about',
     '/services',
+    '/services/web-development',
     '/work',
+    '/work/os-dashboard',
     '/blog',
+    '/blog/first-post',
     '/contact',
+    '/testimonials',
+    '/privacy',
+    '/terms',
+    '/non-existent-404-page',
   ];
   
   const locales = ['en', 'am', 'om'];
@@ -15,8 +22,6 @@ test.describe('Exactly One H1 Test', () => {
   for (const locale of locales) {
     for (const path of publicPaths) {
       test(`[${locale}] ${path} has exactly one h1`, async ({ page }) => {
-        // Set locale cookie if needed or visit /[locale]/path
-        // For Next-Intl we can set NEXT_LOCALE cookie or visit directly
         await page.goto(`/${locale}${path}`);
         
         // Count h1 tags

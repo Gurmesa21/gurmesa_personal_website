@@ -1,0 +1,792 @@
+﻿node.exe : Γùç injected env (12) from .env.test
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γùç injected env (12) from .env.test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γùç injected env (0) from .env.test
+[globalSetup] Resetting and seeding test database: gurmesa_test_db...
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "gurmesa_test_db", schema "public" at "127.0.0.1:5433"
+
+9 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+Seed completed.
+[globalSetup] Test database gurmesa_test_db reset and seeded successfully.
+
+Running 108 tests using 1 worker
+
+Γùç injected env (0) from .env.test
+
+[1/108] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:5:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on / (homepage with AUTHORIZED+PUBLISHED testimonial)
+[2/108] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:14:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /contact
+[3/108] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:23:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /privacy
+[4/108] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:32:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /about
+[5/108] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:41:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /blog
+[6/108] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:50:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /services
+[7/108] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:59:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /work
+[8/108] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:68:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /terms
+[9/108] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:77:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ skip-to-content link works correctly
+[10/108] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:94:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ mobile menu opens, traps focus, and closes with escape
+[11/108] [chromium] ΓÇ║ tests\e2e\admin-comments.spec.ts:14:3 ΓÇ║ Admin Comments Moderation Queue ΓÇ║ navigates to /admin/comments and verifies queue filters and UI
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+  1) [chromium] ΓÇ║ tests\e2e\admin-comments.spec.ts:14:3 ΓÇ║ Admin Comments Moderation Queue ΓÇ║ navigates to /admin/comments and verifies queue filters and UI 
+
+    Error: expect(page).not.toHaveURL(expected) failed
+
+    Expected pattern: not /\/admin\/login/
+    Received string: "http://localhost:3006/admin/login"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "not toHaveURL" with timeout 5000ms
+        13 ├ù locator resolved to <html lang="en" class="dark">ΓÇª</html>
+           - unexpected value "http://localhost:3006/admin/login"
+
+
+       8 |     await page.fill('input[name="password"]', 'admin123');
+       9 |     await page.click('button[type="submit"]');
+    > 10 |     await expect(page).not.toHaveURL(/\/admin\/login/);
+         |                            ^
+      11 |     await expect(page).toHaveURL(/.*\/admin$/);
+      12 |   });
+      13 |
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\admin-comments.spec.ts:10:28
+
+    Error Context: test-results\admin-comments-Admin-Comme-53425-rifies-queue-filters-and-UI-chromium\error-context.md
+
+
+Γùç injected env (0) from .env.test
+
+[12/108] [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:14:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Services: Edit and persist
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[13/108] [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:51:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Projects: Edit and persist
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] Error: Failed to find Server Action "6007d36b7ca56d886440f094210dc9cc836e292aa0". This request might be 
+from an older or newer deployment.
+[WebServer] Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__0nhhui-._.js:10:66267)
+[WebServer]     at Object.get 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__0nhhui-._.js:12:2951)
+
+  2) [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:51:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Projects: Edit and persist 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected: "http://localhost:3006/admin/projects"
+    Received: "http://localhost:3006/admin/projects/cmvr8ixns000vd8mb55tjn5g3/edit"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        2 ├ù locator resolved to <html lang="en" class="dark">ΓÇª</html>
+          - unexpected value "http://localhost:3006/admin/projects/cmvr8ixns000vd8mb55tjn5g3/edit"
+        11 ├ù locator resolved to <html lang="en">ΓÇª</html>
+           - unexpected value "http://localhost:3006/admin/projects/cmvr8ixns000vd8mb55tjn5g3/edit"
+
+
+      67 |     await page.click('button[type="submit"]');
+      68 |     
+    > 69 |     await expect(page).toHaveURL('/admin/projects');
+         |                        ^
+      70 |     
+      71 |     const updatedRow = page.getByTestId('admin-row').first();
+      72 |     const displayedTitle = await updatedRow.locator('.text-xl').first().textContent();
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\admin-crud.spec.ts:69:24
+
+    Error Context: test-results\admin-crud-Admin-CRUD-Edit-65969-t-Projects-Edit-and-persist-chromium\error-context.md
+
+
+
+Γùç injected env (0) from .env.test
+[14/108] [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:81:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Blog: Edit and persist
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[15/108] [chromium] ΓÇ║ tests\e2e\axe-dark-scan.spec.ts:25:3 ΓÇ║ Task 10 - Axe Accessibility Scan (8 Public + 4 Admin Pages) ΓÇ║ run axe in dark theme and report violation counts and contrast failures
+[WebServer] Γ¿» Error: The destination stream closed early.
+
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[16/108] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:28:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post is absent from public index HTML
+[17/108] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:34:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post returns 404 on direct lookup
+[18/108] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:39:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post is absent from sitemap
+[19/108] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:45:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Unauthenticated request to the preview URL is redirected/rejected and contains no draft content
+[20/108] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:58:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: /blog index renders seeded published posts
+[21/108] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:65:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: article detail page loads from the index
+[22/108] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:80:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: search (?q=) filters results; a DRAFT post's title never appears in results
+[23/108] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:97:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: category and tag filters work
+[24/108] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:103:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Axe scan (zero critical/serious) on /blog and /blog/[slug]
+[25/108] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:117:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ XSS: a post whose body contains <script> and <img src=x onerror=...> payloads renders them inert on /blog/[slug]
+[26/108] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:137:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ XSS: CaseStudy content on /work/[slug] renders inert
+[27/108] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:13:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ i. Publish a testimonial -> appears on /
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[28/108] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:36:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ ii. Mark a featured project DRAFT -> absent from / and /work
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[29/108] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:57:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iii. Unpublish a service -> absent from /services and /
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[30/108] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:74:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iv. Unpublish a blog post -> absent from / and /blog
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+  3) [chromium] ΓÇ║ tests\e2e\caching.spec.ts:74:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iv. Unpublish a blog post -> absent from / and /blog 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('text=Save Post')
+
+
+      77 |     await page.locator(`tr[data-testid="admin-row"]:has(td:text-is("${postTitle}"))`).first().locator('a[data-testid="edit-link"]').click();
+      78 |     await page.selectOption('select[name="status"]', 'DRAFT');
+    > 79 |     await page.locator('text=Save Post').click();
+         |                                          ^
+      80 |     await expect(page).toHaveURL(/.*\/admin\/blog$/, { timeout: 15000 });
+      81 |
+      82 |     await page.goto('/');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\caching.spec.ts:79:42
+
+    Error Context: test-results\caching-Caching-and-Revali-5e4e7-post---absent-from-and-blog-chromium\error-context.md
+
+
+Γùç injected env (0) from .env.test
+
+[31/108] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:97:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+
+[WebServer] Error: Failed to find Server Action "6007d36b7ca56d886440f094210dc9cc836e292aa0". This request might be 
+from an older or newer deployment.
+[WebServer] Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__0nhhui-._.js:10:66267)
+[WebServer]     at Object.get 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__0nhhui-._.js:12:2951)
+  4) [chromium] ΓÇ║ tests\e2e\caching.spec.ts:97:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /.*\/admin\/projects$/
+    Received string:  "http://localhost:3006/admin/projects/cmvr8ixmb000rd8mb5gttglex/edit"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 15000ms
+        2 ├ù locator resolved to <html lang="en" class="dark">ΓÇª</html>
+          - unexpected value "http://localhost:3006/admin/projects/cmvr8ixmb000rd8mb5gttglex/edit"
+        31 ├ù locator resolved to <html lang="en">ΓÇª</html>
+           - unexpected value "http://localhost:3006/admin/projects/cmvr8ixmb000rd8mb5gttglex/edit"
+
+
+      101 |     await page.selectOption('select[name="confidentiality"]', 'PRIVATE');
+      102 |     await page.locator('text=Save Project').click();
+    > 103 |     await expect(page).toHaveURL(/.*\/admin\/projects$/, { timeout: 15000 });
+          |                        ^
+      104 |
+      105 |     await page.goto('/');
+      106 |     await expect(page.locator(`text=${projectTitle}`).first()).not.toBeVisible();
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\caching.spec.ts:103:24
+
+    Error Context: test-results\caching-Caching-and-Revali-810af-t-from-work-and-sitemap-xml-chromium\error-context.md
+
+
+Γùç injected env (0) from .env.test
+
+[32/108] [chromium] ΓÇ║ tests\e2e\contact.spec.ts:12:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ contact form: happy path submits and shows confirmation, using keyboard only
+[33/108] [chromium] ΓÇ║ tests\e2e\contact.spec.ts:32:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ contact form: invalid submit focuses the error summary and associates errors with fields
+[34/108] [chromium] ΓÇ║ tests\e2e\contact.spec.ts:46:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ inquiry-leak scan: assert the marker is absent from the HTML of public surfaces and sitemap
+[35/108] [chromium] ΓÇ║ tests\e2e\contact.spec.ts:65:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ unauthenticated visit to /admin/inquiries and /admin/testimonials redirects to login
+[36/108] [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:5:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ HIDDEN social link absent from getPublicSocialLinks output AND from the rendered /about page HTML
+[37/108] [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:26:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ editing the Profile tagline via the admin UI shows the new tagline on / on the next request
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[38/108] [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:48:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ production error page shows no stack trace in the rendered HTML
+[WebServer] Γ¿» Error: simulated secret internal server error postgres://secret@db
+
+[WebServer]     at K (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_0l7ooyk._.js:1:1985) {
+[WebServer]   digest: '3336167416'
+[WebServer] }
+[39/108] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:5:3 ΓÇ║ Day 10b E2E ΓÇ║ robots.ts disallows /admin and /api and references the sitemap
+[40/108] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:13:3 ΓÇ║ Day 10b E2E ΓÇ║ sitemap includes the static pages and public entities, excludes the known private project, DRAFT case study, and DRAFT post
+[41/108] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:21:3 ΓÇ║ Day 10b E2E ΓÇ║ /admin pages, /admin/login, and the blog preview page each return noindex
+[42/108] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:31:3 ΓÇ║ Day 10b E2E ΓÇ║ canonical URL and OG title present in generateMetadata output for: home, one service detail, one case study, one blog post
+[43/108] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:43:3 ΓÇ║ Day 10b E2E ΓÇ║ JSON-LD on at least one page parses as valid JSON, and a fixture with </script> in its title does not break out of the script element
+[44/108] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:60:3 ΓÇ║ Day 10b E2E ΓÇ║ login with an external callbackUrl does not redirect off-site
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[45/108] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:71:3 ΓÇ║ Day 10b E2E ΓÇ║ SEO override persists in admin UI and is rendered by generateMetadata
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[46/108] [chromium] ΓÇ║ tests\e2e\day5.spec.ts:4:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ homepage renders hero, services preview, about snapshot with real seeded data
+[47/108] [chromium] ΓÇ║ tests\e2e\day5.spec.ts:20:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ services index -> click service -> detail page loads correctly
+[48/108] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:11:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(c): /work page does NOT render the private project
+[49/108] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:18:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(d): /work/[slug] returns 404 for a private project
+[50/108] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:23:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL
+[51/108] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:30:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(c): /work page does NOT render unpublished case studies
+[52/108] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:36:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study
+[53/108] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:41:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs
+[54/108] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:48:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ Public /work page renders seeded public case studies
+[55/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] / has exactly one h1
+[56/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /about has exactly one h1
+[57/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /services has exactly one h1
+[58/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /services/web-development has exactly one h1
+[59/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /work has exactly one h1
+[60/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /work/os-dashboard has exactly one h1
+[61/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /blog has exactly one h1
+[62/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /blog/first-post has exactly one h1
+[63/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /contact has exactly one h1
+[64/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /testimonials has exactly one h1
+[65/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /privacy has exactly one h1
+[66/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /terms has exactly one h1
+[67/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [en] /non-existent-404-page has exactly one h1
+[68/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] / has exactly one h1
+[69/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /about has exactly one h1
+[70/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /services has exactly one h1
+[71/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /services/web-development has exactly one h1
+[72/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /work has exactly one h1
+[73/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /work/os-dashboard has exactly one h1
+[74/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /blog has exactly one h1
+[75/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /blog/first-post has exactly one h1
+[76/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /contact has exactly one h1
+[77/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /testimonials has exactly one h1
+[78/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /privacy has exactly one h1
+[79/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /terms has exactly one h1
+[80/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [am] /non-existent-404-page has exactly one h1
+[81/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] / has exactly one h1
+[82/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /about has exactly one h1
+[83/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /services has exactly one h1
+[84/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /services/web-development has exactly one h1
+[85/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /work has exactly one h1
+[86/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /work/os-dashboard has exactly one h1
+[87/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /blog has exactly one h1
+[88/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /blog/first-post has exactly one h1
+[89/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /contact has exactly one h1
+[90/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /testimonials has exactly one h1
+[91/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /privacy has exactly one h1
+[92/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /terms has exactly one h1
+[93/108] [chromium] ΓÇ║ tests\e2e\h1.spec.ts:24:7 ΓÇ║ Exactly One H1 Test ΓÇ║ [om] /non-existent-404-page has exactly one h1
+[94/108] [chromium] ΓÇ║ tests\e2e\media-picker.spec.ts:17:3 ΓÇ║ MediaPicker Component E2E ΓÇ║ pick-existing and upload-then-pick flows in MediaPicker modal
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[95/108] [chromium] ΓÇ║ tests\e2e\part3-media-upload.spec.ts:19:3 ΓÇ║ Part 3 - Media Upload Widget ΓÇ║ Upload avatar in Profile edit and verify on public page
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+  5) [chromium] ΓÇ║ tests\e2e\part3-media-upload.spec.ts:19:3 ΓÇ║ Part 3 - Media Upload Widget ΓÇ║ Upload avatar in Profile edit and verify on public page 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('text=Uploading...')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('text=Uploading...') with timeout 5000ms
+      - waiting for locator('text=Uploading...')
+
+
+      36 |     await fileInput.setInputFiles(uniquePath);
+      37 |
+    > 38 |     await expect(page.locator('text=Uploading...')).toBeVisible();
+         |                                                     ^
+      39 |     await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
+      40 |
+      41 |     const firstMediaCard = page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`);
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\part3-media-upload.spec.ts:38:53
+
+    Error Context: test-results\part3-media-upload-Part-3--43a7b-t-and-verify-on-public-page-chromium\error-context.md
+
+    Error Context: test-results\part3-media-upload-Part-3--43a7b-t-and-verify-on-public-page-chromium\error-context.md
+
+
+
+Γùç injected env (0) from .env.test
+[96/108] [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:30:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Profile Avatar Render
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+  6) [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:30:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Profile Avatar Render 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('text=Uploading...')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('text=Uploading...') with timeout 5000ms
+      - waiting for locator('text=Uploading...')
+
+
+      36 |
+      37 |     await page.locator('input[type="file"]').setInputFiles(uniquePath);
+    > 38 |     await expect(page.locator('text=Uploading...')).toBeVisible();
+         |                                                     ^
+      39 |     await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
+      40 |     await page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`).dispatchEvent('click');
+      41 |     await expect(page.locator('text=1 asset selected')).toBeVisible();
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partF-media-rendering.spec.ts:38:53
+
+    Error Context: test-results\partF-media-rendering-Part-be317-ering-Profile-Avatar-Render-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-be317-ering-Profile-Avatar-Render-chromium\error-context.md
+
+
+Γùç injected env (0) from .env.test
+
+[97/108] [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:71:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Service Featured Image Render
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  7) [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:71:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Service Featured Image Render 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.dispatchEvent: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.cursor-pointer:has(img[alt="test-service-1793139021712.png"])')
+
+
+      79 |     await page.locator('input[type="file"]').setInputFiles(uniquePath);
+      80 |     await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
+    > 81 |     await page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`).dispatchEvent('click');
+         |                                                                         ^
+      82 |     await expect(page.locator('text=1 asset selected')).toBeVisible();
+      83 |     await page.click('button[type="submit"]');
+      84 |     await page.waitForLoadState('networkidle');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partF-media-rendering.spec.ts:81:73
+
+    Error Context: test-results\partF-media-rendering-Part-01b6b-rvice-Featured-Image-Render-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-01b6b-rvice-Featured-Image-Render-chromium\error-context.md
+
+
+Γùç injected env (0) from .env.test
+
+[98/108] [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:117:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Project Featured Image Render
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  8) [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:117:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Project Featured Image Render 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.dispatchEvent: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.cursor-pointer:has(img[alt="test-project-1793139053814.png"])')
+
+
+      125 |     await page.locator('input[type="file"]').setInputFiles(uniquePath);
+      126 |     await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
+    > 127 |     await page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`).dispatchEvent('click');
+          |                                                                         ^
+      128 |     await expect(page.locator('text=1 asset selected')).toBeVisible();
+      129 |     await page.click('button[type="submit"]');
+      130 |     await page.waitForURL('/admin/projects');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partF-media-rendering.spec.ts:127:73
+
+    Error Context: test-results\partF-media-rendering-Part-f4f46-oject-Featured-Image-Render-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-f4f46-oject-Featured-Image-Render-chromium\error-context.md
+
+
+Γùç injected env (0) from .env.test
+
+[99/108] [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:163:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Blog Featured Image Render
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+  9) [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:163:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Blog Featured Image Render 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.dispatchEvent: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.cursor-pointer:has(img[alt="test-blog-1793139085862.png"])')
+
+
+      171 |     await page.locator('input[type="file"]').setInputFiles(uniquePathBlog);
+      172 |     await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
+    > 173 |     await page.locator(`.cursor-pointer:has(img[alt="${uniqueNameBlog}"])`).dispatchEvent('click');
+          |                                                                             ^
+      174 |     await expect(page.locator('text=1 asset selected')).toBeVisible();
+      175 |     await page.click('button[type="submit"]');
+      176 |     await page.waitForLoadState('networkidle');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partF-media-rendering.spec.ts:173:77
+
+    Error Context: test-results\partF-media-rendering-Part-e77bf--Blog-Featured-Image-Render-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-e77bf--Blog-Featured-Image-Render-chromium\error-context.md
+
+
+Γùç injected env (0) from .env.test
+
+[100/108] [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:209:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Video Upload and Render Test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+  10) [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:209:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Video Upload and Render Test 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-testid="media-card"][data-alt="test-video-f-1793139117879.mp4"]')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-testid="media-card"][data-alt="test-video-f-1793139117879.mp4"]') with timeout 5000ms
+      - waiting for locator('[data-testid="media-card"][data-alt="test-video-f-1793139117879.mp4"]')
+
+
+      220 |       // Verify it uploaded successfully (does not error) and select specific asset by unique alt/name
+      221 |       const videoCard = page.locator(`[data-testid="media-card"][data-alt="${uniqueName}"]`);
+    > 222 |       await expect(videoCard).toBeVisible();
+          |                               ^
+      223 |
+      224 |       // Clean up uploaded asset
+      225 |       page.on('dialog', dialog => dialog.accept());
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partF-media-rendering.spec.ts:222:31
+
+    Error Context: test-results\partF-media-rendering-Part-a72bf-ideo-Upload-and-Render-Test-chromium\error-context.md
+
+    Error Context: test-results\partF-media-rendering-Part-a72bf-ideo-Upload-and-Render-Test-chromium\error-context.md
+
+
+Γùç injected env (0) from .env.test
+
+[101/108] [chromium] ΓÇ║ tests\e2e\partG-testimonials.spec.ts:4:3 ΓÇ║ Testimonials Moderation & Rate Limits ΓÇ║ unauthorized testimonials are not public
+  11) [chromium] ΓÇ║ tests\e2e\partG-testimonials.spec.ts:4:3 ΓÇ║ Testimonials Moderation & Rate Limits ΓÇ║ unauthorized testimonials are not public 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('text=Thank You!')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('text=Thank You!') with timeout 5000ms
+      - waiting for locator('text=Thank You!')
+
+
+       9 |     await page.click('button[type="submit"]');
+      10 |
+    > 11 |     await expect(page.locator('text=Thank You!')).toBeVisible();
+         |                                                   ^
+      12 |
+      13 |     // 2. Refresh the page, it should not be listed
+      14 |     await page.goto('/en/testimonials');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partG-testimonials.spec.ts:11:51
+
+    Error Context: test-results\partG-testimonials-Testimo-4e30a-testimonials-are-not-public-chromium\error-context.md
+
+
+Γùç injected env (0) from .env.test
+
+[102/108] [chromium] ΓÇ║ tests\e2e\partG-testimonials.spec.ts:18:3 ΓÇ║ Testimonials Moderation & Rate Limits ΓÇ║ honeypot traps spam bots
+  12) [chromium] ΓÇ║ tests\e2e\partG-testimonials.spec.ts:18:3 ΓÇ║ Testimonials Moderation & Rate Limits ΓÇ║ honeypot traps spam bots 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('text=Thank You!')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('text=Thank You!') with timeout 5000ms
+      - waiting for locator('text=Thank You!')
+
+
+      30 |
+      31 |     // Should pretend to succeed but not actually save
+    > 32 |     await expect(page.locator('text=Thank You!')).toBeVisible();
+         |                                                   ^
+      33 |   });
+      34 |
+      35 |
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partG-testimonials.spec.ts:32:51
+
+    Error Context: test-results\partG-testimonials-Testimo-c9e20-ts-honeypot-traps-spam-bots-chromium\error-context.md
+
+
+
+Γùç injected env (0) from .env.test
+[103/108] [chromium] ΓÇ║ tests\e2e\partG-upload-and-video.spec.ts:33:3 ΓÇ║ Part G - Media Upload Limits and Video Rendering ΓÇ║ Upload file size limits (6MB succeeds, 26MB rejected)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+  13) [chromium] ΓÇ║ tests\e2e\partG-upload-and-video.spec.ts:33:3 ΓÇ║ Part G - Media Upload Limits and Video Rendering ΓÇ║ Upload file size limits (6MB succeeds, 26MB rejected) 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('text=Uploading...')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('text=Uploading...') with timeout 5000ms
+      - waiting for locator('text=Uploading...')
+
+
+      46 |     try {
+      47 |       await page.locator('input[type="file"]').setInputFiles(uniquePath);
+    > 48 |       await expect(page.locator('text=Uploading...')).toBeVisible();
+         |                                                       ^
+      49 |       await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 15000 });
+      50 |       
+      51 |       // Verify it uploaded successfully (does not error)
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partG-upload-and-video.spec.ts:48:55
+
+    Error Context: test-results\partG-upload-and-video-Par-dd4d3-6MB-succeeds-26MB-rejected--chromium\error-context.md
+
+    Error Context: test-results\partG-upload-and-video-Par-dd4d3-6MB-succeeds-26MB-rejected--chromium\error-context.md
+
+
+Γùç injected env (0) from .env.test
+
+[104/108] [chromium] ΓÇ║ tests\e2e\partG-upload-and-video.spec.ts:65:3 ΓÇ║ Part G - Media Upload Limits and Video Rendering ΓÇ║ Video rendering on public pages
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  14) [chromium] ΓÇ║ tests\e2e\partG-upload-and-video.spec.ts:65:3 ΓÇ║ Part G - Media Upload Limits and Video Rendering ΓÇ║ Video rendering on public pages 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.dispatchEvent: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('[data-testid="media-card"][data-alt="test-large-video-g2-1793139156181.mp4"]')
+
+
+      77 |       
+      78 |       const uploadedCard = page.locator(`[data-testid="media-card"][data-alt="${uniqueName}"]`);
+    > 79 |       await uploadedCard.dispatchEvent('click');
+         |                          ^
+      80 |       await expect(page.locator('text=1 asset selected')).toBeVisible();
+      81 |       
+      82 |       // Submit profile form
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partG-upload-and-video.spec.ts:79:26
+
+    Error Context: test-results\partG-upload-and-video-Par-dfee0-o-rendering-on-public-pages-chromium\error-context.md
+
+    Error Context: test-results\partG-upload-and-video-Par-dfee0-o-rendering-on-public-pages-chromium\error-context.md
+
+
+Γùç injected env (0) from .env.test
+
+[105/108] [chromium] ΓÇ║ tests\e2e\partH-notifications.spec.ts:4:3 ΓÇ║ Part H: Admin Notifications ΓÇ║ 16. Unauthenticated access to the notifications list/API is rejected
+[106/108] [chromium] ΓÇ║ tests\e2e\partH-notifications.spec.ts:10:3 ΓÇ║ Part H: Admin Notifications ΓÇ║ 17. Submit a real inquiry as visitor, log in as admin, confirm bell icon shows incremented count and new notification appears
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[107/108] [chromium] ΓÇ║ tests\e2e\partI-blog-social.spec.ts:4:3 ΓÇ║ Blog Social Interactions ΓÇ║ like toggle and comment submission
+  15) [chromium] ΓÇ║ tests\e2e\partI-blog-social.spec.ts:4:3 ΓÇ║ Blog Social Interactions ΓÇ║ like toggle and comment submission 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByLabel(/Your Name/i)
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByLabel(/Your Name/i) with timeout 5000ms
+      - waiting for getByLabel(/Your Name/i)
+
+
+      35 |     // Add a comment
+      36 |     const nameInput = page.getByLabel(/Your Name/i);
+    > 37 |     await expect(nameInput).toBeVisible();
+         |                             ^
+      38 |     await nameInput.fill('Test User');
+      39 |
+      40 |     const emailInput = page.getByLabel(/Your Email/i);
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\partI-blog-social.spec.ts:37:29
+
+    Error Context: test-results\partI-blog-social-Blog-Soc-d72af-ggle-and-comment-submission-chromium\error-context.md
+
+
+Γùç injected env (0) from .env.test
+
+[108/108] [chromium] ΓÇ║ tests\e2e\resume.spec.ts:6:3 ΓÇ║ Resume End-to-End ΓÇ║ upload a PDF as admin, set it as current resume, request from /about unauthenticated
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  16) [chromium] ΓÇ║ tests\e2e\resume.spec.ts:6:3 ΓÇ║ Resume End-to-End ΓÇ║ upload a PDF as admin, set it as current resume, request from /about unauthenticated 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.space-y-4').filter({ hasText: 'application/pdf' }).first().locator('text=Current Resume')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.space-y-4').filter({ hasText: 'application/pdf' }).first().locator('text=Current Resume') with timeout 5000ms
+      - waiting for locator('.space-y-4').filter({ hasText: 'application/pdf' }).first().locator('text=Current Resume')
+
+
+      76 |
+      77 |     // Ensure it shows "Current Resume"
+    > 78 |     await expect(pdfCard.locator('text=Current Resume')).toBeVisible();
+         |                                                          ^
+      79 |
+      80 |     // 4. Log out to become unauthenticated visitor
+      81 |     await page.goto('/api/auth/signout');
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\resume.spec.ts:78:58
+
+    Error Context: test-results\resume-Resume-End-to-End-u-016e4--from-about-unauthenticated-chromium\error-context.md
+
+
+  16 failed
+    [chromium] ΓÇ║ tests\e2e\admin-comments.spec.ts:14:3 ΓÇ║ Admin Comments Moderation Queue ΓÇ║ navigates to /admin/comments and verifies queue filters and UI 
+    [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:51:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Projects: Edit and persist 
+    [chromium] ΓÇ║ tests\e2e\caching.spec.ts:74:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iv. Unpublish a blog post -> absent from / and /blog 
+    [chromium] ΓÇ║ tests\e2e\caching.spec.ts:97:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml 
+    [chromium] ΓÇ║ tests\e2e\part3-media-upload.spec.ts:19:3 ΓÇ║ Part 3 - Media Upload Widget ΓÇ║ Upload avatar in Profile edit and verify on public page 
+    [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:30:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Profile Avatar Render 
+    [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:71:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Service Featured Image Render 
+    [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:117:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Project Featured Image Render 
+    [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:163:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Blog Featured Image Render 
+    [chromium] ΓÇ║ tests\e2e\partF-media-rendering.spec.ts:209:3 ΓÇ║ Part F - Public Media Rendering ΓÇ║ Video Upload and Render Test 
+    [chromium] ΓÇ║ tests\e2e\partG-testimonials.spec.ts:4:3 ΓÇ║ Testimonials Moderation & Rate Limits ΓÇ║ unauthorized testimonials are not public 
+    [chromium] ΓÇ║ tests\e2e\partG-testimonials.spec.ts:18:3 ΓÇ║ Testimonials Moderation & Rate Limits ΓÇ║ honeypot traps spam bots 
+    [chromium] ΓÇ║ tests\e2e\partG-upload-and-video.spec.ts:33:3 ΓÇ║ Part G - Media Upload Limits and Video Rendering ΓÇ║ Upload file size limits (6MB succeeds, 26MB rejected) 
+    [chromium] ΓÇ║ tests\e2e\partG-upload-and-video.spec.ts:65:3 ΓÇ║ Part G - Media Upload Limits and Video Rendering ΓÇ║ Video rendering on public pages 
+    [chromium] ΓÇ║ tests\e2e\partI-blog-social.spec.ts:4:3 ΓÇ║ Blog Social Interactions ΓÇ║ like toggle and comment submission 
+    [chromium] ΓÇ║ tests\e2e\resume.spec.ts:6:3 ΓÇ║ Resume End-to-End ΓÇ║ upload a PDF as admin, set it as current resume, request from /about unauthenticated 
+  92 passed (7.5m)

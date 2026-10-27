@@ -1,5 +1,6 @@
 'use server';
 
+import { revalidatePublicContent } from '@/lib/revalidate';
 import { revalidatePath } from 'next/cache';
 import { createService, updateService, deleteService } from '../../../../server/services/serviceService';
 import { ServiceStatus } from '@prisma/client';
@@ -29,10 +30,7 @@ export async function createServiceAction(formData: FormData) {
   });
 
   revalidatePath('/admin/services');
-  revalidatePath('/services');
-  revalidatePath('/');
-  revalidatePath('/', 'layout');
-  revalidatePath('/[locale]/services', 'page');
+  revalidatePublicContent({ paths: ['/services', `/services/${slug}`] });
 }
 
 export async function updateServiceAction(id: string, formData: FormData) {
@@ -59,40 +57,24 @@ export async function updateServiceAction(id: string, formData: FormData) {
   });
 
   revalidatePath('/admin/services');
-  revalidatePath('/services');
-  revalidatePath(`/services/${slug}`);
-  revalidatePath('/');
-  revalidatePath('/', 'layout');
-  revalidatePath('/[locale]/services', 'page');
-  revalidatePath('/[locale]/services/[slug]', 'page');
+  revalidatePublicContent({ paths: ['/services', `/services/${slug}`] });
 }
 
 export async function deleteServiceAction(id: string) {
   await deleteService(id);
   revalidatePath('/admin/services');
-  revalidatePath('/services');
-  revalidatePath('/');
-  revalidatePath('/', 'layout');
-  revalidatePath('/[locale]/services', 'page');
-  revalidatePath('/[locale]/services/[slug]', 'page');
+  revalidatePublicContent({ paths: ['/services'] });
 }
 
 export async function togglePublishAction(id: string, currentStatus: ServiceStatus) {
   const newStatus: ServiceStatus = currentStatus === 'PUBLISHED' ? 'DRAFT' : 'PUBLISHED';
   await updateService(id, { status: newStatus });
   revalidatePath('/admin/services');
-  revalidatePath('/services');
-  revalidatePath('/');
-  revalidatePath('/', 'layout');
-  revalidatePath('/[locale]/services', 'page');
-  revalidatePath('/[locale]/services/[slug]', 'page');
+  revalidatePublicContent({ paths: ['/services'] });
 }
 
 export async function moveServiceAction(id: string, newOrder: number) {
   await updateService(id, { order: newOrder });
   revalidatePath('/admin/services');
-  revalidatePath('/services');
-  revalidatePath('/');
-  revalidatePath('/', 'layout');
-  revalidatePath('/[locale]/services', 'page');
+  revalidatePublicContent({ paths: ['/services'] });
 }

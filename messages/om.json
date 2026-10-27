@@ -240,6 +240,7 @@
     "successMessage": "Ragaan keessan galeera, gamaggamaaf eegaa jira.",
     "submitAnother": "Kan biraa galchi",
     "formError": "Ragaa galchuun hin milkoofne. Maaloo irra deebi'aa yaalaa.",
+    "textTooShort": "Barreeffamni ragaa yoo xiqqaate arfiilee 20 ta'uu qaba.",
     "textTooLong": "Barreeffamni ragaa arfiilee 200 caaluu hin qabu."
   }
 }

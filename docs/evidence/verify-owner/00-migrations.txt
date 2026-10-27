@@ -1,0 +1,20 @@
+﻿
+
+    Directory: C:\Users\Hp\Document
+    s\Projects\Gurmesa_website\pris
+    ma\migrations
+
+
+Mode                 LastWriteTime
+----                 -------------
+dar---         9/26/2026   2:59 PM
+d-----         9/28/2026  11:38 AM
+d-----         10/8/2026   8:54 AM
+d-----         10/9/2026   9:09 AM
+d-----         10/9/2026   1:46 PM
+d-----         10/9/2026   1:49 PM
+d-----        10/12/2026   4:37 PM
+d-----        10/12/2026   4:54 PM
+-a----        10/12/2026   4:54 PM
+
+

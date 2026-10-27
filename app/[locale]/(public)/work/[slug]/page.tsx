@@ -131,9 +131,9 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             )}
           </div>
 
-          <h2 className="text-3xl sm:text-2xl lg:text-3xl font-heading font-bold tracking-tight text-[#F5F6FC] leading-tight">
+          <h1 className="text-3xl sm:text-2xl lg:text-3xl font-heading font-bold tracking-tight text-[#F5F6FC] leading-tight">
             {project.title}
-          </h2>
+          </h1>
 
           <p className="text-base sm:text-lg text-[#A5ABC1] max-w-4xl leading-relaxed">
             {project.summary}

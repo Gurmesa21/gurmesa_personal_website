@@ -36,6 +36,7 @@ export function ProjectForm({ action, defaultValues = {} }: { action: (formData:
           id="liveUrl"
           name="liveUrl"
           type="url"
+          maxLength={2048}
           placeholder="https://example.com"
           defaultValue={defaultValues.liveUrl || ''}
         />

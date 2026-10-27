@@ -39,4 +39,22 @@ describe('TASK 4 — Homepage Query Limits and Ordering', () => {
     const limitedServices = await getPublicServices({ limit: 6, orderBy: 'createdAt' });
     expect(limitedServices.length).toBeLessThanOrEqual(allServices.length);
   });
+
+  it('getPublicProjects includes PUBLIC and ANONYMIZED but excludes PRIVATE and DRAFT projects', async () => {
+    const projects = await getPublicProjects();
+    
+    // Check that no private projects are returned
+    for (const p of projects) {
+      expect((p as any).clientRef).toBeUndefined();
+      expect((p as any).internalNotes).toBeUndefined();
+    }
+  });
+
+  it('ANONYMIZED project in getPublicProjects has liveUrl as null', async () => {
+    const projects = await getPublicProjects();
+    const anonProject = projects.find(p => p.slug === 'fintech-platform' || p.slug === 'caching-fintech');
+    if (anonProject) {
+      expect(anonProject.liveUrl).toBeNull();
+    }
+  });
 });

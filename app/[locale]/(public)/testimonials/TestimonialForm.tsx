@@ -16,7 +16,13 @@ export function TestimonialForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (text.length > 200) {
+    const trimmed = text.trim();
+    if (trimmed.length < 20) {
+      setStatus('error');
+      setErrorMessage(t('textTooShort') || 'Testimonial text must be at least 20 characters.');
+      return;
+    }
+    if (trimmed.length > 200) {
       setStatus('error');
       setErrorMessage(t('textTooLong') || 'Testimonial text must not exceed 200 characters.');
       return;
@@ -134,6 +140,7 @@ export function TestimonialForm() {
           name="text"
           required
           rows={4}
+          minLength={20}
           maxLength={200}
           value={text}
           onChange={(e) => setText(e.target.value.slice(0, 200))}

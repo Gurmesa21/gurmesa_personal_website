@@ -14,7 +14,7 @@ const siteSettingWhitelist = [
 export type SiteSettingKey = typeof siteSettingWhitelist[number];
 
 const schemas = {
-  publicContactEmail: z.string().email(),
+  publicContactEmail: z.string().trim().email().max(254),
   inquiryRetentionDays: z.number().int().min(30).max(1825),
   sendVisitorAcknowledgement: z.boolean(),
   availabilityMessage: z.string(),

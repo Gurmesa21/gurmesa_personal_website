@@ -70,7 +70,9 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
                 Articles
               </span>
             </div>
-
+            <h1 className="text-3xl sm:text-4xl font-heading font-bold tracking-tight text-[#F5F6FC]">
+              {t('title')}
+            </h1>
           </div>
 
           {/* Search field and compact search action on right */}

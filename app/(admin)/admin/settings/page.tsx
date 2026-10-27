@@ -5,6 +5,10 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent } from '@/components/ui/card';
 import { updateSettingsAction } from './actions';
 
+export const metadata = {
+  title: 'Settings',
+};
+
 export default async function AdminSettingsPage() {
   const settings = await getAdminSiteSettings();
   const getSetting = (key: string, defaultVal: any) => settings.find(s => s.key === key)?.value ?? defaultVal;

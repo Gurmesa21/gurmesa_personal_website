@@ -12,6 +12,29 @@ import { testimonialService } from '../../server/services/testimonialService';
 import { submitTestimonialForm } from '../../app/[locale]/(public)/testimonials/actions';
 
 describe('TASK 1 — Testimonial Length Restrictions', () => {
+  it('rejects 19-character testimonial on server-side validation', async () => {
+    const text19 = '1234567890123456789';
+    expect(text19.length).toBe(19);
+
+    const formData = new FormData();
+    formData.append('name', 'Length Test 19');
+    formData.append('text', text19);
+
+    const res = await submitTestimonialForm(formData);
+    expect(res.success).toBe(false);
+    expect(res.error).toMatch(/20 characters/i);
+  });
+
+  it('rejects 19-character testimonial in testimonialService directly', async () => {
+    const text19 = '1234567890123456789';
+    await expect(testimonialService.submitPublicTestimonial({
+      name: 'Direct Service Test 19',
+      content: text19,
+      status: 'DRAFT',
+      permissionStatus: 'PENDING'
+    })).rejects.toThrow(/20 characters/i);
+  });
+
   it('accepts 20-character testimonial', async () => {
     const text20 = '12345678901234567890';
     expect(text20.length).toBe(20);

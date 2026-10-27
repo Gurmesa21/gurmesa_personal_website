@@ -2,6 +2,10 @@ import { getAdminProfile } from '@/server/services/profileService';
 import { prisma } from '@/server/repositories/db';
 import { ProfileForm } from './ProfileForm';
 
+export const metadata = {
+  title: 'Profile',
+};
+
 export default async function AdminProfilePage() {
   const [profile, emailSetting] = await Promise.all([
     getAdminProfile(),

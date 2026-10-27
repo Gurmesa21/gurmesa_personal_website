@@ -1,0 +1,16 @@
+﻿CI REPRODUCTION AUDIT REPORT
+Target Database: ci_throwaway_db (Empty database built from migrations)
+Command: npx prisma db seed
+Result: FAILED at Step 3 (npx prisma db seed)
+
+Error details:
+PrismaClientKnownRequestError: 
+Invalid prisma.project.create() invocation in
+scripts/seed.ts:119:26
+The column Project.liveUrl does not exist in the current database.
+Code: P2022
+Meta: { modelName: 'Project', column: 'Project.liveUrl' }
+
+Cause:
+The column liveUrl was added to prisma/schema.prisma (Project model) and used in scripts/seed.ts, but no migration was created in prisma/migrations.
+In local databases (gurmesa_db and gurmesa_test_db), liveUrl was introduced via prisma db push or direct DDL, leaving prisma/migrations out of sync.

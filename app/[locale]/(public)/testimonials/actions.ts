@@ -35,7 +35,12 @@ export async function submitTestimonialForm(formData: FormData) {
       return { success: false, error: 'Name and text are required.' };
     }
 
-    if (input.content.length > 200) {
+    const trimmedContent = (input.content || '').trim();
+    if (trimmedContent.length < 20) {
+      return { success: false, error: 'Testimonial text must be at least 20 characters.' };
+    }
+
+    if (trimmedContent.length > 200) {
       return { success: false, error: 'Testimonial text must not exceed 200 characters.' };
     }
 

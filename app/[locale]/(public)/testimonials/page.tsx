@@ -29,13 +29,14 @@ export default async function TestimonialsPage() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 border-b border-[#292D45]/60 min-w-0">
           <div className="space-y-2 max-w-2xl min-w-0">
             <div className="flex items-center gap-2">
-
               <span className=" inline-flex items-center gap-2 rounded-full border border-[#292D45] bg-[#171D32] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
-
                 {t('title')}
               </span>
             </div>
+            <h1 className="text-3xl sm:text-4xl font-heading font-bold tracking-tight text-[#F5F6FC]">
+              {t('title')}
+            </h1>
 
             <p className="text-sm sm:text-base text-[#A5ABC1] leading-relaxed">
               {t('subtitle')}

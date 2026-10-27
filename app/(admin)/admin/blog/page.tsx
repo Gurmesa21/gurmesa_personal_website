@@ -7,6 +7,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { deleteBlogPostAction, createCategoryAction } from './actions';
 
+export const metadata = {
+  title: 'Blog Posts',
+};
+
 export default async function AdminBlogPage() {
   const posts = await getAdminPosts();
   const categories = await blogRepository.findManyCategories();

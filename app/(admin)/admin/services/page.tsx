@@ -5,6 +5,10 @@ import { Badge } from '../../../../components/ui/badge';
 import Link from 'next/link';
 import { togglePublishAction, deleteServiceAction, moveServiceAction } from './actions';
 
+export const metadata = {
+  title: 'Services',
+};
+
 export default async function AdminServicesPage() {
   const services = await getAdminServices();
 

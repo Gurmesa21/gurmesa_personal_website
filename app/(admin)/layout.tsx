@@ -8,7 +8,10 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swa
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });
 
 export const metadata = {
-  title: 'Admin Dashboard | Gurmesa',
+  title: {
+    default: 'Admin Dashboard | Gurmesa',
+    template: '%s | Admin',
+  },
   robots: { index: false, follow: false },
 };
 

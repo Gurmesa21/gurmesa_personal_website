@@ -5,6 +5,10 @@ import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { deleteProjectAction } from './actions';
 
+export const metadata = {
+  title: 'Projects',
+};
+
 export default async function AdminProjectsPage() {
   const projects = await getAdminProjects();
 
