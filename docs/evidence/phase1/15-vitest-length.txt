@@ -1,0 +1,21 @@
+﻿node.exe : Γùç injected env (12) from .env.test
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γùç injected env (12) from .env.test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become 
+the default in a future major version of Vite:
+  - `__dirname` (vitest.config.ts:10:25). Use `import.meta.dirname` instead
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.2 [39m[90mC:/Users/Hp/Documents/Projects/Gurmesa_website[39m
+
+ [32mΓ£ô[39m tests/unit/testimonial-length.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 635[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m7 passed[39m[22m[90m (7)[39m
+[2m   Start at [22m 21:22:01
+[2m   Duration [22m 2.00s[2m (tests 40%, transform 39%, import 20%, worker 1%)[22m
+

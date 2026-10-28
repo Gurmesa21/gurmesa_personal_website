@@ -4,8 +4,11 @@ vi.mock('../../auth', () => ({
   auth: vi.fn()
 }));
 
+let clientIpCounter = 1;
 vi.mock('next/headers', () => ({
-  headers: vi.fn().mockResolvedValue(new Headers({ 'x-forwarded-for': '127.0.0.1' }))
+  headers: vi.fn().mockImplementation(() =>
+    Promise.resolve(new Headers({ 'x-forwarded-for': `127.0.0.${clientIpCounter++}` }))
+  )
 }));
 
 import { testimonialService } from '../../server/services/testimonialService';

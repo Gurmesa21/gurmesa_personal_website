@@ -1,0 +1,92 @@
+﻿
+> gurmesa-website@0.1.0 test
+> vitest run
+
+node.exe : Γùç injected env (12) from .env.test
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γùç injected env (12) from .env.test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become 
+the default in a future major version of Vite:
+  - `__dirname` (vitest.config.ts:10:25). Use `import.meta.dirname` instead
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.2 [39m[90mC:/Users/Hp/Documents/Projects/Gurmesa_website[39m
+
+ [32mΓ£ô[39m tests/integration/guard.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 748[2mms[22m[39m
+   [32mΓ£ô[39m Production Guard [2m(5)[22m
+     [33m[2mΓ£ô[22m[39m refuses to run seed.ts in production[33m 537[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog-likes.test.ts [2m([22m[2m20 tests[22m[2m)[22m[33m 1629[2mms[22m[39m
+[90mstdout[2m | tests/integration/contact.test.ts[2m > [22m[2mContact & Inquiry Service Integration[2m > [22m[2mConsoleTransport records SKIPPED (never SENT)
+[22m[39m--- EMAIL SKIPPED (CONSOLE TRANSPORT) ---
+To: x
+Subject: y
+Body:
+z
+-----------------------------------------
+
+ [32mΓ£ô[39m tests/integration/contact.test.ts [2m([22m[2m32 tests[22m[2m)[22m[33m 689[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/audit.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 363[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/media.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 398[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/testimonial-length.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 153[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/audit-login.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 492[2mms[22m[39m
+   [32mΓ£ô[39m Audit Logs (Login) [2m(1)[22m
+     [33m[2mΓ£ô[22m[39m 9c. Audit log entry is created for a login event[33m 488[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 347[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day3-auth.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 483[2mms[22m[39m
+   [32mΓ£ô[39m Day 3 - Authentication and DTO Boundary [2m(3)[22m
+     [33m[2mΓ£ô[22m[39m SEC-AUTH-03: Login validation accepts correct password and rejects wrong password[33m 405[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/notifications.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 227[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/homepage-limits.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 170[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day6-portfolio.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 121[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/infrastructure-storage.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 73[2mms[22m[39m
+[90mstdout[2m | tests/integration/rateLimit.test.ts[2m > [22m[2mRate Limiter with Redis[2m > [22m[2m11. Rate limiter: the (N+1)th request from one client is rejected while a different client is still accepted
+[22m[39mRedis keys created: [
+  [32m'e7cd2c59b7e7c0478359db86232a378f232dde0e15243d2e06d5c41885db7b2c'[39m,
+  [32m'faf804de39abab4d455bf44a7b29c43d59f66741477aff49842f5d3828c3df1c'[39m,
+  [32m'3478e60ef10c4105c21da1c748f1ff9f6c0c4dd57b8a1fbdd454527780e72250'[39m,
+  [32m'5f055293b83eb0f6baa5cf101e5039cd1a64cc101bb19621c76becb01dd94619'[39m,
+  [32m'6ab5a98006233688242fdd851156a7d4d0df6a6d8ca6a47cd4009d18438847cd'[39m,
+  [32m'e695c4ca2a24b18f1faf5b1180af5979ccd819ae8c28597a3c5fcf999e72ee13'[39m,
+  [32m'e4bc7fa3b4f621b930a227f3f80a7713591bfc5c72dc93982ee1ffe9121a3a19'[39m,
+  [32m'46e81baaa00a3a7e7df821b5b01cfbf74766e6bfed9bffc0839a6f4543f27ca1'[39m,
+  [32m'c0473463d863300ed50953780d865fb670ad162795b654dd86964c1bc3fa7034'[39m,
+  [32m'792db9552e8f4c793fe198961682de18afcf53c3778f18972d617e8cfd6af5d3'[39m,
+  [32m'af0f8a637cdee10af69403dc3426eee2cebb9eaacc68cc37156d66124e4c531e'[39m,
+  [32m'8ec73dcfbbaed22394257bbb2b77361386277155e22d09069fff819b3276d7ed'[39m,
+  [32m'75aa72cb722e24da9f23a01df66b04ab8d617378bc98ddad335f3f7108383f5c'[39m,
+  [32m'6fad5cc6ea47d77f56914cb0304be811489a90c17d0f36d4d74698659a2c66aa'[39m,
+  [32m'63029a8f0ea3b78483fcd00bc5d4bcc76ddd485242847c676b22fbe520814a3b'[39m,
+  [32m'23c29d5eccef9530f157177c13e155dba0b5e72d08c53d50fd598e89a3fa5eb7'[39m,
+  [32m'0b0c650bd32824c39dbab9f4f813b7724e0b9c233b410cf8308248846b1e8d00'[39m
+]
+
+ [32mΓ£ô[39m tests/integration/rateLimit.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 81[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day5-service.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 89[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/testimonialRateLimit.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 62[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/project-visibility.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 61[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/translations-parity.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 35[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/infrastructure-redis.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 30[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day10-admin.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 31[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/infrastructure-media-service.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/health.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/project-live-url.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/settings-email.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/theme-dark-permanent.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/reading-time.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/legal-pages-testimonials.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/profile.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day10b.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/sanity.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 7[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m30 passed[39m[22m[90m (30)[39m
+[2m      Tests [22m [1m[32m189 passed[39m[22m[90m (189)[39m
+[2m   Start at [22m 21:23:06
+[2m   Duration [22m 24.86s[2m (import 44%, tests 44%, transform 9%, worker 3%)[22m
+
+[2m    Isolate [22m [33m30 workers spawned[39m[2m ┬╖ ~316ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~9.18s faster with [22m[33misolate: false[39m[2m ΓÇö reuses workers across files instead of one per file[22m
+

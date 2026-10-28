@@ -1,6 +1,8 @@
 # Phase 1: CI Failure Root Cause, Reproduction & Resolution Report
 
 ## 1.1 Root Cause & CI Failure Details
+
+### Issue 1: TypeScript Unused Variable (Exit Code 2)
 - **Failing CI Job Step**: `npm run typecheck` (`tsc --noEmit`)
 - **Exact Error Lines**:
   ```
@@ -8,12 +10,24 @@
   Error: Process completed with exit code 2.
   ```
 - **Meaning of Exit Code 2 for `tsc`**:
-  In TypeScript (`tsc`), exit code `2` indicates semantic/diagnostic compilation errors were encountered during `tsc --noEmit` (specifically, `ExitStatus.DiagnosticsPresent_OutputsSkipped`), caused here by `"noUnusedLocals": true` in `tsconfig.json`.
+  In TypeScript (`tsc`), exit code `2` indicates semantic/diagnostic compilation errors were encountered during `tsc --noEmit` (specifically, `ExitStatus.DiagnosticsPresent_OutputsSkipped`), caused by `"noUnusedLocals": true` in `tsconfig.json`.
+
+### Issue 2: Vitest Redis Rate Limiter Collision in CI (Exit Code 1)
+- **Failing CI Job Step**: `npm run test` (`vitest run`)
+- **Exact Error Lines**:
+  ```
+  FAIL tests/unit/testimonial-length.test.ts > TASK 1 — Testimonial Length Restrictions > accepts exactly 200-character testimonial
+  AssertionError: expected false to be true
+  FAIL tests/unit/testimonial-length.test.ts > TASK 1 — Testimonial Length Restrictions > rejects 201-character testimonial on server-side validation
+  AssertionError: expected 'You have submitted too many testimonials. Please try again later.' to match /200 characters/i
+  ```
+- **Root Cause**:
+  `tests/unit/testimonial-length.test.ts` previously hardcoded a static IP (`127.0.0.1`) across all mock headers. Because `submitTestimonialForm` invokes `testimonialRateLimiter.check(ip)` (max 3 submissions per hour per IP) and Redis is running in CI, the 4th (200-char) and 5th (201-char) submissions hit the rate limiter before length checking occurred.
 
 ---
 
 ## 1.2 Clean-Clone Reproduction
-- **Commit**: `487710e Fix: pre-deployment`
+- **Commit**: `487710e Fix: pre-deployment` -> `dbbfeec`
 - **Branch**: `feature/modernHeader`
 - **Remote**: `https://github.com/Gurmesa21/gurmesa_personal_website.git`
 - **Untracked Files**: Only test fixtures / binary test videos (`test-oversized-video-g.mp4`, `test-large-video-g1-*.mp4`, `test-blog-*.png`) and evidence logs under `docs/evidence/`. No untracked files are imported by code.
@@ -30,8 +44,9 @@
 
 ---
 
-## 1.4 Root Cause Fix
-- **File**: `tests/e2e/axe-dark-scan.spec.ts`
+## 1.4 Fixes and Diffs (Rule 7)
+
+### 1. `tests/e2e/axe-dark-scan.spec.ts`
 - **Diff**:
   ```diff
   --- a/tests/e2e/axe-dark-scan.spec.ts
@@ -47,6 +62,27 @@
          await page.waitForLoadState('networkidle');
   ```
 - **Rationale**: Uses `adminRoutes` as declared instead of hardcoding the route array in step 3. The test suite is unchanged and not loosened.
+
+### 2. `tests/unit/testimonial-length.test.ts`
+- **Diff**:
+  ```diff
+  --- a/tests/unit/testimonial-length.test.ts
+  +++ b/tests/unit/testimonial-length.test.ts
+  @@ -4,8 +4,11 @@ vi.mock('../../auth', () => ({
+     auth: vi.fn()
+   }));
+   
+  +let clientIpCounter = 1;
+   vi.mock('next/headers', () => ({
+  -  headers: vi.fn().mockResolvedValue(new Headers({ 'x-forwarded-for': '127.0.0.1' }))
+  +  headers: vi.fn().mockImplementation(() =>
+  +    Promise.resolve(new Headers({ 'x-forwarded-for': `127.0.0.${clientIpCounter++}` }))
+  +  )
+   }));
+   
+   import { testimonialService } from '../../server/services/testimonialService';
+  ```
+- **Rationale**: Replaces the static IP (`127.0.0.1`) with dynamic IPs per test submission (`127.0.0.${clientIpCounter++}`) so sequential unit test assertions on string length (19, 20, 199, 200, 201) are not blocked by the Redis rate limiter. All assertions remain strictly intact.
 
 ---
 
@@ -104,7 +140,7 @@
   | 20261027211721_add_project_live_url | 2026-10-27 21:17:57.747276+00 |
 
 - **Origin of previous report's names**:
-  The previous assistant hallucinated migration names corresponding to task names (`day4_blog`, `day5_services`, `day6_projects`, `day7_media`, `day8_social`...) instead of querying the actual `prisma/migrations` folder or database table.
+  The previous assistant hallucinated migration names corresponding to task names (`day4_blog`, `day5_services`, `day6_projects`...) instead of querying the actual `prisma/migrations` folder or database table.
 - **Prisma Migrate Diff**:
   ```bash
   prisma migrate diff --from-migrations prisma/migrations --to-schema-datamodel prisma/schema.prisma --shadow-database-url "postgresql://dev_user:dev_password@localhost:5433/shadow_db?schema=public" --exit-code
@@ -113,36 +149,6 @@
 
 ### c. Test Counts
 - **Vitest**: **189 tests passed** across 30 test files (Exit Code: `0`).
-  - `blog-likes.test.ts`: 20 tests
-  - `audit-login.test.ts`: 1 test
-  - `guard.test.ts`: 5 tests
-  - `contact.test.ts`: 32 tests
-  - `day3-auth.test.ts`: 3 tests
-  - `blog.test.ts`: 13 tests
-  - `media.test.ts`: 7 tests
-  - `audit.test.ts`: 4 tests
-  - `notifications.test.ts`: 3 tests
-  - `homepage-limits.test.ts`: 7 tests
-  - `day6-portfolio.test.ts`: 6 tests
-  - `testimonial-length.test.ts`: 7 tests
-  - `rateLimit.test.ts`: 1 test
-  - `day5-service.test.ts`: 3 tests
-  - `testimonialRateLimit.test.ts`: 1 test
-  - `infrastructure-storage.test.ts`: 11 tests
-  - `project-visibility.test.ts`: 1 test
-  - `translations-parity.test.ts`: 4 tests
-  - `day10-admin.test.ts`: 15 tests
-  - `infrastructure-redis.test.ts`: 6 tests
-  - `infrastructure-media-service.test.ts`: 4 tests
-  - `health.test.ts`: 2 tests
-  - `settings-email.test.ts`: 6 tests
-  - `project-live-url.test.ts`: 10 tests
-  - `theme-dark-permanent.test.ts`: 4 tests
-  - `legal-pages-testimonials.test.ts`: 3 tests
-  - `reading-time.test.ts`: 5 tests
-  - `profile.test.ts`: 1 test
-  - `day10b.test.ts`: 3 tests
-  - `sanity.test.ts`: 1 test
 - **Playwright**: **108 tests** across 20 spec files.
   - Previous count was 85 before `tests/e2e/h1.spec.ts` was expanded across all 3 locales (`en`, `am`, `om`) and 13 public routes (39 tests in `h1.spec.ts`), plus media rendering and upload limit specs (`partF`, `partG`, `partH`, `partI`), bringing the complete suite from 85 -> 92 (partial subset) -> 108 tests.
 
@@ -159,7 +165,7 @@
 | Typecheck | `npm run typecheck` | **0** | `docs/evidence/phase1/10-typecheck.txt` | 58 B |
 | Lint | `npm run lint` | **0** | `docs/evidence/phase1/11-lint.txt` | 4,816 B |
 | Next.js Build | `npm run build` | **0** | `docs/evidence/phase1/12-build.txt` | 3,077 B |
-| Vitest (Integration & Unit) | `npm run test` (189 tests) | **0** | `docs/evidence/phase1/13-vitest.txt` | 8,096 B |
+| Vitest (Integration & Unit) | `npm run test` (189 tests) | **0** | `docs/evidence/phase1/16-vitest-full.txt` | 7,372 B |
 | Playwright (Axe scan target) | `npx playwright test tests/e2e/axe-dark-scan.spec.ts` | **0** | `docs/evidence/phase1/14-playwright-axe.txt` | 3,014 B |
 | Migration Diff | `prisma migrate diff ... --exit-code` | **0** | `docs/evidence/phase1/08-migrate-diff.txt` | 30 B |
 
@@ -167,5 +173,6 @@
 
 ## 1.7 Files Changed
 1. `tests/e2e/axe-dark-scan.spec.ts`: Used `adminRoutes` in loop to fix TS6133 unused variable compiler error.
-2. `messages/om.json`: Translated `"tags": "Maxxantoota:"`.
-3. `scripts/check-import-case.mjs`: Added read-only case consistency checker.
+2. `tests/unit/testimonial-length.test.ts`: Replaced static IP with dynamic client IP in mock headers to prevent 3/hour rate limit collision in Redis during CI.
+3. `messages/om.json`: Translated `"tags": "Maxxantoota:"`.
+4. `scripts/check-import-case.mjs`: Added read-only case consistency checker.
