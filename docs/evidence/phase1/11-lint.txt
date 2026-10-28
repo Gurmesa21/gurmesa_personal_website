@@ -1,0 +1,74 @@
+
+> gurmesa-website@0.1.0 lint
+> eslint app/ server/ lib/ components/ features/ tests/ scripts/
+
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\experience\actions.ts
+  17:106  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  29:89   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\experience\new\page.tsx
+  5:15  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\experience\page.tsx
+  20:56   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:86   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:108  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\profile\ProfileForm.tsx
+  5:53  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\settings\page.tsx
+  7:48  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\skills\actions.ts
+  15:82  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:65  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\skills\new\page.tsx
+  5:15  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\skills\page.tsx
+  20:56   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:86   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:108  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\social-links\actions.ts
+  16:87  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  27:70  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\social-links\new\page.tsx
+  5:15  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\(admin)\admin\social-links\page.tsx
+  20:56   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:86   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:108  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\app\api\health\route.ts
+  21:12  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\lib\jsonLd.ts
+  1:39  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\server\services\siteSettingService.ts
+  29:61  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  33:45  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\integration\day10-admin.test.ts
+  18:14   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  28:145  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  65:14   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  70:14   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  76:14   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  86:43   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  88:41   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  92:39   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  94:37   warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\integration\health.test.ts
+  17:26  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  26:26  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 35 problems (0 errors, 35 warnings)
+

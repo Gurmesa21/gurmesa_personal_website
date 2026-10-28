@@ -1,0 +1,259 @@
+﻿
+> gurmesa-website@0.1.0 typecheck
+> tsc --noEmit
+
+app/(admin)/admin/audit-log/page.tsx(113,45): error TS7006: Parameter 'act' implicitly has an 'any' type.
+app/(admin)/admin/audit-log/page.tsx(130,46): error TS7006: Parameter 'ent' implicitly has an 'any' type.
+app/(admin)/admin/audit-log/page.tsx(187,30): error TS7006: Parameter 'log' implicitly has an 'any' type.
+app/(admin)/admin/blog/actions.ts(7,15): error TS2305: Module '"@prisma/client"' has no exported member 'BlogPostStatus'.
+app/(admin)/admin/blog/actions.ts(47,47): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'BlogPostUpdateInput'.
+app/(admin)/admin/blog/AdminComments.tsx(6,15): error TS2305: Module '"@prisma/client"' has no exported member 'BlogComment'.
+app/(admin)/admin/blog/BlogForm.tsx(12,90): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/@prisma/client/default"' has no exported member 'BlogPost'.
+app/(admin)/admin/blog/BlogForm.tsx(12,137): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/@prisma/client/default"' has no exported member 'Category'.
+app/(admin)/admin/blog/page.tsx(39,28): error TS7006: Parameter 'post' implicitly has an 'any' type.
+app/(admin)/admin/blog/page.tsx(71,29): error TS7006: Parameter 'c' implicitly has an 'any' type.
+app/(admin)/admin/comments/page.tsx(7,15): error TS2305: Module '"@prisma/client"' has no exported member 'CommentStatus'.
+app/(admin)/admin/comments/page.tsx(31,43): error TS7006: Parameter 'c' implicitly has an 'any' type.
+app/(admin)/admin/experience/actions.ts(23,61): error TS7006: Parameter 'i' implicitly has an 'any' type.
+app/(admin)/admin/experience/actions.ts(56,27): error TS7006: Parameter 'i' implicitly has an 'any' type.
+app/(admin)/admin/experience/page.tsx(17,21): error TS7006: Parameter 'item' implicitly has an 'any' type.
+app/(admin)/admin/experience/page.tsx(17,27): error TS7006: Parameter 'index' implicitly has an 'any' type.
+app/(admin)/admin/inquiries/[id]/page.tsx(2,10): error TS2305: Module '"@prisma/client"' has no exported member 'InquiryStatus'.
+app/(admin)/admin/inquiries/[id]/page.tsx(77,25): error TS2322: Type 'unknown' is not assignable to type 'Key | null | undefined'.
+app/(admin)/admin/inquiries/[id]/page.tsx(77,33): error TS2322: Type 'unknown' is not assignable to type 'string | number | readonly string[] | undefined'.
+app/(admin)/admin/inquiries/[id]/page.tsx(77,83): error TS2322: Type 'unknown' is not assignable to type 'ReactNode'.
+app/(admin)/admin/inquiries/[id]/page.tsx(126,32): error TS7006: Parameter 'note' implicitly has an 'any' type.
+app/(admin)/admin/inquiries/page.tsx(2,10): error TS2305: Module '"@prisma/client"' has no exported member 'InquiryStatus'.
+app/(admin)/admin/inquiries/page.tsx(53,23): error TS2322: Type 'unknown' is not assignable to type 'Key | null | undefined'.
+app/(admin)/admin/inquiries/page.tsx(53,31): error TS2322: Type 'unknown' is not assignable to type 'string | number | readonly string[] | undefined'.
+app/(admin)/admin/inquiries/page.tsx(53,81): error TS2322: Type 'unknown' is not assignable to type 'ReactNode'.
+app/(admin)/admin/inquiries/page.tsx(61,20): error TS7006: Parameter 'inq' implicitly has an 'any' type.
+app/(admin)/admin/media/actions.ts(40,53): error TS7006: Parameter 'm' implicitly has an 'any' type.
+app/(admin)/admin/media/page.tsx(40,40): error TS7006: Parameter 's' implicitly has an 'any' type.
+app/(admin)/admin/media/page.tsx(44,46): error TS7006: Parameter 'asset' implicitly has an 'any' type.
+app/(admin)/admin/media/page.tsx(194,41): error TS7006: Parameter 'asset' implicitly has an 'any' type.
+app/(admin)/admin/notifications/page.tsx(33,29): error TS7006: Parameter 'n' implicitly has an 'any' type.
+app/(admin)/admin/notifications/page.tsx(55,30): error TS7006: Parameter 'n' implicitly has an 'any' type.
+app/(admin)/admin/projects/actions.ts(5,10): error TS2305: Module '"@prisma/client"' has no exported member 'ProjectStatus'.
+app/(admin)/admin/projects/actions.ts(5,25): error TS2305: Module '"@prisma/client"' has no exported member 'ProjectConfidentiality'.
+app/(admin)/admin/projects/actions.ts(5,49): error TS2305: Module '"@prisma/client"' has no exported member 'CaseStudyStatus'.
+app/(admin)/admin/projects/page.tsx(25,24): error TS7006: Parameter 'project' implicitly has an 'any' type.
+app/(admin)/admin/projects/ProjectForm.tsx(8,10): error TS2305: Module '"@prisma/client"' has no exported member 'Project'.
+app/(admin)/admin/projects/ProjectForm.tsx(8,19): error TS2305: Module '"@prisma/client"' has no exported member 'CaseStudy'.
+app/(admin)/admin/projects/ProjectForm.tsx(8,30): error TS2305: Module '"@prisma/client"' has no exported member 'ProjectMedia'.
+app/(admin)/admin/projects/ProjectForm.tsx(15,51): error TS7006: Parameter 'm' implicitly has an 'any' type.
+app/(admin)/admin/services/actions.ts(6,10): error TS2305: Module '"@prisma/client"' has no exported member 'ServiceStatus'.
+app/(admin)/admin/services/ServiceForm.tsx(11,10): error TS2305: Module '"@prisma/client"' has no exported member 'Service'.
+app/(admin)/admin/settings/page.tsx(14,70): error TS7006: Parameter 's' implicitly has an 'any' type.
+app/(admin)/admin/skills/actions.ts(13,61): error TS7006: Parameter 'i' implicitly has an 'any' type.
+app/(admin)/admin/skills/actions.ts(42,27): error TS7006: Parameter 'i' implicitly has an 'any' type.
+app/(admin)/admin/skills/page.tsx(17,21): error TS7006: Parameter 'item' implicitly has an 'any' type.
+app/(admin)/admin/skills/page.tsx(17,27): error TS7006: Parameter 'index' implicitly has an 'any' type.
+app/(admin)/admin/social-links/actions.ts(14,61): error TS7006: Parameter 'i' implicitly has an 'any' type.
+app/(admin)/admin/social-links/actions.ts(44,27): error TS7006: Parameter 'i' implicitly has an 'any' type.
+app/(admin)/admin/social-links/page.tsx(17,21): error TS7006: Parameter 'item' implicitly has an 'any' type.
+app/(admin)/admin/social-links/page.tsx(17,27): error TS7006: Parameter 'index' implicitly has an 'any' type.
+app/(admin)/admin/technologies/TechnologyForm.tsx(5,10): error TS2305: Module '"@prisma/client"' has no exported member 'Technology'.
+app/(admin)/admin/testimonials/[id]/page.tsx(2,10): error TS2305: Module '"@prisma/client"' has no exported member 'TestimonialStatus'.
+app/(admin)/admin/testimonials/[id]/page.tsx(2,29): error TS2305: Module '"@prisma/client"' has no exported member 'TestimonialPermissionStatus'.
+app/(admin)/admin/testimonials/[id]/page.tsx(75,70): error TS2322: Type 'unknown' is not assignable to type 'Key | null | undefined'.
+app/(admin)/admin/testimonials/[id]/page.tsx(75,78): error TS2322: Type 'unknown' is not assignable to type 'string | number | readonly string[] | undefined'.
+app/(admin)/admin/testimonials/[id]/page.tsx(75,128): error TS2322: Type 'unknown' is not assignable to type 'ReactNode'.
+app/(admin)/admin/testimonials/[id]/page.tsx(81,80): error TS2322: Type 'unknown' is not assignable to type 'Key | null | undefined'.
+app/(admin)/admin/testimonials/[id]/page.tsx(81,88): error TS2322: Type 'unknown' is not assignable to type 'string | number | readonly string[] | undefined'.
+app/(admin)/admin/testimonials/[id]/page.tsx(81,138): error TS2322: Type 'unknown' is not assignable to type 'ReactNode'.
+app/(admin)/admin/testimonials/page.tsx(22,27): error TS7006: Parameter 't' implicitly has an 'any' type.
+app/[locale]/(public)/contact/page.tsx(124,38): error TS7006: Parameter 'link' implicitly has an 'any' type.
+app/[locale]/(public)/work/[slug]/page.tsx(74,54): error TS7006: Parameter 'pm' implicitly has an 'any' type.
+components/testimonials/TestimonialList.tsx(16,7): error TS18048: 'testimonials' is possibly 'undefined'.
+components/testimonials/TestimonialList.tsx(20,8): error TS18048: 'testimonials' is possibly 'undefined'.
+lib/dto/blogPost.ts(1,15): error TS2305: Module '"@prisma/client"' has no exported member 'BlogPost'.
+lib/dto/blogPost.ts(1,25): error TS2305: Module '"@prisma/client"' has no exported member 'Category'.
+lib/dto/blogPost.ts(1,35): error TS2305: Module '"@prisma/client"' has no exported member 'Tag'.
+lib/dto/blogPost.ts(1,40): error TS2305: Module '"@prisma/client"' has no exported member 'MediaAsset'.
+lib/dto/blogPost.ts(1,52): error TS2305: Module '"@prisma/client"' has no exported member 'BlogComment'.
+lib/dto/blogPost.ts(46,34): error TS7006: Parameter 't' implicitly has an 'any' type.
+lib/dto/blogPost.ts(53,42): error TS7006: Parameter 'c' implicitly has an 'any' type.
+lib/dto/profile.ts(1,10): error TS2305: Module '"@prisma/client"' has no exported member 'Profile'.
+lib/dto/profile.ts(1,19): error TS2305: Module '"@prisma/client"' has no exported member 'Experience'.
+lib/dto/profile.ts(1,31): error TS2305: Module '"@prisma/client"' has no exported member 'Skill'.
+lib/dto/profile.ts(1,38): error TS2305: Module '"@prisma/client"' has no exported member 'SocialLink'.
+lib/dto/project.ts(1,10): error TS2305: Module '"@prisma/client"' has no exported member 'Project'.
+lib/dto/project.ts(1,19): error TS2305: Module '"@prisma/client"' has no exported member 'CaseStudy'.
+lib/dto/project.ts(1,30): error TS2305: Module '"@prisma/client"' has no exported member 'Technology'.
+lib/dto/project.ts(1,42): error TS2305: Module '"@prisma/client"' has no exported member 'ProjectTechnology'.
+lib/dto/project.ts(57,44): error TS7006: Parameter 'pt' implicitly has an 'any' type.
+lib/dto/service.ts(1,10): error TS2305: Module '"@prisma/client"' has no exported member 'Service'.
+lib/dto/testimonial.ts(1,10): error TS2305: Module '"@prisma/client"' has no exported member 'Testimonial'.
+lib/notifications/index.ts(2,10): error TS2305: Module '"@prisma/client"' has no exported member 'NotificationType'.
+scripts/seed-prod.ts(1,24): error TS2305: Module '"@prisma/client"' has no exported member 'AdminUserStatus'.
+scripts/seed.ts(9,5): error TS2339: Property 'AdminUserStatus' does not exist on type '{ default: typeof import("C:/Users/Hp/Documents/Projects/ci-clone/node_modules/@prisma/client/default"); PrismaClient: any; PrismaClientExtends: typeof PrismaClientExtends; dmmf: any; Prisma: typeof Prisma; }'.
+scripts/seed.ts(10,5): error TS2339: Property 'ProjectStatus' does not exist on type '{ default: typeof import("C:/Users/Hp/Documents/Projects/ci-clone/node_modules/@prisma/client/default"); PrismaClient: any; PrismaClientExtends: typeof PrismaClientExtends; dmmf: any; Prisma: typeof Prisma; }'.
+scripts/seed.ts(11,5): error TS2339: Property 'ProjectConfidentiality' does not exist on type '{ default: typeof import("C:/Users/Hp/Documents/Projects/ci-clone/node_modules/@prisma/client/default"); PrismaClient: any; PrismaClientExtends: typeof PrismaClientExtends; dmmf: any; Prisma: typeof Prisma; }'.
+scripts/seed.ts(12,5): error TS2339: Property 'CaseStudyStatus' does not exist on type '{ default: typeof import("C:/Users/Hp/Documents/Projects/ci-clone/node_modules/@prisma/client/default"); PrismaClient: any; PrismaClientExtends: typeof PrismaClientExtends; dmmf: any; Prisma: typeof Prisma; }'.
+scripts/seed.ts(13,5): error TS2339: Property 'BlogPostStatus' does not exist on type '{ default: typeof import("C:/Users/Hp/Documents/Projects/ci-clone/node_modules/@prisma/client/default"); PrismaClient: any; PrismaClientExtends: typeof PrismaClientExtends; dmmf: any; Prisma: typeof Prisma; }'.
+scripts/seed.ts(14,5): error TS2339: Property 'TestimonialStatus' does not exist on type '{ default: typeof import("C:/Users/Hp/Documents/Projects/ci-clone/node_modules/@prisma/client/default"); PrismaClient: any; PrismaClientExtends: typeof PrismaClientExtends; dmmf: any; Prisma: typeof Prisma; }'.
+scripts/seed.ts(15,5): error TS2339: Property 'TestimonialPermissionStatus' does not exist on type '{ default: typeof import("C:/Users/Hp/Documents/Projects/ci-clone/node_modules/@prisma/client/default"); PrismaClient: any; PrismaClientExtends: typeof PrismaClientExtends; dmmf: any; Prisma: typeof Prisma; }'.
+scripts/seed.ts(16,5): error TS2339: Property 'InquiryStatus' does not exist on type '{ default: typeof import("C:/Users/Hp/Documents/Projects/ci-clone/node_modules/@prisma/client/default"); PrismaClient: any; PrismaClientExtends: typeof PrismaClientExtends; dmmf: any; Prisma: typeof Prisma; }'.
+scripts/seed.ts(17,5): error TS2339: Property 'SocialVisibility' does not exist on type '{ default: typeof import("C:/Users/Hp/Documents/Projects/ci-clone/node_modules/@prisma/client/default"); PrismaClient: any; PrismaClientExtends: typeof PrismaClientExtends; dmmf: any; Prisma: typeof Prisma; }'.
+scripts/seed.ts(18,5): error TS2339: Property 'ServiceStatus' does not exist on type '{ default: typeof import("C:/Users/Hp/Documents/Projects/ci-clone/node_modules/@prisma/client/default"); PrismaClient: any; PrismaClientExtends: typeof PrismaClientExtends; dmmf: any; Prisma: typeof Prisma; }'.
+server/repositories/adminUserRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'AdminUserFindManyArgs'.
+server/repositories/adminUserRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'AdminUserFindUniqueArgs'.
+server/repositories/adminUserRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'AdminUserCreateArgs'.
+server/repositories/adminUserRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'AdminUserUpdateArgs'.
+server/repositories/adminUserRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'AdminUserDeleteArgs'.
+server/repositories/auditLogRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'AuditLogFindManyArgs'.
+server/repositories/auditLogRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'AuditLogFindUniqueArgs'.
+server/repositories/auditLogRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'AuditLogCreateArgs'.
+server/repositories/auditLogRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'AuditLogUpdateArgs'.
+server/repositories/auditLogRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'AuditLogDeleteArgs'.
+server/repositories/blogPostRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'BlogPostFindManyArgs'.
+server/repositories/blogPostRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'BlogPostFindUniqueArgs'.
+server/repositories/blogPostRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'BlogPostCreateArgs'.
+server/repositories/blogPostRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'BlogPostUpdateArgs'.
+server/repositories/blogPostRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'BlogPostDeleteArgs'.
+server/repositories/blogRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'BlogPostFindManyArgs'.
+server/repositories/blogRepository.ts(6,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'BlogPostFindFirstArgs'.
+server/repositories/blogRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'BlogPostCreateArgs'.
+server/repositories/blogRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'BlogPostUpdateArgs'.
+server/repositories/blogRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'BlogPostDeleteArgs'.
+server/repositories/blogRepository.ts(13,39): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'CategoryCreateArgs'.
+server/repositories/blogRepository.ts(14,39): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'CategoryUpdateArgs'.
+server/repositories/blogRepository.ts(15,39): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'CategoryDeleteArgs'.
+server/repositories/blogRepository.ts(19,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TagCreateArgs'.
+server/repositories/blogRepository.ts(20,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TagUpdateArgs'.
+server/repositories/blogRepository.ts(21,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TagDeleteArgs'.
+server/repositories/caseStudyRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'CaseStudyFindManyArgs'.
+server/repositories/caseStudyRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'CaseStudyFindUniqueArgs'.
+server/repositories/caseStudyRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'CaseStudyCreateArgs'.
+server/repositories/caseStudyRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'CaseStudyUpdateArgs'.
+server/repositories/caseStudyRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'CaseStudyDeleteArgs'.
+server/repositories/categoryRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'CategoryFindManyArgs'.
+server/repositories/categoryRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'CategoryFindUniqueArgs'.
+server/repositories/categoryRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'CategoryCreateArgs'.
+server/repositories/categoryRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'CategoryUpdateArgs'.
+server/repositories/categoryRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'CategoryDeleteArgs'.
+server/repositories/experienceRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ExperienceFindManyArgs'.
+server/repositories/experienceRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ExperienceFindUniqueArgs'.
+server/repositories/experienceRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ExperienceCreateArgs'.
+server/repositories/experienceRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ExperienceUpdateArgs'.
+server/repositories/experienceRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ExperienceDeleteArgs'.
+server/repositories/inquiryNoteRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'InquiryNoteFindManyArgs'.
+server/repositories/inquiryNoteRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'InquiryNoteFindUniqueArgs'.
+server/repositories/inquiryNoteRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'InquiryNoteCreateArgs'.
+server/repositories/inquiryNoteRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'InquiryNoteUpdateArgs'.
+server/repositories/inquiryNoteRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'InquiryNoteDeleteArgs'.
+server/repositories/inquiryRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'InquiryFindManyArgs'.
+server/repositories/inquiryRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'InquiryFindUniqueArgs'.
+server/repositories/inquiryRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'InquiryCreateArgs'.
+server/repositories/inquiryRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'InquiryUpdateArgs'.
+server/repositories/inquiryRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'InquiryDeleteArgs'.
+server/repositories/mediaAssetRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'MediaAssetFindManyArgs'.
+server/repositories/mediaAssetRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'MediaAssetFindUniqueArgs'.
+server/repositories/mediaAssetRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'MediaAssetCreateArgs'.
+server/repositories/mediaAssetRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'MediaAssetUpdateArgs'.
+server/repositories/mediaAssetRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'MediaAssetDeleteArgs'.
+server/repositories/profileRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProfileFindManyArgs'.
+server/repositories/profileRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProfileFindUniqueArgs'.
+server/repositories/profileRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProfileCreateArgs'.
+server/repositories/profileRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProfileUpdateArgs'.
+server/repositories/profileRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProfileDeleteArgs'.
+server/repositories/projectMediaRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProjectMediaFindManyArgs'.
+server/repositories/projectMediaRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProjectMediaFindUniqueArgs'.
+server/repositories/projectMediaRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProjectMediaCreateArgs'.
+server/repositories/projectMediaRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProjectMediaUpdateArgs'.
+server/repositories/projectMediaRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProjectMediaDeleteArgs'.
+server/repositories/projectRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProjectFindManyArgs'.
+server/repositories/projectRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProjectFindUniqueArgs'.
+server/repositories/projectRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProjectCreateArgs'.
+server/repositories/projectRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProjectUpdateArgs'.
+server/repositories/projectRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProjectDeleteArgs'.
+server/repositories/sEOOverrideRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SEOOverrideFindManyArgs'.
+server/repositories/sEOOverrideRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SEOOverrideFindUniqueArgs'.
+server/repositories/sEOOverrideRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SEOOverrideCreateArgs'.
+server/repositories/sEOOverrideRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SEOOverrideUpdateArgs'.
+server/repositories/sEOOverrideRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SEOOverrideDeleteArgs'.
+server/repositories/serviceRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ServiceFindManyArgs'.
+server/repositories/serviceRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ServiceFindUniqueArgs'.
+server/repositories/serviceRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ServiceCreateArgs'.
+server/repositories/serviceRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ServiceUpdateArgs'.
+server/repositories/serviceRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ServiceDeleteArgs'.
+server/repositories/sessionRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SessionFindManyArgs'.
+server/repositories/sessionRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SessionFindUniqueArgs'.
+server/repositories/sessionRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SessionCreateArgs'.
+server/repositories/sessionRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SessionUpdateArgs'.
+server/repositories/sessionRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SessionDeleteArgs'.
+server/repositories/siteSettingRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SiteSettingFindManyArgs'.
+server/repositories/siteSettingRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SiteSettingFindUniqueArgs'.
+server/repositories/siteSettingRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SiteSettingCreateArgs'.
+server/repositories/siteSettingRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SiteSettingUpdateArgs'.
+server/repositories/siteSettingRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SiteSettingDeleteArgs'.
+server/repositories/siteSettingRepository.ts(10,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SiteSettingUpsertArgs'.
+server/repositories/skillRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SkillFindManyArgs'.
+server/repositories/skillRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SkillFindUniqueArgs'.
+server/repositories/skillRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SkillCreateArgs'.
+server/repositories/skillRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SkillUpdateArgs'.
+server/repositories/skillRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SkillDeleteArgs'.
+server/repositories/socialLinkRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SocialLinkFindManyArgs'.
+server/repositories/socialLinkRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SocialLinkFindUniqueArgs'.
+server/repositories/socialLinkRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SocialLinkCreateArgs'.
+server/repositories/socialLinkRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SocialLinkUpdateArgs'.
+server/repositories/socialLinkRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'SocialLinkDeleteArgs'.
+server/repositories/tagRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TagFindManyArgs'.
+server/repositories/tagRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TagFindUniqueArgs'.
+server/repositories/tagRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TagCreateArgs'.
+server/repositories/tagRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TagUpdateArgs'.
+server/repositories/tagRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TagDeleteArgs'.
+server/repositories/technologyRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TechnologyFindManyArgs'.
+server/repositories/technologyRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TechnologyFindUniqueArgs'.
+server/repositories/technologyRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TechnologyCreateArgs'.
+server/repositories/technologyRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TechnologyUpdateArgs'.
+server/repositories/technologyRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TechnologyDeleteArgs'.
+server/repositories/testimonialRepository.ts(5,34): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TestimonialFindManyArgs'.
+server/repositories/testimonialRepository.ts(6,35): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TestimonialFindUniqueArgs'.
+server/repositories/testimonialRepository.ts(7,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TestimonialCreateArgs'.
+server/repositories/testimonialRepository.ts(8,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TestimonialUpdateArgs'.
+server/repositories/testimonialRepository.ts(9,31): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TestimonialDeleteArgs'.
+server/services/adminOverviewService.ts(1,10): error TS2305: Module '"@prisma/client"' has no exported member 'InquiryStatus'.
+server/services/adminOverviewService.ts(1,25): error TS2305: Module '"@prisma/client"' has no exported member 'BlogPostStatus'.
+server/services/auditService.ts(79,27): error TS7006: Parameter 'a' implicitly has an 'any' type.
+server/services/auditService.ts(80,29): error TS7006: Parameter 'e' implicitly has an 'any' type.
+server/services/blogService.ts(6,23): error TS2305: Module '"@prisma/client"' has no exported member 'CommentStatus'.
+server/services/blogService.ts(28,23): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'BlogPostWhereInput'.
+server/services/blogService.ts(64,33): error TS7006: Parameter 'p' implicitly has an 'any' type.
+server/services/blogService.ts(70,20): error TS7006: Parameter 'p' implicitly has an 'any' type.
+server/services/blogService.ts(125,47): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'BlogPostCreateInput'.
+server/services/blogService.ts(133,59): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'BlogPostUpdateInput'.
+server/services/inquiryService.ts(1,10): error TS2305: Module '"@prisma/client"' has no exported member 'InquiryStatus'.
+server/services/inquiryService.ts(1,25): error TS2305: Module '"@prisma/client"' has no exported member 'NotificationStatus'.
+server/services/inquiryService.ts(123,25): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'InquiryWhereInput'.
+server/services/profileService.ts(1,10): error TS2305: Module '"@prisma/client"' has no exported member 'Profile'.
+server/services/profileService.ts(1,19): error TS2305: Module '"@prisma/client"' has no exported member 'Experience'.
+server/services/profileService.ts(1,31): error TS2305: Module '"@prisma/client"' has no exported member 'Skill'.
+server/services/profileService.ts(1,38): error TS2305: Module '"@prisma/client"' has no exported member 'SocialLink'.
+server/services/projectService.ts(83,50): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProjectCreateInput'.
+server/services/projectService.ts(90,62): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ProjectUpdateInput'.
+server/services/projectService.ts(110,76): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'CaseStudyCreateInput'.
+server/services/serviceService.ts(3,10): error TS2305: Module '"@prisma/client"' has no exported member 'Service'.
+server/services/serviceService.ts(47,55): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ServiceUncheckedCreateInput'.
+server/services/serviceService.ts(54,62): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'ServiceUncheckedUpdateInput'.
+server/services/technologyService.ts(2,10): error TS2305: Module '"@prisma/client"' has no exported member 'Technology'.
+server/services/testimonialService.ts(1,10): error TS2305: Module '"@prisma/client"' has no exported member 'TestimonialStatus'.
+server/services/testimonialService.ts(1,29): error TS2305: Module '"@prisma/client"' has no exported member 'TestimonialPermissionStatus'.
+server/services/testimonialService.ts(32,46): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TestimonialCreateInput'.
+server/services/testimonialService.ts(70,40): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TestimonialCreateInput'.
+server/services/testimonialService.ts(77,52): error TS2694: Namespace '"C:/Users/Hp/Documents/Projects/ci-clone/node_modules/.prisma/client/default".Prisma' has no exported member 'TestimonialUpdateInput'.
+tests/e2e/axe-dark-scan.spec.ts(18,9): error TS6133: 'adminRoutes' is declared but its value is never read.
+tests/integration/contact.test.ts(2,24): error TS2305: Module '"@prisma/client"' has no exported member 'InquiryStatus'.
+tests/integration/contact.test.ts(2,39): error TS2305: Module '"@prisma/client"' has no exported member 'NotificationStatus'.
+tests/integration/contact.test.ts(2,59): error TS2305: Module '"@prisma/client"' has no exported member 'TestimonialStatus'.
+tests/integration/contact.test.ts(2,78): error TS2305: Module '"@prisma/client"' has no exported member 'TestimonialPermissionStatus'.
+tests/integration/contact.test.ts(258,21): error TS7006: Parameter 't' implicitly has an 'any' type.
+tests/integration/contact.test.ts(264,21): error TS7006: Parameter 't' implicitly has an 'any' type.
+tests/integration/contact.test.ts(270,21): error TS7006: Parameter 't' implicitly has an 'any' type.
+tests/integration/day5-service.test.ts(24,29): error TS7006: Parameter 's' implicitly has an 'any' type.
+tests/integration/notifications.test.ts(2,24): error TS2305: Module '"@prisma/client"' has no exported member 'NotificationType'.
+tests/integration/notifications.test.ts(2,42): error TS2305: Module '"@prisma/client"' has no exported member 'TestimonialStatus'.
+tests/integration/notifications.test.ts(2,61): error TS2305: Module '"@prisma/client"' has no exported member 'TestimonialPermissionStatus'.
+tests/integration/project-visibility.test.ts(13,32): error TS7006: Parameter 'p' implicitly has an 'any' type.
+tests/integration/project-visibility.test.ts(14,31): error TS7006: Parameter 'p' implicitly has an 'any' type.

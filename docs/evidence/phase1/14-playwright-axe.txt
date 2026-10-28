@@ -1,0 +1,50 @@
+﻿node.exe : Γùç injected env (12) from .env.test
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γùç injected env (12) from .env.test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γùç injected env (0) from .env.test
+[globalSetup] Resetting and seeding test database: gurmesa_test_db...
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "gurmesa_test_db", schema "public" at "127.0.0.1:5433"
+
+9 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö
+ÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ
+Γöé  Update available 5.22.0 -> 8.0.0-rc.28                 Γöé
+Γöé                                                         Γöé
+Γöé  This is a major update - please follow the guide at    Γöé
+Γöé  https://pris.ly/d/major-version-upgrade                Γöé
+Γöé                                                         Γöé
+Γöé  Run the following to update                            Γöé
+Γöé    npm i --save-dev prisma@latest                       Γöé
+Γöé    npm i @prisma/client@latest                          Γöé
+ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö
+ÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ
+Seed completed.
+[globalSetup] Test database gurmesa_test_db reset and seeded successfully.
+
+Running 1 test using 1 worker
+
+Γùç injected env (0) from .env.test
+
+[1/1] [chromium] ΓÇ║ tests\e2e\axe-dark-scan.spec.ts:25:3 ΓÇ║ Task 10 - Axe Accessibility Scan (8 Public + 4 Admin Pages) ΓÇ║ run axe in dark theme and report violation counts and contrast failures
+[WebServer] Γ¿» Error: The destination stream closed early.
+[WebServer]     at ignore-listed frames {
+[WebServer]   digest: '1056770755'
+[WebServer] }
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+  1 passed (54.8s)

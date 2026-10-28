@@ -1,0 +1,3 @@
+Run npm run typecheck
+Error: tests/e2e/axe-dark-scan.spec.ts(18,9): error TS6133: 'adminRoutes' is declared but its value is never read.
+Error: Process completed with exit code 2.

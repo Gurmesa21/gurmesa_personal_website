@@ -1,0 +1,8 @@
+﻿ M docs/evidence/fix-a2/11_playwright_run2.txt
+ D tests/e2e/test-avatar-f.png
+ D tests/e2e/test-video-f.mp4
+?? docs/evidence/ci-failure/
+?? docs/evidence/phase1/
+?? tests/e2e/test-blog-1793139754138.png
+?? tests/e2e/test-large-video-g1-1793139816538.mp4
+?? tests/e2e/test-oversized-video-g.mp4

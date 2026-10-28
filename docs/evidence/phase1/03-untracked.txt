@@ -1,0 +1,9 @@
+﻿docs/evidence/ci-failure/ci-log.txt
+docs/evidence/phase1/01-git-log.txt
+docs/evidence/phase1/02-git-status.txt
+docs/evidence/phase1/03-untracked.txt
+docs/evidence/phase1/04-git-clone.txt
+docs/evidence/phase1/05-npm-ci.txt
+tests/e2e/test-blog-1793139754138.png
+tests/e2e/test-large-video-g1-1793139816538.mp4
+tests/e2e/test-oversized-video-g.mp4

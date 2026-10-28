@@ -77,7 +77,8 @@ test.describe('Task 10 - Axe Accessibility Scan (8 Public + 4 Admin Pages)', () 
     await page.click('button[type="submit"]');
     await page.waitForURL('/admin');
 
-    for (const route of ['/admin', '/admin/services', '/admin/profile']) {
+    const authenticatedAdminRoutes = adminRoutes.filter((r) => r !== '/admin/login');
+    for (const route of authenticatedAdminRoutes) {
       await page.goto(route);
       await page.waitForLoadState('networkidle');
 
