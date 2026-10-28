@@ -1,0 +1,57 @@
+﻿node.exe : Γùç injected env (12) from .env.test
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γùç injected env (12) from .env.test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γùç injected env (0) from .env.test
+[globalSetup] Resetting and seeding test database: gurmesa_test_db...
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "gurmesa_test_db", schema "public" at "127.0.0.1:5433"
+
+9 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+Seed completed.
+[globalSetup] Test database gurmesa_test_db reset and seeded successfully.
+
+Running 1 test using 1 worker
+
+Γùç injected env (0) from .env.test
+
+[1/1] [chromium] ΓÇ║ tests\e2e\part3-media-upload.spec.ts:19:3 ΓÇ║ Part 3 - Media Upload Widget ΓÇ║ Upload avatar in Profile edit and verify on public page
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+  1) [chromium] ΓÇ║ tests\e2e\part3-media-upload.spec.ts:19:3 ΓÇ║ Part 3 - Media Upload Widget ΓÇ║ Upload avatar in Profile edit and verify on public page 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.dispatchEvent: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.cursor-pointer:has(img[alt="test-avatar-1793213387901.png"])')
+
+
+      40 |
+      41 |     const firstMediaCard = page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`);
+    > 42 |     await firstMediaCard.dispatchEvent('click');
+         |                          ^
+      43 |
+      44 |     // Verify it's selected (shows '1 asset selected')
+      45 |     await expect(page.locator('text=1 asset selected')).toBeVisible();
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\part3-media-upload.spec.ts:42:26
+
+    Error Context: test-results\part3-media-upload-Part-3--43a7b-t-and-verify-on-public-page-chromium\error-context.md
+
+    Error Context: test-results\part3-media-upload-Part-3--43a7b-t-and-verify-on-public-page-chromium\error-context.md
+
+
+  1 failed
+    [chromium] ΓÇ║ tests\e2e\part3-media-upload.spec.ts:19:3 ΓÇ║ Part 3 - Media Upload Widget ΓÇ║ Upload avatar in Profile edit and verify on public page 

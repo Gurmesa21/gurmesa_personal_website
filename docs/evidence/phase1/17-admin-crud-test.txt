@@ -1,0 +1,89 @@
+﻿node.exe : Γùç injected env (12) from .env.test
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γùç injected env (12) from .env.test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γùç injected env (0) from .env.test
+[globalSetup] Resetting and seeding test database: gurmesa_test_db...
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "gurmesa_test_db", schema "public" at "127.0.0.1:5433"
+
+9 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+Seed completed.
+[globalSetup] Test database gurmesa_test_db reset and seeded successfully.
+
+Running 3 tests using 1 worker
+
+
+Γùç injected env (0) from .env.test
+[1/3] [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:14:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Services: Edit and persist
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[2/3] [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:51:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Projects: Edit and persist
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] Error: Failed to find Server Action "6007d36b7ca56d886440f094210dc9cc836e292aa0". This request might be 
+from an older or newer deployment.
+[WebServer] Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+[WebServer]     at i 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__0nhhui-._.js:10:66267)
+[WebServer]     at Object.get 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__0nhhui-._.js:12:2951)
+
+  1) [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:51:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Projects: Edit and persist 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected: "http://localhost:3006/admin/projects"
+    Received: "http://localhost:3006/admin/projects/cmvsgpvgb000v4l5t5sfquu49/edit"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        3 ├ù locator resolved to <html lang="en" class="dark">ΓÇª</html>
+          - unexpected value "http://localhost:3006/admin/projects/cmvsgpvgb000v4l5t5sfquu49/edit"
+        11 ├ù locator resolved to <html lang="en">ΓÇª</html>
+           - unexpected value "http://localhost:3006/admin/projects/cmvsgpvgb000v4l5t5sfquu49/edit"
+
+
+      67 |     await page.click('button[type="submit"]');
+      68 |     
+    > 69 |     await expect(page).toHaveURL('/admin/projects');
+         |                        ^
+      70 |     
+      71 |     const updatedRow = page.getByTestId('admin-row').first();
+      72 |     const displayedTitle = await updatedRow.locator('.text-xl').first().textContent();
+        at C:\Users\Hp\Documents\Projects\Gurmesa_website\tests\e2e\admin-crud.spec.ts:69:24
+
+    Error Context: test-results\admin-crud-Admin-CRUD-Edit-65969-t-Projects-Edit-and-persist-chromium\error-context.md
+
+
+Γùç injected env (0) from .env.test
+
+[3/3] [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:81:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Blog: Edit and persist
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at ge (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\_1fgda-5._.js:404:60412)
+[WebServer]     at async f 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\ssr\[root-of-the-server]__158vy5q._.js:1:964) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+  1 failed
+    [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:51:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Projects: Edit and persist 
+  2 passed (36.2s)

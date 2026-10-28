@@ -88,7 +88,7 @@ export default function BlogForm({ post, categories }: { post?: import('@prisma/
           
           <div className="pt-2">
             <Button type="submit" disabled={loading} className="w-full sm:w-auto">
-              {loading ? 'Saving Post...' : post ? 'Update Post' : 'Save Post'}
+              {loading ? 'Saving Post...' : 'Save Post'}
             </Button>
           </div>
         </form>

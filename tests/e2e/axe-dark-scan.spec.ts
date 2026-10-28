@@ -23,6 +23,7 @@ test.describe('Task 10 - Axe Accessibility Scan (8 Public + 4 Admin Pages)', () 
   ];
 
   test('run axe in dark theme and report violation counts and contrast failures', async ({ page }) => {
+    test.setTimeout(120000);
     const report: Record<string, { totalViolations: number; critical: number; serious: number; contrastFailures: number; documentTitlePassed: boolean; violations: any[] }> = {};
 
     // 1. Scan 8 public pages

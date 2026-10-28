@@ -1,0 +1,58 @@
+◇ injected env (12) from .env.test
+◇ injected env (0) from .env.test
+[globalSetup] Resetting and seeding test database: gurmesa_test_db...
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "gurmesa_test_db", schema "public" at "127.0.0.1:5433"
+
+9 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+Seed completed.
+[globalSetup] Test database gurmesa_test_db reset and seeded successfully.
+
+Running 39 tests using 1 worker
+
+◇ injected env (0) from .env.test
+
+[1/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] / has exactly one h1
+[2/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /about has exactly one h1
+[3/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /services has exactly one h1
+[4/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /services/web-development has exactly one h1
+[5/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /work has exactly one h1
+[6/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /work/os-dashboard has exactly one h1
+[7/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /blog has exactly one h1
+[8/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /blog/first-post has exactly one h1
+[9/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /contact has exactly one h1
+[10/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /testimonials has exactly one h1
+[11/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /privacy has exactly one h1
+[12/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /terms has exactly one h1
+[13/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /non-existent-404-page has exactly one h1
+[14/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] / has exactly one h1
+[15/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /about has exactly one h1
+[16/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /services has exactly one h1
+[17/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /services/web-development has exactly one h1
+[18/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /work has exactly one h1
+[19/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /work/os-dashboard has exactly one h1
+[20/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /blog has exactly one h1
+[21/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /blog/first-post has exactly one h1
+[22/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /contact has exactly one h1
+[23/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /testimonials has exactly one h1
+[24/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /privacy has exactly one h1
+[25/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /terms has exactly one h1
+[26/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /non-existent-404-page has exactly one h1
+[27/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] / has exactly one h1
+[28/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /about has exactly one h1
+[29/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /services has exactly one h1
+[30/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /services/web-development has exactly one h1
+[31/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /work has exactly one h1
+[32/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /work/os-dashboard has exactly one h1
+[33/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /blog has exactly one h1
+[34/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /blog/first-post has exactly one h1
+[35/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /contact has exactly one h1
+[36/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /testimonials has exactly one h1
+[37/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /privacy has exactly one h1
+[38/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /terms has exactly one h1
+[39/39] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /non-existent-404-page has exactly one h1
+  39 passed (50.6s)

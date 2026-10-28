@@ -69,6 +69,10 @@ test.describe('Part 3 - Media Upload Widget', () => {
 
     // Delete the media using the trash button
     await page.goto('/admin/profile'); // Reload to see media picker again
+    const selectMediaBtn = page.locator('[data-testid="select-media-file-btn"]');
+    if (await selectMediaBtn.isVisible()) {
+      await selectMediaBtn.click();
+    }
     const assetCard = page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`);
     
     page.on('dialog', dialog => dialog.accept());

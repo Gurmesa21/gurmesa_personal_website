@@ -6,16 +6,36 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import Link from 'next/link';
 import { Project, CaseStudy, ProjectMedia } from '@prisma/client';
-import { upsertCaseStudyAction } from './actions';
+import { createProjectAction, updateProjectAction, upsertCaseStudyAction } from './actions';
 import { MediaPicker } from '@/components/admin/MediaPicker';
 
 import { useState } from 'react';
 
-export function ProjectForm({ action, defaultValues = {} }: { action: (formData: FormData) => void; defaultValues?: Partial<Project> & { media?: ProjectMedia[] } }) {
+export function ProjectForm({ action, defaultValues = {} }: { action?: (formData: FormData) => void; defaultValues?: Partial<Project> & { media?: ProjectMedia[] } }) {
   const featuredMedia = defaultValues.media?.find(m => m.order === 0);
   const [featuredMediaId, setFeaturedMediaId] = useState(featuredMedia?.mediaId || '');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    try {
+      if (defaultValues?.id) {
+        await updateProjectAction(defaultValues.id, formData);
+      } else if (action) {
+        await action(formData);
+      } else {
+        await createProjectAction(formData);
+      }
+    } catch (err: any) {
+      if (err?.message === 'NEXT_REDIRECT' || err?.digest?.startsWith('NEXT_REDIRECT')) {
+        throw err;
+      }
+      console.error('ProjectForm submit error:', err);
+    }
+  };
+
   return (
-    <form action={action} className="space-y-6 max-w-2xl bg-card border p-6 rounded-lg">
+    <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl bg-card border p-6 rounded-lg">
       <div className="space-y-2">
         <Label>Featured Image</Label>
         <MediaPicker name="featuredMediaId" value={featuredMediaId} onChange={setFeaturedMediaId} />
@@ -90,9 +110,21 @@ export function ProjectForm({ action, defaultValues = {} }: { action: (formData:
 }
 
 export function CaseStudyForm({ projectId, defaultValues = {} }: { projectId: string; defaultValues?: Partial<CaseStudy> }) {
-  const action = upsertCaseStudyAction.bind(null, projectId);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    try {
+      await upsertCaseStudyAction(projectId, formData);
+    } catch (err: any) {
+      if (err?.message === 'NEXT_REDIRECT' || err?.digest?.startsWith('NEXT_REDIRECT')) {
+        throw err;
+      }
+      console.error('CaseStudyForm submit error:', err);
+    }
+  };
+
   return (
-    <form action={action} className="space-y-6 max-w-2xl bg-card border p-6 rounded-lg mt-8 border-primary">
+    <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl bg-card border p-6 rounded-lg mt-8 border-primary">
       <h2 className="text-2xl font-bold">Case Study</h2>
       <div className="space-y-2">
         <Label htmlFor="problem">Problem</Label>

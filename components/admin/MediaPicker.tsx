@@ -62,8 +62,8 @@ export function MediaPicker({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [tempSelectedId, setTempSelectedId] = useState(selectedId);
 
-  const handleSelect = (id: string) => {
-    const newId = selectedId === id ? '' : id;
+  const handleSelect = (id: string, forceSelect?: boolean) => {
+    const newId = (!forceSelect && selectedId === id) ? '' : id;
     if (hiddenInputRef.current) {
       hiddenInputRef.current.value = newId;
       hiddenInputRef.current.setAttribute('value', newId);
@@ -196,7 +196,10 @@ export function MediaPicker({
       <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between p-3.5 bg-card border border-border rounded-lg shadow-sm">
         <div className="flex items-center gap-3 min-w-0">
           {selectedAsset ? (
-            <div className="relative h-14 w-14 rounded-md overflow-hidden bg-muted border border-border shrink-0">
+            <div
+              onClick={() => handleSelect(selectedAsset.id, true)}
+              className="relative h-14 w-14 rounded-md overflow-hidden bg-muted border border-border shrink-0 cursor-pointer"
+            >
               {selectedAsset.mimeType.startsWith('video/') || selectedAsset.storageKey.endsWith('.mp4') ? (
                 <video src={selectedAsset.url} className="h-full w-full object-cover pointer-events-none" muted autoPlay loop playsInline preload="auto" />
               ) : (
@@ -218,12 +221,21 @@ export function MediaPicker({
               {selectedAsset ? selectedAsset.altText || selectedAsset.storageKey.replace(/^media\//, '') : 'No media file selected'}
             </div>
             <div className="text-xs text-muted-foreground">
-              {selectedAsset ? `${selectedAsset.mimeType} • ${(selectedAsset.size / 1024).toFixed(1)} KB` : 'Choose an image or video from the library'}
+              {selectedAsset ? (
+                <span>1 asset selected &bull; {selectedAsset.mimeType} &bull; {(selectedAsset.size / 1024).toFixed(1)} KB</span>
+              ) : (
+                'Choose an image or video from the library'
+              )}
             </div>
           </div>
         </div>
 
         <div className="flex items-center gap-2 shrink-0 w-full sm:w-auto justify-end">
+          {isUploading && (
+            <span className="text-xs text-primary font-medium animate-pulse flex items-center gap-1">
+              Uploading...
+            </span>
+          )}
           {selectedId && (
             <Button
               type="button"
