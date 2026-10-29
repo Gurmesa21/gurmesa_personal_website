@@ -48,25 +48,38 @@ describe('Neon Object Storage - S3 Infrastructure Configuration', () => {
       vi.stubEnv('STORAGE_ENDPOINT', 'https://br-raspy-math-b5fl7dc6.storage.c-7.us-east-2.aws.neon.tech');
       vi.stubEnv('STORAGE_ACCESS_KEY', 'nak_live_test_key');
       vi.stubEnv('STORAGE_SECRET_KEY', 'nsk_live_test_secret');
-      vi.stubEnv('STORAGE_PUBLIC_URL_BASE', '');
+      vi.stubEnv('STORAGE_PUBLIC_URL', '');
 
       const adapter = new S3StorageAdapter();
       expect(adapter).toBeInstanceOf(S3StorageAdapter);
     });
 
-    it('treats empty or whitespace STORAGE_PUBLIC_URL_BASE as private bucket (no invalid public URL)', async () => {
+    it('treats empty or whitespace STORAGE_PUBLIC_URL as private bucket (no invalid public URL)', async () => {
       vi.stubEnv('STORAGE_BUCKET', 'avenor-media');
       vi.stubEnv('STORAGE_REGION', 'us-east-2');
       vi.stubEnv('STORAGE_ENDPOINT', 'https://br-raspy-math-b5fl7dc6.storage.c-7.us-east-2.aws.neon.tech');
       vi.stubEnv('STORAGE_ACCESS_KEY', 'nak_live_test_key');
       vi.stubEnv('STORAGE_SECRET_KEY', 'nsk_live_test_secret');
-      vi.stubEnv('STORAGE_PUBLIC_URL_BASE', '   ');
+      vi.stubEnv('STORAGE_PUBLIC_URL', '   ');
 
       const adapter = new S3StorageAdapter();
       // Calling getUrl for a private bucket generates a presigned URL with X-Amz-Signature, not a bare public URL
       const url = await adapter.getUrl('media/test.jpg');
       expect(url).toContain('X-Amz-Signature');
       expect(url).toContain('media/test.jpg');
+    });
+
+    it('returns direct public URL when STORAGE_PUBLIC_URL is configured', async () => {
+      vi.stubEnv('STORAGE_BUCKET', 'avenor-media');
+      vi.stubEnv('STORAGE_REGION', 'us-east-2');
+      vi.stubEnv('STORAGE_ENDPOINT', 'https://br-raspy-math-b5fl7dc6.storage.c-7.us-east-2.aws.neon.tech');
+      vi.stubEnv('STORAGE_ACCESS_KEY', 'nak_live_test_key');
+      vi.stubEnv('STORAGE_SECRET_KEY', 'nsk_live_test_secret');
+      vi.stubEnv('STORAGE_PUBLIC_URL', 'https://cdn.example.com');
+
+      const adapter = new S3StorageAdapter();
+      const url = await adapter.getUrl('media/test.jpg');
+      expect(url).toBe('https://cdn.example.com/avenor-media/media/test.jpg');
     });
   });
 
@@ -91,7 +104,7 @@ describe('Neon Object Storage - S3 Infrastructure Configuration', () => {
       vi.stubEnv('NODE_ENV', 'development');
       vi.stubEnv('PLAYWRIGHT_TEST', '0');
       vi.stubEnv('STORAGE_ACCESS_KEY', '');
-      vi.stubEnv('S3_ACCESS_KEY', '');
+      vi.stubEnv('STORAGE_SECRET_KEY', '');
 
       expect(hasValidStorageConfig()).toBe(false);
       const adapter = getStorageAdapter();
@@ -103,7 +116,7 @@ describe('Neon Object Storage - S3 Infrastructure Configuration', () => {
       vi.stubEnv('NODE_ENV', 'production');
       vi.stubEnv('PLAYWRIGHT_TEST', '0');
       vi.stubEnv('STORAGE_ACCESS_KEY', '');
-      vi.stubEnv('S3_ACCESS_KEY', '');
+      vi.stubEnv('STORAGE_SECRET_KEY', '');
 
       expect(hasValidStorageConfig()).toBe(false);
       expect(() => getStorageAdapter()).toThrow(/Object storage configuration.*missing or invalid in production/i);

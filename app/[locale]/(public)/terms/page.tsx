@@ -11,19 +11,7 @@ export default function TermsPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 space-y-8">
-      {/* Header */}
-      <div className="space-y-2.5">
-        <div className="inline-flex items-center gap-2 rounded-full border border-[#8063F7]/30 bg-[#8063F7]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
-          <FileText className="h-3.5 w-3.5 text-[#8063F7] animate-pulse" />
-          <span>Legal Agreement</span>
-        </div>
-        <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#F5F6FC]">
-          {t('title')}
-        </h1>
-        <p className="text-xs sm:text-sm text-[#A5ABC1]">
-          {t('updated')}
-        </p>
-      </div>
+      <h1 className="sr-only">{t('title')}</h1>
 
       {/* Main Content Card */}
       <div className="group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-6 sm:p-8 md:p-10 shadow-xl transition-all duration-300 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10">

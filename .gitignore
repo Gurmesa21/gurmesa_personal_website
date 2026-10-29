@@ -13,7 +13,11 @@
 # testing
 /coverage
 
-# next.js
+# backups
+/backups/
+*.gpg
+*.dump
+
 /.next/
 /out/
 

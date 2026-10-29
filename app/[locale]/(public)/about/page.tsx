@@ -127,15 +127,9 @@ export default async function AboutPage() {
                   )}
                 </div>
 
-                {/* Name & Title Typography */}
-                <div className="space-y-1.5">
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black tracking-tight text-white leading-tight">
-                    {profile?.name || t('title')}
-                  </h1>
-                  <p className="text-base sm:text-lg font-heading font-semibold text-[#A995FF] tracking-wide">
-                    {profile?.title}
-                  </p>
-                </div>
+                <h1 className="sr-only">
+                  {profile?.name || t('title')}
+                </h1>
 
                 {/* Biography */}
                 {profile?.bio && (

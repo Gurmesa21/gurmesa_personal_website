@@ -437,36 +437,28 @@ export function BlogPostClientView({
         <span className="text-[#F5F6FC] font-medium truncate max-w-[240px] sm:max-w-md">{post.title}</span>
       </nav>
 
-      {/* Editorial Article Header */}
-      <header className="space-y-4">
-        <div className="flex flex-wrap items-center gap-2.5">
-          {post.category && (
-            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#A995FF]">
-              {post.category.name}
-            </span>
-          )}
-          {formattedDate && (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-[#292D45] bg-[#101426] text-[#A5ABC1]">
-              <Calendar className="w-3.5 h-3.5 text-[#8063F7]" />
-              {formattedDate}
-            </span>
-          )}
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-[#292D45] bg-[#101426] text-[#A5ABC1]">
-            <Clock className="w-3.5 h-3.5 text-[#8063F7]" />
-            {readTime}
+      <h1 className="sr-only">
+        {post.title}
+      </h1>
+
+      {/* Badges / Meta */}
+      <div className="flex flex-wrap items-center gap-2.5">
+        {post.category && (
+          <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#A995FF]">
+            {post.category.name}
           </span>
-        </div>
-
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight text-[#F5F6FC] leading-tight">
-          {post.title}
-        </h1>
-
-        {post.excerpt && (
-          <p className="text-base sm:text-lg text-[#A5ABC1] max-w-4xl leading-relaxed">
-            {post.excerpt}
-          </p>
         )}
-      </header>
+        {formattedDate && (
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-[#292D45] bg-[#101426] text-[#A5ABC1]">
+            <Calendar className="w-3.5 h-3.5 text-[#8063F7]" />
+            {formattedDate}
+          </span>
+        )}
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-[#292D45] bg-[#101426] text-[#A5ABC1]">
+          <Clock className="w-3.5 h-3.5 text-[#8063F7]" />
+          {readTime}
+        </span>
+      </div>
 
       {/* Wide Featured Media Banner */}
       <div className="relative w-full aspect-[21/9] min-h-[260px] max-h-[460px] rounded-2xl overflow-hidden border border-[#292D45] bg-[#101426] shadow-2xl flex items-center justify-center">

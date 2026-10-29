@@ -41,31 +41,7 @@ export default async function ContactPage() {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 space-y-8 sm:space-y-10">
-        {/* Compact, aligned page header */}
-        <div className="space-y-2.5 max-w-2xl">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#292D45] bg-[#171D32] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
-                Get in Touch
-              </span>
-            </div>
-            {profile?.availabilityStatus && (
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium border border-emerald-500/30 bg-emerald-500/10 text-emerald-400">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                {profile.availabilityStatus}
-              </span>
-            )}
-          </div>
-
-          <h1 className="text-3xl sm:text-4xl font-heading font-bold tracking-tight text-[#F5F6FC]">
-            {t('title')}
-          </h1>
-
-          <p className="text-sm sm:text-base text-[#A5ABC1] leading-relaxed">
-            {t('subtitle')}
-          </p>
-        </div>
+        <h1 className="sr-only">{t('title')}</h1>
 
         {/* Main Content Grid: Balanced two-column desktop layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">

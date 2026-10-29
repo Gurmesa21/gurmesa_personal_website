@@ -90,28 +90,22 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <span className="text-[#F5F6FC] font-medium truncate max-w-[240px] sm:max-w-md">{service.title}</span>
         </nav>
 
-        {/* Compact Service Header */}
-        <header className="space-y-4">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#A995FF]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
-              {t('service')}
+        <h1 className="sr-only">
+          {service.title}
+        </h1>
+
+        {/* Badges */}
+        <div className="flex flex-wrap items-center gap-2.5">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#A995FF]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
+            {t('service')}
+          </span>
+          {service.startingPriceRange && (
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border border-[#292D45] bg-[#101426] text-[#A5ABC1]">
+              {t('startingAt')} <strong className="ml-1 text-[#F5F6FC]">{service.startingPriceRange}</strong>
             </span>
-            {service.startingPriceRange && (
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border border-[#292D45] bg-[#101426] text-[#A5ABC1]">
-                {t('startingAt')} <strong className="ml-1 text-[#F5F6FC]">{service.startingPriceRange}</strong>
-              </span>
-            )}
-          </div>
-
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight text-[#F5F6FC] leading-tight">
-            {service.title}
-          </h1>
-
-          <p className="text-base sm:text-lg text-[#A5ABC1] max-w-4xl leading-relaxed">
-            {service.summary}
-          </p>
-        </header>
+          )}
+        </div>
 
         {/* Wide Featured Media Banner */}
         <div className="relative w-full aspect-[21/9] min-h-[260px] max-h-[440px] border border-[#292D45] bg-[#101426] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/100 hover:shadow-x2 hover:shadow-[#8063F7]/20 rounded-2xl overflow-hidden border border-[#292D45] bg-[#101426] shadow-2xl flex items-center justify-center">

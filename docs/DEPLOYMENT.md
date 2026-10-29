@@ -33,8 +33,8 @@ The following environment variables are required for the application to function
 - `STORAGE_REGION`: The region of the S3 bucket (e.g., `us-east-1`). (Not a secret).
 - `STORAGE_ACCESS_KEY`: **[SECRET]** The access key ID for the S3 bucket.
 - `STORAGE_SECRET_KEY`: **[SECRET]** The secret access key for the S3 bucket.
-- `S3_ENDPOINT`: (Optional) The custom endpoint URL if using a provider other than AWS S3 (e.g., MinIO or R2). (Not a secret).
-- `S3_PUBLIC_URL_BASE`: (Optional) The public CDN URL base for the bucket (e.g., `https://cdn.example.com`), allowing the app to serve images via CDN rather than direct S3 URLs.
+- `STORAGE_ENDPOINT`: The endpoint URL for S3-compatible storage (e.g. Neon Object Storage or MinIO). (Not a secret).
+- `STORAGE_PUBLIC_URL`: (Optional) The public CDN or HTTP base URL for public bucket asset resolution (e.g., `https://cdn.example.com`).
 
 ## Production Build and Start Commands
 

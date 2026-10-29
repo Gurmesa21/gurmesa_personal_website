@@ -73,21 +73,7 @@ export default async function ServicesPage() {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
-        {/* Compact, left-aligned page header aligned with the card grid */}
-        <div className="mb-6 sm:mb-8 space-y-2">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#292D45] bg-[#171D32] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
-              Services
-            </span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-heading font-bold tracking-tight text-[#F5F6FC]">
-            {t('title')}
-          </h1>
-          <p className="text-sm sm:text-base text-[#A5ABC1]">
-            {t('subtitle')}
-          </p>
-        </div>
+        <h1 className="sr-only">{t('title')}</h1>
 
         {/* Services Grid: balanced two-column layout on desktop, 1 column on mobile, 16-20px gap */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">

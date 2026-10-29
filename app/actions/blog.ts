@@ -78,6 +78,7 @@ export async function toggleLike(postId: string) {
 import { z } from 'zod';
 import { commentRateLimiter } from '@/lib/rate-limit';
 import { createNotification } from '@/lib/notifications';
+import { getEmailTransport } from '@/lib/email';
 
 import { assertLikeHashSecret } from '@/lib/auth/like-secret';
 assertLikeHashSecret();
@@ -125,6 +126,17 @@ export async function addComment(postId: string, data: { author: string; email?:
       entityId: comment.id,
       message: `New comment by ${comment.author} on post "${post.title}"`
     });
+
+    const emailTo = process.env.EMAIL_OWNER_TO;
+    if (emailTo) {
+      const emailTransport = getEmailTransport();
+      await emailTransport.send({
+        to: emailTo,
+        subject: `New Blog Comment on "${post.title}" from ${validatedData.author}`,
+        text: `New comment submitted on post "${post.title}":\nAuthor: ${validatedData.author}\nEmail: ${validatedData.email}\n\nComment:\n${validatedData.content}`,
+        replyTo: validatedData.email
+      });
+    }
 
     return { success: true, message: 'Comment submitted for moderation' };
   } catch (error) {

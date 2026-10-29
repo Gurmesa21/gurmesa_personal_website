@@ -48,4 +48,4 @@ The following features are pending implementation with their corresponding SRS p
 
 ## 5. Third-Party Integrations & Production Readiness
 - **Uptime Monitoring**: `/api/health` verified with DB and Redis checks (`tests/integration/health.test.ts`). External APM (Sentry) or UptimeRobot to be hooked up by Owner upon domain DNS cutover.
-- **Object Storage**: `lib/storage/` supports S3 adapter (`AWS_S3_BUCKET` / Cloudflare R2 credentials) for production, and local fallback adapter for CI and testing.
+- **Object Storage**: `lib/storage/` supports S3 adapter (`STORAGE_*` canonical credentials) for production, and local fallback adapter for CI and testing.

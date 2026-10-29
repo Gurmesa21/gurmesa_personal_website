@@ -34,10 +34,10 @@ class MockStorageAdapter implements StorageAdapter {
 let instance: StorageAdapter | null = null;
 
 export function hasValidStorageConfig(): boolean {
-  const accessKey = (process.env.STORAGE_ACCESS_KEY || process.env.S3_ACCESS_KEY || '').trim();
-  const secretKey = (process.env.STORAGE_SECRET_KEY || process.env.S3_SECRET_KEY || '').trim();
-  const endpoint = (process.env.STORAGE_ENDPOINT || process.env.S3_ENDPOINT || '').trim();
-  const bucket = (process.env.STORAGE_BUCKET || process.env.S3_BUCKET || '').trim();
+  const accessKey = (process.env.STORAGE_ACCESS_KEY || '').trim();
+  const secretKey = (process.env.STORAGE_SECRET_KEY || '').trim();
+  const endpoint = (process.env.STORAGE_ENDPOINT || '').trim();
+  const bucket = (process.env.STORAGE_BUCKET || '').trim();
 
   if (!accessKey || !secretKey || !endpoint || !bucket) {
     return false;

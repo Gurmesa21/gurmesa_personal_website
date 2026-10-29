@@ -60,23 +60,14 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
-        {/* Horizontal Editorial Header on Desktop, stacked on Mobile */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 sm:gap-6 mb-6 sm:mb-8 pb-6 border-b border-[#292D45]/60">
-          {/* Title and description on left */}
-          <div className="space-y-2 max-w-xl">
-            <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#292D45] bg-[#171D32] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
-                Articles
-              </span>
-            </div>
-            <h1 className="text-3xl sm:text-4xl font-heading font-bold tracking-tight text-[#F5F6FC]">
-              {t('title')}
-            </h1>
-          </div>
+        <h1 className="sr-only">
+          {t('title')}
+        </h1>
 
+        {/* Search field bar */}
+        <div className="flex items-center justify-end mb-6 sm:mb-8 pb-6 border-b border-[#292D45]/60">
           {/* Search field and compact search action on right */}
-          <form className="w-full md:w-80 lg:w-96 shrink-0 group" method="GET">
+          <form className="w-full md:w-80 lg:w-96 shrink-0 group ml-auto" method="GET">
             <div className="flex items-center w-full bg-[#101426] border border-[#292D45] rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-[#8063F7]/40 focus-within:border-[#8063F7] transition-all">
               <div className="pl-3.5 pr-2 flex items-center pointer-events-none">
                 <Search className="w-4 h-4 text-[#858EA8] group-focus-within:text-[#8063F7] transition-colors" />

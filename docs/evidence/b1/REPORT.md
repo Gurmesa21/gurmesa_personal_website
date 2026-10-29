@@ -111,7 +111,7 @@ All automated verification gates (Case Check, Typecheck, Lint, Vitest 197 tests,
 7. **SSRF**: `project.liveUrl` is validated, stored, mapped to DTO, and rendered as a client-side link; never fetched on the server.
 8. **SQL Injection**: 0 occurrences of `$executeRaw`; 1 static `SELECT 1` in health check; 100% parameterized queries.
 9. **Log Hygiene**: Zero tokens, passwords, or PII printed to console.
-10. **Inquiry Retention**: GDPR-compliant purge script `scripts/purge-old-inquiries.ts` with `--dry-run` and customizable retention days.
+10. **Inquiry Retention**: Automated data retention purge script `scripts/purge-old-inquiries.ts` with `--dry-run` and customizable retention days.
 11. **Admin 2FA**: Architecture recommendation documented for TOTP / WebAuthn.
 12. **npm Audit**: 4 advisories documented with remediation plan in `docs/evidence/b1/04-audit.txt`.
 

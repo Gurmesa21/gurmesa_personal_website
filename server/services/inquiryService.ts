@@ -11,7 +11,7 @@ export class InquiryService {
   constructor(
     private rateLimiter: ContactRateLimiter = contactRateLimiter,
     private emailTransport: EmailTransport = getEmailTransport()
-  ) {}
+  ) { }
 
   async submitInquiry(input: InquiryInput, clientIp: string) {
     // 1. Validate
@@ -81,10 +81,22 @@ export class InquiryService {
 
     if (ackSetting && (ackSetting.value === 'true' || ackSetting.value === true)) {
       const fromEmail = emailSetting?.value ? String(emailSetting.value).replace(/"/g, '') : 'contact@example.com';
+      const formLocale = (data as any).locale || 'en';
+      let ackSubject = 'Thank you for your inquiry';
+      let ackText = 'We have received your inquiry and will get back to you shortly.\n\n- The Gurmesa Team';
+
+      if (formLocale === 'am') {
+        ackSubject = 'ስለ ጥያቄዎ እናመሰግናለን';
+        ackText = 'ጥያቄዎ ደርሶናል፤ በቅርቡ ምላሽ እንሰጣለን።\n\n— ጉርሜሳ';
+      } else if (formLocale === 'om') {
+        ackSubject = 'Gaaffii keessaniif galatoomaa';
+        ackText = 'Gaaffiin keessan nu gaheera; dhiyootti deebii isiniif kennina.\n\n— Gurmeessaa';
+      }
+
       const ackRes = await this.emailTransport.send({
         to: data.email,
-        subject: 'Thank you for your inquiry',
-        text: 'We have received your inquiry and will get back to you shortly.\n\n- The Gurmesa Team',
+        subject: ackSubject,
+        text: ackText,
         replyTo: fromEmail
       });
       ackStatus = ackRes.status;
@@ -157,14 +169,44 @@ export class InquiryService {
     });
   }
 
-  async updateStatus(id: string, status: InquiryStatus) {
+  async updateStatus(id: string, status: InquiryStatus, notifyClient: boolean = false, locale: 'en' | 'am' | 'om' = 'en') {
     await this.requireAuth();
+    const existing = await prisma.inquiry.findUnique({ where: { id } });
+    if (!existing) {
+      throw new Error('Inquiry not found');
+    }
+
     const result = await prisma.inquiry.update({
       where: { id },
       data: { status }
     });
-  await logAdminAction({ action: 'UPDATE', entity: 'Inquiry', entityId: result?.id || 'unknown' });
-  return result;
+    await logAdminAction({ action: 'UPDATE', entity: 'Inquiry', entityId: result?.id || 'unknown' });
+
+    // Client notification: only through "Notify client" checkbox in admin, default OFF, never for LOST or ARCHIVED
+    if (notifyClient && status !== InquiryStatus.LOST && status !== InquiryStatus.ARCHIVED && existing.email) {
+      const emailSetting = await prisma.siteSetting.findUnique({ where: { key: 'publicContactEmail' } });
+      const fromEmail = emailSetting?.value ? String(emailSetting.value).replace(/"/g, '') : 'contact@example.com';
+
+      let statusSubject = `Update on your inquiry - Status: ${status}`;
+      let statusText = `Hello ${existing.name},\n\nYour project inquiry status has been updated to: ${status}.\n\nIf you have any questions, feel free to reply to this email.\n\nBest regards,\nGurmesa Teklemariam`;
+
+      if (locale === 'am') {
+        statusSubject = `የጥያቄዎ ወቅታዊ ሁኔታ - ሁኔታ: ${status}`;
+        statusText = `ሰላም ${existing.name}፣\n\nየጥያቄዎ ሁኔታ ወደ ${status} ተቀይሯል።\n\nምንም አይነት ጥያቄ ካለዎት ይህንን ኢሜይል ይመልሱ።\n\nከአክብሮት ጋር፣\nጉርሜሳ ተክለማርያም`;
+      } else if (locale === 'om') {
+        statusSubject = `Haala gaaffii keessanii - Haala: ${status}`;
+        statusText = `Akkam ${existing.name},\n\nHaalli gaaffii keessanii gara ${status}tti jijjiirameera.\n\nGaaffii yoo qabaattan asumaan deebisuu dandeessu.\n\nNagaa wajjin,\nGurmeessaa Taklamaariyaam`;
+      }
+
+      await this.emailTransport.send({
+        to: existing.email,
+        subject: statusSubject,
+        text: statusText,
+        replyTo: fromEmail
+      });
+    }
+
+    return result;
   }
 
   async addNote(id: string, body: string) {
@@ -178,8 +220,8 @@ export class InquiryService {
         body
       }
     });
-  await logAdminAction({ action: 'CREATE', entity: 'Inquiry', entityId: result?.id || 'unknown' });
-  return result;
+    await logAdminAction({ action: 'CREATE', entity: 'Inquiry', entityId: result?.id || 'unknown' });
+    return result;
   }
 
   async deleteInquiry(id: string) {
@@ -190,8 +232,8 @@ export class InquiryService {
     const result = await prisma.inquiry.delete({
       where: { id }
     });
-  await logAdminAction({ action: 'DELETE', entity: 'Inquiry', entityId: result?.id || 'unknown' });
-  return result;
+    await logAdminAction({ action: 'DELETE', entity: 'Inquiry', entityId: result?.id || 'unknown' });
+    return result;
   }
 }
 

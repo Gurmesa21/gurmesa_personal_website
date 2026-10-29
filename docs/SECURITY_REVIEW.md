@@ -128,7 +128,7 @@ This security review audits the Gurmesa portfolio and administrative platform ac
 
 ### 2.12 Inquiry Retention Purge
 - **Status**: `VERIFIED`
-- Script `scripts/purge-old-inquiries.ts` implements GDPR / data minimization compliance:
+- Script `scripts/purge-old-inquiries.ts` implements automated inquiry retention and data minimization:
   - Reads `inquiryRetentionDays` from `siteSetting` (defaults to 365 days).
   - Supports `--dry-run` to audit deletable records without modification.
   - Recommended deployment: Add a recurring monthly or weekly cron job via Render Cron Job (`npx tsx scripts/purge-old-inquiries.ts`).

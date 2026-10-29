@@ -1,7 +1,14 @@
 import { config } from 'dotenv';
 import { ResendTransport } from '../lib/email';
 
-config();
+if (process.env.ENV_FILE) {
+  config({ path: process.env.ENV_FILE, override: true });
+} else {
+  config();
+  if (!process.env.EMAIL_API_KEY && !process.env.RESEND_API_KEY) {
+    config({ path: '.env.production', override: true });
+  }
+}
 
 async function main() {
   console.log('=== Resend Email Transport Smoke Test ===\n');
@@ -13,8 +20,8 @@ async function main() {
 
   console.log('1. Configuration Check:');
   console.log(`   - EMAIL_API_KEY / RESEND_API_KEY: ${apiKey ? (apiKey.startsWith('re_') ? 'Set (Valid prefix)' : 'Set (Custom/Test)') : 'MISSING'}`);
-  console.log(`   - EMAIL_FROM: ${fromEmail || 'MISSING'}`);
-  console.log(`   - EMAIL_OWNER_TO: ${ownerTo || 'MISSING'}`);
+  console.log(`   - EMAIL_FROM: ${fromEmail ? 'Set' : 'MISSING'}`);
+  console.log(`   - EMAIL_OWNER_TO: ${ownerTo ? 'Set' : 'MISSING'}`);
 
   if (isDryRun) {
     console.log('\n2. Dry Run Execution:');
@@ -32,7 +39,7 @@ async function main() {
   }
 
   console.log('\n2. Live Send Execution:');
-  console.log(`   Sending test notification to ${ownerTo}...`);
+  console.log('   Sending test notification to EMAIL_OWNER_TO (address masked for privacy)...');
 
   const transport = new ResendTransport();
   const res = await transport.send({
@@ -44,7 +51,7 @@ async function main() {
 
   if (res.status === 'SENT') {
     console.log(`   [SUCCESS] Email sent successfully! Message ID: ${res.id || 'N/A'}`);
-    process.exit(0);
+    return;
   } else {
     console.error(`   [FAILED] Email delivery failed: ${res.error}`);
     process.exit(1);

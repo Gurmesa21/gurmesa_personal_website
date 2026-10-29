@@ -17,7 +17,7 @@ export const metadata = {
 export default async function InquiryDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
   const inquiry = await inquiryService.getInquiry(resolvedParams.id);
-  
+
   if (!inquiry) {
     notFound();
   }
@@ -25,8 +25,9 @@ export default async function InquiryDetailPage({ params }: { params: Promise<{ 
   async function updateStatus(formData: FormData) {
     'use server';
     const newStatus = formData.get('status') as InquiryStatus;
+    const notifyClient = formData.get('notifyClient') === 'on';
     if (newStatus) {
-      await inquiryService.updateStatus(inquiry!.id, newStatus);
+      await inquiryService.updateStatus(inquiry!.id, newStatus, notifyClient);
       revalidatePath(`/admin/inquiries/${inquiry!.id}`);
     }
   }
@@ -66,17 +67,26 @@ export default async function InquiryDetailPage({ params }: { params: Promise<{ 
             <CardTitle>Applicant Information</CardTitle>
             <p className="text-sm text-muted-foreground mt-1">Personal details and application.</p>
           </div>
-          
-          <form action={updateStatus} className="flex items-center gap-2">
+
+          <form action={updateStatus} className="flex flex-wrap items-center gap-2">
             <select
               name="status"
               defaultValue={inquiry.status}
-              className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-card text-foreground px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex h-10 w-full sm:w-auto items-center justify-between rounded-md border border-input bg-card text-foreground px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {Object.values(InquiryStatus).map(s => (
                 <option key={s} value={s} className="bg-[#101426] text-[#F5F6FC]">{s}</option>
               ))}
             </select>
+            <label className="flex items-center gap-1.5 text-xs text-muted-foreground whitespace-nowrap cursor-pointer px-1">
+              <input
+                type="checkbox"
+                name="notifyClient"
+                defaultChecked={false}
+                className="rounded border-input text-primary focus:ring-primary h-4 w-4"
+              />
+              <span>Notify client</span>
+            </label>
             <Button type="submit">Update</Button>
           </form>
         </CardHeader>
@@ -103,7 +113,7 @@ export default async function InquiryDetailPage({ params }: { params: Promise<{ 
             <div className="md:col-span-2">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Notification Status</p>
               <p className="text-sm font-medium text-foreground mt-1">
-                {inquiry.notificationStatus} 
+                {inquiry.notificationStatus}
                 {inquiry.notificationError && <span className="text-destructive ml-2">({inquiry.notificationError})</span>}
               </p>
             </div>
@@ -133,9 +143,9 @@ export default async function InquiryDetailPage({ params }: { params: Promise<{ 
           </div>
 
           <form action={addNote} className="space-y-3 pt-2">
-            <Textarea 
-              name="body" 
-              rows={3} 
+            <Textarea
+              name="body"
+              rows={3}
               required
               placeholder="Add an internal note..."
               className="bg-card text-foreground"

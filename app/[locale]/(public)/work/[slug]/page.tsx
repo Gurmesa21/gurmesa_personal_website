@@ -110,35 +110,29 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           <span className="text-[#F5F6FC] font-medium truncate max-w-[240px] sm:max-w-md">{project.title}</span>
         </nav>
 
-        {/* Compact Project Header */}
-        <header className="space-y-4">
-          <div className="flex flex-wrap items-center gap-2.5">
+        <h1 className="sr-only">
+          {project.title}
+        </h1>
+
+        {/* Badges */}
+        <div className="flex flex-wrap items-center gap-2.5">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#A995FF]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
+            {t('caseStudy')}
+          </span>
+          {project.role && (
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#A995FF]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
-              {t('caseStudy')}
+              {t('role')} {project.role}
             </span>
-            {project.role && (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#A995FF]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
-                {t('role')} {project.role}
-              </span>
-            )}
-            {project.publishedAt && (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-[#292D45] bg-[#101426] text-[#A5ABC1]">
-                <Calendar className="w-3.5 h-3.5 text-[#8063F7]" />
-                {new Date(project.publishedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}
-              </span>
-            )}
-          </div>
-
-          <h1 className="text-3xl sm:text-2xl lg:text-3xl font-heading font-bold tracking-tight text-[#F5F6FC] leading-tight">
-            {project.title}
-          </h1>
-
-          <p className="text-base sm:text-lg text-[#A5ABC1] max-w-4xl leading-relaxed">
-            {project.summary}
-          </p>
-        </header>
+          )}
+          {project.publishedAt && (
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-[#292D45] bg-[#101426] text-[#A5ABC1]">
+              <Calendar className="w-3.5 h-3.5 text-[#8063F7]" />
+              {new Date(project.publishedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}
+            </span>
+          )}
+        </div>
 
         {/* Wide Project Hero Banner */}
 

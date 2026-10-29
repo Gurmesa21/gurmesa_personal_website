@@ -11,11 +11,11 @@ async function backupMedia() {
   const startTime = Date.now();
   console.log('=== Neon Object Storage Media Backup ===');
 
-  const endpoint = process.env.STORAGE_ENDPOINT || process.env.S3_ENDPOINT;
-  const region = process.env.STORAGE_REGION || process.env.S3_REGION || 'us-east-2';
-  const bucket = process.env.STORAGE_BUCKET || process.env.S3_BUCKET || 'avenor-media';
-  const accessKeyId = process.env.STORAGE_ACCESS_KEY || process.env.S3_ACCESS_KEY;
-  const secretAccessKey = process.env.STORAGE_SECRET_KEY || process.env.S3_SECRET_KEY;
+  const endpoint = process.env.STORAGE_ENDPOINT;
+  const region = process.env.STORAGE_REGION || 'us-east-2';
+  const bucket = process.env.STORAGE_BUCKET || 'avenor-media';
+  const accessKeyId = process.env.STORAGE_ACCESS_KEY;
+  const secretAccessKey = process.env.STORAGE_SECRET_KEY;
 
   if (!endpoint || !accessKeyId || !secretAccessKey || !bucket) {
     console.error('ERROR: Missing storage environment variables (STORAGE_ENDPOINT, STORAGE_ACCESS_KEY, STORAGE_SECRET_KEY, STORAGE_BUCKET).');

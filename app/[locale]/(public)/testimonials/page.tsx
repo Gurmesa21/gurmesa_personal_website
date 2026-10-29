@@ -25,38 +25,23 @@ export default async function TestimonialsPage() {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 space-y-8 min-w-0">
-        {/* Header — Aligned page header with count & quick action */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 border-b border-[#292D45]/60 min-w-0">
-          <div className="space-y-2 max-w-2xl min-w-0">
-            <div className="flex items-center gap-2">
-              <span className=" inline-flex items-center gap-2 rounded-full border border-[#292D45] bg-[#171D32] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
-                {t('title')}
-              </span>
-            </div>
-            <h1 className="text-3xl sm:text-4xl font-heading font-bold tracking-tight text-[#F5F6FC]">
-              {t('title')}
-            </h1>
+        <h1 className="sr-only">{t('title')}</h1>
 
-            <p className="text-sm sm:text-base text-[#A5ABC1] leading-relaxed">
-              {t('subtitle')}
-            </p>
-          </div>
-
-          {/* Quick stats & jump anchor for mobile users */}
-          <div className="flex items-center gap-3 shrink-0">
-            <span className="text-xs text-[#858EA8] font-medium hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#292D45] bg-[#101426]">
+        {/* Quick action bar */}
+        <div className="flex items-center justify-between pb-2 border-b border-[#292D45]/60 min-w-0">
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-[#858EA8] font-medium inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#292D45] bg-[#101426]">
               <Sparkles className="w-3.5 h-3.5 text-[#8063F7] animate-pulse" />
               {testimonials.length} {testimonials.length === 1 ? 'Endorsement' : 'Endorsements'}
             </span>
-            <a
-              href="#testimonial-form"
-              className="lg:hidden inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-[#8063F7]/40 bg-[#8063F7]/10 text-xs font-semibold text-[#A995FF] hover:bg-[#8063F7]/20 transition-all "
-            >
-              <PenTool className="w-3.5 h-3.5" />
-              Leave Feedback
-            </a>
           </div>
+          <a
+            href="#testimonial-form"
+            className="lg:hidden inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-[#8063F7]/40 bg-[#8063F7]/10 text-xs font-semibold text-[#A995FF] hover:bg-[#8063F7]/20 transition-all ml-auto"
+          >
+            <PenTool className="w-3.5 h-3.5" />
+            Leave Feedback
+          </a>
         </div>
 
         {/* 2-Column Responsive Layout:

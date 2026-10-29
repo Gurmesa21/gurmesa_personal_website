@@ -16,6 +16,7 @@ export const inquirySchema = z.object({
   ]).optional().or(z.literal('')),
   message: z.string().trim().min(10, 'Message is too short').max(5000, 'Message is too long').refine(noControlChars, 'Invalid characters'),
   honeypot: z.string().optional(),
+  locale: z.enum(['en', 'am', 'om']).optional().default('en'),
   source: z.string().trim().max(200).refine(noControlChars, 'Invalid characters').optional().transform(val => {
     if (!val) return val;
     try {

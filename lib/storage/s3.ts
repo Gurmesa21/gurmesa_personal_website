@@ -36,17 +36,17 @@ export function getExtensionFromMime(mimeType: string, filename?: string): strin
 export class S3StorageAdapter implements StorageAdapter {
   private client: S3Client;
   private bucket: string;
-  private publicUrlBase?: string;
+  private publicUrl?: string;
 
   constructor() {
-    this.bucket = process.env.STORAGE_BUCKET || process.env.S3_BUCKET || 'avenor-media';
-    const publicBase = process.env.STORAGE_PUBLIC_URL_BASE ?? process.env.S3_PUBLIC_URL_BASE;
-    this.publicUrlBase = publicBase && publicBase.trim().length > 0 ? publicBase.trim() : undefined;
+    this.bucket = process.env.STORAGE_BUCKET || 'avenor-media';
+    const publicUrl = process.env.STORAGE_PUBLIC_URL;
+    this.publicUrl = publicUrl && publicUrl.trim().length > 0 ? publicUrl.trim() : undefined;
 
-    const endpoint = process.env.STORAGE_ENDPOINT || process.env.S3_ENDPOINT;
-    const region = process.env.STORAGE_REGION || process.env.S3_REGION || 'us-east-2';
-    const accessKeyId = process.env.STORAGE_ACCESS_KEY || process.env.S3_ACCESS_KEY || '';
-    const secretAccessKey = process.env.STORAGE_SECRET_KEY || process.env.S3_SECRET_KEY || '';
+    const endpoint = process.env.STORAGE_ENDPOINT;
+    const region = process.env.STORAGE_REGION || 'us-east-2';
+    const accessKeyId = process.env.STORAGE_ACCESS_KEY || '';
+    const secretAccessKey = process.env.STORAGE_SECRET_KEY || '';
 
     this.client = new S3Client({
       region,
@@ -95,7 +95,7 @@ export class S3StorageAdapter implements StorageAdapter {
   }
 
   async getUrl(key: string): Promise<string> {
-    const rawPublicUrl = (process.env.STORAGE_PUBLIC_URL || this.publicUrlBase || '').trim();
+    const rawPublicUrl = (process.env.STORAGE_PUBLIC_URL || this.publicUrl || '').trim();
     if (rawPublicUrl) {
       const baseUrl = rawPublicUrl.endsWith('/') ? rawPublicUrl.slice(0, -1) : rawPublicUrl;
       const cleanKey = key.startsWith('/') ? key.slice(1) : key;

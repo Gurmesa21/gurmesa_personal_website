@@ -3,8 +3,13 @@ import { prisma } from '@/server/repositories/db';
 import { auth } from '../../auth';
 import { logAdminAction } from '@/lib/audit';
 import { createNotification } from '@/lib/notifications';
+import { getEmailTransport, EmailTransport } from '@/lib/email';
 
 export class TestimonialService {
+  constructor(
+    private emailTransport: EmailTransport = getEmailTransport()
+  ) {}
+
   private async requireAuth() {
     const session = await auth();
     if (!session || !session.user) {
@@ -50,6 +55,16 @@ export class TestimonialService {
       entityId: testimonial.id,
       message: `New testimonial submitted by ${data.name}`
     });
+
+    const emailTo = process.env.EMAIL_OWNER_TO;
+    if (emailTo) {
+      await this.emailTransport.send({
+        to: emailTo,
+        subject: `New Testimonial Submission from ${data.name}`,
+        text: `New testimonial submitted:\nName: ${data.name}\nRole: ${data.role || 'N/A'}\nOrganization: ${data.organization || 'N/A'}\n\nContent:\n${trimmed}`,
+        replyTo: (data as any).email || undefined
+      });
+    }
 
     return testimonial;
   }
