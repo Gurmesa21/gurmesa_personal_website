@@ -636,7 +636,7 @@ export default async function HomePage(props?: {
                 <div className="mb-3.5 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#292D45] bg-[#171D32] text-[#8063F7]">
-                      <BookOpen className="h-4 w-4" />
+                      <BookOpen className="h-4 w-4 animate-pulse" />
                     </div>
                     <h2 className="font-heading text-base sm:text-lg font-bold text-[#F5F6FC]">
                       {t('selectedWriting')}
@@ -720,7 +720,7 @@ export default async function HomePage(props?: {
                       </div>
                     ) : (
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#292D45] bg-[#171D32] text-[#8063F7]">
-                        <User className="h-4 w-4" />
+                        <User className="h-4 w-4 animate-pulse" />
                       </div>
                     )}
                     <h2 className="font-heading text-base sm:text-lg font-bold text-[#F5F6FC]">
@@ -803,7 +803,7 @@ export default async function HomePage(props?: {
                 <div className="mb-3.5 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#292D45] bg-[#171D32] text-[#8063F7]">
-                      <Quote className="h-4 w-4" />
+                      <Quote className="h-4 w-4 animate-pulse" />
                     </div>
                     <h2 className="font-heading text-base sm:text-lg font-bold text-[#F5F6FC]">
                       {t('whatPeopleSay')}

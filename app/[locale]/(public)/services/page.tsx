@@ -72,8 +72,20 @@ export default async function ServicesPage() {
         <div className="absolute top-1/2 -right-32 w-96 h-96 bg-[#4F6FF0]/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
-        <h1 className="sr-only">{t('title')}</h1>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-10 md:py-6">
+
+        <div className="flex items-center justify-between pb-2 ">
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-[#858EA8] font-medium inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#292D45] bg-[#101426]">
+              <Code2 className="w-3.5 h-3.5 text-[#8063F7] animate-pulse" />
+              {t('title')}
+            </span>
+          </div>
+
+          <h1 className="sr-only">
+            {t('title')}
+          </h1>
+        </div>
 
         {/* Services Grid: balanced two-column layout on desktop, 1 column on mobile, 16-20px gap */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
@@ -158,7 +170,7 @@ export default async function ServicesPage() {
                       className="inline-flex items-center gap-1.5 h-8 sm:h-9 px-3.5 rounded-lg border border-[#8063F7]/40 bg-[#8063F7]/10 text-xs sm:text-sm font-semibold text-[#A995FF] hover:bg-[#8063F7] hover:text-white hover:border-[#8063F7] transition-all duration-200 active:scale-95 ml-auto"
                     >
                       <span>{t('viewDetails')}</span>
-                      <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 animate-pulse" />
                     </Link>
                   </div>
                 </div>

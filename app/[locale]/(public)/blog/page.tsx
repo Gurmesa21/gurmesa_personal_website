@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { getStorageAdapter } from '@/lib/storage';
 import { MediaRenderer } from '@/components/ui/MediaRenderer';
-import { Search, Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Search, BookOpen, Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { BlogInteractionButtons } from '@/components/blog/BlogInteractionButtons';
 import { formatReadingTime } from '@/lib/reading-time';
@@ -59,11 +59,20 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
         <div className="absolute top-1/2 -right-32 w-96 h-96 bg-[#4F6FF0]/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
-        <h1 className="sr-only">
-          {t('title')}
-        </h1>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-10 md:py-6">
 
+        <div className="flex items-center justify-between pb-2 ">
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-[#858EA8] font-medium inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#292D45] bg-[#101426]">
+              <BookOpen className="w-3.5 h-3.5 text-[#8063F7] animate-pulse" />
+              {t('title')}
+            </span>
+          </div>
+
+          <h1 className="sr-only">
+            {t('title')}
+          </h1>
+        </div>
         {/* Search field bar */}
         <div className="flex items-center justify-end mb-6 sm:mb-8 pb-6 border-b border-[#292D45]/60">
           {/* Search field and compact search action on right */}

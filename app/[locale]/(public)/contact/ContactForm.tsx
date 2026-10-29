@@ -32,6 +32,9 @@ export function ContactForm() {
 
     const formData = new FormData(e.currentTarget);
     formData.set('source', window.location.pathname);
+    const pathname = window.location.pathname;
+    const locale = pathname.startsWith('/am') ? 'am' : (pathname.startsWith('/om') ? 'om' : 'en');
+    formData.set('locale', locale);
 
     try {
       const result = await submitContactForm(formData);

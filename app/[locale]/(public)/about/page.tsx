@@ -66,17 +66,21 @@ export default async function AboutPage() {
         <div className="absolute top-1/2 -right-32 w-96 h-96 bg-[#4F6FF0]/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 space-y-8 sm:space-y-10">
-        {/* Compact eyebrow header aligned with content */}
-        <div className="space-y-2">
-          <div className="flex items-center gap-2">
 
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#292D45] bg-[#171D32] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
+      {/* Compact eyebrow header aligned with content */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-10 md:py-6">
 
+        <div className="flex items-center justify-between pb-2 ">
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-[#858EA8] font-medium inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#292D45] bg-[#101426]">
+              <User className="w-3.5 h-3.5 text-[#8063F7] animate-pulse" />
               {t('title')}
             </span>
           </div>
+
+          <h1 className="sr-only">
+            {t('title')}
+          </h1>
         </div>
 
         {/* Profile Hero Card: Cinematic profile composition with vertical image on left and text on right */}

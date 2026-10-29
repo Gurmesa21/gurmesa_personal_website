@@ -2,7 +2,7 @@ import { prisma } from '@/server/repositories/db';
 import { ContactForm } from './ContactForm';
 import { getTranslations } from 'next-intl/server';
 
-import { Mail, Share2, MessageSquare, ArrowUpRight, Clock, ShieldCheck, Code2 } from 'lucide-react';
+import { Mail, Share2, MessageSquare, ArrowUpRight, Clock, ShieldCheck, Code2, MailBadge } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const metadata = {
@@ -14,7 +14,7 @@ export default async function ContactPage() {
   const t = await getTranslations('Contact');
   const [emailSetting, socialLinks] = await Promise.all([
     prisma.siteSetting.findUnique({ where: { key: 'publicContactEmail' } }),
-    prisma.socialLink.findMany({ where: { visibility: 'PUBLIC' }, orderBy: { order: 'asc' } }),
+    prisma.socialLink.findMany({ where: { visibility: 'PUBLIC' }, orderBy: { order: 'asc' } })
 
   ]);
 
@@ -40,9 +40,20 @@ export default async function ContactPage() {
         <div className="absolute top-1/2 -right-32 w-96 h-96 bg-[#4F6FF0]/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 space-y-8 sm:space-y-10">
-        <h1 className="sr-only">{t('title')}</h1>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-10 md:py-6">
 
+        <div className="flex items-center justify-between pb-2 ">
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-[#858EA8] font-medium inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#292D45] bg-[#101426]">
+              <MailBadge className="w-3.5 h-3.5 text-[#8063F7] animate-pulse" />
+              {t('title')}
+            </span>
+          </div>
+
+          <h1 className="sr-only">
+            {t('title')}
+          </h1>
+        </div>
         {/* Main Content Grid: Balanced two-column desktop layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           {/* Left Column: Contact information & Socials (5 cols) */}
@@ -52,7 +63,7 @@ export default async function ContactPage() {
               <div>
                 <div className="flex items-center gap-2.5 pb-4 border-b border-[#292D45]">
                   <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#8063F7]">
-                    <Mail className="w-4 h-4" />
+                    <Mail className="w-4 h-4 animate-pulse" />
                   </span>
                   <h2 className="text-lg sm:text-xl font-bold font-heading text-[#F5F6FC]">
                     {t('directContact')}
@@ -81,7 +92,7 @@ export default async function ContactPage() {
               {/* Response Expectations Card */}
               <div className="p-4 rounded-xl border border-[#292D45]/70 bg-[#171D32]/60 space-y-1.5">
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#858EA8]">
-                  <Clock className="w-3.5 h-3.5 text-[#8063F7]" />
+                  <Clock className="w-3.5 h-3.5 text-[#8063F7] animate-pulse" />
                   <span>Response Time</span>
                 </div>
                 <p className="text-xs sm:text-sm text-[#A5ABC1] leading-relaxed">
@@ -93,7 +104,7 @@ export default async function ContactPage() {
               {socialLinks.length > 0 && (
                 <div className="pt-4 border-t border-[#292D45] space-y-3">
                   <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#858EA8]">
-                    <Share2 className="w-3.5 h-3.5 text-[#8063F7]" />
+                    <Share2 className="w-3.5 h-3.5 text-[#8063F7] animate-pulse" />
                     <span>{t('connect')}</span>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2">
@@ -107,7 +118,7 @@ export default async function ContactPage() {
                       >
                         <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between w-full">
                           <span className="truncate">{link.label || link.platform}</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 text-[#858EA8]" />
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#858EA8] animate-pulse" />
                         </a>
                       </Button>
                     ))}
@@ -123,7 +134,7 @@ export default async function ContactPage() {
               <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
               <div className="flex items-center gap-2.5 pb-4 border-b border-[#292D45]">
                 <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#8063F7]">
-                  <MessageSquare className="w-4 h-4" />
+                  <MessageSquare className="w-4 h-4 animate-pulse" />
                 </span>
                 <div>
                   <h2 className="text-lg sm:text-xl font-bold font-heading text-[#F5F6FC]">
@@ -146,7 +157,7 @@ export default async function ContactPage() {
             <div className="group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-5 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10">
               <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
-                <Code2 className="w-4 h-4 text-[#8063F7]" />
+                <Code2 className="w-4 h-4 text-[#8063F7] animate-pulse" />
                 <span>Project Scope</span>
               </div>
               <p className="text-xs sm:text-sm text-[#A5ABC1] leading-relaxed">
@@ -157,7 +168,7 @@ export default async function ContactPage() {
             <div className="group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-5 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10">
               <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
-                <Clock className="w-4 h-4 text-[#8063F7]" />
+                <Clock className="w-4 h-4 text-[#8063F7] animate-pulse" />
                 <span>Working Arrangement</span>
               </div>
               <p className="text-xs sm:text-sm text-[#A5ABC1] leading-relaxed">
@@ -168,7 +179,7 @@ export default async function ContactPage() {
             <div className="group relative overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-5 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10">
               <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
-                <ShieldCheck className="w-4 h-4 text-[#8063F7]" />
+                <ShieldCheck className="w-4 h-4 text-[#8063F7] animate-pulse" />
                 <span>Advisory & Audits</span>
               </div>
               <p className="text-xs sm:text-sm text-[#A5ABC1] leading-relaxed">

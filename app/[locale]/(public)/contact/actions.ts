@@ -17,6 +17,7 @@ export async function submitContactForm(formData: FormData) {
       message: formData.get('message') as string,
       honeypot: formData.get('honeypot') as string,
       source: formData.get('source') as string,
+      locale: (formData.get('locale') as 'en' | 'am' | 'om') || 'en',
     } as unknown as import('@/lib/validation/inquiry').InquiryInput;
 
     await inquiryService.submitInquiry(input, ip);

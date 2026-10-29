@@ -24,13 +24,13 @@ export default async function TestimonialsPage() {
         <div className="absolute top-1/2 -right-32 w-96 h-96 bg-[#4F6FF0]/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 space-y-8 min-w-0">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-6 space-y-8 min-w-0">
         <h1 className="sr-only">{t('title')}</h1>
 
         {/* Quick action bar */}
         <div className="flex items-center justify-between pb-2 border-b border-[#292D45]/60 min-w-0">
           <div className="flex items-center gap-3">
-            <span className="text-xs text-[#858EA8] font-medium inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#292D45] bg-[#101426]">
+            <span className="text-xs text-[#858EA8] font-medium inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#292D45] bg-[#101426]">
               <Sparkles className="w-3.5 h-3.5 text-[#8063F7] animate-pulse" />
               {testimonials.length} {testimonials.length === 1 ? 'Endorsement' : 'Endorsements'}
             </span>
