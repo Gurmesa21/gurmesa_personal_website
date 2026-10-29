@@ -38,6 +38,7 @@ jobs:
     env:
       APP_ENV: test
       DATABASE_URL: postgresql://dev_user:dev_password@localhost:5432/gurmesa_test_db?schema=public
+      DIRECT_URL: postgresql://dev_user:dev_password@localhost:5432/gurmesa_test_db?schema=public
       AUTH_SECRET: 'dummy-secret-for-ci-tests-1234567890'
       AUTH_TRUST_HOST: 'true'
       AUTH_URL: 'http://localhost:3000'
