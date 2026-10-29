@@ -1,4 +1,5 @@
 import { PrismaClient, AdminUserStatus } from '@prisma/client';
+import bcrypt from 'bcryptjs';
 
 const prisma = new PrismaClient();
 
@@ -21,8 +22,6 @@ async function main() {
   // Admin User (Check if one exists first to prevent duplicating)
   const existingAdmin = await prisma.adminUser.findFirst();
   if (!existingAdmin) {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const bcrypt = require('bcryptjs');
     const passwordHash = await bcrypt.hash(password, 10);
     
     await prisma.adminUser.create({
