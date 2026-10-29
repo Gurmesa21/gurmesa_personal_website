@@ -254,9 +254,9 @@ export function BlogPostClientView({
               <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#8063F7]">
                 <MessageCircle className="w-4 h-4" />
               </span>
-              <h1 className="text-2xl sm:text-3xl font-heading font-extrabold text-[#F5F6FC]">
+              <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-[#F5F6FC]">
                 {t('commentsTitle')}
-              </h1>
+              </h2>
               <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold border border-[#292D45] bg-[#101426] text-[#A5ABC1]">
                 {commentsList.length}
               </span>

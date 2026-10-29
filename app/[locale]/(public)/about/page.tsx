@@ -131,9 +131,9 @@ export default async function AboutPage() {
                   )}
                 </div>
 
-                <h1 className="sr-only">
-                  {profile?.name || t('title')}
-                </h1>
+
+
+
 
                 {/* Biography */}
                 {profile?.bio && (
