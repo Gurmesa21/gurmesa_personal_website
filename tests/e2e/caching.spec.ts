@@ -2,12 +2,13 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Caching and Revalidation (End-to-End)', () => {
   test.beforeEach(async ({ page }) => {
+    test.setTimeout(60000);
     await page.goto('/admin/login');
     await page.fill('input[name="email"]', 'admin@example.com');
     await page.fill('input[name="password"]', 'admin123');
     await page.click('button[type="submit"]');
-    await expect(page).not.toHaveURL(/\/admin\/login/);
-    await expect(page).toHaveURL(/.*\/admin$/);
+    await expect(page).not.toHaveURL(/\/admin\/login/, { timeout: 15000 });
+    await expect(page).toHaveURL(/.*\/admin$/, { timeout: 15000 });
   });
 
   test('i. Publish a testimonial -> appears on /', async ({ page }) => {

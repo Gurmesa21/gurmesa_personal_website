@@ -1,0 +1,22 @@
+◇ injected env (27) from .env
+--- Neon Object Storage Smoke Test ---
+Endpoint Host: br-raspy-math-b5fl7dc6.storage.c-7.us-east-2.aws.neon.tech
+Target Bucket: avenor-media
+Target Region: us-east-2
+
+[1/4] Uploading test object: media/smoke-test-1793218294595.txt
+Upload successful.
+
+[2/4] Fetching object via public URL: https://br-raspy-math-b5fl7dc6.storage.c-7.us-east-2.aws.neon.tech/avenor-media/media/smoke-test-1793218294595.txt
+Public URL HTTP Status: 403 Forbidden
+Bucket is private (access: private). Objects require presigned URLs or public_read configuration.
+
+[3/4] Deleting test object: media/smoke-test-1793218294595.txt
+Delete request completed.
+
+[4/4] Verifying object is no longer present
+Object successfully verified deleted (404 NotFound).
+
+==============================
+STORAGE SMOKE TEST: PASS
+==============================

@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-10-29T12:10:46.143Z",
+  "cspHeader": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https: https://br-raspy-math-b5fl7dc6.storage.c-7.us-east-2.aws.neon.tech; media-src 'self' data: blob: https: https://br-raspy-math-b5fl7dc6.storage.c-7.us-east-2.aws.neon.tech; font-src 'self' data:; connect-src 'self' https: https://br-raspy-math-b5fl7dc6.storage.c-7.us-east-2.aws.neon.tech; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self';",
+  "testedOrigins": {
+    "image": "https://br-raspy-math-b5fl7dc6.storage.c-7.us-east-2.aws.neon.tech/avenor-media/sample.png",
+    "video": "https://br-raspy-math-b5fl7dc6.storage.c-7.us-east-2.aws.neon.tech/avenor-media/sample.mp4"
+  },
+  "cspViolationsCount": 0,
+  "cspViolations": [],
+  "consoleLogsSample": []
+}

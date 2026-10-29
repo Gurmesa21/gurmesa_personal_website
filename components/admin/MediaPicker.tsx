@@ -332,33 +332,44 @@ export function MediaPicker({
                       setIsModalOpen(false);
                     }}
                   >
-                    <div className="aspect-square bg-muted relative">
-                      {item.mimeType.startsWith('video/') || item.storageKey.endsWith('.mp4') ? (
-                        <video src={item.url} className="object-cover w-full h-full pointer-events-none" muted autoPlay loop playsInline preload="metadata" />
-                      ) : (
-                        <img src={item.url} alt={item.altText || 'Media'} className="object-cover w-full h-full pointer-events-none" />
-                      )}
+                    <div
+                      data-testid="media-card"
+                      data-alt={item.altText || ''}
+                      className="contents"
+                      onClick={() => setTempSelectedId(tempSelectedId === item.id ? '' : item.id)}
+                      onDoubleClick={() => {
+                        handleSelect(item.id);
+                        setIsModalOpen(false);
+                      }}
+                    >
+                      <div className="aspect-square bg-muted relative">
+                        {item.mimeType.startsWith('video/') || item.storageKey.endsWith('.mp4') ? (
+                          <video src={item.url} className="object-cover w-full h-full pointer-events-none" muted autoPlay loop playsInline preload="metadata" />
+                        ) : (
+                          <img src={item.url} alt={item.altText || 'Media'} className="object-cover w-full h-full pointer-events-none" />
+                        )}
 
-                      <div className="absolute top-1.5 left-1.5 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                        <Button
-                          type="button"
-                          variant="destructive"
-                          size="icon"
-                          className="h-6 w-6 rounded-full shadow-sm bg-destructive"
-                          onClick={(e) => handleDelete(e, item.id)}
-                        >
-                          <Trash2 className="h-3 w-3" />
-                        </Button>
-                      </div>
-
-                      {isSelected && (
-                        <div className="absolute top-2 right-2 bg-primary text-primary-foreground rounded-full p-1 shadow z-10">
-                          <Check className="h-3 w-3" />
+                        <div className="absolute top-1.5 left-1.5 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                          <Button
+                            type="button"
+                            variant="destructive"
+                            size="icon"
+                            className="h-6 w-6 rounded-full shadow-sm bg-destructive"
+                            onClick={(e) => handleDelete(e, item.id)}
+                          >
+                            <Trash2 className="h-3 w-3" />
+                          </Button>
                         </div>
-                      )}
-                    </div>
-                    <div className="p-2 text-[11px] truncate font-medium text-foreground">
-                      {item.altText || item.storageKey.replace(/^media\//, '')}
+
+                        {isSelected && (
+                          <div className="absolute top-2 right-2 bg-primary text-primary-foreground rounded-full p-1 shadow z-10">
+                            <Check className="h-3 w-3" />
+                          </div>
+                        )}
+                      </div>
+                      <div className="p-2 text-[11px] truncate font-medium text-foreground">
+                        {item.altText || item.storageKey.replace(/^media\//, '')}
+                      </div>
                     </div>
                   </Card>
                 );

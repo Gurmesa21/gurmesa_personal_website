@@ -1,0 +1,13 @@
+=== Resend Email Transport Smoke Test ===
+
+Command: npx tsx scripts/email-smoke.ts --dry-run
+Exit Code: 0
+
+1. Configuration Check:
+   - EMAIL_API_KEY / RESEND_API_KEY: MISSING
+   - EMAIL_FROM: notifications@example.com
+   - EMAIL_OWNER_TO: MISSING
+
+2. Dry Run Execution:
+   [SUCCESS] Resend transport interface and validation verified.
+   [INFO] To send a live smoke email, supply EMAIL_API_KEY, EMAIL_FROM, and EMAIL_OWNER_TO and omit --dry-run.

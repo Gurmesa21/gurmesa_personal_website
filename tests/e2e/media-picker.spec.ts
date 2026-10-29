@@ -71,8 +71,8 @@ test.describe('MediaPicker Component E2E', () => {
       await fileInput.setInputFiles(tempFilePath);
 
       // Verify upload spinner/feedback
-      await expect(page.locator('text=Uploading...')).toBeVisible();
-      await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 15000 });
+      await expect(page.locator('text=Uploading...').first()).toBeVisible();
+      await expect(page.locator('text=Uploading...').first()).toBeHidden({ timeout: 15000 });
 
       // Confirm modal footer shows asset selected and confirm selection
       const confirmBtn = page.locator('button:has-text("Select Media File")').last();
@@ -86,8 +86,12 @@ test.describe('MediaPicker Component E2E', () => {
       await expect(page.locator(`text=${uniqueFileName}`)).toBeVisible();
       await expect(triggerBtn).toHaveText(/Change Media File/i);
     } finally {
-      if (fs.existsSync(tempFilePath)) {
-        fs.unlinkSync(tempFilePath);
+      try {
+        if (fs.existsSync(tempFilePath)) {
+          fs.unlinkSync(tempFilePath);
+        }
+      } catch {
+        // Ignore EBUSY on Windows file locks from browser
       }
     }
   });

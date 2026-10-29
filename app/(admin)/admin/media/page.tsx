@@ -248,7 +248,7 @@ export default async function MediaLibraryPage({
                           {isResume && (
                             <Badge variant="default" className="text-[10px] gap-1 shadow-sm">
                               <FileCheck className="h-3 w-3" />
-                              Active Resume
+                              Current Resume
                             </Badge>
                           )}
                           <Badge variant={inUse ? 'secondary' : 'outline'} className="text-[10px] shadow-sm">

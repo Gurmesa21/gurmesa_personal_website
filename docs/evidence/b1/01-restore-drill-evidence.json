@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-10-28T20:22:00.020Z",
+  "tablesCount": 27,
+  "rowCounts": {
+    "AdminUser": 1,
+    "AuditLog": 199,
+    "BlogComment": 3,
+    "BlogLike": 1,
+    "BlogPost": 5,
+    "CaseStudy": 6,
+    "Category": 2,
+    "Experience": 3,
+    "Inquiry": 4,
+    "InquiryNote": 2,
+    "MediaAsset": 0,
+    "Notification": 11,
+    "PostTag": 0,
+    "Profile": 1,
+    "Project": 6,
+    "ProjectMedia": 0,
+    "ProjectTechnology": 0,
+    "SEOOverride": 0,
+    "Service": 5,
+    "Session": 19,
+    "SiteSetting": 3,
+    "Skill": 5,
+    "SocialLink": 4,
+    "Tag": 1,
+    "Technology": 4,
+    "Testimonial": 7
+  },
+  "rpo": {
+    "neonFreePlanPITR": "6 hours (Neon Free Instant Restore limit)",
+    "neonPaidPlanPITR": "Up to 30 days (Scale plan configurable)",
+    "nightlyBackupDump": "24 hours (Nightly pg_dump workflow artifact)"
+  },
+  "rto": {
+    "neonBranchRestore": "< 10 seconds (Neon copy-on-write branch recreation)",
+    "pgRestoreFullReplay": "0.42s measured verification"
+  },
+  "status": "VERIFIED"
+}

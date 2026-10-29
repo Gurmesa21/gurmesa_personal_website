@@ -11,8 +11,11 @@ const intlMiddleware = createMiddleware({
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  const isAdminPath = pathname.startsWith('/admin') || /^\/(?:en|am|om)\/admin(\/|$)/.test(pathname);
+  const isLoginPath = pathname.startsWith('/admin/login') || /^\/(?:en|am|om)\/admin\/login(\/|$)/.test(pathname);
+
   // Protect all /admin routes except /admin/login
-  if (pathname.startsWith('/admin') && !pathname.startsWith('/admin/login')) {
+  if (isAdminPath && !isLoginPath) {
     const session = await auth();
     if (!session) {
       const loginUrl = new URL('/admin/login', request.url);
@@ -26,7 +29,7 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next();
   }
   
-  if (pathname.startsWith('/admin')) {
+  if (isAdminPath) {
     return NextResponse.next();
   }
 

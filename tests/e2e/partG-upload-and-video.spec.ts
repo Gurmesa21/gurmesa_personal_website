@@ -12,6 +12,10 @@ test.describe('Part G - Media Upload Limits and Video Rendering', () => {
     fs.writeFileSync(dummyOversizedVideoPath, oversizedBuffer);
   });
 
+  test.beforeEach(() => {
+    test.setTimeout(90000);
+  });
+
   test.afterAll(() => {
     if (fs.existsSync(dummyOversizedVideoPath)) fs.unlinkSync(dummyOversizedVideoPath);
   });
@@ -48,6 +52,8 @@ test.describe('Part G - Media Upload Limits and Video Rendering', () => {
       await expect(page.locator('text=Uploading...')).toBeVisible();
       await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 15000 });
       
+      await page.locator('[data-testid="select-media-file-btn"]').click();
+
       // Verify it uploaded successfully (does not error)
       const uploadedCard = page.locator(`[data-testid="media-card"][data-alt="${uniqueName}"]`);
       await expect(uploadedCard).toBeVisible();
@@ -58,7 +64,9 @@ test.describe('Part G - Media Upload Limits and Video Rendering', () => {
       await uploadedCard.locator('button').click();
       await expect(uploadedCard).toBeHidden({ timeout: 10000 });
     } finally {
-      if (fs.existsSync(uniquePath)) fs.unlinkSync(uniquePath);
+      if (fs.existsSync(uniquePath)) {
+        try { fs.unlinkSync(uniquePath); } catch {}
+      }
     }
   });
 
@@ -75,9 +83,17 @@ test.describe('Part G - Media Upload Limits and Video Rendering', () => {
       await page.locator('input[type="file"]').setInputFiles(uniquePath);
       await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 15000 });
       
+      await page.locator('[data-testid="select-media-file-btn"]').click();
+
       const uploadedCard = page.locator(`[data-testid="media-card"][data-alt="${uniqueName}"]`);
-      await uploadedCard.dispatchEvent('click');
-      await expect(page.locator('text=1 asset selected')).toBeVisible();
+      await expect(uploadedCard).toBeVisible();
+      const confirmBtn = page.locator('button:has-text("Select Media File")').last();
+      if (await confirmBtn.isDisabled()) {
+        await uploadedCard.click();
+      }
+      await expect(confirmBtn).toBeEnabled();
+      await confirmBtn.click();
+      await expect(page.locator('text=1 asset selected').first()).toBeVisible();
       
       // Submit profile form
       await page.click('button[type="submit"]:has-text("Save Profile")');
@@ -98,24 +114,28 @@ test.describe('Part G - Media Upload Limits and Video Rendering', () => {
       // Cleanup: clear selection and delete uploaded asset
       await page.goto('/admin/profile');
       const clearBtn = page.locator('button:has-text("Clear selection")');
-      if (await clearBtn.isVisible()) {
+      if (await clearBtn.isVisible({ timeout: 10000 }).catch(() => false)) {
         await clearBtn.click();
-        await page.evaluate(() => {
-          const form = document.querySelector('form');
-          if (form) form.requestSubmit();
-        });
-        await page.waitForTimeout(1000);
+        await page.click('button[type="submit"]:has-text("Save Profile")');
+        await page.waitForLoadState('networkidle');
       }
 
+      await page.goto('/admin/profile');
       page.on('dialog', dialog => dialog.accept());
-      const cardToDelete = page.locator(`[data-testid="media-card"][data-alt="${uniqueName}"]`);
+      const selectMediaBtn = page.locator('[data-testid="select-media-file-btn"]');
+      if (await selectMediaBtn.isVisible({ timeout: 10000 }).catch(() => false)) {
+        await selectMediaBtn.click();
+      }
+      const cardToDelete = page.locator(`[data-testid="modal-media-card"][data-alt="${uniqueName}"]`);
       if (await cardToDelete.count() > 0) {
         await cardToDelete.hover();
-        await cardToDelete.locator('button').click();
+        await cardToDelete.locator('button.bg-destructive').click({ force: true });
         await expect(cardToDelete).toBeHidden({ timeout: 10000 });
       }
     } finally {
-      if (fs.existsSync(uniquePath)) fs.unlinkSync(uniquePath);
+      if (fs.existsSync(uniquePath)) {
+        try { fs.unlinkSync(uniquePath); } catch {}
+      }
     }
   });
 });

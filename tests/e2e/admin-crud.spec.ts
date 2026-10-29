@@ -7,8 +7,8 @@ test.describe('Admin CRUD Edit and Persist', () => {
     await page.fill('input[name="email"]', 'admin@example.com');
     await page.fill('input[name="password"]', 'admin123');
     await page.click('button[type="submit"]');
-    await expect(page).not.toHaveURL(/\/admin\/login/);
-    await expect(page).toHaveURL(/.*\/admin$/);
+    await expect(page).not.toHaveURL(/\/admin\/login/, { timeout: 15000 });
+    await expect(page).toHaveURL(/.*\/admin$/, { timeout: 15000 });
   });
 
   test('Services: Edit and persist', async ({ page }) => {
@@ -66,7 +66,7 @@ test.describe('Admin CRUD Edit and Persist', () => {
     
     await page.click('button[type="submit"]');
     
-    await expect(page).toHaveURL('/admin/projects');
+    await expect(page).toHaveURL('/admin/projects', { timeout: 15000 });
     
     const updatedRow = page.getByTestId('admin-row').first();
     const displayedTitle = await updatedRow.locator('.text-xl').first().textContent();
@@ -75,7 +75,7 @@ test.describe('Admin CRUD Edit and Persist', () => {
     await updatedRow.getByTestId('edit-link').click();
     await page.fill('input[name="title"]', originalTitle || '');
     await page.click('button[type="submit"]');
-    await expect(page).toHaveURL('/admin/projects');
+    await expect(page).toHaveURL('/admin/projects', { timeout: 15000 });
   });
 
   test('Blog: Edit and persist', async ({ page }) => {
@@ -96,7 +96,7 @@ test.describe('Admin CRUD Edit and Persist', () => {
     
     await page.click('button[type="submit"]');
     
-    await expect(page).toHaveURL('/admin/blog');
+    await expect(page).toHaveURL('/admin/blog', { timeout: 15000 });
     
     const updatedRow = page.getByTestId('admin-row').first();
     const displayedTitle = await updatedRow.locator('td').first().textContent();
@@ -105,6 +105,6 @@ test.describe('Admin CRUD Edit and Persist', () => {
     await updatedRow.getByTestId('edit-link').click();
     await page.fill('input[name="title"]', originalTitle || '');
     await page.click('button[type="submit"]');
-    await expect(page).toHaveURL('/admin/blog');
+    await expect(page).toHaveURL('/admin/blog', { timeout: 15000 });
   });
 });

@@ -5,14 +5,14 @@ test.describe('Testimonials Moderation & Rate Limits', () => {
     // 1. Submit a testimonial
     await page.goto('/en/testimonials');
     await page.fill('input[name="name"]', 'Spammy McSpamface');
-    await page.fill('textarea[name="text"]', 'Buy my crypto!');
+    await page.fill('textarea[name="text"]', 'Buy my crypto today! This text is longer than twenty.');
     await page.click('button[type="submit"]');
 
     await expect(page.locator('text=Thank You!')).toBeVisible();
 
     // 2. Refresh the page, it should not be listed
     await page.goto('/en/testimonials');
-    await expect(page.locator('text=Buy my crypto!')).toBeHidden();
+    await expect(page.locator('text=Buy my crypto today!')).toBeHidden();
   });
 
   test('honeypot traps spam bots', async ({ page }) => {
@@ -25,7 +25,7 @@ test.describe('Testimonials Moderation & Rate Limits', () => {
     });
 
     await page.fill('input[name="name"]', 'Bot User');
-    await page.fill('textarea[name="text"]', 'Spam comment');
+    await page.fill('textarea[name="text"]', 'Spam comment that satisfies the twenty character minimum.');
     await page.click('button[type="submit"]');
 
     // Should pretend to succeed but not actually save

@@ -59,7 +59,7 @@ async function main() {
       data: [
         { key: 'inquiryRetentionDays', value: 365, type: 'number' },
         { key: 'sendVisitorAcknowledgement', value: false, type: 'boolean' },
-        { key: 'publicContactEmail', value: '"contact@example.com"', type: 'string' },
+        { key: 'publicContactEmail', value: JSON.stringify(email), type: 'string' },
       ]
     });
     console.log('Created default site settings.');

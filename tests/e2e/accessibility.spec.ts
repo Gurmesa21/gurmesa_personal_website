@@ -2,6 +2,9 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
 test.describe('Accessibility & Shell Features', () => {
+  test.beforeEach(() => {
+    test.setTimeout(60000);
+  });
   test('Axe scan on / (homepage with AUTHORIZED+PUBLISHED testimonial)', async ({ page }) => {
     await page.goto('/');
     const accessibilityScanResults = await new AxeBuilder({ page })

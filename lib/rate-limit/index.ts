@@ -3,14 +3,14 @@ import Redis from 'ioredis';
 import { isTestMode } from '../test-mode';
 
 export interface RateLimitStore {
-  increment(key: string, windowMs: number): Promise<number>;
+  increment(key: string, windowMs: number, options?: { throwOnError?: boolean }): Promise<number>;
 }
 
 // In-memory implementation (cleared on server restart)
 export class InMemoryStore implements RateLimitStore {
   private hits = new Map<string, { count: number; expiresAt: number }>();
 
-  async increment(key: string, windowMs: number): Promise<number> {
+  async increment(key: string, windowMs: number, _options?: { throwOnError?: boolean }): Promise<number> {
     const now = Date.now();
     const record = this.hits.get(key);
 
@@ -39,12 +39,20 @@ export class RedisStore implements RateLimitStore {
   private redis: Redis;
 
   constructor(url: string) {
-    // Standard Redis TCP/TLS connection using ioredis
-    this.redis = new Redis(url, {
+    const isTls = url.startsWith('rediss://');
+    const options: any = {
       maxRetriesPerRequest: 1,
       enableReadyCheck: false,
       lazyConnect: false,
-    });
+    };
+    if (isTls) {
+      options.tls = {
+        rejectUnauthorized: false
+      };
+    }
+
+    // Standard Redis TCP/TLS connection using ioredis
+    this.redis = new Redis(url, options);
 
     // Redis error listener: log controlled, useful error information without exposing credentials or REDIS_URL
     this.redis.on('error', (err: any) => {
@@ -53,7 +61,7 @@ export class RedisStore implements RateLimitStore {
     });
   }
 
-  async increment(key: string, windowMs: number): Promise<number> {
+  async increment(key: string, windowMs: number, options?: { throwOnError?: boolean }): Promise<number> {
     try {
       const multi = this.redis.multi();
       multi.incr(key);
@@ -61,6 +69,9 @@ export class RedisStore implements RateLimitStore {
       const results = await multi.exec();
 
       if (!results) {
+        if (options?.throwOnError) {
+          throw new Error('Multi command returned null');
+        }
         console.warn('[RateLimit Redis] Multi command returned null; failing open to preserve application availability.');
         return 1;
       }
@@ -84,6 +95,9 @@ export class RedisStore implements RateLimitStore {
 
       return count;
     } catch (err: any) {
+      if (options?.throwOnError) {
+        throw err;
+      }
       // Operational trade-off: fail-open behavior preserves application availability
       // but temporarily reduces rate-limit enforcement while Redis is unavailable or quota is exhausted.
       const errorMsg = err && typeof err.message === 'string' ? err.message : 'Unknown error';
@@ -187,6 +201,7 @@ export class ContactRateLimiter {
 
 export class LoginRateLimiter {
   private store: RateLimitStore;
+  private fallbackStore = new InMemoryStore();
   
   private readonly EMAIL_LIMIT = 5;
   private readonly EMAIL_WINDOW_MS = 5 * 60 * 1000; // 5 attempts per 5 minutes
@@ -201,8 +216,16 @@ export class LoginRateLimiter {
     }
 
     const hashedEmail = hashKey(`login:${email.toLowerCase()}`);
-    const count = await this.store.increment(hashedEmail, this.EMAIL_WINDOW_MS);
-    return count <= this.EMAIL_LIMIT;
+    try {
+      const count = await this.store.increment(hashedEmail, this.EMAIL_WINDOW_MS, { throwOnError: true });
+      return count <= this.EMAIL_LIMIT;
+    } catch (err: any) {
+      console.warn(
+        `[LoginRateLimiter] Primary rate limit store failed (${err?.message || 'Unknown error'}); falling back to in-memory store per instance (never fail open on login).`
+      );
+      const count = await this.fallbackStore.increment(hashedEmail, this.EMAIL_WINDOW_MS);
+      return count <= this.EMAIL_LIMIT;
+    }
   }
 }
 

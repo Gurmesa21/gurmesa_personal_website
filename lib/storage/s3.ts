@@ -95,9 +95,14 @@ export class S3StorageAdapter implements StorageAdapter {
   }
 
   async getUrl(key: string): Promise<string> {
-    if (this.publicUrlBase) {
-      const baseUrl = this.publicUrlBase.endsWith('/') ? this.publicUrlBase.slice(0, -1) : this.publicUrlBase;
-      return `${baseUrl}/${key}`;
+    const rawPublicUrl = (process.env.STORAGE_PUBLIC_URL || this.publicUrlBase || '').trim();
+    if (rawPublicUrl) {
+      const baseUrl = rawPublicUrl.endsWith('/') ? rawPublicUrl.slice(0, -1) : rawPublicUrl;
+      const cleanKey = key.startsWith('/') ? key.slice(1) : key;
+      if (baseUrl.endsWith(`/${this.bucket}`)) {
+        return `${baseUrl}/${cleanKey}`;
+      }
+      return `${baseUrl}/${this.bucket}/${cleanKey}`;
     }
 
     // For private bucket: generate presigned GET URL

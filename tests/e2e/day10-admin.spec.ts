@@ -36,9 +36,8 @@ test.describe('Day 10 - Admin & SEO E2E', () => {
     const newTagline = 'New Tagline ' + Date.now();
     await page.fill('input[name="tagline"]', newTagline);
     await page.click('button[type="submit"]');
-
-    // wait for success/redirect
-    await page.waitForResponse(response => response.url().includes('/admin/profile') && response.request().method() === 'POST');
+    await page.waitForLoadState('networkidle');
+    await expect(page.locator('input[name="tagline"]')).toHaveValue(newTagline, { timeout: 15000 });
 
     // 3. Check public page
     await page.goto('/');

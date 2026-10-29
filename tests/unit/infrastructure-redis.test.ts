@@ -117,5 +117,38 @@ describe('Upstash Redis Rate Limiter Infrastructure Hardening', () => {
 
       consoleErrorSpy.mockRestore();
     });
+
+    it('configures TLS options when rediss:// scheme is used', () => {
+      const store = new RedisStore('rediss://default:token@region.upstash.io:6379');
+      expect((store.client.options as any).tls).toBeDefined();
+      store.disconnect();
+    });
+
+    it('LoginRateLimiter falls back to in-memory store per instance when primary store fails and enforces 5 attempts', async () => {
+      vi.stubEnv('PLAYWRIGHT_TEST', '0');
+      const consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+
+      const throwingStore = {
+        increment: vi.fn().mockRejectedValue(new Error('Redis connection lost')),
+      };
+
+      const loginLimiter = new LoginRateLimiter(throwingStore);
+
+      // Attempts 1 to 5 should succeed on fallback in-memory store
+      for (let i = 0; i < 5; i++) {
+        const allowed = await loginLimiter.check('target-admin@example.com');
+        expect(allowed).toBe(true);
+      }
+
+      // Attempt 6 must be blocked (never fail open on login)
+      const sixthAttempt = await loginLimiter.check('target-admin@example.com');
+      expect(sixthAttempt).toBe(false);
+
+      expect(consoleWarnSpy).toHaveBeenCalled();
+      const warnMsg = consoleWarnSpy.mock.calls.flat().join(' ');
+      expect(warnMsg).toContain('falling back to in-memory store per instance (never fail open on login)');
+
+      consoleWarnSpy.mockRestore();
+    });
   });
 });

@@ -44,14 +44,22 @@ export async function toggleLike(postId: string) {
     });
 
     if (existingLike) {
-      await prisma.blogLike.delete({ where: { id: existingLike.id } });
+      try {
+        await prisma.blogLike.delete({ where: { id: existingLike.id } });
+      } catch (delErr: any) {
+        if (delErr?.code !== 'P2025') throw delErr;
+      }
     } else {
-      await prisma.blogLike.create({
-        data: {
-          postId,
-          voterHash
-        }
-      });
+      try {
+        await prisma.blogLike.create({
+          data: {
+            postId,
+            voterHash
+          }
+        });
+      } catch (createErr: any) {
+        if (createErr?.code !== 'P2002') throw createErr;
+      }
     }
 
     const likesCount = await prisma.blogLike.count({ where: { postId } });

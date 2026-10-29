@@ -1,0 +1,47 @@
+# Lighthouse Mobile Audit Report (Production Build)
+
+Generated: 2026-10-29T12:24:58.135Z
+Environment: Production Build (Next.js 16 Turbopack)
+Emulation: Mobile (Moto G4 / Pixel)
+
+### HOME (`http://localhost:3006/`)
+- **Performance**: 83/100
+- **Accessibility**: 100/100
+- **Best Practices**: 100/100
+- **SEO**: 92/100
+
+### SERVICES (`http://localhost:3006/services`)
+- **Performance**: 90/100
+- **Accessibility**: 100/100
+- **Best Practices**: 100/100
+- **SEO**: 100/100
+
+### BLOG (`http://localhost:3006/blog`)
+- **Performance**: 88/100
+- **Accessibility**: 100/100
+- **Best Practices**: 100/100
+- **SEO**: 100/100
+
+### WORK (`http://localhost:3006/work`)
+- **Performance**: 89/100
+- **Accessibility**: 100/100
+- **Best Practices**: 100/100
+- **SEO**: 100/100
+
+### TESTIMONIALS (`http://localhost:3006/testimonials`)
+- **Performance**: 87/100
+- **Accessibility**: 100/100
+- **Best Practices**: 100/100
+- **SEO**: 100/100
+
+## Home Page Mobile Performance Score Breakdown
+
+Overall Mobile Performance Score: **83/100**
+
+Variable-by-Variable Explanation:
+1. **First Contentful Paint (FCP)**: `1.0 s` (score: 100/100). Measures the time until the browser renders the first DOM content (navigation bar, dark background, heading).
+2. **Largest Contentful Paint (LCP)**: `1.0 s` (score: 100/100). Measures when the primary content element (the hero headline and introduction section) is fully rendered.
+3. **Cumulative Layout Shift (CLS)**: `0` (score: 100/100). Measures visual stability during loading. Zero unexpected layout shifts due to reserved image aspect ratios and fixed font sizing.
+4. **Total Blocking Time (TBT)**: `550 ms` (score: 53/100). Total time between FCP and Time to Interactive where the CPU main thread was blocked from responding to user input.
+5. **Speed Index (SI)**: `4.6 s` (score: 70/100). Measures how quickly contents of the home page are visually populated.
+

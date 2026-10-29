@@ -1,0 +1,23 @@
+◇ injected env (12) from .env.test
+◇ injected env (0) from .env.test
+[globalSetup] Resetting and seeding test database: gurmesa_test_db...
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "gurmesa_test_db", schema "public" at "127.0.0.1:5433"
+
+9 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+Seed completed.
+[globalSetup] Test database gurmesa_test_db reset and seeded successfully.
+
+Running 1 test using 1 worker
+
+◇ injected env (0) from .env.test
+
+[1/1] [chromium] › tests\e2e\csp-media.spec.ts:6:3 › Content Security Policy - Media and Image External Origins › Prove browser console has zero CSP violations for img and video from external origin
+[chromium] › tests\e2e\csp-media.spec.ts:6:3 › Content Security Policy - Media and Image External Origins › Prove browser console has zero CSP violations for img and video from external origin
+CSP Violations detected: 0
+
+  1 passed (15.7s)

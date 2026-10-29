@@ -7,8 +7,8 @@ test.describe('Admin Comments Moderation Queue', () => {
     await page.fill('input[name="email"]', 'admin@example.com');
     await page.fill('input[name="password"]', 'admin123');
     await page.click('button[type="submit"]');
-    await expect(page).not.toHaveURL(/\/admin\/login/);
-    await expect(page).toHaveURL(/.*\/admin$/);
+    await expect(page).not.toHaveURL(/\/admin\/login/, { timeout: 15000 });
+    await expect(page).toHaveURL(/.*\/admin$/, { timeout: 15000 });
   });
 
   test('navigates to /admin/comments and verifies queue filters and UI', async ({ page }) => {

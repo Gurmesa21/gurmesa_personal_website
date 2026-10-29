@@ -32,6 +32,10 @@ test.describe('Blog Social Interactions', () => {
     await unlikeResponse;
     await expect(likeBtnReloaded).toHaveAttribute('aria-pressed', 'false');
 
+    // Switch to comments view
+    const openCommentsBtn = page.getByRole('button', { name: /View Comments|Leave a Comment|Comment/i }).first();
+    await openCommentsBtn.click();
+
     // Add a comment
     const nameInput = page.getByLabel(/Your Name/i);
     await expect(nameInput).toBeVisible();

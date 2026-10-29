@@ -1,0 +1,35 @@
+◇ injected env (0) from .env
+=== Neon Database Restore Drill & Verification ===
+Found 27 tables in schema.
+
+--- Table Row Counts Audit ---
+  Table: AdminUser                 -> 1 rows
+  Table: AuditLog                  -> 199 rows
+  Table: BlogComment               -> 3 rows
+  Table: BlogLike                  -> 1 rows
+  Table: BlogPost                  -> 5 rows
+  Table: CaseStudy                 -> 6 rows
+  Table: Category                  -> 2 rows
+  Table: Experience                -> 3 rows
+  Table: Inquiry                   -> 4 rows
+  Table: InquiryNote               -> 2 rows
+  Table: MediaAsset                -> 0 rows
+  Table: Notification              -> 11 rows
+  Table: PostTag                   -> 0 rows
+  Table: Profile                   -> 1 rows
+  Table: Project                   -> 6 rows
+  Table: ProjectMedia              -> 0 rows
+  Table: ProjectTechnology         -> 0 rows
+  Table: SEOOverride               -> 0 rows
+  Table: Service                   -> 5 rows
+  Table: Session                   -> 19 rows
+  Table: SiteSetting               -> 3 rows
+  Table: Skill                     -> 5 rows
+  Table: SocialLink                -> 4 rows
+  Table: Tag                       -> 1 rows
+  Table: Technology                -> 4 rows
+  Table: Testimonial               -> 7 rows
+
+=== RESTORE DRILL: PASS ===
+RTO: 0.42s
+Report saved to: docs/evidence/b1/01-restore-drill-evidence.json

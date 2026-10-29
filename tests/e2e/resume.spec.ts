@@ -62,7 +62,11 @@ startxref
     ]);
 
     // Cleanup the dummy file
-    fs.unlinkSync(dummyPdfPath);
+    try {
+      if (fs.existsSync(dummyPdfPath)) fs.unlinkSync(dummyPdfPath);
+    } catch {
+      // Ignore EBUSY on Windows
+    }
 
     // 3. Find the newly uploaded file and click "Set as Resume"
     // Wait for the specific asset we just uploaded.

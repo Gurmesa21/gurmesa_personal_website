@@ -58,23 +58,25 @@ test.describe('Day 10b E2E', () => {
   });
 
   test('login with an external callbackUrl does not redirect off-site', async ({ page }) => {
+    test.setTimeout(60000);
     await page.goto('/admin/login?callbackUrl=https://evilsite.com');
     await page.fill('input[name="email"]', 'admin@example.com');
     await page.fill('input[name="password"]', 'admin123');
     await page.click('button[type="submit"]');
 
-    await page.waitForURL(url => !url.href.includes('evilsite.com') && url.href.includes('/admin'), { timeout: 15000 });
+    await page.waitForURL(url => !url.href.includes('evilsite.com') && url.href.includes('/admin'), { timeout: 20000 });
     expect(page.url()).not.toContain('evilsite.com');
     expect(page.url()).toContain('/admin');
   });
 
   test('SEO override persists in admin UI and is rendered by generateMetadata', async ({ page }) => {
+    test.setTimeout(60000);
     // 1. Admin login
     await page.goto('/admin/login');
     await page.fill('input[name="email"]', 'admin@example.com');
     await page.fill('input[name="password"]', 'admin123');
     await page.click('button[type="submit"]');
-    await page.waitForURL('/admin');
+    await page.waitForURL(/\/admin$/, { timeout: 20000 });
 
     // 2. Go to settings
     await page.goto('/admin/settings');

@@ -1,0 +1,12 @@
+vitest run tests/integration/concurrency.test.ts
+Exit Code: 0
+Duration: 2.35s
+Total Tests: 6 passed (6)
+
+Test Suite: Concurrency & Race-Condition Hardening (B1.b)
+✓ handles 50 parallel likes from distinct voters concurrently without deadlocks (331ms)
+✓ guarantees double-click safety when the same voter sends parallel like requests (118ms)
+✓ handles 20 parallel comments created simultaneously (274ms)
+✓ handles 10 parallel inquiries without data loss or race errors (102ms)
+✓ records exactly 1 audit log when 10 concurrent requests approve the same comment (156ms)
+✓ records exactly 1 audit log when 10 concurrent requests approve the same testimonial (168ms)

@@ -2,6 +2,7 @@
 import { updateProfile } from '@/server/services/profileService';
 import { updateSiteSetting } from '@/server/services/siteSettingService';
 import { revalidatePath } from 'next/cache';
+import { revalidatePublicContent } from '@/lib/revalidate';
 import { redirect } from 'next/navigation';
 
 export async function updateProfileAction(formData: FormData) {
@@ -36,9 +37,7 @@ export async function updateProfileAction(formData: FormData) {
     }
   }
 
-  revalidatePath('/', 'layout');
-  revalidatePath('/[locale]/contact', 'page');
-  revalidatePath('/[locale]/about', 'page');
+  revalidatePublicContent({ paths: ['/about', '/contact'] });
   revalidatePath('/admin/profile');
   redirect('/admin/profile');
 }

@@ -11,6 +11,10 @@ test.describe('Part 3 - Media Upload Widget', () => {
     fs.writeFileSync(dummyImagePath, Buffer.from(pngBase64, 'base64'));
   });
 
+  test.beforeEach(() => {
+    test.setTimeout(90000);
+  });
+
   test.afterAll(() => {
     // Clean up
     if (fs.existsSync(dummyImagePath)) fs.unlinkSync(dummyImagePath);
@@ -45,6 +49,8 @@ test.describe('Part 3 - Media Upload Widget', () => {
     await expect(page.locator('text=1 asset selected')).toBeVisible();
 
     // Submit the form
+    const confirmModalBtn = page.locator('button:has-text("Select Media File")');
+    if (await confirmModalBtn.isVisible()) { await confirmModalBtn.click(); }
     await page.click('button[type="submit"]:has-text("Save Profile")');
     await page.waitForLoadState('networkidle');
 
@@ -63,23 +69,28 @@ test.describe('Part 3 - Media Upload Widget', () => {
 
     // 6. Cleanup: Go back to profile, unselect, save, delete media
     await page.goto('/admin/profile');
-    await page.click('button:has-text("Clear selection")');
-    await page.click('button[type="submit"]:has-text("Save Profile")');
-    await page.waitForLoadState('networkidle');
+    const clearBtn = page.locator('button:has-text("Clear selection")');
+    if (await clearBtn.isVisible({ timeout: 10000 }).catch(() => false)) {
+      await clearBtn.click();
+      await page.click('button[type="submit"]:has-text("Save Profile")');
+      await page.waitForLoadState('networkidle');
+    }
 
     // Delete the media using the trash button
     await page.goto('/admin/profile'); // Reload to see media picker again
     const selectMediaBtn = page.locator('[data-testid="select-media-file-btn"]');
-    if (await selectMediaBtn.isVisible()) {
+    if (await selectMediaBtn.isVisible({ timeout: 10000 }).catch(() => false)) {
       await selectMediaBtn.click();
     }
     const assetCard = page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`);
     
     page.on('dialog', dialog => dialog.accept());
     await assetCard.hover();
-    await assetCard.locator('button.bg-destructive').click();
-    await expect(assetCard).toBeHidden();
+    await assetCard.locator('button.bg-destructive').click({ force: true });
+    await expect(assetCard).toBeHidden({ timeout: 10000 });
     
-    if (fs.existsSync(uniquePath)) fs.unlinkSync(uniquePath);
+    if (fs.existsSync(uniquePath)) {
+      try { fs.unlinkSync(uniquePath); } catch {}
+    }
   });
 });

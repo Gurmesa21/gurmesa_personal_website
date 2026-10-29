@@ -19,6 +19,11 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
+    {
+      name: 'smoke',
+      use: { ...devices['Desktop Chrome'] },
+      testMatch: /.*(smoke|h1|csp-media|accessibility)\.spec\.ts/,
+    },
   ],
   webServer: {
     command: process.env.PW_PREBUILT === '1' ? 'npm run start -- -p 3006' : 'npm run build && npm run start -- -p 3006',
@@ -34,7 +39,8 @@ export default defineConfig({
       NEXTAUTH_URL: 'http://localhost:3006',
       AUTH_SECRET: 'dummy-secret-for-ci-tests-1234567890',
       PORT: '3006',
-      DATABASE_URL: process.env.DATABASE_URL || 'postgresql://dev_user:dev_password@127.0.0.1:5433/gurmesa_test_db?schema=public'
+      DATABASE_URL: process.env.DATABASE_URL || 'postgresql://dev_user:dev_password@127.0.0.1:5433/gurmesa_test_db?schema=public',
+      DIRECT_URL: process.env.DIRECT_URL || process.env.DATABASE_URL || 'postgresql://dev_user:dev_password@127.0.0.1:5433/gurmesa_test_db?schema=public'
     }
   },
 });

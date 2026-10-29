@@ -1,0 +1,16 @@
+vitest run tests/unit/infrastructure-redis.test.ts
+Exit Code: 0
+Duration: 733ms
+Total Tests: 8 passed (8)
+
+Test Breakdown:
+✓ Production configuration validation (3)
+  ✓ fails configuration explicitly if APP_ENV=production and REDIS_URL is missing
+  ✓ falls back to InMemoryStore in development if REDIS_URL is absent
+  ✓ creates RedisStore when REDIS_URL is present in development or production
+✓ Redis error listener and fail-open behavior (5)
+  ✓ attaches error listener without leaking credentials or throwing unhandled events
+  ✓ fails open (returns 1) and logs controlled error when Redis multi.exec fails
+  ✓ allows requests to continue through rate limiters when Redis fails open
+  ✓ configures TLS options when rediss:// scheme is used
+  ✓ LoginRateLimiter falls back to in-memory store per instance when primary store fails and enforces 5 attempts

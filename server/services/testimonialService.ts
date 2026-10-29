@@ -90,6 +90,31 @@ export class TestimonialService {
   await logAdminAction({ action: 'DELETE', entity: 'Testimonial', entityId: result?.id || 'unknown' });
   return result;
   }
+
+  async approveTestimonial(id: string) {
+    await this.requireAuth();
+    const updateResult = await prisma.testimonial.updateMany({
+      where: {
+        id,
+        OR: [
+          { status: { not: TestimonialStatus.PUBLISHED } },
+          { permissionStatus: { not: TestimonialPermissionStatus.AUTHORIZED } }
+        ]
+      },
+      data: {
+        status: TestimonialStatus.PUBLISHED,
+        permissionStatus: TestimonialPermissionStatus.AUTHORIZED
+      }
+    });
+
+    const item = await prisma.testimonial.findUnique({ where: { id } });
+    if (!item) throw new Error('Testimonial not found');
+
+    if (updateResult.count > 0) {
+      await logAdminAction({ action: 'APPROVE', entity: 'Testimonial', entityId: id });
+    }
+    return item;
+  }
 }
 
 export const testimonialService = new TestimonialService();

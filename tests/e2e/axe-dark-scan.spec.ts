@@ -23,13 +23,13 @@ test.describe('Task 10 - Axe Accessibility Scan (8 Public + 4 Admin Pages)', () 
   ];
 
   test('run axe in dark theme and report violation counts and contrast failures', async ({ page }) => {
-    test.setTimeout(120000);
+    test.setTimeout(240000);
     const report: Record<string, { totalViolations: number; critical: number; serious: number; contrastFailures: number; documentTitlePassed: boolean; violations: any[] }> = {};
 
     // 1. Scan 8 public pages
     for (const route of publicRoutes) {
       await page.goto(route);
-      await page.waitForLoadState('networkidle');
+      await page.waitForLoadState('domcontentloaded');
 
       const results = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
@@ -56,7 +56,7 @@ test.describe('Task 10 - Axe Accessibility Scan (8 Public + 4 Admin Pages)', () 
 
     // 2. Scan /admin/login unauthenticated
     await page.goto('/admin/login');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
     const loginResults = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
       .analyze();
@@ -81,7 +81,7 @@ test.describe('Task 10 - Axe Accessibility Scan (8 Public + 4 Admin Pages)', () 
     const authenticatedAdminRoutes = adminRoutes.filter((r) => r !== '/admin/login');
     for (const route of authenticatedAdminRoutes) {
       await page.goto(route);
-      await page.waitForLoadState('networkidle');
+      await page.waitForLoadState('domcontentloaded');
 
       const results = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])

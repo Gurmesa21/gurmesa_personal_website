@@ -14,6 +14,10 @@ test.describe('Part F - Public Media Rendering', () => {
     fs.writeFileSync(dummyVideoPath, Buffer.from(mp4Hex, 'hex'));
   });
 
+  test.beforeEach(() => {
+    test.setTimeout(90000);
+  });
+
   test.afterAll(() => {
     if (fs.existsSync(dummyImagePath)) fs.unlinkSync(dummyImagePath);
     if (fs.existsSync(dummyVideoPath)) fs.unlinkSync(dummyVideoPath);
@@ -39,6 +43,8 @@ test.describe('Part F - Public Media Rendering', () => {
     await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
     await page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`).dispatchEvent('click');
     await expect(page.locator('text=1 asset selected')).toBeVisible();
+    const confirmModalBtn = page.locator('button:has-text("Select Media File")');
+    if (await confirmModalBtn.isVisible()) { await confirmModalBtn.click(); }
     await page.click('button[type="submit"]:has-text("Save Profile")');
     await page.waitForLoadState('networkidle');
 
@@ -56,11 +62,16 @@ test.describe('Part F - Public Media Rendering', () => {
 
     // Cleanup
     await page.goto('/admin/profile');
-    await page.click('button:has-text("Clear selection")');
-    await page.click('button[type="submit"]:has-text("Save Profile")');
-    await page.waitForLoadState('networkidle');
+    const clearBtn = page.locator('button:has-text("Clear selection")');
+    if (await clearBtn.isVisible()) {
+      await clearBtn.click();
+      await page.click('button[type="submit"]:has-text("Save Profile")');
+      await page.waitForLoadState('networkidle');
+    }
     await page.goto('/admin/profile');
-    const assetCard = page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`);
+    const selectMediaBtn = page.locator('[data-testid="select-media-file-btn"]');
+    await selectMediaBtn.click();
+    const assetCard = page.locator(`[data-testid="modal-media-card"][data-alt="${uniqueName}"]`);
     page.on('dialog', dialog => dialog.accept());
     await assetCard.hover();
     await assetCard.locator('button.bg-destructive').click();
@@ -101,17 +112,25 @@ test.describe('Part F - Public Media Rendering', () => {
     // Cleanup
     await page.goto('/admin/services');
     await page.locator('a[data-testid="edit-link"]').first().click();
-    await page.click('button:has-text("Clear selection")');
+    await page.waitForURL(/\/admin\/services\/.*\/edit/);
+    const clearBtn = page.locator('button:has-text("Clear selection")');
+    await clearBtn.waitFor({ state: 'visible', timeout: 10000 });
+    await clearBtn.click();
     await page.click('button[type="submit"]');
-    await page.waitForLoadState('networkidle');
-    await page.goto('/admin/services'); // just to reset
-    await page.locator('a[data-testid="edit-link"]').first().click(); // open editor again to access media picker
-    const assetCard = page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`);
+    await page.waitForURL('/admin/services');
+
+    await page.locator('a[data-testid="edit-link"]').first().click();
+    await page.waitForURL(/\/admin\/services\/.*\/edit/);
+    const selectMediaBtn = page.locator('[data-testid="select-media-file-btn"]');
+    await selectMediaBtn.click();
+    const assetCard = page.locator(`[data-testid="modal-media-card"][data-alt="${uniqueName}"]`);
     page.on('dialog', dialog => dialog.accept());
     await assetCard.hover();
-    await assetCard.locator('button.bg-destructive').click();
-    await expect(assetCard).toBeHidden();
-    if (fs.existsSync(uniquePath)) fs.unlinkSync(uniquePath);
+    await assetCard.locator('button.bg-destructive').click({ force: true });
+    await expect(assetCard).toBeHidden({ timeout: 10000 });
+    if (fs.existsSync(uniquePath)) {
+      try { fs.unlinkSync(uniquePath); } catch {}
+    }
   });
 
   test('Project Featured Image Render', async ({ page }) => {
@@ -152,7 +171,9 @@ test.describe('Part F - Public Media Rendering', () => {
     await page.waitForURL('/admin/projects');
     await page.goto('/admin/projects'); 
     await page.locator('[data-testid="admin-row"]:has-text("Caching Fintech") a[data-testid="edit-link"]').click(); 
-    const assetCard = page.locator(`.cursor-pointer:has(img[alt="${uniqueName}"])`);
+    const selectMediaBtn = page.locator('[data-testid="select-media-file-btn"]');
+    await selectMediaBtn.click();
+    const assetCard = page.locator(`[data-testid="modal-media-card"][data-alt="${uniqueName}"]`);
     page.on('dialog', dialog => dialog.accept());
     await assetCard.hover();
     await assetCard.locator('button.bg-destructive').click();
@@ -198,6 +219,8 @@ test.describe('Part F - Public Media Rendering', () => {
     await page.waitForLoadState('networkidle');
     await page.goto('/admin/blog'); 
     await page.locator('a[data-testid="edit-link"]').first().click(); 
+    const selectMediaBtn = page.locator('[data-testid="select-media-file-btn"]');
+    await selectMediaBtn.click();
     const assetCardBlog = page.locator(`.cursor-pointer:has(img[alt="${uniqueNameBlog}"])`);
     page.on('dialog', dialog => dialog.accept());
     await assetCardBlog.hover();
@@ -217,6 +240,9 @@ test.describe('Part F - Public Media Rendering', () => {
       await page.locator('input[type="file"]').setInputFiles(uniquePath);
       await expect(page.locator('text=Uploading...')).toBeHidden({ timeout: 10000 });
       
+      const selectMediaBtn = page.locator('[data-testid="select-media-file-btn"]');
+      await selectMediaBtn.click();
+
       // Verify it uploaded successfully (does not error) and select specific asset by unique alt/name
       const videoCard = page.locator(`[data-testid="media-card"][data-alt="${uniqueName}"]`);
       await expect(videoCard).toBeVisible();

@@ -1,0 +1,95 @@
+﻿2d48726 Fix: pre deploy
+64e0b42 Fix: pre-deploy
+dbbfeec Fix: pre-deploy
+487710e Fix: pre-deployment
+1d6d3ad Fix: pre deploy
+51a1607 fix: Fixing the blog page build bug
+b60fb0e Fix: UI update
+3984e84 Feat: Pre final version CI test
+ M app/(admin)/admin/media/page.tsx
+ M app/actions/blog.ts
+ M components/admin/MediaPicker.tsx
+ M docs/evidence/day14-5/partD/part3/proof-avatar-rendered.png
+ M docs/evidence/day14-5/partF/screenshots/proof-avatar.png
+ M docs/evidence/day14-5/partF/screenshots/proof-blog.png
+ M docs/evidence/day14-5/partF/screenshots/proof-project.png
+ M docs/evidence/day14-5/partF/screenshots/proof-service.png
+ M lib/email/index.ts
+ M lib/rate-limit/index.ts
+ M lib/storage/s3.ts
+ M next.config.ts
+ M playwright.config.ts
+ M prisma/schema.prisma
+ M proxy.ts
+ M server/services/blogService.ts
+ M server/services/testimonialService.ts
+ M tests/e2e/axe-dark-scan.spec.ts
+ M tests/e2e/day10-admin.spec.ts
+ M tests/e2e/media-picker.spec.ts
+ M tests/e2e/partF-media-rendering.spec.ts
+ M tests/e2e/partG-testimonials.spec.ts
+ M tests/e2e/partG-upload-and-video.spec.ts
+ M tests/e2e/partI-blog-social.spec.ts
+ M tests/e2e/resume.spec.ts
+ D tests/e2e/test-oversized-video-g.mp4
+ M tests/unit/infrastructure-redis.test.ts
+?? .github/workflows/nightly-backup.yml
+?? docs/RECOVERY_RUNBOOK.md
+?? docs/SECURITY_REVIEW.md
+?? docs/evidence/b0/
+?? docs/evidence/b1/
+?? docs/evidence/b2/
+?? docs/evidence/b3-step-01-git-pivot.txt
+?? docs/evidence/b3/
+?? scripts/email-smoke.ts
+?? scripts/media-backup.ts
+?? scripts/restore-drill.ts
+?? scripts/storage-smoke.ts
+?? tests/e2e/csp-media.spec.ts
+?? tests/e2e/picker-upload-1793224249771.png
+?? tests/e2e/picker-upload-1793224298418.png
+?? tests/e2e/smoke.spec.ts
+?? tests/e2e/test-avatar-1793222757306.png
+?? tests/e2e/test-blog-1793222787496.png
+?? tests/e2e/test-blog-1793223034088.png
+?? tests/e2e/test-project-1793222757595.png
+?? tests/e2e/test-project-1793223005476.png
+?? tests/e2e/test-service-1793222787483.png
+?? tests/e2e/test-service-1793223019164.png
+?? tests/integration/concurrency.test.ts
+?? tests/unit/email-resend.test.ts
+
+FullName                                                                                                   Length
+--------                                                                                                   ------
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3-step-01-git-pivot.txt                        2149
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\25-axe-verify.txt                            3088
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\fix-a2\10_axe_report.json                       2756
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\20b-spec-fixes.txt                           8194
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\20-playwright-run1.txt                      66918
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\day14-5\partF\screenshots\proof-blog.png       96440
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\day14-5\partF\screenshots\proof-service.png   255163
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\day14-5\partF\screenshots\proof-project.png   258258
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\day14-5\partF\screenshots\proof-avatar.png    116416
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\day14-5\partD\part3\proof-avatar-rendered.png 115907
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b0\02-csp-console-proof.json                     885
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\19-build.txt                                 5342
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\18-vitest.txt                               18540
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\17-lint.txt                                 35592
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\16-typecheck.txt                              112
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\15-case-check.txt                             170
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\14-smoke-full.txt                           19724
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\13-smoke-single.txt                         11350
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\12-smoke-project.txt                        23444
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\11-build-smoke.txt                           5432
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\10-admin-comments.txt                        3016
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\09-day6-portfolio.txt                        4660
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\08-day5.txt                                  2614
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\07-day10b.txt                                6048
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\06-day10-admin.txt                           4406
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\05-media-picker.txt                          2998
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\04-blog-social.txt                           2136
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\03-notifications.txt                         4378
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\02-upload-video.txt                          4258
+C:\Users\Hp\Documents\Projects\Gurmesa_website\docs\evidence\b3\01-build.txt                                 5428
+
+

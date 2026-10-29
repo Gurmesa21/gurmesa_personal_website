@@ -186,16 +186,23 @@ export const approveComment = async (id: string) => {
   const session = await auth();
   if (!session?.user?.id) throw new Error('Unauthorized');
   
-  const comment = await prisma.blogComment.update({
+  const updateResult = await prisma.blogComment.updateMany({
+    where: { id, status: { not: 'APPROVED' } },
+    data: { status: 'APPROVED', moderatedAt: new Date() }
+  });
+
+  const comment = await prisma.blogComment.findUnique({
     where: { id },
-    data: { status: 'APPROVED', moderatedAt: new Date() },
     include: { post: true }
   });
-  
-  await logAdminAction({ action: 'APPROVE', entity: 'BlogComment', entityId: id, actorId: session.user.id });
-  revalidatePath('/admin/comments');
-  if (comment.post) {
-    revalidatePath(`/blog/${comment.post.slug}`);
+  if (!comment) throw new Error('Comment not found');
+
+  if (updateResult.count > 0) {
+    await logAdminAction({ action: 'APPROVE', entity: 'BlogComment', entityId: id, actorId: session.user.id });
+    revalidatePath('/admin/comments');
+    if (comment.post) {
+      revalidatePath(`/blog/${comment.post.slug}`);
+    }
   }
   return comment;
 };
@@ -204,16 +211,23 @@ export const rejectComment = async (id: string) => {
   const session = await auth();
   if (!session?.user?.id) throw new Error('Unauthorized');
   
-  const comment = await prisma.blogComment.update({
+  const updateResult = await prisma.blogComment.updateMany({
+    where: { id, status: { not: 'REJECTED' } },
+    data: { status: 'REJECTED', moderatedAt: new Date() }
+  });
+
+  const comment = await prisma.blogComment.findUnique({
     where: { id },
-    data: { status: 'REJECTED', moderatedAt: new Date() },
     include: { post: true }
   });
-  
-  await logAdminAction({ action: 'REJECT', entity: 'BlogComment', entityId: id, actorId: session.user.id });
-  revalidatePath('/admin/comments');
-  if (comment.post) {
-    revalidatePath(`/blog/${comment.post.slug}`);
+  if (!comment) throw new Error('Comment not found');
+
+  if (updateResult.count > 0) {
+    await logAdminAction({ action: 'REJECT', entity: 'BlogComment', entityId: id, actorId: session.user.id });
+    revalidatePath('/admin/comments');
+    if (comment.post) {
+      revalidatePath(`/blog/${comment.post.slug}`);
+    }
   }
   return comment;
 };

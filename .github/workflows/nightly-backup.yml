@@ -1,0 +1,83 @@
+name: Nightly Database Backup
+
+on:
+  schedule:
+    - cron: '0 3 * * *' # Every night at 03:00 UTC
+  workflow_dispatch: # Allows manual trigger from GitHub Actions
+
+jobs:
+  backup:
+    name: Neon Postgres Backup & Encryption
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install PostgreSQL 16 Client & Tools
+        run: |
+          sudo install -d /etc/apt/keyrings
+          curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/keyrings/postgresql.gpg
+          echo "deb [signed-by=/etc/apt/keyrings/postgresql.gpg] http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client-16 gpg gzip
+
+      - name: Verify pg_dump Version Matching Neon (PostgreSQL 16)
+        run: pg_dump --version
+
+      - name: Dump Database & Encrypt with Public Key
+        env:
+          DATABASE_URL: ${{ secrets.DIRECT_URL || secrets.DATABASE_URL }}
+          BACKUP_PUBLIC_KEY: ${{ secrets.BACKUP_PUBLIC_KEY }}
+          BACKUP_ENCRYPTION_PASSPHRASE: ${{ secrets.BACKUP_ENCRYPTION_PASSPHRASE }}
+        run: |
+          DATE=$(date +'%Y-%m-%d_%H%M%S')
+          mkdir -p backups
+          
+          if [ -z "$DATABASE_URL" ]; then
+            echo "ERROR: DATABASE_URL / DIRECT_URL secret is not set!"
+            exit 1
+          fi
+
+          echo "Running pg_dump against Neon database..."
+          pg_dump "$DATABASE_URL" --format=custom --file="backups/db_${DATE}.dump"
+
+          echo "Encrypting dump file..."
+          if [ -n "$BACKUP_PUBLIC_KEY" ]; then
+            echo "$BACKUP_PUBLIC_KEY" | gpg --import
+            KEY_ID=$(gpg --list-keys --with-colons | awk -F: '/^pub/ {print $5; exit}')
+            gpg --encrypt --trust-model always --recipient "$KEY_ID" --output "backups/db_${DATE}.dump.gpg" "backups/db_${DATE}.dump"
+            rm -f "backups/db_${DATE}.dump"
+            echo "Encrypted with GPG public key: $KEY_ID"
+          elif [ -n "$BACKUP_ENCRYPTION_PASSPHRASE" ]; then
+            gpg --batch --yes --passphrase "$BACKUP_ENCRYPTION_PASSPHRASE" --symmetric --cipher-algo AES256 --output "backups/db_${DATE}.dump.gpg" "backups/db_${DATE}.dump"
+            rm -f "backups/db_${DATE}.dump"
+            echo "Encrypted with AES256 symmetric passphrase."
+          else
+            echo "WARNING: Neither BACKUP_PUBLIC_KEY nor BACKUP_ENCRYPTION_PASSPHRASE configured. Compressing with gzip."
+            gzip -9 "backups/db_${DATE}.dump"
+          fi
+
+      - name: Store Encrypted Backup as Workflow Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: neon-database-backup
+          path: backups/
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Failure Notification
+        if: failure()
+        env:
+          RESEND_API_KEY: ${{ secrets.EMAIL_API_KEY }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          EMAIL_OWNER_TO: ${{ secrets.EMAIL_OWNER_TO }}
+        run: |
+          echo "Database backup workflow failed!"
+          if [ -n "$RESEND_API_KEY" ] && [ -n "$EMAIL_FROM" ] && [ -n "$EMAIL_OWNER_TO" ]; then
+            curl -s -X POST https://api.resend.com/emails \
+              -H "Authorization: Bearer $RESEND_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d "{\"from\":\"$EMAIL_FROM\",\"to\":\"$EMAIL_OWNER_TO\",\"subject\":\"[ALERT] Nightly Database Backup Failed\",\"text\":\"The nightly Neon database backup on GitHub Actions has failed. Check run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}"
+          fi
