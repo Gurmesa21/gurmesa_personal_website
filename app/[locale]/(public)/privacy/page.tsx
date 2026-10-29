@@ -10,7 +10,7 @@ export const metadata = {
 export default async function PrivacyPage() {
   const t = await getTranslations('Privacy');
   const setting = await prisma.siteSetting.findUnique({ where: { key: 'inquiryRetentionDays' } });
-  
+
   let retentionDays = 365;
   if (setting && setting.value) {
     try {
@@ -25,7 +25,7 @@ export default async function PrivacyPage() {
       {/* Header */}
       <div className="space-y-2.5">
         <div className="inline-flex items-center gap-2 rounded-full border border-[#8063F7]/30 bg-[#8063F7]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
-          <ShieldCheck className="h-3.5 w-3.5 text-[#8063F7]" />
+          <ShieldCheck className="h-3.5 w-3.5 text-[#8063F7] animate-pulse" />
           <span>Legal & Compliance</span>
         </div>
         <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#F5F6FC]">
