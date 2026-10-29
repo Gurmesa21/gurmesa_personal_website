@@ -1,7 +1,7 @@
 import { prisma } from '@/server/repositories/db';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
-import { ShieldCheck } from 'lucide-react';
+
 
 export const metadata = {
   title: 'Privacy Policy - Gurmesa',

@@ -316,7 +316,7 @@ export default async function HomePage(props?: {
 
                     {profile?.locationLabel && (
                       <span className="inline-flex items-center gap-1.5 text-xs text-[#A5ABC1]">
-                        <MapPin className="h-3.5 w-3.5 text-[#8063F7]" />
+                        <MapPin className="h-3.5 w-3.5 text-[#8063F7] animate-pulse" />
                         {profile.locationLabel}
                       </span>
                     )}

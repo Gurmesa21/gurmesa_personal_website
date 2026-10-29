@@ -1,7 +1,7 @@
 import { prisma } from '@/server/repositories/db';
 import { ContactForm } from './ContactForm';
 import { getTranslations } from 'next-intl/server';
-import { getPublicProfile } from '@/server/services/profileService';
+
 import { Mail, Share2, MessageSquare, ArrowUpRight, Clock, ShieldCheck, Code2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -12,10 +12,10 @@ export const metadata = {
 
 export default async function ContactPage() {
   const t = await getTranslations('Contact');
-  const [emailSetting, socialLinks, profile] = await Promise.all([
+  const [emailSetting, socialLinks] = await Promise.all([
     prisma.siteSetting.findUnique({ where: { key: 'publicContactEmail' } }),
     prisma.socialLink.findMany({ where: { visibility: 'PUBLIC' }, orderBy: { order: 'asc' } }),
-    getPublicProfile()
+
   ]);
 
   let publicEmail: string | null = null;

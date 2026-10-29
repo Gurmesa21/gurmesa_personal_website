@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { FileText } from 'lucide-react';
+
 
 export const metadata = {
   title: 'Terms of Service - Gurmesa',
