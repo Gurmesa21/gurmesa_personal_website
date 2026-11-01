@@ -8,9 +8,27 @@ interface MediaRendererProps {
   className?: string;
   width?: number;
   height?: number;
+  priority?: boolean;
+  controls?: boolean;
+  autoPlay?: boolean;
+  preload?: 'none' | 'metadata' | 'auto';
+  unoptimized?: boolean;
 }
 
-export function MediaRenderer({ url, mimeType, altText, fill, className, width, height }: MediaRendererProps) {
+export function MediaRenderer({
+  url,
+  mimeType,
+  altText,
+  fill,
+  className,
+  width,
+  height,
+  priority = false,
+  controls = true,
+  autoPlay = false,
+  preload = 'metadata',
+  unoptimized = true,
+}: MediaRendererProps) {
   const isVideo = mimeType?.startsWith('video/') || url?.endsWith('.mp4') || url?.endsWith('.webm');
   if (isVideo) {
     const videoMime = mimeType?.startsWith('video/')
@@ -20,14 +38,17 @@ export function MediaRenderer({ url, mimeType, altText, fill, className, width, 
       : 'video/mp4';
 
     return (
-      <video 
-        className={fill ? `absolute inset-0 w-full h-full object-cover ${className || ''}` : className} 
-        controls 
-        muted 
-        playsInline 
-        autoPlay
+      <video
+        className={fill ? `absolute inset-0 w-full h-full object-contain ${className || ''}` : className}
+        controls={controls}
+        muted
+        playsInline
+        autoPlay={autoPlay}
         loop
-        preload="metadata"
+        preload={preload}
+        width={width || (fill ? undefined : 1280)}
+        height={height || (fill ? undefined : 720)}
+        aria-label={altText || 'Video presentation'}
       >
         <source src={url} type={videoMime} />
         Your browser does not support the video tag.
@@ -36,18 +57,35 @@ export function MediaRenderer({ url, mimeType, altText, fill, className, width, 
   }
 
   if (mimeType.startsWith('image/')) {
+    const combinedClassName = className ? `object-cover ${className}` : 'object-cover object-contain';
     if (fill) {
       return (
         <Image
           src={url}
           alt={altText || 'Media'}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className={className}
+          unoptimized={unoptimized}
+          priority={priority}
+          loading={priority ? 'eager' : 'lazy'}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1280px"
+          className={combinedClassName}
+          style={{ objectFit: 'contain' }}
         />
       );
     }
-    return <Image src={url} alt={altText || 'Media'} width={width} height={height} className={className} />;
+    return (
+      <Image
+        src={url}
+        alt={altText || 'Media'}
+        width={width || 1280}
+        height={height || 720}
+        unoptimized={unoptimized}
+        priority={priority}
+        loading={priority ? 'eager' : 'lazy'}
+        className={combinedClassName}
+        style={{ objectFit: 'contain' }}
+      />
+    );
   }
 
   // Fallback for PDF and other unsupported types

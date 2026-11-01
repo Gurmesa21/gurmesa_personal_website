@@ -2,6 +2,13 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { FileText } from 'lucide-react';
 
+export const revalidate = 60;
+export const dynamic = 'auto';
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'am' }, { locale: 'om' }];
+}
+
 
 export const metadata = {
   title: 'Terms of Service - Gurmesa',

@@ -64,7 +64,7 @@ describe('C2.a Email Matrix Specification', () => {
           email: 'jane@client.com',
           message: 'Interested in architecture review and full stack consulting.',
           organization: 'Acme Corp',
-          projectType: 'Business website'
+          projectType: 'Web application development'
         },
         '192.168.1.100'
       );

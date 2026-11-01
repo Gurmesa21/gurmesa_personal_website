@@ -1,0 +1,40 @@
+﻿PERFORMANCE BASELINE MEASUREMENTS (LIVE SITE)
+Date: 2026-10-30 20:16:11 +03:00
+Target: https://gurmesa-personal-website.onrender.com
+Format: dns connect tls ttfb total size
+=================================================
+
+URL: / (https://gurmesa-personal-website.onrender.com/)
+  Run 1 (cold) : dns=0.023585 connect=0.039314 tls=0.118506 ttfb=0.832485 total=1.604255 size=156010
+  Run 2 (warm) : dns=0.015354 connect=0.061699 tls=0.087136 ttfb=1.287760 total=1.394235 size=156010
+  Run 3 (warm) : dns=0.013517 connect=0.033020 tls=0.089246 ttfb=1.394700 total=2.045512 size=156010
+
+URL: /services (https://gurmesa-personal-website.onrender.com/en/services)
+  Run 1 (cold) : dns=0.015318 connect=1.046638 tls=1.077890 ttfb=2.096615 total=2.205158 size=74878
+  Run 2 (warm) : dns=0.020064 connect=0.035636 tls=0.083989 ttfb=0.564560 total=1.119838 size=74878
+  Run 3 (warm) : dns=0.013706 connect=0.050631 tls=0.111569 ttfb=0.695371 total=0.973172 size=74878
+
+URL: first /services/<slug> (https://gurmesa-personal-website.onrender.com/en/services/website-design-and-development)
+  Run 1 (cold) : dns=0.015133 connect=0.024904 tls=0.060012 ttfb=0.610513 total=1.136901 size=72169
+  Run 2 (warm) : dns=0.017547 connect=0.034272 tls=0.065184 ttfb=1.546288 total=1.634276 size=72169
+  Run 3 (warm) : dns=0.017622 connect=2.062767 tls=2.171191 ttfb=2.635896 total=2.936786 size=72169
+
+URL: /work (https://gurmesa-personal-website.onrender.com/en/work)
+  Run 1 (cold) : dns=0.025907 connect=0.056075 tls=0.096108 ttfb=0.625458 total=0.665987 size=96103
+  Run 2 (warm) : dns=0.014060 connect=0.028438 tls=0.087326 ttfb=0.585514 total=0.615225 size=96103
+  Run 3 (warm) : dns=0.014052 connect=0.036134 tls=0.069475 ttfb=0.554053 total=0.729112 size=96103
+
+URL: first /work/<slug> (https://gurmesa-personal-website.onrender.com/en/work/training-center-and-short-course-platform)
+  Run 1 (cold) : dns=0.016054 connect=0.042114 tls=0.087523 ttfb=1.069606 total=1.443477 size=76846
+  Run 2 (warm) : dns=0.014258 connect=0.059043 tls=0.090849 ttfb=0.556302 total=0.642863 size=76846
+  Run 3 (warm) : dns=0.014945 connect=0.026818 tls=0.094009 ttfb=0.471595 total=0.588400 size=76846
+
+URL: first video URL (https://br-raspy-math-b5fl7dc6.storage.c-7.us-east-2.aws.neon.tech/avenor-media/media/3cfc5ebc-e547-4401-9e56-3e18a408ee44.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=nak_live_65c8b313427741f19c895651f98172f0%2F20261030%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20261030T171241Z&X-Amz-Expires=604800&X-Amz-Signature=77ad5fdd7852b7764aeadfadb9a1da8d3bfe06a4ac374503eb4a8c40000f4ccb&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+  Run 1 (cold) : dns=0.142369 connect=0.739736 tls=9.060859 ttfb=9.460746 total=81.053662 size=641945
+  Run 2 (warm) : dns=0.014006 connect=0.294642 tls=0.780663 ttfb=1.467298 total=42.031793 size=641945
+  Run 3 (warm) : dns=0.014865 connect=1.034043 tls=5.065059 ttfb=5.957937 total=28.683583 size=641945
+
+URL: first image URL (https://br-raspy-math-b5fl7dc6.storage.c-7.us-east-2.aws.neon.tech/avenor-media/media/ea1ef4c3-b707-43e2-8537-13bf70cff508.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=nak_live_65c8b313427741f19c895651f98172f0%2F20261030%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20261030T171503Z&X-Amz-Expires=604800&X-Amz-Signature=985817f074ec5dac9505351c4181807ef1b53fe1a656bec89a1008a254cc7469&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+  Run 1 (cold) : dns=0.141251 connect=0.344045 tls=1.017745 ttfb=1.990861 total=6.343398 size=166519
+  Run 2 (warm) : dns=0.014197 connect=0.867379 tls=1.200935 ttfb=1.876441 total=8.963695 size=166519
+  Run 3 (warm) : dns=0.014680 connect=0.454457 tls=0.861854 ttfb=2.689523 total=19.527347 size=166519

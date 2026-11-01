@@ -1,5 +1,10 @@
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
+export const dynamic = 'auto';
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'am' }, { locale: 'om' }];
+}
 
 import {
   getPublicProfile,
@@ -11,6 +16,49 @@ import { Button } from '@/components/ui/button';
 import { getSeoOverride } from '@/server/services/seoService';
 import { getResumeUrl } from '@/server/services/mediaService';
 import { Metadata } from 'next';
+import { isTestMode } from '@/lib/test-mode';
+import { unstable_noStore as noStore } from 'next/cache';
+import { getTranslations } from 'next-intl/server';
+import Link from 'next/link';
+
+import { User, Download, Sparkles, ArrowRight, ArrowUpRight, Mail, Globe } from 'lucide-react';
+import { MediaRenderer } from '@/components/ui/MediaRenderer';
+
+function getSocialInfo(platform: string, label?: string) {
+  const p = (platform || '').toLowerCase().trim();
+  if (p.includes('github')) return { name: 'GitHub', icon: 'github' };
+  if (p.includes('linkedin')) return { name: 'LinkedIn', icon: 'linkedin' };
+  if (p.includes('twitter') || p === 'x') return { name: 'X (Twitter)', icon: 'twitter' };
+  if (p.includes('email') || p.includes('mail')) return { name: 'Email', icon: 'email' };
+  return { name: label || platform || 'Link', icon: 'link' };
+}
+
+function SocialIcon({ type }: { type: string }) {
+  switch (type) {
+    case 'github':
+      return (
+        <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+        </svg>
+      );
+    case 'linkedin':
+      return (
+        <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+      );
+    case 'twitter':
+      return (
+        <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      );
+    case 'email':
+      return <Mail className="w-3.5 h-3.5" />;
+    default:
+      return <Globe className="w-3.5 h-3.5" />;
+  }
+}
 export async function generateMetadata(): Promise<Metadata> {
   const override = await getSeoOverride('/about');
   const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
@@ -27,13 +75,10 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-import { getTranslations } from 'next-intl/server';
-import Link from 'next/link';
-
-import { User, Download, Sparkles, ArrowRight } from 'lucide-react';
-import { MediaRenderer } from '@/components/ui/MediaRenderer';
-
 export default async function AboutPage() {
+  if (isTestMode()) {
+    noStore();
+  }
   const t = await getTranslations('About');
   const [profile, experiences, skills, socialLinks, resumeUrl] = await Promise.all([
     getPublicProfile(),
@@ -142,33 +187,46 @@ export default async function AboutPage() {
                   </p>
                 )}
 
-                {/* Actions row: Social Links + Resume Download */}
-                <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5 pt-1">
-                  {socialLinks.map(link => (
-                    <Button
-                      key={link.id}
-                      variant="outline"
-                      size="sm"
-                      asChild
-                      className="rounded-xl border-[#292D45] bg-[#171D32]/80 text-[#D0D4E4] hover:border-[#8063F7]/60 hover:bg-[#1f2642] hover:text-white transition-all duration-200 text-xs h-9 px-3.5 shadow-sm active:scale-95"
-                    >
-                      <a href={link.url} target="_blank" rel="noopener noreferrer">
-                        {link.label || link.platform}
-                      </a>
-                    </Button>
-                  ))}
-                  {resumeUrl && (
-                    <Button
-                      asChild
-                      size="sm"
-                      className="rounded-xl border-0 bg-gradient-to-r from-[#8063F7] to-[#4F6FF0] text-white hover:from-[#7154e6] hover:to-[#3e5edb] text-xs h-9 px-4 font-semibold shadow-md shadow-[#8063F7]/25 hover:shadow-[#8063F7]/40 active:scale-95 transition-all duration-200 inline-flex items-center gap-1.5"
-                    >
-                      <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
-                        <Download className="w-3.5 h-3.5" />
+                {/* Social Links: vertically stacked (one per line) with full readable names and icons */}
+                <div className="w-full space-y-2 pt-2">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-[#858EA8] text-left">
+                    Connect & Profiles
+                  </div>
+                  <div className="flex flex-col gap-2 w-full">
+                    {socialLinks.map((link) => {
+                      const info = getSocialInfo(link.platform, link.label);
+                      const isExternal = link.url.startsWith('http://') || link.url.startsWith('https://');
+                      return (
+                        <a
+                          key={link.id}
+                          href={link.url}
+                          target={isExternal ? '_blank' : undefined}
+                          rel={isExternal ? 'noopener noreferrer' : undefined}
+                          aria-label={info.name}
+                          className="flex items-center gap-3 w-full px-3.5 py-2.5 rounded-xl border border-[#292D45] bg-[#171D32]/80 text-[#D0D4E4] hover:border-[#8063F7]/70 hover:bg-[#1f2642] hover:text-[#F5F6FC] hover:shadow-md hover:shadow-[#8063F7]/10 focus:outline-none focus:ring-2 focus:ring-[#8063F7] focus:ring-offset-2 focus:ring-offset-[#101426] transition-all duration-200 text-xs sm:text-sm font-medium group"
+                        >
+                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-[#8063F7]/30 bg-[#101426] text-[#A995FF] group-hover:text-white group-hover:border-[#8063F7]/60 transition-colors">
+                            <SocialIcon type={info.icon} />
+                          </span>
+                          <span className="truncate">{info.name}</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 ml-auto text-[#858EA8] group-hover:text-[#A995FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+                        </a>
+                      );
+                    })}
+
+                    {resumeUrl && (
+                      <a
+                        href={resumeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={t('downloadResume')}
+                        className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border-0 bg-gradient-to-r from-[#8063F7] to-[#4F6FF0] text-white hover:from-[#7154e6] hover:to-[#3e5edb] text-xs sm:text-sm font-semibold shadow-md shadow-[#8063F7]/25 hover:shadow-[#8063F7]/40 focus:outline-none focus:ring-2 focus:ring-[#8063F7] focus:ring-offset-2 focus:ring-offset-[#101426] active:scale-95 transition-all duration-200 mt-1"
+                      >
+                        <Download className="w-4 h-4 shrink-0" />
                         <span>{t('downloadResume')}</span>
                       </a>
-                    </Button>
-                  )}
+                    )}
+                  </div>
                 </div>
               </div>
 

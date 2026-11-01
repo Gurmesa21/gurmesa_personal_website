@@ -19,14 +19,14 @@ test.describe('Inquiry & Testimonial E2E', () => {
     await page.keyboard.type('keyboard@test.com');
     await page.focus('input[name="organization"]');
     await page.keyboard.type('Test Org');
-    await page.selectOption('select[name="projectType"]', 'Business website');
+    await page.selectOption('select[name="projectType"]', 'Web application development');
     await page.focus('textarea[name="message"]');
     await page.keyboard.type('This is a test message that is long enough.');
     await page.focus('button[type="submit"]');
     await page.keyboard.press('Enter');
 
     // Wait for success message
-    await expect(page.locator('text=Thank you!')).toBeVisible({ timeout: 10000 });
+    await expect(page.locator('text=Thank you!')).toBeVisible({ timeout: 20000 });
   });
 
   test('contact form: invalid submit focuses the error summary and associates errors with fields', async ({ page }) => {

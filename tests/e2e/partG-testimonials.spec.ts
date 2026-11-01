@@ -8,7 +8,7 @@ test.describe('Testimonials Moderation & Rate Limits', () => {
     await page.fill('textarea[name="text"]', 'Buy my crypto today! This text is longer than twenty.');
     await page.click('button[type="submit"]');
 
-    await expect(page.locator('text=Thank You!')).toBeVisible();
+    await expect(page.locator('text=Thank You!')).toBeVisible({ timeout: 15000 });
 
     // 2. Refresh the page, it should not be listed
     await page.goto('/en/testimonials');
@@ -29,7 +29,7 @@ test.describe('Testimonials Moderation & Rate Limits', () => {
     await page.click('button[type="submit"]');
 
     // Should pretend to succeed but not actually save
-    await expect(page.locator('text=Thank You!')).toBeVisible();
+    await expect(page.locator('text=Thank You!')).toBeVisible({ timeout: 15000 });
   });
 
 

@@ -9,8 +9,15 @@ import { Search, BookOpen, Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { BlogInteractionButtons } from '@/components/blog/BlogInteractionButtons';
 import { formatReadingTime } from '@/lib/reading-time';
+import { isTestMode } from '@/lib/test-mode';
+import { unstable_noStore as noStore } from 'next/cache';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
+export const dynamic = 'auto';
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'am' }, { locale: 'om' }];
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const override = await getSeoOverride('/blog');
@@ -28,6 +35,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function BlogIndexPage({ searchParams }: { searchParams: Promise<{ title?: string, category?: string, tag?: string }> }) {
+  if (isTestMode()) {
+    noStore();
+  }
   const t = await getTranslations('Blog');
   const resolvedParams = await searchParams;
   const posts = await getPublicPosts({

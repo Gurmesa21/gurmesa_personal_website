@@ -55,19 +55,16 @@ export const getPublicPosts = async (filters?: { category?: string; tag?: string
     orderBy: { publishedAt: 'desc' }
   });
 
-  const voterHash = await getCurrentVoterHash();
-  let userLikes = new Set<string>();
-  if (voterHash && posts.length > 0) {
-    const likes = await prisma.blogLike.findMany({
-      where: {
-        voterHash,
-        postId: { in: posts.map(p => p.id) }
-      }
-    });
-    userLikes = new Set(likes.map((l: { postId: string }) => l.postId));
-  }
+  return posts.map(p => toPublicPost({ ...p, likedByMe: false }));
+};
 
-  return posts.map(p => toPublicPost({ ...p, likedByMe: userLikes.has(p.id) }));
+export const getLikedStatusForUser = async (postId: string): Promise<boolean> => {
+  const voterHash = await getCurrentVoterHash();
+  if (!voterHash) return false;
+  const like = await prisma.blogLike.findUnique({
+    where: { postId_voterHash: { postId, voterHash } }
+  });
+  return !!like;
 };
 
 export const getPublicPostBySlug = async (slug: string): Promise<PublicBlogPost | null> => {
@@ -86,17 +83,7 @@ export const getPublicPostBySlug = async (slug: string): Promise<PublicBlogPost 
   });
 
   if (!post) return null;
-  
-  let likedByMe = false;
-  const voterHash = await getCurrentVoterHash();
-  if (voterHash) {
-    const like = await prisma.blogLike.findUnique({
-      where: { postId_voterHash: { postId: post.id, voterHash } }
-    });
-    likedByMe = !!like;
-  }
-
-  return toPublicPost({ ...post, likedByMe });
+  return toPublicPost({ ...post, likedByMe: false });
 };
 
 export const getAdminPosts = async () => {

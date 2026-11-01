@@ -1,0 +1,104 @@
+﻿
+> gurmesa-website@0.1.0 build
+> prisma generate && next build
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+
+âœ” Generated Prisma Client (v5.22.0) to .\node_modules\@prisma\client in 361ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to react to database changes in your app as they happen? Discover how with Pulse: https://pris.ly/tip-1-pulse
+
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚  Update available 5.22.0 -> 8.0.0-rc.29                 â”‚
+â”‚                                                         â”‚
+â”‚  This is a major update - please follow the guide at    â”‚
+â”‚  https://pris.ly/d/major-version-upgrade                â”‚
+â”‚                                                         â”‚
+â”‚  Run the following to update                            â”‚
+â”‚    npm i --save-dev prisma@latest                       â”‚
+â”‚    npm i @prisma/client@latest                          â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+â–² Next.js 16.4.3 (Turbopack)
+- Environments: .env.production, .env
+âœ“ Running next.config.ts took 235ms
+- Experiments (use with caution):
+  Â· proxyClientMaxBodySize: 31457280
+  Â· serverActions
+
+  Creating an optimized production build ...
+âœ“ Compiled successfully in 8.0s
+  Running TypeScript ...
+  Finished TypeScript in 12.2s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/31) ...
+  Generating static pages using 7 workers (7/31) 
+  Generating static pages using 7 workers (15/31) 
+  Generating static pages using 7 workers (23/31) 
+âœ“ Generating static pages using 7 workers (31/31) in 9.4s
+  Finalizing page optimization ...
+
+Route (app)
+â”Œ â—‹ /_not-found
+â”œ Æ’ /[locale]
+â”œ Æ’ /[locale]/about
+â”œ Æ’ /[locale]/blog
+â”œ Æ’ /[locale]/blog/[slug]
+â”œ Æ’ /[locale]/contact
+â”œ Æ’ /[locale]/privacy
+â”œ Æ’ /[locale]/services
+â”œ Æ’ /[locale]/services/[slug]
+â”œ Æ’ /[locale]/terms
+â”œ Æ’ /[locale]/testimonials
+â”œ Æ’ /[locale]/work
+â”œ Æ’ /[locale]/work/[slug]
+â”œ Æ’ /admin
+â”œ Æ’ /admin/audit-log
+â”œ Æ’ /admin/audit-logs
+â”œ Æ’ /admin/blog
+â”œ Æ’ /admin/blog/[id]/edit
+â”œ Æ’ /admin/blog/[id]/preview
+â”œ Æ’ /admin/blog/new
+â”œ Æ’ /admin/comments
+â”œ Æ’ /admin/experience
+â”œ Æ’ /admin/experience/[id]/edit
+â”œ Æ’ /admin/experience/new
+â”œ Æ’ /admin/inquiries
+â”œ Æ’ /admin/inquiries/[id]
+â”œ Æ’ /admin/login
+â”œ Æ’ /admin/media
+â”œ Æ’ /admin/notifications
+â”œ Æ’ /admin/profile
+â”œ Æ’ /admin/projects
+â”œ Æ’ /admin/projects/[id]/edit
+â”œ Æ’ /admin/projects/new
+â”œ Æ’ /admin/services
+â”œ Æ’ /admin/services/[id]/edit
+â”œ Æ’ /admin/services/new
+â”œ Æ’ /admin/settings
+â”œ Æ’ /admin/skills
+â”œ Æ’ /admin/skills/[id]/edit
+â”œ Æ’ /admin/skills/new
+â”œ Æ’ /admin/social-links
+â”œ Æ’ /admin/social-links/[id]/edit
+â”œ Æ’ /admin/social-links/new
+â”œ Æ’ /admin/technologies
+â”œ Æ’ /admin/technologies/[id]/edit
+â”œ Æ’ /admin/technologies/new
+â”œ Æ’ /admin/testimonials
+â”œ Æ’ /admin/testimonials/[id]
+â”œ Æ’ /api/auth/[...nextauth]
+â”œ Æ’ /api/blog/like-status
+â”œ Æ’ /api/health
+â”œ Æ’ /mock-storage/[...path]
+â”œ â—‹ /robots.txt
+â”” Æ’ /sitemap.xml
+
+
+Æ’ Proxy (Middleware)
+
+â—‹  (Static)   prerendered as static content
+Æ’  (Dynamic)  server-rendered on demand
+

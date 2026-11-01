@@ -48,6 +48,7 @@
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "react-markdown": "^10.1.0",
+    "sharp": "^0.35.5",
     "rehype-highlight": "^7.0.2",
     "rehype-sanitize": "^6.0.0",
     "remark-gfm": "^4.0.1",

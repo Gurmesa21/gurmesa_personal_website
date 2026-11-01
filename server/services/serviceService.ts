@@ -3,26 +3,36 @@ import { toPublicService, PublicServiceDTO } from '../../lib/dto/service';
 import { Service, Prisma } from '@prisma/client';
 import { auth } from '../../auth';
 import { logAdminAction } from '@/lib/audit';
+import { timedQuery } from '@/lib/perf-timing';
 
 export async function getPublicServices(options?: { limit?: number; orderBy?: 'createdAt' | 'order' }): Promise<PublicServiceDTO[]> {
-  const orderBy = options?.orderBy === 'createdAt'
-    ? { createdAt: 'desc' as const }
-    : { order: 'asc' as const };
+  return timedQuery('getPublicServices', async () => {
+    const orderBy = options?.orderBy === 'createdAt'
+      ? { createdAt: 'desc' as const }
+      : { order: 'asc' as const };
 
-  const services = await serviceRepository.findMany({
-    where: { status: 'PUBLISHED' },
-    orderBy,
-    take: options?.limit,
+    const services = await serviceRepository.findMany({
+      where: { status: 'PUBLISHED' },
+      include: { featuredImage: true },
+      orderBy,
+      take: options?.limit,
+    });
+    return services.map((s: any) => {
+      const dto = toPublicService(s);
+      (dto as any).featuredImage = s.featuredImage;
+      return dto;
+    });
   });
-  return services.map(toPublicService);
 }
 
 export async function getPublicServiceBySlug(slug: string): Promise<PublicServiceDTO | null> {
-  const service = await serviceRepository.findUnique({
-    where: { slug, status: 'PUBLISHED' },
+  return timedQuery(`getPublicServiceBySlug:${slug}`, async () => {
+    const service = await serviceRepository.findUnique({
+      where: { slug, status: 'PUBLISHED' },
+    });
+    if (!service) return null;
+    return toPublicService(service);
   });
-  if (!service) return null;
-  return toPublicService(service);
 }
 
 async function requireAdmin() {

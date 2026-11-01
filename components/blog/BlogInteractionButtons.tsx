@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Heart, MessageCircle, Share2, Check } from 'lucide-react';
 import { toggleLike } from '@/app/actions/blog';
 import { cn } from '@/lib/utils';
@@ -21,6 +21,21 @@ export function BlogInteractionButtons({ postId, postSlug, initialLikesCount, in
   const [isLiking, setIsLiking] = useState(false);
   const router = useRouter();
   const t = useTranslations('Blog');
+
+  useEffect(() => {
+    let ignore = false;
+    fetch(`/api/blog/like-status?postId=${postId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (!ignore && typeof data.likedByMe === 'boolean') {
+          setIsLiked(data.likedByMe);
+        }
+      })
+      .catch(() => {});
+    return () => {
+      ignore = true;
+    };
+  }, [postId]);
 
   const handleLike = async () => {
     if (isLiking) return;

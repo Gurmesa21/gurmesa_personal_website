@@ -10,6 +10,8 @@ import { getTranslations } from 'next-intl/server';
 import { getStorageAdapter } from '@/lib/storage';
 import { prisma } from '@/server/repositories/db';
 import { MediaRenderer } from '@/components/ui/MediaRenderer';
+import { isTestMode } from '@/lib/test-mode';
+import { unstable_noStore as noStore } from 'next/cache';
 import {
   ImageIcon,
   ChevronRight,
@@ -18,7 +20,8 @@ import {
   ExternalLink
 } from 'lucide-react';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
+export const dynamic = 'auto';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -44,6 +47,9 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   const t = await getTranslations('Work');
   const tNav = await getTranslations('Navigation');
   const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+  if (isTestMode()) {
+    noStore();
+  }
 
   const rawSlug = (await params).slug;
   const decodedSlug = decodeURIComponent(rawSlug);
@@ -134,23 +140,25 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           )}
         </div>
 
-        {/* Wide Project Hero Banner */}
-
-        <div className="relative w-full aspect-[21/9] min-h-[260px] max-h-[460px] border border-[#292D45] bg-[#101426] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/100 hover:shadow-x2 hover:shadow-[#8063F7]/20 rounded-2xl overflow-hidden border border-[#292D45] bg-[#101426] shadow-2xl flex items-center justify-center">
+        {/* 16:9 Featured Media Banner: max 1280px wide, centered, intrinsic 16:9 ratio preserved */}
+        <div className="relative max-w-[1280px] w-full mx-auto aspect-video rounded-2xl overflow-hidden border border-[#292D45] bg-[#080B16] shadow-2xl flex items-center justify-center">
           {featuredImage ? (
             <MediaRenderer
               url={featuredImage.url!}
               mimeType={featuredImage.mimeType}
               altText={featuredImage.altText}
               fill
-              className="object-cover"
+              className="object-contain bg-[#080B16]"
+              priority
+              controls
+              preload="metadata"
             />
           ) : (
-            <div className="relative w-full h-full bg-gradient-to-br from-[#171D32] via-[#101426] to-[#171D32]/80 flex flex-col items-center justify-center gap-3 ">
+            <div className="relative w-full h-full bg-gradient-to-br from-[#171D32] via-[#101426] to-[#171D32]/80 flex flex-col items-center justify-center gap-3">
               <div className="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full bg-[#4F6FF0]/15 blur-3xl" />
               <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-[#8063F7]/15 blur-3xl" />
               <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-[#4F6FF0]/30 bg-[#101426] text-[#4F6FF0] shadow-inner">
-                <ImageIcon className="w-8 h-8 opacity-80 " />
+                <ImageIcon className="w-8 h-8 opacity-80" />
               </div>
             </div>
           )}

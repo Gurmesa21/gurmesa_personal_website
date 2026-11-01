@@ -4,6 +4,7 @@ import { toPublicCaseStudy, PublicCaseStudyDTO } from '../../lib/dto/project';
 import { Prisma } from '@prisma/client';
 import { auth } from '../../auth';
 import { logAdminAction } from '@/lib/audit';
+import { timedQuery } from '@/lib/perf-timing';
 
 async function requireAdmin() {
   const session = await auth();
@@ -15,45 +16,57 @@ async function requireAdmin() {
  * AND that CaseStudy's status == 'PUBLISHED'.
  */
 export async function getPublicProjects(options?: { limit?: number }): Promise<PublicCaseStudyDTO[]> {
-  const projects = await prisma.project.findMany({
-    where: {
-      confidentiality: { not: 'PRIVATE' },
-      caseStudy: {
-        status: 'PUBLISHED'
-      }
-    },
-    include: {
-      caseStudy: true,
-      technologies: {
-        include: { technology: true }
-      }
-    },
-    orderBy: { createdAt: 'desc' },
-    take: options?.limit
-  });
+  return timedQuery('getPublicProjects', async () => {
+    const projects = await prisma.project.findMany({
+      where: {
+        confidentiality: { not: 'PRIVATE' },
+        caseStudy: {
+          status: 'PUBLISHED'
+        }
+      },
+      include: {
+        caseStudy: true,
+        technologies: {
+          include: { technology: true }
+        },
+        media: {
+          where: { order: 0 },
+          include: { media: true }
+        }
+      },
+      orderBy: { createdAt: 'desc' },
+      take: options?.limit
+    });
 
-  return projects.map(toPublicCaseStudy);
+    return projects.map((p) => {
+      const dto = toPublicCaseStudy(p);
+      (dto as any).media = p.media;
+      return dto;
+    });
+  });
 }
 
 export async function getPublicCaseStudyBySlug(slug: string): Promise<PublicCaseStudyDTO | null> {
-  const project = await prisma.project.findFirst({
-    where: {
-      slug,
-      confidentiality: { not: 'PRIVATE' },
-      caseStudy: {
-        status: 'PUBLISHED'
+  return timedQuery(`getPublicCaseStudyBySlug:${slug}`, async () => {
+    const project = await prisma.project.findFirst({
+      where: {
+        slug,
+        confidentiality: { not: 'PRIVATE' },
+        caseStudy: {
+          status: 'PUBLISHED'
+        }
+      },
+      include: {
+        caseStudy: true,
+        technologies: {
+          include: { technology: true }
+        }
       }
-    },
-    include: {
-      caseStudy: true,
-      technologies: {
-        include: { technology: true }
-      }
-    }
-  });
+    });
 
-  if (!project || !project.caseStudy) return null;
-  return toPublicCaseStudy(project);
+    if (!project || !project.caseStudy) return null;
+    return toPublicCaseStudy(project);
+  });
 }
 
 export async function getAdminProjects() {

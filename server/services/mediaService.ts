@@ -24,18 +24,72 @@ export async function getAdminMedia() {
   });
 }
 
+async function downscaleImageIfNeeded(
+  file: File,
+  mimeType: string
+): Promise<{ file: File; mimeType: string }> {
+  // Skip GIFs, SVGs, or non-images
+  if (
+    !mimeType.startsWith('image/') ||
+    mimeType === 'image/gif' ||
+    mimeType === 'image/svg+xml'
+  ) {
+    return { file, mimeType };
+  }
+
+  // Guard memory: reject images > 25MB before sharp
+  if (file.size > 25 * 1024 * 1024) {
+    throw new Error('Image exceeds 25MB limit.');
+  }
+
+  try {
+    const sharpModule = await import('sharp');
+    const sharp = sharpModule.default || sharpModule;
+    const arrayBuffer = await file.arrayBuffer();
+    const inputBuffer = Buffer.from(arrayBuffer);
+
+    // Guard memory with limitInputPixels (50 megapixels)
+    const img = sharp(inputBuffer, { limitInputPixels: 50 * 1024 * 1024 });
+    const metadata = await img.metadata();
+
+    if (metadata.width && metadata.width > 1280) {
+      const outputBuffer = await img
+        .resize({ width: 1280, withoutEnlargement: true })
+        .webp({ quality: 80 })
+        .toBuffer();
+
+      const baseName = file.name.replace(/\.[^/.]+$/, '');
+      const newFile = new File([outputBuffer], `${baseName}.webp`, {
+        type: 'image/webp',
+      });
+      return { file: newFile, mimeType: 'image/webp' };
+    }
+  } catch (err: any) {
+    if (err.message === 'Image exceeds 25MB limit.') throw err;
+    console.warn('[Sharp Downscale] Processing skipped or failed, uploading original:', err);
+  }
+
+  return { file, mimeType };
+}
+
 export async function uploadMedia(file: File, altText?: string) {
   const session = await auth();
   if (!session) throw new Error('Unauthorized');
 
   // 1. Validate the uploaded file
-  const detectedMimeType = await validateMediaUpload(file);
+  let detectedMimeType = await validateMediaUpload(file);
   
-  // 2. Upload the file to storage
+  // 2. Downscale image if width > 1280px to WebP (quality 80)
+  let fileToUpload = file;
+  const processed = await downscaleImageIfNeeded(file, detectedMimeType);
+  fileToUpload = processed.file;
+  detectedMimeType = processed.mimeType;
+
+  // 3. Upload the file to storage
   const storage = getStorageAdapter();
-  const { key, size } = await storage.upload(file, 'media/');
+  const { key, size } = await storage.upload(fileToUpload, 'media/');
   
-  // 3. Create the database record with compensating cleanup on failure
+  // 4. Create the database record with compensating cleanup on failure
   let media;
   try {
     media = await prisma.mediaAsset.create({
@@ -47,13 +101,13 @@ export async function uploadMedia(file: File, altText?: string) {
       }
     });
   } catch (dbError) {
-    // 4. If database creation fails, attempt to delete the uploaded object
+    // 5. If database creation fails, attempt to delete the uploaded object
     try {
       await storage.delete(key);
     } catch (cleanupError) {
       console.error('[Storage Cleanup] Failed to delete orphaned object after DB error:', cleanupError);
     }
-    // 5. Rethrow original database error without hiding it
+    // 6. Rethrow original database error without hiding it
     throw dbError;
   }
 

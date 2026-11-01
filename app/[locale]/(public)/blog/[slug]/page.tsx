@@ -8,8 +8,11 @@ import { BlogPostClientView } from '@/components/blog/BlogPostClientView';
 import { getPublicProfile, getPublicSocialLinks } from '@/server/services/profileService';
 import { getResumeUrl } from '@/server/services/mediaService';
 import { formatReadingTime } from '@/lib/reading-time';
+import { isTestMode } from '@/lib/test-mode';
+import { unstable_noStore as noStore } from 'next/cache';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
+export const dynamic = 'auto';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -30,6 +33,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  if (isTestMode()) {
+    noStore();
+  }
   const resolvedParams = await params;
   const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
   const post = await getPublicPostBySlug(resolvedParams.slug);
@@ -79,9 +85,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     }))
   };
 
-  const profile = await getPublicProfile();
-  const socialLinks = await getPublicSocialLinks();
-  const resumeUrl = await getResumeUrl();
+  const [profile, socialLinks, resumeUrl] = await Promise.all([
+    getPublicProfile(),
+    getPublicSocialLinks(),
+    getResumeUrl()
+  ]);
 
   let avatarMedia = null;
   if (profile?.avatarUrl) {

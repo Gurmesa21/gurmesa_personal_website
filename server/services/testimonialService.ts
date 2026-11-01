@@ -4,6 +4,7 @@ import { auth } from '../../auth';
 import { logAdminAction } from '@/lib/audit';
 import { createNotification } from '@/lib/notifications';
 import { getEmailTransport, EmailTransport } from '@/lib/email';
+import { timedQuery } from '@/lib/perf-timing';
 
 export class TestimonialService {
   constructor(
@@ -20,17 +21,19 @@ export class TestimonialService {
 
   // PUBLIC
   async getPublicTestimonials(options?: { limit?: number; orderBy?: 'createdAt' | 'featured' }) {
-    const orderBy = options?.orderBy === 'createdAt'
-      ? [{ createdAt: 'desc' as const }]
-      : [{ featured: 'desc' as const }, { createdAt: 'desc' as const }];
+    return timedQuery('getPublicTestimonials', async () => {
+      const orderBy = options?.orderBy === 'createdAt'
+        ? [{ createdAt: 'desc' as const }]
+        : [{ featured: 'desc' as const }, { createdAt: 'desc' as const }];
 
-    return prisma.testimonial.findMany({
-      where: {
-        status: TestimonialStatus.PUBLISHED,
-        permissionStatus: TestimonialPermissionStatus.AUTHORIZED
-      },
-      orderBy,
-      take: options?.limit
+      return prisma.testimonial.findMany({
+        where: {
+          status: TestimonialStatus.PUBLISHED,
+          permissionStatus: TestimonialPermissionStatus.AUTHORIZED
+        },
+        orderBy,
+        take: options?.limit
+      });
     });
   }
 

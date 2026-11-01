@@ -32,6 +32,8 @@ import {
 import { getStorageAdapter } from '@/lib/storage';
 import { prisma } from '@/server/repositories/db';
 import { MediaRenderer } from '@/components/ui/MediaRenderer';
+import { CardMedia } from '@/components/ui/CardMedia';
+import { unstable_noStore as noStore } from 'next/cache';
 
 function getServiceIcon(slug: string) {
   switch (slug) {
@@ -118,7 +120,12 @@ function getProjectTags(project: {
   return tags;
 }
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
+export const dynamic = 'auto';
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'am' }, { locale: 'om' }];
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const override = await getSeoOverride('/');
@@ -139,19 +146,40 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function HomePage(props?: {
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const searchParams = props?.searchParams ? await props.searchParams : {};
+  if (isTestMode()) {
+    noStore();
+  }
   if (
-    searchParams?.throwTestError === '1' &&
-    (process.env.NODE_ENV === 'development' || isTestMode())
+    (process.env.NODE_ENV === 'development' || isTestMode()) &&
+    props?.searchParams
   ) {
-    throw new Error('simulated secret internal server error postgres://secret@db');
+    const searchParams = await props.searchParams;
+    if (searchParams?.throwTestError === '1') {
+      throw new Error('simulated secret internal server error postgres://secret@db');
+    }
   }
   const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
 
   const t = await getTranslations('Home');
-  const profile = await getPublicProfile();
-  const socialLinks = await getPublicSocialLinks();
-  const resumeUrl = await getResumeUrl();
+
+  // Enforce TASK 4 homepage limits: Services (6), Projects (5), Blog posts (2), Testimonials (2)
+  const [
+    profile,
+    socialLinks,
+    resumeUrl,
+    rawServices,
+    rawProjects,
+    rawPosts,
+    rawTestimonials
+  ] = await Promise.all([
+    getPublicProfile(),
+    getPublicSocialLinks(),
+    getResumeUrl(),
+    getPublicServices({ limit: 6, orderBy: 'createdAt' }),
+    getPublicProjects({ limit: 5 }),
+    getPublicPosts({ limit: 2 }),
+    testimonialService.getPublicTestimonials({ limit: 2, orderBy: 'createdAt' }),
+  ]);
 
   let avatarMedia = null;
   if (profile?.avatarUrl) {
@@ -162,12 +190,6 @@ export default async function HomePage(props?: {
       altText: profile?.name || 'Avatar'
     };
   }
-
-  // Enforce TASK 4 homepage limits: Services (6), Projects (5), Blog posts (2), Testimonials (2)
-  const rawServices = await getPublicServices({ limit: 6, orderBy: 'createdAt' });
-  const rawProjects = await getPublicProjects({ limit: 5 });
-  const rawPosts = await getPublicPosts({ limit: 2 });
-  const rawTestimonials = await testimonialService.getPublicTestimonials({ limit: 2, orderBy: 'createdAt' });
 
   // Testimonials: filter & sort to display only the last 2 most recent testimonials
   const sortedTestimonials = [...rawTestimonials].sort((a, b) => {
@@ -415,34 +437,9 @@ export default async function HomePage(props?: {
                         {/* Thin Top Accent Line Animation */}
                         <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
-                        {/* Static Background Media Layer: image stays static over all the card behind the text */}
-                        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-                          {service.mediaObj ? (
-                            service.mediaObj.mimeType.startsWith('video/') ? (
-                              <video
-                                src={service.mediaObj.url}
-                                className="h-full w-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                              />
-                            ) : (
-                              <MediaRenderer
-                                url={service.mediaObj.url}
-                                mimeType={service.mediaObj.mimeType}
-                                altText={service.title}
-                                fill
-                                className="object-cover scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
-                              />
-                            )
-                          ) : (
-                            <div className="relative h-full w-full bg-gradient-to-br from-[#8063F7]/25 via-[#171D32] to-[#101426]">
-                              <div className="absolute inset-0 bg-gradient-to-t from-[#8063F7]/20 to-transparent" />
-                            </div>
-                          )}
-                          {/* Gradient overlay: increased transparency so background image is clearly visible */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#080B16]/92 via-[#080B16]/55 to-[#080B16]/35 group-hover:via-[#080B16]/45 group-hover:to-[#080B16]/25 transition-all duration-300" />
+                        {/* 16:9 Media Box: fits 1280x720 file whole */}
+                        <div className="mb-3">
+                          <CardMedia mediaObj={service.mediaObj} title={service.title} iconName={service.slug} />
                         </div>
 
                         {/* Subtle hover radial glow */}
@@ -529,34 +526,9 @@ export default async function HomePage(props?: {
                     {/* Thin Top Accent Line Animation */}
                     <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
-                    {/* Static Background Media Layer: image stays static over all the card behind the text */}
-                    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-                      {project.mediaObj ? (
-                        project.mediaObj.mimeType.startsWith('video/') ? (
-                          <video
-                            src={project.mediaObj.url}
-                            className="h-full w-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                          />
-                        ) : (
-                          <MediaRenderer
-                            url={project.mediaObj.url}
-                            mimeType={project.mediaObj.mimeType}
-                            altText={project.mediaObj.altText || project.title}
-                            fill
-                            className="object-cover scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
-                          />
-                        )
-                      ) : (
-                        <div className="relative h-full w-full bg-gradient-to-br from-[#4F6FF0]/25 via-[#171D32] to-[#101426]">
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#8063F7]/20 to-transparent" />
-                        </div>
-                      )}
-                      {/* Gradient overlay: increased transparency so background image is clearly visible */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#080B16]/92 via-[#080B16]/55 to-[#080B16]/35 group-hover:via-[#080B16]/45 group-hover:to-[#080B16]/25 transition-all duration-300" />
+                    {/* 16:9 Media Box: fits 1280x720 file whole */}
+                    <div className="mb-3">
+                      <CardMedia mediaObj={project.mediaObj} title={project.title} iconName="project" />
                     </div>
 
 

@@ -1,0 +1,171 @@
+﻿
+> gurmesa-website@0.1.0 test
+> vitest run --run
+
+node.exe : Γùç injected env (13) from .env.test
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γùç injected env (13) from .env.test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become 
+the default in a future major version of Vite:
+  - `__dirname` (vitest.config.ts:10:25). Use `import.meta.dirname` instead
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90mC:/Users/Hp/Documents/Projects/Gurmesa_website[39m
+
+ [32mΓ£ô[39m tests/unit/email-matrix.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 456[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog-likes.test.ts [2m([22m[2m20 tests[22m[2m)[22m[33m 1535[2mms[22m[39m
+[90mstderr[2m | tests/unit/email-resend.test.ts[2m > [22m[2mResend Email Transport Hardening (B2)[2m > 
+[22m[2mConfiguration & Initialization[2m > [22m[2mreturns FAILED when EMAIL_API_KEY and RESEND_API_KEY are absent
+[22m[39mWARNING: ResendTransport used without EMAIL_API_KEY / RESEND_API_KEY or EMAIL_FROM. Email dropped.
+
+[90mstderr[2m | tests/unit/email-resend.test.ts[2m > [22m[2mResend Email Transport Hardening (B2)[2m > 
+[22m[2mConfiguration & Initialization[2m > [22m[2mreturns FAILED when EMAIL_FROM is absent
+[22m[39mWARNING: ResendTransport used without EMAIL_API_KEY / RESEND_API_KEY or EMAIL_FROM. Email dropped.
+
+ [32mΓ£ô[39m tests/unit/email-resend.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1571[2mms[22m[39m
+   [32mΓ£ô[39m Resend Email Transport Hardening (B2) [2m(11)[22m
+     [32mΓ£ô[39m Idempotency & Transient Retries [2m(4)[22m
+       [33m[2mΓ£ô[22m[39m retries once on HTTP 429 rate limit and succeeds on retry[33m 514[2mms[22m[39m
+       [33m[2mΓ£ô[22m[39m retries once on HTTP 500 and returns FAILED if second attempt also fails[33m 513[2mms[22m[39m
+       [33m[2mΓ£ô[22m[39m retries once on network failure and handles persistent network failure gracefully[33m 518[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/guard.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 1150[2mms[22m[39m
+   [32mΓ£ô[39m Production Guard [2m(5)[22m
+     [33m[2mΓ£ô[22m[39m refuses to run seed.ts in production[33m 953[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/concurrency.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 1027[2mms[22m[39m
+[90mstdout[2m | tests/integration/contact.test.ts[2m > [22m[2mContact & Inquiry Service Integration[2m > [22m[2mConsoleTransport records SKIPPED (never SENT)
+[22m[39m--- EMAIL SKIPPED (CONSOLE TRANSPORT) ---
+To: x
+Subject: y
+Body:
+z
+-----------------------------------------
+
+ [32mΓ£ô[39m tests/integration/contact.test.ts [2m([22m[2m32 tests[22m[2m)[22m[33m 675[2mms[22m[39m
+[90mstderr[2m | tests/integration/audit.test.ts[2m > [22m[2mAudit Logs[2m > [22m[2m9d. Audit log entry is 
+created for a media delete
+[22m[39m[Sharp Downscale] Processing skipped or failed, uploading original: Error: Input buffer has corrupt header: 
+VipsJpeg: premature end of JPEG image
+VipsJpeg: JPEG datastream contains no image
+VipsJpeg: premature end of JPEG image
+VipsJpeg: JPEG datastream contains no image
+VipsJpeg: premature end of JPEG image
+    at Sharp.metadata [90m(file:///C:/Users/Hp/Documents/Projects/Gurmesa_website/[39mnode_modules/[4msharp[24m/dis
+t/input.mjs:651:17[90m)[39m
+    at downscaleImageIfNeeded (C:/Users/Hp/Documents/Projects/Gurmesa_website/server/services/mediaService.ts:53:32)
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)[39m
+    at Module.uploadMedia (C:/Users/Hp/Documents/Projects/Gurmesa_website/server/services/mediaService.ts:84:21)
+    at C:/Users/Hp/Documents/Projects/Gurmesa_website/tests/integration/audit.test.ts:94:19
+    at async [90mfile:///C:/Users/Hp/Documents/Projects/Gurmesa_website/[39mnode_modules/[4mvitest[24m/dist/chunks/
+run.BPv-BBRv.js:2801:20
+
+ [32mΓ£ô[39m tests/integration/audit.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 594[2mms[22m[39m
+   [32mΓ£ô[39m Audit Logs [2m(4)[22m
+     [33m[2mΓ£ô[22m[39m 9d. Audit log entry is created for a media delete[33m 331[2mms[22m[39m
+[90mstderr[2m | tests/integration/media.test.ts[2m > [22m[2mMedia Service[2m > [22m[2m7. Deleting a MediaAsset 
+that is referenced elsewhere behaves per whatever behavior you actually implemented
+[22m[39m[Sharp Downscale] Processing skipped or failed, uploading original: Error: Input buffer has corrupt header: 
+VipsJpeg: premature end of JPEG image
+VipsJpeg: JPEG datastream contains no image
+VipsJpeg: premature end of JPEG image
+VipsJpeg: JPEG datastream contains no image
+VipsJpeg: premature end of JPEG image
+    at Sharp.metadata [90m(file:///C:/Users/Hp/Documents/Projects/Gurmesa_website/[39mnode_modules/[4msharp[24m/dis
+t/input.mjs:651:17[90m)[39m
+    at downscaleImageIfNeeded (C:/Users/Hp/Documents/Projects/Gurmesa_website/server/services/mediaService.ts:53:32)
+    at Module.uploadMedia (C:/Users/Hp/Documents/Projects/Gurmesa_website/server/services/mediaService.ts:84:21)
+    at C:/Users/Hp/Documents/Projects/Gurmesa_website/tests/integration/media.test.ts:98:19
+    at async [90mfile:///C:/Users/Hp/Documents/Projects/Gurmesa_website/[39mnode_modules/[4mvitest[24m/dist/chunks/
+run.BPv-BBRv.js:2801:20
+
+ [32mΓ£ô[39m tests/integration/media.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 586[2mms[22m[39m
+   [32mΓ£ô[39m Media Service [2m(7)[22m
+     [33m[2mΓ£ô[22m[39m 7. Deleting a MediaAsset that is referenced elsewhere behaves per whatever behavior you actually implemented[33m 316[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/perf-and-features.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 456[2mms[22m[39m
+   [32mΓ£ô[39m B5.e: Image Downscaling with Sharp [2m(2)[22m
+     [33m[2mΓ£ô[22m[39m downscales an image exceeding 1280px to max width 1280 WebP[33m 413[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/audit-login.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 566[2mms[22m[39m
+   [32mΓ£ô[39m Audit Logs (Login) [2m(1)[22m
+     [33m[2mΓ£ô[22m[39m 9c. Audit log entry is created for a login event[33m 562[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day3-auth.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 408[2mms[22m[39m
+   [32mΓ£ô[39m Day 3 - Authentication and DTO Boundary [2m(3)[22m
+     [33m[2mΓ£ô[22m[39m SEC-AUTH-03: Login validation accepts correct password and rejects wrong password[33m 343[2mms[22m[39m
+[90mstderr[2m | tests/unit/infrastructure-media-service.test.ts[2m > [22m[2mMedia Service - Infrastructure 
+Consistency & Reference Protection[2m > [22m[2mCompensating upload cleanup[2m > [22m[2mattempts to delete 
+uploaded object from storage and rethrows error if DB creation fails
+[22m[39m[Sharp Downscale] Processing skipped or failed, uploading original: Error: Input buffer has corrupt header:
+    at Sharp.metadata [90m(file:///C:/Users/Hp/Documents/Projects/Gurmesa_website/[39mnode_modules/[4msharp[24m/dis
+t/input.mjs:651:17[90m)[39m
+    at downscaleImageIfNeeded (C:/Users/Hp/Documents/Projects/Gurmesa_website/server/services/mediaService.ts:53:32)
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)[39m
+    at Module.uploadMedia (C:/Users/Hp/Documents/Projects/Gurmesa_website/server/services/mediaService.ts:84:21)
+    at C:/Users/Hp/Documents/Projects/Gurmesa_website/tests/unit/infrastructure-media-service.test.ts:55:7
+    at async [90mfile:///C:/Users/Hp/Documents/Projects/Gurmesa_website/[39mnode_modules/[4mvitest[24m/dist/chunks/
+run.BPv-BBRv.js:2801:20
+
+ [32mΓ£ô[39m tests/unit/infrastructure-media-service.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 355[2mms[22m[39m
+   [32mΓ£ô[39m Media Service - Infrastructure Consistency & Reference Protection [2m(4)[22m
+     [32mΓ£ô[39m Compensating upload cleanup [2m(1)[22m
+       [33m[2mΓ£ô[22m[39m attempts to delete uploaded object from storage and rethrows error if DB creation fails[33m 343[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/blog.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1182[2mms[22m[39m
+   [32mΓ£ô[39m Blog SEC-ACL tests [2m(13)[22m
+     [33m[2mΓ£ô[22m[39m getPublicPosts() excludes DRAFT posts[33m 356[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/notifications.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 927[2mms[22m[39m
+   [32mΓ£ô[39m Notification System [2m(3)[22m
+     [33m[2mΓ£ô[22m[39m 13. Submitting a new Inquiry creates a Notification row with the correct type and entityId[33m 354[2mms[22m[39m
+     [33m[2mΓ£ô[22m[39m 15. Marking a notification read updates isRead and is reflected in the unread count[33m 314[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/homepage-limits.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 183[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/testimonial-length.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 923[2mms[22m[39m
+   [32mΓ£ô[39m TASK 1 ΓÇö Testimonial Length Restrictions [2m(7)[22m
+     [33m[2mΓ£ô[22m[39m accepts 20-character testimonial[33m 426[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day6-portfolio.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 122[2mms[22m[39m
+[90mstdout[2m | tests/integration/rateLimit.test.ts[2m > [22m[2mRate Limiter with Redis[2m > [22m[2m11. Rate limiter: the (N+1)th request from one client is rejected while a different client is still accepted
+[22m[39mRedis keys created: [
+  [32m'174350ee7cc80624c8c56313db40ee50d24c9dd7cf9801f604370b3a8c2e2a47'[39m,
+  [32m'd0e120974e466d0270ea2c08caa348349f4c51e3408f345dc8a5b0156c40ee78'[39m,
+  [32m'c2f106a0da33d535242946609595b98f7c1063b8e90dfdcf8232aa30b1e6f8f1'[39m,
+  [32m'1a5c3345439ad35d79e0df8bcdc89d1c6a0bc2a8debda7bb237b35f80cdc951a'[39m,
+  [32m'5f055293b83eb0f6baa5cf101e5039cd1a64cc101bb19621c76becb01dd94619'[39m,
+  [32m'de273a59f6b645e3e85abf7bd66f4329a346e8bc434558897da53760090176e9'[39m,
+  [32m'3d68be22776a6055f621231fafde919f7fdd461bf2f96a486876c9b6ad3ea0c0'[39m,
+  [32m'af0f8a637cdee10af69403dc3426eee2cebb9eaacc68cc37156d66124e4c531e'[39m,
+  [32m'b8865dfd24adb599faf003dcb2ae915f62e86334d1809c21576327d3aafaaaaf'[39m,
+  [32m'4b9e0676819f28b802c83ce0a27346cecaafe7943c180fd7afdc2795be1fc8c5'[39m,
+  [32m'6fad5cc6ea47d77f56914cb0304be811489a90c17d0f36d4d74698659a2c66aa'[39m,
+  [32m'67fb42d7925cc6ba40b19381b4134bd6aed78b663c3d2cddfd161a88f0507ec9'[39m,
+  [32m'7a953e9b02af2bd3ebe4d8baeef803d5ff9a4b6882675e16290e51099fe305b0'[39m,
+  [32m'e695c4ca2a24b18f1faf5b1180af5979ccd819ae8c28597a3c5fcf999e72ee13'[39m,
+  [32m'bedf0d94c757032a102223c3bcd2aa8e73276fb2f0ccb3874d385fe7a0c32d5e'[39m,
+  [32m'f245efc2f0608c3a009a69fdba0f640e1490e8d531fb3d56765f33ea85b99887'[39m,
+  [32m'8ec73dcfbbaed22394257bbb2b77361386277155e22d09069fff819b3276d7ed'[39m
+]
+
+ [32mΓ£ô[39m tests/integration/rateLimit.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 75[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day5-service.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 80[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/infrastructure-storage.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 76[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/testimonialRateLimit.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 64[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/project-visibility.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 63[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/infrastructure-redis.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 37[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/translations-parity.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 39[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day10-admin.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 35[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/health.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/settings-email.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/reading-time.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/project-live-url.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/theme-dark-permanent.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/legal-pages-testimonials.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/profile.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32mΓ£ô[39m tests/integration/day10b.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32mΓ£ô[39m tests/unit/sanity.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 8[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m34 passed[39m[22m[90m (34)[39m
+[2m      Tests [22m [1m[32m226 passed[39m[22m[90m (226)[39m
+[2m   Start at [22m 14:33:16
+[2m   Duration [22m 36.89s[2m (tests 56%, import 39%, transform 3%, worker 2%)[22m
+
+[2m    Isolate [22m [33m34 workers spawned[39m[2m ┬╖ ~363ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~11.98s faster with [22m[33misolate: false[39m[2m ΓÇö reuses workers across files instead of one per file[22m
+

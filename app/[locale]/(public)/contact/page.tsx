@@ -1,9 +1,18 @@
 import { prisma } from '@/server/repositories/db';
 import { ContactForm } from './ContactForm';
 import { getTranslations } from 'next-intl/server';
+import { isTestMode } from '@/lib/test-mode';
+import { unstable_noStore as noStore } from 'next/cache';
 
 import { Mail, Share2, MessageSquare, ArrowUpRight, Clock, ShieldCheck, Code2, MailBadge } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
+export const revalidate = 60;
+export const dynamic = 'auto';
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'am' }, { locale: 'om' }];
+}
 
 export const metadata = {
   title: 'Contact - Gurmesa',
@@ -11,6 +20,9 @@ export const metadata = {
 };
 
 export default async function ContactPage() {
+  if (isTestMode()) {
+    noStore();
+  }
   const t = await getTranslations('Contact');
   const [emailSetting, socialLinks] = await Promise.all([
     prisma.siteSetting.findUnique({ where: { key: 'publicContactEmail' } }),

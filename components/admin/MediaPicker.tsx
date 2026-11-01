@@ -96,6 +96,7 @@ export function MediaPicker({
 
   const [isUploading, setIsUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [warning, setWarning] = useState<string | null>(null);
 
   useEffect(() => {
     let ignore = false;
@@ -123,6 +124,70 @@ export function MediaPicker({
 
     setIsUploading(true);
     setError(null);
+    setWarning(null);
+
+    // Read dimensions and size in browser to provide helpful feedback without blocking
+    try {
+      const warnings: string[] = [];
+
+      // Warn if video > 3MB
+      if (file.type.startsWith('video/') && file.size > 3 * 1024 * 1024) {
+        const sizeMb = (file.size / (1024 * 1024)).toFixed(1);
+        warnings.push(`Video is ${sizeMb} MB (recommended: ≤ 3 MB for fast streaming).`);
+      }
+
+      // Check dimensions
+      const blobUrl = URL.createObjectURL(file);
+      try {
+        let width = 0;
+        let height = 0;
+
+        if (file.type.startsWith('image/')) {
+          await new Promise<void>((resolve) => {
+            const img = new Image();
+            img.onload = () => {
+              width = img.naturalWidth;
+              height = img.naturalHeight;
+              resolve();
+            };
+            img.onerror = () => resolve();
+            img.src = blobUrl;
+          });
+        } else if (file.type.startsWith('video/')) {
+          await new Promise<void>((resolve) => {
+            const video = document.createElement('video');
+            video.onloadedmetadata = () => {
+              width = video.videoWidth;
+              height = video.videoHeight;
+              resolve();
+            };
+            video.onerror = () => resolve();
+            video.src = blobUrl;
+          });
+        }
+
+        if (width > 0 && height > 0) {
+          const ratio = width / height;
+          const targetRatio = 16 / 9;
+          const diff = Math.abs(ratio - targetRatio) / targetRatio;
+          const roundedRatio = ratio.toFixed(2);
+
+          if (width !== 1280 || height !== 720 || diff > 0.02) {
+            warnings.push(
+              `Recommended: 1280x720 (16:9). Selected: ${width}x${height} (${roundedRatio}:1).`
+            );
+          }
+        }
+      } finally {
+        URL.revokeObjectURL(blobUrl);
+      }
+
+      if (warnings.length > 0) {
+        setWarning(warnings.join(' '));
+      }
+    } catch {
+      // Dimension inspection failure shouldn't block upload
+    }
     try {
       const formData = new FormData();
       formData.append('file', file);
@@ -266,6 +331,11 @@ export function MediaPicker({
         </div>
       </div>
 
+      {warning && !isModalOpen && (
+        <div className="text-xs p-2.5 rounded-lg border border-amber-500/30 bg-amber-500/10 text-amber-300 font-medium">
+          ⚠️ {warning}
+        </div>
+      )}
       {error && !isModalOpen && <div className="text-xs text-destructive font-medium">{error}</div>}
 
       {/* Modal Selection Dialog (Centralized Media Library selection flow) */}
@@ -311,6 +381,11 @@ export function MediaPicker({
             </div>
           </div>
 
+          {warning && (
+            <div className="text-xs p-2.5 rounded-lg border border-amber-500/30 bg-amber-500/10 text-amber-300 font-medium">
+              ⚠️ {warning}
+            </div>
+          )}
           {error && <div className="text-xs text-destructive font-medium">{error}</div>}
 
           {/* Modal Grid of Media */}

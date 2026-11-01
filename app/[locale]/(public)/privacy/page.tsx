@@ -2,13 +2,24 @@ import { prisma } from '@/server/repositories/db';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { ShieldCheck } from 'lucide-react';
+import { isTestMode } from '@/lib/test-mode';
+import { unstable_noStore as noStore } from 'next/cache';
 
+export const revalidate = 60;
+export const dynamic = 'auto';
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'am' }, { locale: 'om' }];
+}
 
 export const metadata = {
   title: 'Privacy Policy - Gurmesa',
 };
 
 export default async function PrivacyPage() {
+  if (isTestMode()) {
+    noStore();
+  }
   const t = await getTranslations('Privacy');
   const setting = await prisma.siteSetting.findUnique({ where: { key: 'inquiryRetentionDays' } });
 

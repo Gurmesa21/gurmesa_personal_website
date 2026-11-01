@@ -184,6 +184,8 @@ model Service {
   featuredImage      MediaAsset?   @relation(fields: [featuredImageId], references: [id], onDelete: SetNull)
 
   @@index([slug, status])
+  @@index([status, order])
+  @@index([status, createdAt])
 }
 
 model Project {
@@ -207,6 +209,8 @@ model Project {
 
   @@index([slug])
   @@index([status, confidentiality])
+  @@index([confidentiality, createdAt])
+  @@index([status, confidentiality, createdAt])
 }
 
 model CaseStudy {
@@ -258,6 +262,8 @@ model ProjectMedia {
 
   project   Project    @relation(fields: [projectId], references: [id], onDelete: Cascade)
   media     MediaAsset @relation(fields: [mediaId], references: [id], onDelete: Restrict)
+
+  @@index([projectId, order])
 }
 
 model BlogPost {
@@ -349,6 +355,9 @@ model Testimonial {
   status           TestimonialStatus
   isAnonymous      Boolean                     @default(false)
   createdAt        DateTime                    @default(now()) @db.Timestamptz
+
+  @@index([status, permissionStatus, createdAt])
+  @@index([createdAt])
 }
 
 model Inquiry {

@@ -1,5 +1,3 @@
-export const dynamic = 'force-dynamic';
-
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getPublicServiceBySlug } from '@/server/services/serviceService';
@@ -11,6 +9,11 @@ import { getTranslations } from 'next-intl/server';
 import { getStorageAdapter } from '@/lib/storage';
 import { prisma } from '@/server/repositories/db';
 import { MediaRenderer } from '@/components/ui/MediaRenderer';
+import { isTestMode } from '@/lib/test-mode';
+import { unstable_noStore as noStore } from 'next/cache';
+
+export const revalidate = 60;
+export const dynamic = 'auto';
 import {
   ImageIcon,
   ChevronRight,
@@ -40,6 +43,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  if (isTestMode()) {
+    noStore();
+  }
   const t = await getTranslations('Services');
   const tNav = await getTranslations('Navigation');
   const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
@@ -107,15 +113,18 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           )}
         </div>
 
-        {/* Wide Featured Media Banner */}
-        <div className="relative w-full aspect-[21/9] min-h-[260px] max-h-[440px] border border-[#292D45] bg-[#101426] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/100 hover:shadow-x2 hover:shadow-[#8063F7]/20 rounded-2xl overflow-hidden border border-[#292D45] bg-[#101426] shadow-2xl flex items-center justify-center">
+        {/* 16:9 Featured Media Banner: max 1280px wide, centered, intrinsic 16:9 ratio preserved */}
+        <div className="relative max-w-[1280px] w-full mx-auto aspect-video rounded-2xl overflow-hidden border border-[#292D45] bg-[#080B16] shadow-2xl flex items-center justify-center">
           {mediaObj ? (
             <MediaRenderer
               url={mediaObj.url}
               mimeType={mediaObj.mimeType}
               altText={service.title}
               fill
-              className="object-cover"
+              className="object-contain bg-[#080B16]"
+              priority
+              controls
+              preload="metadata"
             />
           ) : (
             <div className="relative w-full h-full bg-gradient-to-br from-[#171D32] via-[#101426] to-[#171D32]/80 flex flex-col items-center justify-center gap-3">

@@ -101,6 +101,21 @@ export function BlogPostClientView({
   const [isLiking, setIsLiking] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
+  useEffect(() => {
+    let ignore = false;
+    fetch(`/api/blog/like-status?postId=${post.id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (!ignore && typeof data.likedByMe === 'boolean') {
+          setIsLiked(data.likedByMe);
+        }
+      })
+      .catch(() => {});
+    return () => {
+      ignore = true;
+    };
+  }, [post.id]);
+
   // Comments list derived from post
   const commentsList = post.comments || [];
 

@@ -4,6 +4,15 @@ import { getTranslations } from 'next-intl/server';
 import { testimonialService } from '@/server/services/testimonialService';
 import { toPublicTestimonial } from '@/lib/dto/testimonial';
 import { MessageSquareQuote, PenTool, ShieldCheck, Sparkles } from 'lucide-react';
+import { isTestMode } from '@/lib/test-mode';
+import { unstable_noStore as noStore } from 'next/cache';
+
+export const revalidate = 60;
+export const dynamic = 'auto';
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'am' }, { locale: 'om' }];
+}
 
 export const metadata = {
   title: 'Testimonials - Gurmesa',
@@ -11,6 +20,9 @@ export const metadata = {
 };
 
 export default async function TestimonialsPage() {
+  if (isTestMode()) {
+    noStore();
+  }
   const t = await getTranslations('Testimonials');
 
   const rawTestimonials = await testimonialService.getPublicTestimonials();

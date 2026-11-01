@@ -134,17 +134,20 @@ export function ContactForm() {
           <select
             id="projectType"
             name="projectType"
+            defaultValue=""
             aria-invalid={!!fieldErrors.projectType}
             aria-describedby={fieldErrors.projectType ? "projectType-error" : undefined}
             className="flex h-11 w-full items-center justify-between rounded-lg border border-[#292D45] bg-[#171D32] px-3.5 py-2 text-sm text-[#F5F6FC] focus:outline-none focus:border-[#8063F7] focus:ring-1 focus:ring-[#8063F7] disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <option value="" className="bg-[#101426] text-[#858EA8]">{t('selectProjectType')}</option>
-            <option value="Business website" className="bg-[#101426] text-[#F5F6FC]">{t('typeBusiness')}</option>
-            <option value="Internal system" className="bg-[#101426] text-[#F5F6FC]">{t('typeInternal')}</option>
-            <option value="Dashboard" className="bg-[#101426] text-[#F5F6FC]">{t('typeDashboard')}</option>
-            <option value="Automation" className="bg-[#101426] text-[#F5F6FC]">{t('typeAutomation')}</option>
-            <option value="API/Integration" className="bg-[#101426] text-[#F5F6FC]">{t('typeAPI')}</option>
-            <option value="Other" className="bg-[#101426] text-[#F5F6FC]">{t('typeOther')}</option>
+            <option value="" className="bg-[#101426] text-[#858EA8]">{t('selectService')}</option>
+            <option value="Landing page and website development" className="bg-[#101426] text-[#F5F6FC]">{t('typeLandingPage')}</option>
+            <option value="Web application development" className="bg-[#101426] text-[#F5F6FC]">{t('typeWebApp')}</option>
+            <option value="Website and application management" className="bg-[#101426] text-[#F5F6FC]">{t('typeWebManagement')}</option>
+            <option value="Maintenance and technical support" className="bg-[#101426] text-[#F5F6FC]">{t('typeMaintenanceSupport')}</option>
+            <option value="Website and application modernization" className="bg-[#101426] text-[#F5F6FC]">{t('typeModernization')}</option>
+            <option value="Hosting and server migration" className="bg-[#101426] text-[#F5F6FC]">{t('typeHostingMigration')}</option>
+            <option value="One-time feature updates and improvements" className="bg-[#101426] text-[#F5F6FC]">{t('typeFeatureUpdates')}</option>
+            <option value="Other / not sure yet" className="bg-[#101426] text-[#F5F6FC]">{t('typeOtherNotSure')}</option>
           </select>
           {fieldErrors.projectType && <p id="projectType-error" className="text-xs text-[#FF5C8A] mt-1">{fieldErrors.projectType.join(', ')}</p>}
         </div>
