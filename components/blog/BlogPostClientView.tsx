@@ -475,15 +475,18 @@ export function BlogPostClientView({
         </span>
       </div>
 
-      {/* Wide Featured Media Banner */}
-      <div className="relative w-full aspect-[21/9] min-h-[260px] max-h-[460px] rounded-2xl overflow-hidden border border-[#292D45] bg-[#101426] shadow-2xl flex items-center justify-center">
+      {/* 16:9 Featured Media Banner: max 1280px wide, centered, intrinsic 16:9 ratio preserved */}
+      <div className="relative max-w-[1280px] w-full mx-auto aspect-video rounded-2xl overflow-hidden border border-[#292D45] bg-[#080B16] shadow-2xl flex items-center justify-center">
         {mediaObj ? (
           <MediaRenderer
             url={mediaObj.url}
             mimeType={mediaObj.mimeType}
-            altText={mediaObj.altText}
+            altText={mediaObj.altText || post.title}
             fill
-            className="object-cover"
+            className="object-contain bg-[#080B16]"
+            priority
+            controls
+            preload="metadata"
           />
         ) : (
           <div className="relative w-full h-full bg-gradient-to-br from-[#171D32] via-[#101426] to-[#171D32]/80 flex flex-col items-center justify-center gap-3">

@@ -32,7 +32,6 @@ import {
 import { getStorageAdapter } from '@/lib/storage';
 import { prisma } from '@/server/repositories/db';
 import { MediaRenderer } from '@/components/ui/MediaRenderer';
-import { CardMedia } from '@/components/ui/CardMedia';
 import { unstable_noStore as noStore } from 'next/cache';
 
 function getServiceIcon(slug: string) {
@@ -433,14 +432,39 @@ export default async function HomePage(props: {
                     return (
                       <div
                         key={service.id}
-                        className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-4.5 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10"
+                        className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-4.5 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 aspect-video"
                       >
                         {/* Thin Top Accent Line Animation */}
                         <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
-                        {/* 16:9 Media Box: fits 1280x720 file whole */}
-                        <div className="mb-3">
-                          <CardMedia mediaObj={service.mediaObj} title={service.title} iconName={service.slug} />
+                        {/* Static Background Media Layer: covers entire card behind text */}
+                        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#080B16] flex items-center justify-center">
+                          {service.mediaObj ? (
+                            service.mediaObj.mimeType.startsWith('video/') ? (
+                              <video
+                                src={service.mediaObj.url}
+                                className="h-full w-full object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                              />
+                            ) : (
+                              <MediaRenderer
+                                url={service.mediaObj.url}
+                                mimeType={service.mediaObj.mimeType}
+                                altText={service.title}
+                                fill
+                                className="object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
+                              />
+                            )
+                          ) : (
+                            <div className="relative h-full w-full bg-gradient-to-br from-[#8063F7]/25 via-[#171D32] to-[#101426]">
+                              <div className="absolute inset-0 bg-gradient-to-t from-[#8063F7]/20 to-transparent" />
+                            </div>
+                          )}
+                          {/* Gradient overlay: increased transparency so background image is clearly visible */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#080B16]/92 via-[#080B16]/55 to-[#080B16]/35 group-hover:via-[#080B16]/45 group-hover:to-[#080B16]/25 transition-all duration-300" />
                         </div>
 
                         {/* Subtle hover radial glow */}
@@ -522,16 +546,40 @@ export default async function HomePage(props: {
                   <Link
                     key={project.id}
                     href={`/work/${project.slug}`}
-                    className="group relative block overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-3 sm:p-3.5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10"
+                    className="group relative block overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 aspect-video"
                   >
                     {/* Thin Top Accent Line Animation */}
                     <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
-                    {/* 16:9 Media Box: fits 1280x720 file whole */}
-                    <div className="mb-3">
-                      <CardMedia mediaObj={project.mediaObj} title={project.title} iconName="project" />
+                    {/* Static Background Media Layer: covers entire card behind text */}
+                    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#080B16] flex items-center justify-center">
+                      {project.mediaObj ? (
+                        project.mediaObj.mimeType.startsWith('video/') ? (
+                          <video
+                            src={project.mediaObj.url}
+                            className="h-full w-full object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                          />
+                        ) : (
+                          <MediaRenderer
+                            url={project.mediaObj.url}
+                            mimeType={project.mediaObj.mimeType}
+                            altText={project.mediaObj.altText || project.title}
+                            fill
+                            className="object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
+                          />
+                        )
+                      ) : (
+                        <div className="relative h-full w-full bg-gradient-to-br from-[#4F6FF0]/25 via-[#171D32] to-[#101426]">
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#8063F7]/20 to-transparent" />
+                        </div>
+                      )}
+                      {/* Gradient overlay: increased transparency so background image is clearly visible */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#080B16]/92 via-[#080B16]/55 to-[#080B16]/35 group-hover:via-[#080B16]/45 group-hover:to-[#080B16]/25 transition-all duration-300" />
                     </div>
-
 
                     <div className="pointer-events-none absolute -top-12 -right-12 h-24 w-24 rounded-full bg-[#8063F7]/15 blur-2xl transition-transform duration-500 group-hover:scale-150" />
 

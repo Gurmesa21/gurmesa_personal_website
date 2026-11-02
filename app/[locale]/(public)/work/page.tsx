@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { getStorageAdapter } from '@/lib/storage';
 import { prisma } from '@/server/repositories/db';
-import { CardMedia } from '@/components/ui/CardMedia';
+import { MediaRenderer } from '@/components/ui/MediaRenderer';
 import { Layers, ArrowUpRight } from 'lucide-react';
 import { isTestMode } from '@/lib/test-mode';
 import { unstable_noStore as noStore } from 'next/cache';
@@ -162,15 +162,43 @@ export default async function WorkPage({
           {projectsWithImages.map((project) => (
             <div
               key={project.id}
-              className="group relative flex flex-col justify-between rounded-2xl border border-[#292D45] bg-[#101426] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 overflow-hidden"
+              className="group relative flex flex-col justify-between rounded-2xl border border-[#292D45] bg-[#101426] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 overflow-hidden aspect-video"
             >
               {/* Thin Top Accent Line Animation */}
               <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
-              {/* 16:9 Media Box: fits 1280x720 file whole */}
-              <div className="mb-5">
-                <CardMedia mediaObj={project.mediaObj} title={project.title} iconName="project" />
+              {/* Static Background Media Layer: covers entire card behind text */}
+              <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#080B16] flex items-center justify-center">
+                {project.mediaObj ? (
+                  project.mediaObj.mimeType.startsWith('video/') ? (
+                    <video
+                      src={project.mediaObj.url}
+                      className="h-full w-full object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
+                  ) : (
+                    <MediaRenderer
+                      url={project.mediaObj.url}
+                      mimeType={project.mediaObj.mimeType}
+                      altText={project.mediaObj.altText || project.title}
+                      fill
+                      className="object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
+                    />
+                  )
+                ) : (
+                  <div className="relative h-full w-full bg-gradient-to-br from-[#4F6FF0]/25 via-[#171D32] to-[#101426]">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#8063F7]/20 to-transparent" />
+                  </div>
+                )}
+                {/* Gradient overlay: increased transparency so background image is clearly visible */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080B16]/92 via-[#080B16]/55 to-[#080B16]/35 group-hover:via-[#080B16]/45 group-hover:to-[#080B16]/25 transition-all duration-300" />
               </div>
+
+              {/* Subtle hover radial glow */}
+              <div className="pointer-events-none absolute -top-12 -right-12 h-28 w-28 rounded-full bg-[#8063F7]/15 blur-2xl transition-transform duration-500 group-hover:scale-150" />
 
               {/* Content area */}
               <div className="relative z-10 flex flex-col flex-1 justify-between space-y-4">

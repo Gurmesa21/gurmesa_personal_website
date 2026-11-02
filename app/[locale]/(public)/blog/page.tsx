@@ -113,18 +113,18 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
           {postsWithImages.map(post => (
             <article
               key={post.id}
-              className="group relative flex flex-col justify-between rounded-2xl border border-[#292D45] bg-[#101426] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 overflow-hidden min-h-[240px] sm:min-h-[260px]"
+              className="group relative flex flex-col justify-between rounded-2xl border border-[#292D45] bg-[#101426] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 overflow-hidden aspect-video"
             >
               {/* Thin Top Accent Line Animation */}
               <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
               {/* Static Background Media Layer: covers entire card behind text */}
-              <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+              <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#080B16] flex items-center justify-center">
                 {post.mediaObj ? (
                   post.mediaObj.mimeType.startsWith('video/') ? (
                     <video
                       src={post.mediaObj.url}
-                      className="h-full w-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
+                      className="h-full w-full object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
                       autoPlay
                       loop
                       muted
@@ -136,7 +136,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
                       mimeType={post.mediaObj.mimeType}
                       altText={post.mediaObj.altText || post.title}
                       fill
-                      className="object-cover scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
+                      className="object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                   )
                 ) : (

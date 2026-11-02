@@ -192,7 +192,7 @@ export default async function AboutPage() {
                   <div className="text-xs font-semibold uppercase tracking-wider text-[#858EA8] text-left">
                     Connect & Profiles
                   </div>
-                  <div className="flex flex-col gap-2 w-full">
+                  <div className="flex flex-col items-start gap-2 w-full">
                     {socialLinks.map((link) => {
                       const info = getSocialInfo(link.platform, link.label);
                       const isExternal = link.url.startsWith('http://') || link.url.startsWith('https://');
@@ -203,13 +203,13 @@ export default async function AboutPage() {
                           target={isExternal ? '_blank' : undefined}
                           rel={isExternal ? 'noopener noreferrer' : undefined}
                           aria-label={info.name}
-                          className="flex items-center gap-3 w-full px-3.5 py-2.5 rounded-xl border border-[#292D45] bg-[#171D32]/80 text-[#D0D4E4] hover:border-[#8063F7]/70 hover:bg-[#1f2642] hover:text-[#F5F6FC] hover:shadow-md hover:shadow-[#8063F7]/10 focus:outline-none focus:ring-2 focus:ring-[#8063F7] focus:ring-offset-2 focus:ring-offset-[#101426] transition-all duration-200 text-xs sm:text-sm font-medium group"
+                          className="inline-flex items-center gap-3 w-auto max-w-full px-3.5 py-2.5 rounded-xl border border-[#292D45] bg-[#171D32]/80 text-[#D0D4E4] hover:border-[#8063F7]/70 hover:bg-[#1f2642] hover:text-[#F5F6FC] hover:shadow-md hover:shadow-[#8063F7]/10 focus:outline-none focus:ring-2 focus:ring-[#8063F7] focus:ring-offset-2 focus:ring-offset-[#101426] transition-all duration-200 text-xs sm:text-sm font-medium group"
                         >
                           <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-[#8063F7]/30 bg-[#101426] text-[#A995FF] group-hover:text-white group-hover:border-[#8063F7]/60 transition-colors">
                             <SocialIcon type={info.icon} />
                           </span>
                           <span className="truncate">{info.name}</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 ml-auto text-[#858EA8] group-hover:text-[#A995FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#858EA8] group-hover:text-[#A995FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 ml-1.5" />
                         </a>
                       );
                     })}
@@ -220,7 +220,7 @@ export default async function AboutPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={t('downloadResume')}
-                        className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border-0 bg-gradient-to-r from-[#8063F7] to-[#4F6FF0] text-white hover:from-[#7154e6] hover:to-[#3e5edb] text-xs sm:text-sm font-semibold shadow-md shadow-[#8063F7]/25 hover:shadow-[#8063F7]/40 focus:outline-none focus:ring-2 focus:ring-[#8063F7] focus:ring-offset-2 focus:ring-offset-[#101426] active:scale-95 transition-all duration-200 mt-1"
+                        className="inline-flex items-center justify-center gap-2 w-auto max-w-full px-4 py-2.5 rounded-xl border-0 bg-gradient-to-r from-[#8063F7] to-[#4F6FF0] text-white hover:from-[#7154e6] hover:to-[#3e5edb] text-xs sm:text-sm font-semibold shadow-md shadow-[#8063F7]/25 hover:shadow-[#8063F7]/40 focus:outline-none focus:ring-2 focus:ring-[#8063F7] focus:ring-offset-2 focus:ring-offset-[#101426] active:scale-95 transition-all duration-200 mt-1"
                       >
                         <Download className="w-4 h-4 shrink-0" />
                         <span>{t('downloadResume')}</span>
