@@ -143,7 +143,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function HomePage(props?: {
+export default async function HomePage(props: {
+  params?: Promise<{ locale: string }>;
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   if (isTestMode()) {

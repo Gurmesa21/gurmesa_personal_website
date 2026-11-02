@@ -3,7 +3,9 @@ import { prisma } from '../../../server/repositories/db';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET(request?: Request) {
+export async function GET(): Promise<NextResponse>;
+export async function GET(request: Request): Promise<NextResponse>;
+export async function GET(request?: Request): Promise<NextResponse> {
   try {
     if (request && request.url) {
       const url = new URL(request.url);
