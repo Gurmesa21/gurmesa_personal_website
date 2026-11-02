@@ -7,8 +7,5 @@ export function isTestMode() {
   if (appEnv === 'production' && isPw) {
     throw new Error('PLAYWRIGHT_TEST=1 is not allowed in production');
   }
-  if (appEnv === 'production') {
-    return false;
-  }
-  return isPw || appEnv === 'test' || process.env.NODE_ENV === 'test';
+  return appEnv === 'test' && isPw;
 }
