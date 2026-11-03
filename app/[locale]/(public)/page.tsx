@@ -32,7 +32,7 @@ import {
 import { getStorageAdapter } from '@/lib/storage';
 import { prisma } from '@/server/repositories/db';
 import { MediaRenderer } from '@/components/ui/MediaRenderer';
-import { EngineerBadge } from '@/components/home/EngineerBadge';
+import { LanyardBadge } from '@/components/home/LanyardBadge';
 import { unstable_noStore as noStore } from 'next/cache';
 
 function getServiceIcon(slug: string) {
@@ -322,7 +322,7 @@ export default async function HomePage(props: {
                 {/* Internal Violet/Blue Accent Aura */}
                 <div className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-gradient-to-br from-[#8063F7]/20 via-[#4F6FF0]/10 to-transparent blur-3xl" />
 
-                <div className="relative z-10 flex flex-col xl:flex-row items-center xl:items-start justify-between gap-6">
+                <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-6">
                   <div className="space-y-4 flex-1 w-full min-w-0">
                     {/* Status Badges Row */}
                     <div className="flex flex-wrap items-center gap-2.5">
@@ -405,16 +405,15 @@ export default async function HomePage(props: {
                     </div>
                   </div>
 
-                  {/* High-Tech Animated Engineer ID Badge */}
-                  <div className="w-full xl:w-auto flex justify-center shrink-0 pt-2 xl:pt-1">
-                    <EngineerBadge
-                      profile={profile}
+                  {/* Minimal Hanging Lanyard ID Badge (Part 3) */}
+                  <div className="w-full lg:w-auto flex justify-center shrink-0 pt-3 lg:pt-0 lg:-mt-7">
+                    <LanyardBadge
+                      name={profile?.name || 'Gurmesa Teklemariam'}
+                      title={profile?.title || 'Full-Stack Web Developer'}
+                      location={profile?.locationLabel || 'Adama, Ethiopia'}
                       avatarUrl={avatarMedia?.url}
-                      tBadgeHeader={t('badgeHeader')}
-                      tAcademicStudent={t('academicStudent')}
-                      tStatusAvailable={t('statusAvailable')}
-                      tBadgeLocation={t('badgeLocation')}
-                      tBadgeIdCode={t('badgeIdCode')}
+                      avatarMimeType={avatarMedia?.mimeType}
+                      ariaLabel={t('profileBadge')}
                     />
                   </div>
                 </div>
@@ -564,7 +563,7 @@ export default async function HomePage(props: {
                     key={project.id}
                     href={`/work/${project.slug}`}
                     data-card
-                    className="group relative flex flex-col h-full justify-between overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 aspect-video"
+                    className="group relative flex flex-col h-full justify-between overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10"
                   >
                     {/* Thin Top Accent Line Animation */}
                     <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />

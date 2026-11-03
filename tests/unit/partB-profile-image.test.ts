@@ -2,10 +2,10 @@ import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 
-describe('Part B & Task 3 — About Profile 9:16 and Hero Engineer ID Badge', () => {
+describe('MASTER PROMPT — Part 2 About Profile 9:16 and Part 3 Lanyard Badge', () => {
   const root = process.cwd();
 
-  it('About page has small profile card with centered 9:16 frame and GT initials fallback', () => {
+  it('About page has baseline profile card container with centered 9:16 frame and GT initials fallback', () => {
     const aboutPagePath = path.join(root, 'app', '[locale]', '(public)', 'about', 'page.tsx');
     const content = fs.readFileSync(aboutPagePath, 'utf8');
 
@@ -13,6 +13,7 @@ describe('Part B & Task 3 — About Profile 9:16 and Hero Engineer ID Badge', ()
     expect(content).toContain('data-testid="profile-image-frame-9-16"');
     expect(content).toContain('aspect-[9/16]');
     expect(content).toContain('object-contain');
+    expect(content).toContain('aspect-[3/4]');
     expect(content).toContain('w-48');
     expect(content).toContain('h-48');
     expect(content).toContain('GT');
@@ -28,33 +29,32 @@ describe('Part B & Task 3 — About Profile 9:16 and Hero Engineer ID Badge', ()
     expect(content).toContain('data-testid="avatar-landscape-warning"');
   });
 
-  it('EngineerBadge has 3D tilt, prefers-reduced-motion, and ASTU student line', () => {
-    const badgePath = path.join(root, 'components', 'home', 'EngineerBadge.tsx');
+  it('LanyardBadge has strap, clasp, name, title, location, prefers-reduced-motion, and spring physics', () => {
+    const badgePath = path.join(root, 'components', 'home', 'LanyardBadge.tsx');
     const content = fs.readFileSync(badgePath, 'utf8');
 
     expect(content).toContain('prefers-reduced-motion');
     expect(content).toContain('IntersectionObserver');
-    expect(content).toContain('ASTU');
-    expect(content).toContain('AVN-');
-    expect(content).toContain('Next.js');
-    expect(content).toContain('TypeScript');
-    expect(content).toContain('data-testid="engineer-badge"');
+    expect(content).toContain('data-testid="lanyard-badge-card"');
+    expect(content).toContain('data-testid="badge-name"');
+    expect(content).toContain('data-testid="badge-title"');
+    expect(content).toContain('data-testid="badge-location"');
+    expect(content).toContain('touch-manipulation');
+    expect(content).toContain('AVENOR');
   });
 
-  it('Home page embeds EngineerBadge in Hero section', () => {
+  it('Home page embeds LanyardBadge in Hero section', () => {
     const homePath = path.join(root, 'app', '[locale]', '(public)', 'page.tsx');
     const content = fs.readFileSync(homePath, 'utf8');
 
-    expect(content).toContain('EngineerBadge');
-    expect(content).toContain('import { EngineerBadge }');
+    expect(content).toContain('LanyardBadge');
+    expect(content).toContain("import { LanyardBadge } from '@/components/home/LanyardBadge'");
   });
 
-  it('Public layout includes TouchHighlightManager and overflow-x-clip backstop', () => {
+  it('Public layout includes overflow-x-clip backstop', () => {
     const layoutPath = path.join(root, 'app', '[locale]', '(public)', 'layout.tsx');
     const content = fs.readFileSync(layoutPath, 'utf8');
 
-    expect(content).toContain('TouchHighlightManager');
     expect(content).toContain('overflow-x-clip');
   });
 });
-

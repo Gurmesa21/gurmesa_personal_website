@@ -13,6 +13,7 @@ interface MediaRendererProps {
   autoPlay?: boolean;
   preload?: 'none' | 'metadata' | 'auto';
   unoptimized?: boolean;
+  sizes?: string;
 }
 
 export function MediaRenderer({
@@ -28,6 +29,7 @@ export function MediaRenderer({
   autoPlay = false,
   preload = 'metadata',
   unoptimized = true,
+  sizes,
 }: MediaRendererProps) {
   const isVideo = mimeType?.startsWith('video/') || url?.endsWith('.mp4') || url?.endsWith('.webm');
   if (isVideo) {
@@ -67,7 +69,7 @@ export function MediaRenderer({
           unoptimized={unoptimized}
           priority={priority}
           loading={priority ? 'eager' : 'lazy'}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1280px"
+          sizes={sizes || "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1280px"}
           className={combinedClassName}
           style={{ objectFit: 'contain' }}
         />

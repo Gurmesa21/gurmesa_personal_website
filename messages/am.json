@@ -30,11 +30,7 @@
     "anonymous": "ስም አልባ",
     "at": "በ",
     "downloadResume": "ሲቪ ያውርዱ",
-    "badgeHeader": "የመሃንዲስ መታወቂያ // የተረጋገጠ [REVIEW]",
-    "academicStudent": "የ4ኛ ዓመት የሶፍትዌር ምህንድስና ተማሪ @ ASTU [REVIEW]",
-    "statusAvailable": "ለፕሮጀክቶች ዝግጁ [REVIEW]",
-    "badgeLocation": "ኢትዮጵያ [REVIEW]",
-    "badgeIdCode": "መታወቂያ: AVN-2026-GT [REVIEW]"
+    "profileBadge": "[REVIEW] የፕሮፋይል ባጅ"
   },
   "Theme": {
     "toggle": "ገጽታ ቀይር",

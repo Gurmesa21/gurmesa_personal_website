@@ -140,12 +140,12 @@ export default async function AboutPage() {
             <div className="md:col-span-5 lg:col-span-4 flex flex-col items-center justify-center">
               <div
                 data-testid="about-profile-card"
-                className="relative w-48 h-48 rounded-2xl overflow-hidden border border-[#8063F7]/40 bg-[#080B16] shadow-2xl shadow-black/50 group-hover:border-[#8063F7]/70 group-hover:shadow-[0_12px_36px_rgba(128,99,247,0.2)] transition-all duration-500 flex items-center justify-center p-1"
+                className="relative w-48 h-48 md:w-full md:h-auto max-w-[280px] sm:max-w-[320px] md:max-w-none aspect-[3/4] rounded-2xl overflow-hidden border border-[#8063F7]/40 bg-[#171D32] shadow-2xl shadow-black/50 group-hover:border-[#8063F7]/70 group-hover:shadow-[0_12px_36px_rgba(128,99,247,0.2)] transition-all duration-500 flex items-center justify-center"
               >
                 {/* Inner 9:16 vertical frame centered horizontally & vertically */}
                 <div
                   data-testid="profile-image-frame-9-16"
-                  className="relative h-full aspect-[9/16] max-h-full flex items-center justify-center overflow-hidden bg-[#080B16]"
+                  className="relative h-full aspect-[9/16] max-h-full max-w-full flex items-center justify-center overflow-hidden bg-[#080B16]"
                 >
                   {avatarMedia ? (
                     <MediaRenderer
@@ -155,6 +155,7 @@ export default async function AboutPage() {
                       fill
                       className="object-contain object-cover [object-fit:contain_!important]"
                       priority
+                      sizes="(max-width: 640px) 192px, (max-width: 1024px) 320px, 400px"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#171D32] to-[#101426]">

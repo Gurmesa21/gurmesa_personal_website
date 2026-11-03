@@ -30,11 +30,7 @@
     "anonymous": "Anonymous",
     "at": "at",
     "downloadResume": "Download Resume",
-    "badgeHeader": "ENGINEER ID // VERIFIED",
-    "academicStudent": "4th-year Software Engineering Student @ ASTU",
-    "statusAvailable": "Available for projects",
-    "badgeLocation": "Ethiopia",
-    "badgeIdCode": "ID: AVN-2026-GT"
+    "profileBadge": "Profile badge"
   },
   "Theme": {
     "toggle": "Toggle theme",

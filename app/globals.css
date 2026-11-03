@@ -339,22 +339,60 @@
   }
 }
 
-@media (hover: none) and (pointer: coarse) {
-  button,
-  a,
-  [role="button"],
-  [data-card] {
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
+/* Lanyard Badge Animations (Part 3) */
+@keyframes lanyardIdle {
+  0% {
+    transform: rotate(-2.5deg);
   }
-
-  [data-card]:active {
-    transform: scale(0.98);
-    border-color: rgba(128, 99, 247, 0.7) !important;
+  100% {
+    transform: rotate(2.5deg);
   }
+}
 
-  [data-card][data-inview="true"] {
-    border-color: rgba(128, 99, 247, 0.65) !important;
-    box-shadow: 0 10px 30px -5px rgba(128, 99, 247, 0.2) !important;
+@keyframes lanyardCounter {
+  0% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(-1deg);
+  }
+}
+
+@keyframes lanyardDropIn {
+  0% {
+    transform: translateY(-30px) rotate(-6deg);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(3px) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.lanyard-group-anim {
+  transform-origin: top center;
+  animation: lanyardDropIn 600ms cubic-bezier(0.25, 1, 0.5, 1) forwards,
+             lanyardIdle 6s ease-in-out infinite alternate 600ms;
+}
+
+.lanyard-badge-anim {
+  transform-origin: top center;
+  animation: lanyardCounter 6s ease-in-out infinite alternate 600ms;
+}
+
+[data-paused="true"] .lanyard-group-anim,
+[data-paused="true"] .lanyard-badge-anim {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lanyard-group-anim,
+  .lanyard-badge-anim {
+    animation: none !important;
+    transform: rotate(2deg) !important;
   }
 }

@@ -52,10 +52,9 @@ test.describe('Blog Social Interactions', () => {
     const submitBtn = page.getByRole('button', { name: /Post Comment|Submit Comment/i });
     await submitBtn.click();
     
-    // Wait for the pending state UI
-    // We didn't add the pending state text on the client-side optimistically, 
-    // but the backend returns a success message we could assert on, or we can just 
-    // wait for network idle to ensure no crashes.
+    // Wait for the pending state UI / status banner
+    await expect(page.locator('[role="status"]')).toBeVisible({ timeout: 10000 });
+
     // Actually, let's check if the comment appears. Wait, it only appears if approved.
     // So the comment should NOT be visible immediately as a regular comment.
     await expect(page.locator('text=This is a highly insightful test comment.')).not.toBeVisible();
