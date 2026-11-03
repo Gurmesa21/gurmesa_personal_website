@@ -1,0 +1,629 @@
+◇ injected env (13) from .env.test
+◇ injected env (0) from .env.test
+[globalSetup] Resetting and seeding test database: gurmesa_test_db...
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "gurmesa_test_db", schema "public" at "127.0.0.1:5433"
+
+10 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+Seed completed.
+[globalSetup] Test database gurmesa_test_db reset and seeded successfully.
+
+Running 275 tests using 4 workers
+
+◇ injected env (0) from .env.test
+
+◇ injected env (0) from .env.test
+
+◇ injected env (0) from .env.test
+
+◇ injected env (0) from .env.test
+
+[1/275] [chromium] › tests\e2e\accessibility.spec.ts:17:3 › Accessibility & Shell Features › Axe scan on /contact
+[2/275] [chromium] › tests\e2e\accessibility.spec.ts:8:3 › Accessibility & Shell Features › Axe scan on / (homepage with AUTHORIZED+PUBLISHED testimonial)
+[3/275] [chromium] › tests\e2e\accessibility.spec.ts:35:3 › Accessibility & Shell Features › Axe scan on /about
+[4/275] [chromium] › tests\e2e\accessibility.spec.ts:26:3 › Accessibility & Shell Features › Axe scan on /privacy
+[5/275] [chromium] › tests\e2e\accessibility.spec.ts:44:3 › Accessibility & Shell Features › Axe scan on /blog
+[6/275] [chromium] › tests\e2e\accessibility.spec.ts:53:3 › Accessibility & Shell Features › Axe scan on /services
+[7/275] [chromium] › tests\e2e\accessibility.spec.ts:62:3 › Accessibility & Shell Features › Axe scan on /work
+[8/275] [chromium] › tests\e2e\accessibility.spec.ts:71:3 › Accessibility & Shell Features › Axe scan on /terms
+[9/275] [chromium] › tests\e2e\accessibility.spec.ts:80:3 › Accessibility & Shell Features › skip-to-content link works correctly
+[10/275] [chromium] › tests\e2e\accessibility.spec.ts:97:3 › Accessibility & Shell Features › mobile menu opens, traps focus, and closes with escape
+[11/275] [chromium] › tests\e2e\admin-comments.spec.ts:14:3 › Admin Comments Moderation Queue › navigates to /admin/comments and verifies queue filters and UI
+[12/275] [chromium] › tests\e2e\admin-crud.spec.ts:14:3 › Admin CRUD Edit and Persist › Services: Edit and persist
+[13/275] [chromium] › tests\e2e\admin-crud.spec.ts:51:3 › Admin CRUD Edit and Persist › Projects: Edit and persist
+[14/275] [chromium] › tests\e2e\admin-crud.spec.ts:81:3 › Admin CRUD Edit and Persist › Blog: Edit and persist
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[15/275] [chromium] › tests\e2e\axe-dark-scan.spec.ts:25:3 › Task 10 - Axe Accessibility Scan (8 Public + 4 Admin Pages) › run axe in dark theme and report violation counts and contrast failures
+[16/275] [chromium] › tests\e2e\blog.spec.ts:28:3 › Blog SEC-ACL E2E Tests › Draft post is absent from public index HTML
+[17/275] [chromium] › tests\e2e\blog.spec.ts:45:3 › Blog SEC-ACL E2E Tests › Unauthenticated request to the preview URL is redirected/rejected and contains no draft content
+[18/275] [chromium] › tests\e2e\blog.spec.ts:80:3 › Blog SEC-ACL E2E Tests › Playwright: search (?q=) filters results; a DRAFT post's title never appears in results
+[19/275] [chromium] › tests\e2e\blog.spec.ts:34:3 › Blog SEC-ACL E2E Tests › Draft post returns 404 on direct lookup
+[20/275] [chromium] › tests\e2e\blog.spec.ts:58:3 › Blog SEC-ACL E2E Tests › Playwright: /blog index renders seeded published posts
+[21/275] [chromium] › tests\e2e\blog.spec.ts:39:3 › Blog SEC-ACL E2E Tests › Draft post is absent from sitemap
+[22/275] [chromium] › tests\e2e\blog.spec.ts:97:3 › Blog SEC-ACL E2E Tests › Playwright: category and tag filters work
+[23/275] [chromium] › tests\e2e\blog.spec.ts:117:3 › Blog SEC-ACL E2E Tests › XSS: a post whose body contains <script> and <img src=x onerror=...> payloads renders them inert on /blog/[slug]
+[24/275] [chromium] › tests\e2e\blog.spec.ts:65:3 › Blog SEC-ACL E2E Tests › Playwright: article detail page loads from the index
+[25/275] [chromium] › tests\e2e\blog.spec.ts:103:3 › Blog SEC-ACL E2E Tests › Axe scan (zero critical/serious) on /blog and /blog/[slug]
+[26/275] [chromium] › tests\e2e\blog.spec.ts:137:3 › Blog SEC-ACL E2E Tests › XSS: CaseStudy content on /work/[slug] renders inert
+[27/275] [chromium] › tests\e2e\caching.spec.ts:14:3 › Caching and Revalidation (End-to-End) › i. Publish a testimonial -> appears on /
+[28/275] [chromium] › tests\e2e\caching.spec.ts:37:3 › Caching and Revalidation (End-to-End) › ii. Mark a featured project DRAFT -> absent from / and /work
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[29/275] [chromium] › tests\e2e\caching.spec.ts:58:3 › Caching and Revalidation (End-to-End) › iii. Unpublish a service -> absent from /services and /
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[30/275] [chromium] › tests\e2e\caching.spec.ts:75:3 › Caching and Revalidation (End-to-End) › iv. Unpublish a blog post -> absent from / and /blog
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[31/275] [chromium] › tests\e2e\caching.spec.ts:98:3 › Caching and Revalidation (End-to-End) › v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml
+[32/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after about-en
+[33/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after work-slug-en
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[34/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after services-en
+[35/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after blog-en
+[36/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after testimonials-en
+[37/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after services-am
+[38/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after services-slug-en
+[39/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after blog-slug-en
+[40/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after privacy-en
+[41/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after contact-en
+[42/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after terms-en
+[43/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after blog-am
+[44/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after work-en
+[45/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before about-en
+[46/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after 404-en
+[47/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after services-om
+[48/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before work-slug-en
+[49/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before testimonials-en
+[50/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before services-en
+[51/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before blog-en
+[52/275] [chromium] › tests\e2e\capture-c1-after.spec.ts:34:5 › C1 After Screenshots › capture after blog-om
+[53/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before privacy-en
+[54/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before services-slug-en
+[55/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before blog-slug-en
+[56/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before services-am
+[57/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before terms-en
+[58/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before contact-en
+[59/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before work-en
+[60/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before 404-en
+[61/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before blog-am
+[62/275] [chromium] › tests\e2e\contact.spec.ts:12:3 › Inquiry & Testimonial E2E › contact form: happy path submits and shows confirmation, using keyboard only
+[63/275] [chromium] › tests\e2e\contact.spec.ts:32:3 › Inquiry & Testimonial E2E › contact form: invalid submit focuses the error summary and associates errors with fields
+[64/275] [chromium] › tests\e2e\contact.spec.ts:46:3 › Inquiry & Testimonial E2E › inquiry-leak scan: assert the marker is absent from the HTML of public surfaces and sitemap
+[65/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before services-om
+[66/275] [chromium] › tests\e2e\contact.spec.ts:65:3 › Inquiry & Testimonial E2E › unauthenticated visit to /admin/inquiries and /admin/testimonials redirects to login
+[67/275] [chromium] › tests\e2e\csp-media.spec.ts:6:3 › Content Security Policy - Media and Image External Origins › Prove browser console has zero CSP violations for img and video from external origin
+[68/275] [chromium] › tests\e2e\day10-admin.spec.ts:5:3 › Day 10 - Admin & SEO E2E › HIDDEN social link absent from getPublicSocialLinks output AND from the rendered /about page HTML
+[69/275] [chromium] › tests\e2e\day10-admin.spec.ts:26:3 › Day 10 - Admin & SEO E2E › editing the Profile tagline via the admin UI shows the new tagline on / on the next request
+[70/275] [chromium] › tests\e2e\day10-admin.spec.ts:47:3 › Day 10 - Admin & SEO E2E › production error page shows no stack trace in the rendered HTML
+[WebServer] ⨯ Error: simulated secret internal server error postgres://secret@db
+[WebServer]     at S (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\[locale]\(public)\page.js:7:36504) {
+[WebServer]   digest: '2600345050'
+[WebServer] }
+
+[71/275] [chromium] › tests\e2e\capture-c1-before.spec.ts:34:5 › C1 Before Screenshots › capture before blog-om
+[chromium] › tests\e2e\csp-media.spec.ts:6:3 › Content Security Policy - Media and Image External Origins › Prove browser console has zero CSP violations for img and video from external origin
+CSP Violations detected: 0
+
+[72/275] [chromium] › tests\e2e\day10b.spec.ts:5:3 › Day 10b E2E › robots.ts disallows /admin and /api and references the sitemap
+[73/275] [chromium] › tests\e2e\day10b.spec.ts:13:3 › Day 10b E2E › sitemap includes the static pages and public entities, excludes the known private project, DRAFT case study, and DRAFT post
+[74/275] [chromium] › tests\e2e\day10b.spec.ts:21:3 › Day 10b E2E › /admin pages, /admin/login, and the blog preview page each return noindex
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[75/275] [chromium] › tests\e2e\day10b.spec.ts:31:3 › Day 10b E2E › canonical URL and OG title present in generateMetadata output for: home, one service detail, one case study, one blog post
+[76/275] [chromium] › tests\e2e\day10b.spec.ts:43:3 › Day 10b E2E › JSON-LD on at least one page parses as valid JSON, and a fixture with </script> in its title does not break out of the script element
+[77/275] [chromium] › tests\e2e\day10b.spec.ts:60:3 › Day 10b E2E › login with an external callbackUrl does not redirect off-site
+[78/275] [chromium] › tests\e2e\day10b.spec.ts:72:3 › Day 10b E2E › SEO override persists in admin UI and is rendered by generateMetadata
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[79/275] [chromium] › tests\e2e\day5.spec.ts:4:3 › Day 5 - Public Pages and Navigation › homepage renders hero, services preview, about snapshot with real seeded data
+[80/275] [chromium] › tests\e2e\day5.spec.ts:20:3 › Day 5 - Public Pages and Navigation › services index -> click service -> detail page loads correctly
+[81/275] [chromium] › tests\e2e\day6-portfolio.spec.ts:11:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-02(c): /work page does NOT render the private project
+[82/275] [chromium] › tests\e2e\day6-portfolio.spec.ts:23:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL
+[83/275] [chromium] › tests\e2e\day6-portfolio.spec.ts:30:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-03(c): /work page does NOT render unpublished case studies
+[84/275] [chromium] › tests\e2e\day6-portfolio.spec.ts:18:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-02(d): /work/[slug] returns 404 for a private project
+[85/275] [chromium] › tests\e2e\day6-portfolio.spec.ts:36:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study
+[86/275] [chromium] › tests\e2e\day6-portfolio.spec.ts:48:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › Public /work page renders seeded public case studies
+[87/275] [chromium] › tests\e2e\day6-portfolio.spec.ts:41:3 › Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) › SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs
+[88/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] / has exactly one h1
+[89/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /about has exactly one h1
+[90/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /services has exactly one h1
+[91/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /services/web-development has exactly one h1
+[92/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /work has exactly one h1
+[93/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /work/os-dashboard has exactly one h1
+[94/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /blog has exactly one h1
+[95/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /blog/first-post has exactly one h1
+[96/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /contact has exactly one h1
+[97/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /testimonials has exactly one h1
+[98/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /privacy has exactly one h1
+[99/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /terms has exactly one h1
+[100/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /non-existent-404-page has exactly one h1
+[101/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] / has exactly one h1
+[102/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /about has exactly one h1
+[103/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /services has exactly one h1
+[104/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /services/web-development has exactly one h1
+[105/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /work has exactly one h1
+[106/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /work/os-dashboard has exactly one h1
+[107/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /blog has exactly one h1
+[108/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /blog/first-post has exactly one h1
+[109/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /contact has exactly one h1
+[110/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /testimonials has exactly one h1
+[111/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /privacy has exactly one h1
+[112/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /terms has exactly one h1
+[113/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /non-existent-404-page has exactly one h1
+[114/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] / has exactly one h1
+[115/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /about has exactly one h1
+[116/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /services has exactly one h1
+[117/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /services/web-development has exactly one h1
+[118/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /work has exactly one h1
+[119/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /work/os-dashboard has exactly one h1
+[120/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /blog has exactly one h1
+[121/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /blog/first-post has exactly one h1
+[122/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /testimonials has exactly one h1
+[123/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /contact has exactly one h1
+[124/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /privacy has exactly one h1
+[125/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /terms has exactly one h1
+[126/275] [chromium] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /non-existent-404-page has exactly one h1
+[127/275] [chromium] › tests\e2e\media-picker.spec.ts:17:3 › MediaPicker Component E2E › pick-existing and upload-then-pick flows in MediaPicker modal
+[128/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 320px › zero horizontal overflow on /en at 320px
+[129/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 320px › zero horizontal overflow on /en/about at 320px
+[130/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 320px › zero horizontal overflow on /en/work at 320px
+[131/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 320px › zero horizontal overflow on /en/work/os-dashboard at 320px
+[132/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 320px › zero horizontal overflow on /en/services at 320px
+[133/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 320px › zero horizontal overflow on /en/services/web-development at 320px
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[134/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 320px › zero horizontal overflow on /en/blog at 320px
+[135/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 320px › zero horizontal overflow on /en/blog/first-post at 320px
+[136/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 320px › zero horizontal overflow on /en/testimonials at 320px
+[137/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 320px › zero horizontal overflow on /en/contact at 320px
+[138/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 320px › zero horizontal overflow on /en/privacy at 320px
+[139/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 320px › zero horizontal overflow on /en/terms at 320px
+[140/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 360px › zero horizontal overflow on /en at 360px
+[141/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 360px › zero horizontal overflow on /en/about at 360px
+[142/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 360px › zero horizontal overflow on /en/work at 360px
+[143/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 360px › zero horizontal overflow on /en/work/os-dashboard at 360px
+[144/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 360px › zero horizontal overflow on /en/services at 360px
+[145/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 360px › zero horizontal overflow on /en/services/web-development at 360px
+[146/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 360px › zero horizontal overflow on /en/blog at 360px
+[147/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 360px › zero horizontal overflow on /en/blog/first-post at 360px
+[148/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 360px › zero horizontal overflow on /en/testimonials at 360px
+[149/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 360px › zero horizontal overflow on /en/contact at 360px
+[150/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 360px › zero horizontal overflow on /en/privacy at 360px
+[151/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 360px › zero horizontal overflow on /en/terms at 360px
+[152/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 390px › zero horizontal overflow on /en at 390px
+[153/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 390px › zero horizontal overflow on /en/about at 390px
+[154/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 390px › zero horizontal overflow on /en/work at 390px
+[155/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 390px › zero horizontal overflow on /en/work/os-dashboard at 390px
+[156/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 390px › zero horizontal overflow on /en/services at 390px
+[157/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 390px › zero horizontal overflow on /en/services/web-development at 390px
+[158/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 390px › zero horizontal overflow on /en/blog at 390px
+[159/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 390px › zero horizontal overflow on /en/blog/first-post at 390px
+[160/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 390px › zero horizontal overflow on /en/testimonials at 390px
+[161/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 390px › zero horizontal overflow on /en/contact at 390px
+[162/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 390px › zero horizontal overflow on /en/privacy at 390px
+[163/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 390px › zero horizontal overflow on /en/terms at 390px
+[164/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 412px › zero horizontal overflow on /en at 412px
+[165/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 412px › zero horizontal overflow on /en/about at 412px
+[166/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 412px › zero horizontal overflow on /en/work at 412px
+[167/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 412px › zero horizontal overflow on /en/work/os-dashboard at 412px
+[168/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 412px › zero horizontal overflow on /en/services/web-development at 412px
+[169/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 412px › zero horizontal overflow on /en/services at 412px
+[170/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 412px › zero horizontal overflow on /en/blog at 412px
+[171/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 412px › zero horizontal overflow on /en/blog/first-post at 412px
+[172/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 412px › zero horizontal overflow on /en/testimonials at 412px
+[173/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 412px › zero horizontal overflow on /en/contact at 412px
+[174/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 412px › zero horizontal overflow on /en/privacy at 412px
+[175/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 412px › zero horizontal overflow on /en/terms at 412px
+[176/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 768px › zero horizontal overflow on /en at 768px
+[177/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 768px › zero horizontal overflow on /en/about at 768px
+[178/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 768px › zero horizontal overflow on /en/work at 768px
+[179/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 768px › zero horizontal overflow on /en/work/os-dashboard at 768px
+[180/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 768px › zero horizontal overflow on /en/services at 768px
+[181/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 768px › zero horizontal overflow on /en/services/web-development at 768px
+[182/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 768px › zero horizontal overflow on /en/blog at 768px
+[183/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 768px › zero horizontal overflow on /en/blog/first-post at 768px
+[184/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 768px › zero horizontal overflow on /en/testimonials at 768px
+[185/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 768px › zero horizontal overflow on /en/contact at 768px
+[186/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 768px › zero horizontal overflow on /en/privacy at 768px
+[187/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:23:9 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Viewport 768px › zero horizontal overflow on /en/terms at 768px
+[188/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:57:3 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › Hero Animated Engineer ID Badge renders cleanly and scales without overflowing on mobile
+[189/275] [chromium] › tests\e2e\mobile-responsive.spec.ts:77:3 › Part A3 — Mobile Responsive & Zero Horizontal Overflow Verification › About profile card maintains small dimensions with 9:16 inner frame
+[190/275] [chromium] › tests\e2e\part3-media-upload.spec.ts:23:3 › Part 3 - Media Upload Widget › Upload avatar in Profile edit and verify on public page
+[191/275] [chromium] › tests\e2e\partF-media-rendering.spec.ts:34:3 › Part F - Public Media Rendering › Profile Avatar Render
+[192/275] [chromium] › tests\e2e\partF-media-rendering.spec.ts:136:3 › Part F - Public Media Rendering › Project Featured Image Render
+[193/275] [chromium] › tests\e2e\partF-media-rendering.spec.ts:232:3 › Part F - Public Media Rendering › Video Upload and Render Test
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[194/275] [chromium] › tests\e2e\partG-testimonials.spec.ts:4:3 › Testimonials Moderation & Rate Limits › unauthorized testimonials are not public
+[195/275] [chromium] › tests\e2e\partG-testimonials.spec.ts:18:3 › Testimonials Moderation & Rate Limits › honeypot traps spam bots
+[196/275] [chromium] › tests\e2e\partG-upload-and-video.spec.ts:37:3 › Part G - Media Upload Limits and Video Rendering › Upload file size limits (6MB succeeds, 26MB rejected)
+[197/275] [chromium] › tests\e2e\partF-media-rendering.spec.ts:82:3 › Part F - Public Media Rendering › Service Featured Image Render
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[198/275] [chromium] › tests\e2e\partG-upload-and-video.spec.ts:73:3 › Part G - Media Upload Limits and Video Rendering › Video rendering on public pages
+[199/275] [chromium] › tests\e2e\partF-media-rendering.spec.ts:184:3 › Part F - Public Media Rendering › Blog Featured Image Render
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[200/275] [chromium] › tests\e2e\partH-notifications.spec.ts:4:3 › Part H: Admin Notifications › 16. Unauthenticated access to the notifications list/API is rejected
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[201/275] [chromium] › tests\e2e\partH-notifications.spec.ts:10:3 › Part H: Admin Notifications › 17. Submit a real inquiry as visitor, log in as admin, confirm bell icon shows incremented count and new notification appears
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[202/275] [chromium] › tests\e2e\partI-blog-social.spec.ts:4:3 › Blog Social Interactions › like toggle and comment submission
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[203/275] [chromium] › tests\e2e\perf-ui-features.spec.ts:5:3 › Phase C2: Speed + UI + Inquiry Feature Tests › C2.a: Work page has no filter control and tech tags are clean badges
+[204/275] [chromium] › tests\e2e\perf-ui-features.spec.ts:20:3 › Phase C2: Speed + UI + Inquiry Feature Tests › C2.b: Inquiry list has exact 8 options in en, am, and om with empty placeholder
+[205/275] [chromium] › tests\e2e\perf-ui-features.spec.ts:71:3 › Phase C2: Speed + UI + Inquiry Feature Tests › C2.c: Legacy inquiry values still display in admin
+[206/275] [chromium] › tests\e2e\perf-ui-features.spec.ts:100:3 › Phase C2: Speed + UI + Inquiry Feature Tests › C2.d: About page social links are vertically stacked and responsive at 375px
+[207/275] [chromium] › tests\e2e\perf-ui-features.spec.ts:127:3 › Phase C2: Speed + UI + Inquiry Feature Tests › C2.e: Card media boxes maintain 16:9 aspect ratio
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[208/275] [chromium] › tests\e2e\resume.spec.ts:6:3 › Resume End-to-End › upload a PDF as admin, set it as current resume, request from /about unauthenticated
+[209/275] [chromium] › tests\e2e\smoke.spec.ts:26:3 › Staging Smoke Suite (Production Readiness) › 1. Admin guard redirects unauthenticated requests on /admin, /am/admin, and /om/admin
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[210/275] [chromium] › tests\e2e\smoke.spec.ts:50:3 › Staging Smoke Suite (Production Readiness) › 3. Media upload and rendering across library and forms
+[211/275] [chromium] › tests\e2e\smoke.spec.ts:179:3 › Staging Smoke Suite (Production Readiness) › 5. Multi-language routing and hreflang (/am and /om)
+[212/275] [chromium] › tests\e2e\smoke.spec.ts:40:3 › Staging Smoke Suite (Production Readiness) › 2. Admin login succeeds and displays dashboard
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[213/275] [chromium] › tests\e2e\smoke.spec.ts:198:3 › Staging Smoke Suite (Production Readiness) › 6. Error handling: 404 not-found and 500 error boundary
+[214/275] [chromium] › tests\e2e\smoke.spec.ts:212:3 › Staging Smoke Suite (Production Readiness) › 7. Security headers on route types
+[WebServer] ⨯ Error: simulated secret internal server error postgres://secret@db
+[WebServer]     at S (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\[locale]\(public)\page.js:7:36504) {
+[WebServer]   digest: '2600345050'
+[WebServer] }
+
+[215/275] [chromium] › tests\e2e\stability.spec.ts:4:3 › Task 2 — Stability & Abnormal Re-render Prevention › focus/blur and visibilitychange do NOT trigger unexpected RSC network re-fetches
+[216/275] [chromium] › tests\e2e\stability.spec.ts:45:3 › Task 2 — Stability & Abnormal Re-render Prevention › comments input state is preserved across window blur and focus
+[217/275] [chromium] › tests\e2e\stability.spec.ts:69:3 › Task 2 — Stability & Abnormal Re-render Prevention › public layout root does not include TabVisibilityRefresher
+[218/275] [chromium] › tests\e2e\smoke.spec.ts:111:3 › Staging Smoke Suite (Production Readiness) › 4. Inquiry, testimonial, and social interaction flows
+◇ injected env (0) from .env.test
+
+◇ injected env (0) from .env.test
+
+[219/275] [smoke] › tests\e2e\accessibility.spec.ts:8:3 › Accessibility & Shell Features › Axe scan on / (homepage with AUTHORIZED+PUBLISHED testimonial)
+[220/275] [smoke] › tests\e2e\accessibility.spec.ts:17:3 › Accessibility & Shell Features › Axe scan on /contact
+◇ injected env (0) from .env.test
+
+[221/275] [smoke] › tests\e2e\accessibility.spec.ts:26:3 › Accessibility & Shell Features › Axe scan on /privacy
+[222/275] [smoke] › tests\e2e\accessibility.spec.ts:44:3 › Accessibility & Shell Features › Axe scan on /blog
+[223/275] [smoke] › tests\e2e\accessibility.spec.ts:53:3 › Accessibility & Shell Features › Axe scan on /services
+[224/275] [smoke] › tests\e2e\accessibility.spec.ts:62:3 › Accessibility & Shell Features › Axe scan on /work
+[225/275] [smoke] › tests\e2e\accessibility.spec.ts:71:3 › Accessibility & Shell Features › Axe scan on /terms
+[226/275] [smoke] › tests\e2e\accessibility.spec.ts:80:3 › Accessibility & Shell Features › skip-to-content link works correctly
+[227/275] [smoke] › tests\e2e\accessibility.spec.ts:97:3 › Accessibility & Shell Features › mobile menu opens, traps focus, and closes with escape
+[228/275] [smoke] › tests\e2e\csp-media.spec.ts:6:3 › Content Security Policy - Media and Image External Origins › Prove browser console has zero CSP violations for img and video from external origin
+[229/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] / has exactly one h1
+[230/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /about has exactly one h1
+[231/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /services has exactly one h1
+[232/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /services/web-development has exactly one h1
+[smoke] › tests\e2e\csp-media.spec.ts:6:3 › Content Security Policy - Media and Image External Origins › Prove browser console has zero CSP violations for img and video from external origin
+CSP Violations detected: 0
+
+[233/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /work has exactly one h1
+[234/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /work/os-dashboard has exactly one h1
+[235/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /blog has exactly one h1
+[236/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /blog/first-post has exactly one h1
+[237/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /contact has exactly one h1
+[238/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /testimonials has exactly one h1
+[239/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /privacy has exactly one h1
+[240/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /terms has exactly one h1
+[241/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [en] /non-existent-404-page has exactly one h1
+[242/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] / has exactly one h1
+[243/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /about has exactly one h1
+[244/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /services has exactly one h1
+[245/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /services/web-development has exactly one h1
+[246/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /work has exactly one h1
+[247/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /work/os-dashboard has exactly one h1
+[248/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /blog has exactly one h1
+[249/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /blog/first-post has exactly one h1
+[250/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /contact has exactly one h1
+[251/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /testimonials has exactly one h1
+[252/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /privacy has exactly one h1
+[253/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /terms has exactly one h1
+[254/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [am] /non-existent-404-page has exactly one h1
+[255/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] / has exactly one h1
+[256/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /about has exactly one h1
+[257/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /services has exactly one h1
+[258/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /services/web-development has exactly one h1
+[259/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /work has exactly one h1
+[260/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /work/os-dashboard has exactly one h1
+[261/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /blog has exactly one h1
+[262/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /blog/first-post has exactly one h1
+[263/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /contact has exactly one h1
+[264/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /testimonials has exactly one h1
+[265/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /privacy has exactly one h1
+[266/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /terms has exactly one h1
+[267/275] [smoke] › tests\e2e\h1.spec.ts:24:7 › Exactly One H1 Test › [om] /non-existent-404-page has exactly one h1
+[268/275] [smoke] › tests\e2e\smoke.spec.ts:26:3 › Staging Smoke Suite (Production Readiness) › 1. Admin guard redirects unauthenticated requests on /admin, /am/admin, and /om/admin
+[269/275] [smoke] › tests\e2e\smoke.spec.ts:50:3 › Staging Smoke Suite (Production Readiness) › 3. Media upload and rendering across library and forms
+[270/275] [smoke] › tests\e2e\smoke.spec.ts:179:3 › Staging Smoke Suite (Production Readiness) › 5. Multi-language routing and hreflang (/am and /om)
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[271/275] [smoke] › tests\e2e\smoke.spec.ts:40:3 › Staging Smoke Suite (Production Readiness) › 2. Admin login succeeds and displays dashboard
+[272/275] [smoke] › tests\e2e\smoke.spec.ts:198:3 › Staging Smoke Suite (Production Readiness) › 6. Error handling: 404 not-found and 500 error boundary
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10528)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[WebServer] ⨯ Error: simulated secret internal server error postgres://secret@db
+[WebServer]     at S (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\[locale]\(public)\page.js:7:36504) {
+[WebServer]   digest: '2600345050'
+[WebServer] }
+
+[273/275] [smoke] › tests\e2e\smoke.spec.ts:212:3 › Staging Smoke Suite (Production Readiness) › 7. Security headers on route types
+[274/275] [smoke] › tests\e2e\smoke.spec.ts:111:3 › Staging Smoke Suite (Production Readiness) › 4. Inquiry, testimonial, and social interaction flows
+◇ injected env (0) from .env.test
+
+[275/275] [smoke] › tests\e2e\accessibility.spec.ts:35:3 › Accessibility & Shell Features › Axe scan on /about
+  275 passed (8.6m)

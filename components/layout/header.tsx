@@ -56,7 +56,7 @@ export function Header() {
           <Link href="/" className="flex items-center space-x-2 transition-transform hover:scale-105 active:scale-95 duration-200">
             <span className="font-heading font-extrabold text-lg sm:text-xl inline-block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">AVENOR</span>
           </Link>
-          <nav className="hidden md:flex gap-1.5 lg:gap-3">
+          <nav className="hidden lg:flex gap-1.5 lg:gap-3">
             {navKeys.map((key) => {
               const isActive = pathname === `/${key}` || pathname.startsWith(`/${key}/`);
               return (
@@ -77,7 +77,7 @@ export function Header() {
           </nav>
         </div>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <div className="relative" ref={langRef}>
             <button 
               onClick={() => setIsLangOpen(!isLangOpen)}
@@ -129,7 +129,7 @@ export function Header() {
         </div>
 
         {/* Mobile Nav */}
-        <div className="flex flex-1 items-center justify-end md:hidden gap-2">
+        <div className="flex flex-1 items-center justify-end lg:hidden gap-2">
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
               <Button variant="ghost" className={cn("px-2 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0", isHomePage && "text-[#F5F6FC]")}>
@@ -178,3 +178,4 @@ export function Header() {
     </header>
   )
 }
+

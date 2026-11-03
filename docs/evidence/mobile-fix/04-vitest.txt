@@ -1,0 +1,130 @@
+
+> gurmesa-website@0.1.0 test
+> vitest run --run
+
+◇ injected env (13) from .env.test
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - `__dirname` (vitest.config.ts:10:25). Use `import.meta.dirname` instead
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90mC:/Users/Hp/Documents/Projects/Gurmesa_website[39m
+
+ [32m✓[39m tests/integration/blog-likes.test.ts [2m([22m[2m20 tests[22m[2m)[22m[33m 1460[2mms[22m[39m
+ [32m✓[39m tests/integration/concurrency.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 1000[2mms[22m[39m
+[90mstdout[2m | tests/integration/contact.test.ts[2m > [22m[2mContact & Inquiry Service Integration[2m > [22m[2mConsoleTransport records SKIPPED (never SENT)
+[22m[39m--- EMAIL SKIPPED (CONSOLE TRANSPORT) ---
+To: x
+Subject: y
+Body:
+z
+-----------------------------------------
+
+ [32m✓[39m tests/integration/contact.test.ts [2m([22m[2m32 tests[22m[2m)[22m[33m 683[2mms[22m[39m
+ [32m✓[39m tests/unit/email-matrix.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 506[2mms[22m[39m
+[90mstderr[2m | tests/integration/media.test.ts[2m > [22m[2mMedia Service[2m > [22m[2m7. Deleting a MediaAsset that is referenced elsewhere behaves per whatever behavior you actually implemented
+[22m[39m[Sharp Downscale] Processing skipped or failed, uploading original: Error: Input buffer has corrupt header: VipsJpeg: premature end of JPEG image
+VipsJpeg: JPEG datastream contains no image
+VipsJpeg: premature end of JPEG image
+VipsJpeg: JPEG datastream contains no image
+VipsJpeg: premature end of JPEG image
+    at Sharp.metadata [90m(file:///C:/Users/Hp/Documents/Projects/Gurmesa_website/[39mnode_modules/[4msharp[24m/dist/input.mjs:651:17[90m)[39m
+    at downscaleImageIfNeeded (C:/Users/Hp/Documents/Projects/Gurmesa_website/server/services/mediaService.ts:53:32)
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)[39m
+    at Module.uploadMedia (C:/Users/Hp/Documents/Projects/Gurmesa_website/server/services/mediaService.ts:84:21)
+    at C:/Users/Hp/Documents/Projects/Gurmesa_website/tests/integration/media.test.ts:98:19
+    at async [90mfile:///C:/Users/Hp/Documents/Projects/Gurmesa_website/[39mnode_modules/[4mvitest[24m/dist/chunks/run.BPv-BBRv.js:2801:20
+
+ [32m✓[39m tests/integration/media.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 677[2mms[22m[39m
+   [32m✓[39m Media Service [2m(7)[22m
+     [33m[2m✓[22m[39m 7. Deleting a MediaAsset that is referenced elsewhere behaves per whatever behavior you actually implemented[33m 394[2mms[22m[39m
+ [32m✓[39m tests/integration/guard.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 769[2mms[22m[39m
+   [32m✓[39m Production Guard [2m(5)[22m
+     [33m[2m✓[22m[39m refuses to run seed.ts in production[33m 560[2mms[22m[39m
+[90mstderr[2m | tests/integration/audit.test.ts[2m > [22m[2mAudit Logs[2m > [22m[2m9d. Audit log entry is created for a media delete
+[22m[39m[Sharp Downscale] Processing skipped or failed, uploading original: Error: Input buffer has corrupt header: VipsJpeg: premature end of JPEG image
+VipsJpeg: JPEG datastream contains no image
+VipsJpeg: premature end of JPEG image
+VipsJpeg: JPEG datastream contains no image
+VipsJpeg: premature end of JPEG image
+    at Sharp.metadata [90m(file:///C:/Users/Hp/Documents/Projects/Gurmesa_website/[39mnode_modules/[4msharp[24m/dist/input.mjs:651:17[90m)[39m
+    at downscaleImageIfNeeded (C:/Users/Hp/Documents/Projects/Gurmesa_website/server/services/mediaService.ts:53:32)
+    at Module.uploadMedia (C:/Users/Hp/Documents/Projects/Gurmesa_website/server/services/mediaService.ts:84:21)
+    at C:/Users/Hp/Documents/Projects/Gurmesa_website/tests/integration/audit.test.ts:94:19
+    at async [90mfile:///C:/Users/Hp/Documents/Projects/Gurmesa_website/[39mnode_modules/[4mvitest[24m/dist/chunks/run.BPv-BBRv.js:2801:20
+
+ [32m✓[39m tests/integration/audit.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 597[2mms[22m[39m
+   [32m✓[39m Audit Logs [2m(4)[22m
+     [33m[2m✓[22m[39m 9d. Audit log entry is created for a media delete[33m 327[2mms[22m[39m
+[90mstderr[2m | tests/unit/email-resend.test.ts[2m > [22m[2mResend Email Transport Hardening (B2)[2m > [22m[2mConfiguration & Initialization[2m > [22m[2mreturns FAILED when EMAIL_API_KEY and RESEND_API_KEY are absent
+[22m[39mWARNING: ResendTransport used without EMAIL_API_KEY / RESEND_API_KEY or EMAIL_FROM. Email dropped.
+
+[90mstderr[2m | tests/unit/email-resend.test.ts[2m > [22m[2mResend Email Transport Hardening (B2)[2m > [22m[2mConfiguration & Initialization[2m > [22m[2mreturns FAILED when EMAIL_FROM is absent
+[22m[39mWARNING: ResendTransport used without EMAIL_API_KEY / RESEND_API_KEY or EMAIL_FROM. Email dropped.
+
+ [32m✓[39m tests/unit/email-resend.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1555[2mms[22m[39m
+   [32m✓[39m Resend Email Transport Hardening (B2) [2m(11)[22m
+     [32m✓[39m Idempotency & Transient Retries [2m(4)[22m
+       [33m[2m✓[22m[39m retries once on HTTP 429 rate limit and succeeds on retry[33m 505[2mms[22m[39m
+       [33m[2m✓[22m[39m retries once on HTTP 500 and returns FAILED if second attempt also fails[33m 509[2mms[22m[39m
+       [33m[2m✓[22m[39m retries once on network failure and handles persistent network failure gracefully[33m 503[2mms[22m[39m
+ [32m✓[39m tests/integration/blog.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 481[2mms[22m[39m
+ [32m✓[39m tests/integration/notifications.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 262[2mms[22m[39m
+ [32m✓[39m tests/integration/audit-login.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 536[2mms[22m[39m
+   [32m✓[39m Audit Logs (Login) [2m(1)[22m
+     [33m[2m✓[22m[39m 9c. Audit log entry is created for a login event[33m 532[2mms[22m[39m
+ [32m✓[39m tests/unit/perf-and-features.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 492[2mms[22m[39m
+   [32m✓[39m B5.e: Image Downscaling with Sharp [2m(2)[22m
+     [33m[2m✓[22m[39m downscales an image exceeding 1280px to max width 1280 WebP[33m 449[2mms[22m[39m
+ [32m✓[39m tests/unit/testimonial-length.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 163[2mms[22m[39m
+ [32m✓[39m tests/integration/day3-auth.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 694[2mms[22m[39m
+   [32m✓[39m Day 3 - Authentication and DTO Boundary [2m(3)[22m
+     [33m[2m✓[22m[39m SEC-ACL-05: getPublicProfile() output keys match exactly the declared public allowlist[33m 341[2mms[22m[39m
+     [33m[2m✓[22m[39m SEC-AUTH-03: Login validation accepts correct password and rejects wrong password[33m 344[2mms[22m[39m
+ [32m✓[39m tests/unit/homepage-limits.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 174[2mms[22m[39m
+[90mstderr[2m | tests/unit/infrastructure-media-service.test.ts[2m > [22m[2mMedia Service - Infrastructure Consistency & Reference Protection[2m > [22m[2mCompensating upload cleanup[2m > [22m[2mattempts to delete uploaded object from storage and rethrows error if DB creation fails
+[22m[39m[Sharp Downscale] Processing skipped or failed, uploading original: Error: Input buffer has corrupt header:
+    at Sharp.metadata [90m(file:///C:/Users/Hp/Documents/Projects/Gurmesa_website/[39mnode_modules/[4msharp[24m/dist/input.mjs:651:17[90m)[39m
+    at downscaleImageIfNeeded (C:/Users/Hp/Documents/Projects/Gurmesa_website/server/services/mediaService.ts:53:32)
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)[39m
+    at Module.uploadMedia (C:/Users/Hp/Documents/Projects/Gurmesa_website/server/services/mediaService.ts:84:21)
+    at C:/Users/Hp/Documents/Projects/Gurmesa_website/tests/unit/infrastructure-media-service.test.ts:55:7
+    at async [90mfile:///C:/Users/Hp/Documents/Projects/Gurmesa_website/[39mnode_modules/[4mvitest[24m/dist/chunks/run.BPv-BBRv.js:2801:20
+
+ [32m✓[39m tests/unit/infrastructure-media-service.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 315[2mms[22m[39m
+   [32m✓[39m Media Service - Infrastructure Consistency & Reference Protection [2m(4)[22m
+     [32m✓[39m Compensating upload cleanup [2m(1)[22m
+       [33m[2m✓[22m[39m attempts to delete uploaded object from storage and rethrows error if DB creation fails[33m 303[2mms[22m[39m
+ [32m✓[39m tests/integration/day6-portfolio.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 146[2mms[22m[39m
+ [32m✓[39m tests/integration/testimonialRateLimit.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 171[2mms[22m[39m
+ [32m✓[39m tests/integration/day5-service.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 88[2mms[22m[39m
+[90mstdout[2m | tests/integration/rateLimit.test.ts[2m > [22m[2mRate Limiter with Redis[2m > [22m[2m11. Rate limiter: the (N+1)th request from one client is rejected while a different client is still accepted
+[22m[39mRedis keys created: [
+  [32m'e695c4ca2a24b18f1faf5b1180af5979ccd819ae8c28597a3c5fcf999e72ee13'[39m,
+  [32m'8ec73dcfbbaed22394257bbb2b77361386277155e22d09069fff819b3276d7ed'[39m
+]
+
+ [32m✓[39m tests/integration/rateLimit.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 90[2mms[22m[39m
+ [32m✓[39m tests/unit/infrastructure-storage.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 93[2mms[22m[39m
+ [32m✓[39m tests/integration/project-visibility.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 70[2mms[22m[39m
+ [32m✓[39m tests/unit/translations-parity.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 56[2mms[22m[39m
+ [32m✓[39m tests/unit/infrastructure-redis.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 42[2mms[22m[39m
+ [32m✓[39m tests/integration/day10-admin.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 36[2mms[22m[39m
+ [32m✓[39m tests/integration/health.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 25[2mms[22m[39m
+ [32m✓[39m tests/unit/settings-email.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/unit/project-live-url.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/unit/theme-dark-permanent.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/integration/day10b.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/unit/partB-profile-image.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m tests/unit/reading-time.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m tests/integration/profile.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m tests/unit/legal-pages-testimonials.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m tests/unit/sanity.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 7[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m35 passed[39m[22m[90m (35)[39m
+[2m      Tests [22m [1m[32m231 passed[39m[22m[90m (231)[39m
+[2m   Start at [22m 15:54:09
+[2m   Duration [22m 42.37s[2m (import 50%, tests 44%, transform 3%, worker 3%)[22m
+
+[2m    Isolate [22m [33m35 workers spawned[39m[2m · ~450ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~15.30s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+

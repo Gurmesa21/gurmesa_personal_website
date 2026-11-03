@@ -32,6 +32,7 @@ import {
 import { getStorageAdapter } from '@/lib/storage';
 import { prisma } from '@/server/repositories/db';
 import { MediaRenderer } from '@/components/ui/MediaRenderer';
+import { EngineerBadge } from '@/components/home/EngineerBadge';
 import { unstable_noStore as noStore } from 'next/cache';
 
 function getServiceIcon(slug: string) {
@@ -119,7 +120,7 @@ function getProjectTags(project: {
   return tags;
 }
 
-export const revalidate = 60;
+export const revalidate = 3600;
 export const dynamic = 'auto';
 
 export function generateStaticParams() {
@@ -321,85 +322,100 @@ export default async function HomePage(props: {
                 {/* Internal Violet/Blue Accent Aura */}
                 <div className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-gradient-to-br from-[#8063F7]/20 via-[#4F6FF0]/10 to-transparent blur-3xl" />
 
-                <div className="relative z-10 space-y-4">
-                  {/* Status Badges Row */}
-                  <div className="flex flex-wrap items-center gap-2.5">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-[#292D45] bg-[#171D32] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
-                      {profile?.title || 'Full-Stack Developer'}
-                    </span>
-
-                    {profile?.availabilityStatus && (
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#10B981]/25 bg-[#10B981]/10 px-2.5 py-1 text-xs font-medium text-[#10B981]">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#10B981] animate-pulse" />
-                        {profile.availabilityStatus}
+                <div className="relative z-10 flex flex-col xl:flex-row items-center xl:items-start justify-between gap-6">
+                  <div className="space-y-4 flex-1 w-full min-w-0">
+                    {/* Status Badges Row */}
+                    <div className="flex flex-wrap items-center gap-2.5">
+                      <span className="inline-flex items-center gap-2 rounded-full border border-[#292D45] bg-[#171D32] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#8063F7] animate-pulse" />
+                        {profile?.title || 'Full-Stack Developer'}
                       </span>
-                    )}
 
-                    {profile?.locationLabel && (
-                      <span className="inline-flex items-center gap-1.5 text-xs text-[#A5ABC1]">
-                        <MapPin className="h-3.5 w-3.5 text-[#8063F7] animate-pulse" />
-                        {profile.locationLabel}
-                      </span>
-                    )}
-                  </div>
+                      {profile?.availabilityStatus && (
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#10B981]/25 bg-[#10B981]/10 px-2.5 py-1 text-xs font-medium text-[#10B981]">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#10B981] animate-pulse" />
+                          {profile.availabilityStatus}
+                        </span>
+                      )}
 
-                  {/* Primary Single H1 Heading */}
-                  <div>
-                    <h1 className="font-heading text-3xl font-extrabold tracking-tight text-[#F5F6FC] sm:text-4xl lg:text-[2.65rem] leading-[1.12]">
-                      {profile?.name || 'Gurmesa Teklemariam'}
-                    </h1>
-                    {profile?.tagline && (
-                      <p className="mt-2 text-base font-medium text-[#F5F6FC]/90 sm:text-lg leading-snug">
-                        {profile.tagline}
+                      {profile?.locationLabel && (
+                        <span className="inline-flex items-center gap-1.5 text-xs text-[#A5ABC1]">
+                          <MapPin className="h-3.5 w-3.5 text-[#8063F7] animate-pulse" />
+                          {profile.locationLabel}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Primary Single H1 Heading */}
+                    <div>
+                      <h1 className="font-heading text-3xl font-extrabold tracking-tight text-[#F5F6FC] sm:text-4xl lg:text-[2.65rem] leading-[1.12]">
+                        {profile?.name || 'Gurmesa Teklemariam'}
+                      </h1>
+                      {profile?.tagline && (
+                        <p className="mt-2 text-base font-medium text-[#F5F6FC]/90 sm:text-lg leading-snug">
+                          {profile.tagline}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Concise Supporting Description */}
+                    {profile?.bio && (
+                      <p className="max-w-2xl text-xs sm:text-sm font-normal leading-relaxed text-[#A5ABC1] line-clamp-3">
+                        {profile.bio}
                       </p>
                     )}
-                  </div>
 
-                  {/* Concise Supporting Description */}
-                  {profile?.bio && (
-                    <p className="max-w-2xl text-xs sm:text-sm font-normal leading-relaxed text-[#A5ABC1] line-clamp-3">
-                      {profile.bio}
-                    </p>
-                  )}
-
-                  {/* Calls To Action */}
-                  <div className="flex flex-wrap items-center gap-3 pt-2">
-                    <Button
-                      asChild
-                      size="default"
-                      className="rounded-xl border-0 bg-gradient-to-r from-[#8063F7] to-[#4F6FF0] px-5 py-2.5 text-xs sm:text-sm font-medium text-white shadow-md shadow-[#8063F7]/25 transition-all hover:from-[#7154e6] hover:to-[#3e5edb] hover:shadow-[#8063F7]/40 active:scale-95"
-                    >
-                      <Link href="/contact">{t('getInTouch')}</Link>
-                    </Button>
-
-                    <Button
-                      asChild
-                      variant="outline"
-                      size="default"
-                      className="rounded-xl border-[#292D45] bg-[#171D32]/80 px-5 py-2.5 text-xs sm:text-sm font-medium text-[#F5F6FC] transition-all hover:border-[#8063F7]/50 hover:bg-[#171D32] hover:text-white"
-                    >
-                      <Link href="/work">{t('viewPortfolio')}</Link>
-                    </Button>
-
-                    {resumeUrl && (
+                    {/* Calls To Action */}
+                    <div className="flex flex-wrap items-center gap-3 pt-2">
                       <Button
                         asChild
-                        variant="ghost"
                         size="default"
-                        className="rounded-xl px-3 text-xs font-medium text-[#A5ABC1] transition-colors hover:bg-[#171D32]/60 hover:text-[#F5F6FC]"
+                        className="rounded-xl border-0 bg-gradient-to-r from-[#8063F7] to-[#4F6FF0] px-5 py-2.5 text-xs sm:text-sm font-medium text-white shadow-md shadow-[#8063F7]/25 transition-all hover:from-[#7154e6] hover:to-[#3e5edb] hover:shadow-[#8063F7]/40 active:scale-95"
                       >
-                        <a
-                          href={resumeUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1.5"
-                        >
-                          <FileText className="h-3.5 w-3.5 text-[#8063F7]" />
-                          {t('downloadResume')}
-                        </a>
+                        <Link href="/contact">{t('getInTouch')}</Link>
                       </Button>
-                    )}
+
+                      <Button
+                        asChild
+                        variant="outline"
+                        size="default"
+                        className="rounded-xl border-[#292D45] bg-[#171D32]/80 px-5 py-2.5 text-xs sm:text-sm font-medium text-[#F5F6FC] transition-all hover:border-[#8063F7]/50 hover:bg-[#171D32] hover:text-white"
+                      >
+                        <Link href="/work">{t('viewPortfolio')}</Link>
+                      </Button>
+
+                      {resumeUrl && (
+                        <Button
+                          asChild
+                          variant="ghost"
+                          size="default"
+                          className="rounded-xl px-3 text-xs font-medium text-[#A5ABC1] transition-colors hover:bg-[#171D32]/60 hover:text-[#F5F6FC]"
+                        >
+                          <a
+                            href={resumeUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1.5"
+                          >
+                            <FileText className="h-3.5 w-3.5 text-[#8063F7]" />
+                            {t('downloadResume')}
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* High-Tech Animated Engineer ID Badge */}
+                  <div className="w-full xl:w-auto flex justify-center shrink-0 pt-2 xl:pt-1">
+                    <EngineerBadge
+                      profile={profile}
+                      avatarUrl={avatarMedia?.url}
+                      tBadgeHeader={t('badgeHeader')}
+                      tAcademicStudent={t('academicStudent')}
+                      tStatusAvailable={t('statusAvailable')}
+                      tBadgeLocation={t('badgeLocation')}
+                      tBadgeIdCode={t('badgeIdCode')}
+                    />
                   </div>
                 </div>
               </section>
@@ -432,6 +448,7 @@ export default async function HomePage(props: {
                     return (
                       <div
                         key={service.id}
+                        data-card
                         className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-4.5 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 aspect-video"
                       >
                         {/* Thin Top Accent Line Animation */}
@@ -541,12 +558,13 @@ export default async function HomePage(props: {
               </div>
 
               {/* Vertical List of Compact Project Cards */}
-              <div className="flex flex-col gap-3.5">
+              <div className="flex flex-col gap-3.5 items-stretch">
                 {projects.map((project) => (
                   <Link
                     key={project.id}
                     href={`/work/${project.slug}`}
-                    className="group relative block overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 aspect-video"
+                    data-card
+                    className="group relative flex flex-col h-full justify-between overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 aspect-video"
                   >
                     {/* Thin Top Accent Line Animation */}
                     <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
@@ -583,7 +601,7 @@ export default async function HomePage(props: {
 
                     <div className="pointer-events-none absolute -top-12 -right-12 h-24 w-24 rounded-full bg-[#8063F7]/15 blur-2xl transition-transform duration-500 group-hover:scale-150" />
 
-                    <div className="relative z-10 space-y-2">
+                    <div className="relative z-10 flex-1 space-y-2">
                       <div className="flex items-center justify-between">
                         <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#8063F7]/30 bg-[#101426]/75 text-[#8063F7] shadow-inner backdrop-blur-md transition-colors group-hover:text-[#A995FF] group-hover:border-[#8063F7]/50 animate-pulse">
                           <Layers className="h-5 w-5 animate-pulse" />
@@ -606,7 +624,7 @@ export default async function HomePage(props: {
                       </div>
                     </div>
 
-                    <div className="relative z-10 mt-2.5 flex items-center justify-between border-t border-[#292D45]/50 pt-2 text-xs">
+                    <div className="relative z-10 mt-auto flex items-center justify-between border-t border-[#292D45]/50 pt-2 text-xs">
                       {(() => {
                         const projectTags = getProjectTags(project);
                         return (
@@ -682,6 +700,7 @@ export default async function HomePage(props: {
                       <Link
                         key={post.id}
                         href={`/blog/${post.slug}`}
+                        data-card
                         className={`block rounded-xl p-2.5 transition-colors ${idx === 0
                           ? 'border border-[#292D45]/80 bg-[#171D32]/60 hover:bg-[#171D32]'
                           : 'border border-[#292D45]/80 bg-[#171D32]/60 hover:bg-[#171D32]'
@@ -846,6 +865,7 @@ export default async function HomePage(props: {
                     {testimonials.slice(0, 2).map((testimonial, idx) => (
                       <div
                         key={testimonial.id}
+                        data-card
                         className={`rounded-xl p-2.5 ${idx === 0
                           ? 'border border-[#292D45]/80 bg-[#171D32]/60'
                           : 'border border-[#292D45]/40 bg-[#171D32]/30'

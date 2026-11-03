@@ -38,6 +38,7 @@ export interface MediaPickerProps {
   defaultValue?: string;
   value?: string;
   onChange?: (val: string) => void;
+  onAssetChange?: (asset: MediaAsset | null) => void;
   accept?: string;
   label?: string;
 }
@@ -47,6 +48,7 @@ export function MediaPicker({
   defaultValue = '',
   value,
   onChange,
+  onAssetChange,
   accept = 'image/jpeg,image/png,image/gif,image/webp,video/mp4',
   label = 'Select Media File',
 }: MediaPickerProps) {
@@ -121,6 +123,13 @@ export function MediaPicker({
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
+
+    const MAX_SIZE = 25 * 1024 * 1024;
+    if (file.size > MAX_SIZE) {
+      setError(`File size exceeds the 25MB limit. (${file.size} bytes)`);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      return;
+    }
 
     setIsUploading(true);
     setError(null);
@@ -236,6 +245,12 @@ export function MediaPicker({
   };
 
   const selectedAsset = media.find((m) => m.id === selectedId);
+
+  useEffect(() => {
+    if (onAssetChange) {
+      onAssetChange(selectedAsset || null);
+    }
+  }, [selectedAsset, onAssetChange]);
 
   const filteredMedia = media.filter((m) => {
     const matchesSearch =

@@ -29,7 +29,12 @@
     "readArticle": "Barreeffama Dubbisi",
     "anonymous": "Maqaa-dhabaa",
     "at": "iddoo",
-    "downloadResume": "CV Buufadhu"
+    "downloadResume": "CV Buufadhu",
+    "badgeHeader": "Eenyummaa Injinaraa // Mirkanaa'aa [REVIEW]",
+    "academicStudent": "Barataa Muummee Saayinsii Sooftiweerii Waggaa 4ffaa @ ASTU [REVIEW]",
+    "statusAvailable": "Pirojektiiwwaniif banaa [REVIEW]",
+    "badgeLocation": "Itoophiyaa [REVIEW]",
+    "badgeIdCode": "ID: AVN-2026-GT [REVIEW]"
   },
   "Theme": {
     "toggle": "Jijjiirraa Bifa",
@@ -52,7 +57,9 @@
     "downloadResume": "CV Buufadhu",
     "experience": "Muuxannoo Hojii",
     "present": "Amma",
-    "skills": "Dandeettii fi Ogummaa"
+    "skills": "Dandeettii fi Ogummaa",
+    "avatarRecommended": "Kan gorfamu: 9:16 dhaabbataa (fkn 720x1280) [REVIEW]",
+    "avatarLandscapeWarning": "Fakkiin olkaa'ame dalga ta'a. Giddu galeessaan qulqullaa'ee mul'ata; suuraan dhaabbataa 9:16 filatamaadha. [REVIEW]"
   },
   "Services": {
     "title": "Tajaajilawwan",

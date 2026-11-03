@@ -12,7 +12,7 @@ import { MediaRenderer } from '@/components/ui/MediaRenderer';
 import { isTestMode } from '@/lib/test-mode';
 import { unstable_noStore as noStore } from 'next/cache';
 
-export const revalidate = 60;
+export const revalidate = 3600;
 export const dynamic = 'auto';
 import {
   ImageIcon,

@@ -7,7 +7,7 @@ import { MessageSquareQuote, PenTool, ShieldCheck, Sparkles } from 'lucide-react
 import { isTestMode } from '@/lib/test-mode';
 import { unstable_noStore as noStore } from 'next/cache';
 
-export const revalidate = 60;
+export const revalidate = 3600;
 export const dynamic = 'auto';
 
 export function generateStaticParams() {

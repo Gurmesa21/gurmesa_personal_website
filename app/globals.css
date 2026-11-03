@@ -331,4 +331,30 @@
   .animated-card:hover .btn {
     @apply opacity-100 shadow-lg -translate-y-0.5;
   }
+
+  /* Touch device feedback optimization */
+  .touch-feedback {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  button,
+  a,
+  [role="button"],
+  [data-card] {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  [data-card]:active {
+    transform: scale(0.98);
+    border-color: rgba(128, 99, 247, 0.7) !important;
+  }
+
+  [data-card][data-inview="true"] {
+    border-color: rgba(128, 99, 247, 0.65) !important;
+    box-shadow: 0 10px 30px -5px rgba(128, 99, 247, 0.2) !important;
+  }
 }

@@ -1,5 +1,5 @@
 
-export const revalidate = 60;
+export const revalidate = 3600;
 export const dynamic = 'auto';
 
 export function generateStaticParams() {
@@ -138,20 +138,30 @@ export default async function AboutPage() {
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 items-stretch">
             {/* Cinematic Profile Visual on Left (Vertical Composition) */}
             <div className="md:col-span-5 lg:col-span-4 flex flex-col items-center justify-center">
-              <div className="relative w-48 h-48 md:w-full md:h-auto max-w-[280px] sm:max-w-[320px] md:max-w-none aspect-[3/4] rounded-2xl overflow-hidden border border-[#8063F7]/40 bg-[#171D32] shadow-2xl shadow-black/50 group-hover:border-[#8063F7]/70 group-hover:shadow-[0_12px_36px_rgba(128,99,247,0.2)] transition-all duration-500 flex items-center justify-center">
-                {avatarMedia ? (
-                  <MediaRenderer
-                    url={avatarMedia.url}
-                    mimeType={avatarMedia.mimeType}
-                    altText={profile?.name || 'Avatar'}
-                    fill
-                    className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#171D32] to-[#101426]">
-                    <User className="w-20 h-20 text-[#8063F7]/70" />
-                  </div>
-                )}
+              <div
+                data-testid="about-profile-card"
+                className="relative w-48 h-48 rounded-2xl overflow-hidden border border-[#8063F7]/40 bg-[#080B16] shadow-2xl shadow-black/50 group-hover:border-[#8063F7]/70 group-hover:shadow-[0_12px_36px_rgba(128,99,247,0.2)] transition-all duration-500 flex items-center justify-center p-1"
+              >
+                {/* Inner 9:16 vertical frame centered horizontally & vertically */}
+                <div
+                  data-testid="profile-image-frame-9-16"
+                  className="relative h-full aspect-[9/16] max-h-full flex items-center justify-center overflow-hidden bg-[#080B16]"
+                >
+                  {avatarMedia ? (
+                    <MediaRenderer
+                      url={avatarMedia.url}
+                      mimeType={avatarMedia.mimeType}
+                      altText={profile?.name || 'Avatar'}
+                      fill
+                      className="object-contain object-cover [object-fit:contain_!important]"
+                      priority
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#171D32] to-[#101426]">
+                      <span className="font-heading font-extrabold text-2xl text-[#8063F7]">GT</span>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
 

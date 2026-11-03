@@ -29,7 +29,12 @@
     "readArticle": "ፅሁፉን ያንብቡ",
     "anonymous": "ስም አልባ",
     "at": "በ",
-    "downloadResume": "ሲቪ ያውርዱ"
+    "downloadResume": "ሲቪ ያውርዱ",
+    "badgeHeader": "የመሃንዲስ መታወቂያ // የተረጋገጠ [REVIEW]",
+    "academicStudent": "የ4ኛ ዓመት የሶፍትዌር ምህንድስና ተማሪ @ ASTU [REVIEW]",
+    "statusAvailable": "ለፕሮጀክቶች ዝግጁ [REVIEW]",
+    "badgeLocation": "ኢትዮጵያ [REVIEW]",
+    "badgeIdCode": "መታወቂያ: AVN-2026-GT [REVIEW]"
   },
   "Theme": {
     "toggle": "ገጽታ ቀይር",
@@ -52,7 +57,9 @@
     "downloadResume": "ሲቪ ያውርዱ",
     "experience": "የስራ ልምድ",
     "present": "አሁን",
-    "skills": "ክህሎት እና ሙያ"
+    "skills": "ክህሎት እና ሙያ",
+    "avatarRecommended": "የሚመከር: 9:16 ቀጥ ያለ (ለምሳሌ 720x1280) [REVIEW]",
+    "avatarLandscapeWarning": "የተሰቀለው ምስል አግድም ነው። በማእከል ተስተካክሎ ይቀመጣል፤ የ9:16 ቀጥ ያለ ፎቶ ይመረጣል። [REVIEW]"
   },
   "Services": {
     "title": "አገልግሎቶች",

@@ -20,7 +20,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 
-export const revalidate = 60;
+export const revalidate = 3600;
 export const dynamic = 'auto';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {

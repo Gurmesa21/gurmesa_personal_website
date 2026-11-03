@@ -7,7 +7,7 @@ import { unstable_noStore as noStore } from 'next/cache';
 import { Mail, Share2, MessageSquare, ArrowUpRight, Clock, ShieldCheck, Code2, MailBadge } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-export const revalidate = 60;
+export const revalidate = 3600;
 export const dynamic = 'auto';
 
 export function generateStaticParams() {

@@ -19,7 +19,7 @@ export async function TestimonialList({ testimonials }: TestimonialListProps = {
     <div className="flex flex-col gap-4 sm:gap-5 w-full min-w-0">
       {testimonials.map((testimonial, idx) => (
         <article
-          key={testimonial.id}
+          key={testimonial.id} data-card
           className="group relative w-full min-w-0 max-w-full rounded-2xl border border-[#292D45] bg-[#101426] p-5 sm:p-7 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 flex flex-col justify-between space-y-4 overflow-hidden"
         >
           <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
@@ -80,3 +80,4 @@ export async function TestimonialList({ testimonials }: TestimonialListProps = {
     </div>
   );
 }
+

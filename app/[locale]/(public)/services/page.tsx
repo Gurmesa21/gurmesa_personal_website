@@ -17,7 +17,7 @@ import {
   ArrowUpRight,
 } from 'lucide-react';
 
-export const revalidate = 60;
+export const revalidate = 3600;
 export const dynamic = 'auto';
 
 export function generateStaticParams() {
@@ -121,6 +121,7 @@ export default async function ServicesPage({
             return (
               <div
                 key={service.id}
+                data-card
                 className="group relative flex flex-col justify-between rounded-2xl border border-[#292D45] bg-[#101426] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 overflow-hidden aspect-video"
               >
                 {/* Thin Top Accent Line Animation */}

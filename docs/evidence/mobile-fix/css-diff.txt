@@ -1,0 +1,310 @@
+﻿diff --git a/app/[locale]/(public)/about/page.tsx b/app/[locale]/(public)/about/page.tsx
+index 83770d8..78a3b3c 100644
+--- a/app/[locale]/(public)/about/page.tsx
++++ b/app/[locale]/(public)/about/page.tsx
+@@ -192,7 +192,7 @@ export default async function AboutPage() {
+                   <div className="text-xs font-semibold uppercase tracking-wider text-[#858EA8] text-left">
+                     Connect & Profiles
+                   </div>
+-                  <div className="flex flex-col gap-2 w-full">
++                  <div className="flex flex-col items-start gap-2 w-full">
+                     {socialLinks.map((link) => {
+                       const info = getSocialInfo(link.platform, link.label);
+                       const isExternal = link.url.startsWith('http://') || link.url.startsWith('https://');
+@@ -203,13 +203,13 @@ export default async function AboutPage() {
+                           target={isExternal ? '_blank' : undefined}
+                           rel={isExternal ? 'noopener noreferrer' : undefined}
+                           aria-label={info.name}
+-                          className="flex items-center gap-3 w-full px-3.5 py-2.5 rounded-xl border border-[#292D45] bg-[#171D32]/80 text-[#D0D4E4] hover:border-[#8063F7]/70 hover:bg-[#1f2642] hover:text-[#F5F6FC] hover:shadow-md hover:shadow-[#8063F7]/10 focus:outline-none focus:ring-2 focus:ring-[#8063F7] focus:ring-offset-2 focus:ring-offset-[#101426] transition-all duration-200 text-xs sm:text-sm font-medium group"
++                          className="inline-flex items-center gap-3 w-auto max-w-full px-3.5 py-2.5 rounded-xl border border-[#292D45] bg-[#171D32]/80 text-[#D0D4E4] hover:border-[#8063F7]/70 hover:bg-[#1f2642] hover:text-[#F5F6FC] hover:shadow-md hover:shadow-[#8063F7]/10 focus:outline-none focus:ring-2 focus:ring-[#8063F7] focus:ring-offset-2 focus:ring-offset-[#101426] transition-all duration-200 text-xs sm:text-sm font-medium group"
+                         >
+                           <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-[#8063F7]/30 bg-[#101426] text-[#A995FF] group-hover:text-white group-hover:border-[#8063F7]/60 transition-colors">
+                             <SocialIcon type={info.icon} />
+                           </span>
+                           <span className="truncate">{info.name}</span>
+-                          <ArrowUpRight className="w-3.5 h-3.5 ml-auto text-[#858EA8] group-hover:text-[#A995FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
++                          <ArrowUpRight className="w-3.5 h-3.5 text-[#858EA8] group-hover:text-[#A995FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 ml-1.5" />
+                         </a>
+                       );
+                     })}
+@@ -220,7 +220,7 @@ export default async function AboutPage() {
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         aria-label={t('downloadResume')}
+-                        className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border-0 bg-gradient-to-r from-[#8063F7] to-[#4F6FF0] text-white hover:from-[#7154e6] hover:to-[#3e5edb] text-xs sm:text-sm font-semibold shadow-md shadow-[#8063F7]/25 hover:shadow-[#8063F7]/40 focus:outline-none focus:ring-2 focus:ring-[#8063F7] focus:ring-offset-2 focus:ring-offset-[#101426] active:scale-95 transition-all duration-200 mt-1"
++                        className="inline-flex items-center justify-center gap-2 w-auto max-w-full px-4 py-2.5 rounded-xl border-0 bg-gradient-to-r from-[#8063F7] to-[#4F6FF0] text-white hover:from-[#7154e6] hover:to-[#3e5edb] text-xs sm:text-sm font-semibold shadow-md shadow-[#8063F7]/25 hover:shadow-[#8063F7]/40 focus:outline-none focus:ring-2 focus:ring-[#8063F7] focus:ring-offset-2 focus:ring-offset-[#101426] active:scale-95 transition-all duration-200 mt-1"
+                       >
+                         <Download className="w-4 h-4 shrink-0" />
+                         <span>{t('downloadResume')}</span>
+diff --git a/app/[locale]/(public)/blog/page.tsx b/app/[locale]/(public)/blog/page.tsx
+index 10c2bd7..cb8a019 100644
+--- a/app/[locale]/(public)/blog/page.tsx
++++ b/app/[locale]/(public)/blog/page.tsx
+@@ -113,18 +113,18 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
+           {postsWithImages.map(post => (
+             <article
+               key={post.id}
+-              className="group relative flex flex-col justify-between rounded-2xl border border-[#292D45] bg-[#101426] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 overflow-hidden min-h-[240px] sm:min-h-[260px]"
++              className="group relative flex flex-col justify-between rounded-2xl border border-[#292D45] bg-[#101426] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 overflow-hidden aspect-video"
+             >
+               {/* Thin Top Accent Line Animation */}
+               <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+ 
+               {/* Static Background Media Layer: covers entire card behind text */}
+-              <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
++              <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#080B16] flex items-center justify-center">
+                 {post.mediaObj ? (
+                   post.mediaObj.mimeType.startsWith('video/') ? (
+                     <video
+                       src={post.mediaObj.url}
+-                      className="h-full w-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
++                      className="h-full w-full object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
+                       autoPlay
+                       loop
+                       muted
+@@ -136,7 +136,7 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
+                       mimeType={post.mediaObj.mimeType}
+                       altText={post.mediaObj.altText || post.title}
+                       fill
+-                      className="object-cover scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
++                      className="object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
+                     />
+                   )
+                 ) : (
+diff --git a/app/[locale]/(public)/page.tsx b/app/[locale]/(public)/page.tsx
+index c0a19e0..2740b51 100644
+--- a/app/[locale]/(public)/page.tsx
++++ b/app/[locale]/(public)/page.tsx
+@@ -32,7 +32,6 @@ import {
+ import { getStorageAdapter } from '@/lib/storage';
+ import { prisma } from '@/server/repositories/db';
+ import { MediaRenderer } from '@/components/ui/MediaRenderer';
+-import { CardMedia } from '@/components/ui/CardMedia';
+ import { unstable_noStore as noStore } from 'next/cache';
+ 
+ function getServiceIcon(slug: string) {
+@@ -143,7 +142,8 @@ export async function generateMetadata(): Promise<Metadata> {
+   };
+ }
+ 
+-export default async function HomePage(props?: {
++export default async function HomePage(props: {
++  params?: Promise<{ locale: string }>;
+   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+ }) {
+   if (isTestMode()) {
+@@ -432,14 +432,39 @@ export default async function HomePage(props?: {
+                     return (
+                       <div
+                         key={service.id}
+-                        className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-4.5 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10"
++                        className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-4.5 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 aspect-video"
+                       >
+                         {/* Thin Top Accent Line Animation */}
+                         <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+ 
+-                        {/* 16:9 Media Box: fits 1280x720 file whole */}
+-                        <div className="mb-3">
+-                          <CardMedia mediaObj={service.mediaObj} title={service.title} iconName={service.slug} />
++                        {/* Static Background Media Layer: covers entire card behind text */}
++                        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#080B16] flex items-center justify-center">
++                          {service.mediaObj ? (
++                            service.mediaObj.mimeType.startsWith('video/') ? (
++                              <video
++                                src={service.mediaObj.url}
++                                className="h-full w-full object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
++                                autoPlay
++                                loop
++                                muted
++                                playsInline
++                              />
++                            ) : (
++                              <MediaRenderer
++                                url={service.mediaObj.url}
++                                mimeType={service.mediaObj.mimeType}
++                                altText={service.title}
++                                fill
++                                className="object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
++                              />
++                            )
++                          ) : (
++                            <div className="relative h-full w-full bg-gradient-to-br from-[#8063F7]/25 via-[#171D32] to-[#101426]">
++                              <div className="absolute inset-0 bg-gradient-to-t from-[#8063F7]/20 to-transparent" />
++                            </div>
++                          )}
++                          {/* Gradient overlay: increased transparency so background image is clearly visible */}
++                          <div className="absolute inset-0 bg-gradient-to-t from-[#080B16]/92 via-[#080B16]/55 to-[#080B16]/35 group-hover:via-[#080B16]/45 group-hover:to-[#080B16]/25 transition-all duration-300" />
+                         </div>
+ 
+                         {/* Subtle hover radial glow */}
+@@ -521,17 +546,41 @@ export default async function HomePage(props?: {
+                   <Link
+                     key={project.id}
+                     href={`/work/${project.slug}`}
+-                    className="group relative block overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-3 sm:p-3.5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10"
++                    className="group relative block overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 aspect-video"
+                   >
+                     {/* Thin Top Accent Line Animation */}
+                     <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+ 
+-                    {/* 16:9 Media Box: fits 1280x720 file whole */}
+-                    <div className="mb-3">
+-                      <CardMedia mediaObj={project.mediaObj} title={project.title} iconName="project" />
++                    {/* Static Background Media Layer: covers entire card behind text */}
++                    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#080B16] flex items-center justify-center">
++                      {project.mediaObj ? (
++                        project.mediaObj.mimeType.startsWith('video/') ? (
++                          <video
++                            src={project.mediaObj.url}
++                            className="h-full w-full object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
++                            autoPlay
++                            loop
++                            muted
++                            playsInline
++                          />
++                        ) : (
++                          <MediaRenderer
++                            url={project.mediaObj.url}
++                            mimeType={project.mediaObj.mimeType}
++                            altText={project.mediaObj.altText || project.title}
++                            fill
++                            className="object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
++                          />
++                        )
++                      ) : (
++                        <div className="relative h-full w-full bg-gradient-to-br from-[#4F6FF0]/25 via-[#171D32] to-[#101426]">
++                          <div className="absolute inset-0 bg-gradient-to-t from-[#8063F7]/20 to-transparent" />
++                        </div>
++                      )}
++                      {/* Gradient overlay: increased transparency so background image is clearly visible */}
++                      <div className="absolute inset-0 bg-gradient-to-t from-[#080B16]/92 via-[#080B16]/55 to-[#080B16]/35 group-hover:via-[#080B16]/45 group-hover:to-[#080B16]/25 transition-all duration-300" />
+                     </div>
+ 
+-
+                     <div className="pointer-events-none absolute -top-12 -right-12 h-24 w-24 rounded-full bg-[#8063F7]/15 blur-2xl transition-transform duration-500 group-hover:scale-150" />
+ 
+                     <div className="relative z-10 space-y-2">
+diff --git a/app/[locale]/(public)/services/page.tsx b/app/[locale]/(public)/services/page.tsx
+index 4c9b0f3..4491a33 100644
+--- a/app/[locale]/(public)/services/page.tsx
++++ b/app/[locale]/(public)/services/page.tsx
+@@ -5,7 +5,7 @@ import { Metadata } from 'next';
+ import { getTranslations, setRequestLocale } from 'next-intl/server';
+ import { getStorageAdapter } from '@/lib/storage';
+ import { prisma } from '@/server/repositories/db';
+-import { CardMedia } from '@/components/ui/CardMedia';
++import { MediaRenderer } from '@/components/ui/MediaRenderer';
+ import { isTestMode } from '@/lib/test-mode';
+ import { unstable_noStore as noStore } from 'next/cache';
+ import {
+@@ -121,16 +121,44 @@ export default async function ServicesPage({
+             return (
+               <div
+                 key={service.id}
+-                className="group relative flex flex-col justify-between rounded-2xl border border-[#292D45] bg-[#101426] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 overflow-hidden"
++                className="group relative flex flex-col justify-between rounded-2xl border border-[#292D45] bg-[#101426] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 overflow-hidden aspect-video"
+               >
+                 {/* Thin Top Accent Line Animation */}
+                 <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+ 
+-                {/* 16:9 Media Box: fits 1280x720 file whole */}
+-                <div className="mb-5">
+-                  <CardMedia mediaObj={service.mediaObj} title={service.title} iconName={service.slug} />
++                {/* Static Background Media Layer: covers entire card behind text */}
++                <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#080B16] flex items-center justify-center">
++                  {service.mediaObj ? (
++                    service.mediaObj.mimeType.startsWith('video/') ? (
++                      <video
++                        src={service.mediaObj.url}
++                        className="h-full w-full object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
++                        autoPlay
++                        loop
++                        muted
++                        playsInline
++                      />
++                    ) : (
++                      <MediaRenderer
++                        url={service.mediaObj.url}
++                        mimeType={service.mediaObj.mimeType}
++                        altText={service.title}
++                        fill
++                        className="object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
++                      />
++                    )
++                  ) : (
++                    <div className="relative h-full w-full bg-gradient-to-br from-[#8063F7]/25 via-[#171D32] to-[#101426]">
++                      <div className="absolute inset-0 bg-gradient-to-t from-[#8063F7]/20 to-transparent" />
++                    </div>
++                  )}
++                  {/* Gradient overlay: increased transparency so background image is clearly visible */}
++                  <div className="absolute inset-0 bg-gradient-to-t from-[#080B16]/92 via-[#080B16]/55 to-[#080B16]/35 group-hover:via-[#080B16]/45 group-hover:to-[#080B16]/25 transition-all duration-300" />
+                 </div>
+ 
++                {/* Subtle hover radial glow */}
++                <div className="pointer-events-none absolute -top-12 -right-12 h-28 w-28 rounded-full bg-[#8063F7]/15 blur-2xl transition-transform duration-500 group-hover:scale-150" />
++
+                 {/* Content hierarchy */}
+                 <div className="relative z-10 flex flex-col flex-1 justify-between space-y-4">
+                   <div className="space-y-3">
+diff --git a/app/[locale]/(public)/work/page.tsx b/app/[locale]/(public)/work/page.tsx
+index a424893..035cc5c 100644
+--- a/app/[locale]/(public)/work/page.tsx
++++ b/app/[locale]/(public)/work/page.tsx
+@@ -5,7 +5,7 @@ import { Metadata } from 'next';
+ import { getTranslations, setRequestLocale } from 'next-intl/server';
+ import { getStorageAdapter } from '@/lib/storage';
+ import { prisma } from '@/server/repositories/db';
+-import { CardMedia } from '@/components/ui/CardMedia';
++import { MediaRenderer } from '@/components/ui/MediaRenderer';
+ import { Layers, ArrowUpRight } from 'lucide-react';
+ import { isTestMode } from '@/lib/test-mode';
+ import { unstable_noStore as noStore } from 'next/cache';
+@@ -162,16 +162,44 @@ export default async function WorkPage({
+           {projectsWithImages.map((project) => (
+             <div
+               key={project.id}
+-              className="group relative flex flex-col justify-between rounded-2xl border border-[#292D45] bg-[#101426] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 overflow-hidden"
++              className="group relative flex flex-col justify-between rounded-2xl border border-[#292D45] bg-[#101426] p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 overflow-hidden aspect-video"
+             >
+               {/* Thin Top Accent Line Animation */}
+               <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+ 
+-              {/* 16:9 Media Box: fits 1280x720 file whole */}
+-              <div className="mb-5">
+-                <CardMedia mediaObj={project.mediaObj} title={project.title} iconName="project" />
++              {/* Static Background Media Layer: covers entire card behind text */}
++              <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#080B16] flex items-center justify-center">
++                {project.mediaObj ? (
++                  project.mediaObj.mimeType.startsWith('video/') ? (
++                    <video
++                      src={project.mediaObj.url}
++                      className="h-full w-full object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
++                      autoPlay
++                      loop
++                      muted
++                      playsInline
++                    />
++                  ) : (
++                    <MediaRenderer
++                      url={project.mediaObj.url}
++                      mimeType={project.mediaObj.mimeType}
++                      altText={project.mediaObj.altText || project.title}
++                      fill
++                      className="object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
++                    />
++                  )
++                ) : (
++                  <div className="relative h-full w-full bg-gradient-to-br from-[#4F6FF0]/25 via-[#171D32] to-[#101426]">
++                    <div className="absolute inset-0 bg-gradient-to-t from-[#8063F7]/20 to-transparent" />
++                  </div>
++                )}
++                {/* Gradient overlay: increased transparency so background image is clearly visible */}
++                <div className="absolute inset-0 bg-gradient-to-t from-[#080B16]/92 via-[#080B16]/55 to-[#080B16]/35 group-hover:via-[#080B16]/45 group-hover:to-[#080B16]/25 transition-all duration-300" />
+               </div>
+ 
++              {/* Subtle hover radial glow */}
++              <div className="pointer-events-none absolute -top-12 -right-12 h-28 w-28 rounded-full bg-[#8063F7]/15 blur-2xl transition-transform duration-500 group-hover:scale-150" />
++
+               {/* Content area */}
+               <div className="relative z-10 flex flex-col flex-1 justify-between space-y-4">
+                 <div className="flex items-center justify-between">

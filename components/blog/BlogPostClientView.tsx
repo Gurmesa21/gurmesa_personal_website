@@ -87,13 +87,16 @@ export function BlogPostClientView({
   const tNav = useTranslations('Navigation');
 
   // Active view: 'article' (default reading) or 'comments' (on-demand dedicated screen)
-  const [view, setView] = useState<'article' | 'comments'>(() => {
-    if (typeof window !== 'undefined' && window.location.hash === '#comments') {
-      return 'comments';
-    }
-    return 'article';
-  });
+  const [view, setView] = useState<'article' | 'comments'>('article');
   const savedScrollY = useRef<number>(0);
+
+  useEffect(() => {
+    if (window.location.hash === '#comments') {
+      requestAnimationFrame(() => {
+        setView('comments');
+      });
+    }
+  }, []);
 
   // Social interactions state
   const [isLiked, setIsLiked] = useState(!!post.likedByMe);
@@ -247,7 +250,7 @@ export function BlogPostClientView({
     return (
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-8 animate-in fade-in duration-200">
         {/* Navigation & Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-[#292D45]">
+        <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[#292D45]">
           <button
             onClick={handleBackToPost}
             aria-label={t('backToArticle') || 'Back to Article'}
@@ -263,7 +266,7 @@ export function BlogPostClientView({
         </div>
 
         {/* Comments Title Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="space-y-1">
             <div className="flex items-center gap-2.5">
               <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#8063F7]/30 bg-[#8063F7]/10 text-[#8063F7]">
@@ -402,7 +405,7 @@ export function BlogPostClientView({
                 </div>
 
                 <div className="flex-1 min-w-0 space-y-1.5">
-                  <div className="flex items-center justify-between gap-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
                     <span className="font-heading font-bold text-sm text-[#F5F6FC] truncate">
                       {comment.author}
                     </span>
@@ -526,8 +529,8 @@ export function BlogPostClientView({
             )}
 
             {/* Compact Social Action Bar at the bottom of the article card */}
-            <div className="pt-6 mt-8 border-t border-[#292D45] flex items-center justify-between">
-              <div className="flex items-center gap-3 sm:gap-4">
+            <div className="pt-6 mt-8 border-t border-[#292D45] flex flex-wrap items-center justify-between gap-3">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                 {/* Like Button */}
                 <button
                   onClick={handleLike}
@@ -595,7 +598,7 @@ export function BlogPostClientView({
             <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
             <div>
-              <div className="mb-3.5 flex items-center justify-between">
+              <div className="mb-3.5 flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-2.5">
                   {avatarMedia ? (
                     <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full border border-[#8063F7]/50 bg-[#171D32] flex items-center justify-center">
@@ -660,7 +663,7 @@ export function BlogPostClientView({
               </div>
             </div>
 
-            <div className="mt-4 flex items-center justify-between border-t border-[#292D45]/60 pt-3">
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-[#292D45]/60 pt-3">
               <Link
                 href="/about"
                 className="inline-flex items-center gap-1 text-xs font-semibold text-[#A995FF] transition-colors hover:text-white"
@@ -684,7 +687,7 @@ export function BlogPostClientView({
           {/* Discussion Card Prompt */}
 
           <div className="rounded-2xl border border-[#292D45] bg-[#101426] p-5 shadow-lg shadow-black/30 from-[#101426] via-[#171D32]/60 to-[#101426] p-5 sm:p-6 space-y-3 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap items-center justify-between gap-3">
               <span className="text-xs font-semibold uppercase tracking-wider text-[#A995FF]">
                 {t('discussion') || 'Discussion'}
               </span>
@@ -722,3 +725,5 @@ export function BlogPostClientView({
     </div>
   );
 }
+
+

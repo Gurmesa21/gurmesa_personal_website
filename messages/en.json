@@ -29,7 +29,12 @@
     "readArticle": "Read Article",
     "anonymous": "Anonymous",
     "at": "at",
-    "downloadResume": "Download Resume"
+    "downloadResume": "Download Resume",
+    "badgeHeader": "ENGINEER ID // VERIFIED",
+    "academicStudent": "4th-year Software Engineering Student @ ASTU",
+    "statusAvailable": "Available for projects",
+    "badgeLocation": "Ethiopia",
+    "badgeIdCode": "ID: AVN-2026-GT"
   },
   "Theme": {
     "toggle": "Toggle theme",
@@ -52,7 +57,9 @@
     "downloadResume": "Download Resume",
     "experience": "Experience",
     "present": "Present",
-    "skills": "Skills & Expertise"
+    "skills": "Skills & Expertise",
+    "avatarRecommended": "Recommended: 9:16 vertical (e.g. 720x1280)",
+    "avatarLandscapeWarning": "Uploaded image is landscape. It will be centered and scaled with letterboxing; a 9:16 vertical photo looks best."
   },
   "Services": {
     "title": "Services",
