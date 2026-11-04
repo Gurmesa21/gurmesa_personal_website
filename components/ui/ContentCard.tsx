@@ -91,7 +91,7 @@ export function ContentCard({
       <div className="pointer-events-none absolute -top-12 -right-12 h-28 w-28 rounded-full bg-[#8063F7]/15 blur-2xl transition-transform duration-500 group-hover:scale-150" />
 
       {/* Foreground Content: sits cleanly on top of background media */}
-      <div className="relative z-10 flex flex-col flex-1 justify-between space-y-3.5 min-w-0">
+      <div className="relative z-10 flex flex-col flex-1 min-w-0">
         <div className="space-y-2.5 min-w-0">
           {/* Top Meta / Icon / Badge Row */}
           {(icon || badge) && (
@@ -125,7 +125,7 @@ export function ContentCard({
         {(footerLeft || footerCta) && (
           <div
             data-card-footer
-            className="mt-auto pt-3 border-t border-[#292D45]/60 flex items-center justify-between gap-3 text-xs"
+            className="mt-auto pt-3 border-t border-[#292D45]/60 flex items-center justify-between gap-3 text-xs min-h-[48px]"
           >
             {footerLeft && (
               <div className="min-w-0 flex-1 truncate text-xs text-[#A5ABC1]">

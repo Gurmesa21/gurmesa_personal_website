@@ -183,18 +183,18 @@ export default async function WorkPage({
                   ) : undefined
                 }
                 footerLeft={
-                  <div className="flex flex-wrap items-center gap-1.5">
-                    {projectTags.slice(0, 3).map((tech) => (
+                  <div className="flex items-center gap-1.5 overflow-hidden">
+                    {projectTags.slice(0, 2).map((tech) => (
                       <span
                         key={tech.slug}
-                        className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium border border-[#292D45] bg-[#171D32]/80 text-[#A5ABC1]"
+                        className="inline-flex shrink-0 items-center px-2 py-0.5 rounded-md text-xs font-medium border border-[#292D45] bg-[#171D32]/80 text-[#A5ABC1]"
                       >
                         {tech.name}
                       </span>
                     ))}
-                    {projectTags.length > 3 && (
-                      <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-xs font-medium border border-[#292D45]/60 bg-[#171D32]/60 text-[#A5ABC1]">
-                        +{projectTags.length - 3}
+                    {projectTags.length > 2 && (
+                      <span className="inline-flex shrink-0 items-center px-1.5 py-0.5 rounded-md text-xs font-medium border border-[#292D45]/60 bg-[#171D32]/60 text-[#A5ABC1]">
+                        +{projectTags.length - 2}
                       </span>
                     )}
                   </div>
