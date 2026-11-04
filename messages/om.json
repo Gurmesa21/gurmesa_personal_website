@@ -6,7 +6,9 @@
     "work": "Hojiiwwan",
     "blog": "Barreeffama",
     "contact": "Quunnamtii",
-    "testimonials": "Ragaa namootaa"
+    "testimonials": "Ragaa namootaa",
+    "toggleMenu": "Bani ykn cufi [REVIEW]",
+    "closeMenu": "Cufi [REVIEW]"
   },
   "Footer": {
     "rights": "Mirgi hunduu seeraan eegamaadha.",

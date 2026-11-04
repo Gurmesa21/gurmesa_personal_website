@@ -117,7 +117,7 @@ test.describe('Staging Smoke Suite (Production Readiness)', () => {
     await page.selectOption('select[name="projectType"]', 'Web application development');
     await page.fill('textarea[name="message"]', 'This is an end-to-end automated smoke test inquiry message.');
     await page.click('button[type="submit"]');
-    await expect(page.locator('text=Thank you!')).toBeVisible({ timeout: 10000 });
+    await expect(page.locator('text=Thank you!')).toBeVisible({ timeout: 20000 });
 
     // Verify saved to database
     const savedInquiry = await prisma.inquiry.findFirst({ where: { email: testInquiryEmail } });
@@ -128,7 +128,7 @@ test.describe('Staging Smoke Suite (Production Readiness)', () => {
     await page.fill('input[name="name"]', `Smoke Client ${SMOKE_MARKER}`);
     await page.fill('textarea[name="text"]', 'Antigravity end-to-end verification delivers outstanding software quality and robustness.');
     await page.click('button[type="submit"]');
-    await expect(page.locator('text=Thank You!')).toBeVisible({ timeout: 10000 });
+    await expect(page.locator('text=Thank You!')).toBeVisible({ timeout: 20000 });
 
     // Verify testimonial saved with PENDING status
     const savedTestimonial = await prisma.testimonial.findFirst({

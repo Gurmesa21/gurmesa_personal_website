@@ -6,7 +6,9 @@
     "work": "Work",
     "blog": "Blog",
     "contact": "Contact",
-    "testimonials": "Testimonials"
+    "testimonials": "Testimonials",
+    "toggleMenu": "Toggle Menu",
+    "closeMenu": "Close menu"
   },
   "Footer": {
     "rights": "All rights reserved.",

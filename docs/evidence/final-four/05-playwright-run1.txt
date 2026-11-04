@@ -1,0 +1,271 @@
+﻿node.exe : Γùç injected env (13) from .env.test
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γùç injected env (13) from .env.test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γùç injected env (0) from .env.test
+[globalSetup] Resetting and seeding test database: gurmesa_test_db...
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "gurmesa_test_db", schema "public" at "127.0.0.1:5433"
+
+10 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+Seed completed with mixed-shape media fixtures.
+[globalSetup] Test database gurmesa_test_db reset and seeded successfully.
+
+Running 288 tests using 1 worker
+
+Γùç injected env (0) from .env.test
+
+[1/288] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:8:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on / (homepage with AUTHORIZED+PUBLISHED testimonial)
+[2/288] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:17:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /contact
+[3/288] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:26:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /privacy
+[4/288] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:35:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /about
+[5/288] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:44:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /blog
+[6/288] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:53:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /services
+[7/288] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:62:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /work
+[8/288] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:71:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ Axe scan on /terms
+[9/288] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:80:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ skip-to-content link works correctly
+[10/288] [chromium] ΓÇ║ tests\e2e\accessibility.spec.ts:97:3 ΓÇ║ Accessibility & Shell Features ΓÇ║ mobile menu opens, traps focus, and closes with escape
+[11/288] [chromium] ΓÇ║ tests\e2e\admin-comments.spec.ts:14:3 ΓÇ║ Admin Comments Moderation Queue ΓÇ║ navigates to /admin/comments and verifies queue filters and UI
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10166)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[12/288] [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:14:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Services: Edit and persist
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10166)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[13/288] [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:51:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Projects: Edit and persist
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10166)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[14/288] [chromium] ΓÇ║ tests\e2e\admin-crud.spec.ts:81:3 ΓÇ║ Admin CRUD Edit and Persist ΓÇ║ Blog: Edit and persist
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10166)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[15/288] [chromium] ΓÇ║ tests\e2e\axe-dark-scan.spec.ts:25:3 ΓÇ║ Task 10 - Axe Accessibility Scan (8 Public + 4 Admin Pages) ΓÇ║ run axe in dark theme and report violation counts and contrast failures
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10166)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[16/288] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:28:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post is absent from public index HTML
+[17/288] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:34:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post returns 404 on direct lookup
+[18/288] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:39:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Draft post is absent from sitemap
+[19/288] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:45:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Unauthenticated request to the preview URL is redirected/rejected and contains no draft content
+[20/288] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:58:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: /blog index renders seeded published posts
+[21/288] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:65:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: article detail page loads from the index
+[22/288] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:80:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: search (?q=) filters results; a DRAFT post's title never appears in results
+[23/288] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:97:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Playwright: category and tag filters work
+[24/288] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:103:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ Axe scan (zero critical/serious) on /blog and /blog/[slug]
+[25/288] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:117:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ XSS: a post whose body contains <script> and <img src=x onerror=...> payloads renders them inert on /blog/[slug]
+[26/288] [chromium] ΓÇ║ tests\e2e\blog.spec.ts:137:3 ΓÇ║ Blog SEC-ACL E2E Tests ΓÇ║ XSS: CaseStudy content on /work/[slug] renders inert
+[27/288] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:14:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ i. Publish a testimonial -> appears on /
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10166)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[28/288] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:37:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ ii. Mark a featured project DRAFT -> absent from / and /work
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10166)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[29/288] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:58:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iii. Unpublish a service -> absent from /services and /
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10166)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[30/288] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:75:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ iv. Unpublish a blog post -> absent from / and /blog
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10166)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[31/288] [chromium] ΓÇ║ tests\e2e\caching.spec.ts:98:3 ΓÇ║ Caching and Revalidation (End-to-End) ΓÇ║ v. Change project to PRIVATE -> absent from /, /work, and sitemap.xml
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10166)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[32/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after about-en
+[33/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after services-en
+[34/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after services-slug-en
+[35/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after work-en
+[36/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after work-slug-en
+[37/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after blog-en
+[38/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after blog-slug-en
+[39/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after contact-en
+[40/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after testimonials-en
+[41/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after privacy-en
+[42/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after terms-en
+[43/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after 404-en
+[44/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after services-am
+[45/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after blog-am
+[46/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after services-om
+[47/288] [chromium] ΓÇ║ tests\e2e\capture-c1-after.spec.ts:34:5 ΓÇ║ C1 After Screenshots ΓÇ║ capture after blog-om
+[48/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before about-en
+[49/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before services-en
+[50/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before services-slug-en
+[51/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before work-en
+[52/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before work-slug-en
+[53/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before blog-en
+[54/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before blog-slug-en
+[55/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before contact-en
+[56/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before testimonials-en
+[57/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before privacy-en
+[58/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before terms-en
+[59/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before 404-en
+[60/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before services-am
+[61/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before blog-am
+[62/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before services-om
+[63/288] [chromium] ΓÇ║ tests\e2e\capture-c1-before.spec.ts:34:5 ΓÇ║ C1 Before Screenshots ΓÇ║ capture before blog-om
+[64/288] [chromium] ΓÇ║ tests\e2e\cards-mobile.spec.ts:5:3 ΓÇ║ MASTER PROMPT ΓÇö Card & Media Frame Architecture, Layout Uniformity & Mobile Integrity ΓÇ║ Home page: Service Card width equals Featured Work Card width at desktop 1280px
+[65/288] [chromium] ΓÇ║ tests\e2e\cards-mobile.spec.ts:32:3 ΓÇ║ MASTER PROMPT ΓÇö Card & Media Frame Architecture, Layout Uniformity & Mobile Integrity ΓÇ║ Public pages: media is rendered as card background behind text overlay
+[66/288] [chromium] ΓÇ║ tests\e2e\cards-mobile.spec.ts:58:3 ΓÇ║ MASTER PROMPT ΓÇö Card & Media Frame Architecture, Layout Uniformity & Mobile Integrity ΓÇ║ Footer baseline alignment: in every grid row, footers sit at card bottom and on the same baseline within 1px
+[67/288] [chromium] ΓÇ║ tests\e2e\cards-mobile.spec.ts:116:3 ΓÇ║ MASTER PROMPT ΓÇö Card & Media Frame Architecture, Layout Uniformity & Mobile Integrity ΓÇ║ Services page: long price label wraps gracefully without colliding with CTA at 360px
+[68/288] [chromium] ΓÇ║ tests\e2e\cards-mobile.spec.ts:141:3 ΓÇ║ MASTER PROMPT ΓÇö Card & Media Frame Architecture, Layout Uniformity & Mobile Integrity ΓÇ║ About page: LanyardBadge renders with size="about" hanging from card top edge
+[69/288] [chromium] ΓÇ║ tests\e2e\cards-mobile.spec.ts:159:3 ΓÇ║ MASTER PROMPT ΓÇö Card & Media Frame Architecture, Layout Uniformity & Mobile Integrity ΓÇ║ Slug pages: 16:9 media banner renders without clipping or overflow at mobile widths
+[70/288] [chromium] ΓÇ║ tests\e2e\cards-mobile.spec.ts:184:3 ΓÇ║ MASTER PROMPT ΓÇö Card & Media Frame Architecture, Layout Uniformity & Mobile Integrity ΓÇ║ Zero horizontal overflow across all pages at 360px and 412px
+[71/288] [chromium] ΓÇ║ tests\e2e\contact.spec.ts:12:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ contact form: happy path submits and shows confirmation, using keyboard only
+[72/288] [chromium] ΓÇ║ tests\e2e\contact.spec.ts:32:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ contact form: invalid submit focuses the error summary and associates errors with fields
+[73/288] [chromium] ΓÇ║ tests\e2e\contact.spec.ts:46:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ inquiry-leak scan: assert the marker is absent from the HTML of public surfaces and sitemap
+[74/288] [chromium] ΓÇ║ tests\e2e\contact.spec.ts:65:3 ΓÇ║ Inquiry & Testimonial E2E ΓÇ║ unauthenticated visit to /admin/inquiries and /admin/testimonials redirects to login
+[75/288] [chromium] ΓÇ║ tests\e2e\csp-media.spec.ts:6:3 ΓÇ║ Content Security Policy - Media and Image External Origins ΓÇ║ Prove browser console has zero CSP violations for img and video from external origin
+[chromium] ΓÇ║ tests\e2e\csp-media.spec.ts:6:3 ΓÇ║ Content Security Policy - Media and Image External Origins ΓÇ║ Prove browser console has zero CSP violations for img and video from external origin
+CSP Violations detected: 0
+
+[76/288] [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:5:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ HIDDEN social link absent from getPublicSocialLinks output AND from the rendered /about page HTML
+[77/288] [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:26:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ editing the Profile tagline via the admin UI shows the new tagline on / on the next request
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10166)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+
+[78/288] [chromium] ΓÇ║ tests\e2e\day10-admin.spec.ts:47:3 ΓÇ║ Day 10 - Admin & SEO E2E ΓÇ║ production error page shows no stack trace in the rendered HTML
+[WebServer] Γ¿» Error: simulated secret internal server error postgres://secret@db
+[WebServer]     at T 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\[locale]\(public)\page.js:7:27089) {
+[WebServer]   digest: '754835229'
+[WebServer] }
+
+[79/288] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:5:3 ΓÇ║ Day 10b E2E ΓÇ║ robots.ts disallows /admin and /api and references the sitemap
+[80/288] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:13:3 ΓÇ║ Day 10b E2E ΓÇ║ sitemap includes the static pages and public entities, excludes the known private project, DRAFT case study, and DRAFT post
+[81/288] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:21:3 ΓÇ║ Day 10b E2E ΓÇ║ /admin pages, /admin/login, and the blog preview page each return noindex
+[82/288] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:31:3 ΓÇ║ Day 10b E2E ΓÇ║ canonical URL and OG title present in generateMetadata output for: home, one service detail, one case study, one blog post
+[83/288] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:43:3 ΓÇ║ Day 10b E2E ΓÇ║ JSON-LD on at least one page parses as valid JSON, and a fixture with </script> in its title does not break out of the script element
+[84/288] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:60:3 ΓÇ║ Day 10b E2E ΓÇ║ login with an external callbackUrl does not redirect off-site
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10166)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[85/288] [chromium] ΓÇ║ tests\e2e\day10b.spec.ts:72:3 ΓÇ║ Day 10b E2E ΓÇ║ SEO override persists in admin UI and is rendered by generateMetadata
+
+[WebServer] LOGIN ERROR: Error: NEXT_REDIRECT
+[WebServer]     at i (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87280)
+[WebServer]     at j (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:87392)
+[WebServer]     at gb (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\7045.js:404:60406)
+[WebServer]     at async h 
+(C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\app\(admin)\admin\login\page.js:1:10166)
+[WebServer]     at async p (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:63:43997)
+[WebServer]     at async q (C:\Users\Hp\Documents\Projects\Gurmesa_website\.next\server\chunks\2347.js:64:4598) {
+[WebServer]   digest: 'NEXT_REDIRECT;push;http://localhost:3006/admin;307;'
+[WebServer] }
+[86/288] [chromium] ΓÇ║ tests\e2e\day5.spec.ts:4:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ homepage renders hero, services preview, about snapshot with real seeded data
+[87/288] [chromium] ΓÇ║ tests\e2e\day5.spec.ts:20:3 ΓÇ║ Day 5 - Public Pages and Navigation ΓÇ║ services index -> click service -> detail page loads correctly
+[88/288] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:11:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(c): /work page does NOT render the private project
+[89/288] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:18:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(d): /work/[slug] returns 404 for a private project
+[90/288] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:23:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-02(e): sitemap.xml does NOT contain the private project URL
+[91/288] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:30:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(c): /work page does NOT render unpublished case studies
+[92/288] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:36:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(d): /work/[slug] returns 404 for an unpublished case study
+[93/288] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:41:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ SEC-ACL-03(e): sitemap.xml does NOT contain unpublished case study URLs
+[94/288] [chromium] ΓÇ║ tests\e2e\day6-portfolio.spec.ts:48:3 ΓÇ║ Day 6 - Portfolio & Case Studies (E2E & SEC-ACL) ΓÇ║ Public /work page renders seeded public case studies
+[95/288] [chromium] ΓÇ║ tests\e2e\final-four.spec.ts:11:3 ΓÇ║ SCOPE-LOCKED PROMPT: FINAL FOUR E2E VERIFICATION ΓÇ║ 1. Mobile menu button is visible, non-zero box, >=44x44px at 360, 390, 412; hidden at 1280 with desktop nav visible

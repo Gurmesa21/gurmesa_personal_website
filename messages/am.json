@@ -6,7 +6,9 @@
     "work": "ስራዎች",
     "blog": "ጦማር",
     "contact": "አግኙኝ",
-    "testimonials": "ምስክርነቶች"
+    "testimonials": "ምስክርነቶች",
+    "toggleMenu": "ምናሌ ቀይር [REVIEW]",
+    "closeMenu": "ምናሌ ዝጋ [REVIEW]"
   },
   "Footer": {
     "rights": "መብቱ በህግ የተጠበቀ ነው።",

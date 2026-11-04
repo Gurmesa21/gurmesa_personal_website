@@ -1,0 +1,66 @@
+{
+  "375px": {
+    "work": {
+      "width": 343,
+      "height": 260,
+      "className": "group relative isolate flex flex-col h-full justify-between overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-4.5 sm:p-5 lg:p-6 shadow-xl shadow-black/40 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10 touch-manipulation min-w-0 min-h-[260px] sm:min-h-[280px]",
+      "gridColumns": "343px",
+      "gridGap": "20px"
+    },
+    "blog": {
+      "width": 343,
+      "height": 240,
+      "className": "group relative isolate flex flex-col h-full justify-between overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-4.5 sm:p-5 lg:p-6 shadow-xl shadow-black/40 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10 touch-manipulation min-w-0 min-h-[240px] sm:min-h-[260px]",
+      "gridColumns": "343px",
+      "gridGap": "16px"
+    }
+  },
+  "412px": {
+    "work": {
+      "width": 380,
+      "height": 260,
+      "className": "group relative isolate flex flex-col h-full justify-between overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-4.5 sm:p-5 lg:p-6 shadow-xl shadow-black/40 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10 touch-manipulation min-w-0 min-h-[260px] sm:min-h-[280px]",
+      "gridColumns": "380px",
+      "gridGap": "20px"
+    },
+    "blog": {
+      "width": 380,
+      "height": 240,
+      "className": "group relative isolate flex flex-col h-full justify-between overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-4.5 sm:p-5 lg:p-6 shadow-xl shadow-black/40 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10 touch-manipulation min-w-0 min-h-[240px] sm:min-h-[260px]",
+      "gridColumns": "380px",
+      "gridGap": "16px"
+    }
+  },
+  "768px": {
+    "work": {
+      "width": 348,
+      "height": 280,
+      "className": "group relative isolate flex flex-col h-full justify-between overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-4.5 sm:p-5 lg:p-6 shadow-xl shadow-black/40 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10 touch-manipulation min-w-0 min-h-[260px] sm:min-h-[280px]",
+      "gridColumns": "348px 348px",
+      "gridGap": "24px"
+    },
+    "blog": {
+      "width": 350,
+      "height": 260,
+      "className": "group relative isolate flex flex-col h-full justify-between overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-4.5 sm:p-5 lg:p-6 shadow-xl shadow-black/40 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10 touch-manipulation min-w-0 min-h-[240px] sm:min-h-[260px]",
+      "gridColumns": "350px 350px",
+      "gridGap": "20px"
+    }
+  },
+  "1280px": {
+    "work": {
+      "width": 596,
+      "height": 280,
+      "className": "group relative isolate flex flex-col h-full justify-between overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-4.5 sm:p-5 lg:p-6 shadow-xl shadow-black/40 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10 touch-manipulation min-w-0 min-h-[260px] sm:min-h-[280px]",
+      "gridColumns": "596px 596px",
+      "gridGap": "24px"
+    },
+    "blog": {
+      "width": 598,
+      "height": 260,
+      "className": "group relative isolate flex flex-col h-full justify-between overflow-hidden rounded-2xl border border-[#292D45] bg-[#101426] p-4.5 sm:p-5 lg:p-6 shadow-xl shadow-black/40 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-2xl hover:shadow-[#8063F7]/10 touch-manipulation min-w-0 min-h-[240px] sm:min-h-[260px]",
+      "gridColumns": "598px 598px",
+      "gridGap": "20px"
+    }
+  }
+}

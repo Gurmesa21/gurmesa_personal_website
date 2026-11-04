@@ -109,11 +109,11 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
         </div>
 
         {/* Posts Grid: 2 balanced columns desktop, 1 column mobile, items-stretch */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 items-stretch">
           {postsWithImages.map((post) => (
             <ContentCard
               key={post.id}
-              className="min-h-[240px] sm:min-h-[260px]"
+              className="min-h-[260px] sm:min-h-[280px]"
               href={`/blog/${post.slug}`}
               media={post.mediaObj}
               fallbackIcon={BookOpen}

@@ -398,3 +398,85 @@
     transform: rotate(2deg) !important;
   }
 }
+
+/* Site-wide Text Selection Highlight */
+::selection {
+  background-color: rgb(99 102 241 / 0.45);
+  color: #FFFFFF;
+}
+
+/* Keyboard Focus-Visible Rings */
+a:focus-visible,
+button:focus-visible,
+[data-card]:focus-visible {
+  outline: 2px solid #8063F7;
+  outline-offset: 2px;
+}
+
+/* Press Feedback (:active) */
+[data-card]:active,
+button:active,
+a:active,
+.btn:active,
+[role="button"]:active {
+  transform: scale(0.98);
+  box-shadow: 0 0 15px -2px rgba(128, 99, 247, 0.35);
+  transition-duration: 150ms;
+}
+
+/* Real Pointer / Hover Devices */
+@media (hover: hover) {
+  [data-card] {
+    transition: transform 300ms ease-out, border-color 300ms ease-out, box-shadow 300ms ease-out;
+  }
+  [data-card]:hover {
+    transform: translateY(-2px);
+    border-color: rgba(128, 99, 247, 0.7) !important;
+    box-shadow: 0 10px 30px -5px rgba(128, 99, 247, 0.25) !important;
+  }
+  [data-card]:hover [data-card-media-bg] > img,
+  [data-card]:hover [data-card-media-bg] > video {
+    transform: scale(1.04);
+  }
+}
+
+/* Touch Devices (@media (hover: none)) */
+@media (hover: none) {
+  button,
+  a,
+  [role="button"],
+  [data-card] {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  [data-card] {
+    transition: border-color 300ms ease-out, box-shadow 300ms ease-out;
+  }
+
+  [data-card][data-inview="true"] {
+    border-color: rgba(128, 99, 247, 0.7) !important;
+    box-shadow: 0 10px 30px -5px rgba(128, 99, 247, 0.25) !important;
+  }
+
+  [data-card][data-inview="true"] [data-card-media-bg] > img,
+  [data-card][data-inview="true"] [data-card-media-bg] > video {
+    transform: scale(1.04);
+  }
+}
+
+/* Motion Reduction */
+@media (prefers-reduced-motion: reduce) {
+  [data-card],
+  [data-card]:hover,
+  [data-card]:active,
+  button:active,
+  a:active,
+  .btn:active,
+  [role="button"]:active,
+  [data-card-media-bg] > img,
+  [data-card-media-bg] > video {
+    transform: none !important;
+    transition-property: color, background-color, border-color, box-shadow, opacity !important;
+  }
+}

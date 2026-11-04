@@ -425,7 +425,7 @@ export async function seed() {
         { name: 'Sara Bekele', content: 'Outstanding craftsmanship in design and code. The mobile experience on our platform transformed user retention dramatically.', permissionStatus: TestimonialPermissionStatus.AUTHORIZED, status: TestimonialStatus.PUBLISHED },
         { name: 'Alice Smith', content: 'Great work!', permissionStatus: TestimonialPermissionStatus.AUTHORIZED, status: TestimonialStatus.PUBLISHED },
         { name: 'Bob Jones', content: 'Very good.', permissionStatus: TestimonialPermissionStatus.PENDING, status: TestimonialStatus.DRAFT },
-        { name: 'Caching Testimonial', content: 'For caching tests.', permissionStatus: TestimonialPermissionStatus.PENDING, status: TestimonialStatus.DRAFT }
+        { name: 'Caching Testimonial', content: 'For caching tests.', permissionStatus: TestimonialPermissionStatus.PENDING, status: TestimonialStatus.DRAFT, createdAt: new Date(Date.now() + 5000) }
       ]
     });
 

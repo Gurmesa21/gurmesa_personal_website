@@ -1,0 +1,11 @@
+﻿ app/[locale]/(public)/blog/page.tsx  |   4 +-
+ app/[locale]/(public)/layout.tsx     |   2 +
+ app/globals.css                      |  82 +++++++++++++++
+ components/layout/header.tsx         | 188 +++++++++++++++++++++++++----------
+ messages/am.json                     |   4 +-
+ messages/en.json                     |   4 +-
+ messages/om.json                     |   4 +-
+ scripts/seed.ts                      |   2 +-
+ tests/e2e/partG-testimonials.spec.ts |   4 +-
+ tests/e2e/smoke.spec.ts              |   4 +-
+ 10 files changed, 238 insertions(+), 60 deletions(-)
