@@ -157,13 +157,14 @@ export default async function WorkPage({
           </h1>
         </div>
 
-        {/* Project Grid: unified responsive 3-column layout, items-stretch */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 items-stretch">
+        {/* Project Grid: balanced two-column layout on desktop, 1 column on mobile, items-stretch */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 items-stretch">
           {projectsWithImages.map((project) => {
             const projectTags = getProjectTags(project);
             return (
               <ContentCard
                 key={project.id}
+                className="min-h-[260px] sm:min-h-[280px]"
                 href={`/work/${encodeURIComponent(project.slug)}`}
                 media={project.mediaObj}
                 fallbackIcon={Layers}

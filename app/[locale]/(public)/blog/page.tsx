@@ -108,11 +108,12 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
           </form>
         </div>
 
-        {/* Posts Grid: unified responsive 3-column layout, items-stretch */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 items-stretch">
+        {/* Posts Grid: 2 balanced columns desktop, 1 column mobile, items-stretch */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 items-stretch">
           {postsWithImages.map((post) => (
             <ContentCard
               key={post.id}
+              className="min-h-[240px] sm:min-h-[260px]"
               href={`/blog/${post.slug}`}
               media={post.mediaObj}
               fallbackIcon={BookOpen}

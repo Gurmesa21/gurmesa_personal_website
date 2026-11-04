@@ -448,6 +448,7 @@ export default async function HomePage(props: {
                     return (
                       <ContentCard
                         key={service.id}
+                        className="min-h-[200px]"
                         href={`/services/${service.slug}`}
                         media={service.mediaObj}
                         fallbackIcon={ServiceIcon}
@@ -520,6 +521,7 @@ export default async function HomePage(props: {
                   return (
                     <ContentCard
                       key={project.id}
+                      className="min-h-[170px]"
                       href={`/work/${encodeURIComponent(project.slug)}`}
                       media={project.mediaObj}
                       fallbackIcon={Layers}

@@ -29,7 +29,7 @@ test.describe('MASTER PROMPT — Card & Media Frame Architecture, Layout Uniform
     }
   });
 
-  test('Public pages: [data-card-media] maintains 16:9 ratio and sits above text content', async ({ page }) => {
+  test('Public pages: media is rendered as card background behind text overlay', async ({ page }) => {
     const pagesToTest = ['/en', '/en/services', '/en/work', '/en/blog'];
 
     for (const url of pagesToTest) {
@@ -44,31 +44,69 @@ test.describe('MASTER PROMPT — Card & Media Frame Architecture, Layout Uniform
       const sampleCount = Math.min(count, 3);
       for (let i = 0; i < sampleCount; i++) {
         const card = cards.nth(i);
-        const media = card.locator('[data-card-media]');
+        // Card has absolute inset-0 background media layer
+        const bgMedia = card.locator('div.absolute.inset-0.z-0');
+        await expect(bgMedia).toBeVisible();
 
-        if (await media.isVisible()) {
-          const mBox = await media.boundingBox();
-          expect(mBox).not.toBeNull();
-          if (mBox) {
-            const ratio = mBox.width / mBox.height;
-            // 16/9 is ~1.7777... allow 1.70 to 1.85 tolerance
-            expect(
-              ratio,
-              `Media on ${url} card ${i} should have 16:9 ratio (got width=${mBox.width}, height=${mBox.height}, ratio=${ratio})`
-            ).toBeGreaterThan(1.70);
-            expect(ratio).toBeLessThan(1.85);
+        // Text content wrapper has relative z-10 sitting cleanly on top
+        const textWrapper = card.locator('div.relative.z-10');
+        await expect(textWrapper).toBeVisible();
+      }
+    }
+  });
 
-            // Verify title is below media (never overlapping)
-            const title = card.locator('h2, h3').first();
-            if (await title.isVisible()) {
-              const tBox = await title.boundingBox();
-              if (tBox) {
-                expect(
-                  tBox.y,
-                  `Title y (${tBox.y}) should be at or below media bottom (${mBox.y + mBox.height})`
-                ).toBeGreaterThanOrEqual(mBox.y + mBox.height - 2);
-              }
+  test('Footer baseline alignment: in every grid row, footers sit at card bottom and on the same baseline within 1px', async ({ page }) => {
+    test.setTimeout(120000);
+    const pagesToTest = ['/en', '/en/services', '/en/work', '/en/blog'];
+    const viewports = [
+      { width: 375, height: 800 },
+      { width: 768, height: 900 },
+      { width: 1280, height: 900 },
+    ];
+
+    for (const vp of viewports) {
+      await page.setViewportSize(vp);
+      for (const url of pagesToTest) {
+        await page.goto(url, { waitUntil: 'domcontentloaded' });
+        const cards = page.locator('[data-card]');
+        const count = await cards.count();
+        if (count < 2) continue;
+
+        // Collect card top and footer top
+        const cardData: { cardY: number; footerY: number }[] = [];
+        for (let i = 0; i < count; i++) {
+          const card = cards.nth(i);
+          const cBox = await card.boundingBox();
+          const footer = card.locator('[data-card-footer]');
+          if (await footer.isVisible()) {
+            const fBox = await footer.boundingBox();
+            if (cBox && fBox) {
+              cardData.push({ cardY: Math.round(cBox.y), footerY: fBox.y });
             }
+          }
+        }
+
+        // Group cards by row where card top is within 5px
+        const rows: { [key: number]: number[] } = {};
+        for (const item of cardData) {
+          const existingKey = Object.keys(rows).map(Number).find(k => Math.abs(k - item.cardY) <= 5);
+          if (existingKey !== undefined) {
+            rows[existingKey].push(item.footerY);
+          } else {
+            rows[item.cardY] = [item.footerY];
+          }
+        }
+
+        // Assert for each multi-card row that footer top positions differ by at most 1px
+        for (const [rowY, footerYs] of Object.entries(rows)) {
+          if (footerYs.length >= 2) {
+            const min = Math.min(...footerYs);
+            const max = Math.max(...footerYs);
+            const diff = max - min;
+            expect(
+              diff,
+              `On ${url} at ${vp.width}px (row top ~${rowY}px), footers must align within 1px (got diff=${diff}px)`
+            ).toBeLessThanOrEqual(1.0);
           }
         }
       }

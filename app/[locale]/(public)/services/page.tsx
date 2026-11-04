@@ -114,13 +114,14 @@ export default async function ServicesPage({
           </h1>
         </div>
 
-        {/* Services Grid: unified responsive 3-column layout, items-stretch */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 items-stretch">
+        {/* Services Grid: balanced two-column layout on desktop, 1 column on mobile, items-stretch */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 items-stretch">
           {servicesWithImages.map((service) => {
             const ServiceIcon = getServiceIcon(service.slug);
             return (
               <ContentCard
                 key={service.id}
+                className="min-h-[260px] sm:min-h-[280px]"
                 href={`/services/${service.slug}`}
                 media={service.mediaObj}
                 fallbackIcon={ServiceIcon}
