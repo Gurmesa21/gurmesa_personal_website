@@ -1,6 +1,7 @@
 import { getPublicProjects } from '@/server/services/projectService';
 import { getSeoOverride } from '@/server/services/seoService';
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { getStorageAdapter } from '@/lib/storage';
 import { prisma } from '@/server/repositories/db';
@@ -198,10 +199,13 @@ export default async function WorkPage({
                   </div>
                 }
                 footerCta={
-                  <span className="inline-flex items-center gap-1.5 h-8 sm:h-9 px-3.5 rounded-lg border border-[#8063F7]/40 bg-[#8063F7]/10 text-xs sm:text-sm font-semibold text-[#A995FF] group-hover:bg-[#8063F7] group-hover:text-white group-hover:border-[#8063F7] transition-all duration-200">
+                  <Link
+                    href={`/work/${encodeURIComponent(project.slug)}`}
+                    className="inline-flex items-center gap-1.5 h-8 sm:h-9 px-3.5 rounded-lg border border-[#8063F7]/40 bg-[#8063F7]/10 text-xs sm:text-sm font-semibold text-[#A995FF] hover:bg-[#8063F7] hover:text-white hover:border-[#8063F7] group-hover:bg-[#8063F7] group-hover:text-white group-hover:border-[#8063F7] transition-all duration-200"
+                  >
                     <span>{t('readCaseStudy')}</span>
                     <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 animate-pulse" />
-                  </span>
+                  </Link>
                 }
               />
             );

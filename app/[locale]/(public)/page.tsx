@@ -473,10 +473,13 @@ export default async function HomePage(props: {
                           ) : undefined
                         }
                         footerCta={
-                          <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#A995FF] transition-colors group-hover:text-white">
-                            {t('learnMore')}
+                          <Link
+                            href={`/services/${service.slug}`}
+                            className="inline-flex items-center gap-1 text-xs font-semibold text-[#A995FF] transition-colors hover:text-white group-hover:text-white"
+                          >
+                            <span>{t('learnMore')}</span>
                             <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
-                          </span>
+                          </Link>
                         }
                       />
                     );
@@ -552,10 +555,13 @@ export default async function HomePage(props: {
                         </div>
                       }
                       footerCta={
-                        <span className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-[#A995FF] transition-colors group-hover:text-white">
-                          {t('readCaseStudy')}
+                        <Link
+                          href={`/work/${encodeURIComponent(project.slug)}`}
+                          className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-[#A995FF] transition-colors hover:text-white group-hover:text-white"
+                        >
+                          <span>{t('readCaseStudy')}</span>
                           <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
-                        </span>
+                        </Link>
                       }
                     />
                   );

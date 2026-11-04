@@ -77,7 +77,7 @@ export function ContentCard({
         {/* Title */}
         <h3 className="font-heading text-lg sm:text-xl font-semibold tracking-tight text-[#F5F6FC] break-words line-clamp-2 transition-colors group-hover:text-[#A995FF]">
           {href ? (
-            <Link href={href} className="focus:outline-none focus:underline">
+            <Link href={href} className="focus:outline-none focus:underline hover:underline">
               {title}
             </Link>
           ) : (

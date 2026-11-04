@@ -1,6 +1,7 @@
 import { getPublicPosts } from '@/server/services/blogService';
 import { getSeoOverride } from '@/server/services/seoService';
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { getStorageAdapter } from '@/lib/storage';
 import { ContentCard } from '@/components/ui/ContentCard';
@@ -145,10 +146,13 @@ export default async function BlogIndexPage({ searchParams }: { searchParams: Pr
                 />
               }
               footerCta={
-                <span className="inline-flex items-center gap-1.5 h-8 sm:h-9 px-3.5 rounded-lg border border-[#8063F7]/40 bg-[#8063F7]/10 text-xs sm:text-sm font-semibold text-[#A995FF] group-hover:bg-[#8063F7] group-hover:text-white group-hover:border-[#8063F7] transition-all duration-200">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="inline-flex items-center gap-1.5 h-8 sm:h-9 px-3.5 rounded-lg border border-[#8063F7]/40 bg-[#8063F7]/10 text-xs sm:text-sm font-semibold text-[#A995FF] hover:bg-[#8063F7] hover:text-white hover:border-[#8063F7] group-hover:bg-[#8063F7] group-hover:text-white group-hover:border-[#8063F7] transition-all duration-200"
+                >
                   <span>{t('readArticle')}</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-0.5" />
-                </span>
+                </Link>
               }
             />
           ))}

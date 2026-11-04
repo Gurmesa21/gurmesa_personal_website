@@ -203,7 +203,7 @@ export function LanyardBadge({
           className={cn(
             'lanyard-badge-anim relative -mt-1.5 aspect-[5/7.2] rounded-[20px] border border-[#8063F7]/35 bg-[#101426]/95 backdrop-blur-md p-3.5 sm:p-4 flex flex-col shadow-[0_16px_40px_-8px_rgba(128,99,247,0.22)] shadow-black/60 transition-[box-shadow,transform] duration-200 cursor-grab active:cursor-grabbing active:scale-[0.98] hover:shadow-[0_20px_48px_-6px_rgba(128,99,247,0.32)] hover:-translate-y-1 touch-manipulation',
             size === 'about'
-              ? 'w-[200px] sm:w-[220px] md:w-[250px] lg:w-[260px] max-w-[280px]'
+              ? 'w-[220px] sm:w-[235px] md:w-[250px] lg:w-[260px] max-w-[280px]'
               : 'w-[220px] sm:w-[245px] lg:w-[260px]'
           )}
           style={{ touchAction: 'pan-y' }}
@@ -215,7 +215,12 @@ export function LanyardBadge({
           />
 
           {/* Profile Photo: upper ~62% of card */}
-          <div className="relative w-full aspect-[4/4.6] rounded-xl overflow-hidden bg-[#080B16] border border-[#292D45] shrink-0">
+          <div
+            className={cn(
+              'relative w-full aspect-[4/4.6] rounded-xl overflow-hidden bg-[#080B16] border border-[#292D45] shrink-0',
+              size === 'about' && 'w-48 h-48 mx-auto'
+            )}
+          >
             {avatarUrl ? (
               avatarMimeType?.startsWith('video/') ? (
                 <video
@@ -259,7 +264,7 @@ export function LanyardBadge({
               {/* Professional Title */}
               <p
                 data-testid="badge-title"
-                className="text-[11px] sm:text-xs font-semibold text-[#A995FF] truncate mt-0.5"
+                className="text-[11px] sm:text-xs font-semibold text-[#C4B5FD] truncate mt-0.5"
               >
                 {title}
               </p>
@@ -268,9 +273,9 @@ export function LanyardBadge({
             {/* Location with Pin */}
             <div
               data-testid="badge-location"
-              className="flex items-center gap-1.5 text-[10.5px] sm:text-[11px] text-[#858EA8] mt-1.5 truncate"
+              className="flex items-center gap-1.5 text-[10.5px] sm:text-[11px] text-[#CBD5E1] mt-1.5 truncate"
             >
-              <MapPin className="w-3 h-3 text-[#8063F7] shrink-0" aria-hidden="true" />
+              <MapPin className="w-3 h-3 text-[#C4B5FD] shrink-0" aria-hidden="true" />
               <span className="truncate">{location}</span>
             </div>
           </div>
