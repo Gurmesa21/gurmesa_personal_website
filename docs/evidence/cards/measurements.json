@@ -1,0 +1,86 @@
+{
+  "375px": {
+    "homeServiceCard": {
+      "width": 343,
+      "height": 193,
+      "padding": "18px",
+      "gridTemplateColumns": "343px",
+      "gridGap": "14px"
+    },
+    "homeFeaturedWorkCard": {
+      "width": 343,
+      "height": 145,
+      "padding": "16px"
+    },
+    "workPageCard": {
+      "width": 343,
+      "height": 193,
+      "padding": "20px",
+      "gridTemplateColumns": "343px",
+      "gridGap": "20px"
+    }
+  },
+  "412px": {
+    "homeServiceCard": {
+      "width": 380,
+      "height": 214,
+      "padding": "18px",
+      "gridTemplateColumns": "380px",
+      "gridGap": "14px"
+    },
+    "homeFeaturedWorkCard": {
+      "width": 380,
+      "height": 145,
+      "padding": "16px"
+    },
+    "workPageCard": {
+      "width": 380,
+      "height": 214,
+      "padding": "20px",
+      "gridTemplateColumns": "380px",
+      "gridGap": "20px"
+    }
+  },
+  "768px": {
+    "homeServiceCard": {
+      "width": 353,
+      "height": 199,
+      "padding": "20px",
+      "gridTemplateColumns": "353px 353px",
+      "gridGap": "14px"
+    },
+    "homeFeaturedWorkCard": {
+      "width": 720,
+      "height": 156,
+      "padding": "20px"
+    },
+    "workPageCard": {
+      "width": 348,
+      "height": 196,
+      "padding": "24px",
+      "gridTemplateColumns": "348px 348px",
+      "gridGap": "24px"
+    }
+  },
+  "1280px": {
+    "homeServiceCard": {
+      "width": 382,
+      "height": 215,
+      "padding": "20px",
+      "gridTemplateColumns": "381.688px 381.703px",
+      "gridGap": "14px"
+    },
+    "homeFeaturedWorkCard": {
+      "width": 419,
+      "height": 156,
+      "padding": "20px"
+    },
+    "workPageCard": {
+      "width": 596,
+      "height": 335,
+      "padding": "24px",
+      "gridTemplateColumns": "596px 596px",
+      "gridGap": "24px"
+    }
+  }
+}

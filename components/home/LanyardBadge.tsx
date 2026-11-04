@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface LanyardBadgeProps {
   name: string;
@@ -11,6 +12,8 @@ interface LanyardBadgeProps {
   avatarUrl?: string | null;
   avatarMimeType?: string | null;
   ariaLabel?: string;
+  size?: 'hero' | 'about';
+  className?: string;
 }
 
 export function LanyardBadge({
@@ -20,6 +23,8 @@ export function LanyardBadge({
   avatarUrl,
   avatarMimeType,
   ariaLabel = 'Profile badge',
+  size = 'hero',
+  className,
 }: LanyardBadgeProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const groupRef = useRef<HTMLDivElement>(null);
@@ -134,7 +139,10 @@ export function LanyardBadge({
       data-paused={isPaused ? 'true' : undefined}
       role="img"
       aria-label={ariaLabel}
-      className="relative flex flex-col items-center select-none pt-0 shrink-0"
+      className={cn(
+        'relative flex flex-col items-center select-none pt-0 shrink-0',
+        className
+      )}
     >
       {/* Group: Strap + Clasp + Badge Card (pivots at top center) */}
       <div
@@ -192,7 +200,12 @@ export function LanyardBadge({
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerUp}
-          className="lanyard-badge-anim relative -mt-1.5 w-[220px] sm:w-[245px] lg:w-[260px] aspect-[5/7.2] rounded-[20px] border border-[#8063F7]/35 bg-[#101426]/95 backdrop-blur-md p-3.5 sm:p-4 flex flex-col shadow-[0_16px_40px_-8px_rgba(128,99,247,0.22)] shadow-black/60 transition-[box-shadow,transform] duration-200 cursor-grab active:cursor-grabbing active:scale-[0.98] hover:shadow-[0_20px_48px_-6px_rgba(128,99,247,0.32)] hover:-translate-y-1 touch-manipulation"
+          className={cn(
+            'lanyard-badge-anim relative -mt-1.5 aspect-[5/7.2] rounded-[20px] border border-[#8063F7]/35 bg-[#101426]/95 backdrop-blur-md p-3.5 sm:p-4 flex flex-col shadow-[0_16px_40px_-8px_rgba(128,99,247,0.22)] shadow-black/60 transition-[box-shadow,transform] duration-200 cursor-grab active:cursor-grabbing active:scale-[0.98] hover:shadow-[0_20px_48px_-6px_rgba(128,99,247,0.32)] hover:-translate-y-1 touch-manipulation',
+            size === 'about'
+              ? 'w-[200px] sm:w-[220px] md:w-[250px] lg:w-[260px] max-w-[280px]'
+              : 'w-[220px] sm:w-[245px] lg:w-[260px]'
+          )}
           style={{ touchAction: 'pan-y' }}
         >
           {/* Punched Slot at top (decorative) */}

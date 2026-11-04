@@ -126,24 +126,17 @@ test.describe('MASTER PROMPT Part 2 — About Profile Image Card Position and Si
         expect(cardBox.width).toBeGreaterThanOrEqual(250);
         expect(cardBox.width).toBeLessThanOrEqual(350);
       } else if (width === 1280) {
-        // Desktop: lg:col-span-4 aspect-[3/4]
-        expect(cardBox.width).toBeGreaterThanOrEqual(320);
-        expect(cardBox.width).toBeLessThanOrEqual(420);
+        // Desktop: LanyardBadge profile card up to 280-300px
+        expect(cardBox.width).toBeGreaterThanOrEqual(260);
+        expect(cardBox.width).toBeLessThanOrEqual(320);
       }
 
-      // Check inner 9:16 frame and image containment
-      const innerFrame = page.locator('[data-testid="profile-image-frame-9-16"]');
-      await expect(innerFrame).toBeVisible();
+      // Check LanyardBadge inside profile card
+      const badge = card.locator('[data-testid="lanyard-badge-card"]');
+      await expect(badge).toBeVisible();
 
-      const imageOrFallback = innerFrame.locator('img, video, span');
+      const imageOrFallback = badge.locator('img, video, span');
       await expect(imageOrFallback.first()).toBeVisible();
-
-      // Check computed object-fit if image or video
-      const img = innerFrame.locator('img, video');
-      if (await img.count() > 0) {
-        const objectFit = await img.first().evaluate((el) => window.getComputedStyle(el).objectFit);
-        expect(objectFit).toBe('contain');
-      }
 
       // No horizontal overflow
       const isOver = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);

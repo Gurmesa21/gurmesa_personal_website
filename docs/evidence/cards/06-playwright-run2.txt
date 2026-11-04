@@ -1,0 +1,161 @@
+﻿node.exe : Γùç injected env (13) from .env.test
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γùç injected env (13) from .env.test:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γùç injected env (0) from .env.test
+[globalSetup] Resetting and seeding test database: gurmesa_test_db...
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "gurmesa_test_db", schema "public" at "127.0.0.1:5433"
+
+10 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+Seed completed with mixed-shape media fixtures.
+[globalSetup] Test database gurmesa_test_db reset and seeded successfully.
+
+Running 126 tests using 4 workers
+
+Γùç injected env (0) from .env.test
+
+[1/126] [chromium] ΓÇ║ tests\e2e\cards-mobile.spec.ts:78:3 ΓÇ║ MASTER PROMPT ΓÇö Card & Media Frame Architecture, Layout Uniformity & Mobile Integrity ΓÇ║ Services page: long price label wraps gracefully without colliding with CTA at 360px
+Γùç injected env (0) from .env.test
+
+Γùç injected env (0) from .env.test
+
+Γùç injected env (0) from .env.test
+
+[2/126] [chromium] ΓÇ║ tests\e2e\cards-mobile.spec.ts:32:3 ΓÇ║ MASTER PROMPT ΓÇö Card & Media Frame Architecture, Layout Uniformity & Mobile Integrity ΓÇ║ Public pages: [data-card-media] maintains 16:9 ratio and sits above text content
+[3/126] [chromium] ΓÇ║ tests\e2e\cards-mobile.spec.ts:5:3 ΓÇ║ MASTER PROMPT ΓÇö Card & Media Frame Architecture, Layout Uniformity & Mobile Integrity ΓÇ║ Home page: Service Card width equals Featured Work Card width at desktop 1280px
+[4/126] [chromium] ΓÇ║ tests\e2e\cards-mobile.spec.ts:103:3 ΓÇ║ MASTER PROMPT ΓÇö Card & Media Frame Architecture, Layout Uniformity & Mobile Integrity ΓÇ║ About page: LanyardBadge renders with size="about" hanging from card top edge
+[WebServer] [Performance Warning] Query/Page operation "getPublicProjects" took 2369.0ms (> 1000ms)
+
+[5/126] [chromium] ΓÇ║ tests\e2e\cards-mobile.spec.ts:121:3 ΓÇ║ MASTER PROMPT ΓÇö Card & Media Frame Architecture, Layout Uniformity & Mobile Integrity ΓÇ║ Slug pages: 16:9 media banner renders without clipping or overflow at mobile widths
+[6/126] [chromium] ΓÇ║ tests\e2e\cards-mobile.spec.ts:146:3 ΓÇ║ MASTER PROMPT ΓÇö Card & Media Frame Architecture, Layout Uniformity & Mobile Integrity ΓÇ║ Zero horizontal overflow across all pages at 360px and 412px
+[7/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /en at 320px
+[8/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /en/about at 320px
+[9/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /en/work at 320px
+[10/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /en/work/os-dashboard at 320px
+[11/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /en/services at 320px
+[12/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /en/services/web-development at 320px
+[13/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /en/blog at 320px
+[14/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /en/blog/first-post at 320px
+[15/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /en/testimonials at 320px
+[16/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /en/contact at 320px
+[17/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /en/privacy at 320px
+[18/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /en/terms at 320px
+[19/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /am at 320px
+[20/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /am/about at 320px
+[21/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /am/work at 320px
+[22/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /am/services at 320px
+[WebServer] [Performance Warning] Query/Page operation "getPublicProjects" took 1314.1ms (> 1000ms)
+
+[23/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /am/contact at 320px
+[24/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /om at 320px
+[25/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /om/about at 320px
+[26/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /om/work at 320px
+[27/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /om/services at 320px
+[28/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 320px ΓÇ║ zero horizontal overflow on /om/contact at 320px
+[29/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /en at 360px
+[30/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /en/about at 360px
+[31/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /en/work at 360px
+[32/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /en/work/os-dashboard at 360px
+[33/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /en/services at 360px
+[34/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /en/services/web-development at 360px
+[35/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /en/blog at 360px
+[36/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /en/blog/first-post at 360px
+[37/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /en/testimonials at 360px
+[38/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /en/contact at 360px
+[39/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /en/privacy at 360px
+[40/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /en/terms at 360px
+[41/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /am at 360px
+[42/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /am/about at 360px
+[43/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /am/work at 360px
+[44/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /am/services at 360px
+[45/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /am/contact at 360px
+[46/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /om at 360px
+[47/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /om/about at 360px
+[48/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /om/work at 360px
+[49/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /om/services at 360px
+[50/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 360px ΓÇ║ zero horizontal overflow on /om/contact at 360px
+[51/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /en at 390px
+[52/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /en/about at 390px
+[53/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /en/work at 390px
+[54/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /en/work/os-dashboard at 390px
+[55/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /en/services at 390px
+[56/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /en/services/web-development at 390px
+[57/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /en/blog at 390px
+[58/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /en/blog/first-post at 390px
+[59/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /en/testimonials at 390px
+[60/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /en/contact at 390px
+[61/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /en/privacy at 390px
+[62/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /en/terms at 390px
+[63/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /am at 390px
+[64/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /am/about at 390px
+[65/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /am/work at 390px
+[66/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /am/services at 390px
+[67/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /am/contact at 390px
+[68/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /om at 390px
+[69/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /om/about at 390px
+[70/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /om/work at 390px
+[71/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /om/services at 390px
+[72/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 390px ΓÇ║ zero horizontal overflow on /om/contact at 390px
+[73/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /en at 412px
+[74/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /en/about at 412px
+[75/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /en/work at 412px
+[76/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /en/work/os-dashboard at 412px
+[77/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /en/services at 412px
+[78/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /en/services/web-development at 412px
+[79/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /en/blog at 412px
+[80/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /en/blog/first-post at 412px
+[81/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /en/testimonials at 412px
+[82/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /en/contact at 412px
+[83/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /en/privacy at 412px
+[84/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /en/terms at 412px
+[85/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /am at 412px
+[86/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /am/about at 412px
+[87/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /am/work at 412px
+[88/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /am/services at 412px
+[89/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /am/contact at 412px
+[90/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /om at 412px
+[91/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /om/about at 412px
+[92/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /om/work at 412px
+[93/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /om/services at 412px
+[94/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 412px ΓÇ║ zero horizontal overflow on /om/contact at 412px
+[95/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /en at 768px
+[96/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /en/about at 768px
+[97/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /en/work at 768px
+[98/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /en/work/os-dashboard at 768px
+[99/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /en/services at 768px
+[100/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /en/services/web-development at 768px
+[101/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /en/blog at 768px
+[102/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /en/blog/first-post at 768px
+[103/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /en/testimonials at 768px
+[104/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /en/contact at 768px
+[105/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /en/privacy at 768px
+[106/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /en/terms at 768px
+[107/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /am at 768px
+[108/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /am/about at 768px
+[109/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /am/work at 768px
+[110/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /am/services at 768px
+[111/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /am/contact at 768px
+[112/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /om at 768px
+[113/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /om/about at 768px
+[114/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /om/work at 768px
+[115/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /om/services at 768px
+[116/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:40:9 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ Viewport 768px ΓÇ║ zero horizontal overflow on /om/contact at 768px
+[117/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:84:3 ΓÇ║ MASTER PROMPT Part 1 ΓÇö Mobile Responsive & Zero Horizontal Overflow Verification ΓÇ║ mobile navigation drawer opens and closes with escape on phone viewport
+[118/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:109:5 ΓÇ║ MASTER PROMPT Part 2 ΓÇö About Profile Image Card Position and Size ΓÇ║ About profile image card at 375px conforms to baseline size and contain fit
+[119/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:109:5 ΓÇ║ MASTER PROMPT Part 2 ΓÇö About Profile Image Card Position and Size ΓÇ║ About profile image card at 768px conforms to baseline size and contain fit
+[120/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:109:5 ΓÇ║ MASTER PROMPT Part 2 ΓÇö About Profile Image Card Position and Size ΓÇ║ About profile image card at 1280px conforms to baseline size and contain fit
+[121/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:151:3 ΓÇ║ MASTER PROMPT Part 3 ΓÇö Minimal Hanging Lanyard Badge on Home Hero ΓÇ║ Home page contains exactly one lanyard badge with only required fields and no removed text
+[122/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:178:5 ΓÇ║ MASTER PROMPT Part 3 ΓÇö Minimal Hanging Lanyard Badge on Home Hero ΓÇ║ Lanyard badge at 320px produces zero horizontal overflow
+[123/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:178:5 ΓÇ║ MASTER PROMPT Part 3 ΓÇö Minimal Hanging Lanyard Badge on Home Hero ΓÇ║ Lanyard badge at 375px produces zero horizontal overflow
+[124/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:178:5 ΓÇ║ MASTER PROMPT Part 3 ΓÇö Minimal Hanging Lanyard Badge on Home Hero ΓÇ║ Lanyard badge at 768px produces zero horizontal overflow
+[125/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:178:5 ΓÇ║ MASTER PROMPT Part 3 ΓÇö Minimal Hanging Lanyard Badge on Home Hero ΓÇ║ Lanyard badge at 1280px produces zero horizontal overflow
+[126/126] [chromium] ΓÇ║ tests\e2e\mobile-responsive.spec.ts:197:3 ΓÇ║ MASTER PROMPT Part 3 ΓÇö Minimal Hanging Lanyard Badge on Home Hero ΓÇ║ Lanyard badge supports interactive drag transform and preserves pan-y touch action
+  126 passed (3.0m)

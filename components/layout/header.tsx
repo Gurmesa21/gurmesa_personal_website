@@ -132,7 +132,7 @@ export function Header() {
         <div className="flex flex-1 items-center justify-end lg:hidden gap-2">
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-              <Button variant="ghost" className={cn("px-2 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0", isHomePage && "text-[#F5F6FC]")}>
+              <Button variant="ghost" className={cn("h-11 w-11 p-2 text-base hover:bg-[#171D32]/50 focus-visible:bg-[#171D32]/50 focus-visible:ring-0 focus-visible:ring-offset-0", isHomePage && "text-[#F5F6FC]")}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
@@ -147,7 +147,7 @@ export function Header() {
                     key={key}
                     href={`/${key}`}
                     onClick={() => setIsOpen(false)}
-                    className="block px-3 py-2 text-lg font-medium hover:text-primary hover:bg-muted/50 rounded-md transition-colors"
+                    className="flex items-center min-h-[44px] px-3 py-2 text-base sm:text-lg font-medium hover:text-primary hover:bg-muted/50 rounded-lg transition-colors"
                   >
                     {t(key)}
                   </Link>
@@ -161,7 +161,7 @@ export function Header() {
                         key={l.code}
                         onClick={() => { changeLanguage(l.code); setIsOpen(false); }}
                         className={cn(
-                          "w-full text-left px-4 py-3 rounded-md text-sm font-medium transition-colors border",
+                          "w-full min-h-[44px] text-left px-4 py-3 rounded-md text-sm font-medium transition-colors border",
                           locale === l.code ? "bg-primary/10 border-primary text-primary" : "bg-card border-border hover:bg-muted text-foreground"
                         )}
                       >

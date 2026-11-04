@@ -54,8 +54,8 @@
     "experience": "የስራ ልምድ",
     "present": "አሁን",
     "skills": "ክህሎት እና ሙያ",
-    "avatarRecommended": "የሚመከር: 9:16 ቀጥ ያለ (ለምሳሌ 720x1280) [REVIEW]",
-    "avatarLandscapeWarning": "የተሰቀለው ምስል አግድም ነው። በማእከል ተስተካክሎ ይቀመጣል፤ የ9:16 ቀጥ ያለ ፎቶ ይመረጣል። [REVIEW]"
+    "avatarRecommended": "ፎቶው በቁመት ባጅ ላይ ስለሚታይ ፊቱ በላይኛው ሲሶ ውስጥ ያለበት የቁመት 9:16 ፎቶ ይመረጣል (ለምሳሌ 720x1280) [REVIEW]",
+    "avatarLandscapeWarning": "የተሰቀለው ምስል አግድም ነው። ባጁ ፎቶውን ከላይ መሃል ጀምሮ በቁመት ስለሚቆርጠው ፊቱ በላይኛው ሲሶ ውስጥ ያለበት የቁመት 9:16 ፎቶ ይመረጣል። [REVIEW]"
   },
   "Services": {
     "title": "አገልግሎቶች",

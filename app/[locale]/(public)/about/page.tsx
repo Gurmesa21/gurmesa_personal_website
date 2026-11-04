@@ -22,7 +22,7 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 
 import { User, Download, Sparkles, ArrowRight, ArrowUpRight, Mail, Globe } from 'lucide-react';
-import { MediaRenderer } from '@/components/ui/MediaRenderer';
+import { LanyardBadge } from '@/components/home/LanyardBadge';
 
 function getSocialInfo(platform: string, label?: string) {
   const p = (platform || '').toLowerCase().trim();
@@ -136,33 +136,22 @@ export default async function AboutPage() {
           <div className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-[#4F6FF0]/15 blur-3xl group-hover:scale-125 transition-transform duration-700 ease-out" />
 
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-            {/* Cinematic Profile Visual on Left (Vertical Composition) */}
-            <div className="md:col-span-5 lg:col-span-4 flex flex-col items-center justify-center">
+            {/* Cinematic Profile Visual on Left: Lanyard Badge hanging from card top edge */}
+            <div className="md:col-span-5 lg:col-span-4 flex flex-col items-center justify-start">
               <div
                 data-testid="about-profile-card"
-                className="relative w-48 h-48 md:w-full md:h-auto max-w-[280px] sm:max-w-[320px] md:max-w-none aspect-[3/4] rounded-2xl overflow-hidden border border-[#8063F7]/40 bg-[#171D32] shadow-2xl shadow-black/50 group-hover:border-[#8063F7]/70 group-hover:shadow-[0_12px_36px_rgba(128,99,247,0.2)] transition-all duration-500 flex items-center justify-center"
+                className="relative w-full max-w-[260px] sm:max-w-[280px] md:max-w-[300px] overflow-clip rounded-2xl border border-[#8063F7]/40 bg-[#171D32]/85 backdrop-blur-md p-3 sm:p-4 shadow-2xl shadow-black/50 transition-all duration-500 hover:border-[#8063F7]/70 hover:shadow-[0_12px_36px_rgba(128,99,247,0.2)] flex flex-col items-center justify-center"
               >
-                {/* Inner 9:16 vertical frame centered horizontally & vertically */}
-                <div
-                  data-testid="profile-image-frame-9-16"
-                  className="relative h-full aspect-[9/16] max-h-full max-w-full flex items-center justify-center overflow-hidden bg-[#080B16]"
-                >
-                  {avatarMedia ? (
-                    <MediaRenderer
-                      url={avatarMedia.url}
-                      mimeType={avatarMedia.mimeType}
-                      altText={profile?.name || 'Avatar'}
-                      fill
-                      className="object-contain object-cover [object-fit:contain_!important]"
-                      priority
-                      sizes="(max-width: 640px) 192px, (max-width: 1024px) 320px, 400px"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#171D32] to-[#101426]">
-                      <span className="font-heading font-extrabold text-2xl text-[#8063F7]">GT</span>
-                    </div>
-                  )}
-                </div>
+                <LanyardBadge
+                  size="about"
+                  name={profile?.name || 'Gurmesa Teklemariam'}
+                  title={profile?.title || 'Full-Stack Engineer & Architect'}
+                  location={profile?.locationLabel || 'Adama, Ethiopia'}
+                  avatarUrl={avatarMedia?.url}
+                  avatarMimeType={avatarMedia?.mimeType}
+                  ariaLabel={t('title') || 'Profile badge'}
+                  className="-mt-3 sm:-mt-4"
+                />
               </div>
             </div>
 

@@ -32,6 +32,7 @@ import {
 import { getStorageAdapter } from '@/lib/storage';
 import { prisma } from '@/server/repositories/db';
 import { MediaRenderer } from '@/components/ui/MediaRenderer';
+import { ContentCard } from '@/components/ui/ContentCard';
 import { LanyardBadge } from '@/components/home/LanyardBadge';
 import { unstable_noStore as noStore } from 'next/cache';
 
@@ -304,13 +305,13 @@ export default async function HomePage(props: {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-5">
           {/* =========================================================================
-              MAIN CONTENT GRID — TWO COLUMNS (Desktop: ~65% Left / ~35% Right)
+              MAIN CONTENT GRID — THREE COLUMNS ON DESKTOP (Hero & Services: 2 cols, Featured Work: 1 col)
              ========================================================================= */}
-          <div className="grid grid-cols-1 lg:grid-cols-[13fr_7fr] gap-5 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 items-start">
             {/* -----------------------------------------------------------------------
-                LEFT COLUMN (~65% width): Hero Developer Introduction + Services
+                LEFT COLUMN (2 columns wide on desktop): Hero Developer Introduction + Services
                ----------------------------------------------------------------------- */}
-            <div className="flex flex-col gap-5">
+            <div className="lg:col-span-2 flex flex-col gap-5">
               {/* HERO CARD */}
               <section
                 aria-label="Developer Introduction"
@@ -441,90 +442,43 @@ export default async function HomePage(props: {
                   </Link>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 items-stretch">
                   {services.map((service) => {
                     const ServiceIcon = getServiceIcon(service.slug);
                     return (
-                      <div
+                      <ContentCard
                         key={service.id}
-                        data-card
-                        className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-4.5 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10 aspect-video"
-                      >
-                        {/* Thin Top Accent Line Animation */}
-                        <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
-
-                        {/* Static Background Media Layer: covers entire card behind text */}
-                        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#080B16] flex items-center justify-center">
-                          {service.mediaObj ? (
-                            service.mediaObj.mimeType.startsWith('video/') ? (
-                              <video
-                                src={service.mediaObj.url}
-                                className="h-full w-full object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                              />
-                            ) : (
-                              <MediaRenderer
-                                url={service.mediaObj.url}
-                                mimeType={service.mediaObj.mimeType}
-                                altText={service.title}
-                                fill
-                                className="object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
-                              />
-                            )
-                          ) : (
-                            <div className="relative h-full w-full bg-gradient-to-br from-[#8063F7]/25 via-[#171D32] to-[#101426]">
-                              <div className="absolute inset-0 bg-gradient-to-t from-[#8063F7]/20 to-transparent" />
-                            </div>
-                          )}
-                          {/* Gradient overlay: increased transparency so background image is clearly visible */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#080B16]/92 via-[#080B16]/55 to-[#080B16]/35 group-hover:via-[#080B16]/45 group-hover:to-[#080B16]/25 transition-all duration-300" />
-                        </div>
-
-                        {/* Subtle hover radial glow */}
-                        <div className="pointer-events-none absolute -top-12 -right-12 h-24 w-24 rounded-full bg-[#8063F7]/15 blur-2xl transition-transform duration-500 group-hover:scale-150" />
-
-                        <div className="relative z-10 space-y-2.5">
-                          <div className="flex items-center justify-between">
-                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#8063F7]/30 bg-[#101426]/75 text-[#8063F7] shadow-inner backdrop-blur-md transition-colors group-hover:text-[#A995FF] group-hover:border-[#8063F7]/50 animate-pulse">
-                              <ServiceIcon className="h-4.5 w-4.5" />
-                            </div>
-
-                            {service.startingPriceRange && (
-                              <span className="rounded-full border border-[#8063F7]/30 bg-[#8063F7]/15 backdrop-blur-md px-2.5 py-0.5 text-[10px] sm:text-[11px] font-semibold text-[#A995FF]">
-                                {service.startingPriceRange}
-                              </span>
-                            )}
+                        href={`/services/${service.slug}`}
+                        media={service.mediaObj}
+                        fallbackIcon={ServiceIcon}
+                        title={service.title}
+                        description={service.summary}
+                        icon={
+                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#8063F7]/30 bg-[#171D32]/80 text-[#8063F7] shadow-inner backdrop-blur-md transition-colors group-hover:text-[#A995FF] group-hover:border-[#8063F7]/50">
+                            <ServiceIcon className="h-4.5 w-4.5" />
                           </div>
-
-                          <div>
-                            <h3 className="font-heading text-base font-bold tracking-tight text-[#F5F6FC] transition-colors group-hover:text-[#A995FF]">
-                              {service.title}
-                            </h3>
-                            <p className="mt-1 text-xs sm:text-sm font-normal leading-relaxed text-[#A5ABC1] line-clamp-2">
-                              {service.summary}
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="relative z-10 mt-3 flex items-center justify-between border-t border-[#292D45]/50 pt-2.5">
-                          <Link
-                            href={`/services/${service.slug}`}
-                            className="inline-flex items-center gap-1 text-xs font-semibold text-[#A995FF] transition-colors group-hover:text-white"
-                          >
+                        }
+                        badge={
+                          service.startingPriceRange ? (
+                            <span className="rounded-full border border-[#8063F7]/30 bg-[#8063F7]/15 backdrop-blur-md px-2.5 py-0.5 text-[10px] sm:text-[11px] font-semibold text-[#A995FF]">
+                              {service.startingPriceRange}
+                            </span>
+                          ) : undefined
+                        }
+                        footerLeft={
+                          service.deliverables && service.deliverables.length > 0 ? (
+                            <span className="text-[11px] text-[#A5ABC1]/70">
+                              {service.deliverables.length} {service.deliverables.length === 1 ? 'deliverable' : 'deliverables'}
+                            </span>
+                          ) : undefined
+                        }
+                        footerCta={
+                          <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#A995FF] transition-colors group-hover:text-white">
                             {t('learnMore')}
                             <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
-                          </Link>
-
-                          {service.deliverables && service.deliverables.length > 0 && (
-                            <span className="text-[10px] text-[#A5ABC1]/70">
-                              {service.deliverables.length} deliverables
-                            </span>
-                          )}
-                        </div>
-                      </div>
+                          </span>
+                        }
+                      />
                     );
                   })}
                 </div>
@@ -532,9 +486,9 @@ export default async function HomePage(props: {
             </div>
 
             {/* -----------------------------------------------------------------------
-                RIGHT COLUMN (~35% width): Featured Work / Projects beside Hero & Services
+                RIGHT COLUMN (1 column wide on desktop): Featured Work / Projects beside Hero & Services
                ----------------------------------------------------------------------- */}
-            <aside aria-label="Featured Work" className="flex flex-col gap-3.5">
+            <aside aria-label="Featured Work" className="lg:col-span-1 flex flex-col gap-3.5">
               <div className="flex items-center justify-between px-1">
                 <div className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#4F6FF0] animate-pulse" />
@@ -557,104 +511,55 @@ export default async function HomePage(props: {
               </div>
 
               {/* Vertical List of Compact Project Cards */}
-              <div className="flex flex-col gap-3.5 items-stretch">
-                {projects.map((project) => (
-                  <Link
-                    key={project.id}
-                    href={`/work/${project.slug}`}
-                    data-card
-                    className="group relative flex flex-col h-full justify-between overflow-hidden rounded-xl border border-[#292D45] bg-[#101426] p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8063F7]/70 hover:shadow-xl hover:shadow-[#8063F7]/10"
-                  >
-                    {/* Thin Top Accent Line Animation */}
-                    <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#8063F7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
-
-                    {/* Static Background Media Layer: covers entire card behind text */}
-                    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#080B16] flex items-center justify-center">
-                      {project.mediaObj ? (
-                        project.mediaObj.mimeType.startsWith('video/') ? (
-                          <video
-                            src={project.mediaObj.url}
-                            className="h-full w-full object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                          />
-                        ) : (
-                          <MediaRenderer
-                            url={project.mediaObj.url}
-                            mimeType={project.mediaObj.mimeType}
-                            altText={project.mediaObj.altText || project.title}
-                            fill
-                            className="object-contain scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
-                          />
-                        )
-                      ) : (
-                        <div className="relative h-full w-full bg-gradient-to-br from-[#4F6FF0]/25 via-[#171D32] to-[#101426]">
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#8063F7]/20 to-transparent" />
+              <div className="flex flex-col gap-4 sm:gap-5 items-stretch">
+                {projects.map((project) => {
+                  const projectTags = getProjectTags(project);
+                  return (
+                    <ContentCard
+                      key={project.id}
+                      href={`/work/${encodeURIComponent(project.slug)}`}
+                      media={project.mediaObj}
+                      fallbackIcon={Layers}
+                      title={project.title}
+                      description={project.summary}
+                      icon={
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#8063F7]/30 bg-[#171D32]/80 text-[#8063F7] shadow-inner backdrop-blur-md transition-colors group-hover:text-[#A995FF] group-hover:border-[#8063F7]/50">
+                          <Layers className="h-4 w-4" />
                         </div>
-                      )}
-                      {/* Gradient overlay: increased transparency so background image is clearly visible */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#080B16]/92 via-[#080B16]/55 to-[#080B16]/35 group-hover:via-[#080B16]/45 group-hover:to-[#080B16]/25 transition-all duration-300" />
-                    </div>
-
-                    <div className="pointer-events-none absolute -top-12 -right-12 h-24 w-24 rounded-full bg-[#8063F7]/15 blur-2xl transition-transform duration-500 group-hover:scale-150" />
-
-                    <div className="relative z-10 flex-1 space-y-2">
-                      <div className="flex items-center justify-between">
-                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#8063F7]/30 bg-[#101426]/75 text-[#8063F7] shadow-inner backdrop-blur-md transition-colors group-hover:text-[#A995FF] group-hover:border-[#8063F7]/50 animate-pulse">
-                          <Layers className="h-5 w-5 animate-pulse" />
-                        </div>
-
-                        {project.role && (
+                      }
+                      badge={
+                        project.role ? (
                           <span className="rounded-full border border-[#8063F7]/30 bg-[#8063F7]/15 backdrop-blur-md px-2.5 py-0.5 text-[10px] sm:text-[11px] font-semibold text-[#A995FF]">
                             {project.role}
                           </span>
-                        )}
-                      </div>
-
-                      <div>
-                        <h3 className="font-heading text-base font-bold tracking-tight text-[#F5F6FC] transition-colors group-hover:text-[#A995FF]">
-                          {project.title}
-                        </h3>
-                        <p className="mt-1 text-xs sm:text-sm font-normal leading-relaxed text-[#A5ABC1] line-clamp-2">
-                          {project.summary}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="relative z-10 mt-auto flex items-center justify-between border-t border-[#292D45]/50 pt-2 text-xs">
-                      {(() => {
-                        const projectTags = getProjectTags(project);
-                        return (
-                          <div className="flex flex-wrap gap-1">
-                            {projectTags.slice(0, 3).map((tech) => (
-                              <span
-                                key={tech.slug}
-                                className="rounded-md border border-[#292D45] bg-[#8063F7]/15 backdrop-blur-md px-2 py-0.5 text-[10px] font-medium text-[#A5ABC1]"
-                              >
-                                {tech.name}
-                              </span>
-                            ))}
-                            {projectTags.length > 3 && (
-                              <span className="rounded-md border border-[#292D45]/60 bg-[#171D32]/60 backdrop-blur-sm px-1.5 py-0.5 text-[10px] font-medium text-[#A5ABC1]">
-                                +{projectTags.length - 3}
-                              </span>
-                            )}
-                          </div>
-                        );
-                      })()}
-
-
-                      <span className="ml-2 inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-[#A995FF] transition-colors group-hover:text-white">
-                        {t('readCaseStudy')}
-                        <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
-                      </span>
-                    </div>
-                  </Link>
-                ))}
-
-
+                        ) : undefined
+                      }
+                      footerLeft={
+                        <div className="flex flex-wrap gap-1">
+                          {projectTags.slice(0, 3).map((tech) => (
+                            <span
+                              key={tech.slug}
+                              className="rounded-md border border-[#292D45] bg-[#8063F7]/15 backdrop-blur-md px-2 py-0.5 text-[10px] font-medium text-[#A5ABC1]"
+                            >
+                              {tech.name}
+                            </span>
+                          ))}
+                          {projectTags.length > 3 && (
+                            <span className="rounded-md border border-[#292D45]/60 bg-[#171D32]/60 backdrop-blur-sm px-1.5 py-0.5 text-[10px] font-medium text-[#A5ABC1]">
+                              +{projectTags.length - 3}
+                            </span>
+                          )}
+                        </div>
+                      }
+                      footerCta={
+                        <span className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-[#A995FF] transition-colors group-hover:text-white">
+                          {t('readCaseStudy')}
+                          <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+                        </span>
+                      }
+                    />
+                  );
+                })}
               </div>
             </aside>
           </div>

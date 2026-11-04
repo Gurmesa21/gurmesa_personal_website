@@ -58,6 +58,7 @@
   --danger: #EF4444;
   --primary-gradient: linear-gradient(135deg, #8063F7 0%, #4F6FF0 100%);
   --muted: #171D32;
+  --surface-2: #171D32;
 }
 
 .dark,
@@ -78,6 +79,7 @@
   --danger: #EF4444;
   --primary-gradient: linear-gradient(135deg, #8063F7 0%, #4F6FF0 100%);
   --muted: #171D32;
+  --surface-2: #171D32;
 }
 
 @layer base {

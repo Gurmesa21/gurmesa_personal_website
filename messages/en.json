@@ -54,8 +54,8 @@
     "experience": "Experience",
     "present": "Present",
     "skills": "Skills & Expertise",
-    "avatarRecommended": "Recommended: 9:16 vertical (e.g. 720x1280)",
-    "avatarLandscapeWarning": "Uploaded image is landscape. It will be centered and scaled with letterboxing; a 9:16 vertical photo looks best."
+    "avatarRecommended": "Photo is shown in a portrait badge; a vertical 9:16 photo with the face in the upper third is best (e.g. 720x1280).",
+    "avatarLandscapeWarning": "Uploaded image is landscape. The badge crops the photo to a portrait with center-top position; a vertical 9:16 photo with the face in the upper third looks best."
   },
   "Services": {
     "title": "Services",

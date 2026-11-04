@@ -78,7 +78,7 @@ export function ProfileForm({ profile, publicContactEmail }: { profile: any; pub
         <div className="flex items-center justify-between">
           <Label>Avatar / Headshot</Label>
           <span className="text-xs text-muted-foreground" data-testid="avatar-recommended-hint">
-            Recommended: 9:16 vertical (e.g. 720x1280)
+            Photo is shown in a portrait badge; a vertical 9:16 photo with the face in the upper third is best (e.g. 720x1280).
           </span>
         </div>
 
@@ -102,7 +102,7 @@ export function ProfileForm({ profile, publicContactEmail }: { profile: any; pub
           >
             <AlertCircle className="w-4 h-4 shrink-0 text-amber-400 mt-0.5" />
             <span>
-              Uploaded image is landscape. It will be centered and scaled with letterboxing; a 9:16 vertical photo looks best.
+              Uploaded image is landscape. The badge crops the photo to a portrait with center-top position; a vertical 9:16 photo with the face in the upper third looks best.
             </span>
           </div>
         )}
