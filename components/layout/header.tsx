@@ -30,11 +30,6 @@ export function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [langRef]);
 
-  // Close menu on route change
-  React.useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
-
   const changeLanguage = (newLocale: string) => {
     router.replace(pathname, { locale: newLocale })
     setIsLangOpen(false);
@@ -148,6 +143,7 @@ export function Header() {
               />
               <DialogPrimitive.Content
                 id="mobile-nav-panel"
+                aria-modal="true"
                 aria-label={t('toggleMenu')}
                 className={cn(
                   "fixed top-0 right-0 z-50 h-[100vh] h-[100dvh] w-full max-w-[min(88vw,380px)]",

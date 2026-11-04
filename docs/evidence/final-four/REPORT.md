@@ -69,7 +69,7 @@ In `components/layout/header.tsx`, the mobile menu trigger button was styled wit
 
 | Item | File | Lines | Change Description |
 |---|---|---|---|
-| Item 1 & 2 | `components/layout/header.tsx` | 32-265 | Fixed mobile button sizing/shrink, added Radix mobile slide-in dialog panel, 6 rows, segmented locale control, CTA |
+| Item 1 & 2 | `components/layout/header.tsx` | 32-265 | Fixed mobile button sizing/shrink, added Radix mobile slide-in dialog panel, 6 rows, segmented locale control, CTA; removed redundant cascading `useEffect` to ensure 0 lint errors |
 | Item 1 & 2 | `messages/en.json` | 13-14 | Added `toggleMenu` and `closeMenu` keys |
 | Item 1 & 2 | `messages/am.json` | 13-14 | Added `toggleMenu` and `closeMenu` keys |
 | Item 1 & 2 | `messages/om.json` | 13-14 | Added `toggleMenu` and `closeMenu` keys |
