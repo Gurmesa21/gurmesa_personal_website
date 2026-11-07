@@ -86,7 +86,7 @@ test.describe('Caching and Revalidation (End-to-End)', () => {
     await expect(page.locator(`text=${postTitle}`).first()).not.toBeVisible();
     
     await page.goto('/sitemap.xml');
-    await expect(page.locator('body')).not.toContainText('/blog/caching-post'); 
+    await expect(page.locator(':root')).not.toContainText('/blog/caching-post'); 
 
     await page.goto('/admin/blog');
     await page.locator(`tr[data-testid="admin-row"]:has(td:text-is("${postTitle}"))`).first().locator('a[data-testid="edit-link"]').click();
@@ -109,7 +109,7 @@ test.describe('Caching and Revalidation (End-to-End)', () => {
     await expect(page.locator(`text=${projectTitle}`).first()).not.toBeVisible();
     
     await page.goto('/sitemap.xml');
-    await expect(page.locator('body')).not.toContainText(projectTitle.toLowerCase().replace(/\s+/g, '-'));
+    await expect(page.locator(':root')).not.toContainText(projectTitle.toLowerCase().replace(/\s+/g, '-'));
 
     // Restore
     await page.goto('/admin/projects');
