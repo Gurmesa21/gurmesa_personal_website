@@ -2,6 +2,7 @@ import { getPublicPostBySlug } from '@/server/services/blogService';
 import { notFound } from 'next/navigation';
 import { serializeJsonLd } from '@/lib/jsonLd';
 import { getSeoOverride } from '@/server/services/seoService';
+import { getBaseUrl, buildAlternates } from '@/lib/seo';
 import { Metadata } from 'next';
 import { getStorageAdapter } from '@/lib/storage';
 import { BlogPostClientView } from '@/components/blog/BlogPostClientView';
@@ -14,21 +15,41 @@ import { unstable_noStore as noStore } from 'next/cache';
 export const revalidate = 3600;
 export const dynamic = 'auto';
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale?: string }>;
+}): Promise<Metadata> {
   const resolvedParams = await params;
-  const override = await getSeoOverride(`/blog/${resolvedParams.slug}`);
-  const post = await getPublicPostBySlug(resolvedParams.slug);
-  const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+  const locale = resolvedParams.locale || 'en';
+  const rawSlug = resolvedParams.slug;
+  const override = await getSeoOverride(`/blog/${rawSlug}`);
+  const post = await getPublicPostBySlug(rawSlug);
+  const siteUrl = getBaseUrl();
+  const title = override?.title || post?.title || 'Post';
+  const description = override?.description || post?.excerpt || 'Post details.';
+  const pagePath = `/blog/${encodeURIComponent(rawSlug)}`;
+  const pageUrl = locale === 'en' ? `${siteUrl}${pagePath}` : `${siteUrl}/${locale}${pagePath}`;
+
   return {
-    title: override?.title || post?.title || 'Post',
-    description: override?.description || post?.excerpt || 'Post details.',
-    alternates: { canonical: override?.canonical || `${siteUrl}/blog/${resolvedParams.slug}` },
+    title,
+    description,
+    robots: { index: true, follow: true },
+    alternates: buildAlternates(pagePath, locale, override?.canonical),
     openGraph: {
-      title: override?.title || post?.title || 'Post',
-      description: override?.description || post?.excerpt,
-      url: `${siteUrl}/blog/${resolvedParams.slug}`,
+      title,
+      description: description || undefined,
+      url: pageUrl,
+      siteName: 'AVENOR',
+      locale: locale === 'am' ? 'am_ET' : (locale === 'om' ? 'om_ET' : 'en_US'),
+      type: 'article',
       images: override?.ogImage ? [override.ogImage.storageKey] : ['/og-image.jpg'],
-    }
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: description || undefined,
+    },
   };
 }
 

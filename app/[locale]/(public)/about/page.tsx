@@ -16,6 +16,7 @@ import { Button } from '@/components/ui/button';
 import { getSeoOverride } from '@/server/services/seoService';
 import { getResumeUrl } from '@/server/services/mediaService';
 import { Metadata } from 'next';
+import { getBaseUrl, buildAlternates } from '@/lib/seo';
 import { isTestMode } from '@/lib/test-mode';
 import { unstable_noStore as noStore } from 'next/cache';
 import { getTranslations } from 'next-intl/server';
@@ -59,19 +60,35 @@ function SocialIcon({ type }: { type: string }) {
       return <Globe className="w-3.5 h-3.5" />;
   }
 }
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale = 'en' } = (await props.params) || {};
   const override = await getSeoOverride('/about');
-  const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+  const siteUrl = getBaseUrl();
+  const title = override?.title || 'About';
+  const description = override?.description || 'About me.';
+  const pageUrl = locale === 'en' ? `${siteUrl}/about` : `${siteUrl}/${locale}/about`;
+
   return {
-    title: override?.title || 'About',
-    description: override?.description || 'About me.',
-    alternates: { canonical: override?.canonical || `${siteUrl}/about` },
+    title,
+    description,
+    robots: { index: true, follow: true },
+    alternates: buildAlternates('/about', locale, override?.canonical),
     openGraph: {
-      title: override?.title || 'About',
-      description: override?.description || 'About me.',
-      url: `${siteUrl}/about`,
+      title,
+      description,
+      url: pageUrl,
+      siteName: 'AVENOR',
+      locale: locale === 'am' ? 'am_ET' : (locale === 'om' ? 'om_ET' : 'en_US'),
+      type: 'website',
       images: override?.ogImage ? [override.ogImage.storageKey] : ['/og-image.jpg'],
-    }
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
   };
 }
 

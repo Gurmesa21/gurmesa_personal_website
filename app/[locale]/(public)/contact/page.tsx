@@ -3,6 +3,8 @@ import { ContactForm } from './ContactForm';
 import { getTranslations } from 'next-intl/server';
 import { isTestMode } from '@/lib/test-mode';
 import { unstable_noStore as noStore } from 'next/cache';
+import { Metadata } from 'next';
+import { getBaseUrl, buildAlternates } from '@/lib/seo';
 
 import { Mail, Share2, MessageSquare, ArrowUpRight, Clock, ShieldCheck, Code2, MailBadge } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -14,10 +16,36 @@ export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'am' }, { locale: 'om' }];
 }
 
-export const metadata = {
-  title: 'Contact - Gurmesa',
-  description: 'Get in touch for project inquiries or technical consulting.'
-};
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale = 'en' } = (await props.params) || {};
+  const siteUrl = getBaseUrl();
+  const title = 'Contact - Gurmesa';
+  const description = 'Get in touch for project inquiries or technical consulting.';
+  const pageUrl = locale === 'en' ? `${siteUrl}/contact` : `${siteUrl}/${locale}/contact`;
+
+  return {
+    title,
+    description,
+    robots: { index: true, follow: true },
+    alternates: buildAlternates('/contact', locale),
+    openGraph: {
+      title,
+      description,
+      url: pageUrl,
+      siteName: 'AVENOR',
+      locale: locale === 'am' ? 'am_ET' : (locale === 'om' ? 'om_ET' : 'en_US'),
+      type: 'website',
+      images: ['/og-image.jpg'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+  };
+}
 
 export default async function ContactPage() {
   if (isTestMode()) {

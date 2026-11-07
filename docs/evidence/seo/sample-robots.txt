@@ -1,0 +1,8 @@
+User-Agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /api
+Disallow: /mock-storage/
+
+Sitemap: https://gurmesa.tech/sitemap.xml

@@ -7,6 +7,8 @@ export function revalidatePublicContent(options: {
   paths?: string[];
   includeHome?: boolean;
 }) {
+  revalidatePath('/sitemap.xml');
+
   if (options.includeHome ?? true) {
     revalidatePath('/');
     revalidatePath('/', 'layout');

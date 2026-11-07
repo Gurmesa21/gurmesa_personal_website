@@ -5,7 +5,8 @@ import { auth } from './auth';
 
 const intlMiddleware = createMiddleware({
   locales: ['en', 'am', 'om'],
-  defaultLocale: 'en'
+  defaultLocale: 'en',
+  localePrefix: 'as-needed'
 });
 
 export async function proxy(request: NextRequest) {

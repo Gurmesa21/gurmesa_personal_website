@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { getSeoOverride } from '@/server/services/seoService';
+import { getBaseUrl, buildAlternates } from '@/lib/seo';
 import { serializeJsonLd } from '@/lib/jsonLd';
 import { isTestMode } from '@/lib/test-mode';
 
@@ -128,19 +129,35 @@ export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'am' }, { locale: 'om' }];
 }
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale = 'en' } = (await props.params) || {};
   const override = await getSeoOverride('/');
-  const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+  const siteUrl = getBaseUrl();
+  const title = override?.title || 'Gurmesa - Full Stack Developer';
+  const description = override?.description || 'Personal portfolio and developer blog.';
+  const pageUrl = locale === 'en' ? siteUrl : `${siteUrl}/${locale}`;
+
   return {
-    title: override?.title || 'Gurmesa - Full Stack Developer',
-    description: override?.description || 'Personal portfolio and developer blog.',
-    alternates: { canonical: override?.canonical || siteUrl },
+    title,
+    description,
+    robots: { index: true, follow: true },
+    alternates: buildAlternates('/', locale, override?.canonical),
     openGraph: {
-      title: override?.title || 'Gurmesa - Full Stack Developer',
-      description: override?.description || 'Personal portfolio and developer blog.',
-      url: siteUrl,
+      title,
+      description,
+      url: pageUrl,
+      siteName: 'AVENOR',
+      locale: locale === 'am' ? 'am_ET' : (locale === 'om' ? 'om_ET' : 'en_US'),
+      type: 'website',
       images: override?.ogImage ? [override.ogImage.storageKey] : ['/og-image.jpg'],
-    }
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
   };
 }
 

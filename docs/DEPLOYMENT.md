@@ -15,7 +15,10 @@ The following environment variables are required for the application to function
 
 ### Application & Routing
 - `APP_ENV`: Defines the deployment environment (e.g., `production`, `test`, `development`). Must be set to `production` in production.
-- `SITE_URL`: The canonical public URL of the deployment (e.g., `https://gurmesa.com`). Used for absolute URLs in metadata, sitemaps, and RSS feeds. (Not a secret).
+- `SITE_URL`: The canonical public URL of the deployment (e.g., `https://gurmesa.tech`). Used for server-side resolution, metadata, sitemaps, and RSS feeds. (Not a secret).
+- `NEXT_PUBLIC_SITE_URL`: (Optional) Explicit canonical public URL exposed to client and metadata contexts (e.g., `https://gurmesa.tech`).
+- `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`: (Optional) Google Search Console verification token for `<meta name="google-site-verification" content="...">`.
+- `NEXT_PUBLIC_BING_SITE_VERIFICATION`: (Optional) Bing Webmaster Tools verification token for `<meta name="msvalidate.01" content="...">`.
 
 ### Database
 - `DATABASE_URL`: **[SECRET]** The PostgreSQL connection string (e.g., `postgresql://user:password@host:port/dbname`). Used by Prisma to connect to the database.

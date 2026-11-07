@@ -6,6 +6,8 @@ import { toPublicTestimonial } from '@/lib/dto/testimonial';
 import { MessageSquareQuote, PenTool, ShieldCheck, Sparkles } from 'lucide-react';
 import { isTestMode } from '@/lib/test-mode';
 import { unstable_noStore as noStore } from 'next/cache';
+import { Metadata } from 'next';
+import { getBaseUrl, buildAlternates } from '@/lib/seo';
 
 export const revalidate = 3600;
 export const dynamic = 'auto';
@@ -14,10 +16,36 @@ export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'am' }, { locale: 'om' }];
 }
 
-export const metadata = {
-  title: 'Testimonials - Gurmesa',
-  description: 'What people say about me.'
-};
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale = 'en' } = (await props.params) || {};
+  const siteUrl = getBaseUrl();
+  const title = 'Testimonials - Gurmesa';
+  const description = 'What people say about me.';
+  const pageUrl = locale === 'en' ? `${siteUrl}/testimonials` : `${siteUrl}/${locale}/testimonials`;
+
+  return {
+    title,
+    description,
+    robots: { index: true, follow: true },
+    alternates: buildAlternates('/testimonials', locale),
+    openGraph: {
+      title,
+      description,
+      url: pageUrl,
+      siteName: 'AVENOR',
+      locale: locale === 'am' ? 'am_ET' : (locale === 'om' ? 'om_ET' : 'en_US'),
+      type: 'website',
+      images: ['/og-image.jpg'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+  };
+}
 
 export default async function TestimonialsPage() {
   if (isTestMode()) {

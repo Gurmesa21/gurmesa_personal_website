@@ -1,5 +1,6 @@
 import { getPublicServices } from '@/server/services/serviceService';
 import { getSeoOverride } from '@/server/services/seoService';
+import { getBaseUrl, buildAlternates } from '@/lib/seo';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -24,18 +25,35 @@ export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'am' }, { locale: 'om' }];
 }
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale = 'en' } = (await props.params) || {};
   const override = await getSeoOverride('/services');
-  const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+  const siteUrl = getBaseUrl();
+  const title = override?.title || 'Services';
+  const description = override?.description || 'What I offer.';
+  const pageUrl = locale === 'en' ? `${siteUrl}/services` : `${siteUrl}/${locale}/services`;
+
   return {
-    title: override?.title || 'Services',
-    description: override?.description || 'What I offer.',
-    alternates: { canonical: override?.canonical || `${siteUrl}/services` },
+    title,
+    description,
+    robots: { index: true, follow: true },
+    alternates: buildAlternates('/services', locale, override?.canonical),
     openGraph: {
-      title: override?.title || 'Services',
-      url: `${siteUrl}/services`,
+      title,
+      description,
+      url: pageUrl,
+      siteName: 'AVENOR',
+      locale: locale === 'am' ? 'am_ET' : (locale === 'om' ? 'om_ET' : 'en_US'),
+      type: 'website',
       images: override?.ogImage ? [override.ogImage.storageKey] : ['/og-image.jpg'],
-    }
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
   };
 }
 

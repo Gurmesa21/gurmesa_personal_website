@@ -4,6 +4,7 @@ import { getPublicCaseStudyBySlug } from '@/server/services/projectService';
 import { Button } from '@/components/ui/button';
 import { serializeJsonLd } from '@/lib/jsonLd';
 import { getSeoOverride } from '@/server/services/seoService';
+import { getBaseUrl, buildAlternates } from '@/lib/seo';
 import { Metadata } from 'next';
 import { MarkdownRenderer } from '@/components/ui/markdown-renderer';
 import { getTranslations } from 'next-intl/server';
@@ -23,23 +24,42 @@ import {
 export const revalidate = 3600;
 export const dynamic = 'auto';
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale?: string }>;
+}): Promise<Metadata> {
   const resolvedParams = await params;
+  const locale = resolvedParams.locale || 'en';
   const rawSlug = resolvedParams.slug;
   const decodedSlug = decodeURIComponent(rawSlug);
   const override = (await getSeoOverride(`/work/${rawSlug}`)) || (await getSeoOverride(`/work/${decodedSlug}`));
   const project = (await getPublicCaseStudyBySlug(rawSlug)) || (await getPublicCaseStudyBySlug(decodedSlug));
-  const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+  const siteUrl = getBaseUrl();
+  const title = override?.title || project?.title || 'Case Study';
+  const description = override?.description || project?.summary || 'Project details.';
+  const pagePath = `/work/${encodeURIComponent(rawSlug)}`;
+  const pageUrl = locale === 'en' ? `${siteUrl}${pagePath}` : `${siteUrl}/${locale}${pagePath}`;
+
   return {
-    title: override?.title || project?.title || 'Case Study',
-    description: override?.description || project?.summary || 'Project details.',
-    alternates: { canonical: override?.canonical || `${siteUrl}/work/${rawSlug}` },
+    title,
+    description,
+    robots: { index: true, follow: true },
+    alternates: buildAlternates(pagePath, locale, override?.canonical),
     openGraph: {
-      title: override?.title || project?.title || 'Case Study',
-      description: override?.description || project?.summary,
-      url: `${siteUrl}/work/${rawSlug}`,
+      title,
+      description: description || undefined,
+      url: pageUrl,
+      siteName: 'AVENOR',
+      locale: locale === 'am' ? 'am_ET' : (locale === 'om' ? 'om_ET' : 'en_US'),
+      type: 'website',
       images: override?.ogImage ? [override.ogImage.storageKey] : ['/og-image.jpg'],
-    }
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: description || undefined,
+    },
   };
 }
 

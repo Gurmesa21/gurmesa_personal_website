@@ -4,6 +4,7 @@ import { getPublicServiceBySlug } from '@/server/services/serviceService';
 import { Button } from '@/components/ui/button';
 import { serializeJsonLd } from '@/lib/jsonLd';
 import { getSeoOverride } from '@/server/services/seoService';
+import { getBaseUrl, buildAlternates } from '@/lib/seo';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { getStorageAdapter } from '@/lib/storage';
@@ -24,21 +25,41 @@ import {
   ShieldCheck
 } from 'lucide-react';
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; locale?: string }>;
+}): Promise<Metadata> {
   const resolvedParams = await params;
-  const override = await getSeoOverride(`/services/${resolvedParams.slug}`);
-  const service = await getPublicServiceBySlug(resolvedParams.slug);
-  const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+  const locale = resolvedParams.locale || 'en';
+  const rawSlug = resolvedParams.slug;
+  const override = await getSeoOverride(`/services/${rawSlug}`);
+  const service = await getPublicServiceBySlug(rawSlug);
+  const siteUrl = getBaseUrl();
+  const title = override?.title || service?.title || 'Service';
+  const description = override?.description || service?.summary || 'Service details.';
+  const pagePath = `/services/${encodeURIComponent(rawSlug)}`;
+  const pageUrl = locale === 'en' ? `${siteUrl}${pagePath}` : `${siteUrl}/${locale}${pagePath}`;
+
   return {
-    title: override?.title || service?.title || 'Service',
-    description: override?.description || service?.summary || 'Service details.',
-    alternates: { canonical: override?.canonical || `${siteUrl}/services/${resolvedParams.slug}` },
+    title,
+    description,
+    robots: { index: true, follow: true },
+    alternates: buildAlternates(pagePath, locale, override?.canonical),
     openGraph: {
-      title: override?.title || service?.title || 'Service',
-      description: override?.description || service?.summary,
-      url: `${siteUrl}/services/${resolvedParams.slug}`,
+      title,
+      description: description || undefined,
+      url: pageUrl,
+      siteName: 'AVENOR',
+      locale: locale === 'am' ? 'am_ET' : (locale === 'om' ? 'om_ET' : 'en_US'),
+      type: 'website',
       images: override?.ogImage ? [override.ogImage.storageKey] : ['/og-image.jpg'],
-    }
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: description || undefined,
+    },
   };
 }
 

@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { FileText } from 'lucide-react';
+import type { Metadata } from 'next';
+import { buildAlternates } from '@/lib/seo';
 
 export const revalidate = 3600;
 export const dynamic = 'auto';
@@ -9,10 +11,15 @@ export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'am' }, { locale: 'om' }];
 }
 
-
-export const metadata = {
-  title: 'Terms of Service - Gurmesa',
-};
+export async function generateMetadata(
+  props: { params: Promise<{ locale: string }> }
+): Promise<Metadata> {
+  const { locale } = await props.params;
+  return {
+    title: 'Terms of Service - Gurmesa',
+    alternates: buildAlternates('/terms', locale),
+  };
+}
 
 export default function TermsPage() {
   const t = useTranslations('Terms');

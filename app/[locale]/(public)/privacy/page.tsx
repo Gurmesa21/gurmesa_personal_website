@@ -4,6 +4,8 @@ import { getTranslations } from 'next-intl/server';
 import { ShieldCheck } from 'lucide-react';
 import { isTestMode } from '@/lib/test-mode';
 import { unstable_noStore as noStore } from 'next/cache';
+import type { Metadata } from 'next';
+import { buildAlternates } from '@/lib/seo';
 
 export const revalidate = 3600;
 export const dynamic = 'auto';
@@ -12,9 +14,15 @@ export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'am' }, { locale: 'om' }];
 }
 
-export const metadata = {
-  title: 'Privacy Policy - Gurmesa',
-};
+export async function generateMetadata(
+  props: { params: Promise<{ locale: string }> }
+): Promise<Metadata> {
+  const { locale } = await props.params;
+  return {
+    title: 'Privacy Policy - Gurmesa',
+    alternates: buildAlternates('/privacy', locale),
+  };
+}
 
 export default async function PrivacyPage() {
   if (isTestMode()) {

@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
 import { Noto_Sans_Ethiopic } from 'next/font/google';
+import { getBaseUrl, getVerificationMetadata } from '@/lib/seo';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-heading', display: 'swap' });
@@ -15,19 +16,29 @@ const notoSansEthiopic = Noto_Sans_Ethiopic({
   variable: '--font-ethiopic',
 });
 
+const baseUrl = getBaseUrl();
+const verification = getVerificationMetadata();
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.SITE_URL || 'http://localhost:3000'),
+  metadataBase: new URL(baseUrl),
   title: {
     template: '%s | Gurmesa',
     default: 'Gurmesa - Full Stack Developer',
   },
   description: 'Personal portfolio and developer blog.',
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
+    siteName: 'AVENOR',
+    type: 'website',
     images: ['/og-image.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
   },
+  ...verification,
 };
 
 export function generateStaticParams() {
